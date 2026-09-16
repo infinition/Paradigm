@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import statistics
 from pathlib import Path
 from typing import Any
 
@@ -9,7 +8,7 @@ from .agent_vertical import PHASES
 from .llm_controller import OpenAICompatibleCodingDeliberator
 from .online_learning import OnlineReflexCompiler
 from .p23 import NOVEL_FAMILY, run_p23_live_online_benchmark
-from .p23r import ARRIVALS, make_arrival_stream
+from .p23r import make_arrival_stream
 from .schema import Trace
 
 POISON_FROM = "inspect_file"

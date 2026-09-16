@@ -370,6 +370,10 @@ def _fmt(stat: dict[str, Any], pct: bool = False, digits: int = 1) -> str:
     return f"{stat['mean']:.{digits}f} [{stat['min']:.{digits}f}, {stat['max']:.{digits}f}]"
 
 
+def _seconds(stat: dict[str, Any]) -> str:
+    return "n/a" if stat["n"] == 0 else f"{stat['mean'] / 1000:.1f}"
+
+
 def _fmt_med(stat: dict[str, Any], pct: bool = False, digits: int = 1) -> str:
     if stat["n"] == 0:
         return "n/a"
@@ -483,7 +487,7 @@ def write_p23r_report(root: Path, summary: dict[str, Any]) -> None:
         lines.append(
             f"| {t['model']} | {t['runs']} | {t['successful_reflexes_acquired']} | {_fmt_med(t['validated_episodes_before_maturity'], digits=0)} | "
             f"{_fmt(t['acquisition_tokens_before_maturity'], digits=0)} | "
-            f"{'n/a' if lat['n'] == 0 else f'{lat['mean'] / 1000:.1f}'} | "
+            f"{_seconds(lat)} | "
             f"{t['mean_tokens_per_llm_call']['mean']:.0f} | {t['mean_latency_ms_per_llm_call']['mean']:.0f} | "
             f"{_fmt(t['online_success'], True)} | {t['invalid_llm_actions']} |"
         )
