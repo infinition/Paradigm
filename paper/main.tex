@@ -1,0 +1,729 @@
+\documentclass[10pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{newtxtext,newtxmath}
+\usepackage[margin=0.78in]{geometry}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,shapes.geometric}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{siunitx}
+\usepackage{url}
+\usepackage{titlesec}
+
+\definecolor{pblue}{HTML}{195B9B}
+\definecolor{pcyan}{HTML}{168AAD}
+\definecolor{pgreen}{HTML}{297A67}
+\definecolor{pamber}{HTML}{B36B22}
+\definecolor{pred}{HTML}{A33B3B}
+\definecolor{pgray}{HTML}{5F6670}
+\definecolor{plight}{HTML}{F4F7FA}
+\definecolor{pline}{HTML}{D7DEE6}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=pblue,
+  citecolor=pgreen,
+  urlcolor=pblue,
+  pdfauthor={Fabien Polly},
+  pdftitle={Paradigm: Learning Trusted Procedural Reflexes from Validated LLM Deliberation}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small Paradigm}
+\rhead{\small Preprint, 2026}
+\cfoot{\small \thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+\titleformat{\section}{\large\bfseries\color{pblue}}{\thesection}{0.6em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\setlist[itemize]{leftmargin=1.25em,itemsep=2pt,topsep=3pt}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{1em}
+\setlength{\columnsep}{0.25in}
+
+\newcommand{\paradigm}{\textsc{Paradigm}}
+\newcommand{\delib}{\textsc{Deliberate}}
+\newcommand{\reflex}{\textsc{Reflex}}
+\newcommand{\ok}{\textcolor{pgreen}{\textbf{pass}}}
+\newcommand{\fail}{\textcolor{pred}{\textbf{fail}}}
+\newcommand{\na}{\textcolor{pgray}{n/a}}
+
+\newcommand{\keybox}[2]{%
+\begin{center}
+\fcolorbox{pline}{plight}{\begin{minipage}{0.93\linewidth}
+\textbf{#1} #2
+\end{minipage}}
+\end{center}}
+
+\title{\vspace{-1.5em}\textbf{Paradigm: Learning Trusted Procedural Reflexes\\from Validated LLM Deliberation}}
+\author{Fabien Polly\\Independent Researcher\\\href{https://github.com/infinition/Paradigm}{github.com/infinition/Paradigm}}
+\date{September 2026}
+
+\begin{document}
+\maketitle
+\vspace{-1.2em}
+
+\begin{abstract}
+Agentic systems repeatedly spend deliberative compute on control decisions that become familiar through use. This paper studies whether validated deliberative behavior can be compiled into a smaller procedural reflex without removing abstention, regression checks, or fallback. We introduce \paradigm, a lifecycle that stores only validated deliberative decisions, trains a separate candidate reflex, tests it under explicit quality and trust gates, promotes it without modifying the active reflex in place, and returns uncertain states to the deliberative controller. The evaluation separates two cases that are often conflated. In \emph{Type A} acquisition, the reflex already has the required policy and learns certified coverage of a new state region. In \emph{Type B} acquisition, the required action policy is absent at zero evidence and capability itself must rise with validated demonstrations.
+
+A 24-run Type A replication across two Qwen3 teachers, four evidence arrival orders, and three seeds preserves 100\% task success and records 0\% false fast paths. A separate retention study shows that immutable per-family probes catch a damaged candidate missed by recent-split certification, while also exposing the cost of atomic all-family promotion. In the Type B experiment, a new dependency-repair family requires four actions absent from all known families. With zero novel evidence, held-out decision accuracy is 50\%, exact sequence accuracy is 0\%, and forced replay success is 0\%. With four to six validated demonstrations from Qwen3-4B, capability reaches 100\% and is then certified online. On eight frozen fresh tasks, the learned reflex solves 8/8, including two prompt variants its teacher fails to solve.
+
+We then integrate the same mechanism into the real LaRuche agent loop with DeepSeek and real tools. Whole-candidate certification fails because stable test-running behavior is coupled to variable exploratory behavior. A pre-registered family-scoped rule fixes this without changing thresholds. In a fresh 24-mission run, two stable test-execution families are activated at mission 16. Missions 17--23 route their repeated test calls through \paradigm, yielding 15 reflex decisions and 15 avoided model calls while all 24 missions remain independently verified by pytest. No false fast path or unsafe automated action is observed. A later candidate that would regress an active family is rejected by retention probes. The combined evidence supports a controlled first demonstration of procedural memory learned from validated LLM deliberation and selectively deployed inside a real agent. It also exposes the next problem directly: a reflex may remain capable after active-family evidence becomes sparse, so re-certification must distinguish absence of fresh deliberative evidence from measured regression.
+\end{abstract}
+
+\keybox{Central distinction.}{A reflex can be capable without being authorized. \paradigm\ treats capability and trust as separate variables, and a state may return \delib\ even when the frozen reflex would have succeeded.}
+
+\section{Introduction}
+
+Large language models are increasingly used as controllers for multi-step agents. The same controller may repeatedly decide to run a test, inspect a file, retry a tool, or finish a task. Re-solving each familiar micro-decision with the full deliberative model is expensive, but blindly caching prior actions is unsafe under distribution shift. A useful procedural memory must therefore answer two different questions: \emph{can a compact policy perform the behavior?} and \emph{where is it sufficiently supported to act without deliberation?}
+
+\paradigm\ treats this as a compilation lifecycle rather than a one-shot distillation problem. A deliberative controller remains responsible for unfamiliar states. Only successful, verified trajectories enter the acquisition buffer. A candidate reflex is trained separately from the active reflex, checked for quality, calibration, state-space support, retention, and subgroup regressions, and promoted only after validation. Runtime abstention is part of the system, not an error path.
+
+The empirical line in this paper grew through controlled failures. Early experiments showed that classifier confidence alone is a poor OOD signal, input geometry does not provide semantic guarantees, bounded local updates do not solve catastrophic forgetting, and a global trusted update subspace can admit harmful candidates. These negative results shaped the current design: independent signals are used for routing and rejection, while promotion remains an explicit multi-signal decision.
+
+The paper focuses on the first end-to-end agent vertical and asks a narrow question:
+
+\begin{quote}
+Can validated LLM deliberation produce a compact procedural reflex that acquires a genuinely new action policy, while preserving explicit fallback and retention checks?
+\end{quote}
+
+The main controlled result is Type B acquisition in a coding environment. A dependency-repair policy is absent at zero evidence, appears after validated teacher demonstrations, is certified, promoted, and later executes without LLM calls. The frozen reflex generalizes the learned policy to held-out prompt variants that the teacher itself fails to solve. The runtime trust gate does not authorize those variants because no validated evidence exists there, which keeps the deployed hybrid conservative.
+
+The paper then moves outside the benchmark. The same integration surface is connected to LaRuche, a Rust agent loop, with DeepSeek as the live deliberative provider and real tools in a guarded workspace. This deployment reproduces a failure predicted by the retention study: a globally scored candidate is rejected because stable and variable families are coupled. Family-scoped activation is pre-registered, implemented without changing thresholds, and evaluated in a fresh 24-mission run. Two stable test-execution families become active while file exploration, editing, arbitrary shell, and other variable behavior remain deliberative or blocked.
+
+\section{Paradigm lifecycle}
+
+\subsection{Runtime decision rule}
+
+At each agent step, the current state $s$ is passed to a compact reflex $f_\theta$. The reflex proposes an action $a$ and confidence $c$, while a support gate $g(s)$ estimates whether the state lies inside a represented region. Execution is selective:
+\begin{equation}
+\pi(s)=
+\begin{cases}
+ f_\theta(s), & c(s)\ge \tau_c \ \wedge\ g(s)\ge \tau_g \ \wedge\ a\in\mathcal{A}_{\mathrm{valid}}(s),\\
+ \pi_D(s), & \text{otherwise},
+\end{cases}
+\end{equation}
+where $\pi_D$ is the deliberative controller. A rejected reflex proposal is not counted as failure. It is an abstention.
+
+\begin{figure}[t]
+\centering
+\resizebox{0.98\linewidth}{!}{%
+\begin{tikzpicture}[
+  node distance=8mm and 10mm,
+  every node/.style={font=\small},
+  box/.style={draw=pline, rounded corners=2pt, fill=white, minimum height=8mm, align=center, inner sep=4pt},
+  blue/.style={box, draw=pblue!60, fill=pblue!5},
+  green/.style={box, draw=pgreen!60, fill=pgreen!6},
+  amber/.style={box, draw=pamber!65, fill=pamber!7},
+  decision/.style={diamond, draw=pline, fill=plight, aspect=2.0, align=center, inner sep=1pt},
+  arrow/.style={-{Latex[length=2mm]}, thick, draw=pgray!80}
+]
+\node[blue] (state) {structured\\agent state};
+\node[decision, right=of state] (trusted) {trusted?};
+\node[green, above right=5mm and 11mm of trusted] (reflex) {compiled reflex\\fast action};
+\node[amber, below right=5mm and 11mm of trusted] (llm) {deliberative\\controller};
+\node[blue, right=20mm of trusted] (exec) {execute\\action};
+\node[decision, right=of exec] (valid) {outcome\\verified?};
+\node[green, above right=5mm and 10mm of valid] (store) {trusted\\experience};
+\node[box, below right=5mm and 10mm of valid] (drop) {do not\\train};
+\node[blue, right=of store] (cand) {candidate\\compile};
+\node[decision, right=of cand] (cert) {quality + trust\\+ retention};
+\node[green, above right=5mm and 9mm of cert] (promote) {promote};
+\node[box, below right=5mm and 9mm of cert] (reject) {reject};
+
+\draw[arrow] (state) -- (trusted);
+\draw[arrow] (trusted) -- node[above left,font=\scriptsize]{yes} (reflex);
+\draw[arrow] (trusted) -- node[below left,font=\scriptsize]{no} (llm);
+\draw[arrow] (reflex) -- (exec);
+\draw[arrow] (llm) -- (exec);
+\draw[arrow] (exec) -- (valid);
+\draw[arrow] (valid) -- node[above left,font=\scriptsize]{yes} (store);
+\draw[arrow] (valid) -- node[below left,font=\scriptsize]{no} (drop);
+\draw[arrow] (store) -- (cand);
+\draw[arrow] (cand) -- (cert);
+\draw[arrow] (cert) -- node[above left,font=\scriptsize]{pass} (promote);
+\draw[arrow] (cert) -- node[below left,font=\scriptsize]{fail} (reject);
+\draw[arrow, rounded corners=8pt] (promote.north) |- ($(trusted.north)+(0,12mm)$) -| (trusted.north);
+\end{tikzpicture}%
+}
+\caption{The \paradigm\ lifecycle. Deliberation remains the default outside certified regions. Only verified successful deliberative experience is eligible for acquisition. Candidate training and promotion are separate from the active reflex.}
+\label{fig:lifecycle}
+\end{figure}
+
+\subsection{Validated experience, not imitation by default}
+
+A teacher action is not training evidence merely because a language model produced it. An episode $e$ enters the trusted buffer only if its domain-specific Outcome Contract returns verified success. Failed, timed-out, ambiguous, or unverified episodes are excluded. Reflex-generated decisions are also excluded from teacher labels, preventing self-confirming training loops.
+
+The active reflex is immutable during evaluation. New experience produces a separate candidate. This distinction matters operationally because promotion can be rejected, delayed, quarantined, or rolled back without altering the current serving policy.
+
+\subsection{Capability and authorization}
+
+Let $C(s)$ denote whether the candidate can produce the correct action in state $s$, and $T(s)$ denote whether the system has sufficient evidence to authorize the fast path. \paradigm\ does not assume $C(s)=T(s)$. The P2.4 held-out experiment directly exhibits states with $C(s)=1$ and $T(s)=0$.
+
+This separation is related to selective prediction and abstention, where coverage is traded against risk \cite{geifman2017selective}. The difference is that \paradigm\ uses selective execution inside an online procedural acquisition lifecycle: new states are first handled deliberatively, validated outcomes accumulate, candidates are compiled, and trust regions evolve separately from model capability.
+
+\subsection{Three acquisition types}
+
+The experiments motivate a useful taxonomy, shown in \cref{fig:types}.
+
+\begin{figure}[t]
+\centering
+\resizebox{0.97\linewidth}{!}{%
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  card/.style={draw=pline, rounded corners=3pt, align=left, text width=0.285\linewidth, minimum height=33mm, inner sep=6pt},
+]
+\node[card, fill=pblue!5, draw=pblue!45] (a) {\textbf{Type A: coverage}\\[2pt]
+Policy already exists.\\New state region appears.\\Evidence expands authorization.\\[3pt]
+\textcolor{pblue}{Capability precedes trust.}};
+\node[card, fill=pgreen!6, draw=pgreen!50, right=7mm of a] (b) {\textbf{Type B: skill}\\[2pt]
+New state region.\\Required action policy is absent.\\Validated demonstrations raise capability.\\[3pt]
+\textcolor{pgreen}{Capability must be learned.}};
+\node[card, fill=pamber!7, draw=pamber!50, right=7mm of b] (c) {\textbf{Type C: composition}\\[2pt]
+Known skills exist.\\A new ordering or composition is required.\\[3pt]
+\textcolor{pamber}{Not demonstrated here.}};
+\end{tikzpicture}%
+}
+\caption{Acquisition taxonomy. P2.3R/P2.3T establish Type A; P2.4 establishes Type B in one controlled family. Type C remains future work.}
+\label{fig:types}
+\end{figure}
+
+\section{Research lineage and related work}
+
+\paragraph{System 2 to System 1 transfer.}
+Yu et al. study self-supervised distillation of expensive System 2 procedures into direct System 1 generations, reducing inference cost after compilation \cite{yu2024system2}. \paradigm\ shares the motivation of compiling repeated deliberation, but keeps the compiled reflex separately deployable and makes abstention, candidate promotion, retention, and rollback explicit.
+
+\paragraph{Procedural memory distillation.}
+Procedural Memory Distillation accumulates cross-episode procedural information and distills it into model weights \cite{liu2026pmd}. \paradigm\ instead studies an external procedural layer whose reflex can be a rule, tree, small neural model, or other compact policy. The deliberative model can therefore change without requiring all procedural memory to remain inside its weights.
+
+\paragraph{Selective prediction and deferral.}
+Selective classification formalizes prediction with rejection and the coverage-risk tradeoff \cite{geifman2017selective}. Model cascades and learning-to-defer systems similarly route hard cases to a stronger expert. \paradigm\ uses the same principle at runtime, but also asks when repeated expert decisions justify compiling a new expert of smaller scope.
+
+\paragraph{Continual learning.}
+Replay and regularization are standard tools for retaining earlier tasks \cite{chaudhry2019replay,kirkpatrick2017ewc}. Paradigm's Core experiments compare replay, EWC, periodic retraining, ordinary optimization, and bounded updates before introducing additional trust machinery. The results in this paper do not claim a new general solution to catastrophic forgetting.
+
+\paragraph{Research lineage.}
+Several earlier projects by the author motivate specific design constraints without transferring their claims automatically. \emph{Learning Only What Valid Adapters Can Express} motivates pool-relative trusted spaces and explicit rejection, while also documenting that geometric membership is not a semantic safety certificate \cite{polly2026validadapters}. \emph{Drift-Bounded Spectral Updates} motivates interpretable plasticity budgets, but Paradigm's own experiments confirm that bounded local drift does not by itself prevent forgetting \cite{polly2026drift}. \emph{GA vs Scalarization} motivates architectural restraint: specialized structure is introduced only when the task justifies it \cite{polly2026ga}. \emph{FluidWorld} motivates the longer-term idea of using a predictive state substrate to evaluate execute-or-defer decisions before physical action; no world-model result is used in the present experiments \cite{polly2026fluidworld}.
+
+\section{Agent vertical and experimental protocol}
+
+\subsection{Controller task}
+
+The first application is a bounded coding controller. The reflex selects control actions, not generated patches or free-form text. Known families use a small vocabulary such as test execution, file inspection, symbol search, controlled repair, and finish. A slow deliberative controller handles unfamiliar diagnosis and any state that the reflex does not pass through the runtime gates.
+
+For the main experiments, Qwen3 models are served locally with thinking disabled, so both teachers operate through the same non-thinking control interface. Qwen3 is a family of dense and mixture-of-experts language models with explicit thinking and non-thinking modes \cite{qwen3report}. Teacher size is treated as an experimental variable rather than a proxy for teaching quality.
+
+\subsection{Type A protocol}
+
+The Type A family is \texttt{syntax\_error}. Its state region is withheld from initial trust, but its correct action sequence is representable by the same controller policy used by known families. This design is useful for testing trust acquisition, but it cannot establish skill acquisition. P2.3T makes this explicit by fitting candidates with zero novel training episodes and measuring capability separately from gate acceptance.
+
+P2.3R replicates the online experiment as a $2\times4\times3$ matrix: two teachers (Qwen3-4B and Qwen3-8B), four novel-family arrival orders (burst, interleaved, periodic, rare), and three seeds. The transport and thresholds are fixed across the matrix.
+
+\subsection{Retention protocol}
+
+Once known families move to the fast path, they generate fewer fresh teacher labels. This self-focusing acquisition buffer is useful for unresolved behavior but weakens recent-split retention evidence. P2.3R-bis adds immutable per-family retention probes and a negative control that damages a mature family while preserving the novel family. A candidate counts as a \emph{catch} only if the clean candidate is promoted and the poisoned candidate is rejected.
+
+\subsection{Type B family}
+
+P2.4 introduces \texttt{dependency\_error}, a family that cannot be solved by extrapolating the known repair sequence. It requires four actions never required by the previous families:
+\begin{center}
+\texttt{inspect\_dependency}, \texttt{search\_registry},\\
+\texttt{modify\_dependency\_file}, \texttt{install\_dependency}.
+\end{center}
+The environment keeps known actions available as valid but wrong alternatives. In particular, \texttt{apply\_fix} cannot solve the dependency family. The Outcome Contract requires the dependency declaration to be corrected, the required package installed, tests passing, and code files unchanged.
+
+The Type B signature is pre-registered operationally: capability must be materially below mature performance at $k=0$ novel training episodes; capability must rise with validated evidence; certification must follow capability rather than replace it; mature families must remain intact on quality-feasible candidates; uncertified states remain deliberative; and no threshold is lowered to force promotion.
+
+\subsection{Metrics}
+
+The evaluation separates learning from authorization:
+\begin{itemize}
+  \item \textbf{Decision capability}: held-out action accuracy.
+  \item \textbf{Exact sequence}: fraction of held-out episodes whose entire action sequence is correct.
+  \item \textbf{Forced replay}: episode success when the reflex is forced to act without the trust gate.
+  \item \textbf{Time-to-Capability (TTC)}: minimum validated training evidence meeting the fixed capability criterion.
+  \item \textbf{Time-to-Reflex (TTR)}: validated evidence observed before the active fast path becomes available.
+  \item \textbf{False fast path}: a task failure caused by an accepted reflex action in a state that should have remained deliberative.
+  \item \textbf{Acquisition debt}: teacher calls, tokens, latency, and decisions consumed before the first useful fast path.
+  \item \textbf{Reflex dividend}: calls, tokens, and latency avoided after representation.
+\end{itemize}
+
+The TTC criterion for P2.4 is fixed before the sweep: at least 95\% held-out decision accuracy and 100\% forced-replay episode success.
+
+\section{Type A: certified coverage acquisition}
+
+\subsection{24-run replication}
+
+Across all 24 P2.3R runs, task success remains 100\% and the false fast-path rate is 0\%. No acquisition metric varies across the three seeds inside a cell. Burst arrival reaches TTR 12; interleaved, periodic, and rare reach TTR 7. Qwen3-4B and Qwen3-8B produce the same acquisition dynamics on this task because they emit the same successful controller policy. The larger teacher costs more per call without changing the trust trajectory.
+
+Arrival order changes when evidence becomes certifiable and, more importantly, how much time remains to benefit from a promoted reflex. Rare arrival promotes at episode 68 of a 69-episode stream and is never exercised. This motivates separating certification, deployment, exposure, and realized economic value.
+
+\begin{table}[t]
+\centering
+\caption{P2.3R headline results. Values are identical across the three seeds of each arrival order and across the two teachers.}
+\label{tab:p23r}
+\begin{tabular}{lrrrr}
+\toprule
+Arrival & TTR & Success & False FP & Post-promo exposure \\
+\midrule
+Burst & 12 & 100\% & 0\% & $>$0 \\
+Interleaved & 7 & 100\% & 0\% & highest \\
+Periodic & 7 & 100\% & 0\% & intermediate \\
+Rare & 7 & 100\% & 0\% & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{P2.3T: capability already existed}
+
+The Type A learning-threshold sweep removes a misleading interpretation from the earlier online result. With zero novel training episodes, held-out capability on \texttt{syntax\_error} is already 100\% for both teachers. Only gate acceptance rises with evidence, from 0.00 toward 0.94. The online system therefore learned certified coverage of a new state region, not a new control policy.
+
+This distinction matters for sample-efficiency claims. The apparent live boundary between three and four novel training episodes is protocol-specific. When the certification set is fixed, the acceptance curve changes. No universal ``four examples'' claim follows from P2.3R.
+
+\section{Retention: what recent certification misses}
+
+P2.3R-bis compares the recent-split rule against family-aware certification with persistent probes. The negative control damages a mature family while preserving the novel one. A discriminative catch requires promotion of the clean candidate and rejection of the damaged one.
+
+\begin{table}[t]
+\centering
+\caption{Negative-control discrimination across four arrival orders.}
+\label{tab:retention}
+\begin{tabular}{lrrrr}
+\toprule
+Certifier & Catch & Miss & Non-disc. & Inversion \\
+\midrule
+Family-aware & 3 & 0 & 1 & 0 \\
+Recent split & 0 & 2 & 2 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The probes close a measurable blind spot, but the first family-aware implementation is expensive because promotion is atomic across all families. An uncertified novel family can block already-certified mature families. Across the four paired orders this adds 215 deliberative decisions. Requiring two validation episodes per family instead of one further delays promotion and increases cost without improving the observed negative-control discrimination. The result points toward family-scoped authorization rather than weaker retention checks.
+
+\section{Type B: procedural skill acquisition}
+
+\subsection{Zero-evidence control}
+
+The Type B control succeeds in making capability genuinely absent. With no \texttt{dependency\_error} training episodes, held-out decision accuracy is 50\% for both teachers' trace sets, exact sequence accuracy is 0\%, and forced-replay episode success is 0\%. The 50\% comes from generic steps such as \texttt{run\_tests} and \texttt{finish}; the candidate never emits a dependency-specific action.
+
+\subsection{Capability rises with validated demonstrations}
+
+Only successful teacher episodes enter acquisition. For Qwen3-4B, capability stays at 50\% through three validated episodes, rises to 87\% at four, 93\% at five, and 100\% at six and above. Across five orderings, TTC is reached in all five, with median 4 validated episodes and range 4--6. The aggregate curve and trust trajectory are shown in \cref{fig:curve}.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.92\linewidth,
+  height=5.5cm,
+  xmin=0,xmax=8,
+  ymin=0,ymax=1.05,
+  xtick={0,1,2,3,4,5,6,8},
+  ytick={0,0.25,0.5,0.75,1.0},
+  yticklabels={0,25\%,50\%,75\%,100\%},
+  xlabel={validated novel training episodes $k$},
+  ylabel={rate},
+  grid=major,
+  grid style={draw=pline!70},
+  legend style={draw=none,fill=none,font=\small,at={(0.02,0.98)},anchor=north west},
+  axis line style={draw=pgray!70},
+  tick style={draw=pgray!70}
+]
+\addplot+[mark=*,very thick,color=pgreen] coordinates {(0,0.50) (1,0.50) (2,0.50) (3,0.50) (4,0.87) (5,0.93) (6,1.00) (8,1.00)};
+\addlegendentry{decision capability}
+\addplot+[mark=square*,very thick,color=pblue] coordinates {(0,0.00) (1,0.12) (2,0.33) (3,0.52) (4,0.61) (5,0.61) (6,0.80) (8,0.97)};
+\addlegendentry{gate acceptance}
+\addplot+[mark=triangle*,thick,dashed,color=pamber] coordinates {(0,0.00) (1,0.00) (2,0.00) (3,0.00) (4,0.60) (5,0.75) (6,1.00) (8,1.00)};
+\addlegendentry{forced replay success}
+\end{axis}
+\end{tikzpicture}
+\caption{P2.4 Type B acquisition using validated Qwen3-4B demonstrations. Capability is absent at zero evidence, then rises. Gate acceptance follows a separate trajectory. The curve is aggregated across orderings; TTC is computed per ordering under the fixed criterion.}
+\label{fig:curve}
+\end{figure}
+
+Certification follows capability rather than substituting for it. No candidate is promoted below 87\% decision accuracy, and 100\% promotion coincides with 100\% capability. Intermediate candidates that fail the mixed quality constraint are not counted as retention failures; every quality-feasible candidate at and above TTC passes the mature-family probes.
+
+\subsection{Teacher quality, not teacher size}
+
+P2.4 is the first experiment in the project where the two teachers differ materially. Qwen3-4B solves 12/16 dependency episodes; Qwen3-8B solves 4/16. Every successful trajectory satisfies the Outcome Contract and both teachers use the same six-step successful policy:
+\begin{center}
+\texttt{run\_tests} $\rightarrow$ \texttt{inspect\_dependency} $\rightarrow$\\
+\texttt{modify\_dependency\_file} $\rightarrow$ \texttt{install\_dependency} $\rightarrow$\\
+\texttt{run\_tests} $\rightarrow$ \texttt{finish}.
+\end{center}
+The 8B teacher simply produces too few validated demonstrations to fit a candidate under the fixed protocol.
+
+\begin{table}[t]
+\centering
+\caption{Teacher yield on the Type B family.}
+\label{tab:teachers}
+\begin{tabular}{lrrr}
+\toprule
+Teacher & Valid demos & Tokens & Outcome \\
+\midrule
+Qwen3-4B & 12/16 & 33,128 & acquired + certified \\
+Qwen3-8B & 4/16 & 49,011 & insufficient evidence \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This does not imply that smaller language models are generally better teachers. It shows that procedural acquisition depends on validated teaching yield, not parameter count alone. On this family the smaller model provides three times as many usable demonstrations while consuming fewer teacher tokens.
+
+\subsection{Online acquisition}
+
+The Qwen3-4B online stream interleaves known and novel families across 69 episodes. The recent certification rule promotes at episode 50 with TTR 8, decomposed into five learning episodes and three certification episodes. Family-aware certification promotes at episode 64 with TTR 12. Both reach 93\% overall success, equal to the LLM-only baseline, and both record 0 invalid reflex actions and a 0\% false fast-path rate.
+
+\begin{table}[t]
+\centering
+\caption{P2.4 online acquisition.}
+\label{tab:online}
+\begin{tabular}{lrrrr}
+\toprule
+Rule & TTR & Promote ep. & Success & LLM calls avoided \\
+\midrule
+Recent & 8 & 50 & 93\% & 61\% \\
+Family-aware & 12 & 64 & 93\% & 47\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The two rules produce frozen reflexes with identical held-out behavior. The family-aware rule pays for explicit mature-family evidence: 54 additional LLM calls, 14,038 additional tokens, and a 14-episode promotion delay. This is a price-of-prudence measurement, not evidence that the learned skill differs.
+
+\subsection{Frozen held-out evaluation}
+
+The online stream ends too soon to exercise the family-aware reflex on a solvable post-promotion novel episode. A frozen post-stream evaluation therefore tests eight fresh dependency tasks, two per prompt wording, using the exact same tasks in three arms. Reflex, gate, registry, thresholds, and acquisition buffer are frozen; no evaluation trajectory is ingested.
+
+\begin{figure}[t]
+\centering
+\begin{subfigure}[b]{0.48\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+ ybar, width=\linewidth,height=4.6cm,
+ ymin=0,ymax=8.8,
+ symbolic x coords={LLM,Hybrid,Reflex}, xtick=data,
+ ylabel={tasks solved (of 8)},
+ nodes near coords,
+ bar width=11pt,
+ axis line style={draw=pgray!70},
+ tick style={draw=pgray!70},
+ grid=major, grid style={draw=pline!60},
+]
+\addplot[fill=pgreen!65,draw=pgreen] coordinates {(LLM,6) (Hybrid,6) (Reflex,8)};
+\end{axis}
+\end{tikzpicture}
+\caption{Success}
+\end{subfigure}\hfill
+\begin{subfigure}[b]{0.48\linewidth}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+ ybar, width=\linewidth,height=4.6cm,
+ ymin=0,ymax=60,
+ symbolic x coords={LLM,Hybrid,Reflex}, xtick=data,
+ ylabel={LLM calls},
+ nodes near coords,
+ bar width=11pt,
+ axis line style={draw=pgray!70},
+ tick style={draw=pgray!70},
+ grid=major, grid style={draw=pline!60},
+]
+\addplot[fill=pblue!65,draw=pblue] coordinates {(LLM,56) (Hybrid,22) (Reflex,0)};
+\end{axis}
+\end{tikzpicture}
+\caption{Deliberative calls}
+\end{subfigure}
+\caption{Frozen P2.4 held-out evaluation. The reflex-only diagnostic solves all eight fresh tasks. The deployed hybrid remains at teacher-level success because the trust gate defers the two prompt variants that have no validated evidence.}
+\label{fig:frozen}
+\end{figure}
+
+The LLM-only teacher solves 6/8 tasks using 56 LLM calls and 16,557 tokens. The frozen hybrid also solves 6/8, but uses 22 LLM calls and 7,096 tokens. Four tasks require zero LLM calls; two require one LLM call on the first state. The false fast-path count is zero.
+
+The reflex-only diagnostic solves 8/8. The two additional successes are exactly the prompt wording on which the teacher fails. No failed episode was ever ingested. The reflex therefore generalizes the validated six-step policy learned from successful wordings to held-out instances in an unevidenced wording. The trust gate, correctly under the current design, refuses to authorize those states and falls back to the teacher.
+
+\keybox{P2.4 result.}{A procedure absent at zero evidence is learned from validated deliberative demonstrations, certified, promoted, and executed without the teacher. The frozen policy generalizes beyond the teacher's successful region, while the deployed system remains bounded by evidence rather than raw capability.}
+
+
+\section{Real-agent deployment: LaRuche + DeepSeek}
+\label{sec:laruche}
+
+The controlled P2.x experiments answer whether the mechanism can learn and certify procedural memory. A product integration asks a stricter question: does the same mechanism remain useful when a real agent emits heterogeneous tool calls, variable arguments, partial outputs, and exploratory behavior? We integrate \paradigm\ into LaRuche through a thin generic interface rather than embedding LaRuche-specific logic in the core.
+
+\subsection{Integration contract}
+
+The public integration layer exposes a structured state, a bounded action space, and a verified outcome. A LaRuche adapter and Rust client call \texttt{decide} before each model decision and report the verified tool outcome through \texttt{observe}. Two invariants are carried directly from the controlled experiments: \texttt{observe} never learns from a bare action without a verified outcome, and \texttt{decide} may return \delib\ even when the reflex can technically produce an action.
+
+\begin{figure}[t]
+\centering
+\resizebox{0.97\linewidth}{!}{%
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  box/.style={draw=pline, rounded corners=2pt, fill=white, minimum height=9mm, align=center, inner sep=4pt},
+  blue/.style={box, draw=pblue!65, fill=pblue!5},
+  green/.style={box, draw=pgreen!65, fill=pgreen!6},
+  amber/.style={box, draw=pamber!65, fill=pamber!7},
+  gray/.style={box, draw=pgray!50, fill=plight},
+  arrow/.style={-{Latex[length=2mm]}, thick, draw=pgray!80}
+]
+\node[blue] (laruche) {LaRuche\\agent state};
+\node[blue, right=13mm of laruche] (adapter) {adapter\\normalize state + actions};
+\node[blue, right=13mm of adapter] (decide) {\texttt{paradigm.decide}};
+\node[green, above right=6mm and 13mm of decide] (reflex) {trusted family\\local reflex};
+\node[amber, below right=6mm and 13mm of decide] (llm) {\delib\\DeepSeek};
+\node[gray, right=22mm of decide] (tools) {LaRuche tools\\guarded execution};
+\node[blue, right=13mm of tools] (verify) {verified\\outcome};
+\node[blue, right=13mm of verify] (observe) {\texttt{paradigm.observe}};
+
+\draw[arrow] (laruche) -- (adapter);
+\draw[arrow] (adapter) -- (decide);
+\draw[arrow] (decide) -- node[above left,font=\scriptsize]{authorized} (reflex);
+\draw[arrow] (decide) -- node[below left,font=\scriptsize]{otherwise} (llm);
+\draw[arrow] (reflex) -- (tools);
+\draw[arrow] (llm) -- (tools);
+\draw[arrow] (tools) -- (verify);
+\draw[arrow] (verify) -- (observe);
+\draw[arrow, rounded corners=8pt] (observe.south) |- ($(adapter.south)+(0,-11mm)$) -| (adapter.south);
+\end{tikzpicture}%
+}
+\caption{LaRuche integration. Paradigm is an external procedural layer. The agent's tools and permission system remain authoritative. Transport failure falls back to the deliberative provider. Only verified successful deliberative decisions are eligible for acquisition.}
+\label{fig:laruche-bridge}
+\end{figure}
+
+The initial reflex-capable surface is deliberately narrow: read-only tools and an allowlisted test command can be replayed with validated argument templates. File writes, file edits, arbitrary shell commands, Git pushes, browser actions, and other high-risk or generative operations remain deliberative. A blocking pre-tool guard is active in the real-agent evaluation.
+
+\subsection{Why whole-candidate activation fails in the live loop}
+
+Before the final run, the integration protocol is hardened so that repeated actions have stable semantics: workspace paths are canonicalized, one \texttt{decide} pairs with one \texttt{observe}, batched tool calls that did not request a new decision are telemetry only, and mission success is closed by an independent pytest verification rather than the agent's own completion claim. Debugging runs are not used as evidence.
+
+With this fixed protocol, a 32-mission diagnostic record shows a sharp split. The start-of-mission test call is stable, and the post-edit test call is also highly recurrent. The middle of the episode is not: DeepSeek alternates among \texttt{file\_read}, \texttt{read\_extract}, shell-based \texttt{cat}, batched reads, and occasional unsupported actions. A single tree scored as one global candidate therefore mixes highly predictable families with exploratory ones.
+
+At mission 20 of the diagnostic run, recent-split certification would accept the global candidate with acceptance 0.89, selective accuracy 1.0, and ECE 0.032, while family-aware certification rejects because rare families lack support. As additional variable traces accumulate, the global quality score degrades: at mission 24 coverage is 0.56 with ECE 0.235, and at mission 28 coverage is 0.43 with ECE 0.272, above the fixed ECE floor of 0.10. More data does not repair the coupling. It makes the heterogeneity more visible.
+
+\keybox{Live-agent diagnosis.}{The repeated test-running families are learnable, but a global verdict ties them to exploratory behavior that should remain deliberative. The failure is therefore one of authorization granularity, not an absence of stable reflexes.}
+
+\subsection{Family-scoped activation}
+
+The refinement is pre-registered before inspecting the fresh run. A family activates only if it independently satisfies the existing criteria: coverage $\ge 0.55$, selective accuracy within 0.01 of the teacher, ECE $\le 0.10$, shadow OOD acceptance $\ge 0.65$, and retention probes showing adequate coverage, agreement, and no regression. The existing selector chooses the confidence threshold per family. A family absent from validation is marked insufficient. No threshold is changed.
+
+An offline audit on the frozen 32-mission state predicts that \texttt{laruche:start:none:none} should pass independently. It does: coverage 1.00, selective accuracy 1.00, ECE 0.000, and OOD acceptance 1.00. The second predicted family, \texttt{laruche:file\_edit:success:other}, does not pass the frozen audit because its ECE is 0.179, driven by occasional re-reads before the test rerun. The threshold is left unchanged.
+
+Family-scoped activation uses one compiled artifact plus a per-family authorization manifest. A family can be active while neighboring families remain deliberative.
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  every node/.style={font=\small},
+  artifact/.style={draw=pblue!60, fill=pblue!5, rounded corners=3pt, minimum width=34mm, minimum height=11mm, align=center},
+  fam/.style={draw=pline, rounded corners=2pt, minimum width=45mm, minimum height=8mm, align=left, inner sep=4pt},
+  arrow/.style={-{Latex[length=2mm]}, thick, draw=pgray!75}
+]
+\node[artifact] (art) {single reflex artifact\\version 1};
+\node[fam, fill=pgreen!8, draw=pgreen!55, right=14mm of art, yshift=13mm] (f1) {\texttt{start / pytest}\quad \textcolor{pgreen}{\textbf{ACTIVE}}};
+\node[fam, fill=pgreen!8, draw=pgreen!55, right=14mm of art, yshift=4mm] (f2) {\texttt{post-edit / pytest}\quad \textcolor{pgreen}{\textbf{ACTIVE}}};
+\node[fam, fill=pamber!8, draw=pamber!55, right=14mm of art, yshift=-5mm] (f3) {exploratory reads\quad \textcolor{pamber}{\textbf{DELIBERATIVE}}};
+\node[fam, fill=pred!5, draw=pred!45, right=14mm of art, yshift=-14mm] (f4) {unsafe / unsupported\quad \textcolor{pred}{\textbf{BLOCKED}}};
+\draw[arrow] (art.east) -- (f1.west);
+\draw[arrow] (art.east) -- (f2.west);
+\draw[arrow] (art.east) -- (f3.west);
+\draw[arrow] (art.east) -- (f4.west);
+\end{tikzpicture}
+\caption{Family-scoped authorization. A single reflex artifact can serve multiple families, but activation is local. Stable test behavior can enter the fast path without granting authority to variable or risky behavior.}
+\label{fig:family-scoped}
+\end{figure}
+
+\subsection{Fresh 24-mission run}
+
+The final evaluation starts from a fresh Paradigm state with family-scoped certification active from mission 1. The provider is DeepSeek, the tools and workspace are real, and each mission is independently verified by pytest. The action surface and thresholds are unchanged from the pre-registered rule.
+
+Compile points at missions 8 and 12 have insufficient evidence. At mission 16 the global tree still fails whole-candidate calibration with ECE 0.195, but the stable test families independently pass with ECE 0.000 and OOD acceptance 1.00. Version 1 is adopted with only those families active. From mission 17 onward, the repeated pytest calls are served by \paradigm\ while reads and edits remain with the model.
+
+\begin{table}[t]
+\centering
+\caption{Run 11: first real-agent family-scoped activation.}
+\label{tab:run11}
+\begin{tabularx}{0.96\linewidth}{Xr}
+\toprule
+Measure & Result \\
+\midrule
+Real missions, independently verified & 24/24 \\
+First family-scoped activation & mission 16 \\
+Reflex decisions after activation & 15 \\
+Model calls avoided & 15 \\
+False fast paths & 0 \\
+Unsafe automated actions & 0 \\
+Guard refusals & 1 \\
+Mission-20 replacement candidate & rejected, probe agreement 15/16 \\
+Mission-24 replacement candidate & insufficient evidence \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Across missions 17--23, before the recorded mission-24 outlier, the observed averages move from 5.9 to 4.3 model calls per mission, approximately 56k to 37k tokens, and 10.9 to 7.2 seconds. These values are reported only for missions 17--23. Mission 24 contains 18 model calls and 74.5 seconds of model self-verification; including it removes the apparent mean call reduction over the full post-activation window. The robust headline is therefore simpler: 15 reflex decisions replace 15 model calls without breaking a mission.
+
+The mission-20 candidate is not adopted because an already active family agrees on only 15/16 retention probes, below the fixed 0.95 floor. Version 1 remains active. Mission 24 is different: the candidate is blocked by absence of fresh evidence, not by a measured regression. This distinction matters for the next experiment.
+
+\keybox{Real-agent result.}{Paradigm observes repeated behavior inside a live LLM agent, certifies only the families that meet fixed quality, trust, and retention criteria, replays those families locally, and leaves variable or risky behavior to the LLM. In Run 11 this yields 15 model calls avoided across 24/24 independently verified missions, with 0 false fast paths and 0 unsafe automated actions.}
+
+\subsection{What Run 11 reveals next}
+
+Two limitations are recorded rather than repaired retrospectively. First, the start-of-mission family activates from only five validated traces because LaRuche's shell wrapper drops the pytest report on a failing exit code; a per-family minimum evidence count is not part of the current criteria. Second, once a family is served by the reflex it stops producing fresh deliberative held-out evidence. At later compile points the family can therefore become \emph{insufficient} even when frozen retention probes still pass. The next hypothesis is that, for an already active family with no fresh deliberative validation traces, passing frozen probes may be sufficient for re-certification. A negative control must still reject any candidate that breaks those probes. This is a new experiment, not part of Run 11.
+
+\section{What the experiments establish}
+
+\subsection{Type A and Type B are different phenomena}
+
+P2.3 initially looked like rapid skill acquisition. P2.3T falsifies that interpretation: the policy is already correct at zero novel evidence. The contribution of validated experience is trust expansion. P2.4 changes the task so that the known policy cannot solve it; only then does capability itself rise with demonstrations. Treating these cases separately avoids reporting certification speed as learning sample efficiency.
+
+\subsection{Family-scoped authorization survives contact with a real agent}
+
+The LaRuche deployment validates a design pressure first exposed by P2.3R-bis. Global candidate quality is a poor authorization unit when one agent mixes deterministic micro-decisions with exploratory tool use. Family-scoped activation preserves one compiled artifact while localizing authority. In the fresh live run, the global tree still fails calibration at mission 16, yet the stable test families independently satisfy the unchanged criteria and become active. The result is not broader autonomy. It is narrower, evidence-matched autonomy.
+
+\subsection{Validated teaching yield is an economic variable}
+
+The teacher comparison suggests a practical metric: validated demonstrations per teacher token. A larger model can be a worse teacher when its successful demonstrations are too sparse. For a system that learns only from verified outcomes, failed deliberation has two costs: it fails the immediate task and contributes no acquisition evidence.
+
+\subsection{Retention probes protect what self-focusing buffers stop observing}
+
+As known families become reflexive, teacher labels naturally concentrate on unresolved states. This implicit curriculum is useful for acquisition but starves mature families of fresh validation evidence. Persistent retention probes restore that evidence at candidate certification. P2.3R-bis shows that the probes detect regressions missed by recent-split certification, and Run 11 shows the same mechanism rejecting a replacement candidate whose active-family agreement falls to 15/16. The remaining issue is re-certification under evidence starvation: an active family may have no fresh deliberative validation traces precisely because it is already served by the reflex. Frozen probes are the natural evidence source for that case, but the hypothesis is not yet tested.
+
+\subsection{Capability can outrun trust}
+
+The frozen P2.4 reflex solves states that the trust gate still rejects. This is not a contradiction. The system has evidence that the reflex is capable on related states, but no verified trajectory in the rejected wording. The next research problem is therefore not simply to lower the threshold. It is to obtain counterfactual evidence safely, for example by shadow execution in a copied software workspace. Outside software sandboxes, the corresponding mechanism may require a simulator, digital twin, or predictive world model.
+
+\section{Connection to broader systems}
+
+The implementation now separates a generic integration layer from application adapters. The core contract is a structured state, bounded action space, verified outcome, and selective \texttt{decide}/\texttt{observe} interface. LaRuche is one adapter and Rust client rather than a dependency of the core. This makes the architectural target broader than a coding-specific plugin, while the empirical evidence remains limited to coding agents.
+
+A software agent can fork a workspace to score counterfactual reflex trajectories; a robot cannot cheaply do so in the physical world. This difference determines how quickly trust can expand.
+
+The long-term \emph{Paradigm World} direction considers predictive state as a source of execute-or-defer evidence. FluidWorld is relevant here because it explores persistent reaction-diffusion dynamics as a predictive substrate \cite{polly2026fluidworld}. No result in this paper depends on FluidWorld, and the connection remains a research direction rather than an empirical claim.
+
+Similarly, \emph{Paradigm Structured} is guided by the result of GA vs Scalarization that complex geometric structure is justified only when the target computation actually requires it \cite{polly2026ga}. The current agent reflex deliberately uses simple models where they suffice.
+
+\section{Limitations}
+
+The present evidence is still narrow, and the real-agent run adds implementation-specific constraints rather than removing them.
+\begin{itemize}
+  \item P2.4 contains one genuine Type B family in one controlled coding environment. It does not establish general procedural learning across arbitrary tools or domains.
+  \item The online Type B runs use one seed. The offline sweep uses five orderings of one collected trace set per teacher.
+  \item Both controlled teachers are from the Qwen3 family. P2.4 does not demonstrate teacher independence across unrelated model families.
+  \item The real-agent result is one 24-mission LaRuche run with one DeepSeek provider and one repeated debugging task family. It demonstrates integration and selective activation, not production-scale reliability.
+  \item Early live integration attempts exposed plumbing and safety issues, including workspace handling, shell canonicalization, output truncation, multi-tool-call alignment, and headless approval behavior. They were used to harden the protocol and are not counted as evidence. The final run starts fresh after those fixes.
+  \item The start-of-mission family activates from five validated traces because failing pytest output is not fully preserved by the LaRuche shell wrapper. The current criteria have no per-family minimum evidence count. This is recorded, not retroactively corrected.
+  \item Once a family is active, it produces little or no new deliberative held-out evidence. The current replacement rule can therefore mark an active family insufficient even when frozen probes still pass. Probe-only re-certification for this case remains untested.
+  \item Family-scoped activation reduces coupling, but all active families still share one compiled artifact. The behavior of this design under many interacting families is unknown.
+  \item The held-out P2.4 generalization beyond the teacher concerns one failing prompt wording with two fresh instances.
+  \item No robotics, world-model, speech, vision, finance, or production-scale safety claim follows from these coding experiments.
+\end{itemize}
+
+\section{Reproducibility}
+
+The public repository is \href{https://github.com/infinition/Paradigm}{github.com/infinition/Paradigm}. The frozen scientific baseline is tagged \texttt{p2.4-type-b-baseline}; release \texttt{v0.1.0} points to a Python 3.11 CI-green commit with the one-page P2.4 summary and cached benchmark entry point. The recorded Type B result can be printed without an LLM endpoint:
+
+\begin{center}
+\texttt{paradigm benchmark p24 --from-cache}
+\end{center}
+
+The committed artifact \texttt{results/core\_p24/core\_p24\_type\_b.json} is the source of the P2.4 headline values. The real-agent records, including the family-scoped audit, Run 11 note, decision log, telemetry, and engine state, are stored under \texttt{results/integration\_laruche/}. The family-scoped mechanism and records are covered by the same public test suite; the recorded state reports 65 tests passing on Python 3.11 and 3.14 with CI green.
+
+The repository also retains negative and superseded verdicts when their interpretation changed. P2.4 keeps the original stricter offline classification that counted quality-infeasible intermediates as retention failures, and the integration record keeps the whole-candidate failures that motivated family-scoped activation. This is deliberate: the artifact trail should make the sequence of falsification and refinement inspectable rather than presenting only the final successful configuration.
+
+\section{Conclusion}
+
+\paradigm\ studies procedural memory as a controlled transition from deliberation to selective reflex execution. The experiments separate mechanisms that are easy to conflate. Type A is trust acquisition over a policy that already works. Type B is policy acquisition followed by certification. In the controlled Type B family, capability is absent at zero evidence, reaches full held-out performance after validated demonstrations, is promoted online, and executes end to end without the language model. The frozen reflex also generalizes the learned policy to held-out states where its teacher fails.
+
+The real-agent deployment adds a second result. When \paradigm\ is inserted into LaRuche with DeepSeek and real tools, globally scoring a heterogeneous candidate prevents stable micro-behaviors from activating. A pre-registered family-scoped rule resolves that granularity problem without changing thresholds. In a fresh 24-mission run, two stable test-execution families activate at mission 16. The following missions contain 15 reflex decisions and therefore 15 avoided model calls, while all 24 missions pass independent pytest verification. Variable reads and edits remain deliberative, risky actions remain blocked, and a later candidate that would regress an active family is rejected.
+
+The remaining problem is now more specific. Capability, authorization, and re-certification draw on different evidence once a reflex is active. A mature family may stop generating fresh teacher traces precisely because it is working. The next experiment must determine whether frozen retention probes can safely stand in for missing fresh deliberative evidence when re-certifying an already active family, while a negative control ensures that genuine probe regressions still block replacement. Until that evidence exists, the conservative rule remains appropriate: absence of fresh support is not permission to broaden autonomy.
+
+\section*{Code and artifacts}
+\begin{itemize}
+  \item Paradigm repository: \url{https://github.com/infinition/Paradigm}
+  \item Release: \url{https://github.com/infinition/Paradigm/releases/tag/v0.1.0}
+  \item LaRuche integration docs: \url{https://github.com/infinition/Paradigm/blob/main/docs/INTEGRATION.md}
+  \item Real-agent artifacts: \url{https://github.com/infinition/Paradigm/tree/main/results/integration_laruche}
+  \item z-manifold: \url{https://github.com/infinition/z-manifold}
+  \item Drift Contract: \url{https://github.com/infinition/drift-contract}
+  \item GA vs Scalarization: \url{https://github.com/infinition/ga-vs-scalarization}
+  \item FluidWorld paper: \url{https://arxiv.org/abs/2603.21315}
+\end{itemize}
+
+\begin{thebibliography}{99}
+
+\bibitem{yu2024system2}
+P. Yu, J. Xu, J. Weston, and I. Kulikov.
+\newblock Distilling System 2 into System 1.
+\newblock \emph{arXiv:2407.06023}, 2024.
+
+\bibitem{liu2026pmd}
+Y. Liu, S. Bansal, B. Pang, Y. Li, Z. L. Liu, Y. Ming, Z. Ke, S. Joty, and S. Yavuz.
+\newblock Procedural Memory Distillation: Online Reflection for Self-Improving Language Models.
+\newblock \emph{arXiv:2607.01480}, 2026.
+
+\bibitem{geifman2017selective}
+Y. Geifman and R. El-Yaniv.
+\newblock Selective Classification for Deep Neural Networks.
+\newblock \emph{Advances in Neural Information Processing Systems}, 30, 2017.
+
+\bibitem{kirkpatrick2017ewc}
+J. Kirkpatrick, R. Pascanu, N. Rabinowitz, et al.
+\newblock Overcoming catastrophic forgetting in neural networks.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 114(13):3521--3526, 2017.
+
+\bibitem{chaudhry2019replay}
+A. Chaudhry, M. Rohrbach, M. Elhoseiny, T. Ajanthan, P. K. Dokania, P. H. S. Torr, and M. Ranzato.
+\newblock On Tiny Episodic Memories in Continual Learning.
+\newblock \emph{arXiv:1902.10486}, 2019.
+
+\bibitem{qwen3report}
+A. Yang, A. Li, B. Yang, et al.
+\newblock Qwen3 Technical Report.
+\newblock \emph{arXiv:2505.09388}, 2025.
+
+\bibitem{polly2026validadapters}
+F. Polly.
+\newblock Learning Only What Valid Adapters Can Express: Subspace-Constrained Adaptation Against Fine-Tuning Poisoning.
+\newblock \emph{arXiv:2607.05300}, 2026.
+
+\bibitem{polly2026drift}
+F. Polly.
+\newblock Drift-Bounded Spectral Updates for Deep Local Learning.
+\newblock Public preprint, arXiv submission pending approval, 2026.\\
+\url{https://infinition.github.io/infinition/assets/papers/drift-bounded-spectral-updates.pdf}
+
+\bibitem{polly2026ga}
+F. Polly.
+\newblock When Do Geometric Algebra Layers Beat Scalarization? A Controlled Study on SO(3)-Equivariant Vector Laws.
+\newblock \emph{arXiv:2607.06634}, 2026.
+
+\bibitem{polly2026fluidworld}
+F. Polly.
+\newblock FluidWorld: Reaction-Diffusion Dynamics as a Predictive Substrate for World Models.
+\newblock \emph{arXiv:2603.21315}, 2026.
+
+\bibitem{polly2026paradigm}
+F. Polly.
+\newblock Paradigm: Continual Reflex Compilation for Adaptive Systems.
+\newblock Software repository, 2026.\\
+\url{https://github.com/infinition/Paradigm}
+
+\end{thebibliography}
+
+\end{document}
