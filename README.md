@@ -2,7 +2,7 @@
 
 **Continual reflex compilation for adaptive systems.**
 
-Paradigm is a research framework for turning validated, expensive decisions into fast, specialized reflexes while keeping uncertainty, drift, and promotion explicit.
+Paradigm is a procedural learning and trust layer for AI agents. It learns from validated deliberative decisions, compiles stable behaviors into specialized reflexes, and keeps uncertain or unsupported states on the deliberative path.
 
 The central idea is simple:
 
