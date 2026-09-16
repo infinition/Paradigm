@@ -154,7 +154,7 @@ Generated file inventory for this snapshot.
 - `results/core_p24/SUMMARY.md`
 - `results/core_p24/core_p24_type_b.json`
 - `results/core_p24/traces/` (LLM-only trace episodes and teacher statistics per model)
-- `results/integration_laruche/` (real-loop LaRuche runs with DeepSeek: mission logs 9A and 9B and the final engine state)
+- `results/integration_laruche/` (real-loop LaRuche runs with DeepSeek: mission logs 9A and 9B with their engine state, the offline family audit, and run 11 with family-scoped activation: log, decision log, telemetry, engine state, `run11_family_scoped.md`)
 - `src/paradigm/__init__.py`
 - `src/paradigm/agent_scenarios.py`
 - `src/paradigm/agent_vertical.py`
@@ -166,6 +166,7 @@ Generated file inventory for this snapshot.
 - `src/paradigm/evaluation.py`
 - `src/paradigm/family_evolution.py`
 - `src/paradigm/family_registry.py`
+- `src/paradigm/family_scoped.py`
 - `src/paradigm/gates.py`
 - `src/paradigm/integration/__init__.py`
 - `src/paradigm/integration/contract.py`

@@ -267,3 +267,58 @@ def test_service_generic_and_laruche_routes(service_url, tmp_path):
     t = _get(f"{service_url}/v1/telemetry")
     assert t["deliberative_decisions"] == 2
     assert _get(f"{service_url}/v1/log?last=5")["decisions"]
+
+
+# ------------------------------------------------------- family-scoped activation
+
+def _mixed_episode(engine, i, *, flaky_reads):
+    """A consistent 'start' decision followed by an inconsistent read step, then a consistent finish."""
+    hist = []
+    for phase, options in (("start", ["run_tests"]), ("failed", ["inspect_file", "apply_fix"] if flaky_reads else ["inspect_file"]), ("inspected", ["finish"])):
+        state = ParadigmState(domain="demo", phase=phase, available_actions=ACTIONS, goal="fix", last_action=hist[-1] if hist else None, last_outcome="failure" if phase == "failed" else "none", recent_actions=tuple(hist[-3:]), step=len(hist), family_hint=f"fam:{phase}")
+        decision = engine.decide(state)
+        if isinstance(decision, ReflexDecision):
+            action, source = decision.action, "reflex"
+        else:
+            action, source = options[i % len(options)], "deliberative"
+        engine.observe(state, action, VerifiedOutcome.success("sim"), source=source)
+        hist.append(action)
+    return engine.close_episode(VerifiedOutcome.success("tests"))
+
+
+def test_family_scoped_activates_only_families_that_pass_on_their_own():
+    from paradigm.online_learning import OnlineReflexCompiler
+
+    compiler = OnlineReflexCompiler(min_episodes=8, compile_every=4, validation_fraction=0.25, minimum_ood_acceptance=0.65, certification="family_scoped")
+    engine = Paradigm(policy=ReflexPolicy(allowed_actions=ACTIONS), compiler=compiler)
+    for i in range(24):
+        _mixed_episode(engine, i, flaky_reads=True)
+    assert compiler.state.version >= 1
+    active = set(compiler.state.family_thresholds)
+    assert "fam:start" in active and "fam:inspected" in active
+    assert "fam:failed" not in active
+    last = compiler.state.promotions[-1].certification
+    assert last["groups"]["fam:failed"]["status"] in {"rejected", "insufficient"}
+    assert engine.trust_status("fam:failed").value == "candidate"
+    start_state = ParadigmState(domain="demo", phase="start", available_actions=ACTIONS, goal="fix", family_hint="fam:start")
+    assert isinstance(engine.decide(start_state), ReflexDecision)
+    failed_state = ParadigmState(domain="demo", phase="failed", available_actions=ACTIONS, goal="fix", last_action="run_tests", last_outcome="failure", step=1, recent_actions=("run_tests",), family_hint="fam:failed")
+    d = engine.decide(failed_state)
+    assert isinstance(d, DeliberateDecision) and d.reason in {"family_not_trusted", "low_confidence", "out_of_distribution"}
+
+
+def test_family_scoped_rejects_candidate_that_regresses_an_active_family():
+    from paradigm.family_scoped import FamilyCriteria, certify_families
+    from paradigm.online_learning import OnlineReflexCompiler
+    from paradigm.schema import Trace
+
+    compiler = OnlineReflexCompiler(min_episodes=8, compile_every=4, validation_fraction=0.25, minimum_ood_acceptance=0.65, certification="family_scoped")
+    engine = Paradigm(policy=ReflexPolicy(allowed_actions=ACTIONS), compiler=compiler)
+    for i in range(16):
+        _mixed_episode(engine, i, flaky_reads=False)
+    assert "fam:start" in compiler.state.family_thresholds
+    train, validation = compiler.buffer.split(0.25)
+    poisoned = [Trace(features=t.features, action="finish" if t.metadata["family"] == "fam:start" else t.action, valid=True, metadata=dict(t.metadata)) for t in train]
+    selection, gate, _ = compiler.fit_candidate(poisoned, validation, backends=("tree",))
+    verdicts = certify_families(selection.reflex, gate, poisoned, validation, probes={f: p.traces for f, p in compiler.state.probes.items()}, incumbent=(compiler.state.selection.reflex, compiler.state.ood_gate, dict(compiler.state.family_thresholds)), criteria=FamilyCriteria(minimum_ood_acceptance=0.65))
+    assert verdicts["fam:start"].status == "rejected"

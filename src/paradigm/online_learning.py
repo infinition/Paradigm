@@ -6,8 +6,9 @@ from typing import Any
 import numpy as np
 
 from .agent_vertical import ACTIONS, AgentEpisode, AgentFeatureEncoder, ParadigmCodingAgent
-from .bounded import SpectralDriftContract, softmax_gradient, softmax_probabilities
+from .bounded import SpectralDriftContract, softmax_gradient
 from .evaluation import expected_calibration_error, multiclass_brier
+from .family_scoped import FamilyCriteria, certify_families, summarize_verdicts
 from .model_selection import MinimalReflexSelector, ReflexSelection
 from .ood import MahalanobisGate
 from .reflex import CompiledReflex
@@ -126,6 +127,8 @@ class OnlineCompilerState:
     ood_gate: MahalanobisGate | None = None
     promotions: list[PromotionRecord] = field(default_factory=list)
     probes: dict[str, RetentionProbeSet] = field(default_factory=dict)
+    # family_scoped mode: families authorized to act, each with its own confidence threshold.
+    family_thresholds: dict[str, float] = field(default_factory=dict)
 
 
 class OnlineReflexCompiler:
@@ -153,7 +156,7 @@ class OnlineReflexCompiler:
         min_family_validation_episodes: int = 1,
         shadow_certification: str | None = None,
     ) -> None:
-        if certification not in {"recent", "family_aware"}:
+        if certification not in {"recent", "family_aware", "family_scoped"}:
             raise ValueError(f"unknown certification mode: {certification!r}")
         self.min_episodes = int(min_episodes)
         self.compile_every = int(compile_every)
@@ -202,6 +205,8 @@ class OnlineReflexCompiler:
             self.state.promotions.append(record)
             return record
 
+        if self.certification == "family_scoped":
+            return self._compile_family_scoped(stream_episode, train, validation)
         selection, gate, chosen = self.fit_candidate(train, validation)
         primary = self.certify_candidate(selection, gate, train, validation, mode=self.certification)
         shadow = (
@@ -240,11 +245,84 @@ class OnlineReflexCompiler:
         self.state.promotions.append(record)
         return record
 
-    def fit_candidate(self, train: list[Trace], validation: list[Trace]):
+    def family_thresholds(self) -> dict[str, float]:
+        """Active families and their thresholds; states saved before this field existed get an empty map."""
+        if not hasattr(self.state, "family_thresholds"):
+            self.state.family_thresholds = {}
+        return self.state.family_thresholds
+
+    def _compile_family_scoped(self, stream_episode: int, train: list[Trace], validation: list[Trace]) -> PromotionRecord:
+        """One plain tree, one verdict per family, adoption only without regression of active families."""
+        self.family_thresholds()
+        selection, gate, chosen = self.fit_candidate(train, validation, backends=("tree",))
+        criteria = FamilyCriteria(
+            minimum_ood_acceptance=self.minimum_ood_acceptance,
+            probe_coverage_floor=self.probe_coverage_floor,
+            probe_accuracy_floor=self.probe_accuracy_floor,
+            probe_coverage_regression_tolerance=self.probe_coverage_regression_tolerance,
+            min_validation_episodes=self.min_family_validation_episodes,
+        )
+        incumbent = None
+        if self.state.selection is not None and self.state.ood_gate is not None and self.state.family_thresholds:
+            incumbent = (self.state.selection.reflex, self.state.ood_gate, dict(self.state.family_thresholds))
+        verdicts = certify_families(
+            selection.reflex, gate, train, validation,
+            probes={f: p.traces for f, p in self.state.probes.items()},
+            incumbent=incumbent, criteria=criteria,
+        )
+        summary = summarize_verdicts(verdicts)
+        newly_active = {f: float(verdicts[f].threshold or 0.0) for f in summary["active"]}
+        # A replacement artifact must re-certify every active family. A family that is
+        # served by the reflex stops producing deliberative held-out traces, so it comes
+        # back "insufficient" here and blocks the replacement; the incumbent is kept.
+        # Re-certifying such a family on its frozen probes alone is not done in this
+        # version (observed in the LaRuche run 11 record, see docs/INTEGRATION.md).
+        regressed = [f for f in self.state.family_thresholds if verdicts.get(f) is None or verdicts[f].status != "active"]
+        if regressed:
+            outcome, reason = "rejected", "active_family_regressed:" + ",".join(sorted(regressed))
+        elif newly_active:
+            outcome, reason = "promoted", "families_activated:" + ",".join(sorted(newly_active))
+        elif summary["rejected"]:
+            outcome, reason = "rejected", "no_family_passed"
+        else:
+            outcome, reason = "insufficient_evidence", "no_family_with_held_out_evidence"
+        promoted = outcome == "promoted"
+        if promoted:
+            self.state.version += 1
+            self.state.selection = selection
+            self.state.ood_gate = gate
+            self.state.family_thresholds = newly_active
+            self._create_probes_for(train, validation, stream_episode, families=set(newly_active))
+        train_counts, _ = self._family_counts(train)
+        val_counts, _ = self._family_counts(validation)
+        record = PromotionRecord(
+            stream_episode=stream_episode,
+            version=self.state.version,
+            promoted=promoted,
+            backend=selection.backend,
+            threshold=float(selection.threshold),
+            validation_coverage=float(chosen.coverage),
+            validation_selective_accuracy=float(chosen.selective_accuracy),
+            validation_ece=float(chosen.ece),
+            ood_acceptance=float(np.mean([v.gate_acceptance for v in verdicts.values() if v.gate_acceptance is not None] or [0.0])),
+            train_traces=len(train),
+            validation_traces=len(validation),
+            reason=reason,
+            train_families=train_counts,
+            validation_families=val_counts,
+            ood_acceptance_by_family={f: v.gate_acceptance for f, v in verdicts.items() if v.gate_acceptance is not None},
+            outcome=outcome,
+            certification={"mode": "family_scoped", "outcome": outcome, "reason": reason, "groups": summary["families"], "active_families": sorted(newly_active) if promoted else sorted(self.state.family_thresholds)},
+        )
+        self.state.promotions.append(record)
+        return record
+
+    def fit_candidate(self, train: list[Trace], validation: list[Trace], backends: tuple[str, ...] | None = None):
         reference = np.asarray([t.action for t in validation]).astype(str)
         labels, counts = np.unique(np.asarray([t.action for t in train]).astype(str), return_counts=True)
         min_class_count = int(np.min(counts)) if len(labels) else 0
-        backends = ("tree", "calibrated_tree", "calibrated_forest") if min_class_count >= 3 else ("tree",)
+        if backends is None:
+            backends = ("tree", "calibrated_tree", "calibrated_forest") if min_class_count >= 3 else ("tree",)
         selector = MinimalReflexSelector(
             backends=backends,
             minimum_coverage=0.55,
@@ -384,11 +462,14 @@ class OnlineReflexCompiler:
 
     def _create_probes(self, train: list[Trace], validation: list[Trace], stream_episode: int) -> None:
         """Freeze retention probes for every family the promoted candidate now represents."""
+        self._create_probes_for(train, validation, stream_episode, families=None)
+
+    def _create_probes_for(self, train: list[Trace], validation: list[Trace], stream_episode: int, families: set[str] | None) -> None:
         by_family: dict[str, list[Trace]] = {}
         for t in validation + train:  # held-out traces first
             by_family.setdefault(str(t.metadata.get("family", "unknown")), []).append(t)
         for fam, traces in by_family.items():
-            if fam in self.state.probes:
+            if fam in self.state.probes or (families is not None and fam not in families):
                 continue
             self.state.probes[fam] = RetentionProbeSet(
                 family=fam,

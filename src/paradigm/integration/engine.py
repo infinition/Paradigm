@@ -142,18 +142,27 @@ class Paradigm:
     def _new_episode_id(self) -> str:
         return f"ep-{int(time.time() * 1000)}-{id(self) & 0xFFFF:x}"
 
+    @property
+    def family_scoped(self) -> bool:
+        return getattr(self.compiler, "certification", "") == "family_scoped"
+
     def trust_status(self, family: str) -> TrustStatus:
         if self.compiler.state.selection is None:
             return TrustStatus.NO_REFLEX
-        if family in self.compiler.state.probes:
+        if self.family_scoped:
+            if family in self.compiler.family_thresholds():
+                return TrustStatus.ACTIVE
+        elif family in self.compiler.state.probes:
             return TrustStatus.ACTIVE
-        if any(ep.family == family for ep in self.compiler.buffer.episodes):
+        if any(str(t.metadata.get("family")) == family for ep in self.compiler.buffer.episodes for t in ep.traces):
             return TrustStatus.CANDIDATE
         return TrustStatus.DELIBERATIVE
 
     def trust_manifest(self) -> dict[str, str]:
         """Per-family authorization derived from the compiler lifecycle state."""
-        families: set[str] = set(self.compiler.state.probes) | {ep.family for ep in self.compiler.buffer.episodes}
+        families: set[str] = set(self.compiler.state.probes) | set(self.compiler.family_thresholds()) | {
+            str(t.metadata.get("family")) for ep in self.compiler.buffer.episodes for t in ep.traces
+        }
         return {fam: self.trust_status(fam).value for fam in sorted(families)}
 
     def explain(self, state: ParadigmState, actions: tuple[str, ...] | None = None) -> dict[str, Any]:
@@ -183,7 +192,7 @@ class Paradigm:
         result["gate_accepted"] = accepted
         if not accepted:
             result["reason"] = "out_of_distribution"
-        elif float(confidence) < float(selection.threshold):
+        elif float(confidence) < float(self.compiler.family_thresholds().get(family, selection.threshold) if self.family_scoped else selection.threshold):
             result["reason"] = "low_confidence"
         elif action not in avail and action.split("#", 1)[0] not in avail:
             # Templated labels ("tool#args") are available when their tool is.
