@@ -36,3 +36,4 @@ Large checkpoints and datasets should remain outside Git history.
 - `core_p23r_bis/`: family-aware certification with retention probes against the recent-split rule, shadow certifier records, disagreement matrix, negative control, and a sensitivity run.
 - `core_p23t/`: learning-threshold sweep with fixed certification, cached LLM-only traces per model, capability versus gate acceptance curves.
 - `core_p24/`: Type B skill acquisition on the dependency_error family (one-page `SUMMARY.md`, replayable with `paradigm benchmark p24 --from-cache`): teacher traces and statistics, k = 0 control, capability versus evidence sweep with fixed certification, online acquisition runs, and a frozen post-stream evaluation on fresh tasks.
+- `integration_laruche/`: real LaRuche missions with DeepSeek through the Paradigm bridge, 32 of 32 verified by pytest, no reflex promoted under whole-candidate certification; see `docs/INTEGRATION.md`.

@@ -12,7 +12,7 @@ from .engine import Paradigm, ReflexPolicy
 # LaRuche engine wire shapes (laruche-butinage): Message {role, contenu, outil?}, Appel {id, nom, args},
 # ResultatOutil {ok, sortie, images, incertain}, Bilan.fin (FinDeVol variant name).
 
-READ_ONLY_TOOLS = ("file_read", "file_list", "file_search", "lsp", "tool_search")
+READ_ONLY_TOOLS = ("file_read", "read_extract", "file_list", "file_search", "lsp", "tool_search")
 DEFAULT_SHELL_ALLOW = (
     r"^(python3? -m )?pytest(\s.*)?$",
     r"^cargo (test|check|build)(\s.*)?$",
@@ -21,6 +21,26 @@ DEFAULT_SHELL_ALLOW = (
 )
 FIN_SUCCESS = ("Accomplie",)
 FIN_FAILURE = ("Erreur", "Plafond", "BoucleSterile", "Budget", "Escalade")
+
+
+def canonical_shell(command: str, workspace: str | None = None) -> str:
+    """Reduce equivalent shell phrasings of one command to a canonical form.
+
+    A leading ``cd <workspace> &&`` is dropped (tools already run in the workspace),
+    and output decorations that do not change the command's effect are removed:
+    ``2>&1``, ``| tail -N``, ``| head -N``, ``; echo ...``. The reflex replays the
+    canonical form, never the model's decorated one.
+    """
+    cmd = command.strip()
+    if workspace:
+        for prefix in (f"cd {workspace} && ", f"cd '{workspace}' && ", f'cd "{workspace}" && '):
+            if cmd.startswith(prefix):
+                cmd = cmd[len(prefix):]
+                break
+    cmd = re.split(r"\s*;\s*echo\b", cmd)[0]
+    cmd = re.split(r"\s*\|\s*(tail|head)\b", cmd)[0]
+    cmd = cmd.replace("2>&1", "").strip()
+    return re.sub(r"\s+", " ", cmd)
 
 
 def canonical_args(args: Any) -> str:
@@ -59,11 +79,20 @@ class LaRucheAdapter:
                     return args[key].strip()
         return None
 
-    def reflex_capable(self, nom: str, args: Any) -> bool:
+    def canonical_call(self, nom: str, args: Any, workspace: str | None = None) -> Any:
+        """Arguments as the reflex would replay them."""
+        if nom == "shell_exec" and isinstance(args, dict):
+            cmd = self.shell_command(args)
+            if cmd is not None:
+                key = next(k for k in ("command", "cmd", "commande") if isinstance(args.get(k), str))
+                return {**args, key: canonical_shell(cmd, workspace)}
+        return args
+
+    def reflex_capable(self, nom: str, args: Any, workspace: str | None = None) -> bool:
         if nom not in self.reflex_tools or nom in self.high_risk_tools:
             return False
         if nom == "shell_exec":
-            cmd = self.shell_command(args)
+            cmd = self.shell_command(self.canonical_call(nom, args, workspace))
             return bool(cmd) and any(re.fullmatch(p, cmd) for p in self.shell_allow)
         return True
 
@@ -143,17 +172,33 @@ class LaRucheAdapter:
             return None
         return {"nom": template["nom"], "args": template["args"]}
 
-    def action_from_appel(self, appel: dict[str, Any]) -> tuple[str, bool]:
+    def action_from_appel(self, appel: dict[str, Any], workspace: str | None = None) -> tuple[str, bool]:
         """Label for an executed call and whether that call is reflex-capable at all."""
         nom, args = str(appel.get("nom")), appel.get("args", {})
-        capable = self.reflex_capable(nom, args)
-        key = self.register_template(nom, args) if capable else action_key(nom, args)
+        capable = self.reflex_capable(nom, args, workspace)
+        canon = self.canonical_call(nom, args, workspace) if capable else args
+        key = self.register_template(nom, canon) if capable else action_key(nom, canon)
         return key, capable
 
-    def outcome_from_result(self, result: dict[str, Any]) -> VerifiedOutcome:
-        """ok -> SUCCESS, incertain -> UNKNOWN, otherwise FAILURE. This is tool-level verification only."""
+    TEST_REPORT = re.compile(r"\b\d+ (passed|failed|error|errors)\b|\bno tests ran\b|FAILED|PASSED")
+
+    def outcome_from_result(self, result: dict[str, Any], appel: dict[str, Any] | None = None, workspace: str | None = None) -> VerifiedOutcome:
+        """Step-level verification from the tool result.
+
+        ``incertain`` is UNKNOWN. For an allowlisted diagnostic test command the verdict is
+        the report, not the exit code: a test run that reports failures executed correctly
+        and is a verified observation; a test command that produced no report (interpreter
+        missing, syntax error in the command) is UNKNOWN. For every other call ``ok`` is
+        SUCCESS and anything else FAILURE.
+        """
         if result.get("incertain"):
             return VerifiedOutcome.unknown("laruche:ResultatOutil", incertain=True)
+        if appel is not None and str(appel.get("nom")) == "shell_exec":
+            cmd = self.shell_command(self.canonical_call("shell_exec", appel.get("args", {}), workspace))
+            if cmd and any(re.fullmatch(p, cmd) for p in self.shell_allow):
+                if self.TEST_REPORT.search(str(result.get("sortie", ""))[:4000]):
+                    return VerifiedOutcome.success("laruche:test_report", exit_ok=bool(result.get("ok")))
+                return VerifiedOutcome.unknown("laruche:test_report", reason="no test report in output")
         if result.get("ok"):
             return VerifiedOutcome.success("laruche:ResultatOutil")
         return VerifiedOutcome.failure("laruche:ResultatOutil")
@@ -189,8 +234,10 @@ class LaRucheBridge:
         self.engine = engine
         self._pending: dict[str, dict[str, Any]] = {}
 
-    def decide(self, session: str, messages: list[dict[str, Any]], schemas: list[dict[str, Any]]) -> dict[str, Any]:
+    def decide(self, session: str, messages: list[dict[str, Any]], schemas: list[dict[str, Any]], workspace: str | None = None) -> dict[str, Any]:
         state = self.adapter.encode_state(session, messages, schemas)
+        if workspace:
+            state.context_refs["workspace"] = workspace
         decision = self.engine.decide(state)
         payload: dict[str, Any] = {"decision": decision.to_dict(), "state": state.to_dict()}
         if isinstance(decision, ReflexDecision):
@@ -201,26 +248,36 @@ class LaRucheBridge:
                 payload["decision"] = decision.to_dict()
             else:
                 payload["appel"] = appel
-        self._pending[session] = {"state": state, "source": decision.source}
+        self._pending[session] = {"state": state, "source": decision.source, "observed": 0}
         return payload
 
     def observe(self, session: str, appel: dict[str, Any], result: dict[str, Any], *, source: str | None = None, usage: dict[str, Any] | None = None) -> dict[str, Any]:
-        pending = self._pending.pop(session, None)
-        state = pending["state"] if pending else self.adapter.encode_state(session, [], [])
-        src = source or (pending["source"] if pending else "deliberative")
-        key, capable = self.adapter.action_from_appel(appel)
-        outcome = self.adapter.outcome_from_result(result)
+        pending = self._pending.get(session)
+        if pending is None:
+            # No decision was asked for this call (should not happen through the bridge):
+            # record it for telemetry only, never as evidence.
+            state = self.adapter.encode_state(session, [], [])
+            pending = {"state": state, "source": "deliberative", "observed": 1}
+        state = pending["state"]
+        src = source or pending["source"]
+        first_of_batch = pending.get("observed", 0) == 0
+        pending["observed"] = pending.get("observed", 0) + 1
+        workspace = state.context_refs.get("workspace")
+        key, capable = self.adapter.action_from_appel(appel, workspace)
+        outcome = self.adapter.outcome_from_result(result, appel, workspace)
         metadata: dict[str, Any] = {}
-        if usage:
+        if usage and first_of_batch:
             metadata["llm_tokens"] = int(usage.get("entree", 0)) + int(usage.get("sortie", 0))
             metadata["llm_latency_ms"] = float(usage.get("latency_ms", 0.0))
-        # A deliberative call whose arguments a reflex may never replay is recorded as unverified
-        # evidence so it never becomes a reflex label; it still counts toward telemetry.
-        if not capable:
-            outcome = VerifiedOutcome(Outcome.UNKNOWN, {"reason": "not_reflex_capable", **outcome.evidence}, outcome.verifier)
+        # One decision per state. A model response carrying several tool calls yields one
+        # teacher decision (the first call); the others are telemetry only. A call whose
+        # arguments a reflex may never replay is likewise never a reflex label.
+        if not capable or not first_of_batch:
+            reason = "not_reflex_capable" if not capable else "batched_call"
+            outcome = VerifiedOutcome(Outcome.UNKNOWN, {"reason": reason, **outcome.evidence}, outcome.verifier)
         rec = self.engine.observe(state, key, outcome, source=src, metadata=metadata)
         self.adapter.remember_result(session, key, result)
-        rec.update({"action": key, "reflex_capable": capable})
+        rec.update({"action": key, "reflex_capable": capable, "first_of_batch": first_of_batch})
         return rec
 
     def close(self, session: str, fin: str) -> dict[str, Any]:

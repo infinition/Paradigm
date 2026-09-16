@@ -59,7 +59,7 @@ class ParadigmService:
                 self._persist()
                 return 200, rec
             if method == "POST" and path == "/v1/laruche/decide":
-                return 200, self.bridge.decide(str(body.get("session", "default")), list(body.get("messages") or []), list(body.get("schemas") or []))
+                return 200, self.bridge.decide(str(body.get("session", "default")), list(body.get("messages") or []), list(body.get("schemas") or []), workspace=body.get("workspace"))
             if method == "POST" and path == "/v1/laruche/observe":
                 return 200, self.bridge.observe(str(body.get("session", "default")), dict(body["appel"]), dict(body["result"]), source=body.get("source"), usage=body.get("usage"))
             if method == "POST" and path == "/v1/laruche/close":

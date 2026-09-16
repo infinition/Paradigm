@@ -94,6 +94,22 @@ Behavior family in LaRuche: `laruche:<last tool>:<last outcome>:<output kind>`, 
 
 `laruche-essaim/tests/paradigm_smoke.rs` runs the real `butiner` engine through the real decorators against a live `paradigm serve`, with a fixture provider standing in for the model (three-step procedure) and mocked tools. Recorded run: 24 missions; fixture model calls per mission `3` for missions 1 to 20, `1` for missions 21 to 24 after promotion at mission 20; 8 reflex decisions, 0 failures, 0 false fast paths. Skipped unless `PARADIGM_SMOKE_URL` is set.
 
+## Real-loop record: LaRuche with DeepSeek
+
+`laruche-essaim/examples/paradigm_demo.rs` runs real LaRuche missions (real provider, real builtin tools) with the bridge on: a fixed project directory reset before each mission with one of three bugs in `calc.py`, the model asked to run the tests, fix the code, and finish. Provider `deepseek-v4-flash` through LaRuche's OpenAI-compatible path. Each mission is verified independently by `pytest` and the Paradigm episode is closed from that verification (`LARUCHE_PARADIGM_CLOSE=external`), not from the model's own claim of completion. Containment: LaRuche allows any shell command inside the working directory without asking, so the demo registers a blocking `pre_tool` hook that refuses installs, links, copies, moves, deletions, file redirections, and paths outside the workspace, and puts a `python`/`pytest` on PATH so the model has no reason to install anything. An earlier attempt without those measures saw the model install `pytest` into the user site and create `/opt/homebrew/bin/python`; both were reverted, and the guard exists because of it.
+
+Logs and the final engine state are under `results/integration_laruche/`.
+
+Run 9A, missions 1 to 20, family-aware certification primary, recent rule in shadow: 20 of 20 missions verified. Candidates at 8, 12, 16 rejected for insufficient traces (each mission yields about 2.5 reflex-capable validated decisions). At 20 the first real candidate, a plain tree on 34 traces with selective accuracy 1.0 and ECE 0.032, was rejected by family-aware certification because one one-episode family (`file_write:success`) failed its own acceptance while four other rare families had insufficient evidence; the recent rule in shadow would have promoted it (overall acceptance 0.89).
+
+Run 9B, missions 21 to 32, the same 20 validated episodes reloaded with the recent rule primary and family-aware in shadow: 12 of 12 verified. Candidates at 24, 28, 32 rejected by both rules on quality: coverage 0.56, 0.43, 0.35 and ECE 0.235, 0.272, 0.236 against floors of 0.55 and 0.10.
+
+Result: 32 of 32 missions verified, 0 unsafe actions executed after containment, 0 false fast paths, 0 reflex decisions, 0 LLM calls avoided. No reflex was promoted in the real loop under the current protocol.
+
+Why, from the buffer (79 validated decisions in 9 families): the family "start" led to `python -m pytest -q` 16 times out of 16, and "after file_edit" led to it 27 times out of 30; every other family is small and inconsistent, because the model reads files through different tools and phrasings (`file_read`, `read_extract`, `cat`, batched or not). The whole-candidate certification, which judges one tree on the whole recent split, fails on calibration because of the inconsistent families and therefore never activates the two consistent ones. Per-family activation would have promoted those two families, about 43 of the 79 validated decisions, roughly two of the six to seven model calls per mission, with a replayed `pytest` as the only automated action. This is the family-scoped activation refinement identified in P2.3R-bis, observed here at the quality level rather than the trust level. It was not implemented in this pass.
+
+Two adapter rules came out of this run and are part of the recorded protocol: equivalent shell phrasings canonicalize (a `cd <workspace> &&` prefix and output decorations such as `2>&1`, `| tail -N`, `; echo ...` are dropped, and the reflex would replay the canonical form); and an allowlisted test command is verified by its report, not its exit code, since a test run that reports failures executed correctly.
+
 ## Not in this version
 
 Argument synthesis by the reflex, generative content, family-scoped activation, trust extension into capable-but-unevidenced regions, persistent registry integration, and any change to historical benchmarks.

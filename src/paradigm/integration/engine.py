@@ -265,12 +265,16 @@ class Paradigm:
                 self.llm_latency_ms_spent += llm_latency
             key = f"{self._episode_id}:{len(self._episode_steps) - 1}"
             row = self._pending.pop(key, None)
-            if row is not None:
-                row.outcome = outcome.outcome.value
-                row.llm_tokens = tokens
-                row.llm_latency_ms = llm_latency
-                if row.action is None:
-                    row.action = action
+            if row is None:
+                # Executed without a matching decide (for example the second call of a batched
+                # model response): logged for the audit trail, never as a decision.
+                row = DecisionLog(self._episode_id, len(self._episode_steps) - 1, action, source, state.family, self.trust_status(state.family).value, None, "no_decision_requested", None, 0.0)
+                self._log.append(row)
+            row.outcome = outcome.outcome.value
+            row.llm_tokens = tokens
+            row.llm_latency_ms = llm_latency
+            if row.action is None:
+                row.action = action
             return {"episode": self._episode_id, "step": len(self._episode_steps) - 1, "outcome": outcome.outcome.value}
 
     def close_episode(self, outcome: VerifiedOutcome, *, family: str | None = None) -> dict[str, Any]:

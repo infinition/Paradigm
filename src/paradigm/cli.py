@@ -64,6 +64,10 @@ def _serve(args: argparse.Namespace) -> int:
     else:
         engine = Paradigm(policy=adapter.policy())
     adapter.templates = engine.action_templates  # one shared template map, persisted with the engine
+    if args.certification:
+        # Certification rule is a deployment choice; thresholds are unchanged either way.
+        engine.compiler.certification = args.certification
+        engine.compiler.shadow_certification = "recent" if args.certification == "family_aware" else "family_aware"
     service = ParadigmService(engine, state_file=state_file, adapter=adapter)
     server = serve(service, host=args.host, port=args.port)
     print(f"paradigm service listening on http://{args.host}:{args.port} (active reflex version {engine.compiler.state.version})", flush=True)
@@ -94,6 +98,7 @@ def build_parser() -> argparse.ArgumentParser:
     srv.add_argument("--host", default="127.0.0.1")
     srv.add_argument("--port", type=int, default=8765)
     srv.add_argument("--state-file", help="pickle file to load and persist the engine state")
+    srv.add_argument("--certification", choices=("recent", "family_aware"), help="promotion rule (default: family_aware with recent in shadow)")
     srv.set_defaults(func=_serve)
     return parser
 

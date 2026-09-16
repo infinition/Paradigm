@@ -1,0 +1,321 @@
+provider openai model deepseek-v4-flash paradigm ON
+
+mission 1 [wrong_constant] 7.5s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -20
+   [LLM]      shell_exec             1.9 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              1.4 s   (no_active_reflex)
+   [LLM]      shell_exec             1.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 2 [off_by_one] 9.3s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -20
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   [LLM]      shell_exec             1.2 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              1.9 s   (no_active_reflex)
+   [LLM]      shell_exec             1.5 s   (no_active_reflex)
+   [LLM]      file_read              1.7 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 3 [missing_import] 81.7s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && pwd && ls -la && echo "--- PYTEST ---" && python -m pytest -q 2>&1; echo "EXIT=$?"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1; echo "EXIT=$?" && echo "--- TEST FILE UNCHANGED ---" && cat test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && echo "=== [1] ETAT AVANT CORRECTION (code original rejoue en memoire) ===" && python -c "
+src = 'def root(x):\n    return sqrt(x)\n'
+ns = {}
+try:
+    exec(src, ns)
+    ns['root'](81)
+    print('NO ERROR')
+except NameError as e:
+    print('NameError:', e)
+" && echo && echo "=== [2] CONTENU ACTUEL DE calc.py ===" && cat -n calc.py && echo && echo "=== [3] PYTEST APRES CORRECTION ===" && python -m pytest -q 2>&1; echo "EXIT=$?" && echo && echo "=== [4] EMPREINTE test_calc.py (non modifie) ===" && shasum -a 256 test_calc.py && cat -n test_calc.py
+   tool  shell_exec python -m pytest -q
+   tool  file_read calc.py
+   tool  file_read calc.py
+   tool  tool_search 
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python - <<'PY'
+src = "def root(x):\n    return sqrt(x)\n"
+ns = {}
+exec(src, ns)
+try:
+    ns["root"](81)
+    print("NO ERROR")
+except NameError as e:
+    print("NameError: %s" % e)
+PY
+echo "--- pytest ---"
+python -m pytest -q
+   [LLM]      shell_exec             2.0 s   (no_active_reflex)
+   [LLM]      shell_exec             1.7 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              2.3 s   (no_active_reflex)
+   [LLM]      file_read              1.4 s   (no_active_reflex)
+   [LLM]      shell_exec             0.0 s   (no_decision_requested)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+   [LLM]      shell_exec             3.9 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+   [LLM]      shell_exec             8.5 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              15.0 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+   [LLM]      tool_search            4.1 s   (no_active_reflex)
+   [LLM]      shell_exec             6.6 s   (no_active_reflex)
+   [LLM]      shell_exec             11.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 4 [wrong_constant] 11.5s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -20; echo "EXIT=$?"
+   tool  read_extract /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   [LLM]      shell_exec             1.4 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              2.0 s   (no_active_reflex)
+   [LLM]      file_edit              1.3 s   (no_active_reflex)
+   [LLM]      shell_exec             1.5 s   (no_active_reflex)
+   [LLM]      read_extract           1.6 s   (no_active_reflex)
+   [LLM]      file_read              1.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 5 [off_by_one] 8.2s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q; echo "EXIT=$?"
+   [LLM]      shell_exec             2.1 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              2.0 s   (no_active_reflex)
+   [LLM]      shell_exec             1.5 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 6 [missing_import] 8.5s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -30
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -10 && echo "--- calc.py ---" && cat calc.py
+   [LLM]      shell_exec             1.2 s   (no_active_reflex)
+   [LLM]      file_read              1.3 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              1.5 s   (no_active_reflex)
+   [LLM]      shell_exec             1.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 7 [wrong_constant] 10.0s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -20 && echo "--- calc.py ---" && cat calc.py
+   [LLM]      shell_exec             3.4 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              1.1 s   (no_active_reflex)
+   [LLM]      file_edit              1.7 s   (no_active_reflex)
+   [LLM]      shell_exec             1.4 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 8 [off_by_one] 10.9s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+   [LLM]      shell_exec             1.6 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              2.0 s   (no_active_reflex)
+   [LLM]      file_edit              1.4 s   (no_active_reflex)
+   [LLM]      shell_exec             1.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 9 [missing_import] 8.9s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -40
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -10 && echo "---- calc.py ----" && cat calc.py && echo "---- test_calc.py ----" && cat test_calc.py
+   [LLM]      shell_exec             1.4 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              1.7 s   (no_active_reflex)
+   [LLM]      shell_exec             0.0 s   (no_decision_requested)
+   [LLM]      file_edit              1.4 s   (no_active_reflex)
+   [LLM]      shell_exec             1.5 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 10 [wrong_constant] 8.3s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -20
+   [LLM]      shell_exec             1.4 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              1.3 s   (no_active_reflex)
+   [LLM]      file_edit              1.7 s   (no_active_reflex)
+   [LLM]      shell_exec             1.3 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 11 [off_by_one] 6.7s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1
+   [LLM]      shell_exec             1.6 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              1.6 s   (no_active_reflex)
+   [LLM]      shell_exec             1.3 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 12 [missing_import] 11.7s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q; echo "EXIT=$?"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q; echo "EXIT=$?"; echo "--- calc.py ---"; cat calc.py; echo "--- test_calc.py (md5) ---"; md5 test_calc.py
+   [LLM]      shell_exec             3.2 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              1.8 s   (no_active_reflex)
+   [LLM]      shell_exec             1.6 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 13 [wrong_constant] 7.5s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q
+   [LLM]      shell_exec             1.7 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              2.1 s   (no_active_reflex)
+   [LLM]      shell_exec             1.4 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 14 [off_by_one] 10.1s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | cat
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | cat
+   [LLM]      shell_exec             1.5 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      shell_exec             1.8 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              2.1 s   (no_active_reflex)
+   [LLM]      shell_exec             1.5 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 15 [missing_import] 10.8s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && ls -la && echo '--- TEST RUN ---' && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -20; echo "EXIT=${PIPESTATUS[0]}"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && echo '--- calc.py ---' && cat calc.py && echo '--- test_calc.py ---' && cat test_calc.py && echo '--- sessions ---' && find sessions -type f | head
+   [LLM]      shell_exec             1.7 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              1.7 s   (no_active_reflex)
+   [LLM]      shell_exec             1.2 s   (no_active_reflex)
+   [LLM]      shell_exec             1.5 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 16 [wrong_constant] 9.4s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && ls -la && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -20 && echo "--- calc.py ---" && cat calc.py && echo "--- test_calc.py (unchanged) ---" && cat test_calc.py
+   [LLM]      shell_exec             2.0 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              3.1 s   (no_active_reflex)
+   [LLM]      shell_exec             1.3 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 17 [off_by_one] 7.2s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -20 && echo "--- calc.py ---" && cat calc.py && echo "--- test_calc.py (unchanged) ---" && cat test_calc.py
+   [LLM]      shell_exec             1.5 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              1.5 s   (no_active_reflex)
+   [LLM]      shell_exec             1.1 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 18 [missing_import] 8.5s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_write /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -20
+   [LLM]      shell_exec             1.2 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              1.5 s   (no_active_reflex)
+   [LLM]      file_write             1.5 s   (no_active_reflex)
+   [LLM]      shell_exec             1.1 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 19 [wrong_constant] 7.8s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q
+   [LLM]      shell_exec             1.9 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              1.5 s   (no_active_reflex)
+   [LLM]      shell_exec             1.0 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 20 [off_by_one] 7.2s  laruche: finished  verified by pytest: PASS
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp7FXwU5/project && python -m pytest -q 2>&1 | tail -20
+   [LLM]      shell_exec             1.4 s   (no_active_reflex)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      file_edit              1.8 s   (no_active_reflex)
+   [LLM]      shell_exec             1.3 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+verified by pytest: 20/20 missions
+Paradigm session
+  reflex decisions        0
+  LLM decisions           105
+  LLM calls avoided       0
+  tokens spent (LLM)      986131
+  tokens avoided (est.)   0
+  active reflex version   0
+  active families         []
+  candidate families      []
+  promotions / rejected   0 / 4
