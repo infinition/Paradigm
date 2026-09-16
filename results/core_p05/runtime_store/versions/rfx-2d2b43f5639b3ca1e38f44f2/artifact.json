@@ -1,0 +1,9 @@
+{
+  "created_at": "2026-09-16T13:16:10.391853+00:00",
+  "metadata": {
+    "backend": "tree"
+  },
+  "model_sha256": "2d2b43f5639b3ca1e38f44f26d4cad568d9eee330fb3948c40dab07610a5ceca",
+  "name": "bootstrap_active",
+  "version_id": "rfx-2d2b43f5639b3ca1e38f44f2"
+}

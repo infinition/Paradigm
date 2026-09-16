@@ -1,0 +1,926 @@
+{
+  "novel_episodes": 16,
+  "novel_success_rate": 0.25,
+  "novel_contract_rate": 1.0,
+  "novel_invalid_llm_actions": 0,
+  "novel_mean_steps": 9.0,
+  "novel_distinct_sequences": 1,
+  "novel_modal_sequence": [
+    "run_tests",
+    "inspect_dependency",
+    "modify_dependency_file",
+    "install_dependency",
+    "run_tests",
+    "finish"
+  ],
+  "novel_modal_sequence_share": 1.0,
+  "novel_tokens": 49011,
+  "novel_llm_latency_ms": 83263.09549701546,
+  "known_success_rate": 1.0,
+  "rows": [
+    {
+      "task_id": "missing-0",
+      "family": "missing_import",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1176,
+      "llm_latency_ms": 5613.391706989205
+    },
+    {
+      "task_id": "constant-1",
+      "family": "wrong_constant",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1093,
+      "llm_latency_ms": 2503.3301660005236
+    },
+    {
+      "task_id": "rename-2",
+      "family": "renamed_symbol",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1401,
+      "llm_latency_ms": 3158.8662910071434
+    },
+    {
+      "task_id": "offbyone-3",
+      "family": "off_by_one",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1075,
+      "llm_latency_ms": 2896.4448319966323
+    },
+    {
+      "task_id": "missing-4",
+      "family": "missing_import",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1180,
+      "llm_latency_ms": 2802.870166997309
+    },
+    {
+      "task_id": "constant-5",
+      "family": "wrong_constant",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1105,
+      "llm_latency_ms": 2618.4289169978
+    },
+    {
+      "task_id": "rename-6",
+      "family": "renamed_symbol",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1400,
+      "llm_latency_ms": 2922.839209000813
+    },
+    {
+      "task_id": "offbyone-7",
+      "family": "off_by_one",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1062,
+      "llm_latency_ms": 2679.296416004945
+    },
+    {
+      "task_id": "missing-8",
+      "family": "missing_import",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1161,
+      "llm_latency_ms": 2633.652084005007
+    },
+    {
+      "task_id": "constant-9",
+      "family": "wrong_constant",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1104,
+      "llm_latency_ms": 2621.165040000051
+    },
+    {
+      "task_id": "rename-10",
+      "family": "renamed_symbol",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1397,
+      "llm_latency_ms": 3017.932581999048
+    },
+    {
+      "task_id": "offbyone-11",
+      "family": "off_by_one",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1076,
+      "llm_latency_ms": 2860.8297080063494
+    },
+    {
+      "task_id": "missing-12",
+      "family": "missing_import",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1163,
+      "llm_latency_ms": 2597.9479149973486
+    },
+    {
+      "task_id": "constant-13",
+      "family": "wrong_constant",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1106,
+      "llm_latency_ms": 2604.414250003174
+    },
+    {
+      "task_id": "rename-14",
+      "family": "renamed_symbol",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1399,
+      "llm_latency_ms": 2945.355166993977
+    },
+    {
+      "task_id": "offbyone-15",
+      "family": "off_by_one",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1062,
+      "llm_latency_ms": 2680.0515829963842
+    },
+    {
+      "task_id": "missing-16",
+      "family": "missing_import",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1170,
+      "llm_latency_ms": 2834.934541999246
+    },
+    {
+      "task_id": "constant-17",
+      "family": "wrong_constant",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1100,
+      "llm_latency_ms": 2614.261707996775
+    },
+    {
+      "task_id": "rename-18",
+      "family": "renamed_symbol",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1404,
+      "llm_latency_ms": 3004.8870840037125
+    },
+    {
+      "task_id": "offbyone-19",
+      "family": "off_by_one",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1083,
+      "llm_latency_ms": 3107.055500993738
+    },
+    {
+      "task_id": "missing-20",
+      "family": "missing_import",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1162,
+      "llm_latency_ms": 2621.2293339995085
+    },
+    {
+      "task_id": "constant-21",
+      "family": "wrong_constant",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1094,
+      "llm_latency_ms": 2446.6778749920195
+    },
+    {
+      "task_id": "rename-22",
+      "family": "renamed_symbol",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1395,
+      "llm_latency_ms": 2870.7400830026018
+    },
+    {
+      "task_id": "offbyone-23",
+      "family": "off_by_one",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1059,
+      "llm_latency_ms": 2636.6485000035027
+    },
+    {
+      "task_id": "missing-24",
+      "family": "missing_import",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1171,
+      "llm_latency_ms": 2884.6739169966895
+    },
+    {
+      "task_id": "constant-25",
+      "family": "wrong_constant",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1105,
+      "llm_latency_ms": 2652.5252910068957
+    },
+    {
+      "task_id": "rename-26",
+      "family": "renamed_symbol",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1398,
+      "llm_latency_ms": 2980.309416001546
+    },
+    {
+      "task_id": "offbyone-27",
+      "family": "off_by_one",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1078,
+      "llm_latency_ms": 2881.8619580051745
+    },
+    {
+      "task_id": "missing-28",
+      "family": "missing_import",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1171,
+      "llm_latency_ms": 2745.629707998887
+    },
+    {
+      "task_id": "constant-29",
+      "family": "wrong_constant",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1101,
+      "llm_latency_ms": 2559.188874991378
+    },
+    {
+      "task_id": "rename-30",
+      "family": "renamed_symbol",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1403,
+      "llm_latency_ms": 2998.810750003031
+    },
+    {
+      "task_id": "offbyone-31",
+      "family": "off_by_one",
+      "success": true,
+      "contract": {},
+      "steps": 5,
+      "sequence": [
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1075,
+      "llm_latency_ms": 3063.291874001152
+    },
+    {
+      "task_id": "dependency-100",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "search_registry",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "run_tests",
+        "run_tests"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3686,
+      "llm_latency_ms": 6107.348748999357
+    },
+    {
+      "task_id": "dependency-101",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "search_registry",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3303,
+      "llm_latency_ms": 6092.708249001589
+    },
+    {
+      "task_id": "dependency-102",
+      "family": "dependency_error",
+      "success": true,
+      "contract": {
+        "tests_initially_failed": true,
+        "dependency_file_corrected": true,
+        "required_packages_installed": true,
+        "tests_pass": true,
+        "code_files_unchanged": true
+      },
+      "steps": 6,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "install_dependency",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1669,
+      "llm_latency_ms": 3304.5796250007697
+    },
+    {
+      "task_id": "dependency-103",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "run_tests",
+        "search_symbol",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "run_tests",
+        "run_tests"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3616,
+      "llm_latency_ms": 6190.8688729963615
+    },
+    {
+      "task_id": "dependency-104",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "search_registry",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "run_tests",
+        "run_tests"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3638,
+      "llm_latency_ms": 5508.558499983337
+    },
+    {
+      "task_id": "dependency-105",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "search_registry",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_file",
+        "apply_fix"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3278,
+      "llm_latency_ms": 5716.174169014266
+    },
+    {
+      "task_id": "dependency-106",
+      "family": "dependency_error",
+      "success": true,
+      "contract": {
+        "tests_initially_failed": true,
+        "dependency_file_corrected": true,
+        "required_packages_installed": true,
+        "tests_pass": true,
+        "code_files_unchanged": true
+      },
+      "steps": 6,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "install_dependency",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1676,
+      "llm_latency_ms": 3214.3789579931763
+    },
+    {
+      "task_id": "dependency-107",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "run_tests",
+        "search_symbol",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "run_tests",
+        "run_tests"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3654,
+      "llm_latency_ms": 5977.330707006331
+    },
+    {
+      "task_id": "dependency-108",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "search_registry",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "run_tests",
+        "run_tests"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3672,
+      "llm_latency_ms": 5758.280082009151
+    },
+    {
+      "task_id": "dependency-109",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "search_registry",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3298,
+      "llm_latency_ms": 5628.374875013833
+    },
+    {
+      "task_id": "dependency-110",
+      "family": "dependency_error",
+      "success": true,
+      "contract": {
+        "tests_initially_failed": true,
+        "dependency_file_corrected": true,
+        "required_packages_installed": true,
+        "tests_pass": true,
+        "code_files_unchanged": true
+      },
+      "steps": 6,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "install_dependency",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1672,
+      "llm_latency_ms": 3239.627709008346
+    },
+    {
+      "task_id": "dependency-111",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "run_tests",
+        "search_symbol",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "run_tests",
+        "run_tests"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3616,
+      "llm_latency_ms": 5924.111793996417
+    },
+    {
+      "task_id": "dependency-112",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "search_registry",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "run_tests",
+        "run_tests"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3671,
+      "llm_latency_ms": 5723.4981650181
+    },
+    {
+      "task_id": "dependency-113",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "search_registry",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3275,
+      "llm_latency_ms": 5603.589583988651
+    },
+    {
+      "task_id": "dependency-114",
+      "family": "dependency_error",
+      "success": true,
+      "contract": {
+        "tests_initially_failed": true,
+        "dependency_file_corrected": true,
+        "required_packages_installed": true,
+        "tests_pass": true,
+        "code_files_unchanged": true
+      },
+      "steps": 6,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "install_dependency",
+        "run_tests",
+        "finish"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 1675,
+      "llm_latency_ms": 3361.594915993919
+    },
+    {
+      "task_id": "dependency-115",
+      "family": "dependency_error",
+      "success": false,
+      "contract": {},
+      "steps": 10,
+      "sequence": [
+        "run_tests",
+        "inspect_dependency",
+        "modify_dependency_file",
+        "run_tests",
+        "search_symbol",
+        "inspect_file",
+        "apply_fix",
+        "run_tests",
+        "run_tests",
+        "run_tests"
+      ],
+      "invalid_llm_actions": 0,
+      "tokens": 3612,
+      "llm_latency_ms": 5912.070541991852
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "benchmark": "Paradigm Core P0.1 measured deliberation",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "processor": "unknown"
+  },
+  "scenarios": {
+    "deterministic_routing": {
+      "configuration": {
+        "probes": 512,
+        "sigma": 0.018,
+        "seed": 123
+      },
+      "metrics": {
+        "selected_backend": "tree",
+        "threshold": 0.0,
+        "coverage": 1.0,
+        "reflex_accuracy": 0.9916666666666667,
+        "selective_accuracy": 0.9916666666666667,
+        "deliberative_accuracy": 0.9958333333333333,
+        "system_accuracy": 0.9916666666666667,
+        "reflex_latency_us": 1.8175872395313302,
+        "deliberative_latency_us": 1459.8309895840582,
+        "measured_system_latency_us": 1.3969479167504535,
+        "estimated_system_latency_us": 1.8175872395313302,
+        "speedup_vs_deliberation": 1045.0146151331696,
+        "fallback_rate": 0.0
+      },
+      "go_no_go": {
+        "coverage_pass": true,
+        "selective_quality_pass": true,
+        "efficiency_pass": true,
+        "system_quality_pass": true,
+        "all_pass": true
+      },
+      "note": "Measured local deliberative surrogate. It establishes real local compute savings, but does not substitute for a later agent, planner, or domain-specific reference benchmark."
+    },
+    "noisy_routing": {
+      "configuration": {
+        "probes": 512,
+        "sigma": 0.018,
+        "seed": 124
+      },
+      "metrics": {
+        "selected_backend": "calibrated_forest",
+        "threshold": 0.0,
+        "coverage": 1.0,
+        "reflex_accuracy": 0.8680555555555556,
+        "selective_accuracy": 0.8680555555555556,
+        "deliberative_accuracy": 0.8722222222222222,
+        "system_accuracy": 0.8680555555555556,
+        "reflex_latency_us": 793.3596653645717,
+        "deliberative_latency_us": 1011.3612395817502,
+        "measured_system_latency_us": 498.8208984381496,
+        "estimated_system_latency_us": 793.3596653645717,
+        "speedup_vs_deliberation": 2.0275037448278685,
+        "fallback_rate": 0.0
+      },
+      "go_no_go": {
+        "coverage_pass": true,
+        "selective_quality_pass": true,
+        "efficiency_pass": true,
+        "system_quality_pass": true,
+        "all_pass": true
+      },
+      "note": "Measured local deliberative surrogate. It establishes real local compute savings, but does not substitute for a later agent, planner, or domain-specific reference benchmark."
+    },
+    "distribution_shift": {
+      "configuration": {
+        "probes": 512,
+        "sigma": 0.018,
+        "seed": 125
+      },
+      "metrics": {
+        "selected_backend": "tree",
+        "threshold": 0.0,
+        "coverage": 1.0,
+        "reflex_accuracy": 0.9958333333333333,
+        "selective_accuracy": 0.9958333333333333,
+        "deliberative_accuracy": 0.9986111111111111,
+        "system_accuracy": 0.9958333333333333,
+        "reflex_latency_us": 0.19247526032254805,
+        "deliberative_latency_us": 720.8581666683737,
+        "measured_system_latency_us": 0.9080937495298258,
+        "estimated_system_latency_us": 0.19247526032254805,
+        "speedup_vs_deliberation": 793.8146992439986,
+        "fallback_rate": 0.0
+      },
+      "go_no_go": {
+        "coverage_pass": true,
+        "selective_quality_pass": true,
+        "efficiency_pass": true,
+        "system_quality_pass": true,
+        "all_pass": true
+      },
+      "note": "Measured local deliberative surrogate. It establishes real local compute savings, but does not substitute for a later agent, planner, or domain-specific reference benchmark."
+    },
+    "repeated_workflows": {
+      "configuration": {
+        "probes": 512,
+        "sigma": 0.018,
+        "seed": 126
+      },
+      "metrics": {
+        "selected_backend": "tree",
+        "threshold": 0.0,
+        "coverage": 1.0,
+        "reflex_accuracy": 0.9236111111111112,
+        "selective_accuracy": 0.9236111111111112,
+        "deliberative_accuracy": 0.9263888888888889,
+        "system_accuracy": 0.9236111111111112,
+        "reflex_latency_us": 0.2167643229356031,
+        "deliberative_latency_us": 679.7680000024305,
+        "measured_system_latency_us": 1.1860130205339676,
+        "estimated_system_latency_us": 0.2167643229356031,
+        "speedup_vs_deliberation": 573.1539099767934,
+        "fallback_rate": 0.0
+      },
+      "go_no_go": {
+        "coverage_pass": true,
+        "selective_quality_pass": true,
+        "efficiency_pass": true,
+        "system_quality_pass": true,
+        "all_pass": true
+      },
+      "note": "Measured local deliberative surrogate. It establishes real local compute savings, but does not substitute for a later agent, planner, or domain-specific reference benchmark."
+    }
+  },
+  "summary": {
+    "scenarios_passed": 4,
+    "scenarios_total": 4,
+    "all_pass": true,
+    "scope": "measured local surrogate only"
+  }
+}

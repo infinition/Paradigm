@@ -1,0 +1,436 @@
+{
+  "benchmark": "Paradigm Core P0.4 promotion manifest",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "processor": "unknown"
+  },
+  "seed": 1337,
+  "claim_level": "synthetic multi-signal promotion manifest benchmark",
+  "policy": {
+    "minimum_accuracy": 0.95,
+    "maximum_ece": 0.06,
+    "maximum_label_disagreement": 0.06,
+    "maximum_total_variation": 0.08,
+    "minimum_class_accuracy": 0.8,
+    "minimum_protected_slice_accuracy": 0.7
+  },
+  "protected_slice_size": 41,
+  "cases": {
+    "clean": {
+      "metrics": {
+        "accuracy": 0.969,
+        "ece": 0.024165792855936234,
+        "parameter_space_accepted": true,
+        "behavior_space_accepted": true,
+        "label_disagreement": 0.0225,
+        "total_variation": 0.018644409561436724,
+        "minimum_class_accuracy": 0.8383838383838383,
+        "protected_slice_accuracy": 0.7317073170731707
+      },
+      "manifest": {
+        "candidate_name": "clean_candidate",
+        "approved": true,
+        "failure_reasons": [],
+        "checks": [
+          {
+            "name": "quality.accuracy",
+            "passed": true,
+            "value": 0.969,
+            "requirement": ">= 0.950",
+            "detail": ""
+          },
+          {
+            "name": "calibration.ece",
+            "passed": true,
+            "value": 0.024165792855936234,
+            "requirement": "<= 0.060",
+            "detail": ""
+          },
+          {
+            "name": "trust.parameter_space",
+            "passed": true,
+            "value": true,
+            "requirement": "accepted",
+            "detail": ""
+          },
+          {
+            "name": "trust.behavior_space",
+            "passed": true,
+            "value": true,
+            "requirement": "accepted",
+            "detail": ""
+          },
+          {
+            "name": "drift.label_disagreement",
+            "passed": true,
+            "value": 0.0225,
+            "requirement": "<= 0.060",
+            "detail": ""
+          },
+          {
+            "name": "drift.total_variation",
+            "passed": true,
+            "value": 0.018644409561436724,
+            "requirement": "<= 0.080",
+            "detail": ""
+          },
+          {
+            "name": "quality.minimum_class_accuracy",
+            "passed": true,
+            "value": 0.8383838383838383,
+            "requirement": ">= 0.800",
+            "detail": ""
+          },
+          {
+            "name": "quality.protected_slice_accuracy",
+            "passed": true,
+            "value": 0.7317073170731707,
+            "requirement": ">= 0.700",
+            "detail": ""
+          }
+        ],
+        "metadata": {}
+      }
+    },
+    "poisoned": {
+      "metrics": {
+        "accuracy": 0.919,
+        "ece": 0.2045587467775594,
+        "parameter_space_accepted": false,
+        "behavior_space_accepted": false,
+        "label_disagreement": 0.0675,
+        "total_variation": 0.2515590200204773,
+        "minimum_class_accuracy": 0.3939393939393939,
+        "protected_slice_accuracy": 0.3170731707317073
+      },
+      "manifest": {
+        "candidate_name": "poisoned_candidate",
+        "approved": false,
+        "failure_reasons": [
+          "quality.accuracy: >= 0.950",
+          "calibration.ece: <= 0.060",
+          "trust.parameter_space: candidate is outside the current trusted parameter pool",
+          "trust.behavior_space: candidate is outside the current trusted behavior pool",
+          "drift.label_disagreement: <= 0.060",
+          "drift.total_variation: <= 0.080",
+          "quality.minimum_class_accuracy: >= 0.800",
+          "quality.protected_slice_accuracy: >= 0.700"
+        ],
+        "checks": [
+          {
+            "name": "quality.accuracy",
+            "passed": false,
+            "value": 0.919,
+            "requirement": ">= 0.950",
+            "detail": ""
+          },
+          {
+            "name": "calibration.ece",
+            "passed": false,
+            "value": 0.2045587467775594,
+            "requirement": "<= 0.060",
+            "detail": ""
+          },
+          {
+            "name": "trust.parameter_space",
+            "passed": false,
+            "value": false,
+            "requirement": "accepted",
+            "detail": "candidate is outside the current trusted parameter pool"
+          },
+          {
+            "name": "trust.behavior_space",
+            "passed": false,
+            "value": false,
+            "requirement": "accepted",
+            "detail": "candidate is outside the current trusted behavior pool"
+          },
+          {
+            "name": "drift.label_disagreement",
+            "passed": false,
+            "value": 0.0675,
+            "requirement": "<= 0.060",
+            "detail": ""
+          },
+          {
+            "name": "drift.total_variation",
+            "passed": false,
+            "value": 0.2515590200204773,
+            "requirement": "<= 0.080",
+            "detail": ""
+          },
+          {
+            "name": "quality.minimum_class_accuracy",
+            "passed": false,
+            "value": 0.3939393939393939,
+            "requirement": ">= 0.800",
+            "detail": ""
+          },
+          {
+            "name": "quality.protected_slice_accuracy",
+            "passed": false,
+            "value": 0.3170731707317073,
+            "requirement": ">= 0.700",
+            "detail": ""
+          }
+        ],
+        "metadata": {}
+      }
+    },
+    "weak_pool_before_expansion": {
+      "candidate_index": 4,
+      "metrics": {
+        "accuracy": 0.981,
+        "ece": 0.02824260111014707,
+        "parameter_space_accepted": false,
+        "behavior_space_accepted": false,
+        "label_disagreement": 0.0175,
+        "total_variation": 0.01819638419452699,
+        "minimum_class_accuracy": 0.8787878787878788,
+        "protected_slice_accuracy": 0.8780487804878049
+      },
+      "manifest": {
+        "candidate_name": "weak_pool_valid",
+        "approved": false,
+        "failure_reasons": [
+          "trust.parameter_space: candidate is outside the current trusted parameter pool",
+          "trust.behavior_space: candidate is outside the current trusted behavior pool"
+        ],
+        "checks": [
+          {
+            "name": "quality.accuracy",
+            "passed": true,
+            "value": 0.981,
+            "requirement": ">= 0.950",
+            "detail": ""
+          },
+          {
+            "name": "calibration.ece",
+            "passed": true,
+            "value": 0.02824260111014707,
+            "requirement": "<= 0.060",
+            "detail": ""
+          },
+          {
+            "name": "trust.parameter_space",
+            "passed": false,
+            "value": false,
+            "requirement": "accepted",
+            "detail": "candidate is outside the current trusted parameter pool"
+          },
+          {
+            "name": "trust.behavior_space",
+            "passed": false,
+            "value": false,
+            "requirement": "accepted",
+            "detail": "candidate is outside the current trusted behavior pool"
+          },
+          {
+            "name": "drift.label_disagreement",
+            "passed": true,
+            "value": 0.0175,
+            "requirement": "<= 0.060",
+            "detail": ""
+          },
+          {
+            "name": "drift.total_variation",
+            "passed": true,
+            "value": 0.01819638419452699,
+            "requirement": "<= 0.080",
+            "detail": ""
+          },
+          {
+            "name": "quality.minimum_class_accuracy",
+            "passed": true,
+            "value": 0.8787878787878788,
+            "requirement": ">= 0.800",
+            "detail": ""
+          },
+          {
+            "name": "quality.protected_slice_accuracy",
+            "passed": true,
+            "value": 0.8780487804878049,
+            "requirement": ">= 0.700",
+            "detail": ""
+          }
+        ],
+        "metadata": {}
+      }
+    },
+    "weak_pool_after_expansion": {
+      "candidate_index": 4,
+      "metrics": {
+        "accuracy": 0.981,
+        "ece": 0.02824260111014707,
+        "parameter_space_accepted": true,
+        "behavior_space_accepted": true,
+        "label_disagreement": 0.0175,
+        "total_variation": 0.01819638419452699,
+        "minimum_class_accuracy": 0.8787878787878788,
+        "protected_slice_accuracy": 0.8780487804878049
+      },
+      "manifest": {
+        "candidate_name": "weak_pool_valid_after_pool_expansion",
+        "approved": true,
+        "failure_reasons": [],
+        "checks": [
+          {
+            "name": "quality.accuracy",
+            "passed": true,
+            "value": 0.981,
+            "requirement": ">= 0.950",
+            "detail": ""
+          },
+          {
+            "name": "calibration.ece",
+            "passed": true,
+            "value": 0.02824260111014707,
+            "requirement": "<= 0.060",
+            "detail": ""
+          },
+          {
+            "name": "trust.parameter_space",
+            "passed": true,
+            "value": true,
+            "requirement": "accepted",
+            "detail": ""
+          },
+          {
+            "name": "trust.behavior_space",
+            "passed": true,
+            "value": true,
+            "requirement": "accepted",
+            "detail": ""
+          },
+          {
+            "name": "drift.label_disagreement",
+            "passed": true,
+            "value": 0.0175,
+            "requirement": "<= 0.060",
+            "detail": ""
+          },
+          {
+            "name": "drift.total_variation",
+            "passed": true,
+            "value": 0.01819638419452699,
+            "requirement": "<= 0.080",
+            "detail": ""
+          },
+          {
+            "name": "quality.minimum_class_accuracy",
+            "passed": true,
+            "value": 0.8787878787878788,
+            "requirement": ">= 0.800",
+            "detail": ""
+          },
+          {
+            "name": "quality.protected_slice_accuracy",
+            "passed": true,
+            "value": 0.8780487804878049,
+            "requirement": ">= 0.700",
+            "detail": ""
+          }
+        ],
+        "metadata": {
+          "original_candidate_index": 4
+        }
+      }
+    },
+    "parameter_aligned": {
+      "metrics": {
+        "accuracy": 0.949,
+        "ece": 0.011645110498074845,
+        "parameter_space_accepted": true,
+        "behavior_space_accepted": false,
+        "label_disagreement": 0.0375,
+        "total_variation": 0.03916474852910898,
+        "minimum_class_accuracy": 0.6767676767676768,
+        "protected_slice_accuracy": 0.4878048780487805
+      },
+      "manifest": {
+        "candidate_name": "parameter_aligned_candidate",
+        "approved": false,
+        "failure_reasons": [
+          "quality.accuracy: >= 0.950",
+          "trust.behavior_space: candidate is outside the current trusted behavior pool",
+          "quality.minimum_class_accuracy: >= 0.800",
+          "quality.protected_slice_accuracy: >= 0.700"
+        ],
+        "checks": [
+          {
+            "name": "quality.accuracy",
+            "passed": false,
+            "value": 0.949,
+            "requirement": ">= 0.950",
+            "detail": ""
+          },
+          {
+            "name": "calibration.ece",
+            "passed": true,
+            "value": 0.011645110498074845,
+            "requirement": "<= 0.060",
+            "detail": ""
+          },
+          {
+            "name": "trust.parameter_space",
+            "passed": true,
+            "value": true,
+            "requirement": "accepted",
+            "detail": ""
+          },
+          {
+            "name": "trust.behavior_space",
+            "passed": false,
+            "value": false,
+            "requirement": "accepted",
+            "detail": "candidate is outside the current trusted behavior pool"
+          },
+          {
+            "name": "drift.label_disagreement",
+            "passed": true,
+            "value": 0.0375,
+            "requirement": "<= 0.060",
+            "detail": ""
+          },
+          {
+            "name": "drift.total_variation",
+            "passed": true,
+            "value": 0.03916474852910898,
+            "requirement": "<= 0.080",
+            "detail": ""
+          },
+          {
+            "name": "quality.minimum_class_accuracy",
+            "passed": false,
+            "value": 0.6767676767676768,
+            "requirement": ">= 0.800",
+            "detail": ""
+          },
+          {
+            "name": "quality.protected_slice_accuracy",
+            "passed": false,
+            "value": 0.4878048780487805,
+            "requirement": ">= 0.700",
+            "detail": ""
+          }
+        ],
+        "metadata": {}
+      }
+    }
+  },
+  "expected_decisions": {
+    "clean": true,
+    "poisoned": false,
+    "weak_pool_before_expansion": false,
+    "weak_pool_after_expansion": true,
+    "parameter_aligned": false
+  },
+  "observed_decisions": {
+    "clean": true,
+    "poisoned": false,
+    "weak_pool_before_expansion": false,
+    "weak_pool_after_expansion": true,
+    "parameter_aligned": false
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "phase": "P2.2",
+  "executed_live_llm": true,
+  "controller": {
+    "base_url": "http://127.0.0.1:11434/v1",
+    "model": "qwen3:4b-instruct",
+    "temperature": 0.0,
+    "max_tokens": 64,
+    "pricing_configured": false
+  },
+  "scope": "real OpenAI-compatible LLM slow path versus compiled Paradigm control reflex",
+  "compile": {
+    "stats": {
+      "train_traces": 100.0,
+      "validation_traces": 40.0,
+      "train_episode_success": 1.0,
+      "validation_episode_success": 1.0
+    },
+    "selected_backend": "tree",
+    "threshold": 0.0,
+    "llm_usage": {
+      "calls": 140,
+      "prompt_tokens": 28404,
+      "completion_tokens": 4244,
+      "total_tokens": 32648,
+      "latency_ms": 112247.10091501765,
+      "estimated_cost_usd": 0.0,
+      "invalid_actions": 0,
+      "repaired_actions": 0,
+      "request_failures": 0,
+      "mean_latency_ms": 801.7650065358404,
+      "mean_tokens_per_call": 233.2
+    }
+  },
+  "evaluation": {
+    "episodes": 15,
+    "families": [
+      "missing_import",
+      "off_by_one",
+      "renamed_symbol",
+      "syntax_error",
+      "wrong_constant"
+    ],
+    "baseline": {
+      "episodes": 15.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 75.0,
+      "reflex_calls": 0.0,
+      "fast_path_coverage": 0.0,
+      "mean_policy_latency_ms": 3944.4376669998746,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "missing_import": 1.0,
+        "off_by_one": 1.0,
+        "renamed_symbol": 1.0,
+        "syntax_error": 1.0,
+        "wrong_constant": 1.0
+      }
+    },
+    "hybrid": {
+      "episodes": 15.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 16.0,
+      "reflex_calls": 59.0,
+      "fast_path_coverage": 0.7866666666666666,
+      "mean_policy_latency_ms": 828.2881498669061,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "missing_import": 1.0,
+        "off_by_one": 1.0,
+        "renamed_symbol": 1.0,
+        "syntax_error": 1.0,
+        "wrong_constant": 1.0
+      }
+    },
+    "known_hybrid": {
+      "episodes": 12.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 1.0,
+      "reflex_calls": 59.0,
+      "fast_path_coverage": 0.9833333333333333,
+      "mean_policy_latency_ms": 42.93190266677508,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "missing_import": 1.0,
+        "off_by_one": 1.0,
+        "renamed_symbol": 1.0,
+        "wrong_constant": 1.0
+      }
+    },
+    "withheld_ood_hybrid": {
+      "episodes": 3.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 15.0,
+      "reflex_calls": 0.0,
+      "fast_path_coverage": 0.0,
+      "mean_policy_latency_ms": 3969.71313866743,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "syntax_error": 1.0
+      }
+    },
+    "baseline_llm_usage": {
+      "calls": 75,
+      "prompt_tokens": 15568,
+      "completion_tokens": 2302,
+      "total_tokens": 17870,
+      "latency_ms": 59161.67837597823,
+      "estimated_cost_usd": 0.0,
+      "invalid_actions": 0,
+      "repaired_actions": 0,
+      "request_failures": 0,
+      "mean_latency_ms": 788.8223783463764,
+      "mean_tokens_per_call": 238.26666666666668
+    },
+    "hybrid_llm_usage": {
+      "calls": 16,
+      "prompt_tokens": 3579,
+      "completion_tokens": 506,
+      "total_tokens": 4085,
+      "latency_ms": 12419.1703769975,
+      "estimated_cost_usd": 0.0,
+      "invalid_actions": 0,
+      "repaired_actions": 0,
+      "request_failures": 0,
+      "mean_latency_ms": 776.1981485623437,
+      "mean_tokens_per_call": 255.3125
+    },
+    "llm_call_reduction": 0.7866666666666666,
+    "token_reduction": 0.7714045886961388,
+    "llm_latency_reduction": 0.7900808307351853,
+    "estimated_cost_reduction": null,
+    "success_preserved": true,
+    "amortization": {
+      "reflex_uses": 59.0,
+      "tokens_saved_per_reflex_use": 233.64406779661016,
+      "latency_saved_ms_per_reflex_use": 792.2458982878089,
+      "break_even_reflex_uses_tokens": 139.73391367428366,
+      "break_even_reflex_uses_latency": 141.6821483804518,
+      "amortized_fraction_tokens": 0.42223107081597644,
+      "amortized_fraction_latency": 0.41642508018420454,
+      "break_even_reached": false
+    }
+  },
+  "limitations": [
+    "P2.2 compiles control-policy decisions only. It does not compile free-form code generation.",
+    "The apply_fix tool remains a validated task repair primitive in this controlled vertical.",
+    "LLM-output repair is counted explicitly and uses a deterministic safe action.",
+    "Compilation cost is reported separately from evaluation savings.",
+    "This benchmark is a static compile-then-evaluate design, not the P2.1 online acquisition loop. Whether savings grow with continued sequential use against a real model is not yet measured.",
+    "The reflex amortization point compares tokens and latency only. It does not price compute, engineering time, or monitoring cost."
+  ]
+}

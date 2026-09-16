@@ -1,0 +1,501 @@
+{
+  "benchmark": "Paradigm Core P0",
+  "claim_level": "synthetic research benchmark only",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "processor": "unknown"
+  },
+  "seed": 11,
+  "scenarios": {
+    "deterministic_routing": {
+      "n_train": 3600,
+      "n_validation": 1200,
+      "n_test": 1200,
+      "reference_accuracy": 1.0,
+      "cost_model": {
+        "reflex_unit": 1.0,
+        "deliberative_unit": 100.0
+      },
+      "methods": {
+        "exact_cache": {
+          "accuracy": 1.0,
+          "selective_accuracy": NaN,
+          "coverage": 0.0,
+          "system_accuracy_with_fallback": 1.0,
+          "threshold": null,
+          "ece": null,
+          "brier": null,
+          "latency_us_per_item": 3.734624511753104,
+          "deliberation_calls_avoided": 0.0,
+          "normalized_compute_cost": 1.01,
+          "threshold_feasible": null
+        },
+        "nearest_neighbor_cache": {
+          "accuracy": 0.8975,
+          "selective_accuracy": 0.9907120743034056,
+          "coverage": 0.5383333333333333,
+          "system_accuracy_with_fallback": 0.995,
+          "threshold": 1.0,
+          "ece": 0.049757624198339866,
+          "brier": 0.16303049494189056,
+          "latency_us_per_item": 12.978314941403113,
+          "deliberation_calls_avoided": 0.5383333333333333,
+          "normalized_compute_cost": 0.4716666666666666,
+          "threshold_feasible": false
+        },
+        "decision_tree": {
+          "accuracy": 0.9933333333333333,
+          "selective_accuracy": 0.9933333333333333,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9933333333333333,
+          "threshold": 0.0,
+          "ece": 0.00666666666666671,
+          "brier": 0.013333333333333334,
+          "latency_us_per_item": 0.20328076166808984,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "random_forest_no_fallback": {
+          "accuracy": 0.9975,
+          "selective_accuracy": 0.9975,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9975,
+          "threshold": 0.0,
+          "ece": 0.039061493398181754,
+          "brier": 0.01110970632830382,
+          "latency_us_per_item": 118.78571093748569,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "calibrated_forest_reflex": {
+          "accuracy": 0.9983333333333333,
+          "selective_accuracy": 0.9983333333333333,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9983333333333333,
+          "threshold": 0.0,
+          "ece": 0.006197694665762621,
+          "brier": 0.0044197856176788446,
+          "latency_us_per_item": 368.42228466793523,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "selected_reflex": {
+          "accuracy": 0.9933333333333333,
+          "selective_accuracy": 0.9933333333333333,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9933333333333333,
+          "threshold": 0.0,
+          "ece": 0.00666666666666671,
+          "brier": 0.013333333333333334,
+          "latency_us_per_item": 0.26461914071074233,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        }
+      },
+      "selected_reflex": {
+        "backend": "tree",
+        "feasible": true,
+        "candidates": [
+          {
+            "backend": "tree",
+            "feasible": true,
+            "threshold": 0.0,
+            "coverage": 1.0,
+            "selective_accuracy": 0.9975,
+            "ece": 0.0033333333333333236,
+            "brier": 0.005833333333333334,
+            "latency_us_per_item": 1.5788735351351946
+          }
+        ]
+      },
+      "go_no_go": {
+        "minimum_coverage": 0.5,
+        "minimum_selective_accuracy": 0.99,
+        "maximum_ece": 0.05,
+        "coverage_pass": true,
+        "selective_accuracy_pass": true,
+        "calibration_pass": true,
+        "efficiency_status": "pending_real_deliberative_baseline",
+        "quality_pass": true,
+        "phase1_go": false
+      },
+      "description": "IID deterministic routing with a stable reference policy."
+    },
+    "noisy_routing": {
+      "n_train": 3600,
+      "n_validation": 1200,
+      "n_test": 1200,
+      "reference_accuracy": 0.855,
+      "cost_model": {
+        "reflex_unit": 1.0,
+        "deliberative_unit": 100.0
+      },
+      "methods": {
+        "exact_cache": {
+          "accuracy": 0.855,
+          "selective_accuracy": NaN,
+          "coverage": 0.0,
+          "system_accuracy_with_fallback": 0.855,
+          "threshold": null,
+          "ece": null,
+          "brier": null,
+          "latency_us_per_item": 4.558396484388716,
+          "deliberation_calls_avoided": 0.0,
+          "normalized_compute_cost": 1.01,
+          "threshold_feasible": null
+        },
+        "nearest_neighbor_cache": {
+          "accuracy": 0.7583333333333333,
+          "selective_accuracy": 0.8364611260053619,
+          "coverage": 0.6216666666666667,
+          "system_accuracy_with_fallback": 0.8383333333333334,
+          "threshold": 0.6759801747930198,
+          "ece": 0.0676718057629303,
+          "brier": 0.3905860014346202,
+          "latency_us_per_item": 12.195059570285771,
+          "deliberation_calls_avoided": 0.6216666666666667,
+          "normalized_compute_cost": 0.3883333333333333,
+          "threshold_feasible": true
+        },
+        "decision_tree": {
+          "accuracy": 0.8241666666666667,
+          "selective_accuracy": 0.842152466367713,
+          "coverage": 0.9291666666666667,
+          "system_accuracy_with_fallback": 0.8408333333333333,
+          "threshold": 0.6086956521739131,
+          "ece": 0.06519302344473685,
+          "brier": 0.30390098818178246,
+          "latency_us_per_item": 0.2605024415069934,
+          "deliberation_calls_avoided": 0.9291666666666667,
+          "normalized_compute_cost": 0.0808333333333333,
+          "threshold_feasible": true
+        },
+        "random_forest_no_fallback": {
+          "accuracy": 0.8516666666666667,
+          "selective_accuracy": 0.8516666666666667,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.8516666666666667,
+          "threshold": 0.0,
+          "ece": 0.05828705052095625,
+          "brier": 0.276366312116625,
+          "latency_us_per_item": 156.82548925777252,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "calibrated_forest_reflex": {
+          "accuracy": 0.85,
+          "selective_accuracy": 0.85,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.85,
+          "threshold": 0.0,
+          "ece": 0.029594070857502774,
+          "brier": 0.26567083830221755,
+          "latency_us_per_item": 374.6348212890771,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "selected_reflex": {
+          "accuracy": 0.845,
+          "selective_accuracy": 0.8484087102177554,
+          "coverage": 0.995,
+          "system_accuracy_with_fallback": 0.8483333333333334,
+          "threshold": 0.4347343072516552,
+          "ece": 0.043926825317488025,
+          "brier": 0.2715289215914463,
+          "latency_us_per_item": 7.146307128946816,
+          "deliberation_calls_avoided": 0.995,
+          "normalized_compute_cost": 0.015000000000000005,
+          "threshold_feasible": true
+        }
+      },
+      "selected_reflex": {
+        "backend": "calibrated_tree",
+        "feasible": true,
+        "candidates": [
+          {
+            "backend": "tree",
+            "feasible": false,
+            "threshold": 0.6086956521739131,
+            "coverage": 0.9258333333333333,
+            "selective_accuracy": 0.8424842484248425,
+            "ece": 0.07138094698975501,
+            "brier": 0.3056614071370377,
+            "latency_us_per_item": 0.23911376945129348
+          },
+          {
+            "backend": "calibrated_tree",
+            "feasible": true,
+            "threshold": 0.4347343072516552,
+            "coverage": 0.995,
+            "selective_accuracy": 0.8408710217755444,
+            "ece": 0.03937829601326279,
+            "brier": 0.27668937615726613,
+            "latency_us_per_item": 9.498789550810294
+          }
+        ]
+      },
+      "go_no_go": {
+        "minimum_coverage": 0.5,
+        "minimum_selective_accuracy": 0.845,
+        "maximum_ece": 0.05,
+        "coverage_pass": true,
+        "selective_accuracy_pass": true,
+        "calibration_pass": true,
+        "efficiency_status": "pending_real_deliberative_baseline",
+        "quality_pass": true,
+        "phase1_go": false
+      },
+      "description": "Routing with label ambiguity concentrated near decision boundaries."
+    },
+    "distribution_shift": {
+      "n_train": 3600,
+      "n_validation": 1200,
+      "n_test": 1200,
+      "reference_accuracy": 1.0,
+      "cost_model": {
+        "reflex_unit": 1.0,
+        "deliberative_unit": 100.0
+      },
+      "methods": {
+        "exact_cache": {
+          "accuracy": 1.0,
+          "selective_accuracy": NaN,
+          "coverage": 0.0,
+          "system_accuracy_with_fallback": 1.0,
+          "threshold": null,
+          "ece": null,
+          "brier": null,
+          "latency_us_per_item": 3.1629682617495547,
+          "deliberation_calls_avoided": 0.0,
+          "normalized_compute_cost": 1.01,
+          "threshold_feasible": null
+        },
+        "nearest_neighbor_cache": {
+          "accuracy": 0.8916666666666667,
+          "selective_accuracy": 0.9804469273743017,
+          "coverage": 0.5966666666666667,
+          "system_accuracy_with_fallback": 0.9883333333333333,
+          "threshold": 0.8217238988121783,
+          "ece": 0.051473334548146156,
+          "brier": 0.1683725400938701,
+          "latency_us_per_item": 11.321793945251457,
+          "deliberation_calls_avoided": 0.5966666666666667,
+          "normalized_compute_cost": 0.4133333333333333,
+          "threshold_feasible": true
+        },
+        "decision_tree": {
+          "accuracy": 0.9958333333333333,
+          "selective_accuracy": 0.9958333333333333,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9958333333333333,
+          "threshold": 0.0,
+          "ece": 0.003083333333333387,
+          "brier": 0.006316666666666667,
+          "latency_us_per_item": 0.21576318354199486,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "random_forest_no_fallback": {
+          "accuracy": 0.9975,
+          "selective_accuracy": 0.9975,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9975,
+          "threshold": 0.0,
+          "ece": 0.041707220915653445,
+          "brier": 0.013646673253638764,
+          "latency_us_per_item": 112.6520830078137,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "calibrated_forest_reflex": {
+          "accuracy": 0.9975,
+          "selective_accuracy": 0.9975,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9975,
+          "threshold": 0.0,
+          "ece": 0.006928900037657538,
+          "brier": 0.006038315172967134,
+          "latency_us_per_item": 402.54107519532846,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "selected_reflex": {
+          "accuracy": 0.9958333333333333,
+          "selective_accuracy": 0.9958333333333333,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9958333333333333,
+          "threshold": 0.0,
+          "ece": 0.003083333333333387,
+          "brier": 0.006316666666666667,
+          "latency_us_per_item": 0.22110058595092852,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        }
+      },
+      "selected_reflex": {
+        "backend": "tree",
+        "feasible": true,
+        "candidates": [
+          {
+            "backend": "tree",
+            "feasible": true,
+            "threshold": 0.0,
+            "coverage": 1.0,
+            "selective_accuracy": 0.995,
+            "ece": 0.003500000000000053,
+            "brier": 0.0084,
+            "latency_us_per_item": 0.19330468747913443
+          }
+        ]
+      },
+      "go_no_go": {
+        "minimum_coverage": 0.5,
+        "minimum_selective_accuracy": 0.99,
+        "maximum_ece": 0.05,
+        "coverage_pass": true,
+        "selective_accuracy_pass": true,
+        "calibration_pass": true,
+        "efficiency_status": "pending_real_deliberative_baseline",
+        "quality_pass": true,
+        "phase1_go": false
+      },
+      "description": "Train-like prefix followed by a valid but risk-heavy covariate shift."
+    },
+    "repeated_workflows": {
+      "n_train": 3888,
+      "n_validation": 1296,
+      "n_test": 1296,
+      "reference_accuracy": 0.9344135802469136,
+      "cost_model": {
+        "reflex_unit": 1.0,
+        "deliberative_unit": 100.0
+      },
+      "methods": {
+        "exact_cache": {
+          "accuracy": 0.9344135802469136,
+          "selective_accuracy": 0.9344135802469136,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9344135802469136,
+          "threshold": null,
+          "ece": null,
+          "brier": null,
+          "latency_us_per_item": 3.8068505858745993,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": null
+        },
+        "nearest_neighbor_cache": {
+          "accuracy": 0.9266975308641975,
+          "selective_accuracy": 0.9266975308641975,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9266975308641975,
+          "threshold": 0.0,
+          "ece": 0.014197530864197502,
+          "brier": 0.11574074074074074,
+          "latency_us_per_item": 3.425203124907128,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "decision_tree": {
+          "accuracy": 0.9344135802469136,
+          "selective_accuracy": 0.9344135802469136,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9344135802469136,
+          "threshold": 0.0,
+          "ece": 0.012010151557474685,
+          "brier": 0.10235273004366154,
+          "latency_us_per_item": 0.23131152349087358,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "random_forest_no_fallback": {
+          "accuracy": 0.9320987654320988,
+          "selective_accuracy": 0.9320987654320988,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9320987654320988,
+          "threshold": 0.0,
+          "ece": 0.019710189853157926,
+          "brier": 0.10297695586645685,
+          "latency_us_per_item": 122.28626123045316,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "calibrated_forest_reflex": {
+          "accuracy": 0.9320987654320988,
+          "selective_accuracy": 0.9320987654320988,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9320987654320988,
+          "threshold": 0.0,
+          "ece": 0.05072986137520445,
+          "brier": 0.1085639827995876,
+          "latency_us_per_item": 383.2588486327726,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "selected_reflex": {
+          "accuracy": 0.9344135802469136,
+          "selective_accuracy": 0.9344135802469136,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9344135802469136,
+          "threshold": 0.0,
+          "ece": 0.012010151557474685,
+          "brier": 0.10235273004366154,
+          "latency_us_per_item": 0.6306562500002499,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        }
+      },
+      "selected_reflex": {
+        "backend": "tree",
+        "feasible": true,
+        "candidates": [
+          {
+            "backend": "tree",
+            "feasible": true,
+            "threshold": 0.0,
+            "coverage": 1.0,
+            "selective_accuracy": 0.9382716049382716,
+            "ece": 0.011765718019727136,
+            "brier": 0.09614386577679548,
+            "latency_us_per_item": 0.2012758788527691
+          }
+        ]
+      },
+      "go_no_go": {
+        "minimum_coverage": 0.5,
+        "minimum_selective_accuracy": 0.9244135802469136,
+        "maximum_ece": 0.05,
+        "coverage_pass": true,
+        "selective_accuracy_pass": true,
+        "calibration_pass": true,
+        "efficiency_status": "pending_real_deliberative_baseline",
+        "quality_pass": true,
+        "phase1_go": false
+      },
+      "description": "Repeated exact workflows with a minority of hidden unstable behaviors."
+    }
+  },
+  "summary": {
+    "quality_scenarios_passed": 4,
+    "quality_scenarios_total": 4,
+    "all_quality_gates_pass": true,
+    "phase1_go": "pending_real_deliberative_baseline",
+    "interpretation": "Synthetic quality gates are necessary but not sufficient. Phase 1 still requires measured efficiency against a realistic deliberative path."
+  }
+}

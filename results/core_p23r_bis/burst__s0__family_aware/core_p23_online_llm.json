@@ -1,0 +1,3693 @@
+{
+  "phase": "P2.3",
+  "executed_live_llm": true,
+  "scope": "P2.1 online acquisition with a real OpenAI-compatible LLM as the only teacher",
+  "controller": {
+    "base_url": "http://127.0.0.1:11435",
+    "model": "qwen3:4b-instruct",
+    "temperature": 0.0,
+    "max_tokens": 64,
+    "pricing_configured": false
+  },
+  "learning_mode": {
+    "active_runtime": "immutable between promotions",
+    "teacher_labels": "LLM decisions from successful episodes only",
+    "primary_compiler": "periodic supervised recompile with held-out shadow validation",
+    "reinforcement_learning": false,
+    "compiler_settings_identical_to_p21": true
+  },
+  "stream": {
+    "arrival": "burst",
+    "random_state": 21,
+    "episodes": 69,
+    "first_novel_family_episode": 33,
+    "families": [
+      "missing_import",
+      "off_by_one",
+      "renamed_symbol",
+      "syntax_error",
+      "wrong_constant"
+    ],
+    "phase_sizes": {
+      "A": 32,
+      "B": 12,
+      "C": 25
+    }
+  },
+  "baseline": {
+    "episodes": 69.0,
+    "success_rate": 1.0,
+    "mean_steps": 5.0,
+    "deliberative_calls": 345.0,
+    "reflex_calls": 0.0,
+    "fast_path_coverage": 0.0,
+    "mean_policy_latency_ms": 2354.386675753947,
+    "invalid_reflex_actions": 0.0,
+    "success_by_family": {
+      "missing_import": 1.0,
+      "off_by_one": 1.0,
+      "renamed_symbol": 1.0,
+      "syntax_error": 1.0,
+      "wrong_constant": 1.0
+    }
+  },
+  "online": {
+    "episodes": 69.0,
+    "success_rate": 1.0,
+    "mean_steps": 5.0,
+    "deliberative_calls": 141.0,
+    "reflex_calls": 204.0,
+    "fast_path_coverage": 0.591304347826087,
+    "mean_policy_latency_ms": 979.6748434205454,
+    "invalid_reflex_actions": 0.0,
+    "success_by_family": {
+      "missing_import": 1.0,
+      "off_by_one": 1.0,
+      "renamed_symbol": 1.0,
+      "syntax_error": 1.0,
+      "wrong_constant": 1.0
+    }
+  },
+  "known": {
+    "episodes": 52.0,
+    "success_rate": 1.0,
+    "mean_steps": 5.0,
+    "deliberative_calls": 80.0,
+    "reflex_calls": 180.0,
+    "fast_path_coverage": 0.6923076923076923,
+    "mean_policy_latency_ms": 719.7210919996276,
+    "invalid_reflex_actions": 0.0,
+    "success_by_family": {
+      "missing_import": 1.0,
+      "off_by_one": 1.0,
+      "renamed_symbol": 1.0,
+      "wrong_constant": 1.0
+    }
+  },
+  "novel_family": {
+    "overall": {
+      "episodes": 17.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 61.0,
+      "reflex_calls": 24.0,
+      "fast_path_coverage": 0.2823529411764706,
+      "mean_policy_latency_ms": 1774.8274948257056,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "syntax_error": 1.0
+      }
+    },
+    "phase_b": {
+      "episodes": 12.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 60.0,
+      "reflex_calls": 0.0,
+      "fast_path_coverage": 0.0,
+      "mean_policy_latency_ms": 2474.7836214179792,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "syntax_error": 1.0
+      }
+    },
+    "phase_c": {
+      "episodes": 5.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 1.0,
+      "reflex_calls": 24.0,
+      "fast_path_coverage": 0.96,
+      "mean_policy_latency_ms": 94.93279100424843,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "syntax_error": 1.0
+      }
+    },
+    "first_fast_path_episode": 49,
+    "episodes_before_first_fast_path": 12,
+    "acquisition_tokens_before_first_fast_path": 15516,
+    "represented_from_episode": 44,
+    "unrepresented_decisions": 60,
+    "unrepresented_reflex_decisions": 0,
+    "unknown_false_fast_path_rate": 0.0,
+    "time_to_reflex": {
+      "validated_episodes": 12,
+      "validated_decisions": 60,
+      "learning_evidence": {
+        "episodes": 5,
+        "decisions": 25
+      },
+      "certification_evidence": {
+        "episodes": 7,
+        "decisions": 35
+      },
+      "candidates_rejected_before_representation": 2,
+      "time_to_mature_episodes": 15,
+      "outcome": "promoted",
+      "definition": "validated novel-family episodes before the first promotion representing the family; learning evidence is the novel share of that candidate's train split, certification evidence the novel share of its validation split"
+    }
+  },
+  "old_family_retention": {
+    "known_phase_a": {
+      "episodes": 32.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 80.0,
+      "reflex_calls": 80.0,
+      "fast_path_coverage": 0.5,
+      "mean_policy_latency_ms": 1169.3823058428734,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "missing_import": 1.0,
+        "off_by_one": 1.0,
+        "renamed_symbol": 1.0,
+        "wrong_constant": 1.0
+      }
+    },
+    "known_phase_c": {
+      "episodes": 20.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 0.0,
+      "reflex_calls": 100.0,
+      "fast_path_coverage": 1.0,
+      "mean_policy_latency_ms": 0.2631498504342744,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "missing_import": 1.0,
+        "off_by_one": 1.0,
+        "renamed_symbol": 1.0,
+        "wrong_constant": 1.0
+      }
+    },
+    "known_before_novel": {
+      "episodes": 32.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 80.0,
+      "reflex_calls": 80.0,
+      "fast_path_coverage": 0.5,
+      "mean_policy_latency_ms": 1169.3823058428734,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "missing_import": 1.0,
+        "off_by_one": 1.0,
+        "renamed_symbol": 1.0,
+        "wrong_constant": 1.0
+      }
+    },
+    "known_after_representation": {
+      "episodes": 20.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 0.0,
+      "reflex_calls": 100.0,
+      "fast_path_coverage": 1.0,
+      "mean_policy_latency_ms": 0.2631498504342744,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "missing_import": 1.0,
+        "off_by_one": 1.0,
+        "renamed_symbol": 1.0,
+        "wrong_constant": 1.0
+      }
+    },
+    "success_retained": true
+  },
+  "learning_curve": [
+    {
+      "start_episode": 1,
+      "end_episode": 10,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.0,
+      "deliberative_calls": 50.0,
+      "reflex_calls": 0.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "wrong_constant"
+      ]
+    },
+    {
+      "start_episode": 11,
+      "end_episode": 20,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.4,
+      "deliberative_calls": 30.0,
+      "reflex_calls": 20.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "wrong_constant"
+      ]
+    },
+    {
+      "start_episode": 21,
+      "end_episode": 30,
+      "success_rate": 1.0,
+      "fast_path_coverage": 1.0,
+      "deliberative_calls": 0.0,
+      "reflex_calls": 50.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "wrong_constant"
+      ]
+    },
+    {
+      "start_episode": 31,
+      "end_episode": 40,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.2,
+      "deliberative_calls": 40.0,
+      "reflex_calls": 10.0,
+      "families": [
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error"
+      ]
+    },
+    {
+      "start_episode": 41,
+      "end_episode": 50,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.6,
+      "deliberative_calls": 20.0,
+      "reflex_calls": 30.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error",
+        "wrong_constant"
+      ]
+    },
+    {
+      "start_episode": 51,
+      "end_episode": 60,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.98,
+      "deliberative_calls": 1.0,
+      "reflex_calls": 49.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error",
+        "wrong_constant"
+      ]
+    },
+    {
+      "start_episode": 61,
+      "end_episode": 69,
+      "success_rate": 1.0,
+      "fast_path_coverage": 1.0,
+      "deliberative_calls": 0.0,
+      "reflex_calls": 45.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error",
+        "wrong_constant"
+      ]
+    }
+  ],
+  "per_episode": [
+    {
+      "episode": 1,
+      "phase": "A",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1147,
+      "llm_latency_ms": 2277.5724990133313,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.025083005311898887,
+      "baseline_tokens": 1151,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2361.684833995241,
+      "baseline_success": true,
+      "cumulative_tokens_online": 1147,
+      "cumulative_tokens_baseline": 1151,
+      "cumulative_tokens_saved": 4,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 84.11233498190995,
+      "cumulative_compile_wallclock_ms": 0.025083005311898887
+    },
+    {
+      "episode": 2,
+      "phase": "A",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1084,
+      "llm_latency_ms": 2183.8195419986732,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.012832999345846474,
+      "baseline_tokens": 1084,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2267.538374006108,
+      "baseline_success": true,
+      "cumulative_tokens_online": 2231,
+      "cumulative_tokens_baseline": 2235,
+      "cumulative_tokens_saved": 4,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 167.83116698934464,
+      "cumulative_compile_wallclock_ms": 0.03791600465774536
+    },
+    {
+      "episode": 3,
+      "phase": "A",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1380,
+      "llm_latency_ms": 2549.022791987227,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.01808399974834174,
+      "baseline_tokens": 1371,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2551.7816659994423,
+      "baseline_success": true,
+      "cumulative_tokens_online": 3611,
+      "cumulative_tokens_baseline": 3606,
+      "cumulative_tokens_saved": -5,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 170.59004100156017,
+      "cumulative_compile_wallclock_ms": 0.0560000044060871
+    },
+    {
+      "episode": 4,
+      "phase": "A",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1020,
+      "llm_latency_ms": 2143.3304579986725,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.022084001102484763,
+      "baseline_tokens": 1038,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2340.766250003071,
+      "baseline_success": true,
+      "cumulative_tokens_online": 4631,
+      "cumulative_tokens_baseline": 4644,
+      "cumulative_tokens_saved": 13,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 368.0258330059587,
+      "cumulative_compile_wallclock_ms": 0.07808400550857186
+    },
+    {
+      "episode": 5,
+      "phase": "A",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1159,
+      "llm_latency_ms": 2445.564417001151,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.02083300205413252,
+      "baseline_tokens": 1161,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2399.6705839963397,
+      "baseline_success": true,
+      "cumulative_tokens_online": 5790,
+      "cumulative_tokens_baseline": 5805,
+      "cumulative_tokens_saved": 15,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 322.1320000011474,
+      "cumulative_compile_wallclock_ms": 0.09891700756270438
+    },
+    {
+      "episode": 6,
+      "phase": "A",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1083,
+      "llm_latency_ms": 2246.79845799983,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.01799999881768599,
+      "baseline_tokens": 1082,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2174.4284169908497,
+      "baseline_success": true,
+      "cumulative_tokens_online": 6873,
+      "cumulative_tokens_baseline": 6887,
+      "cumulative_tokens_saved": 14,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 249.7619589921669,
+      "cumulative_compile_wallclock_ms": 0.11691700638039038
+    },
+    {
+      "episode": 7,
+      "phase": "A",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1374,
+      "llm_latency_ms": 2429.6406240027864,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.03204200038453564,
+      "baseline_tokens": 1374,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2393.7070420070086,
+      "baseline_success": true,
+      "cumulative_tokens_online": 8247,
+      "cumulative_tokens_baseline": 8261,
+      "cumulative_tokens_saved": 14,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 213.82837699638912,
+      "cumulative_compile_wallclock_ms": 0.14895900676492602
+    },
+    {
+      "episode": 8,
+      "phase": "A",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1035,
+      "llm_latency_ms": 2233.1726659904234,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 6.610874996113125,
+      "baseline_tokens": 1035,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2189.6734589900007,
+      "baseline_success": true,
+      "cumulative_tokens_online": 9282,
+      "cumulative_tokens_baseline": 9296,
+      "cumulative_tokens_saved": 14,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 170.32916999596637,
+      "cumulative_compile_wallclock_ms": 6.759834002878051
+    },
+    {
+      "episode": 9,
+      "phase": "A",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1159,
+      "llm_latency_ms": 2364.311542005453,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.028665999707300216,
+      "baseline_tokens": 1159,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2395.538583987218,
+      "baseline_success": true,
+      "cumulative_tokens_online": 10441,
+      "cumulative_tokens_baseline": 10455,
+      "cumulative_tokens_saved": 14,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 201.55621197773144,
+      "cumulative_compile_wallclock_ms": 6.7885000025853515
+    },
+    {
+      "episode": 10,
+      "phase": "A",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1082,
+      "llm_latency_ms": 2295.84820799937,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.028750000637955964,
+      "baseline_tokens": 1086,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2384.618791009416,
+      "baseline_success": true,
+      "cumulative_tokens_online": 11523,
+      "cumulative_tokens_baseline": 11541,
+      "cumulative_tokens_saved": 18,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 290.32679498777725,
+      "cumulative_compile_wallclock_ms": 6.817250003223307
+    },
+    {
+      "episode": 11,
+      "phase": "A",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1373,
+      "llm_latency_ms": 2579.1494570003124,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.018582999473437667,
+      "baseline_tokens": 1374,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2547.437542001717,
+      "baseline_success": true,
+      "cumulative_tokens_online": 12896,
+      "cumulative_tokens_baseline": 12915,
+      "cumulative_tokens_saved": 19,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 258.61487998918165,
+      "cumulative_compile_wallclock_ms": 6.835833002696745
+    },
+    {
+      "episode": 12,
+      "phase": "A",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1037,
+      "llm_latency_ms": 2240.9498739943956,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 6.441208002797794,
+      "baseline_tokens": 1030,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2239.0580829960527,
+      "baseline_success": true,
+      "cumulative_tokens_online": 13933,
+      "cumulative_tokens_baseline": 13945,
+      "cumulative_tokens_saved": 12,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 256.72308899083873,
+      "cumulative_compile_wallclock_ms": 13.277041005494539
+    },
+    {
+      "episode": 13,
+      "phase": "A",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1150,
+      "llm_latency_ms": 2294.644709014392,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.03591699351090938,
+      "baseline_tokens": 1147,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2300.3137910054647,
+      "baseline_success": true,
+      "cumulative_tokens_online": 15083,
+      "cumulative_tokens_baseline": 15092,
+      "cumulative_tokens_saved": 9,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 262.3921709819115,
+      "cumulative_compile_wallclock_ms": 13.312957999005448
+    },
+    {
+      "episode": 14,
+      "phase": "A",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1084,
+      "llm_latency_ms": 2249.730957999418,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.030291994335129857,
+      "baseline_tokens": 1082,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2293.3269160057534,
+      "baseline_success": true,
+      "cumulative_tokens_online": 16167,
+      "cumulative_tokens_baseline": 16174,
+      "cumulative_tokens_saved": 7,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 305.9881289882469,
+      "cumulative_compile_wallclock_ms": 13.343249993340578
+    },
+    {
+      "episode": 15,
+      "phase": "A",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1378,
+      "llm_latency_ms": 2469.158832995163,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 0.03112500417046249,
+      "baseline_tokens": 1371,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2423.8967499986757,
+      "baseline_success": true,
+      "cumulative_tokens_online": 17545,
+      "cumulative_tokens_baseline": 17545,
+      "cumulative_tokens_saved": 0,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 260.72604599175975,
+      "cumulative_compile_wallclock_ms": 13.37437499751104
+    },
+    {
+      "episode": 16,
+      "phase": "A",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1035,
+      "llm_latency_ms": 2406.901875998301,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "no_reflex": 5
+      },
+      "active_version_during_episode": 0,
+      "compile_wallclock_ms": 6.275791994994506,
+      "baseline_tokens": 1035,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2202.9752919988823,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 18580,
+      "cumulative_tokens_saved": 0,
+      "cumulative_reflex_calls": 0,
+      "cumulative_llm_latency_saved_ms": 56.799461992341094,
+      "cumulative_compile_wallclock_ms": 19.650166992505547
+    },
+    {
+      "episode": 17,
+      "phase": "A",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0018329956219531596,
+      "baseline_tokens": 1157,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2567.2923760066624,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 19737,
+      "cumulative_tokens_saved": 1157,
+      "cumulative_reflex_calls": 5,
+      "cumulative_llm_latency_saved_ms": 2624.0918379990035,
+      "cumulative_compile_wallclock_ms": 19.6519999881275
+    },
+    {
+      "episode": 18,
+      "phase": "A",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0025419940357096493,
+      "baseline_tokens": 1085,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2222.8055840096204,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 20822,
+      "cumulative_tokens_saved": 2242,
+      "cumulative_reflex_calls": 10,
+      "cumulative_llm_latency_saved_ms": 4846.897422008624,
+      "cumulative_compile_wallclock_ms": 19.65454198216321
+    },
+    {
+      "episode": 19,
+      "phase": "A",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.001291002263315022,
+      "baseline_tokens": 1368,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2448.168333998183,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 22190,
+      "cumulative_tokens_saved": 3610,
+      "cumulative_reflex_calls": 15,
+      "cumulative_llm_latency_saved_ms": 7295.065756006807,
+      "cumulative_compile_wallclock_ms": 19.655832984426524
+    },
+    {
+      "episode": 20,
+      "phase": "A",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0010410003596916795,
+      "baseline_tokens": 1021,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2232.971666016965,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 23211,
+      "cumulative_tokens_saved": 4631,
+      "cumulative_reflex_calls": 20,
+      "cumulative_llm_latency_saved_ms": 9528.037422023772,
+      "cumulative_compile_wallclock_ms": 19.656873984786216
+    },
+    {
+      "episode": 21,
+      "phase": "A",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0008749993867240846,
+      "baseline_tokens": 1157,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2785.0766259871307,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 24368,
+      "cumulative_tokens_saved": 5788,
+      "cumulative_reflex_calls": 25,
+      "cumulative_llm_latency_saved_ms": 12313.114048010902,
+      "cumulative_compile_wallclock_ms": 19.65774898417294
+    },
+    {
+      "episode": 22,
+      "phase": "A",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0010000003385357559,
+      "baseline_tokens": 1082,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2337.714248991688,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 25450,
+      "cumulative_tokens_saved": 6870,
+      "cumulative_reflex_calls": 30,
+      "cumulative_llm_latency_saved_ms": 14650.82829700259,
+      "cumulative_compile_wallclock_ms": 19.658748984511476
+    },
+    {
+      "episode": 23,
+      "phase": "A",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0007499984349124134,
+      "baseline_tokens": 1365,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2433.285833998525,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 26815,
+      "cumulative_tokens_saved": 8235,
+      "cumulative_reflex_calls": 35,
+      "cumulative_llm_latency_saved_ms": 17084.114131001115,
+      "cumulative_compile_wallclock_ms": 19.65949898294639
+    },
+    {
+      "episode": 24,
+      "phase": "A",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0009170034900307655,
+      "baseline_tokens": 1023,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2112.345748995722,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 27838,
+      "cumulative_tokens_saved": 9258,
+      "cumulative_reflex_calls": 40,
+      "cumulative_llm_latency_saved_ms": 19196.459879996837,
+      "cumulative_compile_wallclock_ms": 19.66041598643642
+    },
+    {
+      "episode": 25,
+      "phase": "A",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0008330025593750179,
+      "baseline_tokens": 1161,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2433.572832000209,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 28999,
+      "cumulative_tokens_saved": 10419,
+      "cumulative_reflex_calls": 45,
+      "cumulative_llm_latency_saved_ms": 21630.032711997046,
+      "cumulative_compile_wallclock_ms": 19.661248988995794
+    },
+    {
+      "episode": 26,
+      "phase": "A",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0009160066838376224,
+      "baseline_tokens": 1080,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2284.3261680027354,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 30079,
+      "cumulative_tokens_saved": 11499,
+      "cumulative_reflex_calls": 50,
+      "cumulative_llm_latency_saved_ms": 23914.35887999978,
+      "cumulative_compile_wallclock_ms": 19.662164995679632
+    },
+    {
+      "episode": 27,
+      "phase": "A",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0007920025382190943,
+      "baseline_tokens": 1377,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2541.889583990269,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 31456,
+      "cumulative_tokens_saved": 12876,
+      "cumulative_reflex_calls": 55,
+      "cumulative_llm_latency_saved_ms": 26456.24846399005,
+      "cumulative_compile_wallclock_ms": 19.66295699821785
+    },
+    {
+      "episode": 28,
+      "phase": "A",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0008330025593750179,
+      "baseline_tokens": 1024,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2239.191792003112,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 32480,
+      "cumulative_tokens_saved": 13900,
+      "cumulative_reflex_calls": 60,
+      "cumulative_llm_latency_saved_ms": 28695.440255993162,
+      "cumulative_compile_wallclock_ms": 19.663790000777226
+    },
+    {
+      "episode": 29,
+      "phase": "A",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0006659975042566657,
+      "baseline_tokens": 1149,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2298.3936669988907,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 33629,
+      "cumulative_tokens_saved": 15049,
+      "cumulative_reflex_calls": 65,
+      "cumulative_llm_latency_saved_ms": 30993.833922992053,
+      "cumulative_compile_wallclock_ms": 19.664455998281483
+    },
+    {
+      "episode": 30,
+      "phase": "A",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0007080016075633466,
+      "baseline_tokens": 1085,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2283.5924999963026,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 34714,
+      "cumulative_tokens_saved": 16134,
+      "cumulative_reflex_calls": 70,
+      "cumulative_llm_latency_saved_ms": 33277.426422988356,
+      "cumulative_compile_wallclock_ms": 19.665163999889046
+    },
+    {
+      "episode": 31,
+      "phase": "A",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0007080016075633466,
+      "baseline_tokens": 1371,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2381.495373985672,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 36085,
+      "cumulative_tokens_saved": 17505,
+      "cumulative_reflex_calls": 75,
+      "cumulative_llm_latency_saved_ms": 35658.92179697403,
+      "cumulative_compile_wallclock_ms": 19.66587200149661
+    },
+    {
+      "episode": 32,
+      "phase": "A",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0006249974831007421,
+      "baseline_tokens": 1037,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2256.9601239956683,
+      "baseline_success": true,
+      "cumulative_tokens_online": 18580,
+      "cumulative_tokens_baseline": 37122,
+      "cumulative_tokens_saved": 18542,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 37915.881920969696,
+      "cumulative_compile_wallclock_ms": 19.66649699897971
+    },
+    {
+      "episode": 33,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1296,
+      "llm_latency_ms": 2302.95199999091,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.02341700019314885,
+      "baseline_tokens": 1305,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2280.6515420088544,
+      "baseline_success": true,
+      "cumulative_tokens_online": 19876,
+      "cumulative_tokens_baseline": 38427,
+      "cumulative_tokens_saved": 18551,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 37893.58146298764,
+      "cumulative_compile_wallclock_ms": 19.68991399917286
+    },
+    {
+      "episode": 34,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1297,
+      "llm_latency_ms": 2521.4691250002943,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.036833000194747,
+      "baseline_tokens": 1299,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2404.2989579975256,
+      "baseline_success": true,
+      "cumulative_tokens_online": 21173,
+      "cumulative_tokens_baseline": 39726,
+      "cumulative_tokens_saved": 18553,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 37776.41129598487,
+      "cumulative_compile_wallclock_ms": 19.726746999367606
+    },
+    {
+      "episode": 35,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1301,
+      "llm_latency_ms": 2415.6253750043106,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.0228749995585531,
+      "baseline_tokens": 1299,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2356.476458000543,
+      "baseline_success": true,
+      "cumulative_tokens_online": 22474,
+      "cumulative_tokens_baseline": 41025,
+      "cumulative_tokens_saved": 18551,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 37717.262378981104,
+      "cumulative_compile_wallclock_ms": 19.74962199892616
+    },
+    {
+      "episode": 36,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1281,
+      "llm_latency_ms": 2420.953416993143,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 17.87750000221422,
+      "baseline_tokens": 1283,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2263.518624007702,
+      "baseline_success": true,
+      "cumulative_tokens_online": 23755,
+      "cumulative_tokens_baseline": 42308,
+      "cumulative_tokens_saved": 18553,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 37559.82758599566,
+      "cumulative_compile_wallclock_ms": 37.62712200114038
+    },
+    {
+      "episode": 37,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1303,
+      "llm_latency_ms": 2594.299541997316,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.02058300015050918,
+      "baseline_tokens": 1301,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2446.6195830027573,
+      "baseline_success": true,
+      "cumulative_tokens_online": 25058,
+      "cumulative_tokens_baseline": 43609,
+      "cumulative_tokens_saved": 18551,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 37412.147627001104,
+      "cumulative_compile_wallclock_ms": 37.64770500129089
+    },
+    {
+      "episode": 38,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1288,
+      "llm_latency_ms": 2545.0538329969277,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.034500000765547156,
+      "baseline_tokens": 1295,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2404.480457997124,
+      "baseline_success": true,
+      "cumulative_tokens_online": 26346,
+      "cumulative_tokens_baseline": 44904,
+      "cumulative_tokens_saved": 18558,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 37271.5742520013,
+      "cumulative_compile_wallclock_ms": 37.682205002056435
+    },
+    {
+      "episode": 39,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1295,
+      "llm_latency_ms": 2852.9084170077113,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.036541998269967735,
+      "baseline_tokens": 1297,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2327.0472080039326,
+      "baseline_success": true,
+      "cumulative_tokens_online": 27641,
+      "cumulative_tokens_baseline": 46201,
+      "cumulative_tokens_saved": 18560,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 36745.71304299752,
+      "cumulative_compile_wallclock_ms": 37.7187470003264
+    },
+    {
+      "episode": 40,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1283,
+      "llm_latency_ms": 2439.7394569969038,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 19.982874997367617,
+      "baseline_tokens": 1281,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2392.243916998268,
+      "baseline_success": true,
+      "cumulative_tokens_online": 28924,
+      "cumulative_tokens_baseline": 47482,
+      "cumulative_tokens_saved": 18558,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 36698.21750299889,
+      "cumulative_compile_wallclock_ms": 57.70162199769402
+    },
+    {
+      "episode": 41,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1297,
+      "llm_latency_ms": 2421.233625995228,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.039667000237386674,
+      "baseline_tokens": 1307,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2446.00200100831,
+      "baseline_success": true,
+      "cumulative_tokens_online": 30221,
+      "cumulative_tokens_baseline": 48789,
+      "cumulative_tokens_saved": 18568,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 36722.98587801197,
+      "cumulative_compile_wallclock_ms": 57.741288997931406
+    },
+    {
+      "episode": 42,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1291,
+      "llm_latency_ms": 2345.618667000963,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.030165996577125043,
+      "baseline_tokens": 1293,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2337.4087090051034,
+      "baseline_success": true,
+      "cumulative_tokens_online": 31512,
+      "cumulative_tokens_baseline": 50082,
+      "cumulative_tokens_saved": 18570,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 36714.77592001611,
+      "cumulative_compile_wallclock_ms": 57.77145499450853
+    },
+    {
+      "episode": 43,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1299,
+      "llm_latency_ms": 2427.401415996428,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 0.03541700425557792,
+      "baseline_tokens": 1295,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2446.912583000085,
+      "baseline_success": true,
+      "cumulative_tokens_online": 32811,
+      "cumulative_tokens_baseline": 51377,
+      "cumulative_tokens_saved": 18566,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 36734.287087019766,
+      "cumulative_compile_wallclock_ms": 57.80687199876411
+    },
+    {
+      "episode": 44,
+      "phase": "B",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 5,
+      "reflex_calls": 0,
+      "tokens": 1285,
+      "llm_latency_ms": 2404.711417009821,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 5
+      },
+      "active_version_during_episode": 1,
+      "compile_wallclock_ms": 20.0827080043382,
+      "baseline_tokens": 1287,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2398.107125009119,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 52664,
+      "cumulative_tokens_saved": 18568,
+      "cumulative_reflex_calls": 80,
+      "cumulative_llm_latency_saved_ms": 36727.68279501906,
+      "cumulative_compile_wallclock_ms": 77.88958000310231
+    },
+    {
+      "episode": 45,
+      "phase": "C",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0025420013116672635,
+      "baseline_tokens": 1163,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2385.784666010295,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 53827,
+      "cumulative_tokens_saved": 19731,
+      "cumulative_reflex_calls": 85,
+      "cumulative_llm_latency_saved_ms": 39113.46746102936,
+      "cumulative_compile_wallclock_ms": 77.89212200441398
+    },
+    {
+      "episode": 46,
+      "phase": "C",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0009170034900307655,
+      "baseline_tokens": 1084,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2220.8034999930533,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 54911,
+      "cumulative_tokens_saved": 20815,
+      "cumulative_reflex_calls": 90,
+      "cumulative_llm_latency_saved_ms": 41334.27096102241,
+      "cumulative_compile_wallclock_ms": 77.89303900790401
+    },
+    {
+      "episode": 47,
+      "phase": "C",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0011250012903474271,
+      "baseline_tokens": 1368,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2436.647707996599,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 56279,
+      "cumulative_tokens_saved": 22183,
+      "cumulative_reflex_calls": 95,
+      "cumulative_llm_latency_saved_ms": 43770.91866901901,
+      "cumulative_compile_wallclock_ms": 77.89416400919436
+    },
+    {
+      "episode": 48,
+      "phase": "C",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0010000003385357559,
+      "baseline_tokens": 1036,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2347.9929989989614,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 57315,
+      "cumulative_tokens_saved": 23219,
+      "cumulative_reflex_calls": 100,
+      "cumulative_llm_latency_saved_ms": 46118.91166801797,
+      "cumulative_compile_wallclock_ms": 77.89516400953289
+    },
+    {
+      "episode": 49,
+      "phase": "C",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0007499984349124134,
+      "baseline_tokens": 1307,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2357.4984160077292,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 58622,
+      "cumulative_tokens_saved": 24526,
+      "cumulative_reflex_calls": 105,
+      "cumulative_llm_latency_saved_ms": 48476.4100840257,
+      "cumulative_compile_wallclock_ms": 77.8959140079678
+    },
+    {
+      "episode": 50,
+      "phase": "C",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0008749993867240846,
+      "baseline_tokens": 1155,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2417.926541987981,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 59777,
+      "cumulative_tokens_saved": 25681,
+      "cumulative_reflex_calls": 110,
+      "cumulative_llm_latency_saved_ms": 50894.33662601368,
+      "cumulative_compile_wallclock_ms": 77.89678900735453
+    },
+    {
+      "episode": 51,
+      "phase": "C",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0007499984349124134,
+      "baseline_tokens": 1083,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2234.6160400047665,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 60860,
+      "cumulative_tokens_saved": 26764,
+      "cumulative_reflex_calls": 115,
+      "cumulative_llm_latency_saved_ms": 53128.95266601845,
+      "cumulative_compile_wallclock_ms": 77.89753900578944
+    },
+    {
+      "episode": 52,
+      "phase": "C",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0010419971658848226,
+      "baseline_tokens": 1376,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2417.203166987747,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 62236,
+      "cumulative_tokens_saved": 28140,
+      "cumulative_reflex_calls": 120,
+      "cumulative_llm_latency_saved_ms": 55546.155833006196,
+      "cumulative_compile_wallclock_ms": 77.89858100295532
+    },
+    {
+      "episode": 53,
+      "phase": "C",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0008330025593750179,
+      "baseline_tokens": 1036,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2251.158792998467,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 63272,
+      "cumulative_tokens_saved": 29176,
+      "cumulative_reflex_calls": 125,
+      "cumulative_llm_latency_saved_ms": 57797.31462600466,
+      "cumulative_compile_wallclock_ms": 77.8994140055147
+    },
+    {
+      "episode": 54,
+      "phase": "C",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0007499984349124134,
+      "baseline_tokens": 1293,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2482.6535830143257,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 64565,
+      "cumulative_tokens_saved": 30469,
+      "cumulative_reflex_calls": 130,
+      "cumulative_llm_latency_saved_ms": 60279.96820901899,
+      "cumulative_compile_wallclock_ms": 77.90016400394961
+    },
+    {
+      "episode": 55,
+      "phase": "C",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0007079943316057324,
+      "baseline_tokens": 1152,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2307.14845899638,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 65717,
+      "cumulative_tokens_saved": 31621,
+      "cumulative_reflex_calls": 135,
+      "cumulative_llm_latency_saved_ms": 62587.11666801537,
+      "cumulative_compile_wallclock_ms": 77.90087199828122
+    },
+    {
+      "episode": 56,
+      "phase": "C",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0007919952622614801,
+      "baseline_tokens": 1083,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2243.6955829980434,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 66800,
+      "cumulative_tokens_saved": 32704,
+      "cumulative_reflex_calls": 140,
+      "cumulative_llm_latency_saved_ms": 64830.81225101341,
+      "cumulative_compile_wallclock_ms": 77.90166399354348
+    },
+    {
+      "episode": 57,
+      "phase": "C",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0007920025382190943,
+      "baseline_tokens": 1372,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2437.5532920093974,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 68172,
+      "cumulative_tokens_saved": 34076,
+      "cumulative_reflex_calls": 145,
+      "cumulative_llm_latency_saved_ms": 67268.36554302281,
+      "cumulative_compile_wallclock_ms": 77.9024559960817
+    },
+    {
+      "episode": 58,
+      "phase": "C",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0008330025593750179,
+      "baseline_tokens": 1034,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2286.9785010043415,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34096,
+      "cumulative_tokens_baseline": 69206,
+      "cumulative_tokens_saved": 35110,
+      "cumulative_reflex_calls": 150,
+      "cumulative_llm_latency_saved_ms": 69555.34404402715,
+      "cumulative_compile_wallclock_ms": 77.90328899864107
+    },
+    {
+      "episode": 59,
+      "phase": "C",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 1,
+      "reflex_calls": 4,
+      "tokens": 191,
+      "llm_latency_ms": 473.56745800061617,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {
+        "out_of_distribution": 1
+      },
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.01566599530633539,
+      "baseline_tokens": 1295,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2551.1285830070847,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 70501,
+      "cumulative_tokens_saved": 36214,
+      "cumulative_reflex_calls": 154,
+      "cumulative_llm_latency_saved_ms": 71632.90516903362,
+      "cumulative_compile_wallclock_ms": 77.91895499394741
+    },
+    {
+      "episode": 60,
+      "phase": "C",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0025420013116672635,
+      "baseline_tokens": 1153,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2400.0613750104094,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 71654,
+      "cumulative_tokens_saved": 37367,
+      "cumulative_reflex_calls": 159,
+      "cumulative_llm_latency_saved_ms": 74032.96654404403,
+      "cumulative_compile_wallclock_ms": 77.92149699525908
+    },
+    {
+      "episode": 61,
+      "phase": "C",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.007041999197099358,
+      "baseline_tokens": 1084,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2249.4552499920246,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 72738,
+      "cumulative_tokens_saved": 38451,
+      "cumulative_reflex_calls": 164,
+      "cumulative_llm_latency_saved_ms": 76282.42179403605,
+      "cumulative_compile_wallclock_ms": 77.92853899445618
+    },
+    {
+      "episode": 62,
+      "phase": "C",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.001959000655915588,
+      "baseline_tokens": 1371,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2329.61325100041,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 74109,
+      "cumulative_tokens_saved": 39822,
+      "cumulative_reflex_calls": 169,
+      "cumulative_llm_latency_saved_ms": 78612.03504503646,
+      "cumulative_compile_wallclock_ms": 77.93049799511209
+    },
+    {
+      "episode": 63,
+      "phase": "C",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0015420009731315076,
+      "baseline_tokens": 1020,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2118.7455839972245,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 75129,
+      "cumulative_tokens_saved": 40842,
+      "cumulative_reflex_calls": 174,
+      "cumulative_llm_latency_saved_ms": 80730.78062903369,
+      "cumulative_compile_wallclock_ms": 77.93203999608522
+    },
+    {
+      "episode": 64,
+      "phase": "C",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0010000003385357559,
+      "baseline_tokens": 1280,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2223.796083002526,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 76409,
+      "cumulative_tokens_saved": 42122,
+      "cumulative_reflex_calls": 179,
+      "cumulative_llm_latency_saved_ms": 82954.57671203621,
+      "cumulative_compile_wallclock_ms": 77.93303999642376
+    },
+    {
+      "episode": 65,
+      "phase": "C",
+      "family": "missing_import",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.000957996235229075,
+      "baseline_tokens": 1154,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2310.389292004402,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 77563,
+      "cumulative_tokens_saved": 43276,
+      "cumulative_reflex_calls": 184,
+      "cumulative_llm_latency_saved_ms": 85264.96600404062,
+      "cumulative_compile_wallclock_ms": 77.93399799265899
+    },
+    {
+      "episode": 66,
+      "phase": "C",
+      "family": "wrong_constant",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.000833999365568161,
+      "baseline_tokens": 1083,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2479.594584008737,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 78646,
+      "cumulative_tokens_saved": 44359,
+      "cumulative_reflex_calls": 189,
+      "cumulative_llm_latency_saved_ms": 87744.56058804935,
+      "cumulative_compile_wallclock_ms": 77.93483199202456
+    },
+    {
+      "episode": 67,
+      "phase": "C",
+      "family": "renamed_symbol",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0011669981176964939,
+      "baseline_tokens": 1382,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2491.7299179942347,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 80028,
+      "cumulative_tokens_saved": 45741,
+      "cumulative_reflex_calls": 194,
+      "cumulative_llm_latency_saved_ms": 90236.29050604359,
+      "cumulative_compile_wallclock_ms": 77.93599899014225
+    },
+    {
+      "episode": 68,
+      "phase": "C",
+      "family": "off_by_one",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0009170034900307655,
+      "baseline_tokens": 1024,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2126.0745429899544,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 81052,
+      "cumulative_tokens_saved": 46765,
+      "cumulative_reflex_calls": 199,
+      "cumulative_llm_latency_saved_ms": 92362.36504903354,
+      "cumulative_compile_wallclock_ms": 77.93691599363228
+    },
+    {
+      "episode": 69,
+      "phase": "C",
+      "family": "syntax_error",
+      "success": true,
+      "steps": 5,
+      "llm_calls": 0,
+      "reflex_calls": 5,
+      "tokens": 0,
+      "llm_latency_ms": 0.0,
+      "invalid_llm_actions": 0,
+      "invalid_reflex_actions": 0,
+      "fallback_reasons": {},
+      "active_version_during_episode": 2,
+      "compile_wallclock_ms": 0.0008330025593750179,
+      "baseline_tokens": 1301,
+      "baseline_llm_calls": 5,
+      "baseline_llm_latency_ms": 2483.6232910020044,
+      "baseline_success": true,
+      "cumulative_tokens_online": 34287,
+      "cumulative_tokens_baseline": 82353,
+      "cumulative_tokens_saved": 48066,
+      "cumulative_reflex_calls": 204,
+      "cumulative_llm_latency_saved_ms": 94845.98834003555,
+      "cumulative_compile_wallclock_ms": 77.93774899619166
+    }
+  ],
+  "llm_usage": {
+    "online": {
+      "calls": 141,
+      "prompt_tokens": 29922,
+      "completion_tokens": 4365,
+      "total_tokens": 34287,
+      "latency_ms": 67575.15066298947,
+      "estimated_cost_usd": 0.0,
+      "invalid_actions": 0,
+      "repaired_actions": 0,
+      "request_failures": 0,
+      "mean_latency_ms": 479.2563876807764,
+      "mean_tokens_per_call": 243.17021276595744
+    },
+    "baseline": {
+      "calls": 345,
+      "prompt_tokens": 71671,
+      "completion_tokens": 10682,
+      "total_tokens": 82353,
+      "latency_ms": 162421.13900302502,
+      "estimated_cost_usd": 0.0,
+      "invalid_actions": 0,
+      "repaired_actions": 0,
+      "request_failures": 0,
+      "mean_latency_ms": 470.7859101536957,
+      "mean_tokens_per_call": 238.70434782608694
+    },
+    "llm_call_reduction": 0.591304347826087,
+    "token_reduction": 0.5836581545298897,
+    "llm_latency_reduction": 0.5839510110704806
+  },
+  "amortization": {
+    "compile_llm_tokens": 0,
+    "compile_wallclock_ms": 77.93774899619166,
+    "cumulative_tokens_saved": 48066,
+    "cumulative_llm_latency_saved_ms": 94845.98834003555,
+    "latency_break_even_episode": 17,
+    "note": "Online acquisition spends no extra LLM tokens on compilation: teacher labels come from deliberative calls the LLM-only baseline also pays for. Token savings are therefore net from the first reflex use. The only extra cost is local compile and validation wall-clock, compared here against cumulative LLM latency saved."
+  },
+  "experience_buffer": {
+    "trusted_episodes": 29,
+    "trusted_traces": 141,
+    "rejected_failed_episodes": 1,
+    "ignored_self_labels": 204,
+    "failed_episode_success": false,
+    "failed_episode_added_traces": 0
+  },
+  "promotions": [
+    {
+      "stream_episode": 8,
+      "version": 0,
+      "promoted": false,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 0.9,
+      "train_traces": 30,
+      "validation_traces": 10,
+      "reason": "insufficient_family_evidence:missing_import,wrong_constant",
+      "train_families": {
+        "missing_import": 10,
+        "wrong_constant": 10,
+        "renamed_symbol": 5,
+        "off_by_one": 5
+      },
+      "validation_families": {
+        "renamed_symbol": 5,
+        "off_by_one": 5
+      },
+      "ood_acceptance_by_family": {
+        "off_by_one": 1.0,
+        "renamed_symbol": 0.8
+      },
+      "outcome": "insufficient_evidence",
+      "certification": {
+        "mode": "family_aware",
+        "quality_feasible": true,
+        "overall_acceptance": 0.9,
+        "acceptance_by_family": {
+          "off_by_one": 1.0,
+          "renamed_symbol": 0.8
+        },
+        "train_families": {
+          "missing_import": 10,
+          "wrong_constant": 10,
+          "renamed_symbol": 5,
+          "off_by_one": 5
+        },
+        "validation_families": {
+          "renamed_symbol": 5,
+          "off_by_one": 5
+        },
+        "validation_episodes_by_family": {
+          "renamed_symbol": 1,
+          "off_by_one": 1
+        },
+        "probe_evaluations": 0,
+        "groups": {
+          "off_by_one": {
+            "kind": "novel",
+            "status": "pass",
+            "episodes": 1,
+            "acceptance": 1.0
+          },
+          "renamed_symbol": {
+            "kind": "novel",
+            "status": "pass",
+            "episodes": 1,
+            "acceptance": 0.8
+          },
+          "missing_import": {
+            "kind": "novel",
+            "status": "insufficient",
+            "episodes": 0,
+            "acceptance": null
+          },
+          "wrong_constant": {
+            "kind": "novel",
+            "status": "insufficient",
+            "episodes": 0,
+            "acceptance": null
+          }
+        },
+        "outcome": "insufficient_evidence",
+        "reason": "insufficient_family_evidence:missing_import,wrong_constant"
+      },
+      "shadow_certification": {
+        "mode": "recent",
+        "quality_feasible": true,
+        "overall_acceptance": 0.9,
+        "acceptance_by_family": {
+          "off_by_one": 1.0,
+          "renamed_symbol": 0.8
+        },
+        "train_families": {
+          "missing_import": 10,
+          "wrong_constant": 10,
+          "renamed_symbol": 5,
+          "off_by_one": 5
+        },
+        "validation_families": {
+          "renamed_symbol": 5,
+          "off_by_one": 5
+        },
+        "validation_episodes_by_family": {
+          "renamed_symbol": 1,
+          "off_by_one": 1
+        },
+        "probe_evaluations": 0,
+        "groups": {},
+        "outcome": "promoted",
+        "reason": "quality_and_trust_pass"
+      },
+      "families_in_buffer": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "wrong_constant"
+      ],
+      "compile_wallclock_ms": 6.610874996113125
+    },
+    {
+      "stream_episode": 12,
+      "version": 0,
+      "promoted": false,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 1.0,
+      "train_traces": 45,
+      "validation_traces": 15,
+      "reason": "insufficient_family_evidence:missing_import",
+      "train_families": {
+        "missing_import": 15,
+        "wrong_constant": 10,
+        "renamed_symbol": 10,
+        "off_by_one": 10
+      },
+      "validation_families": {
+        "wrong_constant": 5,
+        "renamed_symbol": 5,
+        "off_by_one": 5
+      },
+      "ood_acceptance_by_family": {
+        "off_by_one": 1.0,
+        "renamed_symbol": 1.0,
+        "wrong_constant": 1.0
+      },
+      "outcome": "insufficient_evidence",
+      "certification": {
+        "mode": "family_aware",
+        "quality_feasible": true,
+        "overall_acceptance": 1.0,
+        "acceptance_by_family": {
+          "off_by_one": 1.0,
+          "renamed_symbol": 1.0,
+          "wrong_constant": 1.0
+        },
+        "train_families": {
+          "missing_import": 15,
+          "wrong_constant": 10,
+          "renamed_symbol": 10,
+          "off_by_one": 10
+        },
+        "validation_families": {
+          "wrong_constant": 5,
+          "renamed_symbol": 5,
+          "off_by_one": 5
+        },
+        "validation_episodes_by_family": {
+          "wrong_constant": 1,
+          "renamed_symbol": 1,
+          "off_by_one": 1
+        },
+        "probe_evaluations": 0,
+        "groups": {
+          "off_by_one": {
+            "kind": "novel",
+            "status": "pass",
+            "episodes": 1,
+            "acceptance": 1.0
+          },
+          "renamed_symbol": {
+            "kind": "novel",
+            "status": "pass",
+            "episodes": 1,
+            "acceptance": 1.0
+          },
+          "wrong_constant": {
+            "kind": "novel",
+            "status": "pass",
+            "episodes": 1,
+            "acceptance": 1.0
+          },
+          "missing_import": {
+            "kind": "novel",
+            "status": "insufficient",
+            "episodes": 0,
+            "acceptance": null
+          }
+        },
+        "outcome": "insufficient_evidence",
+        "reason": "insufficient_family_evidence:missing_import"
+      },
+      "shadow_certification": {
+        "mode": "recent",
+        "quality_feasible": true,
+        "overall_acceptance": 1.0,
+        "acceptance_by_family": {
+          "off_by_one": 1.0,
+          "renamed_symbol": 1.0,
+          "wrong_constant": 1.0
+        },
+        "train_families": {
+          "missing_import": 15,
+          "wrong_constant": 10,
+          "renamed_symbol": 10,
+          "off_by_one": 10
+        },
+        "validation_families": {
+          "wrong_constant": 5,
+          "renamed_symbol": 5,
+          "off_by_one": 5
+        },
+        "validation_episodes_by_family": {
+          "wrong_constant": 1,
+          "renamed_symbol": 1,
+          "off_by_one": 1
+        },
+        "probe_evaluations": 0,
+        "groups": {},
+        "outcome": "promoted",
+        "reason": "quality_and_trust_pass"
+      },
+      "families_in_buffer": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "wrong_constant"
+      ],
+      "compile_wallclock_ms": 6.441208002797794
+    },
+    {
+      "stream_episode": 16,
+      "version": 1,
+      "promoted": true,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 1.0,
+      "train_traces": 60,
+      "validation_traces": 20,
+      "reason": "family_certification_pass",
+      "train_families": {
+        "missing_import": 15,
+        "wrong_constant": 15,
+        "renamed_symbol": 15,
+        "off_by_one": 15
+      },
+      "validation_families": {
+        "missing_import": 5,
+        "wrong_constant": 5,
+        "renamed_symbol": 5,
+        "off_by_one": 5
+      },
+      "ood_acceptance_by_family": {
+        "missing_import": 1.0,
+        "off_by_one": 1.0,
+        "renamed_symbol": 1.0,
+        "wrong_constant": 1.0
+      },
+      "outcome": "promoted",
+      "certification": {
+        "mode": "family_aware",
+        "quality_feasible": true,
+        "overall_acceptance": 1.0,
+        "acceptance_by_family": {
+          "missing_import": 1.0,
+          "off_by_one": 1.0,
+          "renamed_symbol": 1.0,
+          "wrong_constant": 1.0
+        },
+        "train_families": {
+          "missing_import": 15,
+          "wrong_constant": 15,
+          "renamed_symbol": 15,
+          "off_by_one": 15
+        },
+        "validation_families": {
+          "missing_import": 5,
+          "wrong_constant": 5,
+          "renamed_symbol": 5,
+          "off_by_one": 5
+        },
+        "validation_episodes_by_family": {
+          "missing_import": 1,
+          "wrong_constant": 1,
+          "renamed_symbol": 1,
+          "off_by_one": 1
+        },
+        "probe_evaluations": 0,
+        "groups": {
+          "missing_import": {
+            "kind": "novel",
+            "status": "pass",
+            "episodes": 1,
+            "acceptance": 1.0
+          },
+          "off_by_one": {
+            "kind": "novel",
+            "status": "pass",
+            "episodes": 1,
+            "acceptance": 1.0
+          },
+          "renamed_symbol": {
+            "kind": "novel",
+            "status": "pass",
+            "episodes": 1,
+            "acceptance": 1.0
+          },
+          "wrong_constant": {
+            "kind": "novel",
+            "status": "pass",
+            "episodes": 1,
+            "acceptance": 1.0
+          }
+        },
+        "outcome": "promoted",
+        "reason": "family_certification_pass"
+      },
+      "shadow_certification": {
+        "mode": "recent",
+        "quality_feasible": true,
+        "overall_acceptance": 1.0,
+        "acceptance_by_family": {
+          "missing_import": 1.0,
+          "off_by_one": 1.0,
+          "renamed_symbol": 1.0,
+          "wrong_constant": 1.0
+        },
+        "train_families": {
+          "missing_import": 15,
+          "wrong_constant": 15,
+          "renamed_symbol": 15,
+          "off_by_one": 15
+        },
+        "validation_families": {
+          "missing_import": 5,
+          "wrong_constant": 5,
+          "renamed_symbol": 5,
+          "off_by_one": 5
+        },
+        "validation_episodes_by_family": {
+          "missing_import": 1,
+          "wrong_constant": 1,
+          "renamed_symbol": 1,
+          "off_by_one": 1
+        },
+        "probe_evaluations": 0,
+        "groups": {},
+        "outcome": "promoted",
+        "reason": "quality_and_trust_pass"
+      },
+      "families_in_buffer": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "wrong_constant"
+      ],
+      "compile_wallclock_ms": 6.275791994994506
+    },
+    {
+      "stream_episode": 36,
+      "version": 1,
+      "promoted": false,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 0.2,
+      "train_traces": 75,
+      "validation_traces": 25,
+      "reason": "family_certification_failed:syntax_error",
+      "train_families": {
+        "missing_import": 20,
+        "wrong_constant": 20,
+        "renamed_symbol": 20,
+        "off_by_one": 15
+      },
+      "validation_families": {
+        "off_by_one": 5,
+        "syntax_error": 20
+      },
+      "ood_acceptance_by_family": {
+        "off_by_one": 1.0,
+        "syntax_error": 0.0
+      },
+      "outcome": "rejected",
+      "certification": {
+        "mode": "family_aware",
+        "quality_feasible": true,
+        "overall_acceptance": 0.2,
+        "acceptance_by_family": {
+          "off_by_one": 1.0,
+          "syntax_error": 0.0
+        },
+        "train_families": {
+          "missing_import": 20,
+          "wrong_constant": 20,
+          "renamed_symbol": 20,
+          "off_by_one": 15
+        },
+        "validation_families": {
+          "off_by_one": 5,
+          "syntax_error": 20
+        },
+        "validation_episodes_by_family": {
+          "off_by_one": 1,
+          "syntax_error": 4
+        },
+        "probe_evaluations": 80,
+        "groups": {
+          "syntax_error": {
+            "kind": "novel",
+            "status": "fail",
+            "episodes": 4,
+            "acceptance": 0.0
+          },
+          "missing_import": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "off_by_one": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "renamed_symbol": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "wrong_constant": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          }
+        },
+        "outcome": "rejected",
+        "reason": "family_certification_failed:syntax_error"
+      },
+      "shadow_certification": {
+        "mode": "recent",
+        "quality_feasible": true,
+        "overall_acceptance": 0.2,
+        "acceptance_by_family": {
+          "off_by_one": 1.0,
+          "syntax_error": 0.0
+        },
+        "train_families": {
+          "missing_import": 20,
+          "wrong_constant": 20,
+          "renamed_symbol": 20,
+          "off_by_one": 15
+        },
+        "validation_families": {
+          "off_by_one": 5,
+          "syntax_error": 20
+        },
+        "validation_episodes_by_family": {
+          "off_by_one": 1,
+          "syntax_error": 4
+        },
+        "probe_evaluations": 0,
+        "groups": {},
+        "outcome": "rejected",
+        "reason": "ood_shadow_coverage_failed"
+      },
+      "families_in_buffer": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error",
+        "wrong_constant"
+      ],
+      "compile_wallclock_ms": 17.87750000221422
+    },
+    {
+      "stream_episode": 40,
+      "version": 1,
+      "promoted": false,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 0.3,
+      "train_traces": 90,
+      "validation_traces": 30,
+      "reason": "family_certification_failed:syntax_error",
+      "train_families": {
+        "missing_import": 20,
+        "wrong_constant": 20,
+        "renamed_symbol": 20,
+        "off_by_one": 20,
+        "syntax_error": 10
+      },
+      "validation_families": {
+        "syntax_error": 30
+      },
+      "ood_acceptance_by_family": {
+        "syntax_error": 0.3
+      },
+      "outcome": "rejected",
+      "certification": {
+        "mode": "family_aware",
+        "quality_feasible": true,
+        "overall_acceptance": 0.3,
+        "acceptance_by_family": {
+          "syntax_error": 0.3
+        },
+        "train_families": {
+          "missing_import": 20,
+          "wrong_constant": 20,
+          "renamed_symbol": 20,
+          "off_by_one": 20,
+          "syntax_error": 10
+        },
+        "validation_families": {
+          "syntax_error": 30
+        },
+        "validation_episodes_by_family": {
+          "syntax_error": 6
+        },
+        "probe_evaluations": 80,
+        "groups": {
+          "syntax_error": {
+            "kind": "novel",
+            "status": "fail",
+            "episodes": 6,
+            "acceptance": 0.3
+          },
+          "missing_import": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "off_by_one": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "renamed_symbol": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "wrong_constant": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          }
+        },
+        "outcome": "rejected",
+        "reason": "family_certification_failed:syntax_error"
+      },
+      "shadow_certification": {
+        "mode": "recent",
+        "quality_feasible": true,
+        "overall_acceptance": 0.3,
+        "acceptance_by_family": {
+          "syntax_error": 0.3
+        },
+        "train_families": {
+          "missing_import": 20,
+          "wrong_constant": 20,
+          "renamed_symbol": 20,
+          "off_by_one": 20,
+          "syntax_error": 10
+        },
+        "validation_families": {
+          "syntax_error": 30
+        },
+        "validation_episodes_by_family": {
+          "syntax_error": 6
+        },
+        "probe_evaluations": 0,
+        "groups": {},
+        "outcome": "rejected",
+        "reason": "ood_shadow_coverage_failed"
+      },
+      "families_in_buffer": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error",
+        "wrong_constant"
+      ],
+      "compile_wallclock_ms": 19.982874997367617
+    },
+    {
+      "stream_episode": 44,
+      "version": 2,
+      "promoted": true,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 0.9428571428571428,
+      "train_traces": 105,
+      "validation_traces": 35,
+      "reason": "family_certification_pass",
+      "train_families": {
+        "missing_import": 20,
+        "wrong_constant": 20,
+        "renamed_symbol": 20,
+        "off_by_one": 20,
+        "syntax_error": 25
+      },
+      "validation_families": {
+        "syntax_error": 35
+      },
+      "ood_acceptance_by_family": {
+        "syntax_error": 0.9428571428571428
+      },
+      "outcome": "promoted",
+      "certification": {
+        "mode": "family_aware",
+        "quality_feasible": true,
+        "overall_acceptance": 0.9428571428571428,
+        "acceptance_by_family": {
+          "syntax_error": 0.9428571428571428
+        },
+        "train_families": {
+          "missing_import": 20,
+          "wrong_constant": 20,
+          "renamed_symbol": 20,
+          "off_by_one": 20,
+          "syntax_error": 25
+        },
+        "validation_families": {
+          "syntax_error": 35
+        },
+        "validation_episodes_by_family": {
+          "syntax_error": 7
+        },
+        "probe_evaluations": 80,
+        "groups": {
+          "syntax_error": {
+            "kind": "novel",
+            "status": "pass",
+            "episodes": 7,
+            "acceptance": 0.9428571428571428
+          },
+          "missing_import": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "off_by_one": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "renamed_symbol": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "wrong_constant": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          }
+        },
+        "outcome": "promoted",
+        "reason": "family_certification_pass"
+      },
+      "shadow_certification": {
+        "mode": "recent",
+        "quality_feasible": true,
+        "overall_acceptance": 0.9428571428571428,
+        "acceptance_by_family": {
+          "syntax_error": 0.9428571428571428
+        },
+        "train_families": {
+          "missing_import": 20,
+          "wrong_constant": 20,
+          "renamed_symbol": 20,
+          "off_by_one": 20,
+          "syntax_error": 25
+        },
+        "validation_families": {
+          "syntax_error": 35
+        },
+        "validation_episodes_by_family": {
+          "syntax_error": 7
+        },
+        "probe_evaluations": 0,
+        "groups": {},
+        "outcome": "promoted",
+        "reason": "quality_and_trust_pass"
+      },
+      "families_in_buffer": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error",
+        "wrong_constant"
+      ],
+      "compile_wallclock_ms": 20.0827080043382
+    }
+  ],
+  "active_version": 2,
+  "deliberative_calls_avoided": 204,
+  "success_preserved": true,
+  "limitations": [
+    "Single model, single seed, one 69-episode stream in the full run. Not a robust estimate.",
+    "Supervised imitation of LLM decisions from successful episodes only. No credit assignment, no RL.",
+    "The compiled reflex covers tool-control decisions. apply_fix remains a validated repair primitive.",
+    "Latency comparison mixes local compile wall-clock with remote model latency on one machine."
+  ],
+  "signature_metrics": {
+    "time_to_reflex": {
+      "validated_episodes": 12,
+      "validated_decisions": 60,
+      "learning_evidence": {
+        "episodes": 5,
+        "decisions": 25
+      },
+      "certification_evidence": {
+        "episodes": 7,
+        "decisions": 35
+      },
+      "candidates_rejected_before_representation": 2,
+      "time_to_mature_episodes": 15,
+      "outcome": "promoted",
+      "definition": "validated novel-family episodes before the first promotion representing the family; learning evidence is the novel share of that candidate's train split, certification evidence the novel share of its validation split"
+    },
+    "acquisition_debt": {
+      "episodes": 12,
+      "decisions": 60,
+      "tokens": 15516,
+      "llm_latency_ms": 29691.966291989957,
+      "reflex_reached": true
+    },
+    "reflex_dividend": {
+      "novel_episodes_after_representation": 5,
+      "novel_tokens_saved": 6285,
+      "novel_llm_calls_saved": 24,
+      "novel_llm_latency_saved_ms": 11625.132498033054,
+      "novel_fast_path_after_representation": 0.96,
+      "total_tokens_saved": 48066,
+      "total_llm_latency_saved_ms": 94845.98834003555
+    },
+    "debt_recovery_ratio_tokens": 0.40506573859242073
+  },
+  "promotion_audit": [
+    {
+      "stream_episode": 8,
+      "candidate_version": 1,
+      "promoted": false,
+      "reason": "insufficient_family_evidence:missing_import,wrong_constant",
+      "train_traces": {
+        "known": 30,
+        "novel": 0
+      },
+      "validation_traces": {
+        "known": 10,
+        "novel": 0
+      },
+      "train_episodes": {
+        "known": 6,
+        "novel": 0
+      },
+      "validation_episodes": {
+        "known": 2,
+        "novel": 0
+      },
+      "validation_novel_share": 0.0,
+      "overall_shadow_acceptance": 0.9,
+      "novel_shadow_acceptance": null,
+      "recorded_train_traces": 30,
+      "recorded_validation_traces": 10,
+      "reconstruction_matches_record": true
+    },
+    {
+      "stream_episode": 12,
+      "candidate_version": 1,
+      "promoted": false,
+      "reason": "insufficient_family_evidence:missing_import",
+      "train_traces": {
+        "known": 45,
+        "novel": 0
+      },
+      "validation_traces": {
+        "known": 15,
+        "novel": 0
+      },
+      "train_episodes": {
+        "known": 9,
+        "novel": 0
+      },
+      "validation_episodes": {
+        "known": 3,
+        "novel": 0
+      },
+      "validation_novel_share": 0.0,
+      "overall_shadow_acceptance": 1.0,
+      "novel_shadow_acceptance": null,
+      "recorded_train_traces": 45,
+      "recorded_validation_traces": 15,
+      "reconstruction_matches_record": true
+    },
+    {
+      "stream_episode": 16,
+      "candidate_version": 1,
+      "promoted": true,
+      "reason": "family_certification_pass",
+      "train_traces": {
+        "known": 60,
+        "novel": 0
+      },
+      "validation_traces": {
+        "known": 20,
+        "novel": 0
+      },
+      "train_episodes": {
+        "known": 12,
+        "novel": 0
+      },
+      "validation_episodes": {
+        "known": 4,
+        "novel": 0
+      },
+      "validation_novel_share": 0.0,
+      "overall_shadow_acceptance": 1.0,
+      "novel_shadow_acceptance": null,
+      "recorded_train_traces": 60,
+      "recorded_validation_traces": 20,
+      "reconstruction_matches_record": true
+    },
+    {
+      "stream_episode": 36,
+      "candidate_version": 2,
+      "promoted": false,
+      "reason": "family_certification_failed:syntax_error",
+      "train_traces": {
+        "known": 75,
+        "novel": 0
+      },
+      "validation_traces": {
+        "known": 5,
+        "novel": 20
+      },
+      "train_episodes": {
+        "known": 15,
+        "novel": 0
+      },
+      "validation_episodes": {
+        "known": 1,
+        "novel": 4
+      },
+      "validation_novel_share": 0.8,
+      "overall_shadow_acceptance": 0.2,
+      "novel_shadow_acceptance": 0.0,
+      "recorded_train_traces": 75,
+      "recorded_validation_traces": 25,
+      "reconstruction_matches_record": true
+    },
+    {
+      "stream_episode": 40,
+      "candidate_version": 2,
+      "promoted": false,
+      "reason": "family_certification_failed:syntax_error",
+      "train_traces": {
+        "known": 80,
+        "novel": 10
+      },
+      "validation_traces": {
+        "known": 0,
+        "novel": 30
+      },
+      "train_episodes": {
+        "known": 16,
+        "novel": 2
+      },
+      "validation_episodes": {
+        "known": 0,
+        "novel": 6
+      },
+      "validation_novel_share": 1.0,
+      "overall_shadow_acceptance": 0.3,
+      "novel_shadow_acceptance": 0.3,
+      "recorded_train_traces": 90,
+      "recorded_validation_traces": 30,
+      "reconstruction_matches_record": true
+    },
+    {
+      "stream_episode": 44,
+      "candidate_version": 2,
+      "promoted": true,
+      "reason": "family_certification_pass",
+      "train_traces": {
+        "known": 80,
+        "novel": 25
+      },
+      "validation_traces": {
+        "known": 0,
+        "novel": 35
+      },
+      "train_episodes": {
+        "known": 16,
+        "novel": 5
+      },
+      "validation_episodes": {
+        "known": 0,
+        "novel": 7
+      },
+      "validation_novel_share": 1.0,
+      "overall_shadow_acceptance": 0.9428571428571428,
+      "novel_shadow_acceptance": 0.9428571428571428,
+      "recorded_train_traces": 105,
+      "recorded_validation_traces": 35,
+      "reconstruction_matches_record": true
+    }
+  ],
+  "replication": {
+    "model": "qwen3:4b-instruct",
+    "api_style": "ollama",
+    "arrival": "burst",
+    "seed": 0
+  },
+  "certification_mode": "family_aware",
+  "certification_options": {
+    "min_family_validation_episodes": 1
+  },
+  "candidate_comparison": [
+    {
+      "stream_episode": 8,
+      "primary_mode": "family_aware",
+      "primary_outcome": "insufficient_evidence",
+      "primary_reason": "insufficient_family_evidence:missing_import,wrong_constant",
+      "shadow_mode": "recent",
+      "shadow_outcome": "promoted",
+      "shadow_reason": "quality_and_trust_pass",
+      "probe_evaluations": 0,
+      "groups": {
+        "off_by_one": {
+          "kind": "novel",
+          "status": "pass",
+          "episodes": 1,
+          "acceptance": 1.0
+        },
+        "renamed_symbol": {
+          "kind": "novel",
+          "status": "pass",
+          "episodes": 1,
+          "acceptance": 0.8
+        },
+        "missing_import": {
+          "kind": "novel",
+          "status": "insufficient",
+          "episodes": 0,
+          "acceptance": null
+        },
+        "wrong_constant": {
+          "kind": "novel",
+          "status": "insufficient",
+          "episodes": 0,
+          "acceptance": null
+        }
+      }
+    },
+    {
+      "stream_episode": 12,
+      "primary_mode": "family_aware",
+      "primary_outcome": "insufficient_evidence",
+      "primary_reason": "insufficient_family_evidence:missing_import",
+      "shadow_mode": "recent",
+      "shadow_outcome": "promoted",
+      "shadow_reason": "quality_and_trust_pass",
+      "probe_evaluations": 0,
+      "groups": {
+        "off_by_one": {
+          "kind": "novel",
+          "status": "pass",
+          "episodes": 1,
+          "acceptance": 1.0
+        },
+        "renamed_symbol": {
+          "kind": "novel",
+          "status": "pass",
+          "episodes": 1,
+          "acceptance": 1.0
+        },
+        "wrong_constant": {
+          "kind": "novel",
+          "status": "pass",
+          "episodes": 1,
+          "acceptance": 1.0
+        },
+        "missing_import": {
+          "kind": "novel",
+          "status": "insufficient",
+          "episodes": 0,
+          "acceptance": null
+        }
+      }
+    },
+    {
+      "stream_episode": 16,
+      "primary_mode": "family_aware",
+      "primary_outcome": "promoted",
+      "primary_reason": "family_certification_pass",
+      "shadow_mode": "recent",
+      "shadow_outcome": "promoted",
+      "shadow_reason": "quality_and_trust_pass",
+      "probe_evaluations": 0,
+      "groups": {
+        "missing_import": {
+          "kind": "novel",
+          "status": "pass",
+          "episodes": 1,
+          "acceptance": 1.0
+        },
+        "off_by_one": {
+          "kind": "novel",
+          "status": "pass",
+          "episodes": 1,
+          "acceptance": 1.0
+        },
+        "renamed_symbol": {
+          "kind": "novel",
+          "status": "pass",
+          "episodes": 1,
+          "acceptance": 1.0
+        },
+        "wrong_constant": {
+          "kind": "novel",
+          "status": "pass",
+          "episodes": 1,
+          "acceptance": 1.0
+        }
+      }
+    },
+    {
+      "stream_episode": 36,
+      "primary_mode": "family_aware",
+      "primary_outcome": "rejected",
+      "primary_reason": "family_certification_failed:syntax_error",
+      "shadow_mode": "recent",
+      "shadow_outcome": "rejected",
+      "shadow_reason": "ood_shadow_coverage_failed",
+      "probe_evaluations": 80,
+      "groups": {
+        "syntax_error": {
+          "kind": "novel",
+          "status": "fail",
+          "episodes": 4,
+          "acceptance": 0.0
+        },
+        "missing_import": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        },
+        "off_by_one": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        },
+        "renamed_symbol": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        },
+        "wrong_constant": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        }
+      }
+    },
+    {
+      "stream_episode": 40,
+      "primary_mode": "family_aware",
+      "primary_outcome": "rejected",
+      "primary_reason": "family_certification_failed:syntax_error",
+      "shadow_mode": "recent",
+      "shadow_outcome": "rejected",
+      "shadow_reason": "ood_shadow_coverage_failed",
+      "probe_evaluations": 80,
+      "groups": {
+        "syntax_error": {
+          "kind": "novel",
+          "status": "fail",
+          "episodes": 6,
+          "acceptance": 0.3
+        },
+        "missing_import": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        },
+        "off_by_one": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        },
+        "renamed_symbol": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        },
+        "wrong_constant": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        }
+      }
+    },
+    {
+      "stream_episode": 44,
+      "primary_mode": "family_aware",
+      "primary_outcome": "promoted",
+      "primary_reason": "family_certification_pass",
+      "shadow_mode": "recent",
+      "shadow_outcome": "promoted",
+      "shadow_reason": "quality_and_trust_pass",
+      "probe_evaluations": 80,
+      "groups": {
+        "syntax_error": {
+          "kind": "novel",
+          "status": "pass",
+          "episodes": 7,
+          "acceptance": 0.9428571428571428
+        },
+        "missing_import": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        },
+        "off_by_one": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        },
+        "renamed_symbol": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        },
+        "wrong_constant": {
+          "kind": "retention",
+          "status": "pass",
+          "probes": 20,
+          "coverage": 1.0,
+          "incumbent_coverage": 1.0,
+          "agreement": 1.0
+        }
+      }
+    }
+  ],
+  "negative_control": {
+    "feasible": true,
+    "damaged_family": "missing_import",
+    "poisoned_traces": 4,
+    "train_traces": 110,
+    "validation_traces": 31,
+    "validation_contains_damaged_family": false,
+    "clean_candidate": {
+      "recent": {
+        "mode": "recent",
+        "quality_feasible": true,
+        "overall_acceptance": 0.9032258064516129,
+        "acceptance_by_family": {
+          "syntax_error": 0.9032258064516129
+        },
+        "train_families": {
+          "missing_import": 20,
+          "wrong_constant": 20,
+          "renamed_symbol": 20,
+          "off_by_one": 20,
+          "syntax_error": 30
+        },
+        "validation_families": {
+          "syntax_error": 31
+        },
+        "validation_episodes_by_family": {
+          "syntax_error": 7
+        },
+        "probe_evaluations": 0,
+        "groups": {},
+        "outcome": "promoted",
+        "reason": "quality_and_trust_pass"
+      },
+      "family_aware": {
+        "mode": "family_aware",
+        "quality_feasible": true,
+        "overall_acceptance": 0.9032258064516129,
+        "acceptance_by_family": {
+          "syntax_error": 0.9032258064516129
+        },
+        "train_families": {
+          "missing_import": 20,
+          "wrong_constant": 20,
+          "renamed_symbol": 20,
+          "off_by_one": 20,
+          "syntax_error": 30
+        },
+        "validation_families": {
+          "syntax_error": 31
+        },
+        "validation_episodes_by_family": {
+          "syntax_error": 7
+        },
+        "probe_evaluations": 100,
+        "groups": {
+          "missing_import": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "off_by_one": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "renamed_symbol": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "syntax_error": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 0.95,
+            "incumbent_coverage": 0.95,
+            "agreement": 1.0
+          },
+          "wrong_constant": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          }
+        },
+        "outcome": "promoted",
+        "reason": "family_certification_pass"
+      },
+      "damaged_family_probe_agreement": {
+        "probes": 20,
+        "agreement": 1.0
+      },
+      "novel_family_probe_agreement": {
+        "probes": 20,
+        "agreement": 1.0
+      }
+    },
+    "poisoned_candidate": {
+      "recent": {
+        "mode": "recent",
+        "quality_feasible": true,
+        "overall_acceptance": 0.9032258064516129,
+        "acceptance_by_family": {
+          "syntax_error": 0.9032258064516129
+        },
+        "train_families": {
+          "missing_import": 20,
+          "wrong_constant": 20,
+          "renamed_symbol": 20,
+          "off_by_one": 20,
+          "syntax_error": 30
+        },
+        "validation_families": {
+          "syntax_error": 31
+        },
+        "validation_episodes_by_family": {
+          "syntax_error": 7
+        },
+        "probe_evaluations": 0,
+        "groups": {},
+        "outcome": "promoted",
+        "reason": "quality_and_trust_pass"
+      },
+      "family_aware": {
+        "mode": "family_aware",
+        "quality_feasible": true,
+        "overall_acceptance": 0.9032258064516129,
+        "acceptance_by_family": {
+          "syntax_error": 0.9032258064516129
+        },
+        "train_families": {
+          "missing_import": 20,
+          "wrong_constant": 20,
+          "renamed_symbol": 20,
+          "off_by_one": 20,
+          "syntax_error": 30
+        },
+        "validation_families": {
+          "syntax_error": 31
+        },
+        "validation_episodes_by_family": {
+          "syntax_error": 7
+        },
+        "probe_evaluations": 100,
+        "groups": {
+          "missing_import": {
+            "kind": "retention",
+            "status": "fail",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 0.8
+          },
+          "off_by_one": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "renamed_symbol": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          },
+          "syntax_error": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 0.95,
+            "incumbent_coverage": 0.95,
+            "agreement": 1.0
+          },
+          "wrong_constant": {
+            "kind": "retention",
+            "status": "pass",
+            "probes": 20,
+            "coverage": 1.0,
+            "incumbent_coverage": 1.0,
+            "agreement": 1.0
+          }
+        },
+        "outcome": "rejected",
+        "reason": "family_certification_failed:missing_import"
+      },
+      "damaged_family_probe_agreement": {
+        "probes": 20,
+        "agreement": 0.8
+      },
+      "novel_family_probe_agreement": {
+        "probes": 20,
+        "agreement": 1.0
+      }
+    }
+  },
+  "retention_probes": {
+    "missing_import": {
+      "traces": 20,
+      "created_version": 1,
+      "created_episode": 16
+    },
+    "wrong_constant": {
+      "traces": 20,
+      "created_version": 1,
+      "created_episode": 16
+    },
+    "renamed_symbol": {
+      "traces": 20,
+      "created_version": 1,
+      "created_episode": 16
+    },
+    "off_by_one": {
+      "traces": 20,
+      "created_version": 1,
+      "created_episode": 16
+    },
+    "syntax_error": {
+      "traces": 20,
+      "created_version": 2,
+      "created_episode": 44
+    }
+  }
+}

@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+title: "Paradigm: Continual Reflex Compilation for Adaptive Systems"
+message: "If you use Paradigm, cite this repository and the research papers relevant to the component you use."
+type: software
+authors:
+  - family-names: Polly
+    given-names: Fabien
+year: 2026
+repository-code: "https://github.com/infinition/paradigm"
+license: MIT

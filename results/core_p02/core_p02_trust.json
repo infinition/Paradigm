@@ -1,0 +1,88 @@
+{
+  "benchmark": "Paradigm Core P0.2 trusted compilation",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "processor": "unknown"
+  },
+  "seed": 41,
+  "claim_level": "synthetic input-space OOD benchmark",
+  "methods": {
+    "nearest_distance": {
+      "id_accept_rate": 0.9833333333333333,
+      "off_manifold_false_accept_rate": 0.0,
+      "weak_pool_valid_accept_rate": 0.34444444444444444,
+      "near_manifold_invalid_false_accept_rate": 0.9822222222222222,
+      "ood_auroc": 1.0
+    },
+    "mahalanobis": {
+      "id_accept_rate": 0.9866666666666667,
+      "off_manifold_false_accept_rate": 0.0,
+      "weak_pool_valid_accept_rate": 0.79,
+      "near_manifold_invalid_false_accept_rate": 0.9366666666666666,
+      "ood_auroc": 1.0
+    },
+    "pca_trusted_subspace": {
+      "id_accept_rate": 0.9888888888888889,
+      "off_manifold_false_accept_rate": 0.0011111111111111111,
+      "weak_pool_valid_accept_rate": 1.0,
+      "near_manifold_invalid_false_accept_rate": 0.9733333333333334,
+      "ood_auroc": 0.9983740740740741
+    },
+    "nonlinear_autoencoder": {
+      "id_accept_rate": 0.9822222222222222,
+      "off_manifold_false_accept_rate": 0.0,
+      "weak_pool_valid_accept_rate": 0.4955555555555556,
+      "near_manifold_invalid_false_accept_rate": 0.9677777777777777,
+      "ood_auroc": 1.0
+    },
+    "classifier_confidence": {
+      "id_accept_rate": 0.9855555555555555,
+      "off_manifold_false_accept_rate": 0.9788888888888889,
+      "weak_pool_valid_accept_rate": 0.9933333333333333,
+      "near_manifold_invalid_false_accept_rate": 0.9855555555555555,
+      "ood_auroc": 0.5617623456790124
+    }
+  },
+  "confidence_threshold": 0.533,
+  "tradeoff_gates": {
+    "nearest_distance": {
+      "off_manifold_pass": true,
+      "weak_pool_pass": false,
+      "id_retention_pass": true,
+      "balanced_pass": false
+    },
+    "mahalanobis": {
+      "off_manifold_pass": true,
+      "weak_pool_pass": true,
+      "id_retention_pass": true,
+      "balanced_pass": true
+    },
+    "pca_trusted_subspace": {
+      "off_manifold_pass": true,
+      "weak_pool_pass": true,
+      "id_retention_pass": true,
+      "balanced_pass": true
+    },
+    "nonlinear_autoencoder": {
+      "off_manifold_pass": true,
+      "weak_pool_pass": false,
+      "id_retention_pass": true,
+      "balanced_pass": false
+    },
+    "classifier_confidence": {
+      "off_manifold_pass": false,
+      "weak_pool_pass": true,
+      "id_retention_pass": true,
+      "balanced_pass": false
+    }
+  },
+  "poisoning_control": {
+    "poison_fraction": 0.12,
+    "clean_accuracy": 0.95,
+    "poisoned_accuracy": 0.9188888888888889,
+    "accuracy_drop": 0.03111111111111109,
+    "input_space_gate_expected_to_detect_label_poisoning": false
+  },
+  "interpretation": "Input-space trusted gates are proxies only. The benchmark tests whether they add OOD information beyond classifier confidence. It does not transfer the adapter-space guarantees or threat model of z-manifold."
+}

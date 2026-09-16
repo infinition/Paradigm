@@ -1,0 +1,425 @@
+{
+  "claim_level": "synthetic persistent family lifecycle benchmark",
+  "epsilon_violation_control": {
+    "approved": false,
+    "candidate_name": "family-3-epsilon-violation-control",
+    "checks": [
+      {
+        "detail": "",
+        "name": "family.route",
+        "passed": true,
+        "requirement": "single represented active family",
+        "value": "fam-ae122447b65b9e644dafc472"
+      },
+      {
+        "detail": "candidate exceeds the family plasticity budget",
+        "name": "plasticity.epsilon",
+        "passed": false,
+        "requirement": "<= 0.007500",
+        "value": 0.03
+      },
+      {
+        "detail": "",
+        "name": "quality.current_accuracy",
+        "passed": true,
+        "requirement": ">= 0.416392",
+        "value": 0.4285
+      },
+      {
+        "detail": "",
+        "name": "quality.protected_accuracy",
+        "passed": true,
+        "requirement": ">= 0.596603",
+        "value": 0.6105
+      },
+      {
+        "detail": "",
+        "name": "quality.minimum_class_accuracy",
+        "passed": true,
+        "requirement": ">= 0.346344",
+        "value": 0.38632162661737524
+      },
+      {
+        "detail": "",
+        "name": "quality.subgroup_accuracy",
+        "passed": true,
+        "requirement": ">= 0.409064",
+        "value": 0.4425925925925926
+      }
+    ],
+    "failure_reasons": [
+      "plasticity.epsilon: candidate exceeds the family plasticity budget"
+    ],
+    "metadata": {
+      "control": "plasticity budget violation",
+      "family_id": "fam-ae122447b65b9e644dafc472",
+      "family_name": "shift-family-3",
+      "family_risk": "high",
+      "route": {
+        "family_id": "fam-ae122447b65b9e644dafc472",
+        "family_name": "shift-family-3",
+        "matches": [
+          {
+            "behavior_similarity": 0.9687232556823305,
+            "family_id": "fam-ae122447b65b9e644dafc472",
+            "family_name": "shift-family-3",
+            "margin": 0.009120297258101484,
+            "parameter_similarity": 0.8960747927244656
+          }
+        ],
+        "reason": "single family match",
+        "status": "represented"
+      }
+    }
+  },
+  "heldout_manifests": {
+    "family_1": {
+      "approved": true,
+      "candidate_name": "heldout-family-1",
+      "checks": [
+        {
+          "detail": "",
+          "name": "family.route",
+          "passed": true,
+          "requirement": "single represented active family",
+          "value": "fam-c5931201b7e9d1b9780452ad"
+        },
+        {
+          "detail": "",
+          "name": "plasticity.epsilon",
+          "passed": true,
+          "requirement": "<= 0.030000",
+          "value": 0.03
+        },
+        {
+          "detail": "",
+          "name": "quality.current_accuracy",
+          "passed": true,
+          "requirement": ">= 0.607097",
+          "value": 0.6225
+        },
+        {
+          "detail": "",
+          "name": "quality.protected_accuracy",
+          "passed": true,
+          "requirement": ">= 0.227492",
+          "value": 0.2485
+        },
+        {
+          "detail": "",
+          "name": "quality.minimum_class_accuracy",
+          "passed": true,
+          "requirement": ">= 0.486864",
+          "value": 0.5392781316348195
+        },
+        {
+          "detail": "",
+          "name": "quality.subgroup_accuracy",
+          "passed": true,
+          "requirement": ">= 0.645319",
+          "value": 0.6685185185185185
+        }
+      ],
+      "failure_reasons": [],
+      "metadata": {
+        "family_id": "fam-c5931201b7e9d1b9780452ad",
+        "family_name": "shift-family-1",
+        "family_risk": "low",
+        "route": {
+          "family_id": "fam-c5931201b7e9d1b9780452ad",
+          "family_name": "shift-family-1",
+          "matches": [
+            {
+              "behavior_similarity": 0.9638047562029474,
+              "family_id": "fam-c5931201b7e9d1b9780452ad",
+              "family_name": "shift-family-1",
+              "margin": 0.00452715687119265,
+              "parameter_similarity": 0.8214012019683814
+            }
+          ],
+          "reason": "single family match",
+          "status": "represented"
+        }
+      }
+    },
+    "family_2": {
+      "approved": true,
+      "candidate_name": "heldout-family-2",
+      "checks": [
+        {
+          "detail": "",
+          "name": "family.route",
+          "passed": true,
+          "requirement": "single represented active family",
+          "value": "fam-80ee0fd98e8a9b3adff9b6bc"
+        },
+        {
+          "detail": "",
+          "name": "plasticity.epsilon",
+          "passed": true,
+          "requirement": "<= 0.015000",
+          "value": 0.015
+        },
+        {
+          "detail": "",
+          "name": "quality.current_accuracy",
+          "passed": true,
+          "requirement": ">= 0.431587",
+          "value": 0.4485
+        },
+        {
+          "detail": "",
+          "name": "quality.protected_accuracy",
+          "passed": true,
+          "requirement": ">= 0.451584",
+          "value": 0.496
+        },
+        {
+          "detail": "",
+          "name": "quality.minimum_class_accuracy",
+          "passed": true,
+          "requirement": ">= 0.330804",
+          "value": 0.3861607142857143
+        },
+        {
+          "detail": "",
+          "name": "quality.subgroup_accuracy",
+          "passed": true,
+          "requirement": ">= 0.476674",
+          "value": 0.5185185185185185
+        }
+      ],
+      "failure_reasons": [],
+      "metadata": {
+        "family_id": "fam-80ee0fd98e8a9b3adff9b6bc",
+        "family_name": "shift-family-2",
+        "family_risk": "medium",
+        "route": {
+          "family_id": "fam-80ee0fd98e8a9b3adff9b6bc",
+          "family_name": "shift-family-2",
+          "matches": [
+            {
+              "behavior_similarity": 0.9725732935948207,
+              "family_id": "fam-80ee0fd98e8a9b3adff9b6bc",
+              "family_name": "shift-family-2",
+              "margin": 0.006492567722299003,
+              "parameter_similarity": 0.8920077493910065
+            }
+          ],
+          "reason": "single family match",
+          "status": "represented"
+        }
+      }
+    },
+    "family_3": {
+      "approved": true,
+      "candidate_name": "heldout-family-3",
+      "checks": [
+        {
+          "detail": "",
+          "name": "family.route",
+          "passed": true,
+          "requirement": "single represented active family",
+          "value": "fam-ae122447b65b9e644dafc472"
+        },
+        {
+          "detail": "",
+          "name": "plasticity.epsilon",
+          "passed": true,
+          "requirement": "<= 0.007500",
+          "value": 0.0075
+        },
+        {
+          "detail": "",
+          "name": "quality.current_accuracy",
+          "passed": true,
+          "requirement": ">= 0.416392",
+          "value": 0.4285
+        },
+        {
+          "detail": "",
+          "name": "quality.protected_accuracy",
+          "passed": true,
+          "requirement": ">= 0.596603",
+          "value": 0.6105
+        },
+        {
+          "detail": "",
+          "name": "quality.minimum_class_accuracy",
+          "passed": true,
+          "requirement": ">= 0.346344",
+          "value": 0.38632162661737524
+        },
+        {
+          "detail": "",
+          "name": "quality.subgroup_accuracy",
+          "passed": true,
+          "requirement": ">= 0.409064",
+          "value": 0.4425925925925926
+        }
+      ],
+      "failure_reasons": [],
+      "metadata": {
+        "family_id": "fam-ae122447b65b9e644dafc472",
+        "family_name": "shift-family-3",
+        "family_risk": "high",
+        "route": {
+          "family_id": "fam-ae122447b65b9e644dafc472",
+          "family_name": "shift-family-3",
+          "matches": [
+            {
+              "behavior_similarity": 0.9687232556823305,
+              "family_id": "fam-ae122447b65b9e644dafc472",
+              "family_name": "shift-family-3",
+              "margin": 0.009120297258101484,
+              "parameter_similarity": 0.8960747927244656
+            }
+          ],
+          "reason": "single family match",
+          "status": "represented"
+        }
+      }
+    }
+  },
+  "heldout_routing": {
+    "family_1": {
+      "correct": true,
+      "expected_family_id": "fam-c5931201b7e9d1b9780452ad",
+      "family_id": "fam-c5931201b7e9d1b9780452ad",
+      "status": "represented"
+    },
+    "family_2": {
+      "correct": true,
+      "expected_family_id": "fam-80ee0fd98e8a9b3adff9b6bc",
+      "family_id": "fam-80ee0fd98e8a9b3adff9b6bc",
+      "status": "represented"
+    },
+    "family_3": {
+      "correct": true,
+      "expected_family_id": "fam-ae122447b65b9e644dafc472",
+      "family_id": "fam-ae122447b65b9e644dafc472",
+      "status": "represented"
+    }
+  },
+  "initial_family_ids": {
+    "1": "fam-c5931201b7e9d1b9780452ad",
+    "2": "fam-80ee0fd98e8a9b3adff9b6bc",
+    "3": "fam-ae122447b65b9e644dafc472"
+  },
+  "observed": {
+    "epsilon_violation_blocks_manifest": true,
+    "family_expansion_does_not_modify_existing_definitions": true,
+    "quarantine_persists_after_reload": true,
+    "quarantine_removes_family_from_routing": true,
+    "represented_families_route_correctly": true,
+    "semantic_failure_blocks_manifest": true,
+    "unknown_routes_to_deliberation": true,
+    "validated_new_family_routes_after_registration": true
+  },
+  "persistence": {
+    "active_family_count": 3,
+    "all_family_count": 4,
+    "event_count": 10
+  },
+  "quarantine": {
+    "definition_hash_unchanged": true,
+    "family_id": "fam-80ee0fd98e8a9b3adff9b6bc",
+    "route_after_quarantine": {
+      "family_id": null,
+      "status": "unknown"
+    },
+    "status_after_reload": "quarantined"
+  },
+  "research_sources": {
+    "drift_contract": "https://github.com/infinition/drift-contract",
+    "drift_preprint": "https://infinition.github.io/infinition/assets/papers/drift-bounded-spectral-updates.pdf",
+    "z_manifold": "https://github.com/infinition/z-manifold",
+    "z_manifold_paper": "https://arxiv.org/abs/2607.05300"
+  },
+  "scope_note": "P1.3 persists immutable family definitions and mutable operational status separately. Unknown or quarantined families route to deliberation. Family geometry remains auxiliary evidence.",
+  "semantic_failure_control": {
+    "approved": false,
+    "candidate_name": "family-2-semantic-regression-control",
+    "checks": [
+      {
+        "detail": "",
+        "name": "family.route",
+        "passed": true,
+        "requirement": "single represented active family",
+        "value": "fam-80ee0fd98e8a9b3adff9b6bc"
+      },
+      {
+        "detail": "",
+        "name": "plasticity.epsilon",
+        "passed": true,
+        "requirement": "<= 0.015000",
+        "value": 0.015
+      },
+      {
+        "detail": "",
+        "name": "quality.current_accuracy",
+        "passed": true,
+        "requirement": ">= 0.431587",
+        "value": 0.4485
+      },
+      {
+        "detail": "",
+        "name": "quality.protected_accuracy",
+        "passed": true,
+        "requirement": ">= 0.451584",
+        "value": 0.496
+      },
+      {
+        "detail": "",
+        "name": "quality.minimum_class_accuracy",
+        "passed": true,
+        "requirement": ">= 0.330804",
+        "value": 0.3861607142857143
+      },
+      {
+        "detail": "",
+        "name": "quality.subgroup_accuracy",
+        "passed": false,
+        "requirement": ">= 0.476674",
+        "value": 0.0
+      }
+    ],
+    "failure_reasons": [
+      "quality.subgroup_accuracy: >= 0.476674"
+    ],
+    "metadata": {
+      "control": "semantic evidence failure with unchanged geometry",
+      "family_id": "fam-80ee0fd98e8a9b3adff9b6bc",
+      "family_name": "shift-family-2",
+      "family_risk": "medium",
+      "route": {
+        "family_id": "fam-80ee0fd98e8a9b3adff9b6bc",
+        "family_name": "shift-family-2",
+        "matches": [
+          {
+            "behavior_similarity": 0.9725732935948207,
+            "family_id": "fam-80ee0fd98e8a9b3adff9b6bc",
+            "family_name": "shift-family-2",
+            "margin": 0.006492567722299003,
+            "parameter_similarity": 0.8920077493910065
+          }
+        ],
+        "reason": "single family match",
+        "status": "represented"
+      }
+    }
+  },
+  "store_path": "results/core_p13/family_store",
+  "unknown_family": {
+    "after_validation": {
+      "family_id": "fam-6f5e1af2aeea12301bb669e1",
+      "status": "represented"
+    },
+    "before_validation": {
+      "family_id": null,
+      "status": "unknown"
+    },
+    "existing_family_hashes_unchanged": true,
+    "registered_family_id": "fam-6f5e1af2aeea12301bb669e1"
+  }
+}

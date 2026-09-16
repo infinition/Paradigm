@@ -1,0 +1,357 @@
+{
+  "bound_check": {
+    "128x64": {
+      "bound_respected": true,
+      "max_ratio_to_bound": 0.7836353432380793,
+      "max_ratio_to_epsilon": 0.888918687494677,
+      "mean_orthogonalized_spectral_norm": 1.1331128549360172,
+      "mean_ratio_to_bound": 0.7703500901058521,
+      "mean_ratio_to_epsilon": 0.872892502838898,
+      "p99_ratio_to_bound": 0.7799262652586131,
+      "p99_ratio_to_epsilon": 0.8847148949741466
+    },
+    "64x64": {
+      "bound_respected": true,
+      "max_ratio_to_bound": 0.7803866691914163,
+      "max_ratio_to_epsilon": 0.8963490818838116,
+      "mean_orthogonalized_spectral_norm": 1.1629019650604855,
+      "mean_ratio_to_bound": 0.7523588870401138,
+      "mean_ratio_to_epsilon": 0.8744584122115906,
+      "p99_ratio_to_bound": 0.7793596781632658,
+      "p99_ratio_to_epsilon": 0.8895178334383129
+    },
+    "8x64": {
+      "bound_respected": true,
+      "max_ratio_to_bound": 0.3381161786667096,
+      "max_ratio_to_epsilon": 0.383408546850963,
+      "mean_orthogonalized_spectral_norm": 1.1292666315401851,
+      "mean_ratio_to_bound": 0.319956367261947,
+      "mean_ratio_to_epsilon": 0.36130950967403386,
+      "p99_ratio_to_bound": 0.33501983076980785,
+      "p99_ratio_to_epsilon": 0.37916124144463836
+    }
+  },
+  "claim_level": "synthetic mechanical transfer test of Drift Contract geometry to reflex adaptation",
+  "distribution_shock": {
+    "baseline": {
+      "old_accuracy_mean": 0.9829333333333332,
+      "shifted_accuracy_before_adaptation_mean": 0.20286666666666667
+    },
+    "methods": {
+      "adam": {
+        "max_step_preactivation_drift": {
+          "mean": 0.06025730203386036,
+          "std": 0.0007942382828233163
+        },
+        "mean_step_preactivation_drift": {
+          "mean": 0.033173555776932664,
+          "std": 0.0012287295295492153
+        },
+        "old_accuracy_after_adaptation": {
+          "mean": 0.3838666666666667,
+          "std": 0.026899483679472775
+        },
+        "shifted_accuracy_after_adaptation": {
+          "mean": 0.6771333333333333,
+          "std": 0.04766671328669048
+        }
+      },
+      "adam_replay": {
+        "max_step_preactivation_drift": {
+          "mean": 0.05986516032179986,
+          "std": 0.0007422271363375396
+        },
+        "mean_step_preactivation_drift": {
+          "mean": 0.03250665198334117,
+          "std": 0.0011734549078153975
+        },
+        "old_accuracy_after_adaptation": {
+          "mean": 0.4375333333333334,
+          "std": 0.02795361236843003
+        },
+        "shifted_accuracy_after_adaptation": {
+          "mean": 0.6302,
+          "std": 0.04781845297000357
+        }
+      },
+      "contract_conservative": {
+        "max_ratio_to_theoretical_bound": {
+          "max": 0.3071958706895606,
+          "mean": 0.30093544778614423
+        },
+        "max_step_preactivation_drift": {
+          "mean": 0.009972743720757174,
+          "std": 0.0002709173566350172
+        },
+        "mean_step_preactivation_drift": {
+          "mean": 0.008844695549586026,
+          "std": 0.0003925099830463515
+        },
+        "old_accuracy_after_adaptation": {
+          "mean": 0.8703333333333333,
+          "std": 0.017045038378757996
+        },
+        "shifted_accuracy_after_adaptation": {
+          "mean": 0.2773333333333333,
+          "std": 0.057859216110217826
+        }
+      },
+      "contract_fast": {
+        "max_ratio_to_theoretical_bound": {
+          "max": 0.3226169212741882,
+          "mean": 0.31448487250866597
+        },
+        "max_step_preactivation_drift": {
+          "mean": 0.03541000228536862,
+          "std": 0.0012020993193785719
+        },
+        "mean_step_preactivation_drift": {
+          "mean": 0.030561169574588355,
+          "std": 0.0011189573893358087
+        },
+        "old_accuracy_after_adaptation": {
+          "mean": 0.3894666666666667,
+          "std": 0.033201472524238704
+        },
+        "shifted_accuracy_after_adaptation": {
+          "mean": 0.6929333333333334,
+          "std": 0.04356165490173413
+        }
+      }
+    },
+    "runs": [
+      {
+        "baseline": {
+          "old_accuracy": 0.983,
+          "shifted_accuracy_before_adaptation": 0.12033333333333333
+        },
+        "methods": {
+          "adam": {
+            "max_ratio_to_theoretical_bound": null,
+            "max_step_preactivation_drift": 0.05937332906879422,
+            "mean_step_preactivation_drift": 0.03424107509368901,
+            "old_accuracy_after_adaptation": 0.35733333333333334,
+            "shifted_accuracy_after_adaptation": 0.6116666666666667
+          },
+          "adam_replay": {
+            "max_ratio_to_theoretical_bound": null,
+            "max_step_preactivation_drift": 0.058790363276221023,
+            "mean_step_preactivation_drift": 0.03343572040126016,
+            "old_accuracy_after_adaptation": 0.4063333333333333,
+            "shifted_accuracy_after_adaptation": 0.5616666666666666
+          },
+          "contract_conservative": {
+            "max_ratio_to_theoretical_bound": 0.3013263172487072,
+            "max_step_preactivation_drift": 0.00983824816450272,
+            "mean_step_preactivation_drift": 0.008788900975237147,
+            "old_accuracy_after_adaptation": 0.891,
+            "shifted_accuracy_after_adaptation": 0.186
+          },
+          "contract_fast": {
+            "max_ratio_to_theoretical_bound": 0.3226169212741882,
+            "max_step_preactivation_drift": 0.0365790721143257,
+            "mean_step_preactivation_drift": 0.03161186767774492,
+            "old_accuracy_after_adaptation": 0.3416666666666667,
+            "shifted_accuracy_after_adaptation": 0.6583333333333333
+          }
+        }
+      },
+      {
+        "baseline": {
+          "old_accuracy": 0.9853333333333333,
+          "shifted_accuracy_before_adaptation": 0.253
+        },
+        "methods": {
+          "adam": {
+            "max_ratio_to_theoretical_bound": null,
+            "max_step_preactivation_drift": 0.06050126528599522,
+            "mean_step_preactivation_drift": 0.03132699131729037,
+            "old_accuracy_after_adaptation": 0.4106666666666667,
+            "shifted_accuracy_after_adaptation": 0.7003333333333334
+          },
+          "adam_replay": {
+            "max_ratio_to_theoretical_bound": null,
+            "max_step_preactivation_drift": 0.06103132148667648,
+            "mean_step_preactivation_drift": 0.030550238857986165,
+            "old_accuracy_after_adaptation": 0.4656666666666667,
+            "shifted_accuracy_after_adaptation": 0.6566666666666666
+          },
+          "contract_conservative": {
+            "max_ratio_to_theoretical_bound": 0.3071958706895606,
+            "max_step_preactivation_drift": 0.010446180755284803,
+            "mean_step_preactivation_drift": 0.009188450412153382,
+            "old_accuracy_after_adaptation": 0.8503333333333334,
+            "shifted_accuracy_after_adaptation": 0.3496666666666667
+          },
+          "contract_fast": {
+            "max_ratio_to_theoretical_bound": 0.315700625414674,
+            "max_step_preactivation_drift": 0.0354072229797583,
+            "mean_step_preactivation_drift": 0.03144394697540507,
+            "old_accuracy_after_adaptation": 0.37466666666666665,
+            "shifted_accuracy_after_adaptation": 0.7763333333333333
+          }
+        }
+      },
+      {
+        "baseline": {
+          "old_accuracy": 0.979,
+          "shifted_accuracy_before_adaptation": 0.20966666666666667
+        },
+        "methods": {
+          "adam": {
+            "max_ratio_to_theoretical_bound": null,
+            "max_step_preactivation_drift": 0.05934902029672031,
+            "mean_step_preactivation_drift": 0.034313796165592235,
+            "old_accuracy_after_adaptation": 0.355,
+            "shifted_accuracy_after_adaptation": 0.746
+          },
+          "adam_replay": {
+            "max_ratio_to_theoretical_bound": null,
+            "max_step_preactivation_drift": 0.060001784586840766,
+            "mean_step_preactivation_drift": 0.033490005967356365,
+            "old_accuracy_after_adaptation": 0.405,
+            "shifted_accuracy_after_adaptation": 0.6916666666666667
+          },
+          "contract_conservative": {
+            "max_ratio_to_theoretical_bound": 0.2982010020220949,
+            "max_step_preactivation_drift": 0.009639756546056248,
+            "mean_step_preactivation_drift": 0.008110447498484028,
+            "old_accuracy_after_adaptation": 0.8873333333333333,
+            "shifted_accuracy_after_adaptation": 0.2776666666666667
+          },
+          "contract_fast": {
+            "max_ratio_to_theoretical_bound": 0.3119126982250163,
+            "max_step_preactivation_drift": 0.03522329118836672,
+            "mean_step_preactivation_drift": 0.02965485322642826,
+            "old_accuracy_after_adaptation": 0.41833333333333333,
+            "shifted_accuracy_after_adaptation": 0.6956666666666667
+          }
+        }
+      },
+      {
+        "baseline": {
+          "old_accuracy": 0.984,
+          "shifted_accuracy_before_adaptation": 0.248
+        },
+        "methods": {
+          "adam": {
+            "max_ratio_to_theoretical_bound": null,
+            "max_step_preactivation_drift": 0.06065094345080834,
+            "mean_step_preactivation_drift": 0.03208904877198536,
+            "old_accuracy_after_adaptation": 0.42,
+            "shifted_accuracy_after_adaptation": 0.6906666666666667
+          },
+          "adam_replay": {
+            "max_ratio_to_theoretical_bound": null,
+            "max_step_preactivation_drift": 0.060063199394229876,
+            "mean_step_preactivation_drift": 0.0317456055162224,
+            "old_accuracy_after_adaptation": 0.4703333333333333,
+            "shifted_accuracy_after_adaptation": 0.6526666666666666
+          },
+          "contract_conservative": {
+            "max_ratio_to_theoretical_bound": 0.3022289889392736,
+            "max_step_preactivation_drift": 0.009886546364287343,
+            "mean_step_preactivation_drift": 0.008995959636603722,
+            "old_accuracy_after_adaptation": 0.852,
+            "shifted_accuracy_after_adaptation": 0.3253333333333333
+          },
+          "contract_fast": {
+            "max_ratio_to_theoretical_bound": 0.2997934189529546,
+            "max_step_preactivation_drift": 0.033285612786509794,
+            "mean_step_preactivation_drift": 0.028817116822705817,
+            "old_accuracy_after_adaptation": 0.43466666666666665,
+            "shifted_accuracy_after_adaptation": 0.667
+          }
+        }
+      },
+      {
+        "baseline": {
+          "old_accuracy": 0.9833333333333333,
+          "shifted_accuracy_before_adaptation": 0.18333333333333332
+        },
+        "methods": {
+          "adam": {
+            "max_ratio_to_theoretical_bound": null,
+            "max_step_preactivation_drift": 0.06141195206698367,
+            "mean_step_preactivation_drift": 0.03389686753610634,
+            "old_accuracy_after_adaptation": 0.37633333333333335,
+            "shifted_accuracy_after_adaptation": 0.637
+          },
+          "adam_replay": {
+            "max_ratio_to_theoretical_bound": null,
+            "max_step_preactivation_drift": 0.05943913286503115,
+            "mean_step_preactivation_drift": 0.033311689173880756,
+            "old_accuracy_after_adaptation": 0.44033333333333335,
+            "shifted_accuracy_after_adaptation": 0.5883333333333334
+          },
+          "contract_conservative": {
+            "max_ratio_to_theoretical_bound": 0.2957250600310847,
+            "max_step_preactivation_drift": 0.01005298677365475,
+            "mean_step_preactivation_drift": 0.00913971922545185,
+            "old_accuracy_after_adaptation": 0.871,
+            "shifted_accuracy_after_adaptation": 0.248
+          },
+          "contract_fast": {
+            "max_ratio_to_theoretical_bound": 0.32240069867649673,
+            "max_step_preactivation_drift": 0.03655481235788258,
+            "mean_step_preactivation_drift": 0.03127806317065769,
+            "old_accuracy_after_adaptation": 0.378,
+            "shifted_accuracy_after_adaptation": 0.6673333333333333
+          }
+        }
+      }
+    ],
+    "seeds": [
+      11,
+      23,
+      41,
+      77,
+      101
+    ]
+  },
+  "research_source": {
+    "preprint": "https://infinition.github.io/infinition/assets/papers/drift-bounded-spectral-updates.pdf",
+    "repository": "https://github.com/infinition/drift-contract",
+    "status": "public preprint; arXiv submission pending approval"
+  },
+  "risk_conditioned_budget": {
+    "drift_ratio_low_to_high": 9.999999994339355,
+    "high_risk": {
+      "denominator_rms": 0.9987205449036636,
+      "ema_input_rms": 0.9987205449036636,
+      "epsilon": 0.003,
+      "input_rms": 0.9987205449036636,
+      "learning_rate": 0.0030038432825965143,
+      "measured_preactivation_drift": 0.0015899260700918062,
+      "ratio_to_bound": 0.46777057718909115,
+      "ratio_to_epsilon": 0.5299753566972687,
+      "scale": 0.5773502691896257,
+      "spectral_norm": 1.13298138562279
+    },
+    "low_risk": {
+      "denominator_rms": 0.9987205449036636,
+      "ema_input_rms": 0.9987205449036636,
+      "epsilon": 0.03,
+      "input_rms": 0.9987205449036636,
+      "learning_rate": 0.03003843282596514,
+      "measured_preactivation_drift": 0.015899260691918056,
+      "ratio_to_bound": 0.46777057692430285,
+      "ratio_to_epsilon": 0.5299753563972686,
+      "scale": 0.5773502691896257,
+      "spectral_norm": 1.13298138562279
+    },
+    "medium_risk": {
+      "denominator_rms": 0.9987205449036636,
+      "ema_input_rms": 0.9987205449036636,
+      "epsilon": 0.01,
+      "input_rms": 0.9987205449036636,
+      "learning_rate": 0.01001281094198838,
+      "measured_preactivation_drift": 0.005299753564639353,
+      "ratio_to_bound": 0.4677705769831448,
+      "ratio_to_epsilon": 0.5299753564639353,
+      "scale": 0.5773502691896257,
+      "spectral_norm": 1.13298138562279
+    }
+  },
+  "scope_note": "The original work studies deep local learning. This benchmark does not transfer its accuracy claims. It tests the matrix update rule, the stated per-step drift bound, and a small continual-reflex adaptation hypothesis."
+}

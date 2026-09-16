@@ -1,0 +1,3256 @@
+{
+  "phase": "P2.3R",
+  "runs": 24,
+  "cells": [
+    {
+      "model": "qwen3:4b-instruct",
+      "arrival": "burst",
+      "api_styles": [
+        "ollama"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "online_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "baseline_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "llm_call_reduction": {
+        "n": 3,
+        "mean": 0.6956521739130435,
+        "median": 0.6956521739130435,
+        "min": 0.6956521739130435,
+        "max": 0.6956521739130435,
+        "iqr": 0.0
+      },
+      "token_reduction": {
+        "n": 3,
+        "mean": 0.6873769232492246,
+        "median": 0.6872237602603332,
+        "min": 0.6869834710743802,
+        "max": 0.6879235384129606,
+        "iqr": 0.0009400673385804303
+      },
+      "llm_latency_reduction": {
+        "n": 3,
+        "mean": 0.6946847528038304,
+        "median": 0.6963131959106887,
+        "min": 0.6902172044444945,
+        "max": 0.6975238580563077,
+        "iqr": 0.007306653611813152
+      },
+      "invalid_llm_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "invalid_reflex_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "reflex_reached": 3,
+      "reflex_exercised": 3,
+      "mature_reflex_rate": 1.0,
+      "outcomes": {
+        "promoted": 3,
+        "rejected": 0,
+        "insufficient_evidence": 0
+      },
+      "learning_episodes": {
+        "n": 3,
+        "mean": 6.0,
+        "median": 6.0,
+        "min": 6.0,
+        "max": 6.0,
+        "iqr": 0.0
+      },
+      "certification_episodes": {
+        "n": 3,
+        "mean": 6.0,
+        "median": 6.0,
+        "min": 6.0,
+        "max": 6.0,
+        "iqr": 0.0
+      },
+      "ttr_episodes": {
+        "n": 3,
+        "mean": 12.0,
+        "median": 12.0,
+        "min": 12.0,
+        "max": 12.0,
+        "iqr": 0.0
+      },
+      "ttr_decisions": {
+        "n": 3,
+        "mean": 60.0,
+        "median": 60.0,
+        "min": 60.0,
+        "max": 60.0,
+        "iqr": 0.0
+      },
+      "candidates_rejected_before_representation": {
+        "n": 3,
+        "mean": 2.0,
+        "median": 2.0,
+        "min": 2.0,
+        "max": 2.0,
+        "iqr": 0.0
+      },
+      "time_to_deployment_episode": {
+        "n": 3,
+        "mean": 44.0,
+        "median": 44.0,
+        "min": 44.0,
+        "max": 44.0,
+        "iqr": 0.0
+      },
+      "post_promotion_novel_exposure": {
+        "n": 3,
+        "mean": 5.0,
+        "median": 5.0,
+        "min": 5.0,
+        "max": 5.0,
+        "iqr": 0.0
+      },
+      "acquisition_debt": {
+        "episodes": {
+          "n": 3,
+          "mean": 12.0,
+          "median": 12.0,
+          "min": 12.0,
+          "max": 12.0,
+          "iqr": 0.0
+        },
+        "decisions": {
+          "n": 3,
+          "mean": 60.0,
+          "median": 60.0,
+          "min": 60.0,
+          "max": 60.0,
+          "iqr": 0.0
+        },
+        "tokens": {
+          "n": 3,
+          "mean": 15532.0,
+          "median": 15537.0,
+          "min": 15519.0,
+          "max": 15540.0,
+          "iqr": 21.0
+        },
+        "llm_latency_ms": {
+          "n": 3,
+          "mean": 28177.048930336867,
+          "median": 28391.06241799891,
+          "min": 27584.556831010617,
+          "max": 28555.527542001073,
+          "iqr": 970.9707109904557
+        }
+      },
+      "reflex_dividend": {
+        "novel_llm_calls_saved": {
+          "n": 3,
+          "mean": 24.0,
+          "median": 24.0,
+          "min": 24.0,
+          "max": 24.0,
+          "iqr": 0.0
+        },
+        "novel_tokens_saved": {
+          "n": 3,
+          "mean": 6303.0,
+          "median": 6298.0,
+          "min": 6295.0,
+          "max": 6316.0,
+          "iqr": 21.0
+        },
+        "novel_llm_latency_saved_ms": {
+          "n": 3,
+          "mean": 11548.621378008296,
+          "median": 11491.811086008966,
+          "min": 11395.858087013126,
+          "max": 11758.194961002795,
+          "iqr": 362.3368739896687
+        },
+        "novel_episodes_after_representation": {
+          "n": 3,
+          "mean": 5.0,
+          "median": 5.0,
+          "min": 5.0,
+          "max": 5.0,
+          "iqr": 0.0
+        }
+      },
+      "debt_recovery_ratio": {
+        "tokens": {
+          "n": 3,
+          "mean": 0.4058074188743324,
+          "median": 0.40582511759778334,
+          "min": 0.40508365508365507,
+          "max": 0.40651348394155884,
+          "iqr": 0.00142982885790377
+        },
+        "calls": {
+          "n": 3,
+          "mean": 0.4000000000000001,
+          "median": 0.4,
+          "min": 0.4,
+          "max": 0.4,
+          "iqr": 0.0
+        },
+        "latency": {
+          "n": 3,
+          "mean": 0.4100352718129691,
+          "median": 0.4047686175605592,
+          "min": 0.39907713384918064,
+          "max": 0.4262600640291675,
+          "iqr": 0.027182930179986853
+        }
+      },
+      "novel_fast_path_after_representation": {
+        "n": 3,
+        "mean": 0.96,
+        "median": 0.96,
+        "min": 0.96,
+        "max": 0.96,
+        "iqr": 0.0
+      },
+      "novel_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "unknown_false_fast_path_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "known_success_before_novel": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_success_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_fast_path_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "total_tokens_saved": {
+        "n": 3,
+        "mean": 56589.0,
+        "median": 56597.0,
+        "min": 56525.0,
+        "max": 56645.0,
+        "iqr": 120.0
+      }
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "arrival": "interleaved",
+      "api_styles": [
+        "ollama"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "online_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "baseline_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "llm_call_reduction": {
+        "n": 3,
+        "mean": 0.76231884057971,
+        "median": 0.7623188405797101,
+        "min": 0.7623188405797101,
+        "max": 0.7623188405797101,
+        "iqr": 0.0
+      },
+      "token_reduction": {
+        "n": 3,
+        "mean": 0.7615244074585149,
+        "median": 0.7614116447336473,
+        "min": 0.7614077669902912,
+        "max": 0.7617538106516062,
+        "iqr": 0.00034604366131496533
+      },
+      "llm_latency_reduction": {
+        "n": 3,
+        "mean": 0.7652819634822787,
+        "median": 0.7653361935768775,
+        "min": 0.7629260546542278,
+        "max": 0.7675836422157309,
+        "iqr": 0.00465758756150314
+      },
+      "invalid_llm_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "invalid_reflex_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "reflex_reached": 3,
+      "reflex_exercised": 3,
+      "mature_reflex_rate": 1.0,
+      "outcomes": {
+        "promoted": 3,
+        "rejected": 0,
+        "insufficient_evidence": 0
+      },
+      "learning_episodes": {
+        "n": 3,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 4.0,
+        "max": 4.0,
+        "iqr": 0.0
+      },
+      "certification_episodes": {
+        "n": 3,
+        "mean": 3.0,
+        "median": 3.0,
+        "min": 3.0,
+        "max": 3.0,
+        "iqr": 0.0
+      },
+      "ttr_episodes": {
+        "n": 3,
+        "mean": 7.0,
+        "median": 7.0,
+        "min": 7.0,
+        "max": 7.0,
+        "iqr": 0.0
+      },
+      "ttr_decisions": {
+        "n": 3,
+        "mean": 35.0,
+        "median": 35.0,
+        "min": 35.0,
+        "max": 35.0,
+        "iqr": 0.0
+      },
+      "candidates_rejected_before_representation": {
+        "n": 3,
+        "mean": 2.0,
+        "median": 2.0,
+        "min": 2.0,
+        "max": 2.0,
+        "iqr": 0.0
+      },
+      "time_to_deployment_episode": {
+        "n": 3,
+        "mean": 34.0,
+        "median": 34.0,
+        "min": 34.0,
+        "max": 34.0,
+        "iqr": 0.0
+      },
+      "post_promotion_novel_exposure": {
+        "n": 3,
+        "mean": 10.0,
+        "median": 10.0,
+        "min": 10.0,
+        "max": 10.0,
+        "iqr": 0.0
+      },
+      "acquisition_debt": {
+        "episodes": {
+          "n": 3,
+          "mean": 7.0,
+          "median": 7.0,
+          "min": 7.0,
+          "max": 7.0,
+          "iqr": 0.0
+        },
+        "decisions": {
+          "n": 3,
+          "mean": 35.0,
+          "median": 35.0,
+          "min": 35.0,
+          "max": 35.0,
+          "iqr": 0.0
+        },
+        "tokens": {
+          "n": 3,
+          "mean": 9072.333333333334,
+          "median": 9071.0,
+          "min": 9067.0,
+          "max": 9079.0,
+          "iqr": 12.0
+        },
+        "llm_latency_ms": {
+          "n": 3,
+          "mean": 16587.054331997642,
+          "median": 16603.336539992713,
+          "min": 16416.843456000905,
+          "max": 16740.98299999931,
+          "iqr": 324.1395439984044
+        }
+      },
+      "reflex_dividend": {
+        "novel_llm_calls_saved": {
+          "n": 3,
+          "mean": 48.0,
+          "median": 48.0,
+          "min": 48.0,
+          "max": 48.0,
+          "iqr": 0.0
+        },
+        "novel_tokens_saved": {
+          "n": 3,
+          "mean": 12593.0,
+          "median": 12590.0,
+          "min": 12586.0,
+          "max": 12603.0,
+          "iqr": 17.0
+        },
+        "novel_llm_latency_saved_ms": {
+          "n": 3,
+          "mean": 23013.530098347033,
+          "median": 23226.801792032435,
+          "min": 22521.925752004376,
+          "max": 23291.862751004286,
+          "iqr": 769.9369989999104
+        },
+        "novel_episodes_after_representation": {
+          "n": 3,
+          "mean": 10.0,
+          "median": 10.0,
+          "min": 10.0,
+          "max": 10.0,
+          "iqr": 0.0
+        }
+      },
+      "debt_recovery_ratio": {
+        "tokens": {
+          "n": 3,
+          "mean": 1.3880670905257215,
+          "median": 1.3879395876970566,
+          "min": 1.3862760215882806,
+          "max": 1.3899856622918274,
+          "iqr": 0.003709640703546846
+        },
+        "calls": {
+          "n": 3,
+          "mean": 1.3714285714285712,
+          "median": 1.3714285714285714,
+          "min": 1.3714285714285714,
+          "max": 1.3714285714285714,
+          "iqr": 0.0
+        },
+        "latency": {
+          "n": 3,
+          "mean": 1.3873810329837417,
+          "median": 1.387421622256793,
+          "min": 1.371879180816082,
+          "max": 1.4028422958783504,
+          "iqr": 0.030963115062268454
+        }
+      },
+      "novel_fast_path_after_representation": {
+        "n": 3,
+        "mean": 0.96,
+        "median": 0.96,
+        "min": 0.96,
+        "max": 0.96,
+        "iqr": 0.0
+      },
+      "novel_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "unknown_false_fast_path_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "known_success_before_novel": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_success_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_fast_path_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "total_tokens_saved": {
+        "n": 3,
+        "mean": 62726.0,
+        "median": 62719.0,
+        "min": 62719.0,
+        "max": 62740.0,
+        "iqr": 21.0
+      }
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "arrival": "periodic",
+      "api_styles": [
+        "ollama"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "online_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "baseline_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "llm_call_reduction": {
+        "n": 3,
+        "mean": 0.7652173913043478,
+        "median": 0.7652173913043478,
+        "min": 0.7652173913043478,
+        "max": 0.7652173913043478,
+        "iqr": 0.0
+      },
+      "token_reduction": {
+        "n": 3,
+        "mean": 0.7616719730199405,
+        "median": 0.7618097464837008,
+        "min": 0.761387144553389,
+        "max": 0.7618190280227317,
+        "iqr": 0.0004318834693427531
+      },
+      "llm_latency_reduction": {
+        "n": 3,
+        "mean": 0.7704947707817077,
+        "median": 0.7705166236665159,
+        "min": 0.7688012513298521,
+        "max": 0.772166437348755,
+        "iqr": 0.0033651860189028993
+      },
+      "invalid_llm_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "invalid_reflex_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "reflex_reached": 3,
+      "reflex_exercised": 3,
+      "mature_reflex_rate": 1.0,
+      "outcomes": {
+        "promoted": 3,
+        "rejected": 0,
+        "insufficient_evidence": 0
+      },
+      "learning_episodes": {
+        "n": 3,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 4.0,
+        "max": 4.0,
+        "iqr": 0.0
+      },
+      "certification_episodes": {
+        "n": 3,
+        "mean": 3.0,
+        "median": 3.0,
+        "min": 3.0,
+        "max": 3.0,
+        "iqr": 0.0
+      },
+      "ttr_episodes": {
+        "n": 3,
+        "mean": 7.0,
+        "median": 7.0,
+        "min": 7.0,
+        "max": 7.0,
+        "iqr": 0.0
+      },
+      "ttr_decisions": {
+        "n": 3,
+        "mean": 35.0,
+        "median": 35.0,
+        "min": 35.0,
+        "max": 35.0,
+        "iqr": 0.0
+      },
+      "candidates_rejected_before_representation": {
+        "n": 3,
+        "mean": 2.0,
+        "median": 2.0,
+        "min": 2.0,
+        "max": 2.0,
+        "iqr": 0.0
+      },
+      "time_to_deployment_episode": {
+        "n": 3,
+        "mean": 37.0,
+        "median": 37.0,
+        "min": 37.0,
+        "max": 37.0,
+        "iqr": 0.0
+      },
+      "post_promotion_novel_exposure": {
+        "n": 3,
+        "mean": 5.0,
+        "median": 5.0,
+        "min": 5.0,
+        "max": 5.0,
+        "iqr": 0.0
+      },
+      "acquisition_debt": {
+        "episodes": {
+          "n": 3,
+          "mean": 7.0,
+          "median": 7.0,
+          "min": 7.0,
+          "max": 7.0,
+          "iqr": 0.0
+        },
+        "decisions": {
+          "n": 3,
+          "mean": 35.0,
+          "median": 35.0,
+          "min": 35.0,
+          "max": 35.0,
+          "iqr": 0.0
+        },
+        "tokens": {
+          "n": 3,
+          "mean": 9074.0,
+          "median": 9075.0,
+          "min": 9068.0,
+          "max": 9079.0,
+          "iqr": 11.0
+        },
+        "llm_latency_ms": {
+          "n": 3,
+          "mean": 16378.568707322469,
+          "median": 16426.887874985812,
+          "min": 16180.410124994814,
+          "max": 16528.40812198678,
+          "iqr": 347.9979969919659
+        }
+      },
+      "reflex_dividend": {
+        "novel_llm_calls_saved": {
+          "n": 3,
+          "mean": 24.0,
+          "median": 24.0,
+          "min": 24.0,
+          "max": 24.0,
+          "iqr": 0.0
+        },
+        "novel_tokens_saved": {
+          "n": 3,
+          "mean": 6280.666666666667,
+          "median": 6277.0,
+          "min": 6276.0,
+          "max": 6289.0,
+          "iqr": 13.0
+        },
+        "novel_llm_latency_saved_ms": {
+          "n": 3,
+          "mean": 11655.372527664527,
+          "median": 11747.282667002408,
+          "min": 11343.882041997509,
+          "max": 11874.952873993665,
+          "iqr": 531.0708319961559
+        },
+        "novel_episodes_after_representation": {
+          "n": 3,
+          "mean": 5.0,
+          "median": 5.0,
+          "min": 5.0,
+          "max": 5.0,
+          "iqr": 0.0
+        }
+      },
+      "debt_recovery_ratio": {
+        "tokens": {
+          "n": 3,
+          "mean": 0.6921608531095568,
+          "median": 0.6921041023378914,
+          "min": 0.6913757021698425,
+          "max": 0.6930027548209367,
+          "iqr": 0.0016270526510941963
+        },
+        "calls": {
+          "n": 3,
+          "mean": 0.6857142857142856,
+          "median": 0.6857142857142857,
+          "min": 0.6857142857142857,
+          "max": 0.6857142857142857,
+          "iqr": 0.0
+        },
+        "latency": {
+          "n": 3,
+          "mean": 0.7115566128309051,
+          "median": 0.7151252724437649,
+          "min": 0.7010874232708081,
+          "max": 0.7184571427781424,
+          "iqr": 0.017369719507334347
+        }
+      },
+      "novel_fast_path_after_representation": {
+        "n": 3,
+        "mean": 0.96,
+        "median": 0.96,
+        "min": 0.96,
+        "max": 0.96,
+        "iqr": 0.0
+      },
+      "novel_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "unknown_false_fast_path_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "known_success_before_novel": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_success_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_fast_path_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "total_tokens_saved": {
+        "n": 3,
+        "mean": 62211.333333333336,
+        "median": 62201.0,
+        "min": 62200.0,
+        "max": 62233.0,
+        "iqr": 33.0
+      }
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "arrival": "rare",
+      "api_styles": [
+        "ollama"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "online_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "baseline_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "llm_call_reduction": {
+        "n": 3,
+        "mean": 0.744927536231884,
+        "median": 0.744927536231884,
+        "min": 0.744927536231884,
+        "max": 0.744927536231884,
+        "iqr": 0.0
+      },
+      "token_reduction": {
+        "n": 3,
+        "mean": 0.7433417181928844,
+        "median": 0.7433517868617469,
+        "min": 0.7432968663081773,
+        "max": 0.7433765014087291,
+        "iqr": 7.963510055186696e-05
+      },
+      "llm_latency_reduction": {
+        "n": 3,
+        "mean": 0.7518062718807036,
+        "median": 0.7510642030031759,
+        "min": 0.7495494450358704,
+        "max": 0.7548051676030645,
+        "iqr": 0.005255722567194088
+      },
+      "invalid_llm_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "invalid_reflex_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "reflex_reached": 3,
+      "reflex_exercised": 0,
+      "mature_reflex_rate": 1.0,
+      "outcomes": {
+        "promoted": 3,
+        "rejected": 0,
+        "insufficient_evidence": 0
+      },
+      "learning_episodes": {
+        "n": 3,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 4.0,
+        "max": 4.0,
+        "iqr": 0.0
+      },
+      "certification_episodes": {
+        "n": 3,
+        "mean": 3.0,
+        "median": 3.0,
+        "min": 3.0,
+        "max": 3.0,
+        "iqr": 0.0
+      },
+      "ttr_episodes": {
+        "n": 3,
+        "mean": 7.0,
+        "median": 7.0,
+        "min": 7.0,
+        "max": 7.0,
+        "iqr": 0.0
+      },
+      "ttr_decisions": {
+        "n": 3,
+        "mean": 35.0,
+        "median": 35.0,
+        "min": 35.0,
+        "max": 35.0,
+        "iqr": 0.0
+      },
+      "candidates_rejected_before_representation": {
+        "n": 3,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 4.0,
+        "max": 4.0,
+        "iqr": 0.0
+      },
+      "time_to_deployment_episode": {
+        "n": 3,
+        "mean": 68.0,
+        "median": 68.0,
+        "min": 68.0,
+        "max": 68.0,
+        "iqr": 0.0
+      },
+      "post_promotion_novel_exposure": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "acquisition_debt": {
+        "episodes": {
+          "n": 3,
+          "mean": 7.0,
+          "median": 7.0,
+          "min": 7.0,
+          "max": 7.0,
+          "iqr": 0.0
+        },
+        "decisions": {
+          "n": 3,
+          "mean": 35.0,
+          "median": 35.0,
+          "min": 35.0,
+          "max": 35.0,
+          "iqr": 0.0
+        },
+        "tokens": {
+          "n": 3,
+          "mean": 9070.0,
+          "median": 9066.0,
+          "min": 9064.0,
+          "max": 9080.0,
+          "iqr": 16.0
+        },
+        "llm_latency_ms": {
+          "n": 3,
+          "mean": 16405.133529659284,
+          "median": 16504.63883298682,
+          "min": 15995.029252992943,
+          "max": 16715.732502998086,
+          "iqr": 720.7032500051428
+        }
+      },
+      "reflex_dividend": {
+        "novel_llm_calls_saved": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        },
+        "novel_tokens_saved": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        },
+        "novel_llm_latency_saved_ms": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        },
+        "novel_episodes_after_representation": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        }
+      },
+      "debt_recovery_ratio": {
+        "tokens": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        },
+        "calls": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        },
+        "latency": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        }
+      },
+      "novel_fast_path_after_representation": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "iqr": null
+      },
+      "novel_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "unknown_false_fast_path_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "known_success_before_novel": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_success_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_fast_path_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "total_tokens_saved": {
+        "n": 3,
+        "mean": 60147.0,
+        "median": 60155.0,
+        "min": 60129.0,
+        "max": 60157.0,
+        "iqr": 28.0
+      }
+    },
+    {
+      "model": "qwen3:8b",
+      "arrival": "burst",
+      "api_styles": [
+        "ollama"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "online_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "baseline_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "llm_call_reduction": {
+        "n": 3,
+        "mean": 0.6956521739130435,
+        "median": 0.6956521739130435,
+        "min": 0.6956521739130435,
+        "max": 0.6956521739130435,
+        "iqr": 0.0
+      },
+      "token_reduction": {
+        "n": 3,
+        "mean": 0.6884994313899949,
+        "median": 0.6884531071292413,
+        "min": 0.6881870258553956,
+        "max": 0.6888581611853477,
+        "iqr": 0.0006711353299521106
+      },
+      "llm_latency_reduction": {
+        "n": 3,
+        "mean": 0.6975702668669511,
+        "median": 0.7037740022406537,
+        "min": 0.6844398847983766,
+        "max": 0.704496913561823,
+        "iqr": 0.020057028763446394
+      },
+      "invalid_llm_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "invalid_reflex_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "reflex_reached": 3,
+      "reflex_exercised": 3,
+      "mature_reflex_rate": 1.0,
+      "outcomes": {
+        "promoted": 3,
+        "rejected": 0,
+        "insufficient_evidence": 0
+      },
+      "learning_episodes": {
+        "n": 3,
+        "mean": 6.0,
+        "median": 6.0,
+        "min": 6.0,
+        "max": 6.0,
+        "iqr": 0.0
+      },
+      "certification_episodes": {
+        "n": 3,
+        "mean": 6.0,
+        "median": 6.0,
+        "min": 6.0,
+        "max": 6.0,
+        "iqr": 0.0
+      },
+      "ttr_episodes": {
+        "n": 3,
+        "mean": 12.0,
+        "median": 12.0,
+        "min": 12.0,
+        "max": 12.0,
+        "iqr": 0.0
+      },
+      "ttr_decisions": {
+        "n": 3,
+        "mean": 60.0,
+        "median": 60.0,
+        "min": 60.0,
+        "max": 60.0,
+        "iqr": 0.0
+      },
+      "candidates_rejected_before_representation": {
+        "n": 3,
+        "mean": 2.0,
+        "median": 2.0,
+        "min": 2.0,
+        "max": 2.0,
+        "iqr": 0.0
+      },
+      "time_to_deployment_episode": {
+        "n": 3,
+        "mean": 44.0,
+        "median": 44.0,
+        "min": 44.0,
+        "max": 44.0,
+        "iqr": 0.0
+      },
+      "post_promotion_novel_exposure": {
+        "n": 3,
+        "mean": 5.0,
+        "median": 5.0,
+        "min": 5.0,
+        "max": 5.0,
+        "iqr": 0.0
+      },
+      "acquisition_debt": {
+        "episodes": {
+          "n": 3,
+          "mean": 12.0,
+          "median": 12.0,
+          "min": 12.0,
+          "max": 12.0,
+          "iqr": 0.0
+        },
+        "decisions": {
+          "n": 3,
+          "mean": 60.0,
+          "median": 60.0,
+          "min": 60.0,
+          "max": 60.0,
+          "iqr": 0.0
+        },
+        "tokens": {
+          "n": 3,
+          "mean": 15701.333333333334,
+          "median": 15710.0,
+          "min": 15674.0,
+          "max": 15720.0,
+          "iqr": 46.0
+        },
+        "llm_latency_ms": {
+          "n": 3,
+          "mean": 32862.19797131947,
+          "median": 33006.598789990705,
+          "min": 32532.8825409814,
+          "max": 33047.1125829863,
+          "iqr": 514.2300420048996
+        }
+      },
+      "reflex_dividend": {
+        "novel_llm_calls_saved": {
+          "n": 3,
+          "mean": 24.0,
+          "median": 24.0,
+          "min": 24.0,
+          "max": 24.0,
+          "iqr": 0.0
+        },
+        "novel_tokens_saved": {
+          "n": 3,
+          "mean": 6384.0,
+          "median": 6384.0,
+          "min": 6377.0,
+          "max": 6391.0,
+          "iqr": 14.0
+        },
+        "novel_llm_latency_saved_ms": {
+          "n": 3,
+          "mean": 13370.381874335455,
+          "median": 13242.6962490172,
+          "min": 13119.597291984974,
+          "max": 13748.852082004189,
+          "iqr": 629.2547900192149
+        },
+        "novel_episodes_after_representation": {
+          "n": 3,
+          "mean": 5.0,
+          "median": 5.0,
+          "min": 5.0,
+          "max": 5.0,
+          "iqr": 0.0
+        }
+      },
+      "debt_recovery_ratio": {
+        "tokens": {
+          "n": 3,
+          "mean": 0.4065907535626845,
+          "median": 0.4063653723742839,
+          "min": 0.4056615776081425,
+          "max": 0.40774531070562714,
+          "iqr": 0.0020837330974846635
+        },
+        "calls": {
+          "n": 3,
+          "mean": 0.4000000000000001,
+          "median": 0.4,
+          "min": 0.4,
+          "max": 0.4,
+          "iqr": 0.0
+        },
+        "latency": {
+          "n": 3,
+          "mean": 0.40694146403441284,
+          "median": 0.4012135977195283,
+          "min": 0.3969967802493994,
+          "max": 0.4226140141343108,
+          "iqr": 0.02561723388491144
+        }
+      },
+      "novel_fast_path_after_representation": {
+        "n": 3,
+        "mean": 0.96,
+        "median": 0.96,
+        "min": 0.96,
+        "max": 0.96,
+        "iqr": 0.0
+      },
+      "novel_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "unknown_false_fast_path_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "known_success_before_novel": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_success_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_fast_path_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "total_tokens_saved": {
+        "n": 3,
+        "mean": 57786.666666666664,
+        "median": 57786.0,
+        "min": 57785.0,
+        "max": 57789.0,
+        "iqr": 4.0
+      }
+    },
+    {
+      "model": "qwen3:8b",
+      "arrival": "interleaved",
+      "api_styles": [
+        "ollama"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "online_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "baseline_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "llm_call_reduction": {
+        "n": 3,
+        "mean": 0.76231884057971,
+        "median": 0.7623188405797101,
+        "min": 0.7623188405797101,
+        "max": 0.7623188405797101,
+        "iqr": 0.0
+      },
+      "token_reduction": {
+        "n": 3,
+        "mean": 0.7621383582062378,
+        "median": 0.7622293456629765,
+        "min": 0.76193030129672,
+        "max": 0.7622554276590167,
+        "iqr": 0.00032512636229664604
+      },
+      "llm_latency_reduction": {
+        "n": 3,
+        "mean": 0.7700309710076342,
+        "median": 0.7699930327999813,
+        "min": 0.7686171149069605,
+        "max": 0.7714827653159607,
+        "iqr": 0.00286565040900022
+      },
+      "invalid_llm_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "invalid_reflex_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "reflex_reached": 3,
+      "reflex_exercised": 3,
+      "mature_reflex_rate": 1.0,
+      "outcomes": {
+        "promoted": 3,
+        "rejected": 0,
+        "insufficient_evidence": 0
+      },
+      "learning_episodes": {
+        "n": 3,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 4.0,
+        "max": 4.0,
+        "iqr": 0.0
+      },
+      "certification_episodes": {
+        "n": 3,
+        "mean": 3.0,
+        "median": 3.0,
+        "min": 3.0,
+        "max": 3.0,
+        "iqr": 0.0
+      },
+      "ttr_episodes": {
+        "n": 3,
+        "mean": 7.0,
+        "median": 7.0,
+        "min": 7.0,
+        "max": 7.0,
+        "iqr": 0.0
+      },
+      "ttr_decisions": {
+        "n": 3,
+        "mean": 35.0,
+        "median": 35.0,
+        "min": 35.0,
+        "max": 35.0,
+        "iqr": 0.0
+      },
+      "candidates_rejected_before_representation": {
+        "n": 3,
+        "mean": 2.0,
+        "median": 2.0,
+        "min": 2.0,
+        "max": 2.0,
+        "iqr": 0.0
+      },
+      "time_to_deployment_episode": {
+        "n": 3,
+        "mean": 34.0,
+        "median": 34.0,
+        "min": 34.0,
+        "max": 34.0,
+        "iqr": 0.0
+      },
+      "post_promotion_novel_exposure": {
+        "n": 3,
+        "mean": 10.0,
+        "median": 10.0,
+        "min": 10.0,
+        "max": 10.0,
+        "iqr": 0.0
+      },
+      "acquisition_debt": {
+        "episodes": {
+          "n": 3,
+          "mean": 7.0,
+          "median": 7.0,
+          "min": 7.0,
+          "max": 7.0,
+          "iqr": 0.0
+        },
+        "decisions": {
+          "n": 3,
+          "mean": 35.0,
+          "median": 35.0,
+          "min": 35.0,
+          "max": 35.0,
+          "iqr": 0.0
+        },
+        "tokens": {
+          "n": 3,
+          "mean": 9162.666666666666,
+          "median": 9159.0,
+          "min": 9157.0,
+          "max": 9172.0,
+          "iqr": 15.0
+        },
+        "llm_latency_ms": {
+          "n": 3,
+          "mean": 19170.05718100102,
+          "median": 19074.738289000583,
+          "min": 19011.84687699389,
+          "max": 19423.586377008585,
+          "iqr": 411.7395000146935
+        }
+      },
+      "reflex_dividend": {
+        "novel_llm_calls_saved": {
+          "n": 3,
+          "mean": 48.0,
+          "median": 48.0,
+          "min": 48.0,
+          "max": 48.0,
+          "iqr": 0.0
+        },
+        "novel_tokens_saved": {
+          "n": 3,
+          "mean": 12722.333333333334,
+          "median": 12725.0,
+          "min": 12713.0,
+          "max": 12729.0,
+          "iqr": 16.0
+        },
+        "novel_llm_latency_saved_ms": {
+          "n": 3,
+          "mean": 26897.638431663934,
+          "median": 26797.675547993276,
+          "min": 26718.63770598825,
+          "max": 27176.60204101028,
+          "iqr": 457.96433502202854
+        },
+        "novel_episodes_after_representation": {
+          "n": 3,
+          "mean": 10.0,
+          "median": 10.0,
+          "min": 10.0,
+          "max": 10.0,
+          "iqr": 0.0
+        }
+      },
+      "debt_recovery_ratio": {
+        "tokens": {
+          "n": 3,
+          "mean": 1.3884980322733782,
+          "median": 1.3896472643878999,
+          "min": 1.3860662887047537,
+          "max": 1.3897805437274813,
+          "iqr": 0.0037142550227275972
+        },
+        "calls": {
+          "n": 3,
+          "mean": 1.3714285714285712,
+          "median": 1.3714285714285714,
+          "min": 1.3714285714285714,
+          "max": 1.3714285714285714,
+          "iqr": 0.0
+        },
+        "latency": {
+          "n": 3,
+          "mean": 1.4031379909080535,
+          "median": 1.4007341700407765,
+          "min": 1.3991546933463752,
+          "max": 1.4095251093370083,
+          "iqr": 0.010370415990633042
+        }
+      },
+      "novel_fast_path_after_representation": {
+        "n": 3,
+        "mean": 0.96,
+        "median": 0.96,
+        "min": 0.96,
+        "max": 0.96,
+        "iqr": 0.0
+      },
+      "novel_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "unknown_false_fast_path_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "known_success_before_novel": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_success_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_fast_path_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "total_tokens_saved": {
+        "n": 3,
+        "mean": 63954.333333333336,
+        "median": 63964.0,
+        "min": 63929.0,
+        "max": 63970.0,
+        "iqr": 41.0
+      }
+    },
+    {
+      "model": "qwen3:8b",
+      "arrival": "periodic",
+      "api_styles": [
+        "ollama"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "online_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "baseline_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "llm_call_reduction": {
+        "n": 3,
+        "mean": 0.7652173913043478,
+        "median": 0.7652173913043478,
+        "min": 0.7652173913043478,
+        "max": 0.7652173913043478,
+        "iqr": 0.0
+      },
+      "token_reduction": {
+        "n": 3,
+        "mean": 0.7625472005431858,
+        "median": 0.7624876983269725,
+        "min": 0.7622981329170919,
+        "max": 0.762855770385493,
+        "iqr": 0.0005576374684010954
+      },
+      "llm_latency_reduction": {
+        "n": 3,
+        "mean": 0.7720124034109371,
+        "median": 0.7726453266211918,
+        "min": 0.770030111514518,
+        "max": 0.7733617720971017,
+        "iqr": 0.0033316605825837176
+      },
+      "invalid_llm_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "invalid_reflex_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "reflex_reached": 3,
+      "reflex_exercised": 3,
+      "mature_reflex_rate": 1.0,
+      "outcomes": {
+        "promoted": 3,
+        "rejected": 0,
+        "insufficient_evidence": 0
+      },
+      "learning_episodes": {
+        "n": 3,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 4.0,
+        "max": 4.0,
+        "iqr": 0.0
+      },
+      "certification_episodes": {
+        "n": 3,
+        "mean": 3.0,
+        "median": 3.0,
+        "min": 3.0,
+        "max": 3.0,
+        "iqr": 0.0
+      },
+      "ttr_episodes": {
+        "n": 3,
+        "mean": 7.0,
+        "median": 7.0,
+        "min": 7.0,
+        "max": 7.0,
+        "iqr": 0.0
+      },
+      "ttr_decisions": {
+        "n": 3,
+        "mean": 35.0,
+        "median": 35.0,
+        "min": 35.0,
+        "max": 35.0,
+        "iqr": 0.0
+      },
+      "candidates_rejected_before_representation": {
+        "n": 3,
+        "mean": 2.0,
+        "median": 2.0,
+        "min": 2.0,
+        "max": 2.0,
+        "iqr": 0.0
+      },
+      "time_to_deployment_episode": {
+        "n": 3,
+        "mean": 37.0,
+        "median": 37.0,
+        "min": 37.0,
+        "max": 37.0,
+        "iqr": 0.0
+      },
+      "post_promotion_novel_exposure": {
+        "n": 3,
+        "mean": 5.0,
+        "median": 5.0,
+        "min": 5.0,
+        "max": 5.0,
+        "iqr": 0.0
+      },
+      "acquisition_debt": {
+        "episodes": {
+          "n": 3,
+          "mean": 7.0,
+          "median": 7.0,
+          "min": 7.0,
+          "max": 7.0,
+          "iqr": 0.0
+        },
+        "decisions": {
+          "n": 3,
+          "mean": 35.0,
+          "median": 35.0,
+          "min": 35.0,
+          "max": 35.0,
+          "iqr": 0.0
+        },
+        "tokens": {
+          "n": 3,
+          "mean": 9153.0,
+          "median": 9164.0,
+          "min": 9124.0,
+          "max": 9171.0,
+          "iqr": 47.0
+        },
+        "llm_latency_ms": {
+          "n": 3,
+          "mean": 19244.22165100129,
+          "median": 19401.143288993277,
+          "min": 18837.369538010098,
+          "max": 19494.152126000496,
+          "iqr": 656.7825879903976
+        }
+      },
+      "reflex_dividend": {
+        "novel_llm_calls_saved": {
+          "n": 3,
+          "mean": 24.0,
+          "median": 24.0,
+          "min": 24.0,
+          "max": 24.0,
+          "iqr": 0.0
+        },
+        "novel_tokens_saved": {
+          "n": 3,
+          "mean": 6358.333333333333,
+          "median": 6356.0,
+          "min": 6356.0,
+          "max": 6363.0,
+          "iqr": 7.0
+        },
+        "novel_llm_latency_saved_ms": {
+          "n": 3,
+          "mean": 13366.385750004245,
+          "median": 13216.19241701439,
+          "min": 13112.919085989473,
+          "max": 13770.045747008873,
+          "iqr": 657.1266610193998
+        },
+        "novel_episodes_after_representation": {
+          "n": 3,
+          "mean": 5.0,
+          "median": 5.0,
+          "min": 5.0,
+          "max": 5.0,
+          "iqr": 0.0
+        }
+      },
+      "debt_recovery_ratio": {
+        "tokens": {
+          "n": 3,
+          "mean": 0.6946753088955253,
+          "median": 0.6943474465298997,
+          "min": 0.6930541925635154,
+          "max": 0.6966242875931609,
+          "iqr": 0.003570095029645448
+        },
+        "calls": {
+          "n": 3,
+          "mean": 0.6857142857142856,
+          "median": 0.6857142857142857,
+          "min": 0.6857142857142857,
+          "max": 0.6857142857142857,
+          "iqr": 0.0
+        },
+        "latency": {
+          "n": 3,
+          "mean": 0.6946692761977346,
+          "median": 0.7015943701877653,
+          "min": 0.6726591134220197,
+          "max": 0.7097543449834187,
+          "iqr": 0.037095231561399045
+        }
+      },
+      "novel_fast_path_after_representation": {
+        "n": 3,
+        "mean": 0.96,
+        "median": 0.96,
+        "min": 0.96,
+        "max": 0.96,
+        "iqr": 0.0
+      },
+      "novel_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "unknown_false_fast_path_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "known_success_before_novel": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_success_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_fast_path_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "total_tokens_saved": {
+        "n": 3,
+        "mean": 63514.333333333336,
+        "median": 63523.0,
+        "min": 63488.0,
+        "max": 63532.0,
+        "iqr": 44.0
+      }
+    },
+    {
+      "model": "qwen3:8b",
+      "arrival": "rare",
+      "api_styles": [
+        "ollama"
+      ],
+      "seeds": [
+        0,
+        1,
+        2
+      ],
+      "online_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "baseline_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "llm_call_reduction": {
+        "n": 3,
+        "mean": 0.744927536231884,
+        "median": 0.744927536231884,
+        "min": 0.744927536231884,
+        "max": 0.744927536231884,
+        "iqr": 0.0
+      },
+      "token_reduction": {
+        "n": 3,
+        "mean": 0.7440171629203135,
+        "median": 0.7440810496756076,
+        "min": 0.7437807329893661,
+        "max": 0.7441897060959667,
+        "iqr": 0.0004089731066005964
+      },
+      "llm_latency_reduction": {
+        "n": 3,
+        "mean": 0.7553103436283392,
+        "median": 0.7554632456296817,
+        "min": 0.7544574757329208,
+        "max": 0.7560103095224149,
+        "iqr": 0.0015528337894941124
+      },
+      "invalid_llm_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "invalid_reflex_actions": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "reflex_reached": 3,
+      "reflex_exercised": 0,
+      "mature_reflex_rate": 1.0,
+      "outcomes": {
+        "promoted": 3,
+        "rejected": 0,
+        "insufficient_evidence": 0
+      },
+      "learning_episodes": {
+        "n": 3,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 4.0,
+        "max": 4.0,
+        "iqr": 0.0
+      },
+      "certification_episodes": {
+        "n": 3,
+        "mean": 3.0,
+        "median": 3.0,
+        "min": 3.0,
+        "max": 3.0,
+        "iqr": 0.0
+      },
+      "ttr_episodes": {
+        "n": 3,
+        "mean": 7.0,
+        "median": 7.0,
+        "min": 7.0,
+        "max": 7.0,
+        "iqr": 0.0
+      },
+      "ttr_decisions": {
+        "n": 3,
+        "mean": 35.0,
+        "median": 35.0,
+        "min": 35.0,
+        "max": 35.0,
+        "iqr": 0.0
+      },
+      "candidates_rejected_before_representation": {
+        "n": 3,
+        "mean": 4.0,
+        "median": 4.0,
+        "min": 4.0,
+        "max": 4.0,
+        "iqr": 0.0
+      },
+      "time_to_deployment_episode": {
+        "n": 3,
+        "mean": 68.0,
+        "median": 68.0,
+        "min": 68.0,
+        "max": 68.0,
+        "iqr": 0.0
+      },
+      "post_promotion_novel_exposure": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "acquisition_debt": {
+        "episodes": {
+          "n": 3,
+          "mean": 7.0,
+          "median": 7.0,
+          "min": 7.0,
+          "max": 7.0,
+          "iqr": 0.0
+        },
+        "decisions": {
+          "n": 3,
+          "mean": 35.0,
+          "median": 35.0,
+          "min": 35.0,
+          "max": 35.0,
+          "iqr": 0.0
+        },
+        "tokens": {
+          "n": 3,
+          "mean": 9161.666666666666,
+          "median": 9162.0,
+          "min": 9160.0,
+          "max": 9163.0,
+          "iqr": 3.0
+        },
+        "llm_latency_ms": {
+          "n": 3,
+          "mean": 19068.764513002086,
+          "median": 19113.986375013832,
+          "min": 18778.027124986053,
+          "max": 19314.28003900638,
+          "iqr": 536.252914020326
+        }
+      },
+      "reflex_dividend": {
+        "novel_llm_calls_saved": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        },
+        "novel_tokens_saved": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        },
+        "novel_llm_latency_saved_ms": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        },
+        "novel_episodes_after_representation": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        }
+      },
+      "debt_recovery_ratio": {
+        "tokens": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        },
+        "calls": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        },
+        "latency": {
+          "n": 3,
+          "mean": 0.0,
+          "median": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "iqr": 0.0
+        }
+      },
+      "novel_fast_path_after_representation": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "iqr": null
+      },
+      "novel_success": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "unknown_false_fast_path_rate": {
+        "n": 3,
+        "mean": 0.0,
+        "median": 0.0,
+        "min": 0.0,
+        "max": 0.0,
+        "iqr": 0.0
+      },
+      "known_success_before_novel": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_success_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "known_fast_path_after_representation": {
+        "n": 3,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "total_tokens_saved": {
+        "n": 3,
+        "mean": 61454.333333333336,
+        "median": 61473.0,
+        "min": 61411.0,
+        "max": 61479.0,
+        "iqr": 68.0
+      }
+    }
+  ],
+  "teacher_efficiency": [
+    {
+      "model": "qwen3:4b-instruct",
+      "runs": 12,
+      "successful_reflexes_acquired": 12,
+      "validated_episodes_before_maturity": {
+        "n": 12,
+        "mean": 8.25,
+        "median": 7.0,
+        "min": 7.0,
+        "max": 12.0,
+        "iqr": 3.75
+      },
+      "acquisition_tokens_before_maturity": {
+        "n": 12,
+        "mean": 10687.083333333334,
+        "median": 9077.0,
+        "min": 9064.0,
+        "max": 15540.0,
+        "iqr": 4842.0
+      },
+      "acquisition_latency_ms_before_maturity": {
+        "n": 12,
+        "mean": 19386.951374829066,
+        "median": 16565.872330989747,
+        "min": 15995.029252992943,
+        "max": 28555.527542001073,
+        "iqr": 8454.308812510659
+      },
+      "mean_tokens_per_llm_call": {
+        "n": 12,
+        "mean": 237.16425120772945,
+        "median": 237.64202898550724,
+        "min": 234.47826086956522,
+        "max": 238.84057971014494,
+        "iqr": 3.6159420289855007
+      },
+      "mean_latency_ms_per_llm_call": {
+        "n": 12,
+        "mean": 467.6216546386547,
+        "median": 467.7171492652035,
+        "min": 454.80593970427964,
+        "max": 474.72065750440936,
+        "iqr": 9.465345942697013
+      },
+      "online_success": {
+        "n": 12,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "invalid_llm_actions": 0
+    },
+    {
+      "model": "qwen3:8b",
+      "runs": 12,
+      "successful_reflexes_acquired": 12,
+      "validated_episodes_before_maturity": {
+        "n": 12,
+        "mean": 8.25,
+        "median": 7.0,
+        "min": 7.0,
+        "max": 12.0,
+        "iqr": 3.75
+      },
+      "acquisition_tokens_before_maturity": {
+        "n": 12,
+        "mean": 10794.666666666666,
+        "median": 9163.5,
+        "min": 9124.0,
+        "max": 15720.0,
+        "iqr": 4889.25
+      },
+      "acquisition_latency_ms_before_maturity": {
+        "n": 12,
+        "mean": 22586.310329080967,
+        "median": 19357.711663999828,
+        "min": 18778.027124986053,
+        "max": 33047.1125829863,
+        "iqr": 10245.63020724061
+      },
+      "mean_tokens_per_llm_call": {
+        "n": 12,
+        "mean": 241.8376811594203,
+        "median": 242.3376811594203,
+        "min": 239.3217391304348,
+        "max": 243.38260869565218,
+        "iqr": 3.3079710144927503
+      },
+      "mean_latency_ms_per_llm_call": {
+        "n": 12,
+        "mean": 569.4895015565231,
+        "median": 570.577189089865,
+        "min": 560.723627898618,
+        "max": 576.1994097797531,
+        "iqr": 8.565490289189484
+      },
+      "online_success": {
+        "n": 12,
+        "mean": 1.0,
+        "median": 1.0,
+        "min": 1.0,
+        "max": 1.0,
+        "iqr": 0.0
+      },
+      "invalid_llm_actions": 0
+    }
+  ],
+  "certification_boundary": [
+    {
+      "model": "qwen3:4b-instruct",
+      "by_novel_train_episodes": [
+        {
+          "novel_train_episodes": 0,
+          "candidates": 12,
+          "promoted": 0,
+          "acceptance_min": 0.0,
+          "acceptance_max": 0.2857142857142857,
+          "acceptances": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.09090909090909091,
+            0.09090909090909091,
+            0.09090909090909091,
+            0.2857142857142857,
+            0.2857142857142857,
+            0.2857142857142857
+          ]
+        },
+        {
+          "novel_train_episodes": 1,
+          "candidates": 3,
+          "promoted": 0,
+          "acceptance_min": 0.375,
+          "acceptance_max": 0.375,
+          "acceptances": [
+            0.375,
+            0.375,
+            0.375
+          ]
+        },
+        {
+          "novel_train_episodes": 2,
+          "candidates": 6,
+          "promoted": 0,
+          "acceptance_min": 0.16666666666666666,
+          "acceptance_max": 0.23076923076923078,
+          "acceptances": [
+            0.16666666666666666,
+            0.16666666666666666,
+            0.16666666666666666,
+            0.23076923076923078,
+            0.23076923076923078,
+            0.23076923076923078
+          ]
+        },
+        {
+          "novel_train_episodes": 3,
+          "candidates": 9,
+          "promoted": 0,
+          "acceptance_min": 0.56,
+          "acceptance_max": 0.6428571428571429,
+          "acceptances": [
+            0.56,
+            0.56,
+            0.56,
+            0.5833333333333334,
+            0.5833333333333334,
+            0.5833333333333334,
+            0.6428571428571429,
+            0.6428571428571429,
+            0.6428571428571429
+          ]
+        },
+        {
+          "novel_train_episodes": 4,
+          "candidates": 9,
+          "promoted": 9,
+          "acceptance_min": 0.9411764705882353,
+          "acceptance_max": 0.9473684210526315,
+          "acceptances": [
+            0.9411764705882353,
+            0.9411764705882353,
+            0.9411764705882353,
+            0.9411764705882353,
+            0.9411764705882353,
+            0.9411764705882353,
+            0.9473684210526315,
+            0.9473684210526315,
+            0.9473684210526315
+          ]
+        },
+        {
+          "novel_train_episodes": 6,
+          "candidates": 3,
+          "promoted": 3,
+          "acceptance_min": 0.9333333333333333,
+          "acceptance_max": 0.9333333333333333,
+          "acceptances": [
+            0.9333333333333333,
+            0.9333333333333333,
+            0.9333333333333333
+          ]
+        }
+      ]
+    },
+    {
+      "model": "qwen3:8b",
+      "by_novel_train_episodes": [
+        {
+          "novel_train_episodes": 0,
+          "candidates": 12,
+          "promoted": 0,
+          "acceptance_min": 0.0,
+          "acceptance_max": 0.2857142857142857,
+          "acceptances": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.09090909090909091,
+            0.09090909090909091,
+            0.09090909090909091,
+            0.2857142857142857,
+            0.2857142857142857,
+            0.2857142857142857
+          ]
+        },
+        {
+          "novel_train_episodes": 1,
+          "candidates": 3,
+          "promoted": 0,
+          "acceptance_min": 0.375,
+          "acceptance_max": 0.375,
+          "acceptances": [
+            0.375,
+            0.375,
+            0.375
+          ]
+        },
+        {
+          "novel_train_episodes": 2,
+          "candidates": 6,
+          "promoted": 0,
+          "acceptance_min": 0.16666666666666666,
+          "acceptance_max": 0.23076923076923078,
+          "acceptances": [
+            0.16666666666666666,
+            0.16666666666666666,
+            0.16666666666666666,
+            0.23076923076923078,
+            0.23076923076923078,
+            0.23076923076923078
+          ]
+        },
+        {
+          "novel_train_episodes": 3,
+          "candidates": 9,
+          "promoted": 0,
+          "acceptance_min": 0.56,
+          "acceptance_max": 0.6428571428571429,
+          "acceptances": [
+            0.56,
+            0.56,
+            0.56,
+            0.5833333333333334,
+            0.5833333333333334,
+            0.5833333333333334,
+            0.6428571428571429,
+            0.6428571428571429,
+            0.6428571428571429
+          ]
+        },
+        {
+          "novel_train_episodes": 4,
+          "candidates": 9,
+          "promoted": 9,
+          "acceptance_min": 0.9411764705882353,
+          "acceptance_max": 0.9473684210526315,
+          "acceptances": [
+            0.9411764705882353,
+            0.9411764705882353,
+            0.9411764705882353,
+            0.9411764705882353,
+            0.9411764705882353,
+            0.9411764705882353,
+            0.9473684210526315,
+            0.9473684210526315,
+            0.9473684210526315
+          ]
+        },
+        {
+          "novel_train_episodes": 6,
+          "candidates": 3,
+          "promoted": 3,
+          "acceptance_min": 0.9333333333333333,
+          "acceptance_max": 0.9333333333333333,
+          "acceptances": [
+            0.9333333333333333,
+            0.9333333333333333,
+            0.9333333333333333
+          ]
+        }
+      ]
+    }
+  ],
+  "per_run": [
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "burst",
+      "seed": 0,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.6956521739130435,
+      "token_reduction": 0.6879235384129606,
+      "llm_latency_reduction": 0.6963131959106887,
+      "ttr_episodes": 12,
+      "outcome": "promoted",
+      "deployment_episode": 44,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 6,
+      "certification_episodes": 6,
+      "debt_tokens": 15519,
+      "debt_latency_ms": 28391.06241799891,
+      "dividend_tokens": 6298,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.40582511759778334,
+      "recovery_calls": 0.4,
+      "recovery_latency": 0.4047686175605592,
+      "false_fast_path": 0.0,
+      "promotions": 3,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "burst",
+      "seed": 1,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.6956521739130435,
+      "token_reduction": 0.6872237602603332,
+      "llm_latency_reduction": 0.6902172044444945,
+      "ttr_episodes": 12,
+      "outcome": "promoted",
+      "deployment_episode": 44,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 6,
+      "certification_episodes": 6,
+      "debt_tokens": 15540,
+      "debt_latency_ms": 28555.527542001073,
+      "dividend_tokens": 6295,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.40508365508365507,
+      "recovery_calls": 0.4,
+      "recovery_latency": 0.39907713384918064,
+      "false_fast_path": 0.0,
+      "promotions": 3,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "burst",
+      "seed": 2,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.6956521739130435,
+      "token_reduction": 0.6869834710743802,
+      "llm_latency_reduction": 0.6975238580563077,
+      "ttr_episodes": 12,
+      "outcome": "promoted",
+      "deployment_episode": 44,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 6,
+      "certification_episodes": 6,
+      "debt_tokens": 15537,
+      "debt_latency_ms": 27584.556831010617,
+      "dividend_tokens": 6316,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.40651348394155884,
+      "recovery_calls": 0.4,
+      "recovery_latency": 0.4262600640291675,
+      "false_fast_path": 0.0,
+      "promotions": 3,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "interleaved",
+      "seed": 0,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7623188405797101,
+      "token_reduction": 0.7614116447336473,
+      "llm_latency_reduction": 0.7653361935768775,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 34,
+      "post_promotion_exposure": 10,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9079,
+      "debt_latency_ms": 16740.98299999931,
+      "dividend_tokens": 12586,
+      "dividend_calls": 48,
+      "recovery_tokens": 1.3862760215882806,
+      "recovery_calls": 1.3714285714285714,
+      "recovery_latency": 1.387421622256793,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "interleaved",
+      "seed": 1,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7623188405797101,
+      "token_reduction": 0.7614077669902912,
+      "llm_latency_reduction": 0.7675836422157309,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 34,
+      "post_promotion_exposure": 10,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9071,
+      "debt_latency_ms": 16603.336539992713,
+      "dividend_tokens": 12590,
+      "dividend_calls": 48,
+      "recovery_tokens": 1.3879395876970566,
+      "recovery_calls": 1.3714285714285714,
+      "recovery_latency": 1.4028422958783504,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "interleaved",
+      "seed": 2,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7623188405797101,
+      "token_reduction": 0.7617538106516062,
+      "llm_latency_reduction": 0.7629260546542278,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 34,
+      "post_promotion_exposure": 10,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9067,
+      "debt_latency_ms": 16416.843456000905,
+      "dividend_tokens": 12603,
+      "dividend_calls": 48,
+      "recovery_tokens": 1.3899856622918274,
+      "recovery_calls": 1.3714285714285714,
+      "recovery_latency": 1.371879180816082,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "periodic",
+      "seed": 0,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7652173913043478,
+      "token_reduction": 0.7618190280227317,
+      "llm_latency_reduction": 0.772166437348755,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 37,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9068,
+      "debt_latency_ms": 16180.410124994814,
+      "dividend_tokens": 6276,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.6921041023378914,
+      "recovery_calls": 0.6857142857142857,
+      "recovery_latency": 0.7010874232708081,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "periodic",
+      "seed": 1,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7652173913043478,
+      "token_reduction": 0.761387144553389,
+      "llm_latency_reduction": 0.7688012513298521,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 37,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9079,
+      "debt_latency_ms": 16528.40812198678,
+      "dividend_tokens": 6277,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.6913757021698425,
+      "recovery_calls": 0.6857142857142857,
+      "recovery_latency": 0.7184571427781424,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "periodic",
+      "seed": 2,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7652173913043478,
+      "token_reduction": 0.7618097464837008,
+      "llm_latency_reduction": 0.7705166236665159,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 37,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9075,
+      "debt_latency_ms": 16426.887874985812,
+      "dividend_tokens": 6289,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.6930027548209367,
+      "recovery_calls": 0.6857142857142857,
+      "recovery_latency": 0.7151252724437649,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "rare",
+      "seed": 0,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.744927536231884,
+      "token_reduction": 0.7433765014087291,
+      "llm_latency_reduction": 0.7510642030031759,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 68,
+      "post_promotion_exposure": 0,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9066,
+      "debt_latency_ms": 16504.63883298682,
+      "dividend_tokens": 0,
+      "dividend_calls": 0,
+      "recovery_tokens": 0.0,
+      "recovery_calls": 0.0,
+      "recovery_latency": 0.0,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 4
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "rare",
+      "seed": 1,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.744927536231884,
+      "token_reduction": 0.7433517868617469,
+      "llm_latency_reduction": 0.7548051676030645,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 68,
+      "post_promotion_exposure": 0,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9080,
+      "debt_latency_ms": 16715.732502998086,
+      "dividend_tokens": 0,
+      "dividend_calls": 0,
+      "recovery_tokens": 0.0,
+      "recovery_calls": 0.0,
+      "recovery_latency": 0.0,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 4
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "ollama",
+      "arrival": "rare",
+      "seed": 2,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.744927536231884,
+      "token_reduction": 0.7432968663081773,
+      "llm_latency_reduction": 0.7495494450358704,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 68,
+      "post_promotion_exposure": 0,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9064,
+      "debt_latency_ms": 15995.029252992943,
+      "dividend_tokens": 0,
+      "dividend_calls": 0,
+      "recovery_tokens": 0.0,
+      "recovery_calls": 0.0,
+      "recovery_latency": 0.0,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 4
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "burst",
+      "seed": 0,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.6956521739130435,
+      "token_reduction": 0.6881870258553956,
+      "llm_latency_reduction": 0.6844398847983766,
+      "ttr_episodes": 12,
+      "outcome": "promoted",
+      "deployment_episode": 44,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 6,
+      "certification_episodes": 6,
+      "debt_tokens": 15720,
+      "debt_latency_ms": 33047.1125829863,
+      "dividend_tokens": 6377,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.4056615776081425,
+      "recovery_calls": 0.4,
+      "recovery_latency": 0.3969967802493994,
+      "false_fast_path": 0.0,
+      "promotions": 3,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "burst",
+      "seed": 1,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.6956521739130435,
+      "token_reduction": 0.6884531071292413,
+      "llm_latency_reduction": 0.7037740022406537,
+      "ttr_episodes": 12,
+      "outcome": "promoted",
+      "deployment_episode": 44,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 6,
+      "certification_episodes": 6,
+      "debt_tokens": 15710,
+      "debt_latency_ms": 33006.598789990705,
+      "dividend_tokens": 6384,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.4063653723742839,
+      "recovery_calls": 0.4,
+      "recovery_latency": 0.4012135977195283,
+      "false_fast_path": 0.0,
+      "promotions": 3,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "burst",
+      "seed": 2,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.6956521739130435,
+      "token_reduction": 0.6888581611853477,
+      "llm_latency_reduction": 0.704496913561823,
+      "ttr_episodes": 12,
+      "outcome": "promoted",
+      "deployment_episode": 44,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 6,
+      "certification_episodes": 6,
+      "debt_tokens": 15674,
+      "debt_latency_ms": 32532.8825409814,
+      "dividend_tokens": 6391,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.40774531070562714,
+      "recovery_calls": 0.4,
+      "recovery_latency": 0.4226140141343108,
+      "false_fast_path": 0.0,
+      "promotions": 3,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "interleaved",
+      "seed": 0,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7623188405797101,
+      "token_reduction": 0.76193030129672,
+      "llm_latency_reduction": 0.7714827653159607,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 34,
+      "post_promotion_exposure": 10,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9172,
+      "debt_latency_ms": 19011.84687699389,
+      "dividend_tokens": 12713,
+      "dividend_calls": 48,
+      "recovery_tokens": 1.3860662887047537,
+      "recovery_calls": 1.3714285714285714,
+      "recovery_latency": 1.4095251093370083,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "interleaved",
+      "seed": 1,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7623188405797101,
+      "token_reduction": 0.7622554276590167,
+      "llm_latency_reduction": 0.7699930327999813,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 34,
+      "post_promotion_exposure": 10,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9159,
+      "debt_latency_ms": 19074.738289000583,
+      "dividend_tokens": 12729,
+      "dividend_calls": 48,
+      "recovery_tokens": 1.3897805437274813,
+      "recovery_calls": 1.3714285714285714,
+      "recovery_latency": 1.4007341700407765,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "interleaved",
+      "seed": 2,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7623188405797101,
+      "token_reduction": 0.7622293456629765,
+      "llm_latency_reduction": 0.7686171149069605,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 34,
+      "post_promotion_exposure": 10,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9157,
+      "debt_latency_ms": 19423.586377008585,
+      "dividend_tokens": 12725,
+      "dividend_calls": 48,
+      "recovery_tokens": 1.3896472643878999,
+      "recovery_calls": 1.3714285714285714,
+      "recovery_latency": 1.3991546933463752,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "periodic",
+      "seed": 0,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7652173913043478,
+      "token_reduction": 0.7624876983269725,
+      "llm_latency_reduction": 0.7726453266211918,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 37,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9164,
+      "debt_latency_ms": 19401.143288993277,
+      "dividend_tokens": 6363,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.6943474465298997,
+      "recovery_calls": 0.6857142857142857,
+      "recovery_latency": 0.7097543449834187,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "periodic",
+      "seed": 1,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7652173913043478,
+      "token_reduction": 0.7622981329170919,
+      "llm_latency_reduction": 0.770030111514518,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 37,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9171,
+      "debt_latency_ms": 19494.152126000496,
+      "dividend_tokens": 6356,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.6930541925635154,
+      "recovery_calls": 0.6857142857142857,
+      "recovery_latency": 0.6726591134220197,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "periodic",
+      "seed": 2,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.7652173913043478,
+      "token_reduction": 0.762855770385493,
+      "llm_latency_reduction": 0.7733617720971017,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 37,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9124,
+      "debt_latency_ms": 18837.369538010098,
+      "dividend_tokens": 6356,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.6966242875931609,
+      "recovery_calls": 0.6857142857142857,
+      "recovery_latency": 0.7015943701877653,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "rare",
+      "seed": 0,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.744927536231884,
+      "token_reduction": 0.7441897060959667,
+      "llm_latency_reduction": 0.7554632456296817,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 68,
+      "post_promotion_exposure": 0,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9160,
+      "debt_latency_ms": 19113.986375013832,
+      "dividend_tokens": 0,
+      "dividend_calls": 0,
+      "recovery_tokens": 0.0,
+      "recovery_calls": 0.0,
+      "recovery_latency": 0.0,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 4
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "rare",
+      "seed": 1,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.744927536231884,
+      "token_reduction": 0.7440810496756076,
+      "llm_latency_reduction": 0.7544574757329208,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 68,
+      "post_promotion_exposure": 0,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9162,
+      "debt_latency_ms": 19314.28003900638,
+      "dividend_tokens": 0,
+      "dividend_calls": 0,
+      "recovery_tokens": 0.0,
+      "recovery_calls": 0.0,
+      "recovery_latency": 0.0,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 4
+    },
+    {
+      "model": "qwen3:8b",
+      "api_style": "ollama",
+      "arrival": "rare",
+      "seed": 2,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.744927536231884,
+      "token_reduction": 0.7437807329893661,
+      "llm_latency_reduction": 0.7560103095224149,
+      "ttr_episodes": 7,
+      "outcome": "promoted",
+      "deployment_episode": 68,
+      "post_promotion_exposure": 0,
+      "learning_episodes": 4,
+      "certification_episodes": 3,
+      "debt_tokens": 9163,
+      "debt_latency_ms": 18778.027124986053,
+      "dividend_tokens": 0,
+      "dividend_calls": 0,
+      "recovery_tokens": 0.0,
+      "recovery_calls": 0.0,
+      "recovery_latency": 0.0,
+      "false_fast_path": 0.0,
+      "promotions": 2,
+      "rejections": 4
+    }
+  ],
+  "transport_control": [
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "openai",
+      "arrival": "burst",
+      "seed": 0,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.6956521739130435,
+      "token_reduction": 0.6875129024031864,
+      "llm_latency_reduction": 0.6809532616558664,
+      "ttr_episodes": 12,
+      "outcome": "promoted",
+      "deployment_episode": 44,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 6,
+      "certification_episodes": 6,
+      "debt_tokens": 15521,
+      "debt_latency_ms": 28599.12170598909,
+      "dividend_tokens": 6302,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.406030539269377,
+      "recovery_calls": 0.4,
+      "recovery_latency": 0.4010805018043994,
+      "false_fast_path": 0.0,
+      "promotions": 3,
+      "rejections": 2
+    },
+    {
+      "model": "qwen3:4b-instruct",
+      "api_style": "openai",
+      "arrival": "burst",
+      "seed": 1,
+      "online_success": 1.0,
+      "llm_call_reduction": 0.6956521739130435,
+      "token_reduction": 0.6873884700826687,
+      "llm_latency_reduction": 0.6981737016526166,
+      "ttr_episodes": 12,
+      "outcome": "promoted",
+      "deployment_episode": 44,
+      "post_promotion_exposure": 5,
+      "learning_episodes": 6,
+      "certification_episodes": 6,
+      "debt_tokens": 15548,
+      "debt_latency_ms": 28073.113585982355,
+      "dividend_tokens": 6303,
+      "dividend_calls": 24,
+      "recovery_tokens": 0.4053897607409313,
+      "recovery_calls": 0.4,
+      "recovery_latency": 0.3992612780786797,
+      "false_fast_path": 0.0,
+      "promotions": 3,
+      "rejections": 2
+    }
+  ]
+}

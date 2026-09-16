@@ -1,0 +1,22 @@
+{
+  "dataset": "paradigm.synthetic",
+  "note": "Bootstrap synthetic result. Not a project claim.",
+  "n_train": 4500,
+  "n_test": 1500,
+  "decision_tree": {
+    "accuracy": 0.996,
+    "latency_us_per_item": 0.5923102666656632
+  },
+  "random_forest": {
+    "accuracy": 0.9966666666666667,
+    "latency_us_per_item": 77.49628700000054
+  },
+  "compiled_reflex": {
+    "accuracy": 0.9966666666666667,
+    "brier": 0.006117356790091584,
+    "ece": 0.0026225613779391013,
+    "coverage_at_0_90": 0.9946666666666667,
+    "selective_accuracy_at_0_90": 0.9979892761394102,
+    "latency_us_per_item": 293.65693966666794
+  }
+}

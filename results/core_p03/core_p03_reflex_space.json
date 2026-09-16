@@ -1,0 +1,95 @@
+{
+  "benchmark": "Paradigm Core P0.3 trusted reflex/update space",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "processor": "unknown"
+  },
+  "seed": 1337,
+  "claim_level": "synthetic trusted reflex parameter/behavior-space benchmark",
+  "parameter_space": {
+    "gate": {
+      "threshold": 0.3662905786070249,
+      "n_components": 11,
+      "variance_retained": 0.9541685196617303
+    },
+    "clean_accept_rate": 0.98,
+    "poison_false_accept_rate": 0.0,
+    "weak_pool_valid_accept_rate": 0.74,
+    "poison_auroc": 1.0,
+    "mean_clean_accuracy": 0.97886,
+    "mean_poisoned_accuracy": 0.9260200000000001,
+    "mean_weak_pool_accuracy": 0.992488888888889,
+    "augmented_with_weak_pool": false
+  },
+  "behavior_space": {
+    "gate": {
+      "threshold": 0.44885178003802784,
+      "n_components": 15,
+      "variance_retained": 0.9610881448411166
+    },
+    "clean_accept_rate": 1.0,
+    "poison_false_accept_rate": 0.0,
+    "weak_pool_valid_accept_rate": 0.7,
+    "poison_auroc": 1.0,
+    "mean_clean_accuracy": 0.97886,
+    "mean_poisoned_accuracy": 0.9260200000000001,
+    "mean_weak_pool_accuracy": 0.992488888888889,
+    "augmented_with_weak_pool": false
+  },
+  "weak_pool_recovery": {
+    "parameter_space": {
+      "gate": {
+        "threshold": 0.39015268862829605,
+        "n_components": 10,
+        "variance_retained": 0.9555961357543816
+      },
+      "clean_accept_rate": 0.94,
+      "poison_false_accept_rate": 0.0,
+      "weak_pool_valid_accept_rate": 1.0,
+      "poison_auroc": 1.0,
+      "mean_clean_accuracy": 0.97886,
+      "mean_poisoned_accuracy": 0.9260200000000001,
+      "mean_weak_pool_accuracy": 0.9926666666666667,
+      "augmented_with_weak_pool": true
+    },
+    "behavior_space": {
+      "gate": {
+        "threshold": 0.4140430511996689,
+        "n_components": 15,
+        "variance_retained": 0.9593171834103378
+      },
+      "clean_accept_rate": 0.92,
+      "poison_false_accept_rate": 0.0,
+      "weak_pool_valid_accept_rate": 1.0,
+      "poison_auroc": 1.0,
+      "mean_clean_accuracy": 0.97886,
+      "mean_poisoned_accuracy": 0.9260200000000001,
+      "mean_weak_pool_accuracy": 0.9926666666666667,
+      "augmented_with_weak_pool": true
+    }
+  },
+  "parameter_aligned_attack": {
+    "target_size": 9,
+    "overall_accuracy": 0.959,
+    "target_slice_accuracy": 0.1111111111111111,
+    "parameter_score": 1.8668590807458237e-15,
+    "parameter_threshold": 0.3662905786070249,
+    "parameter_gate_accepts": true,
+    "behavior_score": 0.5671374053955442,
+    "behavior_threshold": 0.44885178003802784,
+    "behavior_gate_accepts": false
+  },
+  "behavior_aligned_control": {
+    "signature_only_control": true,
+    "target_size": 18,
+    "ensemble_mean_target_accuracy": 0.9444444444444444,
+    "candidate_target_slice_accuracy": 0.7222222222222222,
+    "candidate_overall_anchor_accuracy": 0.9575,
+    "behavior_score": 0.09116133418758791,
+    "behavior_threshold": 0.44885178003802784,
+    "behavior_gate_accepts": true,
+    "interpretation": "A residual-only behavior subspace is not a semantic certificate. This control uses a convex mixture of trusted probability signatures and may not correspond to a single executable trained reflex."
+  },
+  "interpretation": "Moving trust from input space to reflex signatures makes label-poisoned candidates visible in this synthetic task. The result also reproduces the weak-pool problem: valid novel reflexes can be rejected until the trusted pool is expanded. Parameter-subspace membership alone is not sufficient, because an adaptive candidate can be generated inside the parameter subspace while harming a target slice. Behavior-space residuals catch that constructed parameter-space attack here, but the signature-only control shows that behavior-space geometry is not a semantic certificate either."
+}

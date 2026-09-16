@@ -1,0 +1,262 @@
+{
+  "claim_level": "synthetic family-conditioned trusted plasticity benchmark",
+  "combined_baseline": {
+    "drift_contract": {
+      "final_current_accuracy": {
+        "mean": 0.6648333333333333,
+        "std": 0.005864204028586416
+      },
+      "final_mean_forgetting": {
+        "mean": 0.3681111111111111,
+        "std": 0.005065009475574007
+      },
+      "final_mean_seen_accuracy": {
+        "mean": 0.3897916666666667,
+        "std": 0.003266517853753282
+      },
+      "final_worst_seen_accuracy": {
+        "mean": 0.22583333333333333,
+        "std": 0.008024268744807156
+      },
+      "mean_max_step_drift": {
+        "mean": 0.02403407625848925,
+        "std": 9.609523904193948e-05
+      }
+    },
+    "drift_contract_plus_replay": {
+      "final_current_accuracy": {
+        "mean": 0.6383333333333333,
+        "std": 0.011404190263037324
+      },
+      "final_mean_forgetting": {
+        "mean": 0.3013333333333334,
+        "std": 0.0036742346141747707
+      },
+      "final_mean_seen_accuracy": {
+        "mean": 0.40420833333333334,
+        "std": 0.009221992132337188
+      },
+      "final_worst_seen_accuracy": {
+        "mean": 0.2688333333333333,
+        "std": 0.016814345726855442
+      },
+      "mean_max_step_drift": {
+        "mean": 0.024122866469578327,
+        "std": 8.235900470804805e-05
+      }
+    },
+    "replay": {
+      "final_current_accuracy": {
+        "mean": 0.6575,
+        "std": 0.012172373091006845
+      },
+      "final_mean_forgetting": {
+        "mean": 0.30777777777777776,
+        "std": 0.0038904758666692555
+      },
+      "final_mean_seen_accuracy": {
+        "mean": 0.4095416666666667,
+        "std": 0.004941673693081031
+      },
+      "final_worst_seen_accuracy": {
+        "mean": 0.25483333333333336,
+        "std": 0.004870546398734157
+      },
+      "mean_max_step_drift": {
+        "mean": 0.053684039894318504,
+        "std": 0.002633969255476808
+      }
+    }
+  },
+  "family_conditioned_trust": {
+    "family_1": {
+      "behavior_gate": {
+        "calibration_similarity_mean": 0.9572546500724411,
+        "heldout_similarity_mean": 0.9591763137358708,
+        "threshold": 0.928724152574443,
+        "type": "cosine_prototype"
+      },
+      "cross_family": {
+        "behavior_acceptance": 0.0,
+        "full_manifest_acceptance": 0.0,
+        "geometry_joint_acceptance": 0.0,
+        "parameter_acceptance": 0.0,
+        "semantic_acceptance": 0.0
+      },
+      "epsilon": 0.03,
+      "heldout_clean": {
+        "behavior_acceptance": 1.0,
+        "full_manifest_acceptance": 1.0,
+        "geometry_joint_acceptance": 1.0,
+        "parameter_acceptance": 1.0,
+        "semantic_acceptance": 1.0
+      },
+      "mean_metrics": {
+        "current_accuracy": 0.5959791666666666,
+        "max_step_drift": 0.028957030715279247,
+        "minimum_class_accuracy": 0.5103826990595364,
+        "protected_accuracy": 0.2965,
+        "subgroup_accuracy": 0.6496141975308642
+      },
+      "parameter_gate": {
+        "calibration_similarity_mean": 0.808613784046079,
+        "heldout_similarity_mean": 0.8096772958525221,
+        "threshold": 0.7725916414825561,
+        "type": "cosine_prototype"
+      },
+      "risk": "low",
+      "semantic_floors": {
+        "current_accuracy": 0.571767686246565,
+        "minimum_class_accuracy": 0.4085371973401278,
+        "protected_accuracy": 0.25358418299401264,
+        "subgroup_accuracy": 0.5717030967962674
+      },
+      "targeted_poison": {
+        "behavior_acceptance": 0.0,
+        "full_manifest_acceptance": 0.0,
+        "geometry_joint_acceptance": 0.0,
+        "parameter_acceptance": 0.0,
+        "semantic_acceptance": 0.0
+      }
+    },
+    "family_2": {
+      "behavior_gate": {
+        "calibration_similarity_mean": 0.979463343925458,
+        "heldout_similarity_mean": 0.978311941092477,
+        "threshold": 0.9711791563139144,
+        "type": "cosine_prototype"
+      },
+      "cross_family": {
+        "behavior_acceptance": 0.0,
+        "full_manifest_acceptance": 0.0,
+        "geometry_joint_acceptance": 0.0,
+        "parameter_acceptance": 0.0,
+        "semantic_acceptance": 0.0
+      },
+      "epsilon": 0.015,
+      "heldout_clean": {
+        "behavior_acceptance": 1.0,
+        "full_manifest_acceptance": 0.8333333333333334,
+        "geometry_joint_acceptance": 1.0,
+        "parameter_acceptance": 1.0,
+        "semantic_acceptance": 0.8333333333333334
+      },
+      "mean_metrics": {
+        "current_accuracy": 0.5269375,
+        "max_step_drift": 0.014490843950298142,
+        "minimum_class_accuracy": 0.44242931547619047,
+        "protected_accuracy": 0.4001875000000001,
+        "subgroup_accuracy": 0.5973765432098765
+      },
+      "parameter_gate": {
+        "calibration_similarity_mean": 0.9047023584702208,
+        "heldout_similarity_mean": 0.9026893154337339,
+        "threshold": 0.8843158364300872,
+        "type": "cosine_prototype"
+      },
+      "risk": "medium",
+      "semantic_floors": {
+        "current_accuracy": 0.5020695934675437,
+        "minimum_class_accuracy": 0.3533388491144017,
+        "protected_accuracy": 0.37982798047626715,
+        "subgroup_accuracy": 0.4988127547526816
+      },
+      "targeted_poison": {
+        "behavior_acceptance": 0.0,
+        "full_manifest_acceptance": 0.0,
+        "geometry_joint_acceptance": 0.0,
+        "parameter_acceptance": 0.0,
+        "semantic_acceptance": 0.0
+      }
+    },
+    "family_3": {
+      "behavior_gate": {
+        "calibration_similarity_mean": 0.9752987827760418,
+        "heldout_similarity_mean": 0.9747808374301196,
+        "threshold": 0.9665912050208878,
+        "type": "cosine_prototype"
+      },
+      "cross_family": {
+        "behavior_acceptance": 0.0,
+        "full_manifest_acceptance": 0.0,
+        "geometry_joint_acceptance": 0.0,
+        "parameter_acceptance": 0.0,
+        "semantic_acceptance": 0.0
+      },
+      "epsilon": 0.0075,
+      "heldout_clean": {
+        "behavior_acceptance": 1.0,
+        "full_manifest_acceptance": 1.0,
+        "geometry_joint_acceptance": 1.0,
+        "parameter_acceptance": 1.0,
+        "semantic_acceptance": 1.0
+      },
+      "mean_metrics": {
+        "current_accuracy": 0.45704166666666673,
+        "max_step_drift": 0.007220646395492698,
+        "minimum_class_accuracy": 0.42067554985256583,
+        "protected_accuracy": 0.5814583333333333,
+        "subgroup_accuracy": 0.48194444444444445
+      },
+      "parameter_gate": {
+        "calibration_similarity_mean": 0.912019057275136,
+        "heldout_similarity_mean": 0.9126531207493539,
+        "threshold": 0.8990929381086239,
+        "type": "cosine_prototype"
+      },
+      "risk": "high",
+      "semantic_floors": {
+        "current_accuracy": 0.44212547894302284,
+        "minimum_class_accuracy": 0.38816272180334105,
+        "protected_accuracy": 0.5636987749850175,
+        "subgroup_accuracy": 0.4524640886910375
+      },
+      "targeted_poison": {
+        "behavior_acceptance": 0.0,
+        "full_manifest_acceptance": 0.0,
+        "geometry_joint_acceptance": 0.0,
+        "parameter_acceptance": 0.0,
+        "semantic_acceptance": 0.0
+      }
+    }
+  },
+  "research_sources": {
+    "drift_contract": "https://github.com/infinition/drift-contract",
+    "drift_preprint": "https://infinition.github.io/infinition/assets/papers/drift-bounded-spectral-updates.pdf",
+    "z_manifold": "https://github.com/infinition/z-manifold",
+    "z_manifold_paper": "https://arxiv.org/abs/2607.05300"
+  },
+  "risk_conditioned_epsilon": {
+    "controlled_family": 2,
+    "note": "Same parent, data, minibatch seed, replay policy, and steps. Only epsilon changes.",
+    "results": {
+      "high": {
+        "current_accuracy": 0.331,
+        "epsilon": 0.0075,
+        "max_step_drift": 0.007206536924927622,
+        "minimum_class_accuracy": 0.2857142857142857,
+        "protected_accuracy": 0.599
+      },
+      "low": {
+        "current_accuracy": 0.5915,
+        "epsilon": 0.03,
+        "max_step_drift": 0.028629925230459992,
+        "minimum_class_accuracy": 0.5379464285714286,
+        "protected_accuracy": 0.301
+      },
+      "medium": {
+        "current_accuracy": 0.5385,
+        "epsilon": 0.015,
+        "max_step_drift": 0.01446454237524779,
+        "minimum_class_accuracy": 0.45535714285714285,
+        "protected_accuracy": 0.377
+      }
+    }
+  },
+  "scope_note": "P1.2 tests family-conditioned parameter and behavior update spaces within one shared model lineage, semantic subgroup checks, risk-conditioned Drift Contract budgets, and a replay plus Drift Contract baseline. Geometry is used as rejection or routing evidence, never as a standalone promotion certificate.",
+  "seeds": [
+    11,
+    23,
+    41
+  ]
+}

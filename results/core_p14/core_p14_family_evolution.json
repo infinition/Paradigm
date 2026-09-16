@@ -1,0 +1,279 @@
+{
+  "claim_level": "synthetic family-evolution and non-permissivity benchmark",
+  "long_run": {
+    "all_family_count": 9,
+    "capture_history": [
+      {
+        "ambiguous": 0.0,
+        "represented": 0.0,
+        "stage": "after_split",
+        "unknown": 1.0,
+        "unsafe_capture": 0.0
+      },
+      {
+        "ambiguous": 0.0,
+        "represented": 0.0,
+        "stage": "after_narrow-2",
+        "unknown": 1.0,
+        "unsafe_capture": 0.0
+      },
+      {
+        "ambiguous": 0.0,
+        "represented": 0.0,
+        "stage": "after_narrow-3",
+        "unknown": 1.0,
+        "unsafe_capture": 0.0
+      },
+      {
+        "ambiguous": 0.0,
+        "represented": 0.0,
+        "stage": "after_narrow-4",
+        "unknown": 1.0,
+        "unsafe_capture": 0.0
+      },
+      {
+        "ambiguous": 0.0,
+        "represented": 0.0,
+        "stage": "after_narrow-5",
+        "unknown": 1.0,
+        "unsafe_capture": 0.0
+      },
+      {
+        "ambiguous": 0.0,
+        "represented": 0.0,
+        "stage": "after_narrow-6",
+        "unknown": 1.0,
+        "unsafe_capture": 0.0
+      },
+      {
+        "ambiguous": 0.0,
+        "represented": 0.0,
+        "stage": "after_narrow-7",
+        "unknown": 1.0,
+        "unsafe_capture": 0.0
+      },
+      {
+        "ambiguous": 0.0,
+        "represented": 0.0,
+        "stage": "final",
+        "unknown": 1.0,
+        "unsafe_capture": 0.0
+      }
+    ],
+    "final_active_family_count": 8,
+    "narrow_additions": [
+      {
+        "approved": true,
+        "baseline_clean_ambiguity": 0.0,
+        "baseline_clean_exact": 0.6666666666666666,
+        "baseline_negative_capture": 0.0,
+        "candidate_family_id": "fam-4c1d9d66b0b8c917099a4923",
+        "clean_ambiguity_delta": 0.0,
+        "clean_exact_delta": 0.33333333333333337,
+        "name": "narrow-2",
+        "negative_capture_delta": 0.0,
+        "proposed_clean_ambiguity": 0.0,
+        "proposed_clean_exact": 1.0,
+        "proposed_negative_capture": 0.0,
+        "reasons": []
+      },
+      {
+        "approved": true,
+        "baseline_clean_ambiguity": 0.0,
+        "baseline_clean_exact": 0.75,
+        "baseline_negative_capture": 0.0,
+        "candidate_family_id": "fam-444c6730259f73114e588513",
+        "clean_ambiguity_delta": 0.0,
+        "clean_exact_delta": 0.25,
+        "name": "narrow-3",
+        "negative_capture_delta": 0.0,
+        "proposed_clean_ambiguity": 0.0,
+        "proposed_clean_exact": 1.0,
+        "proposed_negative_capture": 0.0,
+        "reasons": []
+      },
+      {
+        "approved": true,
+        "baseline_clean_ambiguity": 0.0,
+        "baseline_clean_exact": 0.8,
+        "baseline_negative_capture": 0.0,
+        "candidate_family_id": "fam-ff737e36b99113e098ee6c88",
+        "clean_ambiguity_delta": 0.0,
+        "clean_exact_delta": 0.19999999999999996,
+        "name": "narrow-4",
+        "negative_capture_delta": 0.0,
+        "proposed_clean_ambiguity": 0.0,
+        "proposed_clean_exact": 1.0,
+        "proposed_negative_capture": 0.0,
+        "reasons": []
+      },
+      {
+        "approved": true,
+        "baseline_clean_ambiguity": 0.0,
+        "baseline_clean_exact": 0.8333333333333334,
+        "baseline_negative_capture": 0.0,
+        "candidate_family_id": "fam-6e58a10daf4c19d4c0dac116",
+        "clean_ambiguity_delta": 0.0,
+        "clean_exact_delta": 0.16666666666666663,
+        "name": "narrow-5",
+        "negative_capture_delta": 0.0,
+        "proposed_clean_ambiguity": 0.0,
+        "proposed_clean_exact": 1.0,
+        "proposed_negative_capture": 0.0,
+        "reasons": []
+      },
+      {
+        "approved": true,
+        "baseline_clean_ambiguity": 0.0,
+        "baseline_clean_exact": 0.8571428571428571,
+        "baseline_negative_capture": 0.0,
+        "candidate_family_id": "fam-2067b3939b92f2e25200513a",
+        "clean_ambiguity_delta": 0.0,
+        "clean_exact_delta": 0.1428571428571429,
+        "name": "narrow-6",
+        "negative_capture_delta": 0.0,
+        "proposed_clean_ambiguity": 0.0,
+        "proposed_clean_exact": 1.0,
+        "proposed_negative_capture": 0.0,
+        "reasons": []
+      },
+      {
+        "approved": true,
+        "baseline_clean_ambiguity": 0.0,
+        "baseline_clean_exact": 0.875,
+        "baseline_negative_capture": 0.0,
+        "candidate_family_id": "fam-3e03de5867b6a4d8e6ae9a14",
+        "clean_ambiguity_delta": 0.0,
+        "clean_exact_delta": 0.125,
+        "name": "narrow-7",
+        "negative_capture_delta": 0.0,
+        "proposed_clean_ambiguity": 0.0,
+        "proposed_clean_exact": 1.0,
+        "proposed_negative_capture": 0.0,
+        "reasons": []
+      }
+    ]
+  },
+  "observed": {
+    "all_narrow_additions_approved": true,
+    "bridge_routes_to_deliberation_as_ambiguous": true,
+    "broad_family_rejected": true,
+    "guarded_split_approved": true,
+    "negative_capture_does_not_increase": true,
+    "overlapping_family_rejected": true,
+    "parent_definition_hash_unchanged": true,
+    "parent_retired_after_split": true,
+    "reactivated_child_routes_again": true,
+    "reactivation_preserves_definition_hash": true,
+    "rejected_families_not_active": true,
+    "retired_child_stops_routing": true,
+    "root_represents_both_modes_before_split": true,
+    "split_children_route_uniquely": true
+  },
+  "persistence": {
+    "event_count": 22,
+    "statuses": {
+      "fam-0342452acf6c5ab281ebd47c": "retired",
+      "fam-2067b3939b92f2e25200513a": "active",
+      "fam-3e03de5867b6a4d8e6ae9a14": "active",
+      "fam-444c6730259f73114e588513": "active",
+      "fam-4c1d9d66b0b8c917099a4923": "active",
+      "fam-533e667aa2326ac5ffe0f829": "active",
+      "fam-5c0fc5cda44275fc3ec1822b": "active",
+      "fam-6e58a10daf4c19d4c0dac116": "active",
+      "fam-ff737e36b99113e098ee6c88": "active"
+    }
+  },
+  "research_sources": {
+    "drift_contract": "https://github.com/infinition/drift-contract",
+    "drift_preprint": "https://infinition.github.io/infinition/assets/papers/drift-bounded-spectral-updates.pdf",
+    "z_manifold": "https://github.com/infinition/z-manifold",
+    "z_manifold_paper": "https://arxiv.org/abs/2607.05300"
+  },
+  "retire_reactivate": {
+    "child_family_id": "fam-5c0fc5cda44275fc3ec1822b",
+    "definition_hash_unchanged": true,
+    "reactivated_route_status": "represented",
+    "retired_route_status": "unknown"
+  },
+  "scope_note": "P1.4 tests routing topology, split/retire/reactivate lifecycle, and a fixed-probe evolution guard. It does not establish semantic safety or universal OOD guarantees.",
+  "split": {
+    "bridge_route": {
+      "match_count": 2,
+      "matches": [
+        {
+          "behavior_similarity": 0.9438583563641297,
+          "family_id": "fam-533e667aa2326ac5ffe0f829",
+          "family_name": "adaptive-a",
+          "margin": 0.013858356364129687,
+          "parameter_similarity": 0.9438583563641297
+        },
+        {
+          "behavior_similarity": 0.9438583563641297,
+          "family_id": "fam-5c0fc5cda44275fc3ec1822b",
+          "family_name": "adaptive-b",
+          "margin": 0.013858356364129687,
+          "parameter_similarity": 0.9438583563641297
+        }
+      ],
+      "status": "ambiguous"
+    },
+    "child_family_ids": [
+      "fam-533e667aa2326ac5ffe0f829",
+      "fam-5c0fc5cda44275fc3ec1822b"
+    ],
+    "decision": {
+      "approved": true,
+      "baseline_clean_ambiguity": 0.0,
+      "baseline_clean_exact": 0.0,
+      "baseline_negative_capture": 0.0,
+      "candidate_family_id": "replace:fam-533e667aa2326ac5ffe0f829,fam-5c0fc5cda44275fc3ec1822b",
+      "clean_ambiguity_delta": 0.0,
+      "clean_exact_delta": 1.0,
+      "negative_capture_delta": 0.0,
+      "proposed_clean_ambiguity": 0.0,
+      "proposed_clean_exact": 1.0,
+      "proposed_negative_capture": 0.0,
+      "reasons": []
+    },
+    "parent_family_id": "fam-0342452acf6c5ab281ebd47c"
+  },
+  "store_path": "/mnt/data/paradigm/results/core_p14/family_store",
+  "unsafe_controls": {
+    "broad": {
+      "approved": false,
+      "baseline_clean_ambiguity": 0.0,
+      "baseline_clean_exact": 1.0,
+      "baseline_negative_capture": 0.0,
+      "candidate_family_id": "fam-5157f0a0ef5727e4723579e3",
+      "clean_ambiguity_delta": 1.0,
+      "clean_exact_delta": -1.0,
+      "negative_capture_delta": 0.36538461538461536,
+      "proposed_clean_ambiguity": 1.0,
+      "proposed_clean_exact": 0.0,
+      "proposed_negative_capture": 0.36538461538461536,
+      "reasons": [
+        "negative capture delta 0.3654 exceeds 0.0100",
+        "clean ambiguity delta 1.0000 exceeds 0.0200",
+        "clean exact-family delta -1.0000 is below -0.0200"
+      ]
+    },
+    "overlap": {
+      "approved": false,
+      "baseline_clean_ambiguity": 0.0,
+      "baseline_clean_exact": 1.0,
+      "baseline_negative_capture": 0.0,
+      "candidate_family_id": "fam-ed3012454ffdbc0b7d7bd82a",
+      "clean_ambiguity_delta": 0.125,
+      "clean_exact_delta": -0.125,
+      "negative_capture_delta": 0.0,
+      "proposed_clean_ambiguity": 0.125,
+      "proposed_clean_exact": 0.875,
+      "proposed_negative_capture": 0.0,
+      "reasons": [
+        "clean ambiguity delta 0.1250 exceeds 0.0200",
+        "clean exact-family delta -0.1250 is below -0.0200"
+      ]
+    }
+  }
+}

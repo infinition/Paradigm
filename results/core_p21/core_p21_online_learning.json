@@ -1,0 +1,353 @@
+{
+  "phase": "P2.1",
+  "scope": "outcome-filtered online supervised reflex compilation during agent use",
+  "learning_mode": {
+    "active_runtime": "immutable between promotions",
+    "teacher_labels": "deliberative decisions from successful episodes only",
+    "primary_compiler": "periodic supervised recompile with held-out shadow validation",
+    "bounded_candidate": "linear softmax supervised fine-tuning with Drift Contract updates",
+    "reinforcement_learning": false
+  },
+  "stream": {
+    "episodes": 69,
+    "first_novel_family_episode": 33,
+    "families": [
+      "missing_import",
+      "off_by_one",
+      "renamed_symbol",
+      "syntax_error",
+      "wrong_constant"
+    ]
+  },
+  "baseline": {
+    "episodes": 69.0,
+    "success_rate": 1.0,
+    "mean_steps": 5.188405797101449,
+    "deliberative_calls": 358.0,
+    "reflex_calls": 0.0,
+    "fast_path_coverage": 0.0,
+    "mean_policy_latency_ms": 2.7944625939383423,
+    "invalid_reflex_actions": 0.0,
+    "success_by_family": {
+      "missing_import": 1.0,
+      "off_by_one": 1.0,
+      "renamed_symbol": 1.0,
+      "syntax_error": 1.0,
+      "wrong_constant": 1.0
+    }
+  },
+  "online": {
+    "episodes": 69.0,
+    "success_rate": 1.0,
+    "mean_steps": 5.188405797101449,
+    "deliberative_calls": 141.0,
+    "reflex_calls": 217.0,
+    "fast_path_coverage": 0.6061452513966481,
+    "mean_policy_latency_ms": 1.385471623138258,
+    "invalid_reflex_actions": 0.0,
+    "success_by_family": {
+      "missing_import": 1.0,
+      "off_by_one": 1.0,
+      "renamed_symbol": 1.0,
+      "syntax_error": 1.0,
+      "wrong_constant": 1.0
+    }
+  },
+  "known": {
+    "episodes": 52.0,
+    "success_rate": 1.0,
+    "mean_steps": 5.25,
+    "deliberative_calls": 78.0,
+    "reflex_calls": 195.0,
+    "fast_path_coverage": 0.7142857142857143,
+    "mean_policy_latency_ms": 1.249315461581528,
+    "invalid_reflex_actions": 0.0,
+    "success_by_family": {
+      "missing_import": 1.0,
+      "off_by_one": 1.0,
+      "renamed_symbol": 1.0,
+      "wrong_constant": 1.0
+    }
+  },
+  "novel_family": {
+    "overall": {
+      "episodes": 17.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 63.0,
+      "reflex_calls": 22.0,
+      "fast_path_coverage": 0.25882352941176473,
+      "mean_policy_latency_ms": 1.8019492937823731,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "syntax_error": 1.0
+      }
+    },
+    "first_half": {
+      "episodes": 8.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 40.0,
+      "reflex_calls": 0.0,
+      "fast_path_coverage": 0.0,
+      "mean_policy_latency_ms": 2.2760997501336533,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "syntax_error": 1.0
+      }
+    },
+    "second_half": {
+      "episodes": 9.0,
+      "success_rate": 1.0,
+      "mean_steps": 5.0,
+      "deliberative_calls": 23.0,
+      "reflex_calls": 22.0,
+      "fast_path_coverage": 0.4888888888888889,
+      "mean_policy_latency_ms": 1.3804822214701238,
+      "invalid_reflex_actions": 0.0,
+      "success_by_family": {
+        "syntax_error": 1.0
+      }
+    }
+  },
+  "learning_curve": [
+    {
+      "start_episode": 1,
+      "end_episode": 10,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.0,
+      "deliberative_calls": 52.0,
+      "reflex_calls": 0.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "wrong_constant"
+      ]
+    },
+    {
+      "start_episode": 11,
+      "end_episode": 20,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.6226415094339622,
+      "deliberative_calls": 20.0,
+      "reflex_calls": 33.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "wrong_constant"
+      ]
+    },
+    {
+      "start_episode": 21,
+      "end_episode": 30,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.8846153846153846,
+      "deliberative_calls": 6.0,
+      "reflex_calls": 46.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "wrong_constant"
+      ]
+    },
+    {
+      "start_episode": 31,
+      "end_episode": 40,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.21568627450980393,
+      "deliberative_calls": 40.0,
+      "reflex_calls": 11.0,
+      "families": [
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error"
+      ]
+    },
+    {
+      "start_episode": 41,
+      "end_episode": 50,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.5882352941176471,
+      "deliberative_calls": 21.0,
+      "reflex_calls": 30.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error",
+        "wrong_constant"
+      ]
+    },
+    {
+      "start_episode": 51,
+      "end_episode": 60,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.9807692307692307,
+      "deliberative_calls": 1.0,
+      "reflex_calls": 51.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error",
+        "wrong_constant"
+      ]
+    },
+    {
+      "start_episode": 61,
+      "end_episode": 69,
+      "success_rate": 1.0,
+      "fast_path_coverage": 0.9787234042553191,
+      "deliberative_calls": 1.0,
+      "reflex_calls": 46.0,
+      "families": [
+        "missing_import",
+        "off_by_one",
+        "renamed_symbol",
+        "syntax_error",
+        "wrong_constant"
+      ]
+    }
+  ],
+  "experience_buffer": {
+    "trusted_episodes": 36,
+    "trusted_traces": 141,
+    "rejected_failed_episodes": 1,
+    "ignored_self_labels": 217,
+    "failed_episode_success": false,
+    "failed_episode_added_traces": 0
+  },
+  "promotions": [
+    {
+      "stream_episode": 8,
+      "version": 0,
+      "promoted": false,
+      "backend": "tree",
+      "threshold": 1.0,
+      "validation_coverage": 0.8181818181818182,
+      "validation_selective_accuracy": 0.8888888888888888,
+      "validation_ece": 0.15151515151515157,
+      "ood_acceptance": 0.0,
+      "train_traces": 31,
+      "validation_traces": 11,
+      "reason": "quality_or_calibration_failed"
+    },
+    {
+      "stream_episode": 12,
+      "version": 1,
+      "promoted": true,
+      "backend": "tree",
+      "threshold": 1.0,
+      "validation_coverage": 0.6875,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.012499999999999976,
+      "ood_acceptance": 1.0,
+      "train_traces": 47,
+      "validation_traces": 16,
+      "reason": "quality_and_trust_pass"
+    },
+    {
+      "stream_episode": 19,
+      "version": 1,
+      "promoted": false,
+      "backend": "tree",
+      "threshold": 1.0,
+      "validation_coverage": 0.25,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0625,
+      "ood_acceptance": 0.875,
+      "train_traces": 63,
+      "validation_traces": 8,
+      "reason": "quality_or_calibration_failed"
+    },
+    {
+      "stream_episode": 26,
+      "version": 2,
+      "promoted": true,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 1.0,
+      "train_traces": 68,
+      "validation_traces": 9,
+      "reason": "quality_and_trust_pass"
+    },
+    {
+      "stream_episode": 35,
+      "version": 2,
+      "promoted": false,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 0.1111111111111111,
+      "train_traces": 75,
+      "validation_traces": 18,
+      "reason": "ood_shadow_coverage_failed"
+    },
+    {
+      "stream_episode": 39,
+      "version": 2,
+      "promoted": false,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 0.0,
+      "train_traces": 78,
+      "validation_traces": 35,
+      "reason": "ood_shadow_coverage_failed"
+    },
+    {
+      "stream_episode": 43,
+      "version": 3,
+      "promoted": true,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 0.7,
+      "train_traces": 93,
+      "validation_traces": 40,
+      "reason": "quality_and_trust_pass"
+    },
+    {
+      "stream_episode": 69,
+      "version": 4,
+      "promoted": true,
+      "backend": "tree",
+      "threshold": 0.0,
+      "validation_coverage": 1.0,
+      "validation_selective_accuracy": 1.0,
+      "validation_ece": 0.0,
+      "ood_acceptance": 1.0,
+      "train_traces": 108,
+      "validation_traces": 33,
+      "reason": "quality_and_trust_pass"
+    }
+  ],
+  "active_version": 4,
+  "bounded_neural_candidate": {
+    "feasible": true,
+    "threshold": 0.0,
+    "coverage": 1.0,
+    "selective_accuracy": 1.0,
+    "ece": 0.00011540121403830206,
+    "brier": 2.1875107028302903e-07,
+    "max_step_drift": 0.022094637132566503,
+    "mean_step_drift": 0.01652794913014714,
+    "epochs": 70,
+    "epsilon": 0.03
+  },
+  "deliberative_calls_avoided": 217,
+  "deliberative_call_reduction": 0.6061452513966481,
+  "success_preserved": true
+}

@@ -1,0 +1,366 @@
+{
+  "benchmark": "Paradigm Core P0",
+  "claim_level": "synthetic research benchmark only",
+  "environment": {
+    "python": "3.13.5",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "processor": "unknown"
+  },
+  "seed": 11,
+  "scenarios": {
+    "deterministic_routing": {
+      "n_train": 3600,
+      "n_validation": 1200,
+      "n_test": 1200,
+      "reference_accuracy": 1.0,
+      "cost_model": {
+        "reflex_unit": 1.0,
+        "deliberative_unit": 100.0
+      },
+      "methods": {
+        "exact_cache": {
+          "accuracy": 1.0,
+          "selective_accuracy": NaN,
+          "coverage": 0.0,
+          "system_accuracy_with_fallback": 1.0,
+          "threshold": null,
+          "ece": null,
+          "brier": null,
+          "latency_us_per_item": 3.3629877929652885,
+          "deliberation_calls_avoided": 0.0,
+          "normalized_compute_cost": 1.01,
+          "threshold_feasible": null
+        },
+        "nearest_neighbor_cache": {
+          "accuracy": 0.8975,
+          "selective_accuracy": 0.9907120743034056,
+          "coverage": 0.5383333333333333,
+          "system_accuracy_with_fallback": 0.995,
+          "threshold": 1.0,
+          "ece": 0.049757624198339866,
+          "brier": 0.16303049494189056,
+          "latency_us_per_item": 11.995523437502431,
+          "deliberation_calls_avoided": 0.5383333333333333,
+          "normalized_compute_cost": 0.4716666666666666,
+          "threshold_feasible": false
+        },
+        "decision_tree": {
+          "accuracy": 0.9933333333333333,
+          "selective_accuracy": 0.9933333333333333,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9933333333333333,
+          "threshold": 0.0,
+          "ece": 0.00666666666666671,
+          "brier": 0.013333333333333334,
+          "latency_us_per_item": 0.20590966798295085,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "random_forest_no_fallback": {
+          "accuracy": 0.9983333333333333,
+          "selective_accuracy": 0.9983333333333333,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9983333333333333,
+          "threshold": 0.0,
+          "ece": 0.03753315492935874,
+          "brier": 0.010398207544193688,
+          "latency_us_per_item": 258.1804165038837,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "compiled_reflex": {
+          "accuracy": 0.9983333333333333,
+          "selective_accuracy": 0.9983333333333333,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9983333333333333,
+          "threshold": 0.0,
+          "ece": 0.00645873625320779,
+          "brier": 0.004419601132877423,
+          "latency_us_per_item": 877.9440463867471,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        }
+      },
+      "go_no_go": {
+        "minimum_coverage": 0.5,
+        "minimum_selective_accuracy": 0.99,
+        "maximum_ece": 0.05,
+        "coverage_pass": true,
+        "selective_accuracy_pass": true,
+        "calibration_pass": true,
+        "pass": true
+      },
+      "description": "IID deterministic routing with a stable reference policy."
+    },
+    "noisy_routing": {
+      "n_train": 3600,
+      "n_validation": 1200,
+      "n_test": 1200,
+      "reference_accuracy": 0.855,
+      "cost_model": {
+        "reflex_unit": 1.0,
+        "deliberative_unit": 100.0
+      },
+      "methods": {
+        "exact_cache": {
+          "accuracy": 0.855,
+          "selective_accuracy": NaN,
+          "coverage": 0.0,
+          "system_accuracy_with_fallback": 0.855,
+          "threshold": null,
+          "ece": null,
+          "brier": null,
+          "latency_us_per_item": 2.996395996046619,
+          "deliberation_calls_avoided": 0.0,
+          "normalized_compute_cost": 1.01,
+          "threshold_feasible": null
+        },
+        "nearest_neighbor_cache": {
+          "accuracy": 0.7583333333333333,
+          "selective_accuracy": 0.8364611260053619,
+          "coverage": 0.6216666666666667,
+          "system_accuracy_with_fallback": 0.8383333333333334,
+          "threshold": 0.6759801747930198,
+          "ece": 0.0676718057629303,
+          "brier": 0.3905860014346202,
+          "latency_us_per_item": 12.134076660175186,
+          "deliberation_calls_avoided": 0.6216666666666667,
+          "normalized_compute_cost": 0.3883333333333333,
+          "threshold_feasible": true
+        },
+        "decision_tree": {
+          "accuracy": 0.8241666666666667,
+          "selective_accuracy": 0.842152466367713,
+          "coverage": 0.9291666666666667,
+          "system_accuracy_with_fallback": 0.8408333333333333,
+          "threshold": 0.6086956521739131,
+          "ece": 0.06519302344473685,
+          "brier": 0.30390098818178246,
+          "latency_us_per_item": 0.3448764648306124,
+          "deliberation_calls_avoided": 0.9291666666666667,
+          "normalized_compute_cost": 0.0808333333333333,
+          "threshold_feasible": true
+        },
+        "random_forest_no_fallback": {
+          "accuracy": 0.8491666666666666,
+          "selective_accuracy": 0.8491666666666666,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.8491666666666666,
+          "threshold": 0.0,
+          "ece": 0.05553940469527421,
+          "brier": 0.27432938753402003,
+          "latency_us_per_item": 232.86558837892767,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "compiled_reflex": {
+          "accuracy": 0.8491666666666666,
+          "selective_accuracy": 0.8491666666666666,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.8491666666666666,
+          "threshold": 0.0,
+          "ece": 0.02753488277720191,
+          "brier": 0.2658365869064758,
+          "latency_us_per_item": 771.0935825195331,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        }
+      },
+      "go_no_go": {
+        "minimum_coverage": 0.5,
+        "minimum_selective_accuracy": 0.845,
+        "maximum_ece": 0.05,
+        "coverage_pass": true,
+        "selective_accuracy_pass": true,
+        "calibration_pass": true,
+        "pass": true
+      },
+      "description": "Routing with label ambiguity concentrated near decision boundaries."
+    },
+    "distribution_shift": {
+      "n_train": 3600,
+      "n_validation": 1200,
+      "n_test": 1200,
+      "reference_accuracy": 1.0,
+      "cost_model": {
+        "reflex_unit": 1.0,
+        "deliberative_unit": 100.0
+      },
+      "methods": {
+        "exact_cache": {
+          "accuracy": 1.0,
+          "selective_accuracy": NaN,
+          "coverage": 0.0,
+          "system_accuracy_with_fallback": 1.0,
+          "threshold": null,
+          "ece": null,
+          "brier": null,
+          "latency_us_per_item": 3.286217285181081,
+          "deliberation_calls_avoided": 0.0,
+          "normalized_compute_cost": 1.01,
+          "threshold_feasible": null
+        },
+        "nearest_neighbor_cache": {
+          "accuracy": 0.8916666666666667,
+          "selective_accuracy": 0.9804469273743017,
+          "coverage": 0.5966666666666667,
+          "system_accuracy_with_fallback": 0.9883333333333333,
+          "threshold": 0.8217238988121783,
+          "ece": 0.051473334548146156,
+          "brier": 0.1683725400938701,
+          "latency_us_per_item": 11.527915039055703,
+          "deliberation_calls_avoided": 0.5966666666666667,
+          "normalized_compute_cost": 0.4133333333333333,
+          "threshold_feasible": true
+        },
+        "decision_tree": {
+          "accuracy": 0.9958333333333333,
+          "selective_accuracy": 0.9958333333333333,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9958333333333333,
+          "threshold": 0.0,
+          "ece": 0.003083333333333387,
+          "brier": 0.006316666666666667,
+          "latency_us_per_item": 0.23924951170206654,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "random_forest_no_fallback": {
+          "accuracy": 0.9975,
+          "selective_accuracy": 0.9975,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9975,
+          "threshold": 0.0,
+          "ece": 0.04445656001634283,
+          "brier": 0.014445549892819697,
+          "latency_us_per_item": 275.095408691417,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "compiled_reflex": {
+          "accuracy": 0.9975,
+          "selective_accuracy": 0.9975,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9975,
+          "threshold": 0.0,
+          "ece": 0.00754849992725581,
+          "brier": 0.006321237486017375,
+          "latency_us_per_item": 851.0711025390139,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        }
+      },
+      "go_no_go": {
+        "minimum_coverage": 0.5,
+        "minimum_selective_accuracy": 0.99,
+        "maximum_ece": 0.05,
+        "coverage_pass": true,
+        "selective_accuracy_pass": true,
+        "calibration_pass": true,
+        "pass": true
+      },
+      "description": "Train-like prefix followed by a valid but risk-heavy covariate shift."
+    },
+    "repeated_workflows": {
+      "n_train": 3888,
+      "n_validation": 1296,
+      "n_test": 1296,
+      "reference_accuracy": 0.9344135802469136,
+      "cost_model": {
+        "reflex_unit": 1.0,
+        "deliberative_unit": 100.0
+      },
+      "methods": {
+        "exact_cache": {
+          "accuracy": 0.9344135802469136,
+          "selective_accuracy": 0.9344135802469136,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9344135802469136,
+          "threshold": null,
+          "ece": null,
+          "brier": null,
+          "latency_us_per_item": 8.692634277329692,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": null
+        },
+        "nearest_neighbor_cache": {
+          "accuracy": 0.9266975308641975,
+          "selective_accuracy": 0.9266975308641975,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9266975308641975,
+          "threshold": 0.0,
+          "ece": 0.014197530864197502,
+          "brier": 0.11574074074074074,
+          "latency_us_per_item": 4.8468837890447425,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "decision_tree": {
+          "accuracy": 0.9344135802469136,
+          "selective_accuracy": 0.9344135802469136,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9344135802469136,
+          "threshold": 0.0,
+          "ece": 0.012010151557474685,
+          "brier": 0.10235273004366154,
+          "latency_us_per_item": 0.23441601559870406,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "random_forest_no_fallback": {
+          "accuracy": 0.9320987654320988,
+          "selective_accuracy": 0.9320987654320988,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9320987654320988,
+          "threshold": 0.0,
+          "ece": 0.019560633429517627,
+          "brier": 0.10297123500135434,
+          "latency_us_per_item": 277.7594291992203,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        },
+        "compiled_reflex": {
+          "accuracy": 0.9320987654320988,
+          "selective_accuracy": 0.9320987654320988,
+          "coverage": 1.0,
+          "system_accuracy_with_fallback": 0.9320987654320988,
+          "threshold": 0.0,
+          "ece": 0.05059712624344474,
+          "brier": 0.10869112194908949,
+          "latency_us_per_item": 1145.845077636709,
+          "deliberation_calls_avoided": 1.0,
+          "normalized_compute_cost": 0.01,
+          "threshold_feasible": true
+        }
+      },
+      "go_no_go": {
+        "minimum_coverage": 0.5,
+        "minimum_selective_accuracy": 0.9244135802469136,
+        "maximum_ece": 0.05,
+        "coverage_pass": true,
+        "selective_accuracy_pass": true,
+        "calibration_pass": false,
+        "pass": false
+      },
+      "description": "Repeated exact workflows with a minority of hidden unstable behaviors."
+    }
+  },
+  "summary": {
+    "scenarios_passed": 3,
+    "scenarios_total": 4,
+    "all_scenarios_pass": false,
+    "interpretation": "A failed scenario narrows the current reflex compiler claim. Simple baselines remain valid outcomes."
+  }
+}
