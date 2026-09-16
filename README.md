@@ -180,7 +180,7 @@ This vertical is deliberately narrow. It tests whether repeated agent-control de
 
 ## Using Paradigm in an agent loop
 
-`paradigm.integration` is the public surface: an application supplies a structured `ParadigmState`, the available actions, and a `VerifiedOutcome` after execution; `Paradigm.decide` returns either a `ReflexDecision` or a `DeliberateDecision` (a first-class result carrying the reflex's proposal for audit but never executing it), and `Paradigm.observe` plus `close_episode` feed only verified successes into the same acquisition and certification path measured in P2.1 to P2.4. `paradigm serve` exposes it as a localhost JSON service, and `docs/INTEGRATION.md` documents the contract, the invariants, the LaRuche adapter, and the recorded smoke run through LaRuche's real engine loop. `examples/integration_minimal.py` is the smallest working loop.
+`paradigm.integration` is the public surface: an application supplies a structured `ParadigmState`, the available actions, and a `VerifiedOutcome` after execution; `Paradigm.decide` returns either a `ReflexDecision` or a `DeliberateDecision` (a first-class result carrying the reflex's proposal for audit but never executing it), and `Paradigm.observe` plus `close_episode` feed only verified successes into the same acquisition and certification path measured in P2.1 to P2.4. `paradigm serve` exposes it as a localhost JSON service, and `docs/INTEGRATION.md` documents the contract, the invariants, the LaRuche adapter, family-scoped activation, the recorded smoke run through LaRuche's real engine loop, and the real-provider runs with DeepSeek (runs 9A, 9B and 11). `examples/integration_minimal.py` is the smallest working loop.
 
 ## Current evidence
 
@@ -480,7 +480,7 @@ Full mapping: [docs/RESEARCH_MAP.md](docs/RESEARCH_MAP.md)
 
 ## Status
 
-`0.1.0` is an active research prototype.
+`0.2.0` is an active research prototype.
 
 The first Core P0 synthetic benchmark has been executed across deterministic routing, noisy routing, covariate shift, and repeated workflows. The first calibrated-forest compiler was not justified as a universal default. A minimal-complexity selector now chooses the first reflex family that satisfies declared coverage, selective-accuracy, and calibration constraints.
 
