@@ -165,4 +165,11 @@ PYTHONPATH=src python benchmarks/core_p24_type_b.py \
   --model "qwen3:8b|ollama|http://127.0.0.1:11435" --orderings 5 --online
 ```
 
+Or, after `pip install -e .`, the same run through the console script, and the recorded result without any model endpoint:
+
+```bash
+paradigm benchmark p24 --model "qwen3:4b-instruct|ollama|http://127.0.0.1:11435" --online
+paradigm benchmark p24 --from-cache
+```
+
 Collects LLM-only traces on 32 known and 16 `dependency_error` episodes per teacher (cached under `results/core_p24/traces/`), runs the k = 0 control and the capability-versus-evidence sweep with a fixed certification set, and, when the offline class is `CAPABILITY_AND_CERTIFICATION_SUCCEEDED`, runs the online loop under both certification rules followed by a frozen post-stream evaluation on 8 fresh dependency tasks. The dependency family uses the extended action vocabulary (`AgentFeatureEncoder(vocabulary="extended")`); the base vocabulary and every earlier protocol are unchanged.

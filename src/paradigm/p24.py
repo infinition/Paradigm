@@ -12,10 +12,11 @@ import numpy as np
 
 from .agent_scenarios import make_task
 from .agent_vertical import AgentFeatureEncoder, AgentState, ParadigmCodingAgent
-from .llm_controller import safe_recovery_action
+from .llm_controller import OpenAICompatibleCodingDeliberator, safe_recovery_action
 from .online_learning import OnlineExperienceBuffer, OnlineReflexCompiler, RetentionProbeSet, TrustedEpisode
 from .p23 import run_p23_live_online_benchmark
 from .p23r import KNOWN
+from .p23t import load_episodes, save_episodes
 
 NOVEL_FAMILY = "dependency_error"
 KNOWN_ROUNDS = 8
@@ -551,3 +552,120 @@ def write_p24_results(root: Path, payload: dict[str, Any]) -> None:
         lines.append(f"Result class: `{block['final_class']}`")
         lines.append("")
     (root / "REPORT.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+
+def run_p24_benchmark(
+    *,
+    models: list[str],
+    orderings: int = 5,
+    online: bool = False,
+    output: str = "results/core_p24",
+    log=print,
+) -> dict[str, Any]:
+    """Full P2.4 driver: traces (cached when present), sweep, classification, optional online loop.
+
+    ``models`` entries are ``model|api_style|base_url``. Shared by the benchmark script and the
+    ``paradigm benchmark p24`` command so the experimental logic exists once.
+    """
+    root = Path(output)
+    payload_path = root / "core_p24_type_b.json"
+    payload = json.loads(payload_path.read_text()) if payload_path.exists() else {"phase": "P2.4", "models": {}}
+
+    for spec in models:
+        model, api_style, base_url = spec.split("|")
+        controller = OpenAICompatibleCodingDeliberator(base_url=base_url, model=model, api_style=api_style, timeout_s=180)
+        key = model.replace(":", "_")
+        trace_path = root / "traces" / f"{key}__{api_style}.json"
+        stats_path = root / "traces" / f"{key}__{api_style}__teacher.json"
+        if trace_path.exists() and stats_path.exists():
+            episodes = load_episodes(trace_path)
+            teacher = json.loads(stats_path.read_text())
+            log(f"loaded {len(episodes)} trace episodes for {model}")
+        else:
+            episodes, teacher = collect_type_b_episodes(controller)
+            save_episodes(trace_path, episodes)
+            stats_path.parent.mkdir(parents=True, exist_ok=True)
+            stats_path.write_text(json.dumps(teacher, indent=2, default=float), encoding="utf-8")
+            log(f"collected {len(episodes)} trace episodes for {model}: novel success {teacher['novel_success_rate']:.0%}")
+        block = payload["models"].get(model, {})
+        block["teacher"] = teacher
+        block["mature_reference_accuracy"] = known_family_reference_accuracy(episodes)
+        sweep = run_type_b_sweep(episodes, orderings=orderings)
+        block["sweep"] = sweep
+        block["offline_class"] = classify_offline(sweep, block["mature_reference_accuracy"])
+        block["offline_class_original_rule"] = classify_offline_original_rule(sweep, block["mature_reference_accuracy"])
+        for c in sweep["curve"]:
+            log(f"{model} k={c['novel_train_episodes']}: acc {c['decision_accuracy_mean']:.2f} replay {c['replay_success_mean']:.2f} gate {c['gate_acceptance_mean']:.2f} promote recent {c['recent_promote_rate']:.0%} fam {c['family_aware_promote_rate']:.0%}")
+        log(f"{model} TTC {sweep['time_to_capability']} class {block['offline_class']}")
+        block["final_class"] = block["offline_class"]
+        if online and block["offline_class"] == "CAPABILITY_AND_CERTIFICATION_SUCCEEDED":
+            block.setdefault("online", {})
+            for mode in ("family_aware", "recent"):
+                if mode in block["online"]:
+                    log(f"{model} online {mode}: already recorded")
+                    continue
+                result = run_type_b_online(controller, certification=mode)
+                block["online"][mode] = result
+                payload["models"][model] = block
+                write_p24_results(root, payload)
+                sig = result["signature_metrics"]
+                log(f"{model} online {mode}: success {result['online']['success_rate']:.0%} calls -{result['llm_usage']['llm_call_reduction']:.0%} TTR {sig['time_to_reflex']['validated_episodes']} outcome {sig['time_to_reflex'].get('outcome')} novel success {result['novel_family']['overall']['success_rate']:.0%}")
+            fam = block["online"]["family_aware"]
+            ttr = fam["signature_metrics"]["time_to_reflex"]
+            if ttr.get("outcome") != "promoted":
+                block["final_class"] = "INSUFFICIENT_EVIDENCE" if ttr.get("outcome") == "insufficient_evidence" else "CAPABILITY_ACQUIRED_NOT_CERTIFIED"
+            elif fam["old_family_retention"]["known_after_representation"].get("success_rate", 1.0) < 1.0:
+                block["final_class"] = "RETENTION_FAILURE"
+        payload["models"][model] = block
+        write_p24_results(root, payload)
+    return payload
+
+
+def summarize_p24_payload(payload: dict[str, Any]) -> str:
+    """Concise text summary of a recorded P2.4 artifact. Every number comes from the payload."""
+    lines = ["Paradigm P2.4 Type B", ""]
+    for model, block in payload.get("models", {}).items():
+        sweep = block["sweep"]
+        k0 = sweep["k0_control"]
+        ttc = sweep["time_to_capability"]
+        teacher = block["teacher"]
+        top = sweep["curve"][-1]
+        lines.append(f"Teacher {model}")
+        lines.append(f"  validated demonstrations  {round(teacher['novel_success_rate'] * teacher['novel_episodes'])}/{teacher['novel_episodes']}")
+        lines.append(f"  result class              {block.get('final_class', block.get('offline_class'))}")
+        lines.append("")
+        lines.append("  Type B control (k = 0)")
+        lines.append(f"    decision accuracy       {k0['decision_accuracy_mean']:.0%}")
+        lines.append(f"    exact sequence          {k0['exact_sequence_accuracy_mean']:.0%}")
+        lines.append(f"    replay success          {k0['replay_success_mean']:.0%}")
+        lines.append("")
+        lines.append("  Capability")
+        if ttc["median"] is not None:
+            lines.append(f"    TTC median              {ttc['median']:.0f} episodes (range {ttc['min']} to {ttc['max']})")
+        else:
+            lines.append(f"    TTC                     not reached ({len(sweep['curve'])} k value(s) testable)")
+        lines.append(f"    capability at k = {top['novel_train_episodes']:<3}   {top['decision_accuracy_mean']:.0%} decisions, {top['replay_success_mean']:.0%} replay")
+        online = block.get("online") or {}
+        for mode, r in online.items():
+            sig = r["signature_metrics"]
+            lines.append("")
+            lines.append(f"  Online ({mode} certification)")
+            lines.append(f"    time-to-reflex          {sig['time_to_reflex']['validated_episodes']}")
+            lines.append(f"    promoted at episode     {r['novel_family']['represented_from_episode']}")
+            lines.append(f"    overall success         {r['online']['success_rate']:.0%} (baseline {r['baseline']['success_rate']:.0%})")
+            lines.append(f"    LLM calls avoided       {r['llm_usage']['llm_call_reduction']:.0%}")
+            lines.append(f"    false fast paths        {r['novel_family']['unknown_false_fast_path_rate']:.0%}")
+            ps = r.get("post_stream_exposure")
+            if ps:
+                n = ps["episodes"]
+                lines.append("")
+                lines.append(f"  Frozen held-out ({mode} reflex, {n} fresh tasks)")
+                lines.append(f"    LLM-only                {round(ps['baseline_success_rate'] * n)}/{n}")
+                lines.append(f"    hybrid                  {round(ps['success_rate'] * n)}/{n}")
+                ro = ps.get("reflex_only_success_rate")
+                lines.append(f"    reflex-only             {round(ro * n)}/{n}" if ro is not None else "    reflex-only             n/a")
+                lines.append(f"    false fast paths        {ps['false_fast_path_failures']}")
+                lines.append(f"    LLM calls               {ps['baseline_llm_calls']} -> {ps['llm_calls']}")
+                lines.append(f"    tokens                  {ps['baseline_tokens']:,} -> {ps['tokens']:,}")
+        lines.append("")
+    return "\n".join(lines).rstrip() + "\n"

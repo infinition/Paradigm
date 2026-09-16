@@ -29,6 +29,9 @@ dev = [
   "ruff>=0.6",
 ]
 
+[project.scripts]
+paradigm = "paradigm.cli:main"
+
 [project.urls]
 Repository = "https://github.com/infinition/paradigm"
 Research = "https://arxiv.org/search/cs?query=Polly%2C+F&searchtype=author&abstracts=show&order=-announced_date_first&size=50"

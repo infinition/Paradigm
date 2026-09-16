@@ -149,6 +149,7 @@ Generated file inventory for this snapshot.
 - `results/core_p23t/traces/` (LLM-only trace episodes per model)
 - `results/core_p24/INTERPRETATION.md`
 - `results/core_p24/REPORT.md`
+- `results/core_p24/SUMMARY.md`
 - `results/core_p24/core_p24_type_b.json`
 - `results/core_p24/traces/` (LLM-only trace episodes and teacher statistics per model)
 - `src/paradigm/__init__.py`
@@ -156,6 +157,7 @@ Generated file inventory for this snapshot.
 - `src/paradigm/agent_vertical.py`
 - `src/paradigm/baselines.py`
 - `src/paradigm/bounded.py`
+- `src/paradigm/cli.py`
 - `src/paradigm/compiler.py`
 - `src/paradigm/deliberation.py`
 - `src/paradigm/evaluation.py`
@@ -201,6 +203,7 @@ Generated file inventory for this snapshot.
 - `src/paradigm/synthetic.py`
 - `src/paradigm/trust_scenarios.py`
 - `tests/test_bounded.py`
+- `tests/test_cli.py`
 - `tests/test_core.py`
 - `tests/test_p0.py`
 - `tests/test_p01_p02.py`
