@@ -84,6 +84,8 @@ class AgentDecisionRecord:
     phase: str
     failure_kind: str
     confidence: float
+    family: str | None = None
+    validated: bool = True
 
 
 @dataclass(slots=True)

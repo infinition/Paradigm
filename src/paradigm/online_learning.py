@@ -33,6 +33,7 @@ class OnlineExperienceBuffer:
         self.episodes: list[TrustedEpisode] = []
         self.rejected_failed_episodes = 0
         self.ignored_self_labels = 0
+        self.rejected_unvalidated_steps = 0
 
     def ingest(self, episode: AgentEpisode) -> int:
         if not episode.success:
@@ -44,6 +45,11 @@ class OnlineExperienceBuffer:
             if record.source != "deliberative":
                 self.ignored_self_labels += 1
                 continue
+            if not getattr(record, "validated", True):
+                # A deliberative step whose own outcome was not verified is not teacher evidence,
+                # even inside a successful episode.
+                self.rejected_unvalidated_steps += 1
+                continue
             traces.append(
                 Trace(
                     features=np.asarray(record.features, dtype=np.float64),
@@ -51,7 +57,7 @@ class OnlineExperienceBuffer:
                     valid=True,
                     metadata={
                         "task_id": episode.task_id,
-                        "family": episode.family,
+                        "family": getattr(record, "family", None) or episode.family,
                         "source": "deliberative",
                     },
                 )

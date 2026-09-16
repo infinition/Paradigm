@@ -178,6 +178,10 @@ flowchart TD
 
 This vertical is deliberately narrow. It tests whether repeated agent-control decisions can move from deliberation to a fast reflex without reducing task success. It does not claim to distill code generation or general language reasoning.
 
+## Using Paradigm in an agent loop
+
+`paradigm.integration` is the public surface: an application supplies a structured `ParadigmState`, the available actions, and a `VerifiedOutcome` after execution; `Paradigm.decide` returns either a `ReflexDecision` or a `DeliberateDecision` (a first-class result carrying the reflex's proposal for audit but never executing it), and `Paradigm.observe` plus `close_episode` feed only verified successes into the same acquisition and certification path measured in P2.1 to P2.4. `paradigm serve` exposes it as a localhost JSON service, and `docs/INTEGRATION.md` documents the contract, the invariants, the LaRuche adapter, and the recorded smoke run through LaRuche's real engine loop. `examples/integration_minimal.py` is the smallest working loop.
+
 ## Current evidence
 
 Paradigm currently has eleven executed Core benchmarks and eight executed Agent phases, including live benchmarks, a 24-run replication, a certification comparison with a negative control, a learning-threshold sweep, and a Type B skill-acquisition experiment against real local language models.

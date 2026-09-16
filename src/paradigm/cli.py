@@ -52,6 +52,32 @@ def _benchmark_p24(args: argparse.Namespace) -> int:
     return 0
 
 
+def _serve(args: argparse.Namespace) -> int:
+    from .integration.engine import Paradigm
+    from .integration.laruche import LaRucheAdapter
+    from .integration.service import ParadigmService, serve
+
+    adapter = LaRucheAdapter()
+    state_file = Path(args.state_file) if args.state_file else None
+    if state_file is not None and state_file.exists():
+        engine = Paradigm.load(state_file, policy=adapter.policy())
+    else:
+        engine = Paradigm(policy=adapter.policy())
+    adapter.templates = engine.action_templates  # one shared template map, persisted with the engine
+    service = ParadigmService(engine, state_file=state_file, adapter=adapter)
+    server = serve(service, host=args.host, port=args.port)
+    print(f"paradigm service listening on http://{args.host}:{args.port} (active reflex version {engine.compiler.state.version})", flush=True)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        pass
+    finally:
+        server.server_close()
+        if state_file is not None:
+            engine.save(state_file)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(prog="paradigm", description="Paradigm: validated deliberation to trusted reflexes")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -64,6 +90,11 @@ def build_parser() -> argparse.ArgumentParser:
     p24.add_argument("--online", action="store_true", help="run the online loop when the offline sweep shows acquisition")
     p24.add_argument("--results", help="results directory (default: results/core_p24)")
     p24.set_defaults(func=_benchmark_p24)
+    srv = sub.add_parser("serve", help="run the local integration service (JSON over HTTP)")
+    srv.add_argument("--host", default="127.0.0.1")
+    srv.add_argument("--port", type=int, default=8765)
+    srv.add_argument("--state-file", help="pickle file to load and persist the engine state")
+    srv.set_defaults(func=_serve)
     return parser
 
 

@@ -36,6 +36,7 @@ Generated file inventory for this snapshot.
 - `docs/EVALUATION.md`
 - `docs/EXPERIMENTS.md`
 - `docs/GLOSSARY.md`
+- `docs/INTEGRATION.md`
 - `docs/LIMITATIONS.md`
 - `docs/NOVELTY_BOUNDARY.md`
 - `docs/PAPER_PLAN.md`
@@ -51,6 +52,7 @@ Generated file inventory for this snapshot.
 - `docs/adr/007-real-llm-slow-path.md`
 - `examples/agent_p20.py`
 - `examples/agent_p22_llm.py`
+- `examples/integration_minimal.py`
 - `examples/minimal.py`
 - `notebooks/00_core_concept.ipynb`
 - `notebooks/01_reflex_compilation.ipynb`
@@ -164,6 +166,12 @@ Generated file inventory for this snapshot.
 - `src/paradigm/family_evolution.py`
 - `src/paradigm/family_registry.py`
 - `src/paradigm/gates.py`
+- `src/paradigm/integration/__init__.py`
+- `src/paradigm/integration/contract.py`
+- `src/paradigm/integration/encoder.py`
+- `src/paradigm/integration/engine.py`
+- `src/paradigm/integration/laruche.py`
+- `src/paradigm/integration/service.py`
 - `src/paradigm/lifecycle_scenarios.py`
 - `src/paradigm/llm_controller.py`
 - `src/paradigm/model_selection.py`
@@ -204,6 +212,7 @@ Generated file inventory for this snapshot.
 - `src/paradigm/trust_scenarios.py`
 - `tests/test_bounded.py`
 - `tests/test_cli.py`
+- `tests/test_integration.py`
 - `tests/test_core.py`
 - `tests/test_p0.py`
 - `tests/test_p01_p02.py`

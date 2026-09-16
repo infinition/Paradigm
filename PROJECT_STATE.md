@@ -52,6 +52,8 @@ Research prototype. Paradigm-specific evidence consists of controlled Core exper
 - opt-in extended action vocabulary with a deterministic dependency-resolution sandbox (local package registry), Type B Outcome Contract, and per-family valid-action rules
 - P2.4 Type B runner: teacher trace statistics, k = 0 control, capability-versus-evidence sweep with forced-replay evaluation and pre-registered Time-to-Capability, online acquisition parametrized by novel family, and a frozen post-stream evaluation with LLM-only, hybrid, and reflex-only arms
 - notebook sequence for Core, Agent, Structured, and World directions
+- generic integration surface (`paradigm.integration`): structured state contract, typed `decide` results (reflex or deliberate), verified-outcome `observe` and `close_episode` over the existing online compiler, per-family trust manifest, per-decision telemetry, persistence, and a localhost JSON service (`paradigm serve`)
+- LaRuche adapter (Level 2: whitelisted tools with validated argument templates) and a Rust bridge in LaRuche wrapping the engine's `Fournisseur` and `Outils` traits, exercised end to end through the real engine loop against the live service with a fixture provider
 
 ## Executed results
 
@@ -193,6 +195,10 @@ Conclusion: trusted-family growth can be additive rather than permissive. Unknow
 - `results/core_p24/core_p24_type_b.json`
 - `results/core_p24/REPORT.md`
 - `results/core_p24/INTERPRETATION.md`
+
+## Integration surface
+
+`docs/INTEGRATION.md` describes the public API built after v0.1.0. Recorded smoke run through LaRuche's real engine loop with a fixture provider: 24 missions, model calls per mission 3 for missions 1 to 20 and 1 for missions 21 to 24 after the promotion at mission 20, 8 reflex decisions, 0 failures. Mission-ending control calls always deliberate in this version because the engine intercepts them before the tool layer.
 
 ## Next experiment
 
