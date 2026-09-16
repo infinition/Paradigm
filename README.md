@@ -1,6 +1,6 @@
 # Paradigm
 
-**Continual reflex compilation for adaptive systems.**
+**Trusted procedural memory for adaptive AI agents.**
 
 Paradigm is a procedural learning and trust layer for AI agents. It learns from validated deliberative decisions, compiles stable behaviors into specialized reflexes, and keeps uncertain or unsupported states on the deliberative path.
 
@@ -184,7 +184,7 @@ This vertical is deliberately narrow. It tests whether repeated agent-control de
 
 ## Current evidence
 
-Paradigm currently has eleven executed Core benchmarks and eight executed Agent phases, including live benchmarks, a 24-run replication, a certification comparison with a negative control, a learning-threshold sweep, and a Type B skill-acquisition experiment against real local language models.
+Paradigm currently has eleven executed Core benchmarks, eight executed Agent phases, and a recorded real-agent integration line. The evidence includes live benchmarks, a 24-run replication, a certification comparison with a negative control, a learning-threshold sweep, a Type B skill-acquisition experiment against real local language models, and a fresh LaRuche + DeepSeek deployment with family-scoped activation.
 
 | Benchmark | Result | Interpretation |
 |---|---|---|
@@ -207,6 +207,7 @@ Paradigm currently has eleven executed Core benchmarks and eight executed Agent 
 | Agent P2.3R-bis | retention probes catch a damaged candidate the recent rule promotes, in 3 of 4 orders with 0 misses | the extra deliberation (215 decisions over four pairs) comes mostly from atomic all-family promotion, not from the probes; demanding more evidence per family adds delay without discrimination |
 | Agent P2.3T | 100% capability on the novel family with zero novel training episodes, for both teachers | gate acceptance rises with evidence from 0.00 to 0.94; capability precedes trust; the P2.3R boundary is protocol-specific; no learning threshold measured because capability never had to rise |
 | Agent P2.4 | a new four-action procedure acquired from validated teacher episodes: capability 50% at zero evidence, 100% after 4 to 6 demonstrations, promoted online and executed with zero LLM calls | frozen held-out evaluation: reflex-only 8/8, hybrid 6/8 with 61% fewer LLM calls, LLM-only 6/8; the reflex generalizes to a wording its teacher fails on while the gate keeps that unevidenced region deliberative; 0 false fast paths; the 8B teacher supplied too few validated demonstrations |
+| Real-agent integration, Run 11 | 24/24 missions independently verified by `pytest`; first family-scoped activation at mission 16; 15 reflex decisions; 15 model calls avoided; 0 false fast paths; 0 unsafe automated actions | stable repeated behaviors were activated independently while variable and risky behavior stayed deliberative; a later candidate that regressed an active family was rejected, while mission 24 was rejected for insufficient evidence |
 
 A particularly important P0.2 control is negative: classifier confidence accepts almost all explicit off-manifold inputs in the current synthetic benchmark. PCA residual rejects those inputs while retaining legitimate on-manifold novelty, but still accepts most deliberately invalid near-manifold inputs. This keeps the current claim narrow: input-space trust is useful as an OOD signal, not as a complete safety mechanism.
 
@@ -255,6 +256,8 @@ P2.3T fits candidates offline with 0 to 8 novel episodes against a fixed certifi
 
 P2.4 is the Type B test: a `dependency_error` family that needs four actions the known families never use. With no novel evidence the candidate reaches 50% decision accuracy and 0% episode success; with four to six validated demonstrations from `qwen3:4b-instruct` it reaches 100% on held-out episodes, and certification follows capability. Online, the reflex is promoted at episode 50 and solves later dependency episodes with zero LLM calls. On eight frozen fresh tasks the reflex alone solves 8 of 8, including a prompt wording on which the teacher fails; the hybrid solves 6 of 8 (equal to the teacher) with 61% fewer LLM calls and no false fast path, because the gate keeps the unevidenced wording deliberative. The 8B teacher solved only 4 of 16 dependency episodes and supplied too few validated demonstrations to fit a candidate. See `results/core_p24/SUMMARY.md` for the one-page version and `results/core_p24/INTERPRETATION.md` for the full reading. After `pip install -e .`, `paradigm benchmark p24 --from-cache` prints the recorded result from the committed artifact without any model endpoint.
 
+The real-agent integration then tests the same trust and reflex lifecycle inside LaRuche with `deepseek-v4-flash`, real tools, a reset coding workspace, independent `pytest` verification, command canonicalization, and a blocking `pre_tool` guard. Whole-candidate certification first reproduced the atomic-coupling failure observed in P2.3R-bis: stable test-running behavior and variable exploratory behavior were judged together, so no reflex could activate. A pre-registered family-scoped rule was then applied without changing any quality, trust, calibration, or retention threshold. In fresh Run 11, 24 of 24 missions were independently verified, two stable families became active at mission 16, and 15 later decisions were replayed by Paradigm instead of calling the model. No false fast path and no unsafe automated action were observed. On missions 17 to 23, the stable post-activation window, model calls, tokens, and wall time were lower than before activation; mission 24 is retained as an outlier and is not used to claim an overall post-activation average improvement. At mission 20, a later candidate was rejected because retention-probe agreement for an active family fell to 15/16, below the 0.95 floor. At mission 24, the candidate was rejected for insufficient evidence, not for a demonstrated regression. See `results/integration_laruche/run11_family_scoped.md` and `docs/INTEGRATION.md`.
+
 Reports:
 
 - `results/core_p0/REPORT.md`
@@ -277,45 +280,47 @@ Reports:
 - `results/core_p23r_bis/INTERPRETATION.md`
 - `results/core_p23t/INTERPRETATION.md`
 - `results/core_p24/INTERPRETATION.md`
+- `results/integration_laruche/run11_family_scoped.md`
+- `results/integration_laruche/family_audit.md`
 
 ## Current scope
 
-Version `0.1` intentionally starts with Paradigm Core.
+Version `0.2.0` exposes Paradigm as an integration layer for AI agents while keeping the research lifecycle explicit.
 
-The repository includes a small reference implementation that can:
+The repository currently provides:
 
-- compile validated feature/action traces into a probabilistic reflex
-- calibrate predictions
-- measure accuracy, Brier score, ECE, coverage, and selective accuracy
-- reject unfamiliar inputs through an experimental trusted-subspace gate
-- fall back to a deliberative function
-- keep active and candidate reflexes separate
-- evaluate explicit multi-signal promotion manifests
-- block failed promotions and retain rejection reasons
-- persist immutable content-addressed reflex versions and provenance
-- evaluate sequential shadow windows before promotion
-- detect delayed post-promotion regression and rollback to an archived version
-- measure behavioral drift between active and candidate models
-- apply the Drift Contract matrix rule as an experimental bounded-plasticity update
-- compare multi-layer continual adaptation against SGD, Adam, replay, EWC, and periodic joint retraining
-- measure explicit neural update-delta compatibility as a separate promotion signal
-- condition update and behavior trust on validated reflex families within one model lineage
-- apply risk-conditioned epsilon schedules and combine replay with bounded updates
-- persist immutable update-family definitions, route unknown families to deliberation, and quarantine drifting families
-- split, retire, reactivate, and grow family topology through explicit non-permissivity guardrails
-- run a hybrid coding-agent controller that compiles repeated tool-selection decisions and defers OOD states to deliberation
-- learn online from successful deliberative fallback decisions through candidate-only promotion
+- a generic `decide`, `observe`, and `close_episode` integration API
+- typed `ReflexDecision` and `DeliberateDecision` results
+- verified-outcome-only acquisition
+- calibrated confidence and out-of-distribution fallback
+- active and candidate separation
+- retention probes and regression checks
+- family-scoped activation with per-family thresholds
+- persistent reflex state, decision logs, and telemetry
+- a localhost JSON service through `paradigm serve`
+- a LaRuche adapter contract and a validated Rust bridge on the LaRuche integration branch
+- controlled Type A and Type B acquisition benchmarks
+- a recorded real-agent integration with DeepSeek and real tools
+- reproducible cached benchmark output through `paradigm benchmark p24 --from-cache`
 
-The implementation is a research scaffold, not a production safety system.
+The current reflex surface is intentionally narrow. Read-only tools and exact validated test-command templates may be replayed. Writes, edits, pushes, arbitrary shell commands, delegation, browser or computer control, unsupported arguments, and uncertified families remain deliberative or blocked.
+
+The implementation is an active research prototype, not a production safety system.
 
 ## Quick start
 
 ```bash
-git clone https://github.com/infinition/paradigm.git
-cd paradigm
+git clone https://github.com/infinition/Paradigm.git
+cd Paradigm
 python -m venv .venv
 source .venv/bin/activate
 pip install -e ".[research]"
+
+# Public integration and recorded benchmark
+paradigm benchmark p24 --from-cache
+python examples/integration_minimal.py
+
+# Minimal Core example
 python examples/minimal.py
 python benchmarks/core_p0.py --seed 11
 python benchmarks/core_p01_measured_deliberation.py --seed 23 --probes 512
@@ -339,6 +344,8 @@ On Windows PowerShell:
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -e ".[research]"
+paradigm benchmark p24 --from-cache
+python examples/integration_minimal.py
 python examples/minimal.py
 python benchmarks/core_p0.py --seed 11
 python benchmarks/core_p01_measured_deliberation.py --seed 23 --probes 512
@@ -380,6 +387,9 @@ paradigm/
 │   ├── p11.py
 │   ├── p12.py
 │   ├── p13.py
+│   ├── integration/
+│   ├── service.py
+│   ├── family_scoped.py
 │   ├── family_registry.py
 │   ├── bounded.py
 │   ├── lifecycle_scenarios.py
@@ -424,11 +434,13 @@ paradigm/
 │   ├── GLOSSARY.md
 │   ├── SAFETY_BOUNDARY.md
 │   ├── RELATED_WORK.md
+│   ├── INTEGRATION.md
 │   └── adr/
 ├── benchmarks/
 ├── examples/
 ├── tests/
 ├── data/
+├── paper/
 └── results/
 ```
 
@@ -480,24 +492,36 @@ Full mapping: [docs/RESEARCH_MAP.md](docs/RESEARCH_MAP.md)
 
 ## Status
 
-`0.2.0` is an active research prototype.
+`0.2.0` is an active research prototype with a working integration surface.
 
-The first Core P0 synthetic benchmark has been executed across deterministic routing, noisy routing, covariate shift, and repeated workflows. The first calibrated-forest compiler was not justified as a universal default. A minimal-complexity selector now chooses the first reflex family that satisfies declared coverage, selective-accuracy, and calibration constraints.
+Paradigm has demonstrated, within the recorded experimental scope:
 
-With the current seed, it selects a raw tree on three scenarios and a calibrated tree on the noisy scenario. All four synthetic quality gates pass. P0.1 replaces the assumed cost ratio with a measured local deliberative surrogate. P0.2 and P0.3 progressively move the trust experiment from input space to reflex parameter and behavior space. P0.4 converts those signals into an explicit promotion manifest. P0.5 makes the lifecycle persistent and demonstrates delayed-regression rollback from a content-addressed archived version. P1.0 begins bounded-plasticity testing by transferring only the matrix update mechanics from Drift Contract and verifying the conditional bound numerically on synthetic reflex adaptation. P1.1 extends this to a multi-layer continual benchmark and records a negative result for a single global neural update subspace. A real external deliberative path is still required before making a broader efficiency claim.
+- replicated Type A certified coverage acquisition
+- Type B procedural skill acquisition from validated deliberative experience
+- retention-probe protection against regressions
+- family-scoped activation without lowering existing thresholds
+- integration into a real LaRuche agent loop with DeepSeek and real tools
 
-See [results/core_p05/REPORT.md](results/core_p05/REPORT.md), [results/core_p10/REPORT.md](results/core_p10/REPORT.md), and [PROJECT_STATE.md](PROJECT_STATE.md).
+The strongest real-agent result so far is Run 11. In one fresh 24-mission run, all 24 missions were independently verified by `pytest`. Two stable procedural families became active at mission 16, and Paradigm later replayed 15 certified decisions without a model call. Variable and unsupported behavior remained deliberative, no false fast path was observed, and no unsafe action was automated.
+
+The stable post-activation window is missions 17 to 23. On that window, model calls, tokens, and wall time were lower than before activation. Mission 24 is retained as an outlier with 18 model calls and 74.5 seconds of model self-verification, so the project does not claim an overall post-activation average improvement when that outlier is included. The robust count is 15 reflex decisions and therefore 15 model calls avoided, with no mission broken.
+
+Two limitations from Run 11 remain explicit. First, the start-of-mission family activated on only five validated traces because LaRuche drops detailed output for some failing shell commands; no retrospective minimum-evidence rule was added. Second, once an active family is served by the reflex, fresh deliberative held-out evidence disappears, so later replacement candidates can become `insufficient` even when frozen retention probes still pass. Re-certifying active families from probes when fresh teacher evidence is absent is the next targeted experiment.
+
+See `results/integration_laruche/run11_family_scoped.md`, `docs/INTEGRATION.md`, and `PROJECT_STATE.md`.
 
 ## Citation
 
-Until a Paradigm paper exists, cite the software repository:
+A Paradigm preprint is included under `paper/` and is the preferred research reference once it has a public archival identifier.
+
+Until then, cite the software repository:
 
 ```bibtex
 @software{polly2026paradigm,
   author = {Fabien Polly},
-  title = {Paradigm: Continual Reflex Compilation for Adaptive Systems},
+  title = {Paradigm: Procedural Learning and Trust for AI Agents},
   year = {2026},
-  url = {https://github.com/infinition/paradigm}
+  url = {https://github.com/infinition/Paradigm}
 }
 ```
 
