@@ -29,3 +29,15 @@ The module is implemented from this text, unit-tested on grammar sentences that 
 ## Not done
 
 No live run, no dataset change, no gate or threshold change, no further correction after this experiment.
+
+## Outcome (`RESULTS_C4B.md`, `results_c4b.json`); the line stops here
+
+Extractor version 2 on the datasets, reported first. Version 1: temporal negatives 37 of 37 FUTURE (35 before), the 16 inspection_only sentences tagged CONDITIONAL by the indirect-question misfire are now UNSPECIFIED, the C5 blocker sentence leaves `actionable_now`; 23 sentences change, all in those two directions. Version 2: temporal negatives 26 of 30 FUTURE (19 before), including the two C7 false fast paths and "attends avant de prendre la photo"; conditional 13 of 17 CONDITIONAL (11 before); 14 sentences change. The four temporal negatives still not FUTURE on version 2 are deferrals without a subordinate marker ("Attends que je sois revenu" is now covered; the remaining ones use other constructions), left as they are.
+
+Prediction 1 held. Prediction 2 held: on version 2 under every gate the hard-negative false fast paths are 0, the temporal ones included; the CHECK_CAMERA sentence read as a capture remains the single false fast path, and selective accuracy under the permissive gates rises from 0.85 to 0.87 to 0.88 to 0.90, below 0.99. Prediction 3 held: no gate meets the grid on both versions.
+
+The C4 protocol on version 1 does not credit version 2 of the extractor: with k-NN the temporal false fast path disappears (1 to 0) but an inspection_only one appears (0 to 1), because the inspection sentences the misfire kept out of `actionable_now` are now inside it and the classifier fires on one of them; hard-negative false fast paths 2 to 2, recall 0.46 to 0.46, criterion not met for any model. The correction is right on the grammar and neutral on this protocol: it removes a false protection (the misfire) as well as a real error.
+
+On version 1 out of fold, the class-conditional gate G1 meets the grid with the refit classifier and version 2 features: selective accuracy 1.00, 0 false fast paths of any kind, coverage 0.81, positive reflex coverage 0.83 (0.76 in C7). On version 2 the picture of C7 is unchanged in structure: G1 accepts nothing, the permissive gates transport 0.70 of the positives at 0.88 to 0.90 selective accuracy, and the residual error is no longer temporal.
+
+Closing reading of the line. The grammatical hypothesis is closed: with the subordinate clauses covered, deferrals no longer produce false fast paths on either dataset. What remains is not a rule: a classifier at 0.81 to 0.90 accuracy on phrasings written by other generators, and a gate that either refuses them or admits its errors. No further correction of this dataset is made.

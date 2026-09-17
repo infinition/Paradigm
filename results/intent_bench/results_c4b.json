@@ -1,0 +1,1477 @@
+{
+ "extractor_v1_dataset": {
+  "by_transformation": {
+   "base_or_variant": {
+    "n": 135,
+    "v1": {
+     "UNSPECIFIED": 117,
+     "NOW": 8,
+     "FUTURE": 1,
+     "CONDITIONAL": 6,
+     "PAST_REFERENCE": 3
+    },
+    "v2": {
+     "UNSPECIFIED": 121,
+     "NOW": 9,
+     "FUTURE": 1,
+     "PAST_REFERENCE": 3,
+     "CONDITIONAL": 1
+    },
+    "actionable_v1": 118,
+    "actionable_v2": 123
+   },
+   "negation": {
+    "n": 37,
+    "v1": {
+     "UNSPECIFIED": 36,
+     "NOW": 1
+    },
+    "v2": {
+     "UNSPECIFIED": 36,
+     "NOW": 1
+    },
+    "actionable_v1": 2,
+    "actionable_v2": 2
+   },
+   "temporal": {
+    "n": 37,
+    "v1": {
+     "FUTURE": 35,
+     "UNSPECIFIED": 2
+    },
+    "v2": {
+     "FUTURE": 37
+    },
+    "actionable_v1": 2,
+    "actionable_v2": 0
+   },
+   "past_question": {
+    "n": 37,
+    "v1": {
+     "PAST_REFERENCE": 37
+    },
+    "v2": {
+     "PAST_REFERENCE": 37
+    },
+    "actionable_v1": 0,
+    "actionable_v2": 0
+   },
+   "object_change": {
+    "n": 37,
+    "v1": {
+     "UNSPECIFIED": 31,
+     "NOW": 5,
+     "PAST_REFERENCE": 1
+    },
+    "v2": {
+     "UNSPECIFIED": 31,
+     "NOW": 5,
+     "PAST_REFERENCE": 1
+    },
+    "actionable_v1": 34,
+    "actionable_v2": 34
+   },
+   "inspection_only": {
+    "n": 37,
+    "v1": {
+     "CONDITIONAL": 16,
+     "UNSPECIFIED": 21
+    },
+    "v2": {
+     "UNSPECIFIED": 37
+    },
+    "actionable_v1": 20,
+    "actionable_v2": 35
+   },
+   "conditional": {
+    "n": 0,
+    "v1": {},
+    "v2": {},
+    "actionable_v1": 0,
+    "actionable_v2": 0
+   }
+  },
+  "changed": [
+   {
+    "text": "Regarde si tu peux me prendre en photo, sans le faire.",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "Fais une photo de moi avec la webcam quand je te le dirai.",
+    "intent": "OTHER",
+    "transformation": "temporal",
+    "v1": "UNSPECIFIED",
+    "v2": "FUTURE",
+    "actionable_v1": true,
+    "actionable_v2": false
+   },
+   {
+    "text": "Dis-moi juste si la webcam r\u00e9pond.",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "Indique-moi seulement si la cam\u00e9ra est d\u00e9tect\u00e9e.",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "Regarde si la cam\u00e9ra s'ouvre, sans l'ouvrir vraiment.",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "Dis-moi si la webcam renvoie une image, sans me la montrer.",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "Ouvre mes photos quand j'aurai fini.",
+    "intent": "OTHER",
+    "transformation": "temporal",
+    "v1": "UNSPECIFIED",
+    "v2": "FUTURE",
+    "actionable_v1": true,
+    "actionable_v2": false
+   },
+   {
+    "text": "V\u00e9rifie juste si le dossier Photos existe.",
+    "intent": "FIND_EXISTING_PHOTOS",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "V\u00e9rifie juste si la cam\u00e9ra marche.",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "Regarde si la webcam est dispo, c'est tout.",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "Check vite fait si le Mac voit la cam.",
+    "intent": "CHECK_CAMERA",
+    "transformation": null,
+    "v1": "CONDITIONAL",
+    "v2": "NOW",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "V\u00e9rifie juste si la cam\u00e9ra est disponible, ne cherche aucun fichier.",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": false
+   },
+   {
+    "text": "Dis-moi juste si la webcam r\u00e9pond.",
+    "intent": "CHECK_CAMERA",
+    "transformation": null,
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "Check si la cam est op\u00e9rationnelle.",
+    "intent": "CHECK_CAMERA",
+    "transformation": null,
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "Dis-moi seulement si le dossier de photos existe, sans lister son contenu.",
+    "intent": "OTHER",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "V\u00e9rifie seulement si le Mac est branch\u00e9 au chargeur.",
+    "intent": "OTHER",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "regarde juste si la camera marche",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "check juste si la webcam est dispo",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "check si la cam est detect\u00e9e",
+    "intent": "CHECK_CAMERA",
+    "transformation": null,
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "test si la camera fonctionne",
+    "intent": "CHECK_CAMERA",
+    "transformation": null,
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "regarde juste si le dossier photo existe",
+    "intent": "OTHER",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "regarde juste si la webcam est dispo",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "check juste si le mac est branch\u00e9",
+    "intent": "OTHER",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   }
+  ]
+ },
+ "extractor_v2_dataset": {
+  "by_transformation": {
+   "base_or_variant": {
+    "n": 118,
+    "v1": {
+     "UNSPECIFIED": 80,
+     "NOW": 30,
+     "PAST_REFERENCE": 6,
+     "CONDITIONAL": 2
+    },
+    "v2": {
+     "UNSPECIFIED": 82,
+     "NOW": 30,
+     "PAST_REFERENCE": 6
+    },
+    "actionable_v1": 100,
+    "actionable_v2": 102
+   },
+   "negation": {
+    "n": 28,
+    "v1": {
+     "UNSPECIFIED": 27,
+     "CONDITIONAL": 1
+    },
+    "v2": {
+     "UNSPECIFIED": 27,
+     "CONDITIONAL": 1
+    },
+    "actionable_v1": 1,
+    "actionable_v2": 1
+   },
+   "temporal": {
+    "n": 30,
+    "v1": {
+     "UNSPECIFIED": 9,
+     "FUTURE": 19,
+     "CONDITIONAL": 1,
+     "PAST_REFERENCE": 1
+    },
+    "v2": {
+     "FUTURE": 26,
+     "UNSPECIFIED": 2,
+     "CONDITIONAL": 1,
+     "PAST_REFERENCE": 1
+    },
+    "actionable_v1": 9,
+    "actionable_v2": 2
+   },
+   "past_question": {
+    "n": 28,
+    "v1": {
+     "PAST_REFERENCE": 26,
+     "FUTURE": 2
+    },
+    "v2": {
+     "PAST_REFERENCE": 26,
+     "FUTURE": 2
+    },
+    "actionable_v1": 0,
+    "actionable_v2": 0
+   },
+   "object_change": {
+    "n": 23,
+    "v1": {
+     "UNSPECIFIED": 18,
+     "NOW": 4,
+     "CONDITIONAL": 1
+    },
+    "v2": {
+     "UNSPECIFIED": 18,
+     "NOW": 4,
+     "CONDITIONAL": 1
+    },
+    "actionable_v1": 18,
+    "actionable_v2": 18
+   },
+   "inspection_only": {
+    "n": 15,
+    "v1": {
+     "CONDITIONAL": 3,
+     "UNSPECIFIED": 12
+    },
+    "v2": {
+     "UNSPECIFIED": 15
+    },
+    "actionable_v1": 11,
+    "actionable_v2": 13
+   },
+   "conditional": {
+    "n": 17,
+    "v1": {
+     "CONDITIONAL": 11,
+     "NOW": 2,
+     "FUTURE": 4
+    },
+    "v2": {
+     "CONDITIONAL": 13,
+     "NOW": 2,
+     "FUTURE": 2
+    },
+    "actionable_v1": 2,
+    "actionable_v2": 2
+   }
+  },
+  "changed": [
+   {
+    "text": "Immortalise-moi avec la cam\u00e9ra quand j'aurai fini de me recoiffer.",
+    "intent": "OTHER",
+    "transformation": "temporal",
+    "v1": "UNSPECIFIED",
+    "v2": "FUTURE",
+    "actionable_v1": true,
+    "actionable_v2": false
+   },
+   {
+    "text": "Regarde si la cam\u00e9ra du Mac peut faire une photo d'identit\u00e9, sans la prendre.",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "Allume la webcam pour le cadrage quand je te le demanderai.",
+    "intent": "OTHER",
+    "transformation": "temporal",
+    "v1": "UNSPECIFIED",
+    "v2": "FUTURE",
+    "actionable_v1": true,
+    "actionable_v2": false
+   },
+   {
+    "text": "Regarde si tu peux me prendre, mais ne le fais pas.",
+    "intent": "CHECK_CAMERA",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": false
+   },
+   {
+    "text": "Attends que je sois revenu devant le Mac avant de me prendre en photo.",
+    "intent": "OTHER",
+    "transformation": "temporal",
+    "v1": "UNSPECIFIED",
+    "v2": "FUTURE",
+    "actionable_v1": true,
+    "actionable_v2": false
+   },
+   {
+    "text": "Quand j'aurai fini mon appel, v\u00e9rifie quelles webcams sont connect\u00e9es.",
+    "intent": "OTHER",
+    "transformation": "temporal",
+    "v1": "UNSPECIFIED",
+    "v2": "FUTURE",
+    "actionable_v1": true,
+    "actionable_v2": false
+   },
+   {
+    "text": "Si jamais la visio d\u00e9conne plus tard, regarde \u00e0 ce moment-l\u00e0 si une cam\u00e9ra est d\u00e9tect\u00e9e.",
+    "intent": "OTHER",
+    "transformation": "conditional",
+    "v1": "FUTURE",
+    "v2": "CONDITIONAL",
+    "actionable_v1": false,
+    "actionable_v2": false
+   },
+   {
+    "text": "V\u00e9rifie seulement si le dossier qui contient mes photos existe, sans chercher les fichiers dedans.",
+    "intent": "OTHER",
+    "transformation": "inspection_only",
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "regarde si la webcam r\u00e9pond",
+    "intent": "CHECK_CAMERA",
+    "transformation": null,
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "check si la webcam est accessible",
+    "intent": "CHECK_CAMERA",
+    "transformation": null,
+    "v1": "CONDITIONAL",
+    "v2": "UNSPECIFIED",
+    "actionable_v1": false,
+    "actionable_v2": true
+   },
+   {
+    "text": "attends avant de prendre la photo",
+    "intent": "OTHER",
+    "transformation": "temporal",
+    "v1": "UNSPECIFIED",
+    "v2": "FUTURE",
+    "actionable_v1": true,
+    "actionable_v2": false
+   },
+   {
+    "text": "quand je te dis go tu prends la photo",
+    "intent": "OTHER",
+    "transformation": "temporal",
+    "v1": "UNSPECIFIED",
+    "v2": "FUTURE",
+    "actionable_v1": true,
+    "actionable_v2": false
+   },
+   {
+    "text": "fait la photo une fois que j'ai fini",
+    "intent": "OTHER",
+    "transformation": "temporal",
+    "v1": "UNSPECIFIED",
+    "v2": "FUTURE",
+    "actionable_v1": true,
+    "actionable_v2": false
+   },
+   {
+    "text": "si jamais je te demande apres tu pourra me prendre",
+    "intent": "OTHER",
+    "transformation": "conditional",
+    "v1": "FUTURE",
+    "v2": "CONDITIONAL",
+    "actionable_v1": false,
+    "actionable_v2": false
+   }
+  ]
+ },
+ "c4_protocol_v1": {
+  "A+S+T_v1|prototype": {
+   "accuracy_no_gate": 0.66875,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.8695652173913043,
+    "CHECK_CAMERA": 0.4594594594594595,
+    "FIND_EXISTING_PHOTOS": 0.6666666666666666,
+    "OPEN_CAMERA_NO_CAPTURE": 0.9285714285714286,
+    "OTHER": 0.5816993464052288,
+    "SCREENSHOT": 0.8125
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 0,
+    "FIND_EXISTING_PHOTOS": 3,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 9,
+    "SCREENSHOT": 5
+   },
+   "threshold": 0.6949111894970134,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.2880905931820559,
+   "gate_acceptance": 0.5375,
+   "gate_acceptance_positives": 0.7608695652173914,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.003125,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": 1.0,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0
+  },
+  "A+S+T_v1|knn3": {
+   "accuracy_no_gate": 0.80625,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.9347826086956522,
+    "CHECK_CAMERA": 0.7837837837837838,
+    "FIND_EXISTING_PHOTOS": 0.5833333333333334,
+    "OPEN_CAMERA_NO_CAPTURE": 0.75,
+    "OTHER": 0.8496732026143791,
+    "SCREENSHOT": 0.65625
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 4,
+    "FIND_EXISTING_PHOTOS": 5,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 7,
+    "SCREENSHOT": 7
+   },
+   "threshold": 1.0,
+   "coverage": 0.65625,
+   "selective_accuracy": 0.9619047619047619,
+   "feasible": false,
+   "ece": 0.06354166666666661,
+   "gate_acceptance": 0.5375,
+   "gate_acceptance_positives": 0.7608695652173914,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.4,
+   "false_fast_paths": 2,
+   "false_fast_paths_on_hard_negatives": 2,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.45652173913043476,
+   "hard_negative_rejection_under_gate": 0.9882352941176471,
+   "selective_accuracy_under_gate": 0.96875,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 8,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.46153846153846156,
+    "claude": 0.4,
+    "synthetic_user_style": 0.5384615384615384
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.45652173913043476,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 2
+  },
+  "A+S+T_v1|logreg": {
+   "accuracy_no_gate": 0.8875,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.9130434782608695,
+    "CHECK_CAMERA": 0.7567567567567568,
+    "FIND_EXISTING_PHOTOS": 0.7083333333333334,
+    "OPEN_CAMERA_NO_CAPTURE": 0.8214285714285714,
+    "OTHER": 0.954248366013072,
+    "SCREENSHOT": 0.875
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 0,
+    "FIND_EXISTING_PHOTOS": 1,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 1,
+    "SCREENSHOT": 1
+   },
+   "threshold": 0.9984869481113757,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.16204763636602743,
+   "gate_acceptance": 0.5375,
+   "gate_acceptance_positives": 0.7608695652173914,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.0,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": null,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0
+  },
+  "A+S+T_v1|tree": {
+   "accuracy_no_gate": 0.721875,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.7608695652173914,
+    "CHECK_CAMERA": 0.6486486486486487,
+    "FIND_EXISTING_PHOTOS": 0.5416666666666666,
+    "OPEN_CAMERA_NO_CAPTURE": 0.5,
+    "OTHER": 0.8300653594771242,
+    "SCREENSHOT": 0.5625
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 2,
+    "FIND_EXISTING_PHOTOS": 5,
+    "OPEN_CAMERA_NO_CAPTURE": 2,
+    "OTHER": 3,
+    "SCREENSHOT": 5
+   },
+   "threshold": 1.0,
+   "coverage": 0.809375,
+   "selective_accuracy": 0.8262548262548263,
+   "feasible": false,
+   "ece": 0.19549851190476186,
+   "gate_acceptance": 0.5375,
+   "gate_acceptance_positives": 0.7608695652173914,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.45,
+   "false_fast_paths": 6,
+   "false_fast_paths_on_hard_negatives": 3,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.5869565217391305,
+   "hard_negative_rejection_under_gate": 0.9823529411764705,
+   "selective_accuracy_under_gate": 0.8611111111111112,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.46153846153846156,
+    "claude": 0.65,
+    "synthetic_user_style": 0.6153846153846154
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.5869565217391305,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 3
+  },
+  "A+S+T_v2|prototype": {
+   "accuracy_no_gate": 0.715625,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.8478260869565217,
+    "CHECK_CAMERA": 0.8918918918918919,
+    "FIND_EXISTING_PHOTOS": 0.6666666666666666,
+    "OPEN_CAMERA_NO_CAPTURE": 0.8571428571428571,
+    "OTHER": 0.5947712418300654,
+    "SCREENSHOT": 0.8125
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 0,
+    "FIND_EXISTING_PHOTOS": 3,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 5,
+    "SCREENSHOT": 5
+   },
+   "threshold": 0.7139199012372062,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.33674158171192825,
+   "gate_acceptance": 0.5375,
+   "gate_acceptance_positives": 0.7608695652173914,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.0,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": null,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion": false
+  },
+  "A+S+T_v2|knn3": {
+   "accuracy_no_gate": 0.80625,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.9565217391304348,
+    "CHECK_CAMERA": 0.7027027027027027,
+    "FIND_EXISTING_PHOTOS": 0.5833333333333334,
+    "OPEN_CAMERA_NO_CAPTURE": 0.6785714285714286,
+    "OTHER": 0.8758169934640523,
+    "SCREENSHOT": 0.65625
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 5,
+    "FIND_EXISTING_PHOTOS": 5,
+    "OPEN_CAMERA_NO_CAPTURE": 2,
+    "OTHER": 5,
+    "SCREENSHOT": 7
+   },
+   "threshold": 1.0,
+   "coverage": 0.640625,
+   "selective_accuracy": 0.9512195121951219,
+   "feasible": false,
+   "ece": 0.05625000000000004,
+   "gate_acceptance": 0.5375,
+   "gate_acceptance_positives": 0.7608695652173914,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.396875,
+   "false_fast_paths": 2,
+   "false_fast_paths_on_hard_negatives": 2,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.45652173913043476,
+   "hard_negative_rejection_under_gate": 0.9882352941176471,
+   "selective_accuracy_under_gate": 0.9606299212598425,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 7,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.46153846153846156,
+    "claude": 0.45,
+    "synthetic_user_style": 0.46153846153846156
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.45652173913043476,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 2,
+   "criterion": false
+  },
+  "A+S+T_v2|logreg": {
+   "accuracy_no_gate": 0.8875,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.8478260869565217,
+    "CHECK_CAMERA": 0.8108108108108109,
+    "FIND_EXISTING_PHOTOS": 0.7083333333333334,
+    "OPEN_CAMERA_NO_CAPTURE": 0.8214285714285714,
+    "OTHER": 0.9607843137254902,
+    "SCREENSHOT": 0.875
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 1,
+    "FIND_EXISTING_PHOTOS": 1,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 0,
+    "SCREENSHOT": 1
+   },
+   "threshold": 0.9989186115016858,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.16386319508227168,
+   "gate_acceptance": 0.5375,
+   "gate_acceptance_positives": 0.7608695652173914,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.0,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": null,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion": false
+  },
+  "A+S+T_v2|tree": {
+   "accuracy_no_gate": 0.69375,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.7608695652173914,
+    "CHECK_CAMERA": 0.5945945945945946,
+    "FIND_EXISTING_PHOTOS": 0.375,
+    "OPEN_CAMERA_NO_CAPTURE": 0.5357142857142857,
+    "OTHER": 0.8235294117647058,
+    "SCREENSHOT": 0.46875
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 1,
+    "FIND_EXISTING_PHOTOS": 9,
+    "OPEN_CAMERA_NO_CAPTURE": 3,
+    "OTHER": 4,
+    "SCREENSHOT": 3
+   },
+   "threshold": 1.0,
+   "coverage": 0.7625,
+   "selective_accuracy": 0.8032786885245902,
+   "feasible": false,
+   "ece": 0.2185267857142857,
+   "gate_acceptance": 0.5375,
+   "gate_acceptance_positives": 0.7608695652173914,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.4375,
+   "false_fast_paths": 5,
+   "false_fast_paths_on_hard_negatives": 3,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.5217391304347826,
+   "hard_negative_rejection_under_gate": 0.9823529411764705,
+   "selective_accuracy_under_gate": 0.8571428571428571,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 2,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.46153846153846156,
+    "claude": 0.55,
+    "synthetic_user_style": 0.5384615384615384
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.5217391304347826,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 3,
+   "criterion": false
+  }
+ },
+ "gates": {
+  "threshold_rule_value": 0.5963377679232135,
+  "selector_feasible_in_sample": true,
+  "v1_oof": {
+   "G0": {
+    "acceptance_positives": 1.0,
+    "acceptance_hard_negatives": 1.0,
+    "coverage": 0.878125,
+    "selective_accuracy": 0.9430604982206405,
+    "hard_false_fast_paths": 1,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.8478260869565217,
+    "n_fired": 281,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 1,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G1": {
+    "acceptance_positives": 0.9130434782608695,
+    "acceptance_hard_negatives": 0.9,
+    "coverage": 0.8125,
+    "selective_accuracy": 1.0,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 0,
+    "positive_reflex_coverage": 0.8260869565217391,
+    "n_fired": 260,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": true
+   },
+   "G2_p90": {
+    "acceptance_positives": 1.0,
+    "acceptance_hard_negatives": 1.0,
+    "coverage": 0.871875,
+    "selective_accuracy": 0.9390681003584229,
+    "hard_false_fast_paths": 1,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.8478260869565217,
+    "n_fired": 279,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 1,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G2_p95": {
+    "acceptance_positives": 1.0,
+    "acceptance_hard_negatives": 1.0,
+    "coverage": 0.88125,
+    "selective_accuracy": 0.9397163120567376,
+    "hard_false_fast_paths": 1,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.8478260869565217,
+    "n_fired": 282,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 1,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G2_p99": {
+    "acceptance_positives": 1.0,
+    "acceptance_hard_negatives": 1.0,
+    "coverage": 0.88125,
+    "selective_accuracy": 0.9397163120567376,
+    "hard_false_fast_paths": 1,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.8478260869565217,
+    "n_fired": 282,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 1,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G4": {
+    "acceptance_positives": 0.9130434782608695,
+    "acceptance_hard_negatives": 0.25882352941176473,
+    "coverage": 0.465625,
+    "selective_accuracy": 1.0,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 0,
+    "positive_reflex_coverage": 0.8260869565217391,
+    "n_fired": 149,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": true
+   },
+   "G2_p95+actionable_v2": {
+    "acceptance_positives": 0.9782608695652174,
+    "acceptance_hard_negatives": 0.3352941176470588,
+    "coverage": 0.5,
+    "selective_accuracy": 0.95625,
+    "hard_false_fast_paths": 1,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.8478260869565217,
+    "n_fired": 160,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 1,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G3exp_a0.05": {
+    "acceptance_positives": 0.9565217391304348,
+    "acceptance_hard_negatives": 0.9588235294117647,
+    "coverage": 0.88125,
+    "selective_accuracy": 0.9397163120567376,
+    "hard_false_fast_paths": 1,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.8478260869565217,
+    "n_fired": 282,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 1,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G3exp_a0.1": {
+    "acceptance_positives": 0.8695652173913043,
+    "acceptance_hard_negatives": 0.9411764705882353,
+    "coverage": 0.88125,
+    "selective_accuracy": 0.9397163120567376,
+    "hard_false_fast_paths": 1,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.8478260869565217,
+    "n_fired": 282,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 1,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   }
+  },
+  "v2": {
+   "G0": {
+    "acceptance_positives": 0.26666666666666666,
+    "acceptance_hard_negatives": 0.07258064516129033,
+    "coverage": 0.08641975308641975,
+    "selective_accuracy": 0.9047619047619048,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 0,
+    "positive_reflex_coverage": 0.16666666666666666,
+    "n_fired": 21,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G1": {
+    "acceptance_positives": 0.0,
+    "acceptance_hard_negatives": 0.024193548387096774,
+    "coverage": 0.012345679012345678,
+    "selective_accuracy": 1.0,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 0,
+    "positive_reflex_coverage": 0.0,
+    "n_fired": 3,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G2_p90": {
+    "acceptance_positives": 0.9,
+    "acceptance_hard_negatives": 0.6048387096774194,
+    "coverage": 0.5102880658436214,
+    "selective_accuracy": 0.9032258064516129,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.6666666666666666,
+    "n_fired": 124,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G2_p95": {
+    "acceptance_positives": 0.9666666666666667,
+    "acceptance_hard_negatives": 0.7419354838709677,
+    "coverage": 0.6172839506172839,
+    "selective_accuracy": 0.88,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.7,
+    "n_fired": 150,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G2_p99": {
+    "acceptance_positives": 1.0,
+    "acceptance_hard_negatives": 1.0,
+    "coverage": 0.7942386831275721,
+    "selective_accuracy": 0.8963730569948186,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.7,
+    "n_fired": 193,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G4": {
+    "acceptance_positives": 0.0,
+    "acceptance_hard_negatives": 0.0,
+    "coverage": 0.0,
+    "selective_accuracy": null,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 0,
+    "positive_reflex_coverage": 0.0,
+    "n_fired": 0,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G2_p95+actionable_v2": {
+    "acceptance_positives": 0.9333333333333333,
+    "acceptance_hard_negatives": 0.14516129032258066,
+    "coverage": 0.2880658436213992,
+    "selective_accuracy": 0.8714285714285714,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.7,
+    "n_fired": 70,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G3exp_a0.05": {
+    "acceptance_positives": 0.8,
+    "acceptance_hard_negatives": 0.9516129032258065,
+    "coverage": 0.7942386831275721,
+    "selective_accuracy": 0.8963730569948186,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.7,
+    "n_fired": 193,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   },
+   "G3exp_a0.1": {
+    "acceptance_positives": 0.7666666666666667,
+    "acceptance_hard_negatives": 0.9274193548387096,
+    "coverage": 0.7942386831275721,
+    "selective_accuracy": 0.8963730569948186,
+    "hard_false_fast_paths": 0,
+    "false_fast_paths_all": 1,
+    "positive_reflex_coverage": 0.7,
+    "n_fired": 193,
+    "hard_fired_by_transformation": {
+     "negation": 0,
+     "temporal": 0,
+     "past_question": 0,
+     "object_change": 0,
+     "inspection_only": 0,
+     "conditional": 0
+    },
+    "meets_grid": false
+   }
+  }
+ }
+}
