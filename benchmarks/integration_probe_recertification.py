@@ -145,7 +145,7 @@ def main() -> None:
     OUT_JSON.write_text(json.dumps(results, indent=1, default=float))
 
     lines = ["# Offline counterfactual audit: probe-based re-certification", "",
-             f"Source of truth: `engine_state_family_scoped_after_24.pkl` (tag `laruche-family-scoped-run11`). Frozen probes: " + ", ".join(f"`{f}` {n}" for f, n in sorted(probes.items())) + ". No threshold, split, family definition, probe set or historical artifact was modified; the replay works on deep copies.", ""]
+             "Source of truth: `engine_state_family_scoped_after_24.pkl` (tag `laruche-family-scoped-run11`). Frozen probes: " + ", ".join(f"`{f}` {n}" for f, n in sorted(probes.items())) + ". No threshold, split, family definition, probe set or historical artifact was modified; the replay works on deep copies.", ""]
     for point in (20, 24):
         off = results["replays"][f"{point}_rule_off"]
         on = results["replays"][f"{point}_rule_on"]
