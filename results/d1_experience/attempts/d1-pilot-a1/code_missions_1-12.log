@@ -1,0 +1,156 @@
+D1 pilot  domain code  attempt d1-pilot-a1  model deepseek-v4-flash  paradigm ON
+manifest /Users/infinition/Coding/paradigm/results/d1_experience/missions.json
+hard stop: 200 model calls or 2000000 tokens (cumulative, both domains)
+
+mission 1 [A1] A/wrong_constant 44.4s  laruche: finished  verdict: FAILURE  calls: 15  tokens: 190760
+   diagnostic  edits: 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && (which python3 || true) && python3 -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && for p in python python3 python3.10 python3.11 python3.12 python3.13 python3.14; do printf '%s: ' "$p"; command -v "$p" || echo "(absent)"; done; echo "--- pytest ---"; command -v pytest || echo "(absent)"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3.12 -m pytest -q 2>&1 | tail -20
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "PATH=$PATH" && python3 -m unittest -v test_calc 2>&1 | tail -20
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && for p in python3 python3.12 python3.14; do $p -c "import importlib.util as u,sys;print('$p',sys.version.split()[0],u.find_spec('pytest'))" 2>&1 | tail -2; done; echo "--- PATH scan for python/pytest binaries ---"; for d in $(echo "$PATH" | tr ':' ' '); do for b in python pytest; do [ -x "$d/$b" ] && echo "FOUND $d/$b"; done; done; echo done
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "== python -m pytest -q ==" && (python -m pytest -q 2>&1 | tail -3) ; echo "== python3 -m pytest -q ==" && (python3 -m pytest -q 2>&1 | tail -3) ; echo "== python3 -m unittest -v ==" && python3 -m unittest -v 2>&1 | tail -6 && echo "== direct assertion ==" && python3 -c "from calc import total; print('total(100) =', total(100)); assert total(100) == 120.0; print('PASS')"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "== python -m pytest -q (demandé) ==" && (python -m pytest -q 2>&1 | tail -3); echo "== équivalent exécutable : python3 -m unittest -v ==" && python3 -m unittest -v 2>&1 | tail -6; echo "== suite lancée par pytest ? non (module absent) ==" ; echo "== état final calc.py ==" && cat calc.py && echo "== test_calc.py intact ==" && cat test_calc.py && echo "== md5 test_calc.py (non modifié) ==" && md5 test_calc.py
+   cumulative  15 calls  190760 tokens
+
+mission 2 [A2] A/off_by_one 43.3s  laruche: finished  verdict: FAILURE  calls: 13  tokens: 186108
+   diagnostic  edits: 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python -m pytest -q
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "PWD=$(pwd)"; echo "PATH=$PATH"; command -v python; command -v python3; command -v pytest; echo "---"; python --version 2>&1; python3 --version 2>&1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m pytest -q 2>&1 | tail -20
+   tool  REFUSED shell_exec
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && pytest -q 2>&1 | tail -5; echo "EXIT=$?"
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/sessions
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && command -v python3.13; command -v python3.12; echo done
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -c "import sys,sysconfig;print(sys.executable);print(sysconfig.get_paths()['purelib'])"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && /Users/infinition/.local/bin/python3.12 -m pytest --version 2>&1 | head -3
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && /usr/bin/python3 -m pytest --version 2>&1 | head -3
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m unittest -q 2>&1 | tail -12
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python -m pytest -q 2>&1 | tail -3; echo "EXIT=${PIPESTATUS[0]:-$?}"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m unittest -q -v 2>&1 | tail -8
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m unittest -q; echo "EXIT_CODE=$?"
+   cumulative  28 calls  376868 tokens
+
+mission 3 [A3] A/missing_import 118.2s  laruche: finished  verdict: FAILURE  calls: 17  tokens: 279749
+   diagnostic  edits: 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python -m pytest -q
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "PWD=$(pwd)" && ls -la && echo "--- which ---" && (which python python3 pytest || true) && echo "--- versions ---" && (python3 -V; python3 -m pytest --version) 2>&1 | head -20
+   tool  REFUSED shell_exec
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python -m pytest -q 2>&1; echo "EXIT=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m pytest -q; echo "PYTEST_EXIT=$?"; python3 -m unittest -v test_calc
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && for p in python python3 python3.9 python3.10 python3.11 python3.12 python3.13 python3.14 pytest; do if command -v "$p" >/dev/null 2>&1; then echo "== $p ($(command -v "$p")) =="; "$p" -m pytest -q 2>&1 | tail -4; fi; done; echo "done"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/sessions/butinage/f3aefe33-691c-4e01-8737-2fd1023ec39d.carnet.json
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "--- ls ---" && ls -la && echo "--- calc.py ---" && cat calc.py && echo "--- direct check ---" && python3 -c "from calc import root; print('root(81) =', root(81))" && echo "--- unittest ---" && python3 -m unittest -v test_calc 2>&1 | tail -5 && echo "--- requested command ---" && python -m pytest -q; echo "requested_exit=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && ls -1a && echo "--- tree (depth 2) ---" && find . -maxdepth 2 | head -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/stats-outils.json
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/test_calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/stats-outils.json
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/stats-outils.json
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -c "from calc import root; print('root(81) =', root(81))"; python3 -m pytest -q 2>&1 | tail -2; echo "pytest_via_python3_exit=$?"; python3 -m unittest -q test_calc; echo "unittest_exit=$?"; python -m pytest -q 2>&1 | tail -1; echo "requested_python_exit=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "--- env ---" && env | grep -iE 'python|pytest|virtual|conda' ; echo "--- site ---" && python3 -m site 2>&1 | head -12
+   cumulative  45 calls  656617 tokens
+
+mission 4 [B1] B/wrong_constant 58.7s  laruche: finished  verdict: FAILURE  calls: 16  tokens: 170185
+   diagnostic  edits: 1
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python -m pytest -q; echo "EXIT=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && command -v python3; python3 --version; python3 -m pytest -q; echo "EXIT=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && ls -la && echo "--- tree ---" && find . -maxdepth 3 -not -path '*/.git/*' | head -50
+   tool  REFUSED shell_exec
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m pytest -q 2>&1; echo "EXIT_py3_pytest=$?"; /usr/bin/python3 -c "import pytest,sys;print('system python has pytest', pytest.__version__)" 2>&1 | tail -2
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && cat calc.py && python3 -m unittest -v test_calc 2>&1; echo "EXIT_unittest=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && bash -lc 'cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace; command -v python || echo "python: absent"; python -m pytest -q 2>&1 | tail -3; echo "EXIT=${PIPESTATUS[0]}"'
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "=== calc.py (cat -n) ===" && cat -n calc.py && echo "=== test_calc.py (cat -n) ===" && cat -n test_calc.py && echo "=== tentative python -m pytest -q ===" && (python -m pytest -q 2>&1; echo "EXIT_python_pytest=$?") && echo "=== tentative python3 -m pytest -q ===" && (python3 -m pytest -q 2>&1; echo "EXIT_python3_pytest=$?") && echo "=== suite via runner stdlib ===" && python3 -m unittest -v test_calc 2>&1; echo "EXIT_unittest=$?"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "[A] commande exacte demandee: python -m pytest -q"; python -m pytest -q 2>&1; echo "EXIT_a=$?"; echo "[B] repli python3 -m pytest -q"; python3 -m pytest -q 2>&1; echo "EXIT_b=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m unittest -q test_calc 2>&1; echo "EXIT_unittest=$?"
+   cumulative  61 calls  826802 tokens
+
+mission 5 [B2] B/off_by_one 41.0s  laruche: finished  verdict: FAILURE  calls: 11  tokens: 121466
+   diagnostic  edits: 1
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python -m pytest -q
+   tool  REFUSED shell_exec
+   tool  REFUSED execute_code
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m pytest -q
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace; echo "--- A: version ---"; python3 -V 2>&1; echo "--- B: sum_to ---"; python3 -c "from calc import sum_to; print(sum_to(10))" 2>&1; echo "--- C: pytest version ---"; python3 -m pytest --version 2>&1; echo "--- D: fichiers ---"; ls -1 2>&1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace; python3 -m unittest -v test_calc 2>&1; echo "exit_code=$?"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   cumulative  72 calls  948268 tokens
+
+mission 6 [B3] B/missing_import 34.2s  laruche: finished  verdict: FAILURE  calls: 13  tokens: 141374
+   diagnostic  edits: 1
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python -m pytest -q 2>&1 | tail -20
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && ls -la && which python3 python3.11 python3.12 python3.13 2>/dev/null; echo "---"; python3 -V 2>&1; echo "---"; python3 -m pytest --version 2>&1 | head -5
+   tool  file_write /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m pytest -q 2>&1 | tail -20
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3.12 -V && python3.12 -m pytest -q 2>&1 | tail -20
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace
+   tool  REFUSED shell_exec
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && cat calc.py && echo "--- unittest run ---" && python3 -m unittest -v 2>&1 | tail -20; echo "exit=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && zsh -lc 'command -v python; python -V' 2>&1 | tail -5
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "=== test_calc.py (intact) ===" && cat test_calc.py && echo "=== calc.py (corrige) ===" && cat calc.py && echo "=== execution de la suite ===" && python3 -m unittest -v 2>&1 | tail -6
+   cumulative  85 calls  1089642 tokens
+
+mission 7 [C1] C/wrong_constant 47.4s  laruche: finished  verdict: FAILURE  calls: 10  tokens: 115245
+   diagnostic  edits: 0
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace/test_calc.py
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python -m pytest -q 2>&1 | tail -40
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "--- cat -A calc.py ---" && cat -A calc.py && echo "--- wc ---" && wc -c calc.py test_calc.py && echo "--- interpreters ---" && for c in python python3 python3.11 python3.12 python3.13 py; do command -v $c >/dev/null 2>&1 && echo "FOUND $c -> $(command -v $c)"; done; echo "--- pytest? ---"; command -v pytest; ls -1 /usr/bin/python3 2>/dev/null
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "--- od calc.py ---" && od -c calc.py && echo "--- od test_calc.py ---" && od -c test_calc.py && echo "--- wc ---" && wc -c calc.py test_calc.py && echo "--- pytest module? ---" && /usr/bin/python3 -c "import pytest, sys; print('pytest', pytest.__version__)" 2>&1 | tail -3 && echo "--- python3 version ---" && /usr/bin/python3 -V
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "=== attempt: python -m pytest -q ===" && python -m pytest -q; echo "exit=$?"; echo "=== attempt: /usr/bin/python3 -m pytest -q ===" && /usr/bin/python3 -m pytest -q; echo "exit=$?"; echo "=== stdlib runner: unittest discover -v ===" && /usr/bin/python3 -m unittest discover -v; echo "exit=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && wc -c calc.py test_calc.py && /usr/bin/python3 -m unittest discover -v; echo exit=$?; /usr/bin/python3 -c "from calc import total; print([(x, total(x)) for x in (0,50,100,99.99)])"
+   cumulative  95 calls  1204887 tokens
+
+mission 8 [C2] C/off_by_one 44.8s  laruche: finished  verdict: FAILURE  calls: 9  tokens: 108766
+   diagnostic  edits: 0
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && ls -la && echo "--- python ---" && python -c "from calc import sum_to; print('sum_to(10) =', sum_to(10))" && echo "--- pytest ---" && python -m pytest -q; echo "EXIT=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && for c in python3 python3.13 python3.12 python3.11 py; do command -v $c 2>/dev/null; done; echo "--- versions ---"; python3 -V 2>&1; echo "--- pytest module ---"; python3 -m pytest --version 2>&1 | head -5; echo "--- sessions tree ---"; find sessions -maxdepth 3 | head -40
+   tool  REFUSED shell_exec
+   tool  file_read calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "== 1) literal requested command ==" && python -m pytest -q; echo "exit=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -B -m unittest test_calc
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m pytest -q
+   cumulative  104 calls  1313653 tokens
+
+mission 9 [C3] C/missing_import 54.2s  laruche: finished  verdict: FAILURE  calls: 12  tokens: 169007
+   diagnostic  edits: 0
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && ls -la && python -m pytest -q 2>&1 | tail -20
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && which python3 python3.11 python3.12 python3.13 pytest 2>&1; echo "---"; ls -la sessions 2>/dev/null
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && python3 -m pytest --version
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "=== TREE ===" && ls -laR . && echo "=== PYTEST VERSION ===" && python3 -m pytest --version 2>&1; echo "exit=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && for p in python python3 python3.12 python3.13 python3.14 python3.11; do echo "---- $p"; if command -v "$p" >/dev/null 2>&1; then "$p" -c "import pytest,sys;print('HAVE pytest',pytest.__version__,sys.executable)" 2>&1 | head -3; else echo "absent"; fi; done
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "=== BYTES ===" && wc -c calc.py test_calc.py && echo "=== calc.py (hexdump tail) ===" && tail -c 40 calc.py | hexdump -C && echo "=== UNITTEST (stdlib) ===" && python3 -m unittest -q test_calc 2>&1; echo "unittest_exit=$?"; echo "=== DIRECT CHECK ===" && python3 -c "from calc import root; v=root(81); print('root(81) =', repr(v), '| == 9.0 ?', v==9.0)"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "=== 1) commande demandee : python -m pytest -q ===" && (python -m pytest -q) 2>&1 | head -3; echo "exit=${PIPESTATUS[0]:-$?}"; echo; echo "=== 2) python3 -m pytest -q ===" && (python3 -m pytest -q) 2>&1 | tail -3; echo; echo "=== 3) equivalent stdlib : python3 -m unittest -q test_calc ===" && python3 -m unittest -q test_calc 2>&1; echo "unittest_exit=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpx3f0CJ/workspace && echo "=== final workspace state ===" && ls -la && echo "=== calc.py ===" && cat calc.py && echo "=== test_calc.py (untouched) ===" && cat test_calc.py
+   cumulative  116 calls  1482660 tokens
