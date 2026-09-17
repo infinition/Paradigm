@@ -407,8 +407,15 @@ class Paradigm:
         with self._lock:
             path = Path(path)
             path.parent.mkdir(parents=True, exist_ok=True)
-            with path.open("wb") as fh:
-                pickle.dump({"compiler": self.compiler, "action_templates": self.action_templates, "counters": self.counters}, fh)
+            payload = {
+                "compiler": self.compiler, "action_templates": self.action_templates, "counters": self.counters,
+                # Stream position: keeps compile-point labels and the shadow schedule continuous across a reload.
+                "episode_counter": self._episode_counter, "closed_episodes": self._closed_episodes,
+            }
+            tmp = path.with_suffix(path.suffix + ".tmp")
+            with tmp.open("wb") as fh:
+                pickle.dump(payload, fh)
+            tmp.replace(path)  # atomic: a failed dump never leaves an empty state file behind
 
     @classmethod
     def load(cls, path: Path, *, policy: ReflexPolicy, encoder: GenericStateEncoder | None = None, shadow_sampler: ShadowSampler | None = None) -> "Paradigm":
@@ -416,4 +423,6 @@ class Paradigm:
             payload = pickle.load(fh)
         engine = cls(policy=policy, encoder=encoder, compiler=payload["compiler"], action_templates=payload.get("action_templates"), shadow_sampler=shadow_sampler)
         engine.counters.update(payload.get("counters") or {})
+        engine._episode_counter = int(payload.get("episode_counter", 0))
+        engine._closed_episodes = int(payload.get("closed_episodes", 0))
         return engine
