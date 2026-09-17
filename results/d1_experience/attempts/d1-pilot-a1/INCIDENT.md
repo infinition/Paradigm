@@ -38,6 +38,8 @@ The trace itself is well formed and was not the problem: 160 step rows carrying 
 
 The mission process gets a PATH whose first entry provides both `python` and `python3` with pytest available, so that the harness's verification and the model's own test command resolve to the same working interpreter. Checked before relaunching: the corrected interpreter reports `1 passed` on a corrected `calc.py` and `1 failed` on the injected bug, so the verification discriminates again.
 
+What this correction is, stated so it cannot be misread later: the benchmark has always required pytest, both to score a mission and to let the mission be performed at all, and the interpreter first on PATH on this machine did not provide it. The correction aligns the interpreter actually available to the harness and to the mission's own commands with an environment where that required dependency exists. It is not an aid given to the model, not a change to the task, not a relaxation of the outcome contract, and it gives the model no information and no capability the pre-registered missions did not already assume. The same prompts, run against an interpreter that satisfies the benchmark's stated prerequisite ("python and pytest are already installed"), are what runs 9, 11, 12 and 12b executed.
+
 Nothing else changes. Missions, prompts, order, outcome contracts, ceilings, the circuit breaker, the diversity criterion and the certification parameters are untouched, and the restart begins at mission 1 with a fresh Paradigm state and a new `attempt_id`.
 
 ## Note on the ceiling, recorded but not acted on
