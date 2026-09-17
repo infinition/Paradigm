@@ -35,3 +35,17 @@ Same as C3, under the gate: unseen positive recall, false fast paths on hard neg
 ## Not done
 
 No gate or threshold change, no live run, no change to the dataset, no selection of a weighting after the fact.
+
+## Outcome (written after the run, `RESULTS_C4.md`, `results_c4.json`)
+
+Verdict under the pre-registered criterion: SUPPORTED, for k-NN and for the tree; not for the prototype and logistic regression, whose recall under the gate is zero with or without T (the selector's threshold sits above every confidence they produce).
+
+Extractor on the dataset, reported before the classifiers: 35 of 37 temporal negatives tagged FUTURE (the two misses are `quand + future` clauses the `quand` rule did not match: "quand je te le dirai", "quand j'aurai fini"); 37 of 37 past questions tagged PAST_REFERENCE; 35 of 37 negation negatives tagged negated (the two misses are the two "negation" hard negatives whose class is CAPTURE_PERSON, that is, sentences that remove the "sans photo" restriction and are not negations); 45 of 46 positives actionable_now (the miss is "cherche pas les anciennes prends moi en photo maintenant", where the imperative-negation rule fires on "cherche pas"). One misfire to record: 16 of 37 inspection_only sentences are tagged CONDITIONAL because the `si ` rule matches the indirect question ("regarde si la caméra marche"), which is not a conditional; the rule was frozen and is left as is, and the effect is visible in the results (inspection_only false fast paths do not fall).
+
+Under the gate, k-NN: unseen positive recall 0.37 to 0.46, hard-negative false fast paths 4 to 2, temporal 3 to 1, past_question 1 to 0, object_change 0 to 1, coverage 0.43 to 0.66, selective accuracy 0.93 to 0.96, ECE 0.05 to 0.06. Tree: recall 0.43 to 0.59, false fast paths 8 to 3, temporal 2 to 1. Without the gate, logistic regression: accuracy 0.81 to 0.89, CAPTURE_PERSON predicted on 4 temporal negatives to 1 and on 0 past questions. The weighting of T (1 or 4) makes no difference for k-NN and the tree and degrades the prototype; nothing is chosen.
+
+Prediction held: the temporal and past-reference false fast paths fell and the recall on immediate positives rose rather than fell. The remaining temporal false fast path under k-NN and the two `quand` misses are the same phenomenon: a deferral expressed by a subordinate clause, which the frozen rule covers only partially.
+
+What does not change: Paradigm's selector remains infeasible for every configuration (best: selective accuracy 0.96 at coverage 0.66 with k-NN). No first-decision family would be certified as it stands. This is the input of C5: whether a region of `start` defined independently of the confidence becomes certifiable with these features available.
+
+Not done: no gate or threshold change, no dataset change, no live run, no extractor revision after seeing the misses.
