@@ -369,6 +369,7 @@ class Paradigm:
                 "llm_calls_avoided": reflex,
                 "net_calls_avoided_after_sampling": reflex - shadow,
                 "shadow_sampler": self.shadow_sampler.to_dict() if self.shadow_sampler is not None else None,
+                "equivalence_contract": self._contract_record(),
                 "llm_tokens_spent": self.llm_tokens_spent,
                 "llm_tokens_avoided_estimate": int(round(reflex * mean_tokens)),
                 "llm_latency_ms_avoided_estimate": reflex * mean_latency,
@@ -386,6 +387,13 @@ class Paradigm:
                     "rejected_unvalidated_steps": self.compiler.buffer.rejected_unvalidated_steps,
                 },
             }
+
+    def _contract_record(self) -> dict[str, Any]:
+        contract = getattr(self.compiler, "equivalence", None)
+        if contract is None:
+            return {"version": "identity", "digest": "identity"}
+        record = contract.materialize(set(self.action_templates))
+        return {"version": record["version"], "digest": record["digest"], "classes": {k: v for k, v in record["mapping"].items() if k != v}}
 
     def decision_log(self, last: int | None = None) -> list[dict[str, Any]]:
         with self._lock:

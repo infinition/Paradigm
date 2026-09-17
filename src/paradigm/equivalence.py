@@ -27,6 +27,15 @@ class EquivalenceContract:
     version: str = "identity"
     class_of: Callable[[str], str] = field(default=lambda key: key)
 
+    @classmethod
+    def from_mapping(cls, record: dict[str, Any] | None) -> "EquivalenceContract | None":
+        """Rebuild a contract from a materialized record; keys outside the mapping are literal.
+        None (a record frozen before contracts existed) is identity."""
+        if not record:
+            return None
+        mapping = dict(record.get("mapping") or {})
+        return cls(version=str(record.get("version", "identity")), class_of=lambda key: mapping.get(key, key))
+
     def materialize(self, keys: set[str]) -> dict[str, Any]:
         mapping = {k: str(self.class_of(k)) for k in sorted(keys)}
         digest = hashlib.sha256(json.dumps({"version": self.version, "mapping": mapping}, sort_keys=True).encode("utf-8")).hexdigest()

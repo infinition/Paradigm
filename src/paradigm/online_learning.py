@@ -118,6 +118,9 @@ class RetentionProbeSet:
     traces: list[Trace]
     created_version: int
     created_stream_episode: int
+    # Materialized equivalence contract the set was frozen under; None means identity
+    # (sets frozen before the field existed keep that meaning).
+    contract: dict[str, Any] | None = None
 
 
 @dataclass(slots=True)
@@ -283,6 +286,7 @@ class OnlineReflexCompiler:
         verdicts = certify_families(
             selection.reflex, gate, train, validation,
             probes={f: p.traces for f, p in self.state.probes.items()},
+            probe_contracts={f: getattr(p, "contract", None) for f, p in self.state.probes.items()},
             incumbent=incumbent, criteria=criteria,
         )
         summary = summarize_verdicts(verdicts)
@@ -490,11 +494,14 @@ class OnlineReflexCompiler:
         for fam, traces in by_family.items():
             if fam in self.state.probes or (families is not None and fam not in families):
                 continue
+            contract = getattr(self, "equivalence", None)
+            chosen = list(traces[: self.probe_size])
             self.state.probes[fam] = RetentionProbeSet(
                 family=fam,
-                traces=list(traces[: self.probe_size]),
+                traces=chosen,
                 created_version=self.state.version,
                 created_stream_episode=int(stream_episode),
+                contract=contract.materialize({str(t.action) for t in chosen}) if contract is not None else None,
             )
 
     def make_agent(self, deliberator, encoder: AgentFeatureEncoder) -> ParadigmCodingAgent:

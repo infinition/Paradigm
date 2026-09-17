@@ -450,3 +450,30 @@ def test_equivalence_contract_scores_equivalent_actions_as_correct_and_keeps_lit
     assert literal.status == "rejected" and literal.retention["literal_agreement"] < 1.0
     assert scored.status == "active" and scored.selective_accuracy == 1.0 and scored.ece == 0.0
     assert scored.retention["literal_agreement"] == literal.retention["literal_agreement"] and scored.retention["equivalent_agreement"] == 1.0
+
+
+def test_probe_sets_keep_the_contract_they_were_frozen_under():
+    from paradigm.equivalence import EquivalenceContract
+    from paradigm.integration.shadow import ShadowSampler
+    from paradigm.online_learning import OnlineReflexCompiler
+
+    contract = EquivalenceContract(version="t", class_of=lambda k: "RUN" if k == "run_tests" else k)
+    compiler = OnlineReflexCompiler(min_episodes=8, compile_every=4, validation_fraction=0.25, minimum_ood_acceptance=0.65, certification="family_scoped", equivalence=contract)
+    # Every eligible decision after activation goes to the teacher, so fresh traces keep coming.
+    engine = Paradigm(policy=ReflexPolicy(allowed_actions=ACTIONS), compiler=compiler, shadow_sampler=ShadowSampler.parse("17-40:1.0"))
+    for i in range(20):
+        _mixed_episode(engine, i, flaky_reads=False)
+    assert compiler.state.version >= 1
+    frozen = {f: p.contract for f, p in compiler.state.probes.items()}
+    assert frozen and all(rec is not None and rec["version"] == "t" and len(rec["digest"]) == 64 for rec in frozen.values())
+    last = compiler.state.promotions[-1].certification
+    assert last["equivalence"]["version"] == "t"
+    # A probe set frozen without a contract keeps identity semantics, whatever the current contract.
+    for p in compiler.state.probes.values():
+        p.contract = None
+    for i in range(20, 28):
+        _mixed_episode(engine, i, flaky_reads=False)
+    groups = compiler.state.promotions[-1].certification["groups"]
+    probed = [v for v in groups.values() if v["retention"].get("probes")]
+    assert probed and all(v["retention"]["probe_contract"] == "identity" for v in probed)
+    assert engine.telemetry()["equivalence_contract"]["version"] == "t"

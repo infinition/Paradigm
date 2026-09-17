@@ -1257,6 +1257,7 @@
        "agreement": 0.9285714285714286,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -1290,6 +1291,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -1374,6 +1376,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -1407,6 +1410,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -1539,6 +1543,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 3,
         "gate_accepted": 3,
@@ -1638,6 +1643,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -1671,6 +1677,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -1812,6 +1819,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 6,
         "gate_accepted": 6,
@@ -1845,6 +1853,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -1929,6 +1938,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -1962,6 +1972,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -2103,6 +2114,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 7,
         "gate_accepted": 7,
@@ -2136,6 +2148,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -2220,6 +2233,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -2253,6 +2267,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -2539,6 +2554,7 @@
        "agreement": 0.9285714285714286,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -2572,6 +2588,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -2656,6 +2673,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -2689,6 +2707,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -2821,6 +2840,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 3,
         "gate_accepted": 3,
@@ -2851,7 +2871,8 @@
        "coverage": 1.0,
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
-       "evidence": "probes_only"
+       "evidence": "probes_only",
+       "probe_contract": "identity"
       }
      },
      "laruche:file_write:success:other": {
@@ -2926,6 +2947,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -2959,6 +2981,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -3100,6 +3123,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 6,
         "gate_accepted": 6,
@@ -3133,6 +3157,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -3217,6 +3242,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -3250,6 +3276,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -3391,6 +3418,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 7,
         "gate_accepted": 7,
@@ -3424,6 +3452,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -3508,6 +3537,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -3541,6 +3571,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -3827,6 +3858,7 @@
        "agreement": 0.9285714285714286,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -3858,6 +3890,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -3940,6 +3973,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -3973,6 +4007,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -4105,6 +4140,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 3,
         "gate_accepted": 3,
@@ -4135,7 +4171,8 @@
        "coverage": 1.0,
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
-       "evidence": "probes_only"
+       "evidence": "probes_only",
+       "probe_contract": "identity"
       }
      },
      "laruche:file_write:success:other": {
@@ -4210,6 +4247,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -4241,6 +4279,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -4382,6 +4421,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 6,
         "gate_accepted": 6,
@@ -4413,6 +4453,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -4497,6 +4538,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -4528,6 +4570,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -4669,6 +4712,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 7,
         "gate_accepted": 7,
@@ -4702,6 +4746,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -4784,6 +4829,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -4817,6 +4863,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -5101,6 +5148,7 @@
        "agreement": 0.9285714285714286,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -5132,6 +5180,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -5214,6 +5263,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -5245,6 +5295,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -5377,6 +5428,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 3,
         "gate_accepted": 3,
@@ -5407,7 +5459,8 @@
        "coverage": 1.0,
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
-       "evidence": "probes_only"
+       "evidence": "probes_only",
+       "probe_contract": "identity"
       }
      },
      "laruche:file_write:success:other": {
@@ -5482,6 +5535,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -5513,6 +5567,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -5654,6 +5709,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 6,
         "gate_accepted": 6,
@@ -5685,6 +5741,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -5769,6 +5826,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -5800,6 +5858,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -5941,6 +6000,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 7,
         "gate_accepted": 7,
@@ -5974,6 +6034,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -6056,6 +6117,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -6087,6 +6149,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -6371,6 +6434,7 @@
        "agreement": 0.9285714285714286,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -6402,6 +6466,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -6484,6 +6549,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -6515,6 +6581,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -6645,6 +6712,7 @@
        "agreement": 0.9285714285714286,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 3,
         "gate_accepted": 3,
@@ -6675,7 +6743,8 @@
        "coverage": 1.0,
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
-       "evidence": "probes_only"
+       "evidence": "probes_only",
+       "probe_contract": "identity"
       }
      },
      "laruche:file_write:success:other": {
@@ -6748,6 +6817,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -6779,6 +6849,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -6920,6 +6991,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 6,
         "gate_accepted": 6,
@@ -6951,6 +7023,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -7033,6 +7106,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -7064,6 +7138,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -7205,6 +7280,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "held-out",
+       "probe_contract": "identity",
        "fresh": {
         "n": 7,
         "gate_accepted": 7,
@@ -7236,6 +7312,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -7318,6 +7395,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -7349,6 +7427,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -7633,6 +7712,7 @@
        "agreement": 0.9285714285714286,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -7664,6 +7744,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -7746,6 +7827,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -7777,6 +7859,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,
@@ -7907,6 +7990,7 @@
        "agreement": 0.9285714285714286,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 3,
         "gate_accepted": 3,
@@ -7937,7 +8021,8 @@
        "coverage": 1.0,
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
-       "evidence": "probes_only"
+       "evidence": "probes_only",
+       "probe_contract": "identity"
       }
      },
      "laruche:file_write:success:other": {
@@ -8010,6 +8095,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -8041,6 +8127,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -8180,6 +8267,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 6,
         "gate_accepted": 6,
@@ -8211,6 +8299,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -8293,6 +8382,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -8324,6 +8414,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -8463,6 +8554,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 7,
         "gate_accepted": 7,
@@ -8494,6 +8586,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 4,
         "gate_accepted": 3,
@@ -8576,6 +8669,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 1,
         "gate_accepted": 1,
@@ -8607,6 +8701,7 @@
        "agreement": 1.0,
        "incumbent_coverage": 1.0,
        "evidence": "probes_only",
+       "probe_contract": "identity",
        "fresh": {
         "n": 2,
         "gate_accepted": 2,

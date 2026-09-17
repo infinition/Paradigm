@@ -67,6 +67,9 @@ def _serve(args: argparse.Namespace) -> int:
     else:
         engine = Paradigm(policy=adapter.policy(), shadow_sampler=sampler)
     adapter.templates = engine.action_templates  # one shared template map, persisted with the engine
+    if getattr(args, "equivalence", "identity") == "laruche":
+        # Behavioral equivalence contract derived from the adapter's own rules; identity otherwise.
+        engine.compiler.equivalence = adapter.equivalence_contract()
     if args.certification:
         # Certification rule is a deployment choice; thresholds are unchanged either way.
         engine.compiler.certification = args.certification
@@ -104,6 +107,7 @@ def build_parser() -> argparse.ArgumentParser:
     srv.add_argument("--certification", choices=("recent", "family_aware", "family_scoped"), help="promotion rule (default: family_aware with recent in shadow)")
     srv.add_argument("--shadow-schedule", default=None, help='deterministic shadow sampling of reflex-eligible decisions, e.g. "17-20:0.25,21-24:0.5,29-36:1.0" (episode bands, inclusive)')
     srv.add_argument("--shadow-seed", type=int, default=20260917)
+    srv.add_argument("--equivalence", choices=("identity", "laruche"), default="identity", help="equivalence contract for per-family certification scoring (default identity)")
     srv.set_defaults(func=_serve)
     return parser
 

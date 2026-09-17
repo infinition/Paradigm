@@ -132,14 +132,19 @@ def certify_families(
     probes: dict[str, list[Trace]] | None = None,
     incumbent: tuple[Any, MahalanobisGate, dict[str, float]] | None = None,
     criteria: FamilyCriteria | None = None,
+    probe_contracts: dict[str, dict[str, Any] | None] | None = None,
 ) -> dict[str, FamilyVerdict]:
     """Certify every family seen in train or validation independently.
 
     ``incumbent`` is (reflex, gate, thresholds_by_family) of the active artifact, used only
-    for the coverage-regression check on probe families.
+    for the coverage-regression check on probe families. ``probe_contracts`` gives, per
+    family, the materialized contract its probe set was frozen under; a probe set is
+    scored under that contract (identity when None), and rescored diagnostically under the
+    current one when the two differ. Historical verdicts are never rewritten.
     """
     crit = criteria or FamilyCriteria()
     probes = probes or {}
+    probe_contracts = probe_contracts or {}
     train_by: dict[str, list[Trace]] = {}
     for t in train:
         train_by.setdefault(_family_of(t), []).append(t)
@@ -157,7 +162,10 @@ def certify_families(
         sparse = crit.probe_recertification and inc_thr is not None and bool(probes.get(family)) and len(va) < crit.min_fresh_support
         valid_actions = {str(t.action) for t in tr} | {str(t.action) for t in probes.get(family, [])}
         if sparse:
-            verdicts[family] = _recertify_on_probes(verdict, reflex, gate, incumbent, float(inc_thr), probes[family], crit, fresh=va, valid_actions=valid_actions)
+            verdicts[family] = _recertify_on_probes(
+                verdict, reflex, gate, incumbent, float(inc_thr), probes[family], crit, fresh=va, valid_actions=valid_actions,
+                probe_contract=probe_contracts.get(family),
+            )
             continue
         if verdict.validation_episodes < crit.min_validation_episodes or not va:
             verdict.reason = "no_held_out_evidence"
@@ -190,8 +198,10 @@ def certify_families(
         if acceptance < crit.minimum_ood_acceptance:
             failures.append("trust")
         if family in probes and probes[family]:
-            coverage, agreement = probe_scores(reflex, gate, float(thr.threshold), probes[family], crit.equivalence)
+            frozen = _frozen_contract(probe_contracts.get(family))
+            coverage, agreement = probe_scores(reflex, gate, float(thr.threshold), probes[family], frozen)
             retention: dict[str, Any] = {**verdict.retention, "probes": len(probes[family]), "coverage": coverage, "agreement": agreement, "incumbent_coverage": None, "evidence": "held-out"}
+            _diagnostic_rescoring(retention, reflex, gate, float(thr.threshold), probes[family], frozen, crit.equivalence, probe_contracts.get(family))
             # Reporting only: the same fresh observation summary as the probe branch, at the
             # incumbent threshold when there is one, so both branches are comparable.
             report_thr = float(inc_thr) if inc_thr is not None else float(thr.threshold)
@@ -200,7 +210,7 @@ def certify_families(
                 inc_reflex, inc_gate, inc_thresholds = incumbent
                 inc_thr = inc_thresholds.get(family)
                 if inc_thr is not None:
-                    inc_cov, _ = probe_scores(inc_reflex, inc_gate, inc_thr, probes[family], crit.equivalence)
+                    inc_cov, _ = probe_scores(inc_reflex, inc_gate, inc_thr, probes[family], frozen)
                     retention["incumbent_coverage"] = inc_cov
                     if coverage < inc_cov - crit.probe_coverage_regression_tolerance:
                         failures.append("retention_regression")
@@ -258,6 +268,24 @@ def fresh_report(
     return report
 
 
+def _frozen_contract(record: dict[str, Any] | None) -> EquivalenceContract | None:
+    return EquivalenceContract.from_mapping(record)
+
+
+def _diagnostic_rescoring(
+    retention: dict[str, Any], reflex, gate, threshold: float, probe_traces: list[Trace],
+    frozen: EquivalenceContract | None, current: EquivalenceContract | None, record: dict[str, Any] | None,
+) -> None:
+    """Report the probe agreement under the current contract when it differs from the one
+    the probes were frozen under. Diagnostic only; the verdict uses the frozen contract."""
+    retention["probe_contract"] = (record or {}).get("digest") if record else "identity"
+    current_digest = current.materialize({str(t.action) for t in probe_traces})["digest"] if current is not None else "identity"
+    if current_digest != retention["probe_contract"]:
+        _, agreement = probe_scores(reflex, gate, threshold, probe_traces, current)
+        retention["agreement_under_current_contract"] = agreement
+        retention["current_contract"] = current_digest
+
+
 def _recertify_on_probes(
     verdict: FamilyVerdict,
     reflex,
@@ -268,6 +296,7 @@ def _recertify_on_probes(
     crit: FamilyCriteria,
     fresh: list[Trace] | None = None,
     valid_actions: set[str] | None = None,
+    probe_contract: dict[str, Any] | None = None,
 ) -> FamilyVerdict:
     """Certify an active family on its frozen probes at the incumbent threshold.
 
@@ -277,15 +306,17 @@ def _recertify_on_probes(
     candidate disagrees with the teacher is a hard veto; a fresh state the gate rejects
     is reported, not counted as a regression.
     """
-    coverage, agreement, acceptance, ece = probe_report(reflex, gate, threshold, probe_traces, crit.equivalence)
+    frozen = _frozen_contract(probe_contract)
+    coverage, agreement, acceptance, ece = probe_report(reflex, gate, threshold, probe_traces, frozen)
     inc_reflex, inc_gate, _ = incumbent
-    inc_cov, _ = probe_scores(inc_reflex, inc_gate, threshold, probe_traces, crit.equivalence)
+    inc_cov, _ = probe_scores(inc_reflex, inc_gate, threshold, probe_traces, frozen)
     verdict.threshold = threshold
     verdict.coverage = coverage
     verdict.selective_accuracy = agreement
     verdict.ece = ece
     verdict.gate_acceptance = acceptance
     verdict.retention = {"probes": len(probe_traces), "coverage": coverage, "agreement": agreement, "incumbent_coverage": inc_cov, "evidence": "probes_only"}
+    _diagnostic_rescoring(verdict.retention, reflex, gate, threshold, probe_traces, frozen, crit.equivalence, probe_contract)
     failures: list[str] = []
     if fresh:
         report = fresh_report(reflex, gate, threshold, fresh, inc_reflex, valid_actions, crit.equivalence)
