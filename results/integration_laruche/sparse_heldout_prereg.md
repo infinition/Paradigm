@@ -38,3 +38,15 @@ Families that are not active are judged exactly as before. No floor is changed.
 ## Not done
 
 No `m` is selected. No live run. If a stable region appears, a separate prospective rule is pre-registered before any live confirmation.
+
+## Outcome (written after the replay, `sparse_heldout_sensitivity.md`)
+
+Reproducibility: the `recorded` variant reproduces the run 11 verdicts at 16, 20 and 24.
+
+Run 11. Point 20 is rejected for every `m`: `file_edit` agrees with its probes on 15 of 16 whatever the evidence source. Point 24 is rejected under `recorded` and `m = 1` and promoted (version 2, `tests_passed` activated) under every `m >= 2`: `file_edit` is then judged on its 16 probes (coverage 1.000, agreement 1.000, gate acceptance on probes 1.000, ECE 0.009) and its single fresh trace is reported as gate-rejected, covered 0, disagreements 0. `start` is on probes for every `m >= 1`. The poison is rejected for every `m`. False accepts: 0 for every `m`. False rejects: 1 under `m = 1` (point 24), 0 otherwise. Decisions changed relative to the recorded rule: exactly one (point 24), for every `m >= 2`.
+
+Run 11 cannot separate `m = 2` from `m = 8`: after activation, every active family has 0 or 1 fresh trace per split, so every `m >= 2` routes them identically.
+
+Runs 9A/9B (counterfactual, no reflex ever active in the record). Family-scoped certification promotes `start` and `file_edit` at 20. Then `file_edit` is rejected at 24, 28 and 32 for every `m`: on held-out evidence (`m <= 5`, 6 to 7 fresh traces, agreement 0.944 to 0.947 against the probes) and on probes (`m = 8`, agreement 0.947, plus one covered fresh disagreement at 32 caught by the veto). This is the family that was 27 of 30 consistent in that record; the probes reject it at every `m`, so a large `m` does not open a false accept here. `start` re-certifies on either evidence at every `m`. No new family activates in that record under any `m`.
+
+Reading, without selecting an `m`: on the available records, the region `m >= 2` is stable in the sense that every variant in it produces the same decisions, no false accept, no false reject, and the only changed decision relative to the recorded rule is the point-24 case where one gate-rejected fresh state had overridden 16 passing probes. The records contain no compile point where 2 to 7 fresh traces of an active family exist together with a promotion decision that depends on them, so the upper part of the region is untested. A prospective rule, if pre-registered, would need a live record with intermediate fresh support to be tested; nothing is selected here and no live run was made.

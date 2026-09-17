@@ -322,3 +322,48 @@ def test_family_scoped_rejects_candidate_that_regresses_an_active_family():
     selection, gate, _ = compiler.fit_candidate(poisoned, validation, backends=("tree",))
     verdicts = certify_families(selection.reflex, gate, poisoned, validation, probes={f: p.traces for f, p in compiler.state.probes.items()}, incumbent=(compiler.state.selection.reflex, compiler.state.ood_gate, dict(compiler.state.family_thresholds)), criteria=FamilyCriteria(minimum_ood_acceptance=0.65))
     assert verdicts["fam:start"].status == "rejected"
+
+
+def _fam_trace(family, action, seed, task):
+    import numpy as np
+    from paradigm.schema import Trace
+
+    rng = np.random.default_rng(seed)
+    return Trace(features=rng.normal(size=6) + (3.0 if family == "a" else -3.0), action=action, valid=True, metadata={"family": family, "task_id": task})
+
+
+def _certified_pair():
+    """A tree and gate trained on two clean families, used as candidate and incumbent."""
+    import numpy as np
+    from paradigm.ood import MahalanobisGate
+    from paradigm.reflex import CompiledReflex
+
+    from sklearn.tree import DecisionTreeClassifier
+
+    train = [_fam_trace("a", "x", s, f"t{s}") for s in range(20)] + [_fam_trace("b", "y", 100 + s, f"u{s}") for s in range(20)]
+    x = np.stack([t.features for t in train])
+    reflex = CompiledReflex(model=DecisionTreeClassifier(random_state=0).fit(x, np.asarray([t.action for t in train])), metadata={"backend": "tree"})
+    gate = MahalanobisGate(quantile=0.997).fit(x)
+    return reflex, gate, train
+
+
+def test_sparse_fresh_evidence_falls_back_to_probes_and_keeps_the_disagreement_veto():
+    from paradigm.family_scoped import FamilyCriteria, certify_families
+
+    reflex, gate, train = _certified_pair()
+    probes = {"a": [_fam_trace("a", "x", 500 + s, f"p{s}") for s in range(10)]}
+    incumbent = (reflex, gate, {"a": 0.0})
+    fresh_ok = [_fam_trace("a", "x", 900, "f1")]
+    fresh_bad = [_fam_trace("a", "y", 900, "f1")]
+    crit = FamilyCriteria(probe_recertification=True, min_fresh_support=2)
+
+    v = certify_families(reflex, gate, train, fresh_ok, probes=probes, incumbent=incumbent, criteria=crit)["a"]
+    assert v.status == "active" and v.reason == "probe_recertified"
+    assert v.retention["evidence"] == "probes_only" and v.retention["fresh"]["n"] == 1 and v.retention["fresh"]["disagreements"] == 0
+
+    v = certify_families(reflex, gate, train, fresh_bad, probes=probes, incumbent=incumbent, criteria=crit)["a"]
+    assert v.status == "rejected" and "fresh_disagreement" in v.reason
+
+    # With the control value, one fresh trace is judged on held-out evidence as before.
+    v = certify_families(reflex, gate, train, fresh_ok, probes=probes, incumbent=incumbent, criteria=FamilyCriteria(probe_recertification=True, min_fresh_support=1))["a"]
+    assert v.retention.get("evidence") != "probes_only"

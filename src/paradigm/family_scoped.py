@@ -42,6 +42,9 @@ class FamilyCriteria:
     # An active family with frozen probes and no held-out trace in the current split is
     # certified on its probes at the incumbent threshold instead of being "insufficient".
     probe_recertification: bool = False
+    # Minimum number of fresh held-out traces for an active family before the held-out
+    # rule alone decides; below it, the probes are the evidence (1 = only when none).
+    min_fresh_support: int = 1
 
 
 @dataclass(slots=True)
@@ -134,13 +137,14 @@ def certify_families(
         va = val_by.get(family, [])
         distinct = len({t.action for t in tr + va})
         verdict = FamilyVerdict(family, "insufficient", "", len(tr), len(va), len({str(t.metadata.get("task_id")) for t in va}), distinct)
+        inc_thr = incumbent[2].get(family) if incumbent is not None else None
+        sparse = crit.probe_recertification and inc_thr is not None and bool(probes.get(family)) and len(va) < crit.min_fresh_support
+        if sparse:
+            verdicts[family] = _recertify_on_probes(verdict, reflex, gate, incumbent, float(inc_thr), probes[family], crit, fresh=va)
+            continue
         if verdict.validation_episodes < crit.min_validation_episodes or not va:
-            inc_thr = incumbent[2].get(family) if incumbent is not None else None
-            if crit.probe_recertification and inc_thr is not None and probes.get(family):
-                verdicts[family] = _recertify_on_probes(verdict, reflex, gate, incumbent, float(inc_thr), probes[family], crit)
-            else:
-                verdict.reason = "no_held_out_evidence"
-                verdicts[family] = verdict
+            verdict.reason = "no_held_out_evidence"
+            verdicts[family] = verdict
             continue
         x_val = np.stack([t.features for t in va])
         y_val = np.asarray([t.action for t in va]).astype(str)
@@ -196,11 +200,15 @@ def _recertify_on_probes(
     threshold: float,
     probe_traces: list[Trace],
     crit: FamilyCriteria,
+    fresh: list[Trace] | None = None,
 ) -> FamilyVerdict:
     """Certify an active family on its frozen probes at the incumbent threshold.
 
     Every safeguard is applied to the probe set: coverage and agreement floors, no
-    coverage regression against the incumbent, gate acceptance floor, ECE floor.
+    coverage regression against the incumbent, gate acceptance floor, ECE floor. The
+    sparse fresh held-out traces, if any, are reported and a covered one on which the
+    candidate disagrees with the teacher is a hard veto; a fresh state the gate rejects
+    is reported, not counted as a regression.
     """
     coverage, agreement, acceptance, ece = probe_report(reflex, gate, threshold, probe_traces)
     inc_reflex, inc_gate, _ = incumbent
@@ -212,6 +220,17 @@ def _recertify_on_probes(
     verdict.gate_acceptance = acceptance
     verdict.retention = {"probes": len(probe_traces), "coverage": coverage, "agreement": agreement, "incumbent_coverage": inc_cov, "evidence": "probes_only"}
     failures: list[str] = []
+    if fresh:
+        x = np.stack([t.features for t in fresh])
+        y = np.asarray([t.action for t in fresh]).astype(str)
+        accepted = np.asarray(gate.accept(x), dtype=bool)
+        preds = np.asarray([str(reflex.predict(row)[0]) for row in x])
+        confs = np.asarray([float(reflex.predict(row)[1]) for row in x])
+        covered = accepted & (confs >= threshold)
+        disagreements = int(np.sum(covered & (preds != y)))
+        verdict.retention["fresh"] = {"n": len(fresh), "gate_accepted": int(accepted.sum()), "covered": int(covered.sum()), "disagreements": disagreements}
+        if disagreements:
+            failures.append("fresh_disagreement")
     if coverage < crit.probe_coverage_floor or agreement < crit.probe_accuracy_floor:
         failures.append("retention")
     if coverage < inc_cov - crit.probe_coverage_regression_tolerance:
