@@ -367,3 +367,29 @@ def test_sparse_fresh_evidence_falls_back_to_probes_and_keeps_the_disagreement_v
     # With the control value, one fresh trace is judged on held-out evidence as before.
     v = certify_families(reflex, gate, train, fresh_ok, probes=probes, incumbent=incumbent, criteria=FamilyCriteria(probe_recertification=True, min_fresh_support=1))["a"]
     assert v.retention.get("evidence") != "probes_only"
+
+
+def test_shadow_sampling_routes_eligible_decisions_to_the_teacher_deterministically():
+    from paradigm.integration.shadow import ShadowSampler
+    from paradigm.online_learning import OnlineReflexCompiler
+
+    sampler = ShadowSampler.parse("17-40:1.0", seed=7)
+    assert sampler.rate(16) == 0.0 and sampler.rate(17) == 1.0
+    assert sampler.draw(3, "fam:start", 0) == sampler.draw(3, "fam:start", 0)
+    assert sampler.draw(3, "fam:start", 0) != sampler.draw(4, "fam:start", 0)
+
+    compiler = OnlineReflexCompiler(min_episodes=8, compile_every=4, validation_fraction=0.25, minimum_ood_acceptance=0.65, certification="family_scoped")
+    engine = Paradigm(policy=ReflexPolicy(allowed_actions=ACTIONS), compiler=compiler, shadow_sampler=sampler)
+    for i in range(24):
+        _mixed_episode(engine, i, flaky_reads=False)
+    assert compiler.state.version >= 1
+    rows = engine.decision_log()
+    sampled = [r for r in rows if r["reason"] == "shadow_sample"]
+    assert sampled, "after activation, every eligible decision from episode 17 on is a shadow sample"
+    assert all(r["source"] == "deliberative" for r in sampled)
+    tel = engine.telemetry()
+    assert tel["shadow_sample_model_calls"] == len(sampled)
+    assert tel["net_calls_avoided_after_sampling"] == tel["reflex_decisions"] - len(sampled)
+    assert tel["natural_model_calls"] + tel["shadow_sample_model_calls"] == tel["deliberative_decisions"]
+    # Shadow-sampled steps are deliberative teacher evidence: the buffer keeps growing after activation.
+    assert compiler.buffer.trusted_trace_count > 0

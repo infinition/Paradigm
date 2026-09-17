@@ -58,11 +58,14 @@ def _serve(args: argparse.Namespace) -> int:
     from .integration.service import ParadigmService, serve
 
     adapter = LaRucheAdapter()
+    from .integration.shadow import ShadowSampler
+
+    sampler = ShadowSampler.parse(args.shadow_schedule, seed=args.shadow_seed) if args.shadow_schedule else None
     state_file = Path(args.state_file) if args.state_file else None
     if state_file is not None and state_file.exists():
-        engine = Paradigm.load(state_file, policy=adapter.policy())
+        engine = Paradigm.load(state_file, policy=adapter.policy(), shadow_sampler=sampler)
     else:
-        engine = Paradigm(policy=adapter.policy())
+        engine = Paradigm(policy=adapter.policy(), shadow_sampler=sampler)
     adapter.templates = engine.action_templates  # one shared template map, persisted with the engine
     if args.certification:
         # Certification rule is a deployment choice; thresholds are unchanged either way.
@@ -99,6 +102,8 @@ def build_parser() -> argparse.ArgumentParser:
     srv.add_argument("--port", type=int, default=8765)
     srv.add_argument("--state-file", help="pickle file to load and persist the engine state")
     srv.add_argument("--certification", choices=("recent", "family_aware", "family_scoped"), help="promotion rule (default: family_aware with recent in shadow)")
+    srv.add_argument("--shadow-schedule", default=None, help='deterministic shadow sampling of reflex-eligible decisions, e.g. "17-20:0.25,21-24:0.5,29-36:1.0" (episode bands, inclusive)')
+    srv.add_argument("--shadow-seed", type=int, default=20260917)
     srv.set_defaults(func=_serve)
     return parser
 

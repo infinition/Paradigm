@@ -12,6 +12,7 @@ import numpy as np
 
 from ..agent_vertical import AgentDecisionRecord, AgentEpisode, PolicyDecision
 from ..online_learning import OnlineReflexCompiler
+from .shadow import ShadowSampler
 from .contract import DeliberateDecision, Outcome, ParadigmState, ReflexDecision, TrustStatus, VerifiedOutcome
 from .encoder import GenericStateEncoder
 
@@ -106,8 +107,11 @@ class Paradigm:
         encoder: GenericStateEncoder | None = None,
         compiler: OnlineReflexCompiler | None = None,
         action_templates: dict[str, dict[str, Any]] | None = None,
+        shadow_sampler: "ShadowSampler | None" = None,
     ) -> None:
         self.policy = policy
+        # Optional: deterministic routing of some reflex-eligible decisions to the teacher.
+        self.shadow_sampler = shadow_sampler
         self.encoder = encoder or GenericStateEncoder()
         self.compiler = compiler or OnlineReflexCompiler(
             min_episodes=8, compile_every=4, validation_fraction=0.25, minimum_ood_acceptance=0.65,
@@ -133,6 +137,7 @@ class Paradigm:
             "promotions": 0,
             "candidates_rejected": 0,
             "candidates_insufficient": 0,
+            "shadow_sample_decisions": 0,
         }
         self.llm_tokens_spent = 0
         self.llm_latency_ms_spent = 0.0
@@ -216,6 +221,13 @@ class Paradigm:
             info = self.explain(state)
             latency = (time.perf_counter() - start) * 1e3
             step_index = len(self._episode_steps)
+            sampled = bool(
+                info["authorized"] and self.shadow_sampler is not None
+                and self.shadow_sampler.sample(self._episode_counter + 1, str(info["family"]), step_index)
+            )
+            if sampled:
+                # Eligible for the reflex, deliberately handed to the teacher for evidence.
+                info = {**info, "authorized": False, "reason": "shadow_sample"}
             if info["authorized"]:
                 reflex_id = f"v{self.compiler.state.version}"
                 decision: ReflexDecision | DeliberateDecision = ReflexDecision(
@@ -238,6 +250,8 @@ class Paradigm:
                     latency_ms=latency,
                 )
                 self.counters["deliberative_decisions"] += 1
+                if sampled:
+                    self.counters["shadow_sample_decisions"] += 1
                 row = DecisionLog(self._episode_id, step_index, None, "deliberative", info["family"], info["trust_status"], info["confidence"], decision.reason, None, latency)
             self._log.append(row)
             self._pending[f"{self._episode_id}:{step_index}"] = row
@@ -346,10 +360,15 @@ class Paradigm:
             mean_tokens = (self.llm_tokens_spent / deliberative) if deliberative else 0.0
             mean_latency = (self.llm_latency_ms_spent / deliberative) if deliberative else 0.0
             manifest = self.trust_manifest()
+            shadow = self.counters.get("shadow_sample_decisions", 0)
             return {
                 "reflex_decisions": reflex,
                 "deliberative_decisions": deliberative,
+                "natural_model_calls": deliberative - shadow,
+                "shadow_sample_model_calls": shadow,
                 "llm_calls_avoided": reflex,
+                "net_calls_avoided_after_sampling": reflex - shadow,
+                "shadow_sampler": self.shadow_sampler.to_dict() if self.shadow_sampler is not None else None,
                 "llm_tokens_spent": self.llm_tokens_spent,
                 "llm_tokens_avoided_estimate": int(round(reflex * mean_tokens)),
                 "llm_latency_ms_avoided_estimate": reflex * mean_latency,
@@ -384,9 +403,9 @@ class Paradigm:
                 pickle.dump({"compiler": self.compiler, "action_templates": self.action_templates, "counters": self.counters}, fh)
 
     @classmethod
-    def load(cls, path: Path, *, policy: ReflexPolicy, encoder: GenericStateEncoder | None = None) -> "Paradigm":
+    def load(cls, path: Path, *, policy: ReflexPolicy, encoder: GenericStateEncoder | None = None, shadow_sampler: ShadowSampler | None = None) -> "Paradigm":
         with Path(path).open("rb") as fh:
             payload = pickle.load(fh)
-        engine = cls(policy=policy, encoder=encoder, compiler=payload["compiler"], action_templates=payload.get("action_templates"))
+        engine = cls(policy=policy, encoder=encoder, compiler=payload["compiler"], action_templates=payload.get("action_templates"), shadow_sampler=shadow_sampler)
         engine.counters.update(payload.get("counters") or {})
         return engine
