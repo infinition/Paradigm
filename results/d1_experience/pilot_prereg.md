@@ -129,6 +129,32 @@ One incidental finding, recorded because it affects how the dataset is keyed: th
 
 No B1 training or embedding fit of any kind. No promotion with behavioral effect. No new certification rule, gate, threshold or veto. No reuse of intent v1 or v2 as training or positive evidence. No fixing of the real D1 mission count before this run's numbers exist. No tag, no merge of `paradigm-integration`.
 
-## Outcome
+## Outcome, part 1: the code block of attempt `d1-pilot-a2` (camera block pending)
+
+Attempt `d1-pilot-a1` is invalid and is not part of this outcome: `pytest` was not importable by the `python3` on PATH, so every code mission was scored FAILURE whatever the model did, and the model spent its budget working around the broken environment. It is archived whole with its own incident record and never merged with this attempt, under the rule fixed above. The correction that followed aligned the interpreter available to the harness and to the mission commands with an environment providing the dependency the missions already assume; it is not an aid to the model and not a change to the task.
+
+Attempt `d1-pilot-a2`, fresh Paradigm state, `--shadow-schedule 1-24:1.0`, so no reflex was ever replayed and every decision recorded is the teacher's. Code block, missions 1 to 12, no circuit breaker and no incident.
+
+```text
+code missions        SUCCESS 12   FAILURE 0   UNKNOWN 0      (12 / 12)
+deliberative decisions   72       the counter the circuit breaker reads
+actual model responses   46       the real provider cost
+tokens                   587424   (input 575161, output 12263)
+per mission              6.0 deliberative decisions, 48.9k tokens
+exploitable validated transitions   28   (72 steps: 28 success, 44 unknown, 0 failure)
+distinct action keys     3        shell_exec, file_read, file_list
+distribution             shell_exec 17, file_read 10, file_list 1
+templated keys           7        intra-tool diagnostic only
+```
+
+The two call counters are reported separately and are never merged under one term: a model response carrying several tool calls yields one teacher decision and several observed steps, so 72 and 46 measure different things. Run 11's reference on the same template A prompts is 5.9 calls and 56.4k tokens per mission, so the cost is back in range.
+
+Reading of "distinct action key", fixed before the camera block ran: an action key is the tool or action type, not the templated `tool#args_hash`. The code block therefore contributes 3, not 7. The templated keys are kept as an intra-tool diversity diagnostic and do not count toward the threshold of 5, because five argument spellings of one tool would satisfy the letter of the criterion while giving B1 nothing that goes beyond a single tool.
+
+Structural finding, recorded now and acted on only after the full pilot: the code domain produces real write actions, 10 `file_edit` and 1 `file_write` in the raw record, and the adapter marks every one of them `not_reflex_capable`, so **a write never becomes an exploitable positive transition**. The 44 unknown steps break down as 22 `not_reflex_capable`, 19 `batched_call` and 3 `no test report in output`. A representation conditioned on the action that never learns on write actions is cut off from a part of the procedures that matters, which is a real question for the sizing and the design of the full D1 collection. Nothing about the pilot was changed on the strength of it.
+
+The three clauses on the code block alone, with no conclusion drawn about the pilot as a whole: at least 2 keys in this domain, 3, met; at least 1 structural negative in this domain, 3 (the template C missions, closed SUCCESS with no edit), met; no action key above 70% of validated steps, maximum share 46%, met. The clause requiring 5 distinct keys across both domains is pending the camera block.
+
+## Outcome, part 2: the camera block
 
 Not run.
