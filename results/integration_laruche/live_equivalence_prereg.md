@@ -33,3 +33,9 @@ Stop and report if any family that contains no TEST_EXECUTION action changes ver
 ## Not done
 
 No mechanism change, no threshold change, no `m` selected, no probe re-certification live, no run 13 decision.
+
+## Addendum, before the retry
+
+Attempt 1 (24 missions, 24 of 24 verified; `run12b_attempt1_*` artifacts) was invalidated for every conclusion about probes, digests or certification records: the state file was never written, because the equivalence callback was a lambda that `pickle` refuses, and each save after an episode close failed in the service (24 tracebacks in its log). The live decisions and the telemetry stand as an informative record only (final telemetry: version 2, active `start`, `file_edit:success`, `file_write:success`; 1 reflex decision, 6 shadow samples; 2 promotions, 3 rejections).
+
+The retry uses the same pre-registered protocol and decision logic; only serialization plumbing was corrected: the contract's classifier is a bound method of the adapter, and contracts rebuilt from a mapping use a picklable classifier. Guardrails added before spending model calls: a test that saves and reloads an engine with `laruche-equivalence-1`; the contract digest is asserted identical before and after reload; a save, reload, decide, observe, certify, save cycle runs in the test suite.

@@ -114,11 +114,15 @@ class LaRucheAdapter:
         stripped = cmd.replace("2>&1", "")
         return not re.search(r">|\btee\b", stripped)
 
+    def equivalence_class(self, key: str) -> str:
+        return self.TEST_EXECUTION if self.is_test_execution(key) else key
+
     def equivalence_contract(self):
-        """Minimal contract: one class, TEST_EXECUTION; every other key is literal."""
+        """Minimal contract: one class, TEST_EXECUTION; every other key is literal. The
+        classifier is a bound method, so the contract pickles with the adapter's templates."""
         from ..equivalence import EquivalenceContract
 
-        return EquivalenceContract(version=self.EQUIVALENCE_VERSION, class_of=lambda key: self.TEST_EXECUTION if self.is_test_execution(key) else key)
+        return EquivalenceContract(version=self.EQUIVALENCE_VERSION, class_of=self.equivalence_class)
 
     def register_template(self, nom: str, args: Any) -> str:
         key = action_key(nom, args)

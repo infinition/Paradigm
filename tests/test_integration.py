@@ -477,3 +477,56 @@ def test_probe_sets_keep_the_contract_they_were_frozen_under():
     probed = [v for v in groups.values() if v["retention"].get("probes")]
     assert probed and all(v["retention"]["probe_contract"] == "identity" for v in probed)
     assert engine.telemetry()["equivalence_contract"]["version"] == "t"
+
+
+def test_engine_with_laruche_contract_round_trips_through_save_and_load(tmp_path):
+    import pickle
+
+    from paradigm.equivalence import EquivalenceContract
+    from paradigm.integration.laruche import LaRucheAdapter
+    from paradigm.online_learning import OnlineReflexCompiler
+
+    adapter = LaRucheAdapter()
+    adapter.register_template("shell_exec", {"command": "python -m pytest -q"})
+    contract = adapter.equivalence_contract()
+    compiler = OnlineReflexCompiler(certification="family_scoped", equivalence=contract)
+    engine = Paradigm(policy=adapter.policy(), compiler=compiler)
+    path = tmp_path / "state.pkl"
+    engine.save(path)
+    loaded = Paradigm.load(path, policy=adapter.policy())
+    key = next(iter(adapter.templates))
+    assert loaded.compiler.equivalence.class_of(key) == LaRucheAdapter.TEST_EXECUTION
+    assert loaded.compiler.equivalence.version == contract.version
+    # Contracts rebuilt from a materialized record and the identity default pickle too.
+    rebuilt = EquivalenceContract.from_mapping(contract.materialize({key, "other"}))
+    assert pickle.loads(pickle.dumps(rebuilt)).class_of(key) == LaRucheAdapter.TEST_EXECUTION
+    assert pickle.loads(pickle.dumps(EquivalenceContract())).class_of("x") == "x"
+
+
+def test_contract_digest_survives_reload_and_certification_continues(tmp_path):
+    """save -> reload -> decide/observe/certify with the LaRuche contract, digest unchanged."""
+    from paradigm.integration.laruche import LaRucheAdapter
+    from paradigm.integration.shadow import ShadowSampler
+    from paradigm.online_learning import OnlineReflexCompiler
+
+    adapter = LaRucheAdapter()
+    contract = adapter.equivalence_contract()
+    compiler = OnlineReflexCompiler(min_episodes=8, compile_every=4, validation_fraction=0.25, minimum_ood_acceptance=0.65, certification="family_scoped", equivalence=contract)
+    engine = Paradigm(policy=ReflexPolicy(allowed_actions=ACTIONS), compiler=compiler, shadow_sampler=ShadowSampler.parse("17-40:1.0"))
+    for i in range(16):
+        _mixed_episode(engine, i, flaky_reads=False)
+    assert compiler.state.version >= 1
+    before = engine.telemetry()["equivalence_contract"]
+    path = tmp_path / "state.pkl"
+    engine.save(path)
+    loaded = Paradigm.load(path, policy=ReflexPolicy(allowed_actions=ACTIONS), shadow_sampler=ShadowSampler.parse("17-40:1.0"))
+    after = loaded.telemetry()["equivalence_contract"]
+    assert after == before
+    assert all(p.contract["digest"] for p in loaded.compiler.state.probes.values())
+    n_before = len(loaded.compiler.state.promotions)
+    for i in range(16, 24):
+        _mixed_episode(loaded, i, flaky_reads=False)
+    assert len(loaded.compiler.state.promotions) > n_before
+    last = loaded.compiler.state.promotions[-1].certification
+    assert last["equivalence"]["version"] == contract.version
+    loaded.save(path)  # a second save after certification must succeed too

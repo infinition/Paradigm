@@ -16,16 +16,34 @@ from __future__ import annotations
 
 import hashlib
 import json
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from typing import Any, Callable
 
 import numpy as np
 
 
+def identity_class(key: str) -> str:
+    return key
+
+
+@dataclass(slots=True)
+class MappingClassifier:
+    """Picklable classifier over a materialized mapping; keys outside it are literal."""
+
+    mapping: dict[str, str]
+
+    def __call__(self, key: str) -> str:
+        return self.mapping.get(key, key)
+
+
 @dataclass(slots=True)
 class EquivalenceContract:
+    """``class_of`` must be picklable (a module-level function, a bound method of a
+    picklable object, or a callable dataclass): the contract is part of the persisted
+    compiler state."""
+
     version: str = "identity"
-    class_of: Callable[[str], str] = field(default=lambda key: key)
+    class_of: Callable[[str], str] = identity_class
 
     @classmethod
     def from_mapping(cls, record: dict[str, Any] | None) -> "EquivalenceContract | None":
@@ -33,8 +51,7 @@ class EquivalenceContract:
         None (a record frozen before contracts existed) is identity."""
         if not record:
             return None
-        mapping = dict(record.get("mapping") or {})
-        return cls(version=str(record.get("version", "identity")), class_of=lambda key: mapping.get(key, key))
+        return cls(version=str(record.get("version", "identity")), class_of=MappingClassifier(dict(record.get("mapping") or {})))
 
     def materialize(self, keys: set[str]) -> dict[str, Any]:
         mapping = {k: str(self.class_of(k)) for k in sorted(keys)}
