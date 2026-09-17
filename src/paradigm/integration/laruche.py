@@ -63,7 +63,9 @@ class LaRucheAdapter:
     unknown deliberate by default.
     """
 
-    reflex_tools: tuple[str, ...] = READ_ONLY_TOOLS + ("shell_exec", "task_complete", "mission_accomplie")
+    # ``camera`` (native LaRuche tool: list, capture) is reflex-capable with its exact
+    # validated template only; a capture is verified by the image it returns (run C1).
+    reflex_tools: tuple[str, ...] = READ_ONLY_TOOLS + ("shell_exec", "camera", "task_complete", "mission_accomplie")
     shell_allow: tuple[str, ...] = DEFAULT_SHELL_ALLOW
     high_risk_tools: tuple[str, ...] = ("file_write", "file_edit", "git_push", "delegate", "computer", "browser")
     goal_chars: int = 200
@@ -153,7 +155,7 @@ class LaRucheAdapter:
         risk = "low"
         features: dict[str, Any] = {
             "consecutive_failures": int(last.get("consecutive_failures", 0)) if last else 0,
-            "last_output_kind": self._output_kind(last["sortie"]) if last else "none",
+            "last_output_kind": ("image" if last.get("images") else self._output_kind(last["sortie"])) if last else "none",
         }
         return ParadigmState(
             domain="laruche",
@@ -221,6 +223,14 @@ class LaRucheAdapter:
         """
         if result.get("incertain"):
             return VerifiedOutcome.unknown("laruche:ResultatOutil", incertain=True)
+        if appel is not None and str(appel.get("nom")) == "camera":
+            args = appel.get("args") if isinstance(appel.get("args"), dict) else {}
+            if str(args.get("action", "capture")) == "capture":
+                # The postcondition of a capture is the image it returns, not its ok flag.
+                images = int(result.get("images", 0) or 0)
+                if result.get("ok") and images >= 1:
+                    return VerifiedOutcome.success("laruche:camera_image", images=images)
+                return VerifiedOutcome.failure("laruche:camera_image", images=images) if result.get("ok") else VerifiedOutcome.failure("laruche:ResultatOutil")
         if appel is not None and str(appel.get("nom")) == "shell_exec":
             cmd = self.shell_command(self.canonical_call("shell_exec", appel.get("args", {}), workspace))
             if cmd and any(re.fullmatch(p, cmd) for p in self.shell_allow):
@@ -247,6 +257,7 @@ class LaRucheAdapter:
             "ok": bool(result.get("ok")),
             "incertain": bool(result.get("incertain")),
             "sortie": str(result.get("sortie", ""))[:800],
+            "images": int(result.get("images", 0) or 0),
             "consecutive_failures": failures,
         }
 

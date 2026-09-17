@@ -530,3 +530,28 @@ def test_contract_digest_survives_reload_and_certification_continues(tmp_path):
     last = loaded.compiler.state.promotions[-1].certification
     assert last["equivalence"]["version"] == contract.version
     loaded.save(path)  # a second save after certification must succeed too
+
+
+def test_camera_capture_is_verified_by_its_image_and_families_by_output_kind():
+    from paradigm.integration.laruche import LaRucheAdapter, LaRucheBridge
+    from paradigm.online_learning import OnlineReflexCompiler
+
+    adapter = LaRucheAdapter()
+    engine = Paradigm(policy=adapter.policy(), compiler=OnlineReflexCompiler(certification="family_scoped"))
+    bridge = LaRucheBridge(engine, adapter)
+    schemas = [{"name": "camera"}, {"name": "file_list"}, {"name": "mission_accomplie"}]
+    messages = [{"role": "utilisateur", "contenu": "Prends-moi en photo."}]
+    d = bridge.decide("s1", messages, schemas)
+    assert d["decision"]["source"] == "deliberative" and d["state"]["family_hint"] == "laruche:start:none:none"
+    capture = {"id": "c1", "nom": "camera", "args": {"action": "capture"}}
+    rec = bridge.observe("s1", capture, {"ok": True, "sortie": "1280x720", "incertain": False, "images": 1})
+    assert rec["reflex_capable"] and rec["outcome"] == "success"
+    # The next state carries the image as output kind, so the family is camera:success:image.
+    messages.append({"role": "observation", "outil": "camera", "contenu": "1280x720"})
+    d2 = bridge.decide("s1", messages, schemas)
+    assert d2["state"]["family_hint"] == "laruche:camera:success:image"
+    # A capture that returned no image is not a verified success, whatever its ok flag.
+    assert adapter.outcome_from_result({"ok": True, "sortie": "", "incertain": False, "images": 0}, capture).outcome.value == "failure"
+    # An explicit index is a distinct template; a screenshot through computer is never reflex-capable.
+    assert adapter.action_from_appel({"nom": "camera", "args": {"action": "capture", "index": 1}})[0] != adapter.action_from_appel(capture)[0]
+    assert adapter.action_from_appel({"nom": "computer", "args": {"action": "screenshot"}})[1] is False
