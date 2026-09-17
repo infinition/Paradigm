@@ -53,3 +53,20 @@ No live run, no fine-tuning, no contrastive adaptation, no gate change.
 ## Addendum, before the first embedding
 
 The three parts are three generators with distinct styles, not two models and a person: `claude-*` by Claude, `g*` by ChatGPT, `u*` by ChatGPT simulating the user's writing style (synthetic). No human-written sentence is in version 1; see `MANIFEST.md`. Four sentence texts occur in two groups of different sources; the dataset is frozen with them, and a leave-one-group-out fold can therefore contain a held-out text that also exists in training (4 of 320); this is reported, not corrected. The RTX box was unreachable from this Mac, so the specialized encoder runs locally on CPU with `sentence-transformers`, as the pre-registration allows.
+
+## Outcome (written after the run, `RESULTS_v1.md`, `results_v1.json`)
+
+Metric correction, before interpretation: the first execution counted hard-negative-role sentences whose class is CAPTURE_PERSON as false fast paths when predicted CAPTURE_PERSON; a counting bug, fixed, recorded in the results file. Protocol, dataset and models unchanged. Leakage: 8 of 320 sentences have an identical twin in another group (the four duplicate texts); excluding them from the test side changes no criterion metric.
+
+Verdict under the pre-registered criterion: PARTIALLY SUPPORTED.
+
+- Lexical baseline (A), best configuration: k-NN, unseen positive recall under the gate 0.26, 4 false fast paths on hard negatives.
+- The specialized paraphrase encoder alone (S, k-NN) doubles the recall to 0.52 but adds one hard-negative false fast path (5): it fails the criterion as written, by one sentence.
+- Lexical concatenated with the specialized encoder (A+S, k-NN) is the only configuration that satisfies the criterion: recall 0.37 against 0.26, hard-negative false fast paths 4 against 4, both against the same-model lexical baseline and against the best lexical one.
+- The LaRuche memory embedding (B, and A+B) is worse than lexical under the gate: the Mahalanobis gate fitted on nomic vectors accepts only 26% of unseen positives (11% to 16% of hard negatives), so recall stays at or below 0.13. C2's conclusion stands, for an additional reason.
+
+Where the errors are (false fast paths per transformation under the gate, S with k-NN: negation 0, temporal 3, past_question 0, object_change 2, inspection_only 0; without the gate S predicts CAPTURE_PERSON on 0 negations, 7 temporal, 1 past question, 2 object changes, 1 inspection). Prediction 1 held: nomic's confusions concentrate on inspection_only (8 with k-NN) and object_change. Prediction 2 held for negation and past_question and did not hold for inspection_only, which the paraphrase encoder handles; its remaining failure is temporal deferral ("prends-moi en photo demain"), which a paraphrase model treats as the same meaning. Prediction 3 held: with 320 sentences the gate accepts most unseen positives in lexical (1.00) and paraphrase (0.89) space, so the protection C1 got from the gate was a small-sample effect; in nomic space the gate stays closed (0.26). Prediction 4 held: lexical recall under the gate never exceeds 0.26 and its false fast paths spread over negation, temporal and past_question.
+
+What none of this changes: Paradigm's own certification rule (selective accuracy within 0.01 of the teacher at coverage at least 0.55) is infeasible for every representation and model on this dataset; no configuration would be promoted as a first-decision reflex as it stands. A+S with k-NN reaches selective accuracy 0.93 at coverage 0.43.
+
+Not done, as pre-registered: no gate or threshold change, no fine-tuning, no live run. The next question is not another encoder but the temporal transformation, and whether a certification rule can accept a first-decision family at 0.93 selective accuracy; both are separate pre-registrations.

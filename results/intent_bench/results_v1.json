@@ -1,0 +1,1521 @@
+{
+ "dataset_sha256": "b5ce90ed8b40ee79dc61012363dc0207d683829397a196c46b27b252c40b055b",
+ "n": 320,
+ "groups": 39,
+ "encoders": {
+  "B": {
+   "median_ms": 8.109000000331434,
+   "max_ms": 46.903166999982204,
+   "dims": 768,
+   "server_rss_mb_measured_separately": 219
+  },
+  "S": {
+   "median_ms": 8.700999999746273,
+   "max_ms": 140.3534999999465,
+   "added_rss_mb": 734.3800319999999,
+   "dims": 384
+  }
+ },
+ "evaluations": {
+  "A_lexical|prototype": {
+   "accuracy_no_gate": 0.471875,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.6739130434782609,
+    "CHECK_CAMERA": 0.5675675675675675,
+    "FIND_EXISTING_PHOTOS": 0.625,
+    "OPEN_CAMERA_NO_CAPTURE": 0.7857142857142857,
+    "OTHER": 0.2875816993464052,
+    "SCREENSHOT": 0.5625
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 2,
+    "FIND_EXISTING_PHOTOS": 4,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 18,
+    "SCREENSHOT": 4
+   },
+   "threshold": 0.343732194912803,
+   "coverage": 0.003125,
+   "selective_accuracy": 0.0,
+   "feasible": false,
+   "ece": 0.23940024197959414,
+   "gate_acceptance": 0.984375,
+   "gate_acceptance_positives": 1.0,
+   "gate_acceptance_hard_negatives": 0.9882352941176471,
+   "fired_share": 0.003125,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": 0.0,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 0,
+     "gate_acceptance": 1.0
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 5,
+     "false_fast_paths": 0,
+     "gate_acceptance": 1.0
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.972972972972973
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 5,
+     "false_fast_paths": 0,
+     "gate_acceptance": 1.0
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.972972972972973
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "A_lexical|knn3": {
+   "accuracy_no_gate": 0.540625,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.717391304347826,
+    "CHECK_CAMERA": 0.4594594594594595,
+    "FIND_EXISTING_PHOTOS": 0.5416666666666666,
+    "OPEN_CAMERA_NO_CAPTURE": 0.4642857142857143,
+    "OTHER": 0.5620915032679739,
+    "SCREENSHOT": 0.34375
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 3,
+    "FIND_EXISTING_PHOTOS": 3,
+    "OPEN_CAMERA_NO_CAPTURE": 2,
+    "OTHER": 41,
+    "SCREENSHOT": 7
+   },
+   "threshold": 1.0,
+   "coverage": 0.221875,
+   "selective_accuracy": 0.7605633802816901,
+   "feasible": false,
+   "ece": 0.13229166666666667,
+   "gate_acceptance": 0.984375,
+   "gate_acceptance_positives": 1.0,
+   "gate_acceptance_hard_negatives": 0.9882352941176471,
+   "fired_share": 0.221875,
+   "false_fast_paths": 4,
+   "false_fast_paths_on_hard_negatives": 4,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.2608695652173913,
+   "hard_negative_rejection_under_gate": 0.9764705882352941,
+   "selective_accuracy_under_gate": 0.7605633802816901,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 1,
+     "gate_acceptance": 1.0
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 14,
+     "false_fast_paths": 2,
+     "gate_acceptance": 1.0
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 8,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.972972972972973
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 9,
+     "false_fast_paths": 0,
+     "gate_acceptance": 1.0
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.972972972972973
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.23076923076923078,
+    "claude": 0.15,
+    "synthetic_user_style": 0.46153846153846156
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.2608695652173913,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 4,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "A_lexical|logreg": {
+   "accuracy_no_gate": 0.55,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.43478260869565216,
+    "CHECK_CAMERA": 0.21621621621621623,
+    "FIND_EXISTING_PHOTOS": 0.16666666666666666,
+    "OPEN_CAMERA_NO_CAPTURE": 0.21428571428571427,
+    "OTHER": 0.8562091503267973,
+    "SCREENSHOT": 0.21875
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 0,
+    "FIND_EXISTING_PHOTOS": 3,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 7,
+    "SCREENSHOT": 1
+   },
+   "threshold": 0.8940090450675808,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.09522421424993616,
+   "gate_acceptance": 0.984375,
+   "gate_acceptance_positives": 1.0,
+   "gate_acceptance_hard_negatives": 0.9882352941176471,
+   "fired_share": 0.003125,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": 1.0,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 1.0
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 0,
+     "gate_acceptance": 1.0
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.972972972972973
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 1.0
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.972972972972973
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "A_lexical|tree": {
+   "accuracy_no_gate": 0.5375,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.30434782608695654,
+    "CHECK_CAMERA": 0.5135135135135135,
+    "FIND_EXISTING_PHOTOS": 0.20833333333333334,
+    "OPEN_CAMERA_NO_CAPTURE": 0.21428571428571427,
+    "OTHER": 0.7516339869281046,
+    "SCREENSHOT": 0.40625
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 2,
+    "FIND_EXISTING_PHOTOS": 6,
+    "OPEN_CAMERA_NO_CAPTURE": 2,
+    "OTHER": 13,
+    "SCREENSHOT": 3
+   },
+   "threshold": 1.0,
+   "coverage": 0.165625,
+   "selective_accuracy": 0.7358490566037735,
+   "feasible": false,
+   "ece": 0.1991182132943245,
+   "gate_acceptance": 0.984375,
+   "gate_acceptance_positives": 1.0,
+   "gate_acceptance_hard_negatives": 0.9882352941176471,
+   "fired_share": 0.1625,
+   "false_fast_paths": 2,
+   "false_fast_paths_on_hard_negatives": 1,
+   "false_fast_paths_on_out_of_domain": 1,
+   "unseen_positive_recall_under_gate": 0.06521739130434782,
+   "hard_negative_rejection_under_gate": 0.9941176470588236,
+   "selective_accuracy_under_gate": 0.7307692307692307,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 5,
+     "false_fast_paths": 0,
+     "gate_acceptance": 1.0
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 1,
+     "gate_acceptance": 1.0
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.972972972972973
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 0,
+     "gate_acceptance": 1.0
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.972972972972973
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.1,
+    "synthetic_user_style": 0.07692307692307693
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.06521739130434782,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 1,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "B_nomic_laruche|prototype": {
+   "accuracy_no_gate": 0.565625,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.7608695652173914,
+    "CHECK_CAMERA": 0.7027027027027027,
+    "FIND_EXISTING_PHOTOS": 0.7916666666666666,
+    "OPEN_CAMERA_NO_CAPTURE": 0.75,
+    "OTHER": 0.3464052287581699,
+    "SCREENSHOT": 0.84375
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 1,
+    "FIND_EXISTING_PHOTOS": 4,
+    "OPEN_CAMERA_NO_CAPTURE": 1,
+    "OTHER": 22,
+    "SCREENSHOT": 1
+   },
+   "threshold": 0.8771987891035649,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.16991545120490312,
+   "gate_acceptance": 0.153125,
+   "gate_acceptance_positives": 0.2608695652173913,
+   "gate_acceptance_hard_negatives": 0.1588235294117647,
+   "fired_share": 0.0,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": null,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 8,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.37142857142857144
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 8,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.08108108108108109
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.05405405405405406
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.16666666666666666
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.13513513513513514
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "B_nomic_laruche|knn3": {
+   "accuracy_no_gate": 0.65625,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.782608695652174,
+    "CHECK_CAMERA": 0.6756756756756757,
+    "FIND_EXISTING_PHOTOS": 0.625,
+    "OPEN_CAMERA_NO_CAPTURE": 0.6785714285714286,
+    "OTHER": 0.5947712418300654,
+    "SCREENSHOT": 0.75
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 8,
+    "FIND_EXISTING_PHOTOS": 3,
+    "OPEN_CAMERA_NO_CAPTURE": 7,
+    "OTHER": 21,
+    "SCREENSHOT": 2
+   },
+   "threshold": 1.0,
+   "coverage": 0.303125,
+   "selective_accuracy": 0.8865979381443299,
+   "feasible": false,
+   "ece": 0.08541666666666681,
+   "gate_acceptance": 0.153125,
+   "gate_acceptance_positives": 0.2608695652173913,
+   "gate_acceptance_hard_negatives": 0.1588235294117647,
+   "fired_share": 0.05,
+   "false_fast_paths": 1,
+   "false_fast_paths_on_hard_negatives": 1,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.08695652173913043,
+   "hard_negative_rejection_under_gate": 0.9941176470588236,
+   "selective_accuracy_under_gate": 0.9375,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.37142857142857144
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.08108108108108109
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.05405405405405406
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.16666666666666666
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 8,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.13513513513513514
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.1,
+    "synthetic_user_style": 0.15384615384615385
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.08695652173913043,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 1,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "B_nomic_laruche|logreg": {
+   "accuracy_no_gate": 0.571875,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.32608695652173914,
+    "CHECK_CAMERA": 0.16216216216216217,
+    "FIND_EXISTING_PHOTOS": 0.0,
+    "OPEN_CAMERA_NO_CAPTURE": 0.10714285714285714,
+    "OTHER": 0.9869281045751634,
+    "SCREENSHOT": 0.25
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 0,
+    "FIND_EXISTING_PHOTOS": 1,
+    "OPEN_CAMERA_NO_CAPTURE": 3,
+    "OTHER": 1,
+    "SCREENSHOT": 0
+   },
+   "threshold": 0.8872415458393682,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.10462968626694392,
+   "gate_acceptance": 0.153125,
+   "gate_acceptance_positives": 0.2608695652173913,
+   "gate_acceptance_hard_negatives": 0.1588235294117647,
+   "fired_share": 0.0,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": null,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.37142857142857144
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.08108108108108109
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.05405405405405406
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.16666666666666666
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.13513513513513514
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "B_nomic_laruche|tree": {
+   "accuracy_no_gate": 0.56875,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.5217391304347826,
+    "CHECK_CAMERA": 0.4594594594594595,
+    "FIND_EXISTING_PHOTOS": 0.3333333333333333,
+    "OPEN_CAMERA_NO_CAPTURE": 0.39285714285714285,
+    "OTHER": 0.7254901960784313,
+    "SCREENSHOT": 0.34375
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 4,
+    "FIND_EXISTING_PHOTOS": 5,
+    "OPEN_CAMERA_NO_CAPTURE": 5,
+    "OTHER": 16,
+    "SCREENSHOT": 3
+   },
+   "threshold": 1.0,
+   "coverage": 0.696875,
+   "selective_accuracy": 0.6233183856502242,
+   "feasible": false,
+   "ece": 0.30706315819597074,
+   "gate_acceptance": 0.153125,
+   "gate_acceptance_positives": 0.2608695652173913,
+   "gate_acceptance_hard_negatives": 0.1588235294117647,
+   "fired_share": 0.10625,
+   "false_fast_paths": 4,
+   "false_fast_paths_on_hard_negatives": 4,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.13043478260869565,
+   "hard_negative_rejection_under_gate": 0.9764705882352941,
+   "selective_accuracy_under_gate": 0.6470588235294118,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.37142857142857144
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.08108108108108109
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.05405405405405406
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 5,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.16666666666666666
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 2,
+     "gate_acceptance": 0.13513513513513514
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.2,
+    "synthetic_user_style": 0.15384615384615385
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.13043478260869565,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 4,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "S_paraphrase_minilm|prototype": {
+   "accuracy_no_gate": 0.659375,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.8043478260869565,
+    "CHECK_CAMERA": 0.8108108108108109,
+    "FIND_EXISTING_PHOTOS": 0.875,
+    "OPEN_CAMERA_NO_CAPTURE": 0.8928571428571429,
+    "OTHER": 0.45751633986928103,
+    "SCREENSHOT": 0.875
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 1,
+    "FIND_EXISTING_PHOTOS": 2,
+    "OPEN_CAMERA_NO_CAPTURE": 1,
+    "OTHER": 19,
+    "SCREENSHOT": 0
+   },
+   "threshold": 0.9847570041248811,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.17100399589541343,
+   "gate_acceptance": 0.671875,
+   "gate_acceptance_positives": 0.8913043478260869,
+   "gate_acceptance_hard_negatives": 0.6882352941176471,
+   "fired_share": 0.003125,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": 1.0,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.7142857142857143
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 8,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 7,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.8378378378378378
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.625
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5945945945945946
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "S_paraphrase_minilm|knn3": {
+   "accuracy_no_gate": 0.821875,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.8913043478260869,
+    "CHECK_CAMERA": 0.8108108108108109,
+    "FIND_EXISTING_PHOTOS": 0.8333333333333334,
+    "OPEN_CAMERA_NO_CAPTURE": 0.8571428571428571,
+    "OTHER": 0.7843137254901961,
+    "SCREENSHOT": 0.875
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 2,
+    "FIND_EXISTING_PHOTOS": 2,
+    "OPEN_CAMERA_NO_CAPTURE": 3,
+    "OTHER": 9,
+    "SCREENSHOT": 3
+   },
+   "threshold": 1.0,
+   "coverage": 0.621875,
+   "selective_accuracy": 0.9346733668341709,
+   "feasible": false,
+   "ece": 0.04479166666666657,
+   "gate_acceptance": 0.671875,
+   "gate_acceptance_positives": 0.8913043478260869,
+   "gate_acceptance_hard_negatives": 0.6882352941176471,
+   "fired_share": 0.4625,
+   "false_fast_paths": 5,
+   "false_fast_paths_on_hard_negatives": 5,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.5217391304347826,
+   "hard_negative_rejection_under_gate": 0.9705882352941176,
+   "selective_accuracy_under_gate": 0.9391891891891891,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.7142857142857143
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 7,
+     "false_fast_paths": 3,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.8378378378378378
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 2,
+     "gate_acceptance": 0.625
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5945945945945946
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.5384615384615384,
+    "claude": 0.65,
+    "synthetic_user_style": 0.3076923076923077
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.5217391304347826,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 5,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "S_paraphrase_minilm|logreg": {
+   "accuracy_no_gate": 0.809375,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.782608695652174,
+    "CHECK_CAMERA": 0.7027027027027027,
+    "FIND_EXISTING_PHOTOS": 0.5,
+    "OPEN_CAMERA_NO_CAPTURE": 0.6428571428571429,
+    "OTHER": 0.9215686274509803,
+    "SCREENSHOT": 0.8125
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 0,
+    "FIND_EXISTING_PHOTOS": 2,
+    "OPEN_CAMERA_NO_CAPTURE": 1,
+    "OTHER": 6,
+    "SCREENSHOT": 0
+   },
+   "threshold": 0.9865901571759744,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.21545209112614153,
+   "gate_acceptance": 0.671875,
+   "gate_acceptance_positives": 0.8913043478260869,
+   "gate_acceptance_hard_negatives": 0.6882352941176471,
+   "fired_share": 0.0,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": null,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.7142857142857143
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.8378378378378378
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.625
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5945945945945946
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "S_paraphrase_minilm|tree": {
+   "accuracy_no_gate": 0.65625,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.5869565217391305,
+    "CHECK_CAMERA": 0.5675675675675675,
+    "FIND_EXISTING_PHOTOS": 0.5833333333333334,
+    "OPEN_CAMERA_NO_CAPTURE": 0.5714285714285714,
+    "OTHER": 0.7254901960784313,
+    "SCREENSHOT": 0.65625
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 2,
+    "FIND_EXISTING_PHOTOS": 6,
+    "OPEN_CAMERA_NO_CAPTURE": 1,
+    "OTHER": 18,
+    "SCREENSHOT": 5
+   },
+   "threshold": 1.0,
+   "coverage": 0.7125,
+   "selective_accuracy": 0.7675438596491229,
+   "feasible": false,
+   "ece": 0.2362574404761905,
+   "gate_acceptance": 0.671875,
+   "gate_acceptance_positives": 0.8913043478260869,
+   "gate_acceptance_hard_negatives": 0.6882352941176471,
+   "fired_share": 0.49375,
+   "false_fast_paths": 13,
+   "false_fast_paths_on_hard_negatives": 10,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.45652173913043476,
+   "hard_negative_rejection_under_gate": 0.9411764705882353,
+   "selective_accuracy_under_gate": 0.810126582278481,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.7142857142857143
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 7,
+     "false_fast_paths": 4,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 2,
+     "gate_acceptance": 0.8378378378378378
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 2,
+     "gate_acceptance": 0.625
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.5945945945945946
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.3076923076923077,
+    "claude": 0.6,
+    "synthetic_user_style": 0.38461538461538464
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.45652173913043476,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 10,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "A+B|prototype": {
+   "accuracy_no_gate": 0.525,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.6739130434782609,
+    "CHECK_CAMERA": 0.7027027027027027,
+    "FIND_EXISTING_PHOTOS": 0.6666666666666666,
+    "OPEN_CAMERA_NO_CAPTURE": 0.8214285714285714,
+    "OTHER": 0.33986928104575165,
+    "SCREENSHOT": 0.625
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 2,
+    "FIND_EXISTING_PHOTOS": 4,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 14,
+    "SCREENSHOT": 5
+   },
+   "threshold": 0.36800040729712974,
+   "coverage": 0.003125,
+   "selective_accuracy": 0.0,
+   "feasible": false,
+   "ece": 0.28467750606052616,
+   "gate_acceptance": 0.11875,
+   "gate_acceptance_positives": 0.1956521739130435,
+   "gate_acceptance_hard_negatives": 0.11764705882352941,
+   "fired_share": 0.0,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": null,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.3142857142857143
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.05405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 5,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.02702702702702703
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.125
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.08108108108108109
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "A+B|knn3": {
+   "accuracy_no_gate": 0.634375,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.7608695652173914,
+    "CHECK_CAMERA": 0.6216216216216216,
+    "FIND_EXISTING_PHOTOS": 0.5833333333333334,
+    "OPEN_CAMERA_NO_CAPTURE": 0.6071428571428571,
+    "OTHER": 0.6339869281045751,
+    "SCREENSHOT": 0.53125
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 4,
+    "FIND_EXISTING_PHOTOS": 6,
+    "OPEN_CAMERA_NO_CAPTURE": 1,
+    "OTHER": 27,
+    "SCREENSHOT": 4
+   },
+   "threshold": 1.0,
+   "coverage": 0.2875,
+   "selective_accuracy": 0.8586956521739131,
+   "feasible": false,
+   "ece": 0.08854166666666677,
+   "gate_acceptance": 0.11875,
+   "gate_acceptance_positives": 0.1956521739130435,
+   "gate_acceptance_hard_negatives": 0.11764705882352941,
+   "fired_share": 0.03125,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.043478260869565216,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": 1.0,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.3142857142857143
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 9,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.05405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 10,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.02702702702702703
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 7,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.125
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.08108108108108109
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.05,
+    "synthetic_user_style": 0.07692307692307693
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.043478260869565216,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "A+B|logreg": {
+   "accuracy_no_gate": 0.68125,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.6521739130434783,
+    "CHECK_CAMERA": 0.43243243243243246,
+    "FIND_EXISTING_PHOTOS": 0.2916666666666667,
+    "OPEN_CAMERA_NO_CAPTURE": 0.42857142857142855,
+    "OTHER": 0.8954248366013072,
+    "SCREENSHOT": 0.5
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 1,
+    "FIND_EXISTING_PHOTOS": 2,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 3,
+    "SCREENSHOT": 2
+   },
+   "threshold": 0.9609283555474802,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.13204434989954233,
+   "gate_acceptance": 0.11875,
+   "gate_acceptance_positives": 0.1956521739130435,
+   "gate_acceptance_hard_negatives": 0.11764705882352941,
+   "fired_share": 0.0,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": null,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.3142857142857143
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.05405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.02702702702702703
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.125
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.08108108108108109
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "A+B|tree": {
+   "accuracy_no_gate": 0.571875,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.5652173913043478,
+    "CHECK_CAMERA": 0.43243243243243246,
+    "FIND_EXISTING_PHOTOS": 0.3333333333333333,
+    "OPEN_CAMERA_NO_CAPTURE": 0.35714285714285715,
+    "OTHER": 0.7124183006535948,
+    "SCREENSHOT": 0.4375
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 3,
+    "FIND_EXISTING_PHOTOS": 4,
+    "OPEN_CAMERA_NO_CAPTURE": 5,
+    "OTHER": 16,
+    "SCREENSHOT": 3
+   },
+   "threshold": 1.0,
+   "coverage": 0.7125,
+   "selective_accuracy": 0.6403508771929824,
+   "feasible": false,
+   "ece": 0.31085780105311367,
+   "gate_acceptance": 0.11875,
+   "gate_acceptance_positives": 0.1956521739130435,
+   "gate_acceptance_hard_negatives": 0.11764705882352941,
+   "fired_share": 0.0875,
+   "false_fast_paths": 2,
+   "false_fast_paths_on_hard_negatives": 2,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.13043478260869565,
+   "hard_negative_rejection_under_gate": 0.9882352941176471,
+   "selective_accuracy_under_gate": 0.7857142857142857,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.3142857142857143
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 8,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.05405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 6,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.02702702702702703
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 5,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.125
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.08108108108108109
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.2,
+    "synthetic_user_style": 0.15384615384615385
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.13043478260869565,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 2,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "A+S|prototype": {
+   "accuracy_no_gate": 0.640625,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.8478260869565217,
+    "CHECK_CAMERA": 0.7297297297297297,
+    "FIND_EXISTING_PHOTOS": 0.7916666666666666,
+    "OPEN_CAMERA_NO_CAPTURE": 0.8928571428571429,
+    "OTHER": 0.45098039215686275,
+    "SCREENSHOT": 0.8125
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 0,
+    "FIND_EXISTING_PHOTOS": 3,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 17,
+    "SCREENSHOT": 3
+   },
+   "threshold": 0.4362600536654867,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.3513506397561635,
+   "gate_acceptance": 0.55,
+   "gate_acceptance_positives": 0.8043478260869565,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.003125,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.021739130434782608,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": 1.0,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 3,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 9,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 5,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.05,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.021739130434782608,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": true,
+   "criterion_vs_best_lexical": false
+  },
+  "A+S|knn3": {
+   "accuracy_no_gate": 0.75,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.9130434782608695,
+    "CHECK_CAMERA": 0.8378378378378378,
+    "FIND_EXISTING_PHOTOS": 0.7083333333333334,
+    "OPEN_CAMERA_NO_CAPTURE": 0.6785714285714286,
+    "OTHER": 0.7124183006535948,
+    "SCREENSHOT": 0.6875
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 1,
+    "FIND_EXISTING_PHOTOS": 5,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 16,
+    "SCREENSHOT": 4
+   },
+   "threshold": 1.0,
+   "coverage": 0.428125,
+   "selective_accuracy": 0.927007299270073,
+   "feasible": false,
+   "ece": 0.05312500000000002,
+   "gate_acceptance": 0.55,
+   "gate_acceptance_positives": 0.8043478260869565,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.2625,
+   "false_fast_paths": 4,
+   "false_fast_paths_on_hard_negatives": 4,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.3695652173913043,
+   "hard_negative_rejection_under_gate": 0.9764705882352941,
+   "selective_accuracy_under_gate": 0.9285714285714286,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 7,
+     "false_fast_paths": 3,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 5,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 5,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 1,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.38461538461538464,
+    "claude": 0.3,
+    "synthetic_user_style": 0.46153846153846156
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.3695652173913043,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 4,
+   "criterion_vs_lexical_same_model": true,
+   "criterion_vs_best_lexical": true
+  },
+  "A+S|logreg": {
+   "accuracy_no_gate": 0.80625,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.8260869565217391,
+    "CHECK_CAMERA": 0.6486486486486487,
+    "FIND_EXISTING_PHOTOS": 0.5833333333333334,
+    "OPEN_CAMERA_NO_CAPTURE": 0.7142857142857143,
+    "OTHER": 0.8888888888888888,
+    "SCREENSHOT": 0.8125
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 0,
+    "FIND_EXISTING_PHOTOS": 1,
+    "OPEN_CAMERA_NO_CAPTURE": 0,
+    "OTHER": 4,
+    "SCREENSHOT": 1
+   },
+   "threshold": 0.9883325521262114,
+   "coverage": 0.003125,
+   "selective_accuracy": 1.0,
+   "feasible": false,
+   "ece": 0.1648322170464972,
+   "gate_acceptance": 0.55,
+   "gate_acceptance_positives": 0.8043478260869565,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.0,
+   "false_fast_paths": 0,
+   "false_fast_paths_on_hard_negatives": 0,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.0,
+   "hard_negative_rejection_under_gate": 1.0,
+   "selective_accuracy_under_gate": null,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 0,
+     "false_fast_paths": 0,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.0,
+    "claude": 0.0,
+    "synthetic_user_style": 0.0
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.0,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 0,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  },
+  "A+S|tree": {
+   "accuracy_no_gate": 0.653125,
+   "per_class_recall_no_gate": {
+    "CAPTURE_PERSON": 0.5869565217391305,
+    "CHECK_CAMERA": 0.5675675675675675,
+    "FIND_EXISTING_PHOTOS": 0.5416666666666666,
+    "OPEN_CAMERA_NO_CAPTURE": 0.6428571428571429,
+    "OTHER": 0.7124183006535948,
+    "SCREENSHOT": 0.65625
+   },
+   "positive_confusions_no_gate": {
+    "CHECK_CAMERA": 2,
+    "FIND_EXISTING_PHOTOS": 6,
+    "OPEN_CAMERA_NO_CAPTURE": 1,
+    "OTHER": 19,
+    "SCREENSHOT": 5
+   },
+   "threshold": 1.0,
+   "coverage": 0.71875,
+   "selective_accuracy": 0.7565217391304347,
+   "feasible": false,
+   "ece": 0.24752976190476195,
+   "gate_acceptance": 0.55,
+   "gate_acceptance_positives": 0.8043478260869565,
+   "gate_acceptance_hard_negatives": 0.5764705882352941,
+   "fired_share": 0.403125,
+   "false_fast_paths": 9,
+   "false_fast_paths_on_hard_negatives": 8,
+   "false_fast_paths_on_out_of_domain": 0,
+   "unseen_positive_recall_under_gate": 0.43478260869565216,
+   "hard_negative_rejection_under_gate": 0.9529411764705882,
+   "selective_accuracy_under_gate": 0.8217054263565892,
+   "per_transformation": {
+    "negation": {
+     "n": 35,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.6571428571428571
+    },
+    "temporal": {
+     "n": 37,
+     "predicted_positive_no_gate": 8,
+     "false_fast_paths": 2,
+     "gate_acceptance": 0.5405405405405406
+    },
+    "past_question": {
+     "n": 37,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 2,
+     "gate_acceptance": 0.6486486486486487
+    },
+    "object_change": {
+     "n": 24,
+     "predicted_positive_no_gate": 4,
+     "false_fast_paths": 2,
+     "gate_acceptance": 0.5
+    },
+    "inspection_only": {
+     "n": 37,
+     "predicted_positive_no_gate": 2,
+     "false_fast_paths": 1,
+     "gate_acceptance": 0.5135135135135135
+    }
+   },
+   "per_source_positive_recall": {
+    "chatgpt": 0.3076923076923077,
+    "claude": 0.55,
+    "synthetic_user_style": 0.38461538461538464
+   },
+   "leaked_test_sentences": 8,
+   "unseen_positive_recall_under_gate_excluding_leaks": 0.43478260869565216,
+   "false_fast_paths_on_hard_negatives_excluding_leaks": 8,
+   "criterion_vs_lexical_same_model": false,
+   "criterion_vs_best_lexical": false
+  }
+ }
+}
