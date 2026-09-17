@@ -61,3 +61,7 @@ Per mission: verdict; model calls; reflex decisions with their family and action
 ## Not done
 
 No forged tool, no `tool_search` forcing, no threshold change, no equivalence class, no shadow sampling, no `m`. Type C is not claimed.
+
+## Addendum, before the retry
+
+Attempt 1 stopped at mission 6 (N2): the harness's event watcher exited on a lagged broadcast channel and no approval request was answered afterwards, so LaRuche waited indefinitely. Missions 1 to 5 (P1, P2, N1, P3, P4) all had the expected verdict (captures on positives, none on N1) and are kept as `runC1_attempt1_missions_1-5.log`, invalid for any acquisition analysis. The retry uses the same protocol from a fresh state; only the harness's event handling was corrected (lagged receiver continues, larger channel). Mission 1 of attempt 1 also answered the provider question: DeepSeek accepted the returned image and finished the mission.
