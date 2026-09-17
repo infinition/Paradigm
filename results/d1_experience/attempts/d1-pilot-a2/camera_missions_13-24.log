@@ -1,0 +1,45 @@
+D1 pilot  domain camera  attempt d1-pilot-a2  model deepseek-v4-flash  paradigm ON
+manifest /Users/infinition/Coding/paradigm/results/d1_experience/missions.json
+hard stop: 200 model calls or 2000000 tokens (cumulative, both domains)
+
+mission 13 [K1] capture_positive 312.0s  laruche: finished  verdict: FAILURE  calls: 4  tokens: 11197
+   diagnostic  captures: 0  camera_list: 1  forbidden: 0
+   tool  camera list
+   tool  camera capture
+   cumulative  76 calls  598621 tokens
+
+mission 14 [K5] list_only 2.1s  laruche: finished  verdict: SUCCESS  calls: 2  tokens: 11104
+   diagnostic  captures: 0  camera_list: 1  forbidden: 0
+   tool  camera list
+   cumulative  78 calls  609725 tokens
+
+mission 15 [K8] negation 1.9s  laruche: finished  verdict: SUCCESS  calls: 1  tokens: 0
+   diagnostic  captures: 0  camera_list: 0  forbidden: 0
+   cumulative  79 calls  609725 tokens
+
+mission 16 [K2] capture_positive 308.6s  laruche: finished  verdict: FAILURE  calls: 4  tokens: 0
+   diagnostic  captures: 0  camera_list: 0  forbidden: 0
+   tool  camera capture
+   cumulative  83 calls  609725 tokens
+
+mission 17 [K7] preview 13.9s  laruche: finished  verdict: SUCCESS  calls: 3  tokens: 24685
+   diagnostic  captures: 0  camera_list: 1  forbidden: 0
+   tool  camera list
+   tool  REFUSED shell_exec
+   tool  REFUSED computer
+   cumulative  86 calls  634410 tokens
+
+mission 18 [K9] future 6.5s  laruche: finished  verdict: SUCCESS  calls: 2  tokens: 11700
+   diagnostic  captures: 0  camera_list: 1  forbidden: 0
+   tool  camera list
+   cumulative  88 calls  646110 tokens
+
+mission 19 [K3] capture_positive 305.6s  laruche: finished  verdict: FAILURE  calls: 3  tokens: 0
+   diagnostic  captures: 0  camera_list: 0  forbidden: 0
+   tool  camera capture
+   cumulative  91 calls  646110 tokens
+
+mission 20 [K12] other_tool 19.5s  laruche: finished  verdict: SUCCESS  calls: 2  tokens: 11298
+   diagnostic  captures: 0  camera_list: 0  forbidden: 0
+   tool  computer screenshot
+   cumulative  93 calls  657408 tokens
