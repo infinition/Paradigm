@@ -99,6 +99,46 @@ If cost per mission is judged prohibitive relative to the observed yield even wi
 
 None of `max_model_calls`, `max_tokens`, or the 80% margin is a target to consume; they are ceilings on the real D1 run, not goals for it.
 
+## Amendment, in force from attempt `a3`: invalidation by block
+
+Written after attempts `a1` and `a2` were both invalidated whole, and **not applied retroactively to either of them**. `a1` stays invalid in its entirety. `a2` stays invalid in its entirety, its clean 12 of 12 code block included: that block was declared invalid under the rule in force when the fault occurred, and reviving it now, because a later amendment would have spared it, is precisely the post-hoc move this project does not make. The amendment changes what happens next, never what already happened.
+
+From `a3` on, a hardware, environment or harness fault demonstrated to be confined to one domain invalidates only the block it occurred in, provided all of the following hold:
+
+- the preceding block is already closed;
+- no learning, promotion or policy update took place between the blocks;
+- the fault did not alter the data or the state used by the other domain;
+- the incident was diagnosed independently of the scientific result;
+- the faulty block restarts from its own mission 1 under a new block attempt id.
+
+Identifiers become two-level, a pilot attempt and one attempt id per block:
+
+```text
+pilot_attempt_id      = d1-pilot-a3
+code_block_attempt    = a3-code-1
+camera_block_attempt  = a3-camera-1
+```
+
+so that a second camera fault reads:
+
+```text
+a3-code-1     stays valid
+a3-camera-1   invalid, archived
+a3-camera-2   restarts at camera mission 1
+```
+
+The justification is the experimental reality and not convenience: the two domains are separate, Paradigm runs observe-only at shadow rate 1.0, so nothing learned in one block conditions the other, and a camera fault has no path by which it could have changed what the code block recorded. The third condition is the one that does the work: if a fault ever touched shared state, the whole attempt falls again.
+
+## Mandatory preflight for any run on physical hardware, in force from `a3`
+
+No scientific attempt begins until the device it depends on is proven to work, by a check that costs nothing and calls no provider.
+
+```text
+camera preflight FAIL  ->  no attempt starts
+```
+
+For the camera that check is `camera_preflight`, run under Terminal.app immediately before the block. It must show `list` succeeding **and** `capture` returning an image that actually decodes as a PNG with plausible dimensions, not merely a call that returns. `a2` failed for want of ten seconds of this: the tool was available, the device was listed, and capture never returned, which three positive missions at about 305 seconds each discovered the expensive way.
+
 ## Pilot safety hard stop
 
 Not a scientific criterion, a protection against a looping harness or a teacher trajectory running abnormally long, confirmed by the user: the 24-mission pilot stops immediately if cumulative model calls exceed 200, or cumulative tokens exceed 2,000,000, whichever comes first, counted across both domains from the start of the pilot. A stop under this rule is reported as an incident, exactly like the harness faults recorded in `camera_prereg.md`'s addenda, and does not by itself decide the diversity question.
