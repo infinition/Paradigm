@@ -1,0 +1,1736 @@
+{
+ "latency_ms": {
+  "median": 11.028687499901935,
+  "max": 55.46054199999162
+ },
+ "missions": [
+  {
+   "n": 1,
+   "id": "P1",
+   "text": "Prends-moi en photo.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 2,
+   "id": "P2",
+   "text": "Fais une photo de moi.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 3,
+   "id": "N1",
+   "text": "Fais une capture d'\u00e9cran.",
+   "t1": "other",
+   "t2": "no_capture"
+  },
+  {
+   "n": 4,
+   "id": "P3",
+   "text": "Tu peux me prendre en photo ?",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 5,
+   "id": "P4",
+   "text": "Prends une photo avec la webcam.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 6,
+   "id": "N2",
+   "text": "Trouve mes derni\u00e8res photos.",
+   "t1": "other",
+   "t2": "no_capture"
+  },
+  {
+   "n": 7,
+   "id": "P5",
+   "text": "Photographie-moi.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 8,
+   "id": "P1",
+   "text": "Prends-moi en photo.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 9,
+   "id": "N3",
+   "text": "Est-ce que j'ai une webcam ?",
+   "t1": "list",
+   "t2": "no_capture"
+  },
+  {
+   "n": 10,
+   "id": "P2",
+   "text": "Fais une photo de moi.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 11,
+   "id": "P3",
+   "text": "Tu peux me prendre en photo ?",
+   "t1": "capture_index0",
+   "t2": "capture"
+  },
+  {
+   "n": 12,
+   "id": "N4",
+   "text": "Ouvre la cam\u00e9ra sans prendre de photo.",
+   "t1": "list",
+   "t2": "no_capture"
+  },
+  {
+   "n": 13,
+   "id": "P1",
+   "text": "Prends-moi en photo.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 14,
+   "id": "P2",
+   "text": "Fais une photo de moi.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 15,
+   "id": "N1",
+   "text": "Fais une capture d'\u00e9cran.",
+   "t1": "other",
+   "t2": "no_capture"
+  },
+  {
+   "n": 16,
+   "id": "P3",
+   "text": "Tu peux me prendre en photo ?",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 17,
+   "id": "P4",
+   "text": "Prends une photo avec la webcam.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 18,
+   "id": "N2",
+   "text": "Trouve mes derni\u00e8res photos.",
+   "t1": "other",
+   "t2": "no_capture"
+  },
+  {
+   "n": 19,
+   "id": "P5",
+   "text": "Photographie-moi.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 20,
+   "id": "P1",
+   "text": "Prends-moi en photo.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 21,
+   "id": "N3",
+   "text": "Est-ce que j'ai une webcam ?",
+   "t1": "list",
+   "t2": "no_capture"
+  },
+  {
+   "n": 22,
+   "id": "P2",
+   "text": "Fais une photo de moi.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 23,
+   "id": "P3",
+   "text": "Tu peux me prendre en photo ?",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 24,
+   "id": "N4",
+   "text": "Ouvre la cam\u00e9ra sans prendre de photo.",
+   "t1": "list",
+   "t2": "no_capture"
+  },
+  {
+   "n": 25,
+   "id": "P1",
+   "text": "Prends-moi en photo.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 26,
+   "id": "P2",
+   "text": "Fais une photo de moi.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 27,
+   "id": "N1",
+   "text": "Fais une capture d'\u00e9cran.",
+   "t1": "other",
+   "t2": "no_capture"
+  },
+  {
+   "n": 28,
+   "id": "P3",
+   "text": "Tu peux me prendre en photo ?",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 29,
+   "id": "P4",
+   "text": "Prends une photo avec la webcam.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 30,
+   "id": "N2",
+   "text": "Trouve mes derni\u00e8res photos.",
+   "t1": "other",
+   "t2": "no_capture"
+  },
+  {
+   "n": 31,
+   "id": "P5",
+   "text": "Photographie-moi.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 32,
+   "id": "P1",
+   "text": "Prends-moi en photo.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 33,
+   "id": "N3",
+   "text": "Est-ce que j'ai une webcam ?",
+   "t1": "list",
+   "t2": "no_capture"
+  },
+  {
+   "n": 34,
+   "id": "P2",
+   "text": "Fais une photo de moi.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 35,
+   "id": "P3",
+   "text": "Tu peux me prendre en photo ?",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 36,
+   "id": "N4",
+   "text": "Ouvre la cam\u00e9ra sans prendre de photo.",
+   "t1": "list",
+   "t2": "no_capture"
+  },
+  {
+   "n": 37,
+   "id": "P1",
+   "text": "Prends-moi en photo.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 38,
+   "id": "P2",
+   "text": "Fais une photo de moi.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 39,
+   "id": "N1",
+   "text": "Fais une capture d'\u00e9cran.",
+   "t1": "other",
+   "t2": "no_capture"
+  },
+  {
+   "n": 40,
+   "id": "P3",
+   "text": "Tu peux me prendre en photo ?",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 41,
+   "id": "P4",
+   "text": "Prends une photo avec la webcam.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 42,
+   "id": "N2",
+   "text": "Trouve mes derni\u00e8res photos.",
+   "t1": "other",
+   "t2": "no_capture"
+  },
+  {
+   "n": 43,
+   "id": "P5",
+   "text": "Photographie-moi.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 44,
+   "id": "P1",
+   "text": "Prends-moi en photo.",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 45,
+   "id": "N3",
+   "text": "Est-ce que j'ai une webcam ?",
+   "t1": "list",
+   "t2": "no_capture"
+  },
+  {
+   "n": 46,
+   "id": "P2",
+   "text": "Fais une photo de moi.",
+   "t1": "list",
+   "t2": "capture"
+  },
+  {
+   "n": 47,
+   "id": "P3",
+   "text": "Tu peux me prendre en photo ?",
+   "t1": "capture",
+   "t2": "capture"
+  },
+  {
+   "n": 48,
+   "id": "N4",
+   "text": "Ouvre la cam\u00e9ra sans prendre de photo.",
+   "t1": "list",
+   "t2": "no_capture"
+  }
+ ],
+ "unseen": {
+  "U+1": [
+   "Fais-moi un portrait.",
+   "capture"
+  ],
+  "U+2": [
+   "Capture une image de moi avec la cam\u00e9ra.",
+   "capture"
+  ],
+  "U+3": [
+   "Je veux une photo de moi maintenant.",
+   "capture"
+  ],
+  "U-1": [
+   "Allume la cam\u00e9ra sans capturer.",
+   "no_capture"
+  ],
+  "U-2": [
+   "Liste les cam\u00e9ras disponibles.",
+   "no_capture"
+  ],
+  "U-3": [
+   "Combien de photos ai-je prises hier ?",
+   "no_capture"
+  ],
+  "U-4": [
+   "V\u00e9rifie que la webcam fonctionne, sans photo.",
+   "no_capture"
+  ]
+ },
+ "evaluations": {
+  "A_lexical|prototype|t2": {
+   "threshold": 0.6821179849802282,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.0,
+   "feasible": false,
+   "ece": 0.3370941505218692,
+   "false_fast_paths": 4,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "no_capture",
+     "confidence": 0.6715801953756231,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.581067060005163,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.6883676386459234,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.6194564047520527,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.5580510865828534,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.5880980532898629,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.7038242462665767,
+     "covered": true,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "A_lexical|prototype|t1": {
+   "threshold": 0.4788720968461172,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.5,
+   "feasible": false,
+   "ece": 0.05847918048979463,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "A_lexical|knn3|t2": {
+   "threshold": 1.0,
+   "coverage": 1.0,
+   "selective_accuracy": 0.25,
+   "feasible": false,
+   "ece": 0.75,
+   "false_fast_paths": 16,
+   "recall_positives_covered": 0.375,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.6666666666666666,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "A_lexical|knn3|t1": {
+   "threshold": 1.0,
+   "coverage": 0.6666666666666666,
+   "selective_accuracy": 0.375,
+   "feasible": false,
+   "ece": 0.5277777777777777,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "A_lexical|logreg|t2": {
+   "threshold": 0.8567269831449618,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.0,
+   "feasible": false,
+   "ece": 0.4134022347800165,
+   "false_fast_paths": 4,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "no_capture",
+     "confidence": 0.7477493925100895,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.7563468082812965,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.8676673749423767,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.6366610211242184,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.6802809850526819,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.5727904410580611,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.7360981802172774,
+     "covered": false,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "A_lexical|logreg|t1": {
+   "threshold": 0.7161574351923692,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.5,
+   "feasible": false,
+   "ece": 0.20218932426442904,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "A_lexical|tree|t2": {
+   "threshold": 1.0,
+   "coverage": 1.0,
+   "selective_accuracy": 0.3333333333333333,
+   "feasible": false,
+   "ece": 0.6666666666666667,
+   "false_fast_paths": 8,
+   "recall_positives_covered": 0.25,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "A_lexical|tree|t1": {
+   "threshold": 1.0,
+   "coverage": 0.3333333333333333,
+   "selective_accuracy": 0.25,
+   "feasible": false,
+   "ece": 0.36458333333333337,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "B_embedding|prototype|t2": {
+   "threshold": 0.8779112595877238,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.0,
+   "feasible": false,
+   "ece": 0.19567037652705668,
+   "false_fast_paths": 4,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.7524131861603754,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "no_capture",
+     "confidence": 0.5946017007768727,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.8112492517224688,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.8923529635495469,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.8288290907360178,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.6303183025597332,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.6982512220388202,
+     "covered": false,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "B_embedding|prototype|t1": {
+   "threshold": 0.7630295601014613,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.5,
+   "feasible": false,
+   "ece": 0.07007384230892062,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "B_embedding|knn3|t2": {
+   "threshold": 1.0,
+   "coverage": 1.0,
+   "selective_accuracy": 0.5833333333333334,
+   "feasible": false,
+   "ece": 0.41666666666666663,
+   "false_fast_paths": 16,
+   "recall_positives_covered": 0.875,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "B_embedding|knn3|t1": {
+   "threshold": 1.0,
+   "coverage": 0.8333333333333334,
+   "selective_accuracy": 0.4,
+   "feasible": false,
+   "ece": 0.5277777777777778,
+   "false_fast_paths": 8,
+   "recall_positives_covered": 0.5,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "B_embedding|logreg|t2": {
+   "threshold": 0.7838331537644652,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.0,
+   "feasible": false,
+   "ece": 0.3773594684061,
+   "false_fast_paths": 4,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.7122144123000145,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.6114045656095315,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.7362200304586788,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.5571746103919318,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.5073250344189331,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.6706144711477067,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.5709240836365571,
+     "covered": false,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "B_embedding|logreg|t1": {
+   "threshold": 0.6041254872009142,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.5,
+   "feasible": false,
+   "ece": 0.1145434995924187,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "B_embedding|tree|t2": {
+   "threshold": 1.0,
+   "coverage": 1.0,
+   "selective_accuracy": 0.5833333333333334,
+   "feasible": false,
+   "ece": 0.41666666666666663,
+   "false_fast_paths": 8,
+   "recall_positives_covered": 0.625,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "B_embedding|tree|t1": {
+   "threshold": 1.0,
+   "coverage": 0.6666666666666666,
+   "selective_accuracy": 0.375,
+   "feasible": false,
+   "ece": 0.5104166666666666,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "B'_embedding_classification_prefix|prototype|t2": {
+   "threshold": 0.7374051304900896,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.0,
+   "feasible": false,
+   "ece": 0.1979273751356611,
+   "false_fast_paths": 4,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.655093242497277,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "no_capture",
+     "confidence": 0.5668492290892229,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.6941945158651702,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.7659402240958404,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.7084427130675937,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.5447717968879472,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.6354644563649022,
+     "covered": false,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "B'_embedding_classification_prefix|prototype|t1": {
+   "threshold": 0.5925347002404082,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.5,
+   "feasible": false,
+   "ece": 0.09379408526426318,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "B'_embedding_classification_prefix|knn3|t2": {
+   "threshold": 1.0,
+   "coverage": 1.0,
+   "selective_accuracy": 0.5833333333333334,
+   "feasible": false,
+   "ece": 0.41666666666666663,
+   "false_fast_paths": 16,
+   "recall_positives_covered": 0.875,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "B'_embedding_classification_prefix|knn3|t1": {
+   "threshold": 1.0,
+   "coverage": 0.9166666666666666,
+   "selective_accuracy": 0.36363636363636365,
+   "feasible": false,
+   "ece": 0.611111111111111,
+   "false_fast_paths": 4,
+   "recall_positives_covered": 0.5,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "B'_embedding_classification_prefix|logreg|t2": {
+   "threshold": 0.7631672938066735,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.0,
+   "feasible": false,
+   "ece": 0.49634207542160275,
+   "false_fast_paths": 4,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.7020042911272304,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.6230261051037078,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.7175154647904631,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.5218274762152775,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.5541990938544683,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.6608876197057106,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.5931156205598467,
+     "covered": false,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "B'_embedding_classification_prefix|logreg|t1": {
+   "threshold": 0.5617645116602579,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.5,
+   "feasible": false,
+   "ece": 0.1854927541369831,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "B'_embedding_classification_prefix|tree|t2": {
+   "threshold": 1.0,
+   "coverage": 1.0,
+   "selective_accuracy": 0.5833333333333334,
+   "feasible": false,
+   "ece": 0.41666666666666663,
+   "false_fast_paths": 8,
+   "recall_positives_covered": 0.625,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "B'_embedding_classification_prefix|tree|t1": {
+   "threshold": 1.0,
+   "coverage": 0.6666666666666666,
+   "selective_accuracy": 0.0625,
+   "feasible": false,
+   "ece": 0.6458333333333334,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "C_lexical+embedding|prototype|t2": {
+   "threshold": 0.7117786848148551,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.0,
+   "feasible": false,
+   "ece": 0.347877697633938,
+   "false_fast_paths": 4,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "no_capture",
+     "confidence": 0.6229314996686092,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.5602836394861493,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.7044541654591506,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.6673750634701037,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.5016131288329925,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.5620295388987383,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.7047505677245615,
+     "covered": false,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "C_lexical+embedding|prototype|t1": {
+   "threshold": 0.4830117732091437,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.5,
+   "feasible": false,
+   "ece": 0.08043216191756077,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "C_lexical+embedding|knn3|t2": {
+   "threshold": 1.0,
+   "coverage": 1.0,
+   "selective_accuracy": 0.5,
+   "feasible": false,
+   "ece": 0.5,
+   "false_fast_paths": 16,
+   "recall_positives_covered": 0.75,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "C_lexical+embedding|knn3|t1": {
+   "threshold": 1.0,
+   "coverage": 0.4166666666666667,
+   "selective_accuracy": 0.25,
+   "feasible": false,
+   "ece": 0.451388888888889,
+   "false_fast_paths": 4,
+   "recall_positives_covered": 0.25,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "C_lexical+embedding|logreg|t2": {
+   "threshold": 0.8732610818184205,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.0,
+   "feasible": false,
+   "ece": 0.334969318132471,
+   "false_fast_paths": 4,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "no_capture",
+     "confidence": 0.6515790100764539,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.7243349229538768,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 0.8813321555977509,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.7316837593703029,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 0.5649431146895552,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.5291169527464379,
+     "covered": false,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 0.7359846581792342,
+     "covered": false,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "C_lexical+embedding|logreg|t1": {
+   "threshold": 0.7130626604208089,
+   "coverage": 0.08333333333333333,
+   "selective_accuracy": 0.5,
+   "feasible": false,
+   "ece": 0.22043322227323428,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  },
+  "C_lexical+embedding|tree|t2": {
+   "threshold": 1.0,
+   "coverage": 1.0,
+   "selective_accuracy": 0.5,
+   "feasible": false,
+   "ece": 0.5,
+   "false_fast_paths": 16,
+   "recall_positives_covered": 0.75,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0,
+   "unseen": {
+    "U+1": {
+     "text": "Fais-moi un portrait.",
+     "label": "capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+2": {
+     "text": "Capture une image de moi avec la cam\u00e9ra.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U+3": {
+     "text": "Je veux une photo de moi maintenant.",
+     "label": "capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-1": {
+     "text": "Allume la cam\u00e9ra sans capturer.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-2": {
+     "text": "Liste les cam\u00e9ras disponibles.",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-3": {
+     "text": "Combien de photos ai-je prises hier ?",
+     "label": "no_capture",
+     "pred": "no_capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    },
+    "U-4": {
+     "text": "V\u00e9rifie que la webcam fonctionne, sans photo.",
+     "label": "no_capture",
+     "pred": "capture",
+     "confidence": 1.0,
+     "covered": true,
+     "gate_accepted": false
+    }
+   },
+   "unseen_false_fast_paths": 0,
+   "unseen_positive_recall": 0.0,
+   "unseen_negative_fallback": 1.0
+  },
+  "C_lexical+embedding|tree|t1": {
+   "threshold": 1.0,
+   "coverage": 0.4166666666666667,
+   "selective_accuracy": 0.6,
+   "feasible": false,
+   "ece": 0.30208333333333337,
+   "false_fast_paths": 0,
+   "recall_positives_covered": 0.0,
+   "n": 48,
+   "gate_acceptance_unseen_positives": 0.0,
+   "gate_acceptance_unseen_negatives": 0.0
+  }
+ }
+}

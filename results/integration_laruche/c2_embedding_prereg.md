@@ -42,3 +42,15 @@ B, B' or C is better than A only if coverage rises on unseen positive phrasings 
 ## Not done
 
 No live run. No change to the encoder in the product. No fine-tuning. No threshold change.
+
+## Outcome (written after the replay, `c2_embedding_audit.md`)
+
+Hypothesis not supported. The memory embedding does not give Paradigm the intent separation the first decision needs, and the record does not have enough distinct phrasings for any representation to be certified on unseen wording.
+
+Criterion. No representation and no model reaches a positive coverage on unseen-wording positives under Paradigm's own gate: with 8 distinct training sentences per leave-one-phrasing-out fold (identical requests repeat), the Mahalanobis gate rejects every held-out phrasing in every representation (acceptance 0.00 on positives and on negatives, A, B, B' and C alike), and rejects all 7 pre-declared unseen phrasings. Coverage on unseen positives is therefore 0 everywhere, false fast paths under the gate are 0 everywhere, and B, B' and C are not better than A. The selector's threshold rule is infeasible for every combination on T2 and on T1.
+
+What the classifiers do without the gate, on the 7 unseen phrasings (logistic regression): B predicts capture on "Combien de photos ai-je prises hier ?" (0.67) and "Vérifie que la webcam fonctionne, sans photo." (0.57); B' predicts capture on all four hard negatives; A predicts capture on "Liste les caméras disponibles." (0.68) and misses "Fais-moi un portrait."; C follows A. In leave-one-phrasing-out, k-NN and the tree on B reach coverage 1.0 with 16 false fast paths on the C1 negatives (every N3 and N4 mission predicted capture when its phrasing is unseen). The raw cosine measured before training already said it: N4 sits at 0.81 to 0.86 from every positive, inside the model's own paraphrase band. The retrieval embedding groups by topic, not by procedural intent, and the `classification:` prefix does not change that.
+
+Two things are established. First, on this record, the safety observed in C1 on N2, N3 and N4 after activation was the gate refusing unseen goal vectors, and that refusal is what any representation inherits with 9 distinct sentences; the coverage question cannot be answered from C1 alone. Second, the memory embedding as it is called today is not a suitable intent representation for Paradigm: it would raise coverage only by admitting the hard negatives. A specialized sentence or intent encoder is a separate experiment, and it needs a phrasing set an order of magnitude larger than 9, with intent labels, which can be assembled offline without any model call and without touching the C1 record.
+
+Encoder cost, for the record: 768 dimensions, median 11 to 19 ms per sentence on this machine, 219 MB resident; zero additional memory when the node already runs it.
