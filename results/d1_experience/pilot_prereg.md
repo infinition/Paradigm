@@ -195,6 +195,43 @@ Structural finding, recorded now and acted on only after the full pilot: the cod
 
 The three clauses on the code block alone, with no conclusion drawn about the pilot as a whole: at least 2 keys in this domain, 3, met; at least 1 structural negative in this domain, 3 (the template C missions, closed SUCCESS with no edit), met; no action key above 70% of validated steps, maximum share 46%, met. The clause requiring 5 distinct keys across both domains is pending the camera block.
 
-## Outcome, part 2: the camera block
+## Outcome, part 2: the camera block of `d1-pilot-a2`, and the state at the end of the session
 
-Not run.
+The camera block ran and was stopped by hand during mission 21. Its three positive missions (13, 16, 19) each spent about 305 seconds and closed FAILURE, while the five negative controls that closed (list only, negation, preview, future, screenshot) all passed in seconds. The trace holds four verified `camera list` steps, all under one template key, and **not one observed `camera capture`**: a call that blocks until the tool gives up is never executed, so Paradigm never sees it and a positive mission cannot satisfy its contract.
+
+The cause was then isolated at no provider cost, and it is not the launch context that run C1 identified:
+
+```text
+permissions   Terminal and the desktop app both authorized, no prompt appears      not TCC
+nokhwa        list succeeds, capture blocks, from Terminal.app                     PREFLIGHT FAIL at 30s
+ffmpeg        AVFoundation directly, no nokhwa involved: 3 devices enumerated,
+              capture blocks                                                       TIMEOUT at 25s
+```
+
+Two independent capture paths, launched from two different contexts, fail identically. The machine enumerates its cameras and delivers frames to nothing. The CoreMediaIO services had been up since the boot that followed the system upgrade, the same upgrade that had reset the Xcode license agreement earlier in the session. The fix belongs to the machine, a reboot or a restart of the camera services, and is not an experimental parameter.
+
+Consequently `d1-pilot-a2` is invalid in its entirety under the rule that was in force when the fault occurred, its clean 12 of 12 code block included, and the amendment above does not rescue it.
+
+### State at the end of the session
+
+```text
+a1   invalid   pytest missing from the interpreter on PATH        9 missions, 132 decisions, 1.70M tokens
+a2   invalid   camera delivers no frames on this machine          20 missions, 93 decisions, 657k tokens
+a3   not started, blocked on the mandatory camera preflight
+```
+
+Nothing from either attempt is pilot evidence, cost extrapolation, or D1 data. Neither the missions, the prompts, the order, the contracts, the ceilings nor the diversity criterion has been touched since they were frozen; the only protocol changes are the two recorded amendments, both prospective, and both decided before knowing what `a3` would give.
+
+What the two invalid attempts did establish, and what is worth carrying forward:
+
+- The instrumentation works and earns its cost. In `a1` the raw trace showed that the contract could not be satisfied by any trajectory; in `a2` it showed that no capture was ever observed while the `list` calls passed. Neither diagnosis is available from the compiler's buffer, which keeps encoded features and discards FAILURE episodes.
+- The code domain runs at run 11's cost, about 6 deliberative decisions and 49k tokens per mission, and yields about 2.3 exploitable validated transitions per mission over 3 action keys.
+- Write actions never become exploitable positive transitions, by construction of the adapter. This is the finding most likely to change the design of the full D1 collection, and it is not a defect of the pilot.
+- A hardware precondition must be proven before an attempt starts, not discovered by missions. The preflight now bounds the call, decodes the frame and checks its dimensions.
+
+### To resume
+
+1. Reboot the Mac, or restart the camera services, then run `camera_preflight` alone. It costs nothing and calls no provider.
+2. Start `a3` only on `PREFLIGHT OK` with real PNG dimensions, from mission 1, code block then camera block, under `a3-code-1` and `a3-camera-1`.
+3. Report the raw numbers over the 24 missions before any verdict: missions by status, deliberative decisions and actual model responses kept separate, tokens, exploitable validated transitions, distinct action keys per domain, the maximum share of one action, at least one structural negative per domain, and how many transitions are lost to `not_reflex_capable`.
+4. Only then the three diversity clauses, and only then the sizing of the real D1.
