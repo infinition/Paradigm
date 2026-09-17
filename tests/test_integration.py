@@ -555,3 +555,168 @@ def test_camera_capture_is_verified_by_its_image_and_families_by_output_kind():
     # An explicit index is a distinct template; a screenshot through computer is never reflex-capable.
     assert adapter.action_from_appel({"nom": "camera", "args": {"action": "capture", "index": 1}})[0] != adapter.action_from_appel(capture)[0]
     assert adapter.action_from_appel({"nom": "computer", "args": {"action": "screenshot"}})[1] is False
+
+
+# ---------------------------------------------------------------- D1 trace sink
+
+
+def _read_trace(path):
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def _sink(tmp_path, attempt="att-test"):
+    from paradigm.integration.trace import TraceSink
+
+    return TraceSink(tmp_path / "trace.jsonl", attempt_id=attempt)
+
+
+def test_trace_sink_records_goal_and_state_the_buffer_does_not_keep(tmp_path):
+    sink = _sink(tmp_path)
+    engine = Paradigm(policy=ReflexPolicy(allowed_actions=ACTIONS), trace_sink=sink)
+    run_episode(engine, goal="fix the parser bug")
+    sink.close()
+
+    rows = _read_trace(tmp_path / "trace.jsonl")
+    steps = [r for r in rows if r["record"] == "step"]
+    episodes = [r for r in rows if r["record"] == "episode"]
+    assert len(episodes) == 1 and episodes[0]["step_count"] == len(steps)
+    assert all(r["goal_raw"] == "fix the parser bug" for r in steps)
+    # The raw structured state, not only the encoder's vector: this is what makes the
+    # collected experience usable for a representation other than the current encoder.
+    first = steps[0]
+    assert first["state_raw"]["phase"] == "start" and first["state_raw"]["goal"] == "fix the parser bug"
+    assert first["available_actions"] == list(ACTIONS)
+    assert first["teacher_action"] == "run_tests" and first["decision_source"] == "deliberative"
+    assert first["verified_outcome"] == "success" and first["trace_schema_version"] == "d1-trace-1"
+    assert first["attempt_id"] == "att-test"
+    assert first["input_tokens"] == 0 and first["total_tokens"] == 200 and first["model_calls"] == 1
+
+
+def test_trace_sink_keeps_failed_and_unknown_episodes_the_compiler_discards(tmp_path):
+    sink = _sink(tmp_path)
+    engine = Paradigm(policy=ReflexPolicy(allowed_actions=ACTIONS), trace_sink=sink)
+    run_episode(engine, goal="a", episode_outcome=VerifiedOutcome.failure("tests"))
+    run_episode(engine, goal="b", episode_outcome=VerifiedOutcome.unknown("tests"))
+    sink.close()
+
+    # Nothing entered acquisition, which is the rule and the reason the trace is needed.
+    assert engine.compiler.buffer.episodes == []
+    rows = _read_trace(tmp_path / "trace.jsonl")
+    episodes = [r for r in rows if r["record"] == "episode"]
+    assert [r["episode_status"] for r in episodes] == ["failure", "unknown"]
+    assert all(r["episode_verified"] for r in episodes)
+    steps = [r for r in rows if r["record"] == "step"]
+    assert {r["goal_raw"] for r in steps} == {"a", "b"}
+    assert all(r["step_count"] > 0 for r in episodes)
+    # Two episodes can close inside the same millisecond and then share the engine's
+    # episode id, so the dataset key is (attempt_id, stream_episode, step_id).
+    assert [r["stream_episode"] for r in episodes] == [1, 2]
+    assert {r["goal_raw"] for r in steps if r["stream_episode"] == 1} == {"a"}
+    assert {r["goal_raw"] for r in steps if r["stream_episode"] == 2} == {"b"}
+    assert len({(r["stream_episode"], r["step_id"]) for r in steps}) == len(steps)
+
+
+def test_trace_sink_records_the_reflex_candidate_on_shadow_sampled_steps(tmp_path):
+    from paradigm.integration.shadow import ShadowSampler
+    from paradigm.online_learning import OnlineReflexCompiler
+
+    sink = _sink(tmp_path)
+    compiler = OnlineReflexCompiler(min_episodes=8, compile_every=4, validation_fraction=0.25, minimum_ood_acceptance=0.65, certification="family_scoped")
+    engine = Paradigm(
+        policy=ReflexPolicy(allowed_actions=ACTIONS), compiler=compiler,
+        shadow_sampler=ShadowSampler.parse("1-40:1.0", seed=7), trace_sink=sink,
+    )
+    for i in range(24):
+        _mixed_episode(engine, i, flaky_reads=False)
+    sink.close()
+
+    steps = [r for r in _read_trace(tmp_path / "trace.jsonl") if r["record"] == "step"]
+    # Rate 1.0: nothing is ever replayed, so every step is the teacher's.
+    assert all(r["decision_source"] == "deliberative" for r in steps)
+    candidates = [r for r in steps if r["reflex_candidate_action"]]
+    assert candidates, "once a reflex exists, the candidate action is recorded next to the teacher's"
+    assert any(r["reflex_candidate_action"] != r["teacher_action"] for r in candidates) or all(
+        r["reflex_candidate_action"] == r["teacher_action"] for r in candidates
+    )
+
+
+def test_trace_sink_does_not_change_any_decision(tmp_path):
+    from paradigm.integration.shadow import ShadowSampler
+    from paradigm.online_learning import OnlineReflexCompiler
+
+    def run(sink):
+        compiler = OnlineReflexCompiler(min_episodes=8, compile_every=4, validation_fraction=0.25, minimum_ood_acceptance=0.65, certification="family_scoped")
+        engine = Paradigm(
+            policy=ReflexPolicy(allowed_actions=ACTIONS), compiler=compiler,
+            shadow_sampler=ShadowSampler.parse("17-40:1.0", seed=7), trace_sink=sink,
+        )
+        for i in range(24):
+            _mixed_episode(engine, i, flaky_reads=False)
+        # Episode ids carry a millisecond clock and the instance address, so two episodes
+        # closing in the same millisecond share one: episodes are numbered from the step
+        # boundaries instead. Latencies are wall-clock and excluded.
+        log = []
+        episode_index = -1
+        for r in engine.decision_log():
+            row = {k: v for k, v in r.items() if k not in ("decision_latency_ms", "llm_latency_ms")}
+            if r["step"] == 0:
+                episode_index += 1
+            row["episode"] = episode_index
+            log.append(row)
+        tel = engine.telemetry()
+        return log, tel["counters"], tel["trust_manifest"], engine.compiler.state.version
+
+    without = run(None)
+    sink = _sink(tmp_path, attempt="att-neutral")
+    with_sink = run(sink)
+    sink.close()
+
+    assert with_sink == without, "the sink writes; it must not shift a decision, a counter or a promotion"
+    assert (tmp_path / "trace.jsonl").exists()
+
+
+def test_trace_sink_continues_across_save_and_reload(tmp_path):
+    state_file = tmp_path / "engine.pkl"
+    sink = _sink(tmp_path)
+    engine = Paradigm(policy=ReflexPolicy(allowed_actions=ACTIONS), trace_sink=sink)
+    run_episode(engine, goal="before reload")
+    engine.save(state_file)
+    sink.close()
+
+    sink2 = _sink(tmp_path)  # same path, append mode, same attempt
+    reloaded = Paradigm.load(state_file, policy=ReflexPolicy(allowed_actions=ACTIONS), trace_sink=sink2)
+    run_episode(reloaded, goal="after reload")
+    sink2.close()
+
+    goals = {r["goal_raw"] for r in _read_trace(tmp_path / "trace.jsonl") if r["record"] == "step"}
+    assert goals == {"before reload", "after reload"}
+    # The sink is not part of the persisted state.
+    import pickle
+
+    assert "trace" not in str(sorted(pickle.loads(state_file.read_bytes()).keys()))
+
+
+def test_trace_sink_writes_image_counts_never_image_payloads(tmp_path):
+    from paradigm.integration.laruche import LaRucheAdapter, LaRucheBridge
+
+    sink = _sink(tmp_path)
+    adapter = LaRucheAdapter()
+    engine = Paradigm(policy=adapter.policy(), trace_sink=sink)
+    bridge = LaRucheBridge(engine, adapter)
+    schemas = [{"name": "camera"}]
+    messages = [{"role": "utilisateur", "contenu": "Prends-moi en photo."}]
+    bridge.decide("s1", messages, schemas)
+    payload = "iVBORw0KGgoAAAANSUhEUg" * 20
+    bridge.observe(
+        "s1", {"id": "c1", "nom": "camera", "args": {"action": "capture"}},
+        {"ok": True, "sortie": payload, "incertain": False, "images": 1},
+        usage={"entree": 900, "sortie": 120, "latency_ms": 700.0},
+    )
+    engine.close_episode(VerifiedOutcome.success("laruche:ControleMission", fin="Accomplie"))
+    sink.close()
+
+    raw = (tmp_path / "trace.jsonl").read_text(encoding="utf-8")
+    assert payload not in raw, "no payload bytes in the collected dataset"
+    step = [r for r in _read_trace(tmp_path / "trace.jsonl") if r["record"] == "step"][0]
+    assert step["outcome_evidence"]["images"] == 1
+    assert step["input_tokens"] == 900 and step["output_tokens"] == 120 and step["total_tokens"] == 1020

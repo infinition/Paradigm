@@ -15,6 +15,7 @@ from ..online_learning import OnlineReflexCompiler
 from .shadow import ShadowSampler
 from .contract import DeliberateDecision, Outcome, ParadigmState, ReflexDecision, TrustStatus, VerifiedOutcome
 from .encoder import GenericStateEncoder
+from .trace import TraceSink
 
 
 @dataclass(slots=True)
@@ -68,6 +69,9 @@ class DecisionLog:
     outcome: str | None = None
     llm_tokens: int = 0
     llm_latency_ms: float = 0.0
+    # What the reflex would have done, recorded on deliberative rows too: on a shadow
+    # sample the candidate is the quantity of interest and the executed action is not it.
+    proposed_action: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -84,6 +88,7 @@ class DecisionLog:
             "outcome": self.outcome,
             "llm_tokens": self.llm_tokens,
             "llm_latency_ms": self.llm_latency_ms,
+            "proposed_action": self.proposed_action,
         }
 
 
@@ -108,10 +113,13 @@ class Paradigm:
         compiler: OnlineReflexCompiler | None = None,
         action_templates: dict[str, dict[str, Any]] | None = None,
         shadow_sampler: "ShadowSampler | None" = None,
+        trace_sink: "TraceSink | None" = None,
     ) -> None:
         self.policy = policy
         # Optional: deterministic routing of some reflex-eligible decisions to the teacher.
         self.shadow_sampler = shadow_sampler
+        # Optional: raw experience capture. Write-only, consulted by nothing here.
+        self.trace_sink = trace_sink
         self.encoder = encoder or GenericStateEncoder()
         self.compiler = compiler or OnlineReflexCompiler(
             min_episodes=8, compile_every=4, validation_fraction=0.25, minimum_ood_acceptance=0.65,
@@ -239,7 +247,7 @@ class Paradigm:
                     latency_ms=latency,
                 )
                 self.counters["reflex_decisions"] += 1
-                row = DecisionLog(self._episode_id, step_index, decision.action, "reflex", info["family"], info["trust_status"], decision.confidence, None, reflex_id, latency)
+                row = DecisionLog(self._episode_id, step_index, decision.action, "reflex", info["family"], info["trust_status"], decision.confidence, None, reflex_id, latency, proposed_action=info["proposed_action"])
             else:
                 decision = DeliberateDecision(
                     reason=str(info["reason"]),
@@ -252,7 +260,7 @@ class Paradigm:
                 self.counters["deliberative_decisions"] += 1
                 if sampled:
                     self.counters["shadow_sample_decisions"] += 1
-                row = DecisionLog(self._episode_id, step_index, None, "deliberative", info["family"], info["trust_status"], info["confidence"], decision.reason, None, latency)
+                row = DecisionLog(self._episode_id, step_index, None, "deliberative", info["family"], info["trust_status"], info["confidence"], decision.reason, None, latency, proposed_action=info["proposed_action"])
             self._log.append(row)
             self._pending[f"{self._episode_id}:{step_index}"] = row
             return decision
@@ -298,6 +306,19 @@ class Paradigm:
             row.llm_latency_ms = llm_latency
             if row.action is None:
                 row.action = action
+            if self.trace_sink is not None:
+                self.trace_sink.write_step(
+                    episode_id=self._episode_id,
+                    stream_episode=self._episode_counter + 1,
+                    step_id=len(self._episode_steps) - 1,
+                    state=state,
+                    executed_action=action,
+                    source=source,
+                    outcome=outcome,
+                    proposed_action=row.proposed_action,
+                    confidence=step.confidence,
+                    metadata=metadata,
+                )
             return {"episode": self._episode_id, "step": len(self._episode_steps) - 1, "outcome": outcome.outcome.value}
 
     def close_episode(self, outcome: VerifiedOutcome, *, family: str | None = None) -> dict[str, Any]:
@@ -311,6 +332,16 @@ class Paradigm:
             self._pending = {}
             self.counters["episodes_closed"] += 1
             result: dict[str, Any] = {"episode": episode_id, "steps": len(steps), "outcome": outcome.outcome.value, "ingested": False, "promotion": None}
+            # Written before the returns below discard FAILURE, UNKNOWN and empty episodes:
+            # they are not acquisition evidence, and they are still part of the record.
+            if self.trace_sink is not None:
+                self.trace_sink.write_episode(
+                    episode_id=episode_id,
+                    outcome=outcome,
+                    step_count=len(steps),
+                    family=family or (steps[-1].state.family if steps else None),
+                    stream_episode=self._episode_counter,
+                )
             if outcome.outcome is Outcome.FAILURE:
                 self.counters["episodes_rejected_failure"] += 1
                 return result
@@ -418,10 +449,10 @@ class Paradigm:
             tmp.replace(path)  # atomic: a failed dump never leaves an empty state file behind
 
     @classmethod
-    def load(cls, path: Path, *, policy: ReflexPolicy, encoder: GenericStateEncoder | None = None, shadow_sampler: ShadowSampler | None = None) -> "Paradigm":
+    def load(cls, path: Path, *, policy: ReflexPolicy, encoder: GenericStateEncoder | None = None, shadow_sampler: ShadowSampler | None = None, trace_sink: TraceSink | None = None) -> "Paradigm":
         with Path(path).open("rb") as fh:
             payload = pickle.load(fh)
-        engine = cls(policy=policy, encoder=encoder, compiler=payload["compiler"], action_templates=payload.get("action_templates"), shadow_sampler=shadow_sampler)
+        engine = cls(policy=policy, encoder=encoder, compiler=payload["compiler"], action_templates=payload.get("action_templates"), shadow_sampler=shadow_sampler, trace_sink=trace_sink)
         engine.counters.update(payload.get("counters") or {})
         engine._episode_counter = int(payload.get("episode_counter", 0))
         engine._closed_episodes = int(payload.get("closed_episodes", 0))

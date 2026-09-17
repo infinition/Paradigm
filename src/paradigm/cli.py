@@ -61,11 +61,16 @@ def _serve(args: argparse.Namespace) -> int:
     from .integration.shadow import ShadowSampler
 
     sampler = ShadowSampler.parse(args.shadow_schedule, seed=args.shadow_seed) if args.shadow_schedule else None
+    sink = None
+    if args.trace_file:
+        from .integration.trace import TraceSink
+
+        sink = TraceSink(Path(args.trace_file), attempt_id=args.attempt_id)
     state_file = Path(args.state_file) if args.state_file else None
     if state_file is not None and state_file.exists():
-        engine = Paradigm.load(state_file, policy=adapter.policy(), shadow_sampler=sampler)
+        engine = Paradigm.load(state_file, policy=adapter.policy(), shadow_sampler=sampler, trace_sink=sink)
     else:
-        engine = Paradigm(policy=adapter.policy(), shadow_sampler=sampler)
+        engine = Paradigm(policy=adapter.policy(), shadow_sampler=sampler, trace_sink=sink)
     adapter.templates = engine.action_templates  # one shared template map, persisted with the engine
     if getattr(args, "equivalence", "identity") == "laruche":
         # Behavioral equivalence contract derived from the adapter's own rules; identity otherwise.
@@ -85,6 +90,8 @@ def _serve(args: argparse.Namespace) -> int:
         server.server_close()
         if state_file is not None:
             engine.save(state_file)
+        if sink is not None:
+            sink.close()
     return 0
 
 
@@ -108,6 +115,8 @@ def build_parser() -> argparse.ArgumentParser:
     srv.add_argument("--shadow-schedule", default=None, help='deterministic shadow sampling of reflex-eligible decisions, e.g. "17-20:0.25,21-24:0.5,29-36:1.0" (episode bands, inclusive)')
     srv.add_argument("--shadow-seed", type=int, default=20260917)
     srv.add_argument("--equivalence", choices=("identity", "laruche"), default="identity", help="equivalence contract for per-family certification scoring (default identity)")
+    srv.add_argument("--trace-file", default=None, help="append raw experience (one JSONL row per observed step and per closed episode, FAILURE and UNKNOWN included) for dataset collection; off by default and never read back by the engine")
+    srv.add_argument("--attempt-id", default="unset", help="attempt tag written on every trace row; a restart after an incident uses a new one and is never merged with the invalidated attempt")
     srv.set_defaults(func=_serve)
     return parser
 

@@ -306,7 +306,9 @@ class LaRucheBridge:
         outcome = self.adapter.outcome_from_result(result, appel, workspace)
         metadata: dict[str, Any] = {}
         if usage and first_of_batch:
-            metadata["llm_tokens"] = int(usage.get("entree", 0)) + int(usage.get("sortie", 0))
+            metadata["llm_input_tokens"] = int(usage.get("entree", 0))
+            metadata["llm_output_tokens"] = int(usage.get("sortie", 0))
+            metadata["llm_tokens"] = metadata["llm_input_tokens"] + metadata["llm_output_tokens"]
             metadata["llm_latency_ms"] = float(usage.get("latency_ms", 0.0))
         # One decision per state. A model response carrying several tool calls yields one
         # teacher decision (the first call); the others are telemetry only. A call whose

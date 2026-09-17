@@ -1,0 +1,134 @@
+# Pre-registration: D1 cost and diversity pilot (proposal, nothing run yet)
+
+Written before any experimental code or launch, as the opening move of the D1 branch (`docs/RESEARCH_HANDOFF.md`, "Next research branch"; `results/intent_bench/SYNTHESIS.md`, section 5). D1 is validated-experience collection for a procedural representation conditioned on the action; B1, the learned representation itself, does not start before D1 is finished and frozen, and is out of scope here. This document proposes only the small cost pilot that the handoff requires before the real D1 mission count is fixed. Nothing below is an outcome; the Outcome section is left for after the run, once this protocol is confirmed.
+
+## Purpose, and what it is not
+
+The pilot answers one question first: do real LaRuche traces, verified by the existing outcome contract, produce enough diversity of `(goal, state, action, outcome)` across more than one tool to be worth scaling into a full D1 collection at all. Cost (calls, tokens, latency) and success rate are measured at the same time, but sizing the real dataset from cost alone, without checking that the diversity is there, would repeat the mistake the intent-benchmark line already recorded: a benchmark can look sufficient by one axis and still fail to transport. The pilot is not a training set. It is not scored for B1. Its own traces may later be folded into the frozen D1 set only if they were collected under the exact protocol below, and only as part of the same decision that fixes D1's size, not before.
+
+## Non-negotiable constraints, carried from the handoff and from this session's instructions
+
+- Paradigm observes only during the pilot. No family is ever replayed as a reflex, whatever the compiler's internal bookkeeping concludes. No promotion has behavioral effect.
+- The existing outcome contract stays authoritative in both domains; nothing here redefines SUCCESS, FAILURE or UNKNOWN.
+- Only a verified SUCCESS step or episode can become positive evidence. UNKNOWN and FAILURE are recorded, never treated as positive.
+- No B1 work, no representation training, no embedding fit, before D1 is finished and frozen.
+- The real D1 mission count is not fixed by this document. It is fixed after the pilot, from the pilot's own numbers, under the decision rule declared below.
+- No new certification rule, no threshold change, no tag, no merge of `paradigm-integration`.
+
+## Mechanism for "observe only"
+
+Reuse of run 12's shadow-sampling path, not new code: `paradigm serve` started fresh, `--shadow-schedule` covering the pilot's whole episode range at rate 1.0, so every reflex-eligible decision in both domains is routed to the teacher and logged with reason `shadow_sample`, never replayed. The compiler still computes candidates and may mark families active internally; that bookkeeping has no effect on any executed action, since a rate of 1.0 forces the teacher on every eligible step. This is the default proposed here because it needs no new engineering and its behavior is already validated (run 12). A stricter alternative, a new flag that disables candidate compilation entirely for the pilot, would be a small code change and is not proposed for this first pilot; flagged here in case the internal bookkeeping is judged not clean enough to accept.
+
+One fresh Paradigm state, one `paradigm serve` process, for the whole pilot, both domains against the same server. This lets the family-scoped store hold heterogeneous tool families (`camera:*`, `laruche:*` from the code domain) at once, which is closer to eventual real use than two isolated states, and lets the pilot also surface, incidentally, whether the store behaves sanely with two unrelated tool vocabularies present together; that is a diagnostic side effect, not a criterion this pilot is scored on.
+
+## Setting, both domains reused unmodified
+
+Camera domain: exactly the adapter scope declared in `camera_prereg.md` (`camera` reflex-capable with the exact validated argument templates for `list` and `capture`; a capture verified only when the tool result is ok and carries at least one image whose bytes decode as PNG), the same containment fixes (every path confined to the mission workspace, the `pre_tool` hook covering every tool, not `shell_exec` alone, 30-iteration ceiling), the camera process launched from Terminal.app as required there.
+
+Code domain: exactly the workspace and bug-variant machinery of `laruche-essaim/examples/paradigm_demo.rs`, unmodified where reused (`variant(i)` cycling `wrong_constant`, `off_by_one`, `missing_import`; the guard hook refusing install, link, copy, move, delete, `sudo`, network fetch, or writes outside the workspace; episodes closed from the harness's own `pytest` verification, never from the model's claim).
+
+Model: `deepseek-v4-flash` through LaRuche's OpenAI-compatible path in both domains, as in every run since run 9, for cost comparability.
+
+## Missions, 24 total (12 camera, 12 code), fixed order within each domain, code domain run first
+
+The four camera classes and the three code sequences below are the categories the resulting trajectories are tagged into afterward, from the verified event stream. No mission text forces a tool order; the teacher chooses it, as in every prior run (C1 found about half of direct capture requests opened with `list` and half did not; run 11 found about a third of missions opened with a redirected pytest call and the rest did not). Fixing an order in the mission text would not be measuring what a product sees.
+
+### Code domain (12 missions, 4 per template, cycling the 3 bug variants once per template)
+
+Template A, unmodified existing prompt (targets `tests_failed -> file_edit -> tests`): "You are working in the directory `{d}` which contains `calc.py` and `test_calc.py`. The test suite fails. python and pytest are already installed; do not install anything and do not touch anything outside `{d}`. Run `python -m pytest -q` with shell_exec, read calc.py, fix the bug in calc.py only (never modify the test), run `python -m pytest -q` again, and finish once the tests pass." Applied to the 3 bug variants, then repeated once more (6 missions), matching the cadence used in runs 9, 11, 12 and 12b.
+
+Template B, read-first phrasing, bug present (targets `file_read -> file_edit -> tests`): "You are working in the directory `{d}` which contains `calc.py` and `test_calc.py`. Please review calc.py for correctness against test_calc.py, fix any bug you find in calc.py only (never modify the test), then confirm with `python -m pytest -q` via shell_exec that the suite passes. Do not install anything and do not touch anything outside `{d}`." Applied once per bug variant (3 missions).
+
+Template C, inspection only, no bug injected (targets `file_read -> tests`, no edit; the structural hard negative for `file_edit`, same topic, nothing to fix): same phrasing as template B, `calc.py` set to the corrected version of each of the 3 variant families instead of the buggy one (3 missions).
+
+Outcome contract, unchanged: SUCCESS iff the harness's own final `pytest` run passes and no guarded action ran. For template C only, an additional diagnostic tag (not a pass/fail criterion) records whether `file_edit` occurred at all, since the intended positive path there has none.
+
+### Camera domain (12 missions)
+
+List then capture, positive (3): `Prends-moi en photo.` / `Peux-tu prendre une photo avec la webcam ?` / `Fais une photo de moi maintenant.`
+
+Immediate capture, positive, low token overlap with the above (1): `Photographie-moi.`
+
+List only, no capture (1, new class, not in C1): `Combien de caméras sont connectées sur cet ordinateur ?`
+
+Preview, no capture (1, reused from C1 N4): `Ouvre la caméra sans prendre de photo.`
+
+Negation (1): `Ne me prends pas en photo.`
+
+Future, deferred (1): `Tu pourras me prendre en photo tout à l'heure ?`
+
+Past, references existing photos, reused from C1 N2 (1): `Trouve mes dernières photos.`
+
+Conditional, unmet condition (1): `Si la lumière est meilleure, prends une photo.`
+
+Different tool entirely, reused from C1 N1 (1): `Fais une capture d'écran.`
+
+Unrelated, outside the camera topic altogether (1): `Quelle heure est-il ?`
+
+Outcome contract, unchanged from `camera_prereg.md`: the 4 positive missions are SUCCESS iff at least one verified capture occurred and no forbidden tool ran; every other mission is SUCCESS iff no capture occurred and no forbidden tool ran. Whether `camera list` occurred is logged as a diagnostic tag on every mission, not a pass/fail criterion.
+
+The exact order of the 24 missions and their verbatim prompts are frozen in `missions.json` (hash in `MANIFEST.md`), which the harness reads; it is the authority, so the harness cannot drift from this document. An earlier draft of this section listed a second list-only phrasing, which made the camera block 13 missions against the 12 stated here; it was removed before anything ran, and is recorded here rather than silently corrected.
+
+## Per-step capture, both domains
+
+`goal` (the mission's user request, verbatim), `state` (Paradigm's own encoded state at decision time, as already logged), `candidate action` (the shadow decision, logged even though never executed), `teacher decision` (the actual tool call), `verified action outcome` (from the domain's outcome contract above, never from the model's claim), `episode outcome` (the mission verdict). Provenance tag on every row: `pilot`, domain (`camera` or `code`), mission id and template, so that if these traces are later folded into frozen D1 they remain traceable, in the same way v1 and v2 tag `gen_a`, `gen_b`, `synthetic_user_style`.
+
+## Metrics reported after the run
+
+Per domain and per mission: model calls, tokens, wall time, episode verdict. Per action key: count of verified SUCCESS steps (the quantity the handoff calls exploitable validated transitions), count of UNKNOWN, count of FAILURE. Diversity, read directly off the above: number of distinct verified action keys across both domains; number of missions per class (the four camera classes, the three code templates) that produced a verified trace distinguishable in encoded state from the others of its domain; count of verified hard-negative traces per domain (camera: list-only, preview, negation, future, past, conditional, unrelated, each checked for zero capture; code: template C, checked for zero edit).
+
+## Diversity criterion, fixed now, not after seeing the numbers, confirmed by the user
+
+The pilot supports moving to a sized D1 collection only if all of the following hold on this run:
+
+- at least 5 distinct verified action keys across the two domains combined, with at least 2 in each domain, so that no single domain can carry the whole count;
+- at least one verified structural-negative trace in each domain, distinguishable from that domain's positive traces by encoded state, not merely by mission id (camera: a list-only, preview, negation, future, past, conditional or unrelated mission with zero capture in a state that differs from the capture-positive states; code: a template C mission with zero edit in a state that differs from the template A and B post-fix states);
+- no single action key accounts for more than 70% of all verified steps.
+
+These three numbers are deliberately not tightened further for a 24-mission pilot. The pilot asks whether D1 is worth collecting at scale, not whether it already meets a bar sufficient for B1. They are fixed before the pilot runs so they cannot be adjusted to fit the result, and are open to revision with the user only before launch, never after.
+
+## Decision after the pilot
+
+If the diversity criterion holds and cost is judged acceptable: fix the real D1 mission count from `N_real = ceil(target_min_verified_traces_per_cell / observed_verified_traces_per_cell_per_mission)`, `target_min_verified_traces_per_cell` defaulting to 30 (the compiler's own established minimum, `camera_prereg.md`: "the compiler needs 30 training traces"), computed on the pilot's sparsest class.
+
+`N_real` is then capped by absolute ceilings on the real D1 collection, confirmed by the user: `max_model_calls = 1000`, `max_tokens = 10_000_000`, consistent with the per-mission cost already observed on LaRuche (a few calls and some tens of thousands of tokens per mission), which leaves room for roughly 100 to 150 missions without letting the collection drift. The additional rule: `estimated_cost(D1)` (extrapolated from the pilot's own per-mission calls and tokens) must stay at or under 80% of both ceilings before `N_real` is accepted, so the real collection is never deliberately planned against the ceiling itself; the 20% margin is kept for variance and for missions that run longer than the pilot's own. If the extrapolation from the pilot exceeds 80% of either ceiling at the size the diversity target would otherwise call for, `N_real` is reduced to the largest size that respects the 80% margin, and that reduction is recorded as a limitation of the resulting D1 set, not silently absorbed.
+
+If the diversity criterion does not hold: D1's design is revised, more domains, different modifiers, or a third tool, before any mission count is fixed. This is a possible outcome of the pilot, not a failure of it.
+
+If cost per mission is judged prohibitive relative to the observed yield even within the ceilings above: scope is reconsidered (fewer domains, a cheaper model, a lower per-cell target) before fixing a count.
+
+None of `max_model_calls`, `max_tokens`, or the 80% margin is a target to consume; they are ceilings on the real D1 run, not goals for it.
+
+## Pilot safety hard stop
+
+Not a scientific criterion, a protection against a looping harness or a teacher trajectory running abnormally long, confirmed by the user: the 24-mission pilot stops immediately if cumulative model calls exceed 200, or cumulative tokens exceed 2,000,000, whichever comes first, counted across both domains from the start of the pilot. A stop under this rule is reported as an incident, exactly like the harness faults recorded in `camera_prereg.md`'s addenda, and does not by itself decide the diversity question.
+
+Counters are read from Paradigm's own telemetry (`deliberative_decisions` and `llm_tokens_spent`), the same instrument every LaRuche run since run 9 reported. A model call that produces no tool call is not observed by the bridge and therefore not counted, so the breaker fires on a lower bound of the true cost. That is acceptable for a safety device and is stated here so the pilot's reported cost is never read as an exact provider bill.
+
+## Attempts, and what may never be mixed
+
+Operational rule fixed before the first provider call, confirmed by the user. Every launch carries an `attempt_id`. If the circuit breaker fires, or any harness incident occurs (a stall, an unanswered approval, a containment fault, a crash), the entire attempt is kept as an invalid attempt and is never merged, partially or wholly, with any later one. A restart means: a new `attempt_id`, a fresh Paradigm state, mission 1 again, the same prompts, the same order, the same protocol, with only the cause of the incident corrected in the harness. The previous attempt stays archived under its own `attempt_id` and is cited in the outcome, as runs C1 attempts 1 to 3 and run 12b attempt 1 are. Partial missions from an invalid attempt are never evidence, never cost extrapolation, and never part of D1.
+
+## Addendum, before the first provider call: required instrumentation found at preflight
+
+The pre-launch check of what a mission actually leaves behind found that the pilot as written could not produce its own dataset, and nothing had run yet. Recorded here rather than silently fixed.
+
+What the engine kept before this addendum: `close_episode` returns before ingestion when an episode closes FAILURE or UNKNOWN, so every step of such an episode was discarded; what a SUCCESS episode ingested was `AgentDecisionRecord(features, action, source, phase, failure_kind, confidence, family, validated)`, an encoded vector without the goal text; and `save` persists the compiler, the templates and the counters, explicitly not the decision log, which carries neither goal nor state. The consequence for D1 is direct: the run would have produced verdicts and cost counters and no `(goal, state, action, outcome)` record. The consequence for B1 is worse than an absence. Training it on the persisted `features` would train it on the output of the current encoder, which is the very thing B1 exists to be compared against; the experiment would have been circular by construction.
+
+What was added, optional and behaviorally neutral: `paradigm serve --trace-file <path> --attempt-id <id>`, off by default. A JSONL sink writes one `step` row per observed step (schema version, attempt, episode, stream episode, step, timestamp, raw goal, the full structured state, available actions, family, phase, teacher action, reflex candidate action, decision source, confidence, verified outcome with its evidence and verifier, failure kind, output kind, model calls, input and output tokens, decision and model latency) and one `episode` row per closed episode (status, verified flag, verifier, step count, family, stream episode). The write points are `observe`, and `close_episode` before the returns that discard FAILURE, UNKNOWN and empty episodes, so those are kept in the raw record. A `proposed_action` field was added to the decision log row so the reflex candidate is recorded next to the teacher's action on a shadow-sampled step, and the LaRuche adapter now passes input and output tokens separately instead of only their sum. No payload bytes are written: an image is recorded as its count and the verdict the adapter derived from it.
+
+The retention rule is unchanged and is what the sink makes auditable: a SUCCESS episode's verified step may become positive evidence; FAILURE and UNKNOWN are kept for audit, hard negatives and analysis, and are never positive.
+
+What was not changed: `decide`, the gate, thresholds, calibration, certification, promotion, trust, the equivalence contract, the outcome contracts, the missions, their order, the diversity criterion, the ceilings. The sink is written to and never read by the engine.
+
+Evidence, in `tests/test_integration.py`: the sink records goal and state for every step; FAILURE and UNKNOWN episodes keep their steps in the trace while the compiler still rejects them; the reflex candidate is recorded on shadow-sampled steps; running 24 episodes with and without the sink produces the same decision log, the same counters, the same trust manifest and the same reflex version; the trace survives save and reload; and no image payload reaches the file. Full suite 88 passed, `ruff check --select E9,F` clean on the changed files. A smoke test drove the real `serve` path over HTTP with no provider, one SUCCESS and one FAILURE episode, and confirmed the FAILURE episode is absent from acquisition and present in the trace.
+
+One incidental finding, recorded because it affects how the dataset is keyed: the engine's episode id is a millisecond clock plus the instance address, so two episodes closing inside the same millisecond share one id. Nothing about it was changed. The trace carries the monotonic `stream_episode` on every row instead, and the dataset key is `(attempt_id, stream_episode, step_id)`.
+
+## Not done in this pilot
+
+No B1 training or embedding fit of any kind. No promotion with behavioral effect. No new certification rule, gate, threshold or veto. No reuse of intent v1 or v2 as training or positive evidence. No fixing of the real D1 mission count before this run's numbers exist. No tag, no merge of `paradigm-integration`.
+
+## Outcome
+
+Not run.
