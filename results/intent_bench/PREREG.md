@@ -49,3 +49,7 @@ A representation is better than A only if the recall of unseen positive intents 
 ## Not done
 
 No live run, no fine-tuning, no contrastive adaptation, no gate change.
+
+## Addendum, before the first embedding
+
+The three parts are three generators with distinct styles, not two models and a person: `claude-*` by Claude, `g*` by ChatGPT, `u*` by ChatGPT simulating the user's writing style (synthetic). No human-written sentence is in version 1; see `MANIFEST.md`. Four sentence texts occur in two groups of different sources; the dataset is frozen with them, and a leave-one-group-out fold can therefore contain a held-out text that also exists in training (4 of 320); this is reported, not corrected. The RTX box was unreachable from this Mac, so the specialized encoder runs locally on CPU with `sentence-transformers`, as the pre-registration allows.
