@@ -1,0 +1,320 @@
+{"id": "claude-001", "group": "c01", "source": "claude", "role": "base", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Prends-moi en photo."}
+{"id": "claude-002", "group": "c01", "source": "claude", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Tu peux me prendre en photo ?"}
+{"id": "claude-003", "group": "c01", "source": "claude", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Photographie-moi."}
+{"id": "claude-004", "group": "c01", "source": "claude", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Une photo de moi, s'il te plaît."}
+{"id": "claude-005", "group": "c01", "source": "claude", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Prends une photo de moi maintenant."}
+{"id": "claude-006", "group": "c01", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne me prends pas en photo."}
+{"id": "claude-007", "group": "c01", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Prends-moi en photo demain matin."}
+{"id": "claude-008", "group": "c01", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu m'as pris en photo tout à l'heure ?"}
+{"id": "claude-009", "group": "c01", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "Prends une photo de mon écran."}
+{"id": "claude-010", "group": "c01", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Regarde si tu peux me prendre en photo, sans le faire."}
+{"id": "claude-011", "group": "c02", "source": "claude", "role": "base", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Fais une photo de moi avec la webcam."}
+{"id": "claude-012", "group": "c02", "source": "claude", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Utilise la webcam pour me photographier."}
+{"id": "claude-013", "group": "c02", "source": "claude", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Capture une image de moi avec la caméra."}
+{"id": "claude-014", "group": "c02", "source": "claude", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Fais-moi un portrait avec la webcam."}
+{"id": "claude-015", "group": "c02", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne fais surtout pas de photo de moi avec la webcam."}
+{"id": "claude-016", "group": "c02", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Fais une photo de moi avec la webcam quand je te le dirai."}
+{"id": "claude-017", "group": "c02", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Est-ce que tu as déjà fait une photo de moi avec la webcam ?"}
+{"id": "claude-018", "group": "c02", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "FIND_EXISTING_PHOTOS", "text": "Retrouve une photo de moi prise avec la webcam."}
+{"id": "claude-019", "group": "c02", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Vérifie que la webcam peut faire une photo, sans la prendre."}
+{"id": "claude-020", "group": "c03", "source": "claude", "role": "base", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Je veux une photo de moi tout de suite."}
+{"id": "claude-021", "group": "c03", "source": "claude", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Il me faut une photo de moi, prends-la."}
+{"id": "claude-022", "group": "c03", "source": "claude", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Prends un cliché de moi."}
+{"id": "claude-023", "group": "c03", "source": "claude", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Déclenche la caméra et prends-moi."}
+{"id": "claude-024", "group": "c03", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Je ne veux pas de photo de moi."}
+{"id": "claude-025", "group": "c03", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Je voudrai une photo de moi plus tard."}
+{"id": "claude-026", "group": "c03", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "J'avais demandé une photo de moi, elle a été prise ?"}
+{"id": "claude-027", "group": "c03", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "Je veux une image de l'écran tout de suite."}
+{"id": "claude-028", "group": "c03", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Ouvre la caméra pour que je me voie, sans photo."}
+{"id": "claude-029", "group": "c04", "source": "claude", "role": "base", "transformation": null, "intent": "CHECK_CAMERA", "text": "Est-ce que j'ai une webcam ?"}
+{"id": "claude-030", "group": "c04", "source": "claude", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "Y a-t-il une caméra sur cette machine ?"}
+{"id": "claude-031", "group": "c04", "source": "claude", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "Quelles caméras sont disponibles ici ?"}
+{"id": "claude-032", "group": "c04", "source": "claude", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "Liste les caméras de ce Mac."}
+{"id": "claude-033", "group": "c04", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Je n'ai pas besoin de savoir si j'ai une webcam."}
+{"id": "claude-034", "group": "c04", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Tu vérifieras demain si j'ai une webcam."}
+{"id": "claude-035", "group": "c04", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu avais vérifié si j'avais une webcam ?"}
+{"id": "claude-036", "group": "c04", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "Prends une photo avec la webcam que j'ai."}
+{"id": "claude-037", "group": "c04", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Dis-moi juste si la webcam répond."}
+{"id": "claude-038", "group": "c05", "source": "claude", "role": "base", "transformation": null, "intent": "CHECK_CAMERA", "text": "Vérifie que la caméra fonctionne."}
+{"id": "claude-039", "group": "c05", "source": "claude", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "Teste la webcam, sans rien enregistrer."}
+{"id": "claude-040", "group": "c05", "source": "claude", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "La caméra marche-t-elle ?"}
+{"id": "claude-041", "group": "c05", "source": "claude", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "Contrôle l'état de la caméra."}
+{"id": "claude-042", "group": "c05", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne teste pas la caméra."}
+{"id": "claude-043", "group": "c05", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Vérifie la caméra ce soir."}
+{"id": "claude-044", "group": "c05", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "La caméra a-t-elle fonctionné hier ?"}
+{"id": "claude-045", "group": "c05", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "Vérifie que la caméra fonctionne en me prenant en photo."}
+{"id": "claude-046", "group": "c05", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Indique-moi seulement si la caméra est détectée."}
+{"id": "claude-047", "group": "c06", "source": "claude", "role": "base", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Ouvre la caméra sans prendre de photo."}
+{"id": "claude-048", "group": "c06", "source": "claude", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Allume la webcam mais ne capture rien."}
+{"id": "claude-049", "group": "c06", "source": "claude", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Active la caméra, pas de photo."}
+{"id": "claude-050", "group": "c06", "source": "claude", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Lance l'aperçu de la caméra sans enregistrer d'image."}
+{"id": "claude-051", "group": "c06", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "CAPTURE_PERSON", "text": "Ouvre la caméra et prends une photo."}
+{"id": "claude-052", "group": "c06", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Ouvre la caméra dans une heure, sans prendre de photo."}
+{"id": "claude-053", "group": "c06", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu avais ouvert la caméra sans prendre de photo ?"}
+{"id": "claude-054", "group": "c06", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "Ouvre l'écran de capture et prends une capture d'écran."}
+{"id": "claude-055", "group": "c06", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Regarde si la caméra s'ouvre, sans l'ouvrir vraiment."}
+{"id": "claude-056", "group": "c07", "source": "claude", "role": "base", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Montre-moi l'image de la webcam sans la sauvegarder."}
+{"id": "claude-057", "group": "c07", "source": "claude", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Affiche le flux de la caméra, ne garde rien."}
+{"id": "claude-058", "group": "c07", "source": "claude", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Je veux juste voir ce que la caméra voit."}
+{"id": "claude-059", "group": "c07", "source": "claude", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Aperçu caméra seulement, aucune capture."}
+{"id": "claude-060", "group": "c07", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "CAPTURE_PERSON", "text": "Montre-moi l'image de la webcam et sauvegarde-la."}
+{"id": "claude-061", "group": "c07", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Tu me montreras l'image de la webcam plus tard."}
+{"id": "claude-062", "group": "c07", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu m'as montré l'image de la webcam ?"}
+{"id": "claude-063", "group": "c07", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "Montre-moi une image de mon écran."}
+{"id": "claude-064", "group": "c07", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Dis-moi si la webcam renvoie une image, sans me la montrer."}
+{"id": "claude-065", "group": "c08", "source": "claude", "role": "base", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Trouve mes dernières photos."}
+{"id": "claude-066", "group": "c08", "source": "claude", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Où sont mes photos récentes ?"}
+{"id": "claude-067", "group": "c08", "source": "claude", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Retrouve les dernières images que j'ai prises."}
+{"id": "claude-068", "group": "c08", "source": "claude", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Cherche mes photos les plus récentes."}
+{"id": "claude-069", "group": "c08", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne cherche pas mes photos."}
+{"id": "claude-070", "group": "c08", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Tu chercheras mes photos demain."}
+{"id": "claude-071", "group": "c08", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu as trouvé mes dernières photos ?"}
+{"id": "claude-072", "group": "c08", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "Prends une dernière photo de moi."}
+{"id": "claude-073", "group": "c08", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "FIND_EXISTING_PHOTOS", "text": "Dis-moi combien de photos récentes j'ai, sans les ouvrir."}
+{"id": "claude-074", "group": "c09", "source": "claude", "role": "base", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Ouvre le dossier de mes photos."}
+{"id": "claude-075", "group": "c09", "source": "claude", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Affiche ma bibliothèque de photos."}
+{"id": "claude-076", "group": "c09", "source": "claude", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Montre-moi les photos de la semaine dernière."}
+{"id": "claude-077", "group": "c09", "source": "claude", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Liste les images de mon dossier Photos."}
+{"id": "claude-078", "group": "c09", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "N'ouvre pas mes photos."}
+{"id": "claude-079", "group": "c09", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Ouvre mes photos quand j'aurai fini."}
+{"id": "claude-080", "group": "c09", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu avais ouvert le dossier de mes photos ?"}
+{"id": "claude-081", "group": "c09", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Ouvre la caméra plutôt que mes photos, sans capturer."}
+{"id": "claude-082", "group": "c09", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "FIND_EXISTING_PHOTOS", "text": "Vérifie juste si le dossier Photos existe."}
+{"id": "claude-083", "group": "c10", "source": "claude", "role": "base", "transformation": null, "intent": "SCREENSHOT", "text": "Fais une capture d'écran."}
+{"id": "claude-084", "group": "c10", "source": "claude", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "Prends une capture de l'écran."}
+{"id": "claude-085", "group": "c10", "source": "claude", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "Capture ce qui est affiché à l'écran."}
+{"id": "claude-086", "group": "c10", "source": "claude", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "Screenshot, s'il te plaît."}
+{"id": "claude-087", "group": "c10", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne fais pas de capture d'écran."}
+{"id": "claude-088", "group": "c10", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Fais une capture d'écran dans cinq minutes."}
+{"id": "claude-089", "group": "c10", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu as fait la capture d'écran ?"}
+{"id": "claude-090", "group": "c10", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "Fais une capture de moi avec la caméra."}
+{"id": "claude-091", "group": "c10", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "Dis-moi ce qui est à l'écran, sans capture."}
+{"id": "claude-092", "group": "c11", "source": "claude", "role": "base", "transformation": null, "intent": "SCREENSHOT", "text": "Enregistre une image de la fenêtre active."}
+{"id": "claude-093", "group": "c11", "source": "claude", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "Capture la fenêtre au premier plan."}
+{"id": "claude-094", "group": "c11", "source": "claude", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "Prends un screenshot de cette fenêtre."}
+{"id": "claude-095", "group": "c11", "source": "claude", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "Sauvegarde ce que montre mon écran en image."}
+{"id": "claude-096", "group": "c11", "source": "claude", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "N'enregistre aucune image de l'écran."}
+{"id": "claude-097", "group": "c11", "source": "claude", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Enregistre une image de la fenêtre quand elle sera chargée."}
+{"id": "claude-098", "group": "c11", "source": "claude", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu avais enregistré une image de la fenêtre ?"}
+{"id": "claude-099", "group": "c11", "source": "claude", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "Enregistre une image de moi avec la webcam."}
+{"id": "claude-100", "group": "c11", "source": "claude", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "Décris la fenêtre active sans capturer d'image."}
+{"id": "claude-101", "group": "c12", "source": "claude", "role": "base", "transformation": null, "intent": "OTHER", "text": "Quelle heure est-il à Tokyo ?"}
+{"id": "claude-102", "group": "c12", "source": "claude", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Résume-moi ce fichier en trois phrases."}
+{"id": "claude-103", "group": "c12", "source": "claude", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Lance les tests du projet."}
+{"id": "claude-104", "group": "c12", "source": "claude", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Combien font 17 fois 23 ?"}
+{"id": "claude-105", "group": "c12", "source": "claude", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Rappelle-moi d'appeler le dentiste jeudi."}
+{"id": "claude-106", "group": "c12", "source": "claude", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Traduis cette phrase en espagnol."}
+{"id": "claude-107", "group": "c13", "source": "claude", "role": "base", "transformation": null, "intent": "OTHER", "text": "Ouvre le fichier de configuration."}
+{"id": "claude-108", "group": "c13", "source": "claude", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Ferme toutes les fenêtres."}
+{"id": "claude-109", "group": "c13", "source": "claude", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Éteins l'ordinateur ce soir."}
+{"id": "claude-110", "group": "c13", "source": "claude", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Cherche un vol pour Lisbonne en mai."}
+{"id": "claude-111", "group": "c13", "source": "claude", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Écris un mail à Paul pour décaler la réunion."}
+{"id": "claude-112", "group": "c13", "source": "claude", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Quel est le sens du mot obsolescence ?"}
+{"id": "chatgpt-001", "group": "g01", "source": "chatgpt", "role": "base", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Prends-moi en photo stp."}
+{"id": "chatgpt-002", "group": "g01", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Vas-y fais une photo de moi."}
+{"id": "chatgpt-003", "group": "g01", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Tu peux me photographier vite fait ?"}
+{"id": "chatgpt-004", "group": "g01", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Me prends surtout pas en photo."}
+{"id": "chatgpt-005", "group": "g01", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Tu me prendras en photo tout à l'heure."}
+{"id": "chatgpt-006", "group": "g01", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu m'as pris en photo juste avant ?"}
+{"id": "chatgpt-007", "group": "g01", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "Prends plutôt une photo de ce qu'il y a à l'écran."}
+{"id": "chatgpt-008", "group": "g01", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Vérifie juste si la caméra marche."}
+{"id": "chatgpt-009", "group": "g02", "source": "chatgpt", "role": "base", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Fais-moi un portrait."}
+{"id": "chatgpt-010", "group": "g02", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "J'aimerais bien une photo de moi."}
+{"id": "chatgpt-011", "group": "g02", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Allez hop, une petite photo de ma tête."}
+{"id": "chatgpt-012", "group": "g02", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Je veux pas de portrait de moi."}
+{"id": "chatgpt-013", "group": "g02", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Fais-moi un portrait demain."}
+{"id": "chatgpt-014", "group": "g02", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "T'avais fait un portrait de moi hier ?"}
+{"id": "chatgpt-015", "group": "g02", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "Fais plutôt une image de cette fenêtre."}
+{"id": "chatgpt-016", "group": "g02", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Regarde si la webcam est dispo, c'est tout."}
+{"id": "chatgpt-017", "group": "g03", "source": "chatgpt", "role": "base", "transformation": null, "intent": "CHECK_CAMERA", "text": "Est-ce que j'ai une webcam ?"}
+{"id": "chatgpt-018", "group": "g03", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "Tu peux voir si une caméra est connectée ?"}
+{"id": "chatgpt-019", "group": "g03", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "Check vite fait si le Mac voit la cam."}
+{"id": "chatgpt-020", "group": "g03", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne vérifie pas la webcam."}
+{"id": "chatgpt-021", "group": "g03", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Tu vérifieras la webcam plus tard."}
+{"id": "chatgpt-022", "group": "g03", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "La webcam était détectée tout à l'heure ?"}
+{"id": "chatgpt-023", "group": "g03", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "OTHER", "text": "Vérifie plutôt si mon micro est détecté."}
+{"id": "chatgpt-024", "group": "g03", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Ouvre juste la caméra pour voir, sans prendre de photo."}
+{"id": "chatgpt-025", "group": "g04", "source": "chatgpt", "role": "base", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Ouvre la caméra mais ne prends rien."}
+{"id": "chatgpt-026", "group": "g04", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Affiche-moi la webcam, sans faire de photo."}
+{"id": "chatgpt-027", "group": "g04", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Lance la cam juste pour voir l'image, pas de capture."}
+{"id": "chatgpt-028", "group": "g04", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "N'ouvre pas la caméra."}
+{"id": "chatgpt-029", "group": "g04", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Ouvre la caméra ce soir, pas maintenant."}
+{"id": "chatgpt-030", "group": "g04", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "T'avais ouvert la caméra tout à l'heure ?"}
+{"id": "chatgpt-031", "group": "g04", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "Ouvre plutôt l'écran et fais-en une capture."}
+{"id": "chatgpt-032", "group": "g04", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Vérifie seulement qu'une caméra est disponible."}
+{"id": "chatgpt-033", "group": "g05", "source": "chatgpt", "role": "base", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Retrouve mes dernières photos."}
+{"id": "chatgpt-034", "group": "g05", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Tu peux chercher les photos que j'ai déjà prises ?"}
+{"id": "chatgpt-035", "group": "g05", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Montre-moi les images récentes qui sont déjà sur le disque."}
+{"id": "chatgpt-036", "group": "g05", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne cherche pas mes photos."}
+{"id": "chatgpt-037", "group": "g05", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Cherche mes photos demain."}
+{"id": "chatgpt-038", "group": "g05", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "T'avais retrouvé mes photos hier ?"}
+{"id": "chatgpt-039", "group": "g05", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "Au lieu de chercher les anciennes, prends-moi en photo maintenant."}
+{"id": "chatgpt-040", "group": "g05", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Vérifie juste si la caméra est disponible, ne cherche aucun fichier."}
+{"id": "chatgpt-041", "group": "g06", "source": "chatgpt", "role": "base", "transformation": null, "intent": "SCREENSHOT", "text": "Fais une capture de mon écran."}
+{"id": "chatgpt-042", "group": "g06", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "Prends-moi un screenshot de ce que je vois."}
+{"id": "chatgpt-043", "group": "g06", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "Capture l'écran là maintenant stp."}
+{"id": "chatgpt-044", "group": "g06", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne fais surtout pas de capture d'écran."}
+{"id": "chatgpt-045", "group": "g06", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Fais une capture de l'écran dans dix minutes."}
+{"id": "chatgpt-046", "group": "g06", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu avais fait un screenshot tout à l'heure ?"}
+{"id": "chatgpt-047", "group": "g06", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "Pas l'écran, prends-moi moi en photo."}
+{"id": "chatgpt-048", "group": "g06", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "Regarde juste ce qui est affiché, sans faire de capture."}
+{"id": "chatgpt-049", "group": "g07", "source": "chatgpt", "role": "base", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Tu peux prendre une photo avec la webcam ?"}
+{"id": "chatgpt-050", "group": "g07", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Prends une photo de moi avec la cam du Mac."}
+{"id": "chatgpt-051", "group": "g07", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "Photo webcam de moi, stp."}
+{"id": "chatgpt-052", "group": "g07", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "N'utilise surtout pas la webcam pour me prendre en photo."}
+{"id": "chatgpt-053", "group": "g07", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Tu me prendras en photo avec la webcam après."}
+{"id": "chatgpt-054", "group": "g07", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu m'as déjà pris avec la webcam aujourd'hui ?"}
+{"id": "chatgpt-055", "group": "g07", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "CHECK_CAMERA", "text": "Vérifie juste quelle webcam est disponible."}
+{"id": "chatgpt-056", "group": "g07", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Allume la webcam mais aucune photo."}
+{"id": "chatgpt-057", "group": "g08", "source": "chatgpt", "role": "base", "transformation": null, "intent": "CHECK_CAMERA", "text": "La caméra fonctionne ?"}
+{"id": "chatgpt-058", "group": "g08", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "Dis-moi juste si la webcam répond."}
+{"id": "chatgpt-059", "group": "g08", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "Check si la cam est opérationnelle."}
+{"id": "chatgpt-060", "group": "g08", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne teste pas la caméra."}
+{"id": "chatgpt-061", "group": "g08", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Teste la caméra demain matin."}
+{"id": "chatgpt-062", "group": "g08", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "La caméra marchait hier ?"}
+{"id": "chatgpt-063", "group": "g08", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "OTHER", "text": "Vérifie si les haut-parleurs fonctionnent."}
+{"id": "chatgpt-064", "group": "g08", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Ouvre le flux caméra pour regarder, sans capturer."}
+{"id": "chatgpt-065", "group": "g09", "source": "chatgpt", "role": "base", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Montre-moi ce que voit la caméra sans enregistrer."}
+{"id": "chatgpt-066", "group": "g09", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Je veux juste voir le retour caméra, aucune photo."}
+{"id": "chatgpt-067", "group": "g09", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "Mets la webcam en aperçu, surtout pas de capture."}
+{"id": "chatgpt-068", "group": "g09", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne montre pas le flux caméra."}
+{"id": "chatgpt-069", "group": "g09", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Montre-moi la webcam plus tard."}
+{"id": "chatgpt-070", "group": "g09", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu m'avais montré le flux de la webcam avant ?"}
+{"id": "chatgpt-071", "group": "g09", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "Finalement prends-moi en photo avec la caméra."}
+{"id": "chatgpt-072", "group": "g09", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "Vérifie simplement que la webcam est reconnue."}
+{"id": "chatgpt-073", "group": "g10", "source": "chatgpt", "role": "base", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Où sont les photos que j'ai prises récemment ?"}
+{"id": "chatgpt-074", "group": "g10", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Trouve-moi les dernières images enregistrées."}
+{"id": "chatgpt-075", "group": "g10", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "Va chercher mes photos récentes, pas besoin d'en prendre une."}
+{"id": "chatgpt-076", "group": "g10", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne va pas chercher mes photos récentes."}
+{"id": "chatgpt-077", "group": "g10", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Tu chercheras mes dernières photos ce soir."}
+{"id": "chatgpt-078", "group": "g10", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu avais trouvé mes dernières photos ?"}
+{"id": "chatgpt-079", "group": "g10", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "Cherche pas les photos, fais juste un screenshot maintenant."}
+{"id": "chatgpt-080", "group": "g10", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "Dis-moi seulement si le dossier de photos existe, sans lister son contenu."}
+{"id": "chatgpt-081", "group": "g11", "source": "chatgpt", "role": "base", "transformation": null, "intent": "SCREENSHOT", "text": "Fais-moi une image de la fenêtre actuelle."}
+{"id": "chatgpt-082", "group": "g11", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "Capture juste la fenêtre que j'ai devant moi."}
+{"id": "chatgpt-083", "group": "g11", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "Screenshot de la fenêtre ouverte, merci."}
+{"id": "chatgpt-084", "group": "g11", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne capture pas cette fenêtre."}
+{"id": "chatgpt-085", "group": "g11", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Capture cette fenêtre plus tard."}
+{"id": "chatgpt-086", "group": "g11", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "T'as capturé cette fenêtre tout à l'heure ?"}
+{"id": "chatgpt-087", "group": "g11", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "Laisse la fenêtre, prends plutôt une photo de moi."}
+{"id": "chatgpt-088", "group": "g11", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "Regarde quelle fenêtre est ouverte sans faire de screenshot."}
+{"id": "chatgpt-089", "group": "g12", "source": "chatgpt", "role": "base", "transformation": null, "intent": "OTHER", "text": "Mets le volume un peu moins fort."}
+{"id": "chatgpt-090", "group": "g12", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Tu peux baisser le son stp ?"}
+{"id": "chatgpt-091", "group": "g12", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Descends le volume de quelques crans."}
+{"id": "chatgpt-092", "group": "g12", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne change pas le volume."}
+{"id": "chatgpt-093", "group": "g12", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Baisse le volume dans cinq minutes."}
+{"id": "chatgpt-094", "group": "g12", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "Tu avais baissé le volume tout à l'heure ?"}
+{"id": "chatgpt-095", "group": "g12", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "OTHER", "text": "Baisse plutôt la luminosité."}
+{"id": "chatgpt-096", "group": "g12", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "Dis-moi juste à combien est le volume, sans le modifier."}
+{"id": "chatgpt-097", "group": "g13", "source": "chatgpt", "role": "base", "transformation": null, "intent": "OTHER", "text": "Il me reste combien de batterie ?"}
+{"id": "chatgpt-098", "group": "g13", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "OTHER", "text": "Tu peux me dire le niveau de batterie du Mac ?"}
+{"id": "chatgpt-099", "group": "g13", "source": "chatgpt", "role": "variant", "transformation": null, "intent": "OTHER", "text": "J'ai encore beaucoup de batterie ou pas ?"}
+{"id": "chatgpt-100", "group": "g13", "source": "chatgpt", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "Ne regarde pas le niveau de batterie."}
+{"id": "chatgpt-101", "group": "g13", "source": "chatgpt", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "Tu me diras le niveau de batterie ce soir."}
+{"id": "chatgpt-102", "group": "g13", "source": "chatgpt", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "J'avais combien de batterie tout à l'heure ?"}
+{"id": "chatgpt-103", "group": "g13", "source": "chatgpt", "role": "hard_negative", "transformation": "object_change", "intent": "OTHER", "text": "Dis-moi plutôt combien il reste d'espace disque."}
+{"id": "chatgpt-104", "group": "g13", "source": "chatgpt", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "Vérifie seulement si le Mac est branché au chargeur."}
+{"id": "synthetic_user_style-001", "group": "u01", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "CAPTURE_PERSON", "text": "prends moi en photo"}
+{"id": "synthetic_user_style-002", "group": "u01", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "tu peux me prendre en photo ?"}
+{"id": "synthetic_user_style-003", "group": "u01", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "fait moi une photo vite fait"}
+{"id": "synthetic_user_style-004", "group": "u01", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "me prends pas en photo"}
+{"id": "synthetic_user_style-005", "group": "u01", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "tu me prendra en photo apres"}
+{"id": "synthetic_user_style-006", "group": "u01", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "tu m'as pris en photo avant ?"}
+{"id": "synthetic_user_style-007", "group": "u01", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "prends plutot une photo de mon ecran"}
+{"id": "synthetic_user_style-008", "group": "u01", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "regarde juste si la camera marche"}
+{"id": "synthetic_user_style-009", "group": "u02", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "CAPTURE_PERSON", "text": "fait une photo de moi stp"}
+{"id": "synthetic_user_style-010", "group": "u02", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "vas y prends une photo"}
+{"id": "synthetic_user_style-011", "group": "u02", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "photographie moi la"}
+{"id": "synthetic_user_style-012", "group": "u02", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "surtout fait pas de photo de moi"}
+{"id": "synthetic_user_style-013", "group": "u02", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "fait une photo de moi tout a l'heure"}
+{"id": "synthetic_user_style-014", "group": "u02", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "ta fait une photo de moi tout a l'heure ?"}
+{"id": "synthetic_user_style-015", "group": "u02", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "FIND_EXISTING_PHOTOS", "text": "retrouve plutot une photo de moi deja prise"}
+{"id": "synthetic_user_style-016", "group": "u02", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "ouvre juste la cam sans faire de photo"}
+{"id": "synthetic_user_style-017", "group": "u03", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "CAPTURE_PERSON", "text": "prends moi avec la webcam"}
+{"id": "synthetic_user_style-018", "group": "u03", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "utilise la cam pour me prendre en photo"}
+{"id": "synthetic_user_style-019", "group": "u03", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "CAPTURE_PERSON", "text": "une photo webcam de moi stp"}
+{"id": "synthetic_user_style-020", "group": "u03", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "utilise pas la webcam pour me prendre"}
+{"id": "synthetic_user_style-021", "group": "u03", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "prends moi avec la webcam plus tard"}
+{"id": "synthetic_user_style-022", "group": "u03", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "tu m'avais pris avec la webcam hier ?"}
+{"id": "synthetic_user_style-023", "group": "u03", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "prends plutot ce qu'il y a sur l'ecran"}
+{"id": "synthetic_user_style-024", "group": "u03", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "check juste si la webcam est dispo"}
+{"id": "synthetic_user_style-025", "group": "u04", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "CHECK_CAMERA", "text": "ya une camera sur le mac ?"}
+{"id": "synthetic_user_style-026", "group": "u04", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "tu vois une webcam ?"}
+{"id": "synthetic_user_style-027", "group": "u04", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "check si la cam est detectée"}
+{"id": "synthetic_user_style-028", "group": "u04", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "regarde pas si ya une camera"}
+{"id": "synthetic_user_style-029", "group": "u04", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "tu regardera si ya une webcam apres"}
+{"id": "synthetic_user_style-030", "group": "u04", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "yavait une camera detectée tout a l'heure ?"}
+{"id": "synthetic_user_style-031", "group": "u04", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "OTHER", "text": "check plutot si ya un micro"}
+{"id": "synthetic_user_style-032", "group": "u04", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "ouvre la cam juste pour voir sans prendre de photo"}
+{"id": "synthetic_user_style-033", "group": "u05", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "CHECK_CAMERA", "text": "la webcam marche ?"}
+{"id": "synthetic_user_style-034", "group": "u05", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "test si la camera fonctionne"}
+{"id": "synthetic_user_style-035", "group": "u05", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "CHECK_CAMERA", "text": "dit moi si la cam répond"}
+{"id": "synthetic_user_style-036", "group": "u05", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "test pas la webcam"}
+{"id": "synthetic_user_style-037", "group": "u05", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "test la webcam plus tard"}
+{"id": "synthetic_user_style-038", "group": "u05", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "la webcam marchait avant ?"}
+{"id": "synthetic_user_style-039", "group": "u05", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "OTHER", "text": "test plutot le micro"}
+{"id": "synthetic_user_style-040", "group": "u05", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "affiche juste la camera sans prendre de photo"}
+{"id": "synthetic_user_style-041", "group": "u06", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "ouvre la camera mais prend pas de photo"}
+{"id": "synthetic_user_style-042", "group": "u06", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "met la cam je veux juste voir"}
+{"id": "synthetic_user_style-043", "group": "u06", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "lance la webcam sans rien capturer"}
+{"id": "synthetic_user_style-044", "group": "u06", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "ouvre surtout pas la camera"}
+{"id": "synthetic_user_style-045", "group": "u06", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "ouvre la webcam dans 10 min"}
+{"id": "synthetic_user_style-046", "group": "u06", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "t'avais ouvert la cam avant ?"}
+{"id": "synthetic_user_style-047", "group": "u06", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "finalement prends moi en photo"}
+{"id": "synthetic_user_style-048", "group": "u06", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "regarde juste si elle est disponible sans l'ouvrir"}
+{"id": "synthetic_user_style-049", "group": "u07", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "montre moi la camera sans prendre de photo"}
+{"id": "synthetic_user_style-050", "group": "u07", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "affiche le retour webcam c tout"}
+{"id": "synthetic_user_style-051", "group": "u07", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "OPEN_CAMERA_NO_CAPTURE", "text": "je veux voir ce que voit la cam mais pas de photo"}
+{"id": "synthetic_user_style-052", "group": "u07", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "montre pas la camera"}
+{"id": "synthetic_user_style-053", "group": "u07", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "montre moi la webcam apres"}
+{"id": "synthetic_user_style-054", "group": "u07", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "tu m'avais montré la webcam hier ?"}
+{"id": "synthetic_user_style-055", "group": "u07", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "montre plutot mon ecran et fait une capture"}
+{"id": "synthetic_user_style-056", "group": "u07", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "vérifie juste que la cam existe"}
+{"id": "synthetic_user_style-057", "group": "u08", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "retrouve mes derniere photo"}
+{"id": "synthetic_user_style-058", "group": "u08", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "cherche les photos que j'ai prise"}
+{"id": "synthetic_user_style-059", "group": "u08", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "elles sont ou mes photos recentes ?"}
+{"id": "synthetic_user_style-060", "group": "u08", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "cherche pas mes photos"}
+{"id": "synthetic_user_style-061", "group": "u08", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "retrouve mes photos plus tard"}
+{"id": "synthetic_user_style-062", "group": "u08", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "t'avais retrouvé mes photos avant ?"}
+{"id": "synthetic_user_style-063", "group": "u08", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "cherche pas les anciennes prends moi en photo maintenant"}
+{"id": "synthetic_user_style-064", "group": "u08", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "regarde juste si le dossier photo existe"}
+{"id": "synthetic_user_style-065", "group": "u09", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "trouve moi la derniere photo que j'ai prise"}
+{"id": "synthetic_user_style-066", "group": "u09", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "va voir mes dernières images"}
+{"id": "synthetic_user_style-067", "group": "u09", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "FIND_EXISTING_PHOTOS", "text": "retrouve ce que j'ai pris en photo hier"}
+{"id": "synthetic_user_style-068", "group": "u09", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "va pas chercher mes images"}
+{"id": "synthetic_user_style-069", "group": "u09", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "cherche ma derniere photo demain"}
+{"id": "synthetic_user_style-070", "group": "u09", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "tu l'avais trouvé ma derniere photo ?"}
+{"id": "synthetic_user_style-071", "group": "u09", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "SCREENSHOT", "text": "fait plutot un screenshot de ce que j'ai la"}
+{"id": "synthetic_user_style-072", "group": "u09", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "CHECK_CAMERA", "text": "regarde juste si la webcam est dispo"}
+{"id": "synthetic_user_style-073", "group": "u10", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "SCREENSHOT", "text": "fait un screenshot"}
+{"id": "synthetic_user_style-074", "group": "u10", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "capture mon ecran"}
+{"id": "synthetic_user_style-075", "group": "u10", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "prends une capture de l'ecran stp"}
+{"id": "synthetic_user_style-076", "group": "u10", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "fait pas de screenshot"}
+{"id": "synthetic_user_style-077", "group": "u10", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "fait un screenshot apres"}
+{"id": "synthetic_user_style-078", "group": "u10", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "ta fait une capture d'ecran avant ?"}
+{"id": "synthetic_user_style-079", "group": "u10", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "non prends moi en photo plutot"}
+{"id": "synthetic_user_style-080", "group": "u10", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "regarde juste ce qu'il y a a l'ecran sans capture"}
+{"id": "synthetic_user_style-081", "group": "u11", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "SCREENSHOT", "text": "capture la fenetre que j'ai ouverte"}
+{"id": "synthetic_user_style-082", "group": "u11", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "fait moi une capture de cette fenetre"}
+{"id": "synthetic_user_style-083", "group": "u11", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "SCREENSHOT", "text": "screenshot juste la fenetre actuelle"}
+{"id": "synthetic_user_style-084", "group": "u11", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "capture pas cette fenetre"}
+{"id": "synthetic_user_style-085", "group": "u11", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "tu capturera cette fenetre apres"}
+{"id": "synthetic_user_style-086", "group": "u11", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "t'avais pris un screenshot de cette fenetre ?"}
+{"id": "synthetic_user_style-087", "group": "u11", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "CAPTURE_PERSON", "text": "laisse la fenetre et prends moi en photo"}
+{"id": "synthetic_user_style-088", "group": "u11", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "dit moi juste quelle fenetre est ouverte"}
+{"id": "synthetic_user_style-089", "group": "u12", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "OTHER", "text": "baisse un peu le son"}
+{"id": "synthetic_user_style-090", "group": "u12", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "OTHER", "text": "met moins fort stp"}
+{"id": "synthetic_user_style-091", "group": "u12", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "OTHER", "text": "descend le volume"}
+{"id": "synthetic_user_style-092", "group": "u12", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "touche pas au volume"}
+{"id": "synthetic_user_style-093", "group": "u12", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "baisse le son dans 5 min"}
+{"id": "synthetic_user_style-094", "group": "u12", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "t'avais baissé le son avant ?"}
+{"id": "synthetic_user_style-095", "group": "u12", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "OTHER", "text": "baisse plutot la luminosité"}
+{"id": "synthetic_user_style-096", "group": "u12", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "dit moi juste le niveau du volume"}
+{"id": "synthetic_user_style-097", "group": "u13", "source": "synthetic_user_style", "role": "base", "transformation": null, "intent": "OTHER", "text": "combien il me reste de batterie ?"}
+{"id": "synthetic_user_style-098", "group": "u13", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "OTHER", "text": "j'ai combien de batterie la ?"}
+{"id": "synthetic_user_style-099", "group": "u13", "source": "synthetic_user_style", "role": "variant", "transformation": null, "intent": "OTHER", "text": "reste beaucoup de batterie ou pas"}
+{"id": "synthetic_user_style-100", "group": "u13", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "negation", "intent": "OTHER", "text": "regarde pas la batterie"}
+{"id": "synthetic_user_style-101", "group": "u13", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "temporal", "intent": "OTHER", "text": "tu me dira la batterie plus tard"}
+{"id": "synthetic_user_style-102", "group": "u13", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "past_question", "intent": "OTHER", "text": "j'avais combien de batterie avant ?"}
+{"id": "synthetic_user_style-103", "group": "u13", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "object_change", "intent": "OTHER", "text": "regarde plutot combien j'ai de place sur le disque"}
+{"id": "synthetic_user_style-104", "group": "u13", "source": "synthetic_user_style", "role": "hard_negative", "transformation": "inspection_only", "intent": "OTHER", "text": "check juste si le mac est branché"}
