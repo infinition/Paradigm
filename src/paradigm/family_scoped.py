@@ -39,6 +39,9 @@ class FamilyCriteria:
     probe_accuracy_floor: float = 0.95
     probe_coverage_regression_tolerance: float = 0.10
     min_validation_episodes: int = 1
+    # An active family with frozen probes and no held-out trace in the current split is
+    # certified on its probes at the incumbent threshold instead of being "insufficient".
+    probe_recertification: bool = False
 
 
 @dataclass(slots=True)
@@ -80,6 +83,12 @@ def _family_of(trace: Trace) -> str:
 
 
 def probe_scores(reflex, gate: MahalanobisGate, threshold: float, traces: list[Trace]) -> tuple[float, float]:
+    coverage, agreement, _, _ = probe_report(reflex, gate, threshold, traces)
+    return coverage, agreement
+
+
+def probe_report(reflex, gate: MahalanobisGate, threshold: float, traces: list[Trace]) -> tuple[float, float, float, float]:
+    """Coverage, agreement, gate acceptance and ECE of one artifact on a probe set."""
     x = np.stack([t.features for t in traces])
     y = np.asarray([t.action for t in traces]).astype(str)
     accepted = np.asarray(gate.accept(x), dtype=bool)
@@ -91,7 +100,8 @@ def probe_scores(reflex, gate: MahalanobisGate, threshold: float, traces: list[T
     covered = accepted & (np.asarray(confs) >= threshold)
     coverage = float(np.mean(covered))
     agreement = float(np.mean(np.asarray(preds)[covered] == y[covered])) if covered.any() else 0.0
-    return coverage, agreement
+    ece = float(expected_calibration_error(y, reflex.predict_proba(x), reflex.classes_.astype(str)))
+    return coverage, agreement, float(np.mean(accepted)), ece
 
 
 def certify_families(
@@ -125,8 +135,12 @@ def certify_families(
         distinct = len({t.action for t in tr + va})
         verdict = FamilyVerdict(family, "insufficient", "", len(tr), len(va), len({str(t.metadata.get("task_id")) for t in va}), distinct)
         if verdict.validation_episodes < crit.min_validation_episodes or not va:
-            verdict.reason = "no_held_out_evidence"
-            verdicts[family] = verdict
+            inc_thr = incumbent[2].get(family) if incumbent is not None else None
+            if crit.probe_recertification and inc_thr is not None and probes.get(family):
+                verdicts[family] = _recertify_on_probes(verdict, reflex, gate, incumbent, float(inc_thr), probes[family], crit)
+            else:
+                verdict.reason = "no_held_out_evidence"
+                verdicts[family] = verdict
             continue
         x_val = np.stack([t.features for t in va])
         y_val = np.asarray([t.action for t in va]).astype(str)
@@ -172,6 +186,45 @@ def certify_families(
             verdict.reason = "quality_trust_retention_pass"
         verdicts[family] = verdict
     return verdicts
+
+
+def _recertify_on_probes(
+    verdict: FamilyVerdict,
+    reflex,
+    gate: MahalanobisGate,
+    incumbent: tuple[Any, MahalanobisGate, dict[str, float]],
+    threshold: float,
+    probe_traces: list[Trace],
+    crit: FamilyCriteria,
+) -> FamilyVerdict:
+    """Certify an active family on its frozen probes at the incumbent threshold.
+
+    Every safeguard is applied to the probe set: coverage and agreement floors, no
+    coverage regression against the incumbent, gate acceptance floor, ECE floor.
+    """
+    coverage, agreement, acceptance, ece = probe_report(reflex, gate, threshold, probe_traces)
+    inc_reflex, inc_gate, _ = incumbent
+    inc_cov, _ = probe_scores(inc_reflex, inc_gate, threshold, probe_traces)
+    verdict.threshold = threshold
+    verdict.coverage = coverage
+    verdict.selective_accuracy = agreement
+    verdict.ece = ece
+    verdict.gate_acceptance = acceptance
+    verdict.retention = {"probes": len(probe_traces), "coverage": coverage, "agreement": agreement, "incumbent_coverage": inc_cov, "evidence": "probes_only"}
+    failures: list[str] = []
+    if coverage < crit.probe_coverage_floor or agreement < crit.probe_accuracy_floor:
+        failures.append("retention")
+    if coverage < inc_cov - crit.probe_coverage_regression_tolerance:
+        failures.append("retention_regression")
+    if acceptance < crit.minimum_ood_acceptance:
+        failures.append("trust")
+    if ece > crit.maximum_ece:
+        failures.append("calibration")
+    if failures:
+        verdict.status, verdict.reason = "rejected", ",".join(failures)
+    else:
+        verdict.status, verdict.reason = "active", "probe_recertified"
+    return verdict
 
 
 def summarize_verdicts(verdicts: dict[str, FamilyVerdict]) -> dict[str, Any]:

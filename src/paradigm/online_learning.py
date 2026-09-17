@@ -155,6 +155,7 @@ class OnlineReflexCompiler:
         probe_coverage_regression_tolerance: float = 0.10,
         min_family_validation_episodes: int = 1,
         shadow_certification: str | None = None,
+        probe_recertification: bool = False,
     ) -> None:
         if certification not in {"recent", "family_aware", "family_scoped"}:
             raise ValueError(f"unknown certification mode: {certification!r}")
@@ -172,6 +173,9 @@ class OnlineReflexCompiler:
         self.probe_coverage_regression_tolerance = float(probe_coverage_regression_tolerance)
         self.min_family_validation_episodes = int(min_family_validation_episodes)
         self.shadow_certification = shadow_certification
+        # family_scoped only: an active family without fresh held-out traces is
+        # re-certified on its frozen probes instead of blocking the replacement.
+        self.probe_recertification = bool(probe_recertification)
         self.buffer = OnlineExperienceBuffer()
         self.state = OnlineCompilerState()
         self._episodes_since_compile = 0
@@ -261,6 +265,7 @@ class OnlineReflexCompiler:
             probe_accuracy_floor=self.probe_accuracy_floor,
             probe_coverage_regression_tolerance=self.probe_coverage_regression_tolerance,
             min_validation_episodes=self.min_family_validation_episodes,
+            probe_recertification=getattr(self, "probe_recertification", False),
         )
         incumbent = None
         if self.state.selection is not None and self.state.ood_gate is not None and self.state.family_thresholds:
@@ -271,17 +276,19 @@ class OnlineReflexCompiler:
             incumbent=incumbent, criteria=criteria,
         )
         summary = summarize_verdicts(verdicts)
-        newly_active = {f: float(verdicts[f].threshold or 0.0) for f in summary["active"]}
+        active_now = {f: float(verdicts[f].threshold or 0.0) for f in summary["active"]}
+        newly_active = {f: thr for f, thr in active_now.items() if f not in self.state.family_thresholds}
         # A replacement artifact must re-certify every active family. A family that is
-        # served by the reflex stops producing deliberative held-out traces, so it comes
-        # back "insufficient" here and blocks the replacement; the incumbent is kept.
-        # Re-certifying such a family on its frozen probes alone is not done in this
-        # version (observed in the LaRuche run 11 record, see docs/INTEGRATION.md).
+        # served by the reflex stops producing deliberative held-out traces; without
+        # probe_recertification it comes back "insufficient" here and blocks the
+        # replacement (LaRuche run 11 record), with it the frozen probes are the evidence.
         regressed = [f for f in self.state.family_thresholds if verdicts.get(f) is None or verdicts[f].status != "active"]
         if regressed:
             outcome, reason = "rejected", "active_family_regressed:" + ",".join(sorted(regressed))
         elif newly_active:
             outcome, reason = "promoted", "families_activated:" + ",".join(sorted(newly_active))
+        elif active_now:
+            outcome, reason = "rejected", "no_new_family"
         elif summary["rejected"]:
             outcome, reason = "rejected", "no_family_passed"
         else:
@@ -291,7 +298,7 @@ class OnlineReflexCompiler:
             self.state.version += 1
             self.state.selection = selection
             self.state.ood_gate = gate
-            self.state.family_thresholds = newly_active
+            self.state.family_thresholds = active_now
             self._create_probes_for(train, validation, stream_episode, families=set(newly_active))
         train_counts, _ = self._family_counts(train)
         val_counts, _ = self._family_counts(validation)
@@ -312,7 +319,7 @@ class OnlineReflexCompiler:
             validation_families=val_counts,
             ood_acceptance_by_family={f: v.gate_acceptance for f, v in verdicts.items() if v.gate_acceptance is not None},
             outcome=outcome,
-            certification={"mode": "family_scoped", "outcome": outcome, "reason": reason, "groups": summary["families"], "active_families": sorted(newly_active) if promoted else sorted(self.state.family_thresholds)},
+            certification={"mode": "family_scoped", "outcome": outcome, "reason": reason, "groups": summary["families"], "active_families": sorted(active_now) if promoted else sorted(self.state.family_thresholds), "probe_recertification": getattr(self, "probe_recertification", False)},
         )
         self.state.promotions.append(record)
         return record
