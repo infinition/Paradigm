@@ -393,3 +393,31 @@ def test_shadow_sampling_routes_eligible_decisions_to_the_teacher_deterministica
     assert tel["natural_model_calls"] + tel["shadow_sample_model_calls"] == tel["deliberative_decisions"]
     # Shadow-sampled steps are deliberative teacher evidence: the buffer keeps growing after activation.
     assert compiler.buffer.trusted_trace_count > 0
+
+
+def test_triadic_veto_distinguishes_candidate_regression_from_alternative_trajectory():
+    import numpy as np
+    from sklearn.tree import DecisionTreeClassifier
+    from paradigm.family_scoped import FamilyCriteria, certify_families
+    from paradigm.reflex import CompiledReflex
+
+    reflex, gate, train = _certified_pair()
+    probes = {"a": [_fam_trace("a", "x", 500 + s, f"p{s}") for s in range(10)]}
+    x = np.stack([t.features for t in train])
+    # A damaged candidate that predicts "y" on family a (the incumbent predicts "x").
+    damaged = CompiledReflex(model=DecisionTreeClassifier(random_state=0).fit(x, np.asarray(["y" for _ in train])), metadata={"backend": "tree"})
+    incumbent = (reflex, gate, {"a": 0.0})
+    crit = FamilyCriteria(probe_recertification=True, min_fresh_support=8, triadic_veto=True)
+
+    # Teacher did x, incumbent says x, damaged candidate says y: candidate regression, veto.
+    v = certify_families(damaged, gate, train, [_fam_trace("a", "x", 900, "f1")], probes=probes, incumbent=incumbent, criteria=crit)["a"]
+    assert v.retention["fresh"]["candidate_regression"] == 1 and "candidate_regression" in v.reason
+
+    # Teacher did z, incumbent and candidate both say x (a verified action of the family): alternative trajectory, no veto.
+    v = certify_families(reflex, gate, train, [_fam_trace("a", "z", 900, "f1")], probes=probes, incumbent=incumbent, criteria=crit)["a"]
+    assert v.retention["fresh"] == {**v.retention["fresh"], "alternative_trajectory": 1, "candidate_regression": 0}
+    assert v.status == "active" and v.reason == "probe_recertified"
+
+    # Same observation under the naive veto: rejected.
+    v = certify_families(reflex, gate, train, [_fam_trace("a", "z", 900, "f1")], probes=probes, incumbent=incumbent, criteria=FamilyCriteria(probe_recertification=True, min_fresh_support=8))["a"]
+    assert "fresh_disagreement" in v.reason

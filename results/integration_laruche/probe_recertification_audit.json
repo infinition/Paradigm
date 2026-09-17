@@ -177,7 +177,10 @@
        "n": 1,
        "gate_accepted": 1,
        "covered": 1,
-       "disagreements": 0
+       "disagreements": 0,
+       "candidate_regression": 0,
+       "alternative_trajectory": 0,
+       "ambiguous": 0
       }
      }
     },
@@ -330,7 +333,10 @@
        "n": 1,
        "gate_accepted": 1,
        "covered": 1,
-       "disagreements": 0
+       "disagreements": 0,
+       "candidate_regression": 0,
+       "alternative_trajectory": 0,
+       "ambiguous": 0
       }
      }
     },
@@ -620,7 +626,10 @@
        "n": 1,
        "gate_accepted": 0,
        "covered": 0,
-       "disagreements": 0
+       "disagreements": 0,
+       "candidate_regression": 0,
+       "alternative_trajectory": 0,
+       "ambiguous": 0
       }
      }
     },
@@ -773,7 +782,10 @@
        "n": 1,
        "gate_accepted": 0,
        "covered": 0,
-       "disagreements": 0
+       "disagreements": 0,
+       "candidate_regression": 0,
+       "alternative_trajectory": 0,
+       "ambiguous": 0
       }
      }
     },
@@ -932,7 +944,10 @@
        "n": 1,
        "gate_accepted": 0,
        "covered": 0,
-       "disagreements": 0
+       "disagreements": 0,
+       "candidate_regression": 0,
+       "alternative_trajectory": 0,
+       "ambiguous": 0
       }
      }
     },

@@ -1,0 +1,5652 @@
+{
+ "checks": {
+  "reproduced": true,
+  "25_classified_candidate_regression": true,
+  "25_rejected_under_every_variant": true,
+  "25_triadic_veto_fires_in_probe_branch": true,
+  "33_classified_alternative_trajectory": true,
+  "33_naive_veto_fires_m8": true,
+  "33_triadic_no_veto_m8": true,
+  "33_held_out_still_rejected": true,
+  "33_held_out_reasons": [
+   "quality,calibration"
+  ],
+  "33_held_out_selective_accuracy": 0.8571428571428571,
+  "33_held_out_ece": 0.1428571428571429
+ },
+ "replays": {
+  "recorded": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other,laruche:file_read:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "calibration",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 1.0,
+      "coverage": 0.6666666666666666,
+      "selective_accuracy": 1.0,
+      "ece": 0.16666666666666666,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 0.9285714285714286,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "insufficient",
+      "reason": "no_held_out_evidence",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": null,
+      "coverage": null,
+      "selective_accuracy": null,
+      "ece": null,
+      "gate_acceptance": null,
+      "retention": {}
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "quality,calibration",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.8571428571428571,
+      "ece": 0.1428571428571429,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ],
+  "naive m=1": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "calibration",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 1.0,
+      "coverage": 0.6666666666666666,
+      "selective_accuracy": 1.0,
+      "ece": 0.16666666666666666,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 0.9285714285714286,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only"
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "quality,calibration",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.8571428571428571,
+      "ece": 0.1428571428571429,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ],
+  "naive m=2": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "calibration",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 1.0,
+      "coverage": 0.6666666666666666,
+      "selective_accuracy": 1.0,
+      "ece": 0.16666666666666666,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 0.9285714285714286,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only"
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "quality,calibration",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.8571428571428571,
+      "ece": 0.1428571428571429,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ],
+  "naive m=3": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9285714285714286,
+      "ece": 0.03571428571428571,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "calibration",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 1.0,
+      "coverage": 0.6666666666666666,
+      "selective_accuracy": 1.0,
+      "ece": 0.16666666666666666,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 0.9285714285714286,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only"
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "quality,calibration",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.8571428571428571,
+      "ece": 0.1428571428571429,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ],
+  "naive m=5": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9285714285714286,
+      "ece": 0.03571428571428571,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "fresh_disagreement,retention",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9285714285714286,
+      "ece": 0.03571428571428571,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only"
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "quality,calibration",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.8571428571428571,
+      "ece": 0.1428571428571429,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ],
+  "naive m=8": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9285714285714286,
+      "ece": 0.03571428571428571,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "fresh_disagreement,retention",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9285714285714286,
+      "ece": 0.03571428571428571,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only"
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "fresh_disagreement",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ],
+  "triadic m=1": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "calibration",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 1.0,
+      "coverage": 0.6666666666666666,
+      "selective_accuracy": 1.0,
+      "ece": 0.16666666666666666,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 0.9285714285714286,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only"
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "quality,calibration",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.8571428571428571,
+      "ece": 0.1428571428571429,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ],
+  "triadic m=2": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "calibration",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 1.0,
+      "coverage": 0.6666666666666666,
+      "selective_accuracy": 1.0,
+      "ece": 0.16666666666666666,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 0.9285714285714286,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only"
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "quality,calibration",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.8571428571428571,
+      "ece": 0.1428571428571429,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ],
+  "triadic m=3": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9285714285714286,
+      "ece": 0.03571428571428571,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "calibration",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 1.0,
+      "coverage": 0.6666666666666666,
+      "selective_accuracy": 1.0,
+      "ece": 0.16666666666666666,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 0.9285714285714286,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only"
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "quality,calibration",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.8571428571428571,
+      "ece": 0.1428571428571429,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 0.75,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ],
+  "triadic m=5": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9285714285714286,
+      "ece": 0.03571428571428571,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "candidate_regression,retention",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9285714285714286,
+      "ece": 0.03571428571428571,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only"
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "quality_trust_retention_pass",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "quality,calibration",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 1.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.8571428571428571,
+      "ece": 0.1428571428571429,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ],
+  "triadic m=8": [
+   {
+    "label": 16,
+    "outcome": "promoted",
+    "reason": "families_activated:laruche:file_edit:success:other,laruche:file_read:success:other,laruche:shell_exec:success:tests_passed,laruche:start:none:none",
+    "version_after": 1,
+    "active": {}
+   },
+   {
+    "label": 20,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "retention",
+      "train_traces": 13,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9285714285714286,
+      "ece": 0.03571428571428571,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 5,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 7,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 25,
+    "outcome": "rejected",
+    "reason": "active_family_regressed:laruche:file_edit:success:other",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "rejected",
+      "reason": "candidate_regression,retention",
+      "train_traces": 15,
+      "validation_traces": 3,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 0.9285714285714286,
+      "ece": 0.03571428571428571,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 0.9285714285714286,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 1,
+        "candidate_regression": 1,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 0,
+      "validation_episodes": 0,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only"
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 9,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 29,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 15,
+      "validation_traces": 6,
+      "validation_episodes": 6,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 7,
+      "validation_traces": 4,
+      "validation_episodes": 4,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   },
+   {
+    "label": 33,
+    "outcome": "rejected",
+    "reason": "no_new_family",
+    "version_after": 1,
+    "active": {
+     "laruche:file_edit:success:other": {
+      "family": "laruche:file_edit:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 18,
+      "validation_traces": 7,
+      "validation_episodes": 7,
+      "distinct_actions": 2,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 14,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 7,
+        "covered": 7,
+        "disagreements": 1,
+        "candidate_regression": 0,
+        "alternative_trajectory": 1,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:file_read:success:other": {
+      "family": "laruche:file_read:success:other",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 6,
+      "validation_traces": 4,
+      "validation_episodes": 3,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:shell_exec:success:tests_passed": {
+      "family": "laruche:shell_exec:success:tests_passed",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 1,
+      "validation_episodes": 1,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 6,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     },
+     "laruche:start:none:none": {
+      "family": "laruche:start:none:none",
+      "status": "active",
+      "reason": "probe_recertified",
+      "train_traces": 10,
+      "validation_traces": 2,
+      "validation_episodes": 2,
+      "distinct_actions": 1,
+      "threshold": 0.0,
+      "coverage": 1.0,
+      "selective_accuracy": 1.0,
+      "ece": 0.0,
+      "gate_acceptance": 1.0,
+      "retention": {
+       "probes": 8,
+       "coverage": 1.0,
+       "agreement": 1.0,
+       "incumbent_coverage": 1.0,
+       "evidence": "probes_only",
+       "fresh": {
+        "n": 2,
+        "gate_accepted": 2,
+        "covered": 2,
+        "disagreements": 0,
+        "candidate_regression": 0,
+        "alternative_trajectory": 0,
+        "ambiguous": 0
+       }
+      }
+     }
+    }
+   }
+  ]
+ },
+ "points": [
+  16,
+  20,
+  25,
+  29,
+  33
+ ]
+}

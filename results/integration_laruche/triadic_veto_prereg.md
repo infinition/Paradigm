@@ -27,3 +27,17 @@ For every compile point and active family: counts of covered fresh observations 
 ## Not done
 
 No change to quality, calibration, trust, retention, thresholds or canonicalization. No `m` selected. No live run.
+
+## Outcome (written after the replay, `triadic_veto_audit.md`)
+
+Reproducibility: the `recorded` replay reproduces the live run 12 verdicts at every compile point.
+
+Prediction 1 held. Point 25, `file_edit`, 3 fresh, 1 covered disagreement classified candidate regression (incumbent agrees with the teacher, candidate predicts `file_read`). The triadic veto fires in the probe branch (`m` 5 and 8: `candidate_regression,retention`); the held-out branch rejects on calibration. Rejected under every variant.
+
+Prediction 2 held. Point 33, `file_edit`, 7 fresh, 1 covered disagreement classified alternative trajectory (teacher `python -m pytest -q | cat`; incumbent and candidate `python -m pytest -q`, a verified action of the family). Under the naive veto at `m = 8`: rejected (`fresh_disagreement`). Under the triadic veto at `m = 8`: active (`probe_recertified`, 14 of 14 probes), and the candidate decision at 33 becomes `no_new_family` (all four active families re-certified, nothing new to activate).
+
+Prediction 3 held, and this is the result. In the held-out branch (`m` up to 5 at point 33), `file_edit` remains rejected with reason `quality,calibration`: selective accuracy 0.857 (6 of 7 against the teacher) and ECE 0.143, because the alternative teacher action is counted as a classification error. Stopped here, as pre-registered: quality and calibration were not modified.
+
+What this establishes on the record: the problem is not only the veto. The quality and calibration criteria assume that equality with the teacher's action defines correctness. On a state where two actions are both valid and verified (`python -m pytest -q` and `python -m pytest -q | cat`), a reflex that replays the certified one is scored as wrong, and one such observation among seven is enough to fail the family in the held-out branch. The next hypothesis, to pre-register separately, is that action equality is the wrong supervision target when several actions lead to the same valid outcome, and that quality should be scored against an outcome-aware equivalence rather than the teacher's literal action. The canonicalizer (`| cat`) was deliberately left unchanged so that this result is attributable to the scoring rule, not to a normalization fix.
+
+No candidate adoption decision changed under any variant except the reason at 33 under the triadic veto with `m = 8`. No `m` selected. No live run.

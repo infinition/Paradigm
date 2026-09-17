@@ -157,6 +157,7 @@ class OnlineReflexCompiler:
         shadow_certification: str | None = None,
         probe_recertification: bool = False,
         min_fresh_support: int = 1,
+        triadic_veto: bool = False,
     ) -> None:
         if certification not in {"recent", "family_aware", "family_scoped"}:
             raise ValueError(f"unknown certification mode: {certification!r}")
@@ -178,6 +179,7 @@ class OnlineReflexCompiler:
         # re-certified on its frozen probes instead of blocking the replacement.
         self.probe_recertification = bool(probe_recertification)
         self.min_fresh_support = int(min_fresh_support)
+        self.triadic_veto = bool(triadic_veto)
         self.buffer = OnlineExperienceBuffer()
         self.state = OnlineCompilerState()
         self._episodes_since_compile = 0
@@ -269,6 +271,7 @@ class OnlineReflexCompiler:
             min_validation_episodes=self.min_family_validation_episodes,
             probe_recertification=getattr(self, "probe_recertification", False),
             min_fresh_support=getattr(self, "min_fresh_support", 1),
+            triadic_veto=getattr(self, "triadic_veto", False),
         )
         incumbent = None
         if self.state.selection is not None and self.state.ood_gate is not None and self.state.family_thresholds:
@@ -322,7 +325,7 @@ class OnlineReflexCompiler:
             validation_families=val_counts,
             ood_acceptance_by_family={f: v.gate_acceptance for f, v in verdicts.items() if v.gate_acceptance is not None},
             outcome=outcome,
-            certification={"mode": "family_scoped", "outcome": outcome, "reason": reason, "groups": summary["families"], "active_families": sorted(active_now) if promoted else sorted(self.state.family_thresholds), "probe_recertification": getattr(self, "probe_recertification", False), "min_fresh_support": getattr(self, "min_fresh_support", 1)},
+            certification={"mode": "family_scoped", "outcome": outcome, "reason": reason, "groups": summary["families"], "active_families": sorted(active_now) if promoted else sorted(self.state.family_thresholds), "probe_recertification": getattr(self, "probe_recertification", False), "min_fresh_support": getattr(self, "min_fresh_support", 1), "triadic_veto": getattr(self, "triadic_veto", False)},
         )
         self.state.promotions.append(record)
         return record

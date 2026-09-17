@@ -45,6 +45,11 @@ class FamilyCriteria:
     # Minimum number of fresh held-out traces for an active family before the held-out
     # rule alone decides; below it, the probes are the evidence (1 = only when none).
     min_fresh_support: int = 1
+    # Probe branch only: classify each covered fresh disagreement against the incumbent.
+    # A veto needs a candidate regression (incumbent agrees with the teacher, candidate
+    # does not); a disagreement the incumbent shares, with a still-valid incumbent action,
+    # is an alternative trajectory. Off: any covered disagreement is a veto.
+    triadic_veto: bool = False
 
 
 @dataclass(slots=True)
@@ -139,8 +144,9 @@ def certify_families(
         verdict = FamilyVerdict(family, "insufficient", "", len(tr), len(va), len({str(t.metadata.get("task_id")) for t in va}), distinct)
         inc_thr = incumbent[2].get(family) if incumbent is not None else None
         sparse = crit.probe_recertification and inc_thr is not None and bool(probes.get(family)) and len(va) < crit.min_fresh_support
+        valid_actions = {str(t.action) for t in tr} | {str(t.action) for t in probes.get(family, [])}
         if sparse:
-            verdicts[family] = _recertify_on_probes(verdict, reflex, gate, incumbent, float(inc_thr), probes[family], crit, fresh=va)
+            verdicts[family] = _recertify_on_probes(verdict, reflex, gate, incumbent, float(inc_thr), probes[family], crit, fresh=va, valid_actions=valid_actions)
             continue
         if verdict.validation_episodes < crit.min_validation_episodes or not va:
             verdict.reason = "no_held_out_evidence"
@@ -174,7 +180,7 @@ def certify_families(
             # Reporting only: the same fresh observation summary as the probe branch, at the
             # incumbent threshold when there is one, so both branches are comparable.
             report_thr = float(inc_thr) if inc_thr is not None else float(thr.threshold)
-            retention["fresh"] = fresh_report(reflex, gate, report_thr, va)
+            retention["fresh"] = fresh_report(reflex, gate, report_thr, va, incumbent[0] if incumbent is not None else None, valid_actions)
             if incumbent is not None:
                 inc_reflex, inc_gate, inc_thresholds = incumbent
                 inc_thr = inc_thresholds.get(family)
@@ -196,16 +202,35 @@ def certify_families(
     return verdicts
 
 
-def fresh_report(reflex, gate: MahalanobisGate, threshold: float, fresh: list[Trace]) -> dict[str, int]:
+def fresh_report(
+    reflex, gate: MahalanobisGate, threshold: float, fresh: list[Trace], incumbent_reflex=None, valid_actions: set[str] | None = None
+) -> dict[str, int]:
     """How many fresh traces the gate accepts, how many the candidate covers at ``threshold``,
-    and on how many covered ones it disagrees with the verified teacher action."""
+    and on how many covered ones it disagrees with the verified teacher action. With an
+    incumbent, each covered disagreement is also classified: ``candidate_regression``
+    (incumbent agrees with the teacher, candidate does not), ``alternative_trajectory``
+    (incumbent and candidate agree with each other, not with the teacher, and the shared
+    action is in ``valid_actions``), else ``ambiguous``."""
     x = np.stack([t.features for t in fresh])
     y = np.asarray([t.action for t in fresh]).astype(str)
     accepted = np.asarray(gate.accept(x), dtype=bool)
     preds = np.asarray([str(reflex.predict(row)[0]) for row in x])
     confs = np.asarray([float(reflex.predict(row)[1]) for row in x])
     covered = accepted & (confs >= threshold)
-    return {"n": len(fresh), "gate_accepted": int(accepted.sum()), "covered": int(covered.sum()), "disagreements": int(np.sum(covered & (preds != y)))}
+    report = {"n": len(fresh), "gate_accepted": int(accepted.sum()), "covered": int(covered.sum()), "disagreements": int(np.sum(covered & (preds != y)))}
+    if incumbent_reflex is not None:
+        inc = np.asarray([str(incumbent_reflex.predict(row)[0]) for row in x])
+        valid = valid_actions or set()
+        regression = alternative = ambiguous = 0
+        for k in np.flatnonzero(covered & (preds != y)):
+            if inc[k] == y[k]:
+                regression += 1
+            elif preds[k] == inc[k] and inc[k] in valid:
+                alternative += 1
+            else:
+                ambiguous += 1
+        report.update({"candidate_regression": regression, "alternative_trajectory": alternative, "ambiguous": ambiguous})
+    return report
 
 
 def _recertify_on_probes(
@@ -217,6 +242,7 @@ def _recertify_on_probes(
     probe_traces: list[Trace],
     crit: FamilyCriteria,
     fresh: list[Trace] | None = None,
+    valid_actions: set[str] | None = None,
 ) -> FamilyVerdict:
     """Certify an active family on its frozen probes at the incumbent threshold.
 
@@ -237,8 +263,12 @@ def _recertify_on_probes(
     verdict.retention = {"probes": len(probe_traces), "coverage": coverage, "agreement": agreement, "incumbent_coverage": inc_cov, "evidence": "probes_only"}
     failures: list[str] = []
     if fresh:
-        verdict.retention["fresh"] = fresh_report(reflex, gate, threshold, fresh)
-        if verdict.retention["fresh"]["disagreements"]:
+        report = fresh_report(reflex, gate, threshold, fresh, inc_reflex, valid_actions)
+        verdict.retention["fresh"] = report
+        if crit.triadic_veto:
+            if report.get("candidate_regression", 0):
+                failures.append("candidate_regression")
+        elif report["disagreements"]:
             failures.append("fresh_disagreement")
     if coverage < crit.probe_coverage_floor or agreement < crit.probe_accuracy_floor:
         failures.append("retention")
