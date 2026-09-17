@@ -50,3 +50,17 @@ Reported alongside, not as criteria: the positive reflex coverage (how many CAPT
 ## Not done
 
 No live run, no training on version 2, no threshold, gate or contract change, no model selection.
+
+## Outcome (one pass, `RESULTS_C6R.md`, `results_c6r.json`, reranker scores cached in `results_c6r_scores_v2.json`)
+
+NOT REPLICATED. On the PRIMARY slice (243 sentences): coverage under the frozen gate 0.08 (0.15 required), selective accuracy 0.89 (0.99 required), hard-negative false fast paths 0 (0 required). Two of the three conditions fail.
+
+What failed and what held, separately. The gate fitted on version 1 accepts 14% of the version 2 sentences (54% of version 1 out of sample in C6): the new phrasings are out of distribution for the Mahalanobis gate in the fused space, and coverage falls with it, from 0.28 to 0.08. The 19 sentences that fired contain 2 errors, both non-positive sentences predicted OTHER ("Allume la webcam pour vérifier le cadrage, aucune capture." and one object_change to SCREENSHOT), which is what puts selective accuracy at 0.89. Safety held: 0 false fast paths of any kind; no negation, temporal, past, conditional, inspection or object-change negative fired as CAPTURE_PERSON; the 5 positives that fired were all correct (positive reflex coverage 5 of 30, 0.17). The classifier itself is weaker on version 2 than on version 1: accuracy without the gate 0.81 against 0.90 out of sample on version 1; it covers 78% of the sentences at the frozen threshold, so the drop in coverage is the gate's, not the classifier's confidence.
+
+By source: the synthetic user-style part (short, oral) is the only one where the frozen model transfers (coverage 0.24, selective accuracy 1.00, 4 of 10 positives fired correctly); the Claude and ChatGPT parts, longer and more varied, are nearly all rejected by the gate (0.02 and 0.05 coverage). The DIAGNOSTIC (ambiguous) slice: nothing fired.
+
+Predictions: 1 did not hold (coverage 0.08, below the declared band); 2 held for the false fast paths and not for the selective accuracy; 3 held in the sense that no deferral fired, and the temporal negatives are the only ones the classifier predicts CAPTURE_PERSON without the gate (4 of 28), all stopped by the gate or the threshold; 4 did not hold (0.17 against a fifth to a half).
+
+Reading: the configuration observed in C6 does not transfer as a certified first-decision reflex to phrasings written after the freeze. Its safety transfers; its coverage does not, because the gate that provides the safety is fitted on 320 sentences whose distribution the new ones leave. The in-sample threshold of 0.618, lower than the out-of-sample 0.785, did not produce any false fast path either, so the threshold was not the weak point; the gate's tightness under distribution shift was. This is the same gate behavior as in C1 and C2, at a larger scale.
+
+Not done: no second pass, no threshold or gate change, no training on version 2.

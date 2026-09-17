@@ -1,0 +1,254 @@
+{
+ "dataset_v2_sha256": "dc9a31adc710b9a70fb3d3afca7f63ea76f85bacab080d730dec569a456588f3",
+ "frozen_model_sha256": "f499123be5f4b1e2fc2096d261bb7abee80bb0be8d14429375561edf882e33d3",
+ "threshold": 0.6178501092262769,
+ "reference_v1": {
+  "threshold": 0.6178501092262769,
+  "selector_coverage": 0.88125,
+  "selector_selective_accuracy": 0.9929078014184397,
+  "selector_feasible": true,
+  "in_sample_fired_share": 0.878125,
+  "in_sample_selective_accuracy_under_gate": 0.9928825622775801,
+  "in_sample_hard_false_fast_paths": 1,
+  "in_sample_positive_reflex_coverage": 0.8913043478260869
+ },
+ "primary": {
+  "n": 243,
+  "coverage": 0.07818930041152264,
+  "selective_accuracy": 0.8947368421052632,
+  "hard_false_fast_paths": 0,
+  "false_fast_paths_all": 0,
+  "positives": 30,
+  "positives_fired_correct": 5,
+  "positives_fired_wrong": 0,
+  "positive_reflex_coverage": 0.16666666666666666,
+  "gate_acceptance": 0.13580246913580246,
+  "covered_share": 0.7777777777777778,
+  "accuracy_no_gate": 0.8148148148148148
+ },
+ "diagnostic": {
+  "n": 16,
+  "coverage": 0.0,
+  "selective_accuracy": null,
+  "hard_false_fast_paths": 0,
+  "false_fast_paths_all": 0,
+  "positives": 5,
+  "positives_fired_correct": 0,
+  "positives_fired_wrong": 0,
+  "positive_reflex_coverage": 0.0,
+  "gate_acceptance": 0.0,
+  "covered_share": 0.625,
+  "accuracy_no_gate": 0.5
+ },
+ "criterion_replicated": false,
+ "per_transformation_primary": {
+  "negation": {
+   "n": 27,
+   "fired": 2,
+   "fired_as_capture": 0,
+   "predicted_capture_no_gate": 0
+  },
+  "temporal": {
+   "n": 28,
+   "fired": 0,
+   "fired_as_capture": 0,
+   "predicted_capture_no_gate": 4
+  },
+  "past_question": {
+   "n": 26,
+   "fired": 2,
+   "fired_as_capture": 0,
+   "predicted_capture_no_gate": 0
+  },
+  "object_change": {
+   "n": 13,
+   "fired": 2,
+   "fired_as_capture": 0,
+   "predicted_capture_no_gate": 0
+  },
+  "inspection_only": {
+   "n": 13,
+   "fired": 0,
+   "fired_as_capture": 0,
+   "predicted_capture_no_gate": 0
+  },
+  "conditional": {
+   "n": 17,
+   "fired": 0,
+   "fired_as_capture": 0,
+   "predicted_capture_no_gate": 0
+  }
+ },
+ "per_source_primary": {
+  "chatgpt": {
+   "n": 97,
+   "coverage": 0.05154639175257732,
+   "selective_accuracy": 0.8,
+   "hard_false_fast_paths": 0,
+   "false_fast_paths_all": 0,
+   "positives": 10,
+   "positives_fired_correct": 1,
+   "positives_fired_wrong": 0,
+   "positive_reflex_coverage": 0.1,
+   "gate_acceptance": 0.12371134020618557,
+   "covered_share": 0.7835051546391752,
+   "accuracy_no_gate": 0.845360824742268
+  },
+  "claude": {
+   "n": 96,
+   "coverage": 0.020833333333333332,
+   "selective_accuracy": 0.5,
+   "hard_false_fast_paths": 0,
+   "false_fast_paths_all": 0,
+   "positives": 10,
+   "positives_fired_correct": 0,
+   "positives_fired_wrong": 0,
+   "positive_reflex_coverage": 0.0,
+   "gate_acceptance": 0.041666666666666664,
+   "covered_share": 0.78125,
+   "accuracy_no_gate": 0.8020833333333334
+  },
+  "synthetic_user_style": {
+   "n": 50,
+   "coverage": 0.24,
+   "selective_accuracy": 1.0,
+   "hard_false_fast_paths": 0,
+   "false_fast_paths_all": 0,
+   "positives": 10,
+   "positives_fired_correct": 4,
+   "positives_fired_wrong": 0,
+   "positive_reflex_coverage": 0.4,
+   "gate_acceptance": 0.34,
+   "covered_share": 0.76,
+   "accuracy_no_gate": 0.78
+  }
+ },
+ "per_tag": {
+  "oral": {
+   "n": 85,
+   "coverage": 0.1411764705882353,
+   "selective_accuracy": 1.0,
+   "hard_false_fast_paths": 0,
+   "false_fast_paths_all": 0,
+   "positives": 18,
+   "positives_fired_correct": 4,
+   "positives_fired_wrong": 0,
+   "positive_reflex_coverage": 0.2222222222222222,
+   "gate_acceptance": 0.21176470588235294,
+   "covered_share": 0.7764705882352941,
+   "accuracy_no_gate": 0.8117647058823529
+  },
+  "long": {
+   "n": 9,
+   "coverage": 0.1111111111111111,
+   "selective_accuracy": 0.0,
+   "hard_false_fast_paths": 0,
+   "false_fast_paths_all": 0,
+   "positives": 1,
+   "positives_fired_correct": 0,
+   "positives_fired_wrong": 0,
+   "positive_reflex_coverage": 0.0,
+   "gate_acceptance": 0.2222222222222222,
+   "covered_share": 0.3333333333333333,
+   "accuracy_no_gate": 0.6666666666666666
+  }
+ },
+ "fired_positive_or_wrong": [
+  {
+   "text": "Allume la webcam pour v\u00e9rifier le cadrage, aucune capture.",
+   "true": "OPEN_CAMERA_NO_CAPTURE",
+   "pred": "OTHER",
+   "confidence": 0.7919866855507924,
+   "source": "claude",
+   "tags": []
+  },
+  {
+   "text": "Utilise pas la webcam pour moi, capture plut\u00f4t la fen\u00eatre qui est ouverte \u00e0 l'\u00e9cran.",
+   "true": "SCREENSHOT",
+   "pred": "OTHER",
+   "confidence": 0.7697445996168528,
+   "source": "chatgpt",
+   "tags": [
+    "long"
+   ]
+  },
+  {
+   "text": "Laisse la fen\u00eatre tranquille et prends-moi plut\u00f4t en photo maintenant.",
+   "true": "CAPTURE_PERSON",
+   "pred": "CAPTURE_PERSON",
+   "confidence": 0.783480435917484,
+   "source": "chatgpt",
+   "tags": []
+  },
+  {
+   "text": "tu peux me faire une photo la",
+   "true": "CAPTURE_PERSON",
+   "pred": "CAPTURE_PERSON",
+   "confidence": 0.934506286963325,
+   "source": "synthetic_user_style",
+   "tags": [
+    "oral"
+   ]
+  },
+  {
+   "text": "fais une photo vite fait stp",
+   "true": "CAPTURE_PERSON",
+   "pred": "CAPTURE_PERSON",
+   "confidence": 0.7561947172610872,
+   "source": "synthetic_user_style",
+   "tags": [
+    "oral"
+   ]
+  },
+  {
+   "text": "prends moi avec la webcam maintenant",
+   "true": "CAPTURE_PERSON",
+   "pred": "CAPTURE_PERSON",
+   "confidence": 0.941257203884823,
+   "source": "synthetic_user_style",
+   "tags": [
+    "oral"
+   ]
+  },
+  {
+   "text": "fait moi une photo avec la cam",
+   "true": "CAPTURE_PERSON",
+   "pred": "CAPTURE_PERSON",
+   "confidence": 0.8300398513102948,
+   "source": "synthetic_user_style",
+   "tags": [
+    "oral"
+   ]
+  }
+ ],
+ "raw_rerank_capture": {
+  "positives": {
+   "n": 35,
+   "rerank_capture_yes_mean": 0.9102509941373552
+  },
+  "negation": {
+   "n": 28,
+   "rerank_capture_yes_mean": 0.3777487676457635
+  },
+  "temporal": {
+   "n": 30,
+   "rerank_capture_yes_mean": 0.3950774768056969
+  },
+  "past_question": {
+   "n": 28,
+   "rerank_capture_yes_mean": 0.3939907401301233
+  },
+  "object_change": {
+   "n": 15,
+   "rerank_capture_yes_mean": 0.4741572797919313
+  },
+  "inspection_only": {
+   "n": 15,
+   "rerank_capture_yes_mean": 0.35102944997294494
+  },
+  "conditional": {
+   "n": 17,
+   "rerank_capture_yes_mean": 0.334127162637956
+  }
+ }
+}

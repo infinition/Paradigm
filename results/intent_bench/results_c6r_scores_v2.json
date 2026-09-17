@@ -1,0 +1,3893 @@
+{
+ "texts": [
+  "Immortalise-moi avec la cam\u00e9ra du portable.",
+  "Un clich\u00e9 de moi, l\u00e0, avec la webcam int\u00e9gr\u00e9e, et on n'en parle plus.",
+  "D\u00e9clenche la webcam pour garder une image de moi tel que je suis \u00e0 cet instant pr\u00e9cis devant l'ordinateur.",
+  "Tu n'immortalises rien du tout, pas de clich\u00e9 de moi.",
+  "Immortalise-moi avec la cam\u00e9ra quand j'aurai fini de me recoiffer.",
+  "Tu m'avais immortalis\u00e9 avec la webcam pendant la r\u00e9union de ce matin ?",
+  "Immortalise plut\u00f4t ce qui est \u00e0 l'\u00e9cran, pas moi.",
+  "Si je l\u00e8ve la main, \u00e0 ce moment-l\u00e0 seulement tu me prends en photo.",
+  "Hop, une image de ma trombine avec la cam.",
+  "Capture mon visage avec la webcam, tout de suite.",
+  "J'ai besoin d'une photo d'identit\u00e9 vite fait, prends-la avec la cam\u00e9ra du Mac.",
+  "Pas d'image de ma trombine, laisse la cam \u00e9teinte.",
+  "Tu captureras mon visage d\u00e8s que j'aurai allum\u00e9 la lampe.",
+  "T'as captur\u00e9 mon visage ou pas, juste avant que je bouge ?",
+  "Regarde si la cam\u00e9ra du Mac peut faire une photo d'identit\u00e9, sans la prendre.",
+  "Au cas o\u00f9 la lumi\u00e8re serait correcte, tu pourrais capturer mon visage.",
+  "Le Mac a-t-il une cam\u00e9ra int\u00e9gr\u00e9e qui marche ?",
+  "Fais l'inventaire des cam\u00e9ras branch\u00e9es, sans en allumer aucune.",
+  "Juste un \u00e9tat des lieux : combien de webcams, lesquelles r\u00e9pondent, rien de plus.",
+  "Inutile de faire l'inventaire des cam\u00e9ras.",
+  "Tu feras l'inventaire des cam\u00e9ras une fois le dock rebranch\u00e9.",
+  "L'inventaire des cam\u00e9ras d'hier montrait quoi ?",
+  "Oublie l'inventaire, prends-moi en photo avec la premi\u00e8re cam\u00e9ra qui r\u00e9pond.",
+  "Si la visio de 15 h coupe encore, tu regarderas \u00e0 ce moment-l\u00e0 si la cam\u00e9ra est d\u00e9tect\u00e9e.",
+  "La webcam est-elle op\u00e9rationnelle en ce moment ?",
+  "Diagnostic cam\u00e9ra stp, je veux savoir si elle est reconnue.",
+  "Confirme-moi que la cam\u00e9ra est disponible, sans image.",
+  "Pas de diagnostic cam\u00e9ra pour le moment.",
+  "Le diagnostic cam\u00e9ra, tu le feras apr\u00e8s la mise \u00e0 jour.",
+  "Le diagnostic cam\u00e9ra de tout \u00e0 l'heure a donn\u00e9 quoi ?",
+  "Ouvre l'aper\u00e7u pour que je juge moi-m\u00eame de l'image, sans enregistrer.",
+  "Fais plut\u00f4t un diagnostic du micro.",
+  "Affiche-moi en direct ce que la webcam voit, sans rien garder.",
+  "Miroir cam\u00e9ra, s'il te pla\u00eet : le flux, pas de photo.",
+  "Je veux me voir \u00e0 l'\u00e9cran via la webcam pendant que je r\u00e8gle mon \u00e9clairage, mais n'enregistre absolument rien.",
+  "N'affiche pas le miroir cam\u00e9ra.",
+  "Tu m'afficheras le flux de la webcam d\u00e8s que je serai install\u00e9.",
+  "Le miroir cam\u00e9ra \u00e9tait ouvert pendant que je parlais ?",
+  "Pas besoin de miroir, prends directement la photo de moi.",
+  "V\u00e9rifie juste que la webcam existe, sans afficher son image.",
+  "Allume la webcam pour v\u00e9rifier le cadrage, aucune capture.",
+  "Lance l'aper\u00e7u vid\u00e9o, je veux ajuster ma position, pas de photo.",
+  "Retour vid\u00e9o seulement, ne sauvegarde rien.",
+  "Laisse la webcam \u00e9teinte, pas d'aper\u00e7u.",
+  "Allume la webcam pour le cadrage quand je te le demanderai.",
+  "Tu avais lanc\u00e9 l'aper\u00e7u vid\u00e9o pendant mon appel ?",
+  "Pas l'aper\u00e7u vid\u00e9o, fais une capture de la fen\u00eatre de visio.",
+  "Si le cadrage te semble mauvais, tu allumeras l'aper\u00e7u \u00e0 ce moment-l\u00e0.",
+  "Sors-moi les clich\u00e9s d\u00e9j\u00e0 enregistr\u00e9s cette semaine.",
+  "Fouille dans les images existantes et donne-moi les plus r\u00e9centes.",
+  "Y a des photos de moi qui tra\u00eenent sur le disque ? Retrouve-les.",
+  "Ne sors aucun clich\u00e9 des archives.",
+  "Tu me sortiras les clich\u00e9s de la semaine quand j'aurai fini de trier.",
+  "Tu avais sorti les clich\u00e9s de la semaine derni\u00e8re ?",
+  "Pas les archives, un nouveau clich\u00e9 de moi maintenant.",
+  "Dis-moi seulement s'il existe des clich\u00e9s r\u00e9cents, sans les lister.",
+  "Retrouve la photo prise avec la webcam avant le d\u00e9jeuner.",
+  "Localise les derni\u00e8res images captur\u00e9es par la cam\u00e9ra, sans en refaire.",
+  "O\u00f9 est pass\u00e9e l'image que la webcam a enregistr\u00e9e ce matin ?",
+  "Ne retrouve pas la photo d'avant le d\u00e9jeuner.",
+  "Tu retrouveras la photo d'avant le d\u00e9jeuner ce soir.",
+  "Tu l'avais retrouv\u00e9e, la photo d'avant le d\u00e9jeuner ?",
+  "Pas la photo d'avant le d\u00e9jeuner, une capture de l'\u00e9cran actuel.",
+  "Si je ne la retrouve pas moi-m\u00eame, tu chercheras la photo d'avant le d\u00e9jeuner.",
+  "Photographie l'\u00e9cran entier, pas la webcam.",
+  "Une capture du bureau complet, maintenant.",
+  "Enregistre une image de tout ce que j'ai sous les yeux sur le moniteur.",
+  "N'enregistre aucune image du bureau.",
+  "Tu photographieras l'\u00e9cran entier quand le graphique sera affich\u00e9.",
+  "Tu avais photographi\u00e9 l'\u00e9cran avant que je ferme l'onglet ?",
+  "Pas l'\u00e9cran, photographie-moi avec la webcam.",
+  "D\u00e9cris-moi ce qu'il y a \u00e0 l'\u00e9cran sans en faire d'image.",
+  "Capture uniquement la fen\u00eatre du navigateur.",
+  "Screenshot de la fen\u00eatre active, rien d'autre.",
+  "Prends une image de la fen\u00eatre au premier plan et garde-la.",
+  "Ne capture pas la fen\u00eatre du navigateur.",
+  "Capture la fen\u00eatre du navigateur une fois la page charg\u00e9e.",
+  "T'avais captur\u00e9 la fen\u00eatre du navigateur hier soir ?",
+  "Pas la fen\u00eatre, ouvre l'aper\u00e7u de la webcam sans photo.",
+  "Si l'erreur r\u00e9appara\u00eet, capture la fen\u00eatre du navigateur \u00e0 ce moment-l\u00e0.",
+  "Passe le clavier en anglais.",
+  "Change la disposition du clavier, mets qwerty.",
+  "Bascule sur le clavier am\u00e9ricain stp.",
+  "Ne change pas la disposition du clavier.",
+  "Tu passeras le clavier en anglais apr\u00e8s ma session.",
+  "Tu avais chang\u00e9 le clavier en qwerty hier ?",
+  "Change plut\u00f4t la langue du syst\u00e8me, pas le clavier.",
+  "Dis-moi juste quelle disposition de clavier est active.",
+  "Rappelle-moi d'appeler le garage \u00e0 17 h.",
+  "Mets un rappel pour le garage en fin d'apr\u00e8m.",
+  "Note-moi un rappel : garage, 17 h.",
+  "Pas de rappel pour le garage finalement.",
+  "Tu me mettras le rappel du garage demain matin.",
+  "Tu m'avais mis un rappel pour le garage ?",
+  "Rappelle-moi plut\u00f4t le dentiste, pas le garage.",
+  "Si je n'ai pas appel\u00e9 le garage \u00e0 17 h, rappelle-le-moi.",
+  "Tu me prends ?",
+  "Montre-moi \u00e0 quoi je ressemble l\u00e0.",
+  "Garde une trace de moi, tel que je suis maintenant.",
+  "Surtout, tu ne me prends pas.",
+  "Tu me prendras plus tard, quand je serai pr\u00e9sentable.",
+  "Tu m'as pris, oui ou non ?",
+  "Prends \u00e7a, ce qui est \u00e0 l'\u00e9cran, pas moi.",
+  "Regarde si tu peux me prendre, mais ne le fais pas.",
+  "Tu peux me tirer le portrait avec la webcam ?",
+  "L\u00e0 j'suis pr\u00eat, prends une photo de moi avec la cam\u00e9ra du Mac.",
+  "Vas-y, utilise la webcam et prends-moi en photo maintenant, je regarde l'objectif.",
+  "M\u00eame si la cam\u00e9ra est pr\u00eate, ne prends surtout aucune photo de moi.",
+  "Quand j'aurai remis mes lunettes, tu pourras me prendre en photo avec la webcam.",
+  "C'est toi qui m'as pris en photo avec la webcam juste avant ?",
+  "Utilise pas la webcam pour moi, capture plut\u00f4t la fen\u00eatre qui est ouverte \u00e0 l'\u00e9cran.",
+  "Si je te fais signe plus tard, tu pourras \u00e9ventuellement prendre une photo de moi.",
+  "Fais une photo de ma t\u00eate l\u00e0 tout de suite.",
+  "Prends-moi comme je suis maintenant, pas besoin de pr\u00e9parer quoi que ce soit.",
+  "Je suis devant le Mac, fais juste une photo de moi maintenant stp.",
+  "Je suis devant la cam\u00e9ra mais surtout tu prends aucune photo.",
+  "Attends que je sois revenu devant le Mac avant de me prendre en photo.",
+  "Tu m'avais photographi\u00e9 quand j'\u00e9tais assis ici tout \u00e0 l'heure ?",
+  "Montre seulement ce que voit la webcam pendant que je suis devant, sans enregistrer quoi que ce soit.",
+  "Si la lumi\u00e8re devient meilleure dans quelques minutes, l\u00e0 tu pourras faire une photo.",
+  "Regarde quelles cam\u00e9ras le Mac d\u00e9tecte actuellement.",
+  "Tu peux checker si une webcam est bien reconnue par la machine ?",
+  "Dis-moi si j'ai une cam\u00e9ra utilisable l\u00e0 maintenant, sans prendre d'image.",
+  "Ne v\u00e9rifie aucune cam\u00e9ra pour l'instant.",
+  "Quand j'aurai fini mon appel, v\u00e9rifie quelles webcams sont connect\u00e9es.",
+  "Tu avais vu combien de cam\u00e9ras connect\u00e9es avant que je red\u00e9marre ?",
+  "Au lieu de chercher les webcams, v\u00e9rifie quels micros sont disponibles.",
+  "Si jamais la visio d\u00e9conne plus tard, regarde \u00e0 ce moment-l\u00e0 si une cam\u00e9ra est d\u00e9tect\u00e9e.",
+  "Est-ce que la webcam r\u00e9pond correctement l\u00e0 ?",
+  "V\u00e9rifie juste l'\u00e9tat de la cam\u00e9ra, je veux savoir si elle fonctionne.",
+  "La cam est utilisable ou elle est encore dans les choux ?",
+  "Laisse la webcam tranquille, ne teste pas si elle fonctionne.",
+  "Tu v\u00e9rifieras si la cam\u00e9ra r\u00e9pond apr\u00e8s que j'aurai relanc\u00e9 l'application.",
+  "La webcam fonctionnait correctement avant la mise \u00e0 jour ?",
+  "Affiche le retour vid\u00e9o juste pour que je voie s'il est correct, mais ne capture rien.",
+  "Si l'appel vid\u00e9o plante encore, tu testeras la cam\u00e9ra \u00e0 ce moment-l\u00e0.",
+  "Mets-moi le retour de la webcam \u00e0 l'\u00e9cran sans sauvegarder d'image.",
+  "Lance juste l'aper\u00e7u cam\u00e9ra, j'veux voir le cadrage, aucune photo.",
+  "Ouvre le flux de la cam maintenant mais ne d\u00e9clenche surtout pas de capture.",
+  "N'ouvre pas du tout l'aper\u00e7u de la cam\u00e9ra.",
+  "Tu m'afficheras le retour cam\u00e9ra une fois que j'aurai d\u00e9plac\u00e9 l'ordinateur.",
+  "Tu avais ouvert l'aper\u00e7u de la webcam pendant que j'\u00e9tais parti ?",
+  "Laisse tomber l'aper\u00e7u, prends directement une vraie photo de moi maintenant.",
+  "Si je veux v\u00e9rifier le cadrage plus tard, tu ouvriras seulement l'aper\u00e7u \u00e0 ce moment-l\u00e0.",
+  "Je veux juste voir l'image en direct de la cam\u00e9ra.",
+  "Tu peux afficher ce que filme la webcam l\u00e0, sans rien enregistrer ?",
+  "Mets le live de la cam \u00e0 l'\u00e9cran, pas de photo ni de sauvegarde derri\u00e8re.",
+  "Ne m'affiche pas le flux vid\u00e9o de la cam\u00e9ra.",
+  "Montre-moi ce que voit la cam\u00e9ra quand je serai revenu dans la pi\u00e8ce.",
+  "T'avais affich\u00e9 le live de la webcam pendant mon absence ?",
+  "Je veux pas le flux cam\u00e9ra, fais plut\u00f4t une capture de ce qui est affich\u00e9 sur le bureau.",
+  "V\u00e9rifie uniquement que le p\u00e9riph\u00e9rique cam\u00e9ra est pr\u00e9sent, sans ouvrir son flux.",
+  "Retrouve les photos enregistr\u00e9es le plus r\u00e9cemment sur cette machine.",
+  "Cherche-moi les derni\u00e8res images que j'ai d\u00e9j\u00e0 prises avec la webcam.",
+  "Va fouiller dans mes photos existantes et retrouve les plus r\u00e9centes, n'en prends pas de nouvelle.",
+  "Ne va surtout pas chercher dans mes photos existantes.",
+  "Tu rechercheras mes derni\u00e8res photos quand j'aurai fini ce que je fais.",
+  "Est-ce que tu avais retrouv\u00e9 les images prises la semaine derni\u00e8re ?",
+  "Arr\u00eate de chercher les anciennes images et prends plut\u00f4t une nouvelle photo de moi maintenant.",
+  "Si j'en ai besoin ce soir, tu chercheras \u00e0 ce moment-l\u00e0 mes derni\u00e8res photos enregistr\u00e9es.",
+  "Trouve la photo la plus r\u00e9cente qui existe d\u00e9j\u00e0 dans mes fichiers.",
+  "Elle est o\u00f9 la derni\u00e8re image que j'ai sauvegard\u00e9e ?",
+  "Retrouve-moi ce que la webcam a enregistr\u00e9 pr\u00e9c\u00e9demment, sans faire de nouvelle prise.",
+  "Ne cherche aucune ancienne image dans mes fichiers.",
+  "Apr\u00e8s que j'aurai termin\u00e9, retrouve la derni\u00e8re photo qui est d\u00e9j\u00e0 enregistr\u00e9e.",
+  "Tu sais si tu avais retrouv\u00e9 cette photo hier ?",
+  "Ne cherche pas d'ancienne photo, capture plut\u00f4t l'\u00e9cran actuel.",
+  "V\u00e9rifie seulement si le dossier qui contient mes photos existe, sans chercher les fichiers dedans.",
+  "Fais une capture de tout l'\u00e9cran maintenant.",
+  "Screenshot-moi le bureau tel qu'il est l\u00e0.",
+  "Capture exactement ce qui est affich\u00e9 sur mon \u00e9cran \u00e0 cet instant.",
+  "Ne prends aucune capture de mon \u00e9cran.",
+  "Tu feras le screenshot une fois que la fen\u00eatre de chargement aura disparu.",
+  "T'as fait une capture de mon \u00e9cran avant que je ferme la fen\u00eatre ?",
+  "Capture pas l'\u00e9cran, prends plut\u00f4t une photo de moi avec la webcam.",
+  "Si le message d'erreur revient plus tard, fais une capture de l'\u00e9cran \u00e0 ce moment-l\u00e0.",
+  "Prends une capture uniquement de la fen\u00eatre actuellement au premier plan.",
+  "Fais-moi un screenshot de la fen\u00eatre active, pas de tout le bureau.",
+  "Tu peux capturer juste l'appli que j'ai devant moi l\u00e0 ?",
+  "Ne capture surtout pas la fen\u00eatre qui est ouverte actuellement.",
+  "Quand la page aura fini de charger, tu captureras seulement cette fen\u00eatre.",
+  "Est-ce que tu avais fait un screenshot de cette fen\u00eatre avant son actualisation ?",
+  "Laisse la fen\u00eatre tranquille et prends-moi plut\u00f4t en photo maintenant.",
+  "Dis-moi seulement quelle application est au premier plan, sans faire de capture.",
+  "Coupe le son de la machine.",
+  "Mets le Mac en muet stp.",
+  "J'veux plus aucun son qui sorte, mute tout \u00e7a.",
+  "Ne coupe pas le son finalement.",
+  "Tu mettras le Mac en muet quand la r\u00e9union commencera.",
+  "Tu avais coup\u00e9 le son pendant la r\u00e9union pr\u00e9c\u00e9dente ?",
+  "Ne touche pas au son, baisse plut\u00f4t la luminosit\u00e9 de l'\u00e9cran.",
+  "Si quelqu'un m'appelle, coupe le son seulement \u00e0 ce moment-l\u00e0.",
+  "Dis-moi combien d'espace libre il reste sur le disque.",
+  "Il me reste combien de place sur le SSD l\u00e0 ?",
+  "Check l'espace disque disponible, juste l'info, change rien.",
+  "Ne regarde pas combien de stockage il reste.",
+  "V\u00e9rifie l'espace disque disponible apr\u00e8s la fin de la copie.",
+  "J'avais combien d'espace libre avant de t\u00e9l\u00e9charger tout \u00e7a ?",
+  "Regarde plut\u00f4t combien de m\u00e9moire vive est encore disponible.",
+  "Si la copie \u00e9choue, v\u00e9rifie alors seulement combien d'espace disque il reste.",
+  "L\u00e0 tu peux me prendre ?",
+  "Fais ce qu'il faut pour avoir une image de moi maintenant.",
+  "Tu peux regarder la cam\u00e9ra deux secondes ?",
+  "Quoi que tu comprennes, ne prends aucune image de moi.",
+  "Quand ce sera le bon moment, tu pourras me prendre.",
+  "Tu m'avais pris juste avant ou pas ?",
+  "Si je dis \"prends-moi \u00e7a\", je parle de l'\u00e9cran, fais-en une capture.",
+  "Regarde-moi juste \u00e0 travers la webcam, mais n'enregistre aucune image.",
+  "tu peux me faire une photo la",
+  "vas y prends moi maintenant",
+  "fais une photo vite fait stp",
+  "je suis pret tu peux prendre la photo",
+  "prends moi avec la webcam maintenant",
+  "tu peux faire une photo de moi comme ca",
+  "ok prend la photo maintenant",
+  "fait moi une photo avec la cam",
+  "vas y je bouge plus prends moi",
+  "tu peux me prendre la tout de suite",
+  "la webcam elle fonctionne ou pas",
+  "tu vois bien la camera ?",
+  "est ce que la cam est bien reconnue",
+  "regarde si la webcam r\u00e9pond",
+  "ya bien une camera connect\u00e9e la ?",
+  "tu peux verifier que la cam fonctionne",
+  "check si la webcam est accessible",
+  "la camera est detect\u00e9e correctement ?",
+  "ouvre juste la webcam je veux voir",
+  "affiche moi ce que voit la camera",
+  "met le retour camera sans rien enregistrer",
+  "je veux juste voir la webcam en direct",
+  "ouvre la cam mais surtout capture rien",
+  "tu peux mettre l'image de la webcam ?",
+  "affiche juste le flux camera",
+  "retrouve moi les photos prises r\u00e9cemment",
+  "cherche la derniere photo enregistr\u00e9e",
+  "tu peux retrouver mes photos d'avant",
+  "regarde ou sont les derni\u00e8res images",
+  "cherche les photos que j'ai deja faite",
+  "retrouve moi ce que la webcam avait enregistr\u00e9",
+  "elles sont ou les images prises hier",
+  "fais moi une capture de ce que j'ai a l'ecran",
+  "capture la fenetre actuelle",
+  "fait un screen de cette page",
+  "prends un screenshot maintenant",
+  "capture juste l'application ouverte",
+  "fais une capture de tout mon bureau",
+  "screen moi ce que je vois la",
+  "me prends surtout pas en photo",
+  "non laisse tomber fait pas de photo",
+  "attends avant de prendre la photo",
+  "tu me prendra quand je serais pret",
+  "quand je te dis go tu prends la photo",
+  "fait la photo une fois que j'ai fini",
+  "tu m'avais pris en photo juste avant ?",
+  "c'est toi qui avait fait la photo tout a l'heure ?",
+  "ouvre juste la cam ne prends rien",
+  "regarde seulement si elle marche sans faire de photo",
+  "si jamais je te demande apres tu pourra me prendre",
+  "tu peux me prendre ?"
+ ],
+ "E_RERANK": [
+  [
+   0.9606438279151917,
+   0.8400612473487854,
+   0.8245673179626465,
+   0.3647066354751587,
+   0.9128784537315369
+  ],
+  [
+   0.9740250706672668,
+   0.8620713949203491,
+   0.8914817571640015,
+   0.010910417884588242,
+   0.8644310235977173
+  ],
+  [
+   0.9893670678138733,
+   0.4436856508255005,
+   0.9281224012374878,
+   0.004585768096148968,
+   0.8972415328025818
+  ],
+  [
+   0.19840537011623383,
+   0.017984526231884956,
+   0.012341354042291641,
+   0.010386618785560131,
+   0.19354765117168427
+  ],
+  [
+   0.9912348985671997,
+   0.27929529547691345,
+   0.7642475366592407,
+   0.002849404001608491,
+   0.679297149181366
+  ],
+  [
+   0.9413168430328369,
+   0.17133831977844238,
+   0.6051798462867737,
+   0.036401063203811646,
+   0.2952890694141388
+  ],
+  [
+   0.09720169007778168,
+   0.023126745596528053,
+   0.048403412103652954,
+   0.004145401064306498,
+   0.6451963186264038
+  ],
+  [
+   0.9952775239944458,
+   0.08246685564517975,
+   0.44338104128837585,
+   0.1852521151304245,
+   0.9742226004600525
+  ],
+  [
+   0.7807108163833618,
+   0.25927966833114624,
+   0.3716326653957367,
+   0.04429619014263153,
+   0.05982210114598274
+  ],
+  [
+   0.9971153736114502,
+   0.56293123960495,
+   0.7898473143577576,
+   0.10178562998771667,
+   0.0350453145802021
+  ],
+  [
+   0.9980702996253967,
+   0.5226642489433289,
+   0.21826718747615814,
+   0.004617923870682716,
+   0.03886730223894119
+  ],
+  [
+   0.08738304674625397,
+   0.9241573810577393,
+   0.4941456913948059,
+   0.003751031355932355,
+   0.0033577079884707928
+  ],
+  [
+   0.7048985958099365,
+   0.006187557242810726,
+   0.010224977508187294,
+   0.0013849403476342559,
+   0.026875140145421028
+  ],
+  [
+   0.9245355725288391,
+   0.1950574666261673,
+   0.24018844962120056,
+   0.014442367479205132,
+   0.15489386022090912
+  ],
+  [
+   0.9702996015548706,
+   0.9961304664611816,
+   0.9297322630882263,
+   0.18705564737319946,
+   0.13270290195941925
+  ],
+  [
+   0.985833466053009,
+   0.3569920063018799,
+   0.8068844676017761,
+   0.08180411159992218,
+   0.5071558952331543
+  ],
+  [
+   0.16890539228916168,
+   0.9444820284843445,
+   0.10369054973125458,
+   0.016104212030768394,
+   0.015153270214796066
+  ],
+  [
+   0.16066572070121765,
+   0.9862225651741028,
+   0.5691717863082886,
+   0.04419919475913048,
+   0.13103275001049042
+  ],
+  [
+   0.1209009662270546,
+   0.942774772644043,
+   0.1260591745376587,
+   0.004834027495235205,
+   0.026836011558771133
+  ],
+  [
+   0.5292962193489075,
+   0.9346216917037964,
+   0.7969222664833069,
+   0.18391703069210052,
+   0.10419401526451111
+  ],
+  [
+   0.22013266384601593,
+   0.9052452445030212,
+   0.21899347007274628,
+   0.03387998044490814,
+   0.05937621369957924
+  ],
+  [
+   0.3123945891857147,
+   0.34388720989227295,
+   0.35214564204216003,
+   0.27210938930511475,
+   0.035042088478803635
+  ],
+  [
+   0.9604111909866333,
+   0.21923790872097015,
+   0.6102842688560486,
+   0.03275971859693527,
+   0.24146702885627747
+  ],
+  [
+   0.006816183682531118,
+   0.941868007183075,
+   0.05773612856864929,
+   0.001959186280146241,
+   0.015827523544430733
+  ],
+  [
+   0.24822404980659485,
+   0.9658223986625671,
+   0.16979041695594788,
+   0.001418336178176105,
+   0.03820955753326416
+  ],
+  [
+   0.08373323082923889,
+   0.9240541458129883,
+   0.3464648425579071,
+   0.004269180819392204,
+   0.04131021350622177
+  ],
+  [
+   0.8615807890892029,
+   0.9989608526229858,
+   0.9896212816238403,
+   0.00971943885087967,
+   0.6015231609344482
+  ],
+  [
+   0.4538664221763611,
+   0.9255501627922058,
+   0.558124303817749,
+   0.010368920862674713,
+   0.046764906495809555
+  ],
+  [
+   0.18110431730747223,
+   0.5876709222793579,
+   0.5376222133636475,
+   0.01125204935669899,
+   0.13537992537021637
+  ],
+  [
+   0.12709401547908783,
+   0.7460909485816956,
+   0.18340685963630676,
+   0.014795885421335697,
+   0.05972728505730629
+  ],
+  [
+   0.36691799759864807,
+   0.31637606024742126,
+   0.9843929409980774,
+   0.012128748930990696,
+   0.2638002932071686
+  ],
+  [
+   0.01718115247786045,
+   0.09626027196645737,
+   0.005887813866138458,
+   0.005654629319906235,
+   0.01853014901280403
+  ],
+  [
+   0.42326900362968445,
+   0.9738991260528564,
+   0.994378387928009,
+   0.014140610583126545,
+   0.7205687761306763
+  ],
+  [
+   0.48989337682724,
+   0.747745156288147,
+   0.5735421776771545,
+   0.027650024741888046,
+   0.07899364829063416
+  ],
+  [
+   0.1423308104276657,
+   0.7940906882286072,
+   0.9522809982299805,
+   0.0019235076615586877,
+   0.3541319966316223
+  ],
+  [
+   0.4599340260028839,
+   0.9109408259391785,
+   0.5230078101158142,
+   0.01014594454318285,
+   0.012798385694622993
+  ],
+  [
+   0.06275548785924911,
+   0.7999467253684998,
+   0.4712032973766327,
+   0.0015769950114190578,
+   0.02238105610013008
+  ],
+  [
+   0.02480367384850979,
+   0.32954341173171997,
+   0.0202501118183136,
+   0.002094705356284976,
+   0.05514311417937279
+  ],
+  [
+   0.9971876740455627,
+   0.10393144935369492,
+   0.6162274479866028,
+   0.02817622199654579,
+   0.21766196191310883
+  ],
+  [
+   0.2003145068883896,
+   0.9990538954734802,
+   0.9905272722244263,
+   0.0072794160805642605,
+   0.01668165996670723
+  ],
+  [
+   0.34353524446487427,
+   0.6957225799560547,
+   0.6395047903060913,
+   0.006766201928257942,
+   0.03870268538594246
+  ],
+  [
+   0.3280579447746277,
+   0.8164049386978149,
+   0.64617919921875,
+   0.011949552223086357,
+   0.04620688781142235
+  ],
+  [
+   0.8103189468383789,
+   0.5307918787002563,
+   0.9770427942276001,
+   0.021769775077700615,
+   0.8983744978904724
+  ],
+  [
+   0.029151424765586853,
+   0.9553414583206177,
+   0.8538292050361633,
+   0.0022972626611590385,
+   0.26075753569602966
+  ],
+  [
+   0.5905573964118958,
+   0.6563894748687744,
+   0.8491740822792053,
+   0.0027554254047572613,
+   0.09299998730421066
+  ],
+  [
+   0.05642020329833031,
+   0.02256298065185547,
+   0.02119484171271324,
+   0.0020168591290712357,
+   0.08727830648422241
+  ],
+  [
+   0.9174456000328064,
+   0.3022128939628601,
+   0.29804083704948425,
+   0.012829110026359558,
+   0.998012900352478
+  ],
+  [
+   0.016463208943605423,
+   0.014538065530359745,
+   0.15422914922237396,
+   0.0009592194692231715,
+   0.22940167784690857
+  ],
+  [
+   0.012922332622110844,
+   0.013860376551747322,
+   0.012170148082077503,
+   0.03102104924619198,
+   0.0018129099626094103
+  ],
+  [
+   0.035565655678510666,
+   0.017075687646865845,
+   0.023932889103889465,
+   0.9315054416656494,
+   0.015563391149044037
+  ],
+  [
+   0.6649640798568726,
+   0.08834146708250046,
+   0.02674088627099991,
+   0.9868268966674805,
+   0.002324896166101098
+  ],
+  [
+   0.1320943683385849,
+   0.04337842017412186,
+   0.023476898670196533,
+   0.07029905170202255,
+   0.04433108866214752
+  ],
+  [
+   0.023935139179229736,
+   0.009011553600430489,
+   0.004816693719476461,
+   0.0038792141713202,
+   0.011052890680730343
+  ],
+  [
+   0.03713702782988548,
+   0.020130086690187454,
+   0.0020848012063652277,
+   0.012527896091341972,
+   0.011552768759429455
+  ],
+  [
+   0.9552559852600098,
+   0.010468660853803158,
+   0.022563422098755836,
+   0.011342281475663185,
+   0.016980214044451714
+  ],
+  [
+   0.023980654776096344,
+   0.03321708366274834,
+   0.01965838484466076,
+   0.043345704674720764,
+   0.05258668214082718
+  ],
+  [
+   0.9065889120101929,
+   0.4513704478740692,
+   0.61640465259552,
+   0.005710486322641373,
+   0.009196117520332336
+  ],
+  [
+   0.7175259590148926,
+   0.9359018206596375,
+   0.9964890480041504,
+   0.5922143459320068,
+   0.08964042365550995
+  ],
+  [
+   0.4145296514034271,
+   0.8248833417892456,
+   0.7827017307281494,
+   0.003839960088953376,
+   0.009098539128899574
+  ],
+  [
+   0.7734159827232361,
+   0.23759284615516663,
+   0.23726840317249298,
+   0.6290316581726074,
+   0.0015192067949101329
+  ],
+  [
+   0.8191067576408386,
+   0.02164110355079174,
+   0.037956904619932175,
+   0.6433883309364319,
+   0.016515035182237625
+  ],
+  [
+   0.8929029703140259,
+   0.021029382944107056,
+   0.08319439738988876,
+   0.6663454174995422,
+   0.023520424962043762
+  ],
+  [
+   0.9471796751022339,
+   0.2120175063610077,
+   0.9255415797233582,
+   0.1557973325252533,
+   0.9938333034515381
+  ],
+  [
+   0.9790955781936646,
+   0.033788882195949554,
+   0.023401498794555664,
+   0.7171500325202942,
+   0.01900486648082733
+  ],
+  [
+   0.5640206336975098,
+   0.10868258774280548,
+   0.29770874977111816,
+   0.002052114112302661,
+   0.7500424385070801
+  ],
+  [
+   0.9031782150268555,
+   0.2774903476238251,
+   0.2163974642753601,
+   0.13898205757141113,
+   0.9879453182220459
+  ],
+  [
+   0.9873505234718323,
+   0.0558798648416996,
+   0.1946496218442917,
+   0.06295058131217957,
+   0.9943291544914246
+  ],
+  [
+   0.3314235508441925,
+   0.7048641443252563,
+   0.8050845861434937,
+   0.013544680550694466,
+   0.15922750532627106
+  ],
+  [
+   0.948933482170105,
+   0.016465572640299797,
+   0.14446504414081573,
+   0.002622089348733425,
+   0.9751594066619873
+  ],
+  [
+   0.5683254599571228,
+   0.023043254390358925,
+   0.03003072924911976,
+   0.016567038372159004,
+   0.9341951608657837
+  ],
+  [
+   0.9927887320518494,
+   0.8549891710281372,
+   0.8629945516586304,
+   0.1286340206861496,
+   0.661865234375
+  ],
+  [
+   0.16328303515911102,
+   0.9319604635238647,
+   0.8517358899116516,
+   0.011138329282402992,
+   0.28471603989601135
+  ],
+  [
+   0.029078101739287376,
+   0.0031738956458866596,
+   0.001985839568078518,
+   0.000483684241771698,
+   0.965141236782074
+  ],
+  [
+   0.7060368657112122,
+   0.016370952129364014,
+   0.022068046033382416,
+   0.011815185658633709,
+   0.994086742401123
+  ],
+  [
+   0.9472126364707947,
+   0.020934274420142174,
+   0.032599397003650665,
+   0.0291888564825058,
+   0.9987921118736267
+  ],
+  [
+   0.011373872868716717,
+   0.001224649604409933,
+   0.0008003959082998335,
+   0.00036159108276478946,
+   0.9484397172927856
+  ],
+  [
+   0.0304779764264822,
+   0.0012125242501497269,
+   0.0015843939036130905,
+   0.0006830660859122872,
+   0.9891297817230225
+  ],
+  [
+   0.006140748038887978,
+   0.015076777897775173,
+   0.0009043450700119138,
+   0.004152994602918625,
+   0.8362752795219421
+  ],
+  [
+   0.6731287240982056,
+   0.9945365190505981,
+   0.9832509160041809,
+   0.008949238806962967,
+   0.8000117540359497
+  ],
+  [
+   0.004436679650098085,
+   0.0021051832009106874,
+   0.0037306053563952446,
+   0.001076509477570653,
+   0.9687711596488953
+  ],
+  [
+   0.03236260265111923,
+   0.00823493767529726,
+   0.005265210755169392,
+   0.0016297773690894246,
+   0.015309719368815422
+  ],
+  [
+   0.0013809457886964083,
+   0.004315839149057865,
+   0.0009119387250393629,
+   0.00046964999637566507,
+   0.023768121376633644
+  ],
+  [
+   0.009915837086737156,
+   0.0065656984224915504,
+   0.0022803153842687607,
+   0.0018536874558776617,
+   0.05367317050695419
+  ],
+  [
+   0.03073924593627453,
+   0.00891364086419344,
+   0.014186522923409939,
+   0.003673325525596738,
+   0.11133996397256851
+  ],
+  [
+   0.012810789979994297,
+   0.0065853591077029705,
+   0.007919405587017536,
+   0.001987151801586151,
+   0.04836020618677139
+  ],
+  [
+   0.0019253890495747328,
+   0.002470556413754821,
+   0.0015847106697037816,
+   0.0012486279010772705,
+   0.0070834713988006115
+  ],
+  [
+   0.023420991376042366,
+   0.010177207179367542,
+   0.014772909693419933,
+   0.003558384720236063,
+   0.008618701249361038
+  ],
+  [
+   0.00121180375572294,
+   0.007628913503140211,
+   0.003123354399576783,
+   0.001312483916990459,
+   0.0463431254029274
+  ],
+  [
+   0.0020813795272260904,
+   0.013875111937522888,
+   0.0021804722491651773,
+   0.0011927391169592738,
+   0.00639989972114563
+  ],
+  [
+   0.011245801113545895,
+   0.027719467878341675,
+   0.0044069052673876286,
+   0.002085132524371147,
+   0.07306493073701859
+  ],
+  [
+   0.10814506560564041,
+   0.036049459129571915,
+   0.015646880492568016,
+   0.005656457971781492,
+   0.08046797662973404
+  ],
+  [
+   0.01291875820606947,
+   0.05059824138879776,
+   0.005396058317273855,
+   0.0029496201314032078,
+   0.05553291738033295
+  ],
+  [
+   0.003388704266399145,
+   0.008085653185844421,
+   0.002130314474925399,
+   0.0018547498621046543,
+   0.0010327247437089682
+  ],
+  [
+   0.004834761843085289,
+   0.0062676300294697285,
+   0.0010280315764248371,
+   0.001986541086807847,
+   0.0073507726192474365
+  ],
+  [
+   0.12465199828147888,
+   0.026588836684823036,
+   0.014102503657341003,
+   0.02095070108771324,
+   0.021322747692465782
+  ],
+  [
+   0.0026588193140923977,
+   0.004322031978517771,
+   0.0016324144089594483,
+   0.0006848530611023307,
+   0.004765225574374199
+  ],
+  [
+   0.4183366894721985,
+   0.028361326083540916,
+   0.01510644517838955,
+   0.018512139096856117,
+   0.041175514459609985
+  ],
+  [
+   0.4945027530193329,
+   0.03749348223209381,
+   0.08766652643680573,
+   0.03385395184159279,
+   0.248792365193367
+  ],
+  [
+   0.69756019115448,
+   0.03812899813055992,
+   0.026895849034190178,
+   0.43339237570762634,
+   0.15727736055850983
+  ],
+  [
+   0.14816763997077942,
+   0.045170266181230545,
+   0.006145843770354986,
+   0.0028363221790641546,
+   0.04093693941831589
+  ],
+  [
+   0.08194117993116379,
+   0.021331366151571274,
+   0.0029160715639591217,
+   0.0012458194978535175,
+   0.00574952457100153
+  ],
+  [
+   0.8062469959259033,
+   0.017493125051259995,
+   0.006549445446580648,
+   0.015719519928097725,
+   0.06280671805143356
+  ],
+  [
+   0.5598766803741455,
+   0.03314243629574776,
+   0.12947772443294525,
+   0.007100515067577362,
+   0.6147721409797668
+  ],
+  [
+   0.15850962698459625,
+   0.03971358388662338,
+   0.011580036953091621,
+   0.00208431133069098,
+   0.03267361596226692
+  ],
+  [
+   0.9160640239715576,
+   0.8701662421226501,
+   0.4048771262168884,
+   0.027735764160752296,
+   0.01600337214767933
+  ],
+  [
+   0.9964118599891663,
+   0.1675267219543457,
+   0.3681514263153076,
+   0.004146464169025421,
+   0.039265260100364685
+  ],
+  [
+   0.9935357570648193,
+   0.04895234853029251,
+   0.33741116523742676,
+   0.00472306041046977,
+   0.8544537425041199
+  ],
+  [
+   0.9348456263542175,
+   0.9892923831939697,
+   0.8289331793785095,
+   0.009813496842980385,
+   0.0402248352766037
+  ],
+  [
+   0.8169127106666565,
+   0.09870393574237823,
+   0.07696036249399185,
+   0.022662930190563202,
+   0.016546307131648064
+  ],
+  [
+   0.9830922484397888,
+   0.21537169814109802,
+   0.7398466467857361,
+   0.011245833709836006,
+   0.40947213768959045
+  ],
+  [
+   0.8721839785575867,
+   0.7615253329277039,
+   0.2966339588165283,
+   0.002178742317482829,
+   0.9935490489006042
+  ],
+  [
+   0.6790660619735718,
+   0.07011192291975021,
+   0.11902430653572083,
+   0.06029845401644707,
+   0.05914149433374405
+  ],
+  [
+   0.9989060163497925,
+   0.048358798027038574,
+   0.154272198677063,
+   0.014043765142560005,
+   0.03218766674399376
+  ],
+  [
+   0.4694105088710785,
+   0.00977109745144844,
+   0.010237598791718483,
+   0.007218473125249147,
+   0.008404516614973545
+  ],
+  [
+   0.9989049434661865,
+   0.15412843227386475,
+   0.7474309206008911,
+   0.02298220805823803,
+   0.3128815293312073
+  ],
+  [
+   0.9878671169281006,
+   0.5593991279602051,
+   0.9181326627731323,
+   0.014607309363782406,
+   0.1161184012889862
+  ],
+  [
+   0.5407226085662842,
+   0.23519618809223175,
+   0.030281193554401398,
+   0.008703975938260555,
+   0.11814483255147934
+  ],
+  [
+   0.8438000679016113,
+   0.009614174254238605,
+   0.018539952114224434,
+   0.012413084506988525,
+   0.02706044912338257
+  ],
+  [
+   0.07975555211305618,
+   0.9358364939689636,
+   0.9986238479614258,
+   0.0019956640899181366,
+   0.35225749015808105
+  ],
+  [
+   0.5468728542327881,
+   0.012713715434074402,
+   0.06488271057605743,
+   0.004250157158821821,
+   0.030513588339090347
+  ],
+  [
+   0.12556242942810059,
+   0.3485134541988373,
+   0.2568037807941437,
+   0.004387082532048225,
+   0.03120279125869274
+  ],
+  [
+   0.025011923164129257,
+   0.9215567708015442,
+   0.2486000955104828,
+   0.001322871190495789,
+   0.01913650892674923
+  ],
+  [
+   0.8303983807563782,
+   0.999219536781311,
+   0.9737980365753174,
+   0.06845400482416153,
+   0.36729997396469116
+  ],
+  [
+   0.854437530040741,
+   0.9797306060791016,
+   0.8818776607513428,
+   0.007935966365039349,
+   0.47816571593284607
+  ],
+  [
+   0.03185597434639931,
+   0.8355249762535095,
+   0.038493044674396515,
+   0.0020076509099453688,
+   0.060832105576992035
+  ],
+  [
+   0.002380405319854617,
+   0.49779942631721497,
+   0.01178740430623293,
+   0.001374461455270648,
+   0.006570440251380205
+  ],
+  [
+   0.00938334409147501,
+   0.9688906669616699,
+   0.01626633293926716,
+   0.001538343378342688,
+   0.007944177836179733
+  ],
+  [
+   0.030048593878746033,
+   0.9760320782661438,
+   0.1539238840341568,
+   0.0015436419053003192,
+   0.072575643658638
+  ],
+  [
+   0.35549405217170715,
+   0.8719598650932312,
+   0.2501923441886902,
+   0.0019919220358133316,
+   0.034939974546432495
+  ],
+  [
+   0.06289923191070557,
+   0.9974133372306824,
+   0.537219226360321,
+   0.00366118922829628,
+   0.1106085255742073
+  ],
+  [
+   0.018924206495285034,
+   0.9296385049819946,
+   0.23705068230628967,
+   0.0007490519783459604,
+   0.0064033325761556625
+  ],
+  [
+   0.44571611285209656,
+   0.9858542084693909,
+   0.9616285562515259,
+   0.0019682138226926327,
+   0.3104313910007477
+  ],
+  [
+   0.1743619441986084,
+   0.7349050641059875,
+   0.36354756355285645,
+   0.0049880691803991795,
+   0.10292664170265198
+  ],
+  [
+   0.09649140387773514,
+   0.7185602188110352,
+   0.14570079743862152,
+   0.0015730627346783876,
+   0.06454773992300034
+  ],
+  [
+   0.5629406571388245,
+   0.7692488431930542,
+   0.8773584961891174,
+   0.009190984070301056,
+   0.926834225654602
+  ],
+  [
+   0.1051650196313858,
+   0.9344984889030457,
+   0.6171490550041199,
+   0.0012167287059128284,
+   0.10056678205728531
+  ],
+  [
+   0.3670247793197632,
+   0.8590665459632874,
+   0.9974230527877808,
+   0.01028131227940321,
+   0.5981577038764954
+  ],
+  [
+   0.9533849358558655,
+   0.8818493485450745,
+   0.7229436039924622,
+   0.032942187041044235,
+   0.06630638986825943
+  ],
+  [
+   0.17861606180667877,
+   0.7654913663864136,
+   0.9878281354904175,
+   0.0022731947246938944,
+   0.2895125448703766
+  ],
+  [
+   0.22109355032444,
+   0.8682236671447754,
+   0.7489190697669983,
+   0.008773591369390488,
+   0.1663607805967331
+  ],
+  [
+   0.7143358588218689,
+   0.5854039788246155,
+   0.5211984515190125,
+   0.011049741879105568,
+   0.3622484505176544
+  ],
+  [
+   0.0495678149163723,
+   0.11235324293375015,
+   0.08059621602296829,
+   0.0019536036998033524,
+   0.030081856995821
+  ],
+  [
+   0.997273862361908,
+   0.021048927679657936,
+   0.3629069924354553,
+   0.023628823459148407,
+   0.20120403170585632
+  ],
+  [
+   0.01983102597296238,
+   0.019107745960354805,
+   0.011461603455245495,
+   0.005024224054068327,
+   0.04318196326494217
+  ],
+  [
+   0.9898794889450073,
+   0.7551707625389099,
+   0.9664431810379028,
+   0.01008711475878954,
+   0.8023466467857361
+  ],
+  [
+   0.21781253814697266,
+   0.9431837201118469,
+   0.9963359832763672,
+   0.00200977292843163,
+   0.40500330924987793
+  ],
+  [
+   0.3103468418121338,
+   0.9792565107345581,
+   0.9976773858070374,
+   0.009764768183231354,
+   0.2940720021724701
+  ],
+  [
+   0.03512648120522499,
+   0.8687191009521484,
+   0.8626760244369507,
+   0.000810910714790225,
+   0.10862228274345398
+  ],
+  [
+   0.17301908135414124,
+   0.9067842960357666,
+   0.9104149341583252,
+   0.0021043438464403152,
+   0.8860316872596741
+  ],
+  [
+   0.02566039189696312,
+   0.43850457668304443,
+   0.12592171132564545,
+   0.0010851237457245588,
+   0.01009466964751482
+  ],
+  [
+   0.8132131695747375,
+   0.7576623558998108,
+   0.9415050745010376,
+   0.022759579122066498,
+   0.9886202812194824
+  ],
+  [
+   0.7037965059280396,
+   0.9973883032798767,
+   0.933618426322937,
+   0.0969744622707367,
+   0.35839778184890747
+  ],
+  [
+   0.27916303277015686,
+   0.05405547469854355,
+   0.36122193932533264,
+   0.890559732913971,
+   0.001905938726849854
+  ],
+  [
+   0.5401270985603333,
+   0.7580064535140991,
+   0.2481183558702469,
+   0.9668207764625549,
+   0.009375812485814095
+  ],
+  [
+   0.07838737219572067,
+   0.027508998289704323,
+   0.0075538549572229385,
+   0.9945297837257385,
+   0.003295216476544738
+  ],
+  [
+   0.1742931604385376,
+   0.024421952664852142,
+   0.015071340836584568,
+   0.8367722034454346,
+   0.016261663287878036
+  ],
+  [
+   0.648578941822052,
+   0.013251647353172302,
+   0.028845999389886856,
+   0.5421404242515564,
+   0.008572871796786785
+  ],
+  [
+   0.03975488245487213,
+   0.015702780336141586,
+   0.0070045217871665955,
+   0.4923454523086548,
+   0.0031226924620568752
+  ],
+  [
+   0.9977104663848877,
+   0.031140264123678207,
+   0.28668248653411865,
+   0.7618258595466614,
+   0.010200539603829384
+  ],
+  [
+   0.9503982067108154,
+   0.02391033247113228,
+   0.3280421793460846,
+   0.9714654684066772,
+   0.01931776851415634
+  ],
+  [
+   0.7577331066131592,
+   0.01709211990237236,
+   0.07492251694202423,
+   0.9867384433746338,
+   0.004665971267968416
+  ],
+  [
+   0.13938814401626587,
+   0.016404956579208374,
+   0.09343206882476807,
+   0.6035820841789246,
+   0.02441572956740856
+  ],
+  [
+   0.06578969955444336,
+   0.9575353264808655,
+   0.951516330242157,
+   0.23280049860477448,
+   0.08574717491865158
+  ],
+  [
+   0.39936456084251404,
+   0.04927864670753479,
+   0.0350504107773304,
+   0.5094659924507141,
+   0.03413968160748482
+  ],
+  [
+   0.11085803806781769,
+   0.07526975125074387,
+   0.030428027734160423,
+   0.950430154800415,
+   0.004377611912786961
+  ],
+  [
+   0.25760599970817566,
+   0.009238095954060555,
+   0.013688936829566956,
+   0.13019651174545288,
+   0.011095617897808552
+  ],
+  [
+   0.9922141432762146,
+   0.17008744180202484,
+   0.9617650508880615,
+   0.05738057196140289,
+   0.9831851124763489
+  ],
+  [
+   0.06701942533254623,
+   0.04147133231163025,
+   0.001486504916101694,
+   0.8625819683074951,
+   0.004974300507456064
+  ],
+  [
+   0.7318337559700012,
+   0.0984831377863884,
+   0.16123344004154205,
+   0.009997351095080376,
+   0.9969958066940308
+  ],
+  [
+   0.8870601654052734,
+   0.13388098776340485,
+   0.09241250157356262,
+   0.02384209632873535,
+   0.970795750617981
+  ],
+  [
+   0.4916127026081085,
+   0.02395479939877987,
+   0.43365681171417236,
+   0.009497018530964851,
+   0.9948181509971619
+  ],
+  [
+   0.9143004417419434,
+   0.6163672804832458,
+   0.6731921434402466,
+   0.031591013073921204,
+   0.9847240447998047
+  ],
+  [
+   0.8649028539657593,
+   0.051208529621362686,
+   0.04490317031741142,
+   0.03675146773457527,
+   0.9953988194465637
+  ],
+  [
+   0.8903337717056274,
+   0.01187192928045988,
+   0.07999490946531296,
+   0.008605509996414185,
+   0.9817387461662292
+  ],
+  [
+   0.9932501316070557,
+   0.8100569844245911,
+   0.9584991335868835,
+   0.013776978477835655,
+   0.27605998516082764
+  ],
+  [
+   0.047939907759428024,
+   0.007808430586010218,
+   0.03337938338518143,
+   0.006051389500498772,
+   0.5979004502296448
+  ],
+  [
+   0.7100922465324402,
+   0.009052809327840805,
+   0.006923625245690346,
+   0.0044253915548324585,
+   0.9758262038230896
+  ],
+  [
+   0.731033444404602,
+   0.053828004747629166,
+   0.07479847967624664,
+   0.018801189959049225,
+   0.9985540509223938
+  ],
+  [
+   0.619276762008667,
+   0.22402213513851166,
+   0.03305188938975334,
+   0.02736189216375351,
+   0.9732793569564819
+  ],
+  [
+   0.02945317141711712,
+   0.014480303972959518,
+   0.002267584204673767,
+   0.0015826690942049026,
+   0.5976018905639648
+  ],
+  [
+   0.41234108805656433,
+   0.008316698484122753,
+   0.009017578326165676,
+   0.0053077018819749355,
+   0.9922985434532166
+  ],
+  [
+   0.8480046391487122,
+   0.02130635268986225,
+   0.0484633632004261,
+   0.5689622163772583,
+   0.9802367091178894
+  ],
+  [
+   0.9927943348884583,
+   0.0682859867811203,
+   0.8547028303146362,
+   0.04977286234498024,
+   0.9991010427474976
+  ],
+  [
+   0.4711134731769562,
+   0.8692808747291565,
+   0.9520565271377563,
+   0.07182367146015167,
+   0.7070828080177307
+  ],
+  [
+   0.002505130833014846,
+   0.010684005916118622,
+   0.0018859378760680556,
+   0.0008928838651627302,
+   0.004641779698431492
+  ],
+  [
+   0.003267525462433696,
+   0.028709521517157555,
+   0.004985589534044266,
+   0.0007017519092187285,
+   0.028240449726581573
+  ],
+  [
+   0.0031704548746347427,
+   0.005731517914682627,
+   0.004669758956879377,
+   0.001522987149655819,
+   0.009989548474550247
+  ],
+  [
+   0.05284026637673378,
+   0.08931185305118561,
+   0.025025254115462303,
+   0.0013701330171898007,
+   0.030960531905293465
+  ],
+  [
+   0.0014880741946399212,
+   0.00558751355856657,
+   0.001749808550812304,
+   0.0008304893271997571,
+   0.005356308072805405
+  ],
+  [
+   0.0064481087028980255,
+   0.007946477271616459,
+   0.003466983325779438,
+   0.0014884666306897998,
+   0.010924392379820347
+  ],
+  [
+   0.07172410935163498,
+   0.777092456817627,
+   0.15331332385540009,
+   0.0016981837106868625,
+   0.16443809866905212
+  ],
+  [
+   0.0049200584180653095,
+   0.017296740785241127,
+   0.009673066437244415,
+   0.0009512215037830174,
+   0.014035054482519627
+  ],
+  [
+   0.005863197613507509,
+   0.009676538407802582,
+   0.0012460164725780487,
+   0.0008879479137249291,
+   0.005239773541688919
+  ],
+  [
+   0.001279340242035687,
+   0.005379598122090101,
+   0.0008445586427114904,
+   0.0024470598436892033,
+   0.0030584491323679686
+  ],
+  [
+   0.02314234897494316,
+   0.03316750377416611,
+   0.0025649666786193848,
+   0.0028680202085524797,
+   0.04015497863292694
+  ],
+  [
+   0.027954425662755966,
+   0.05413921922445297,
+   0.005381077993661165,
+   0.008519202470779419,
+   0.03471078351140022
+  ],
+  [
+   0.055545173585414886,
+   0.011794915422797203,
+   0.0014357680920511484,
+   0.008577581495046616,
+   0.01935601606965065
+  ],
+  [
+   0.010686364956200123,
+   0.007412922568619251,
+   0.0034016696736216545,
+   0.0018388262251392007,
+   0.005921176169067621
+  ],
+  [
+   0.01660013571381569,
+   0.05608120933175087,
+   0.003009022679179907,
+   0.0076550873927772045,
+   0.021732579916715622
+  ],
+  [
+   0.09866118431091309,
+   0.008830211125314236,
+   0.0147161353379488,
+   0.007569958455860615,
+   0.03733692690730095
+  ],
+  [
+   0.8899720907211304,
+   0.055022940039634705,
+   0.031804367899894714,
+   0.04397384822368622,
+   0.1428111344575882
+  ],
+  [
+   0.9961906671524048,
+   0.08634272962808609,
+   0.5395902991294861,
+   0.23742395639419556,
+   0.1315200924873352
+  ],
+  [
+   0.07880713790655136,
+   0.8860962986946106,
+   0.6767479777336121,
+   0.0016037654131650925,
+   0.19435198605060577
+  ],
+  [
+   0.7640044689178467,
+   0.14324995875358582,
+   0.25338512659072876,
+   0.041002966463565826,
+   0.10494015365839005
+  ],
+  [
+   0.04389417544007301,
+   0.0031770593486726284,
+   0.0013452016282826662,
+   0.0009038919815793633,
+   0.00331337982788682
+  ],
+  [
+   0.7115926146507263,
+   0.019828541204333305,
+   0.004021259490400553,
+   0.005178228951990604,
+   0.019063949584960938
+  ],
+  [
+   0.9769538044929504,
+   0.18629521131515503,
+   0.7764690518379211,
+   0.4728907346725464,
+   0.9712187647819519
+  ],
+  [
+   0.8712521195411682,
+   0.9854105710983276,
+   0.9953089356422424,
+   0.004178551957011223,
+   0.021916277706623077
+  ],
+  [
+   0.984906017780304,
+   0.07957026362419128,
+   0.39867347478866577,
+   0.06103314459323883,
+   0.09179183095693588
+  ],
+  [
+   0.906718909740448,
+   0.009691647253930569,
+   0.010230914689600468,
+   0.0050399284809827805,
+   0.0280744768679142
+  ],
+  [
+   0.9851358532905579,
+   0.04443252459168434,
+   0.136329784989357,
+   0.10003811120986938,
+   0.03869623318314552
+  ],
+  [
+   0.9878144264221191,
+   0.1490778625011444,
+   0.22532622516155243,
+   0.1723329722881317,
+   0.19868703186511993
+  ],
+  [
+   0.9574052691459656,
+   0.42402857542037964,
+   0.9640311002731323,
+   0.006644133012741804,
+   0.5761446952819824
+  ],
+  [
+   0.9893180727958679,
+   0.15127485990524292,
+   0.7136538028717041,
+   0.37669992446899414,
+   0.049412816762924194
+  ],
+  [
+   0.9963808655738831,
+   0.06862575560808182,
+   0.7261082530021667,
+   0.46147847175598145,
+   0.7250277400016785
+  ],
+  [
+   0.9919790029525757,
+   0.5891246199607849,
+   0.9268018007278442,
+   0.02475154586136341,
+   0.047960586845874786
+  ],
+  [
+   0.29280123114585876,
+   0.013313867151737213,
+   0.0033092566300183535,
+   0.0022046957165002823,
+   0.016382381319999695
+  ],
+  [
+   0.8897919654846191,
+   0.01279425248503685,
+   0.007724124006927013,
+   0.007000569254159927,
+   0.05102277174592018
+  ],
+  [
+   0.122392438352108,
+   0.9343540072441101,
+   0.07367348670959473,
+   0.002617676043882966,
+   0.024855468422174454
+  ],
+  [
+   0.167135551571846,
+   0.970500648021698,
+   0.7618736028671265,
+   0.005819965619593859,
+   0.05077854171395302
+  ],
+  [
+   0.02690623514354229,
+   0.779823362827301,
+   0.3837006390094757,
+   0.014535142108798027,
+   0.020932044833898544
+  ],
+  [
+   0.4359109103679657,
+   0.9253407120704651,
+   0.5960690379142761,
+   0.0011181749869138002,
+   0.04411550611257553
+  ],
+  [
+   0.24964262545108795,
+   0.9664247035980225,
+   0.5087762475013733,
+   0.02341536432504654,
+   0.15374413132667542
+  ],
+  [
+   0.004015347454696894,
+   0.9944652915000916,
+   0.7351704239845276,
+   0.0006553980056196451,
+   0.02495521679520607
+  ],
+  [
+   0.031223637983202934,
+   0.9594845175743103,
+   0.10298530757427216,
+   0.0008438106160610914,
+   0.011641873978078365
+  ],
+  [
+   0.38007673621177673,
+   0.9188268780708313,
+   0.3574735224246979,
+   0.013296527788043022,
+   0.06974527984857559
+  ],
+  [
+   0.25999242067337036,
+   0.6327345967292786,
+   0.8524090647697449,
+   0.0036140361335128546,
+   0.26727572083473206
+  ],
+  [
+   0.7781011462211609,
+   0.9162178039550781,
+   0.9877350926399231,
+   0.019591815769672394,
+   0.47448042035102844
+  ],
+  [
+   0.9751625061035156,
+   0.937783420085907,
+   0.9983838796615601,
+   0.05063091218471527,
+   0.11656783521175385
+  ],
+  [
+   0.1207491084933281,
+   0.9307429194450378,
+   0.8489355444908142,
+   0.002074371324852109,
+   0.050441473722457886
+  ],
+  [
+   0.6209933757781982,
+   0.8118141293525696,
+   0.8377280831336975,
+   0.008381998166441917,
+   0.4214560091495514
+  ],
+  [
+   0.9063274264335632,
+   0.7475619316101074,
+   0.9858452081680298,
+   0.02141123078763485,
+   0.17465677857398987
+  ],
+  [
+   0.906717836856842,
+   0.8930301070213318,
+   0.9825950860977173,
+   0.03346913307905197,
+   0.04440722241997719
+  ],
+  [
+   0.79801344871521,
+   0.03966978192329407,
+   0.13053655624389648,
+   0.972236692905426,
+   0.010581846348941326
+  ],
+  [
+   0.16204942762851715,
+   0.02515341341495514,
+   0.14877061545848846,
+   0.657383143901825,
+   0.0015609590336680412
+  ],
+  [
+   0.42984724044799805,
+   0.019662335515022278,
+   0.02081471122801304,
+   0.9906176924705505,
+   0.013027417473495007
+  ],
+  [
+   0.6341257095336914,
+   0.10563415288925171,
+   0.30935922265052795,
+   0.11201708763837814,
+   0.19303341209888458
+  ],
+  [
+   0.21595776081085205,
+   0.01612677238881588,
+   0.0036192566622048616,
+   0.995891809463501,
+   0.0023480779491364956
+  ],
+  [
+   0.0950772762298584,
+   0.4903276264667511,
+   0.6121244430541992,
+   0.0274149589240551,
+   0.17452043294906616
+  ],
+  [
+   0.8291585445404053,
+   0.07294934242963791,
+   0.5491566061973572,
+   0.7582834959030151,
+   0.1851407140493393
+  ],
+  [
+   0.9541819095611572,
+   0.12112942337989807,
+   0.1779041588306427,
+   0.04394058138132095,
+   0.9799684286117554
+  ],
+  [
+   0.03492148965597153,
+   0.0029436268378049135,
+   0.0017350238049402833,
+   0.00032414557063020766,
+   0.9897164702415466
+  ],
+  [
+   0.5219918489456177,
+   0.028947370126843452,
+   0.03616619482636452,
+   0.0038495261687785387,
+   0.98311847448349
+  ],
+  [
+   0.9847590327262878,
+   0.04831137880682945,
+   0.523733913898468,
+   0.11356940865516663,
+   0.9924938678741455
+  ],
+  [
+   0.8614487648010254,
+   0.04407109320163727,
+   0.0731172040104866,
+   0.04223908856511116,
+   0.9725894331932068
+  ],
+  [
+   0.2487431913614273,
+   0.025689974427223206,
+   0.027308113873004913,
+   0.02178976871073246,
+   0.8805747628211975
+  ],
+  [
+   0.27690741419792175,
+   0.17280033230781555,
+   0.45879432559013367,
+   0.004515122156590223,
+   0.9403625726699829
+  ],
+  [
+   0.6692671179771423,
+   0.09842168539762497,
+   0.2282048761844635,
+   0.052657999098300934,
+   0.051955606788396835
+  ],
+  [
+   0.8682315349578857,
+   0.581345796585083,
+   0.5204229950904846,
+   0.03161856159567833,
+   0.05732138827443123
+  ],
+  [
+   0.6053243279457092,
+   0.2268788069486618,
+   0.1496240645647049,
+   0.06592012196779251,
+   0.015608017332851887
+  ],
+  [
+   0.00911570806056261,
+   0.005771727301180363,
+   0.001043715514242649,
+   0.0017455443739891052,
+   0.0030531759839504957
+  ],
+  [
+   0.9932307004928589,
+   0.12467706948518753,
+   0.558479368686676,
+   0.07769747823476791,
+   0.2710151970386505
+  ],
+  [
+   0.9845596551895142,
+   0.08255095779895782,
+   0.11348428577184677,
+   0.1378219872713089,
+   0.058286868035793304
+  ],
+  [
+   0.943359375,
+   0.03988410532474518,
+   0.15357407927513123,
+   0.06375260651111603,
+   0.12909039855003357
+  ],
+  [
+   0.6188843846321106,
+   0.008414998650550842,
+   0.039411511272192,
+   0.10756658017635345,
+   0.010806862264871597
+  ],
+  [
+   0.1309497058391571,
+   0.9587568044662476,
+   0.8388662338256836,
+   0.007564421743154526,
+   0.051920950412750244
+  ],
+  [
+   0.4940970838069916,
+   0.5631682276725769,
+   0.3071345090866089,
+   0.004967936780303717,
+   0.017486324533820152
+  ],
+  [
+   0.2066773921251297,
+   0.005140474531799555,
+   0.0037811119109392166,
+   0.002925548003986478,
+   0.01894369162619114
+  ],
+  [
+   0.9146355986595154,
+   0.06466145068407059,
+   0.022550320252776146,
+   0.02059922367334366,
+   0.1431179940700531
+  ]
+ ],
+ "detail": [
+  {
+   "camera.capture": 0.9606438279151917,
+   "camera.list": 0.8400612473487854,
+   "camera.preview": 0.8245673179626465,
+   "photos.find": 0.3647066354751587,
+   "screen.capture": 0.9128784537315369
+  },
+  {
+   "camera.capture": 0.9740250706672668,
+   "camera.list": 0.8620713949203491,
+   "camera.preview": 0.8914817571640015,
+   "photos.find": 0.010910417884588242,
+   "screen.capture": 0.8644310235977173
+  },
+  {
+   "camera.capture": 0.9893670678138733,
+   "camera.list": 0.4436856508255005,
+   "camera.preview": 0.9281224012374878,
+   "photos.find": 0.004585768096148968,
+   "screen.capture": 0.8972415328025818
+  },
+  {
+   "camera.capture": 0.19840537011623383,
+   "camera.list": 0.017984526231884956,
+   "camera.preview": 0.012341354042291641,
+   "photos.find": 0.010386618785560131,
+   "screen.capture": 0.19354765117168427
+  },
+  {
+   "camera.capture": 0.9912348985671997,
+   "camera.list": 0.27929529547691345,
+   "camera.preview": 0.7642475366592407,
+   "photos.find": 0.002849404001608491,
+   "screen.capture": 0.679297149181366
+  },
+  {
+   "camera.capture": 0.9413168430328369,
+   "camera.list": 0.17133831977844238,
+   "camera.preview": 0.6051798462867737,
+   "photos.find": 0.036401063203811646,
+   "screen.capture": 0.2952890694141388
+  },
+  {
+   "camera.capture": 0.09720169007778168,
+   "camera.list": 0.023126745596528053,
+   "camera.preview": 0.048403412103652954,
+   "photos.find": 0.004145401064306498,
+   "screen.capture": 0.6451963186264038
+  },
+  {
+   "camera.capture": 0.9952775239944458,
+   "camera.list": 0.08246685564517975,
+   "camera.preview": 0.44338104128837585,
+   "photos.find": 0.1852521151304245,
+   "screen.capture": 0.9742226004600525
+  },
+  {
+   "camera.capture": 0.7807108163833618,
+   "camera.list": 0.25927966833114624,
+   "camera.preview": 0.3716326653957367,
+   "photos.find": 0.04429619014263153,
+   "screen.capture": 0.05982210114598274
+  },
+  {
+   "camera.capture": 0.9971153736114502,
+   "camera.list": 0.56293123960495,
+   "camera.preview": 0.7898473143577576,
+   "photos.find": 0.10178562998771667,
+   "screen.capture": 0.0350453145802021
+  },
+  {
+   "camera.capture": 0.9980702996253967,
+   "camera.list": 0.5226642489433289,
+   "camera.preview": 0.21826718747615814,
+   "photos.find": 0.004617923870682716,
+   "screen.capture": 0.03886730223894119
+  },
+  {
+   "camera.capture": 0.08738304674625397,
+   "camera.list": 0.9241573810577393,
+   "camera.preview": 0.4941456913948059,
+   "photos.find": 0.003751031355932355,
+   "screen.capture": 0.0033577079884707928
+  },
+  {
+   "camera.capture": 0.7048985958099365,
+   "camera.list": 0.006187557242810726,
+   "camera.preview": 0.010224977508187294,
+   "photos.find": 0.0013849403476342559,
+   "screen.capture": 0.026875140145421028
+  },
+  {
+   "camera.capture": 0.9245355725288391,
+   "camera.list": 0.1950574666261673,
+   "camera.preview": 0.24018844962120056,
+   "photos.find": 0.014442367479205132,
+   "screen.capture": 0.15489386022090912
+  },
+  {
+   "camera.capture": 0.9702996015548706,
+   "camera.list": 0.9961304664611816,
+   "camera.preview": 0.9297322630882263,
+   "photos.find": 0.18705564737319946,
+   "screen.capture": 0.13270290195941925
+  },
+  {
+   "camera.capture": 0.985833466053009,
+   "camera.list": 0.3569920063018799,
+   "camera.preview": 0.8068844676017761,
+   "photos.find": 0.08180411159992218,
+   "screen.capture": 0.5071558952331543
+  },
+  {
+   "camera.capture": 0.16890539228916168,
+   "camera.list": 0.9444820284843445,
+   "camera.preview": 0.10369054973125458,
+   "photos.find": 0.016104212030768394,
+   "screen.capture": 0.015153270214796066
+  },
+  {
+   "camera.capture": 0.16066572070121765,
+   "camera.list": 0.9862225651741028,
+   "camera.preview": 0.5691717863082886,
+   "photos.find": 0.04419919475913048,
+   "screen.capture": 0.13103275001049042
+  },
+  {
+   "camera.capture": 0.1209009662270546,
+   "camera.list": 0.942774772644043,
+   "camera.preview": 0.1260591745376587,
+   "photos.find": 0.004834027495235205,
+   "screen.capture": 0.026836011558771133
+  },
+  {
+   "camera.capture": 0.5292962193489075,
+   "camera.list": 0.9346216917037964,
+   "camera.preview": 0.7969222664833069,
+   "photos.find": 0.18391703069210052,
+   "screen.capture": 0.10419401526451111
+  },
+  {
+   "camera.capture": 0.22013266384601593,
+   "camera.list": 0.9052452445030212,
+   "camera.preview": 0.21899347007274628,
+   "photos.find": 0.03387998044490814,
+   "screen.capture": 0.05937621369957924
+  },
+  {
+   "camera.capture": 0.3123945891857147,
+   "camera.list": 0.34388720989227295,
+   "camera.preview": 0.35214564204216003,
+   "photos.find": 0.27210938930511475,
+   "screen.capture": 0.035042088478803635
+  },
+  {
+   "camera.capture": 0.9604111909866333,
+   "camera.list": 0.21923790872097015,
+   "camera.preview": 0.6102842688560486,
+   "photos.find": 0.03275971859693527,
+   "screen.capture": 0.24146702885627747
+  },
+  {
+   "camera.capture": 0.006816183682531118,
+   "camera.list": 0.941868007183075,
+   "camera.preview": 0.05773612856864929,
+   "photos.find": 0.001959186280146241,
+   "screen.capture": 0.015827523544430733
+  },
+  {
+   "camera.capture": 0.24822404980659485,
+   "camera.list": 0.9658223986625671,
+   "camera.preview": 0.16979041695594788,
+   "photos.find": 0.001418336178176105,
+   "screen.capture": 0.03820955753326416
+  },
+  {
+   "camera.capture": 0.08373323082923889,
+   "camera.list": 0.9240541458129883,
+   "camera.preview": 0.3464648425579071,
+   "photos.find": 0.004269180819392204,
+   "screen.capture": 0.04131021350622177
+  },
+  {
+   "camera.capture": 0.8615807890892029,
+   "camera.list": 0.9989608526229858,
+   "camera.preview": 0.9896212816238403,
+   "photos.find": 0.00971943885087967,
+   "screen.capture": 0.6015231609344482
+  },
+  {
+   "camera.capture": 0.4538664221763611,
+   "camera.list": 0.9255501627922058,
+   "camera.preview": 0.558124303817749,
+   "photos.find": 0.010368920862674713,
+   "screen.capture": 0.046764906495809555
+  },
+  {
+   "camera.capture": 0.18110431730747223,
+   "camera.list": 0.5876709222793579,
+   "camera.preview": 0.5376222133636475,
+   "photos.find": 0.01125204935669899,
+   "screen.capture": 0.13537992537021637
+  },
+  {
+   "camera.capture": 0.12709401547908783,
+   "camera.list": 0.7460909485816956,
+   "camera.preview": 0.18340685963630676,
+   "photos.find": 0.014795885421335697,
+   "screen.capture": 0.05972728505730629
+  },
+  {
+   "camera.capture": 0.36691799759864807,
+   "camera.list": 0.31637606024742126,
+   "camera.preview": 0.9843929409980774,
+   "photos.find": 0.012128748930990696,
+   "screen.capture": 0.2638002932071686
+  },
+  {
+   "camera.capture": 0.01718115247786045,
+   "camera.list": 0.09626027196645737,
+   "camera.preview": 0.005887813866138458,
+   "photos.find": 0.005654629319906235,
+   "screen.capture": 0.01853014901280403
+  },
+  {
+   "camera.capture": 0.42326900362968445,
+   "camera.list": 0.9738991260528564,
+   "camera.preview": 0.994378387928009,
+   "photos.find": 0.014140610583126545,
+   "screen.capture": 0.7205687761306763
+  },
+  {
+   "camera.capture": 0.48989337682724,
+   "camera.list": 0.747745156288147,
+   "camera.preview": 0.5735421776771545,
+   "photos.find": 0.027650024741888046,
+   "screen.capture": 0.07899364829063416
+  },
+  {
+   "camera.capture": 0.1423308104276657,
+   "camera.list": 0.7940906882286072,
+   "camera.preview": 0.9522809982299805,
+   "photos.find": 0.0019235076615586877,
+   "screen.capture": 0.3541319966316223
+  },
+  {
+   "camera.capture": 0.4599340260028839,
+   "camera.list": 0.9109408259391785,
+   "camera.preview": 0.5230078101158142,
+   "photos.find": 0.01014594454318285,
+   "screen.capture": 0.012798385694622993
+  },
+  {
+   "camera.capture": 0.06275548785924911,
+   "camera.list": 0.7999467253684998,
+   "camera.preview": 0.4712032973766327,
+   "photos.find": 0.0015769950114190578,
+   "screen.capture": 0.02238105610013008
+  },
+  {
+   "camera.capture": 0.02480367384850979,
+   "camera.list": 0.32954341173171997,
+   "camera.preview": 0.0202501118183136,
+   "photos.find": 0.002094705356284976,
+   "screen.capture": 0.05514311417937279
+  },
+  {
+   "camera.capture": 0.9971876740455627,
+   "camera.list": 0.10393144935369492,
+   "camera.preview": 0.6162274479866028,
+   "photos.find": 0.02817622199654579,
+   "screen.capture": 0.21766196191310883
+  },
+  {
+   "camera.capture": 0.2003145068883896,
+   "camera.list": 0.9990538954734802,
+   "camera.preview": 0.9905272722244263,
+   "photos.find": 0.0072794160805642605,
+   "screen.capture": 0.01668165996670723
+  },
+  {
+   "camera.capture": 0.34353524446487427,
+   "camera.list": 0.6957225799560547,
+   "camera.preview": 0.6395047903060913,
+   "photos.find": 0.006766201928257942,
+   "screen.capture": 0.03870268538594246
+  },
+  {
+   "camera.capture": 0.3280579447746277,
+   "camera.list": 0.8164049386978149,
+   "camera.preview": 0.64617919921875,
+   "photos.find": 0.011949552223086357,
+   "screen.capture": 0.04620688781142235
+  },
+  {
+   "camera.capture": 0.8103189468383789,
+   "camera.list": 0.5307918787002563,
+   "camera.preview": 0.9770427942276001,
+   "photos.find": 0.021769775077700615,
+   "screen.capture": 0.8983744978904724
+  },
+  {
+   "camera.capture": 0.029151424765586853,
+   "camera.list": 0.9553414583206177,
+   "camera.preview": 0.8538292050361633,
+   "photos.find": 0.0022972626611590385,
+   "screen.capture": 0.26075753569602966
+  },
+  {
+   "camera.capture": 0.5905573964118958,
+   "camera.list": 0.6563894748687744,
+   "camera.preview": 0.8491740822792053,
+   "photos.find": 0.0027554254047572613,
+   "screen.capture": 0.09299998730421066
+  },
+  {
+   "camera.capture": 0.05642020329833031,
+   "camera.list": 0.02256298065185547,
+   "camera.preview": 0.02119484171271324,
+   "photos.find": 0.0020168591290712357,
+   "screen.capture": 0.08727830648422241
+  },
+  {
+   "camera.capture": 0.9174456000328064,
+   "camera.list": 0.3022128939628601,
+   "camera.preview": 0.29804083704948425,
+   "photos.find": 0.012829110026359558,
+   "screen.capture": 0.998012900352478
+  },
+  {
+   "camera.capture": 0.016463208943605423,
+   "camera.list": 0.014538065530359745,
+   "camera.preview": 0.15422914922237396,
+   "photos.find": 0.0009592194692231715,
+   "screen.capture": 0.22940167784690857
+  },
+  {
+   "camera.capture": 0.012922332622110844,
+   "camera.list": 0.013860376551747322,
+   "camera.preview": 0.012170148082077503,
+   "photos.find": 0.03102104924619198,
+   "screen.capture": 0.0018129099626094103
+  },
+  {
+   "camera.capture": 0.035565655678510666,
+   "camera.list": 0.017075687646865845,
+   "camera.preview": 0.023932889103889465,
+   "photos.find": 0.9315054416656494,
+   "screen.capture": 0.015563391149044037
+  },
+  {
+   "camera.capture": 0.6649640798568726,
+   "camera.list": 0.08834146708250046,
+   "camera.preview": 0.02674088627099991,
+   "photos.find": 0.9868268966674805,
+   "screen.capture": 0.002324896166101098
+  },
+  {
+   "camera.capture": 0.1320943683385849,
+   "camera.list": 0.04337842017412186,
+   "camera.preview": 0.023476898670196533,
+   "photos.find": 0.07029905170202255,
+   "screen.capture": 0.04433108866214752
+  },
+  {
+   "camera.capture": 0.023935139179229736,
+   "camera.list": 0.009011553600430489,
+   "camera.preview": 0.004816693719476461,
+   "photos.find": 0.0038792141713202,
+   "screen.capture": 0.011052890680730343
+  },
+  {
+   "camera.capture": 0.03713702782988548,
+   "camera.list": 0.020130086690187454,
+   "camera.preview": 0.0020848012063652277,
+   "photos.find": 0.012527896091341972,
+   "screen.capture": 0.011552768759429455
+  },
+  {
+   "camera.capture": 0.9552559852600098,
+   "camera.list": 0.010468660853803158,
+   "camera.preview": 0.022563422098755836,
+   "photos.find": 0.011342281475663185,
+   "screen.capture": 0.016980214044451714
+  },
+  {
+   "camera.capture": 0.023980654776096344,
+   "camera.list": 0.03321708366274834,
+   "camera.preview": 0.01965838484466076,
+   "photos.find": 0.043345704674720764,
+   "screen.capture": 0.05258668214082718
+  },
+  {
+   "camera.capture": 0.9065889120101929,
+   "camera.list": 0.4513704478740692,
+   "camera.preview": 0.61640465259552,
+   "photos.find": 0.005710486322641373,
+   "screen.capture": 0.009196117520332336
+  },
+  {
+   "camera.capture": 0.7175259590148926,
+   "camera.list": 0.9359018206596375,
+   "camera.preview": 0.9964890480041504,
+   "photos.find": 0.5922143459320068,
+   "screen.capture": 0.08964042365550995
+  },
+  {
+   "camera.capture": 0.4145296514034271,
+   "camera.list": 0.8248833417892456,
+   "camera.preview": 0.7827017307281494,
+   "photos.find": 0.003839960088953376,
+   "screen.capture": 0.009098539128899574
+  },
+  {
+   "camera.capture": 0.7734159827232361,
+   "camera.list": 0.23759284615516663,
+   "camera.preview": 0.23726840317249298,
+   "photos.find": 0.6290316581726074,
+   "screen.capture": 0.0015192067949101329
+  },
+  {
+   "camera.capture": 0.8191067576408386,
+   "camera.list": 0.02164110355079174,
+   "camera.preview": 0.037956904619932175,
+   "photos.find": 0.6433883309364319,
+   "screen.capture": 0.016515035182237625
+  },
+  {
+   "camera.capture": 0.8929029703140259,
+   "camera.list": 0.021029382944107056,
+   "camera.preview": 0.08319439738988876,
+   "photos.find": 0.6663454174995422,
+   "screen.capture": 0.023520424962043762
+  },
+  {
+   "camera.capture": 0.9471796751022339,
+   "camera.list": 0.2120175063610077,
+   "camera.preview": 0.9255415797233582,
+   "photos.find": 0.1557973325252533,
+   "screen.capture": 0.9938333034515381
+  },
+  {
+   "camera.capture": 0.9790955781936646,
+   "camera.list": 0.033788882195949554,
+   "camera.preview": 0.023401498794555664,
+   "photos.find": 0.7171500325202942,
+   "screen.capture": 0.01900486648082733
+  },
+  {
+   "camera.capture": 0.5640206336975098,
+   "camera.list": 0.10868258774280548,
+   "camera.preview": 0.29770874977111816,
+   "photos.find": 0.002052114112302661,
+   "screen.capture": 0.7500424385070801
+  },
+  {
+   "camera.capture": 0.9031782150268555,
+   "camera.list": 0.2774903476238251,
+   "camera.preview": 0.2163974642753601,
+   "photos.find": 0.13898205757141113,
+   "screen.capture": 0.9879453182220459
+  },
+  {
+   "camera.capture": 0.9873505234718323,
+   "camera.list": 0.0558798648416996,
+   "camera.preview": 0.1946496218442917,
+   "photos.find": 0.06295058131217957,
+   "screen.capture": 0.9943291544914246
+  },
+  {
+   "camera.capture": 0.3314235508441925,
+   "camera.list": 0.7048641443252563,
+   "camera.preview": 0.8050845861434937,
+   "photos.find": 0.013544680550694466,
+   "screen.capture": 0.15922750532627106
+  },
+  {
+   "camera.capture": 0.948933482170105,
+   "camera.list": 0.016465572640299797,
+   "camera.preview": 0.14446504414081573,
+   "photos.find": 0.002622089348733425,
+   "screen.capture": 0.9751594066619873
+  },
+  {
+   "camera.capture": 0.5683254599571228,
+   "camera.list": 0.023043254390358925,
+   "camera.preview": 0.03003072924911976,
+   "photos.find": 0.016567038372159004,
+   "screen.capture": 0.9341951608657837
+  },
+  {
+   "camera.capture": 0.9927887320518494,
+   "camera.list": 0.8549891710281372,
+   "camera.preview": 0.8629945516586304,
+   "photos.find": 0.1286340206861496,
+   "screen.capture": 0.661865234375
+  },
+  {
+   "camera.capture": 0.16328303515911102,
+   "camera.list": 0.9319604635238647,
+   "camera.preview": 0.8517358899116516,
+   "photos.find": 0.011138329282402992,
+   "screen.capture": 0.28471603989601135
+  },
+  {
+   "camera.capture": 0.029078101739287376,
+   "camera.list": 0.0031738956458866596,
+   "camera.preview": 0.001985839568078518,
+   "photos.find": 0.000483684241771698,
+   "screen.capture": 0.965141236782074
+  },
+  {
+   "camera.capture": 0.7060368657112122,
+   "camera.list": 0.016370952129364014,
+   "camera.preview": 0.022068046033382416,
+   "photos.find": 0.011815185658633709,
+   "screen.capture": 0.994086742401123
+  },
+  {
+   "camera.capture": 0.9472126364707947,
+   "camera.list": 0.020934274420142174,
+   "camera.preview": 0.032599397003650665,
+   "photos.find": 0.0291888564825058,
+   "screen.capture": 0.9987921118736267
+  },
+  {
+   "camera.capture": 0.011373872868716717,
+   "camera.list": 0.001224649604409933,
+   "camera.preview": 0.0008003959082998335,
+   "photos.find": 0.00036159108276478946,
+   "screen.capture": 0.9484397172927856
+  },
+  {
+   "camera.capture": 0.0304779764264822,
+   "camera.list": 0.0012125242501497269,
+   "camera.preview": 0.0015843939036130905,
+   "photos.find": 0.0006830660859122872,
+   "screen.capture": 0.9891297817230225
+  },
+  {
+   "camera.capture": 0.006140748038887978,
+   "camera.list": 0.015076777897775173,
+   "camera.preview": 0.0009043450700119138,
+   "photos.find": 0.004152994602918625,
+   "screen.capture": 0.8362752795219421
+  },
+  {
+   "camera.capture": 0.6731287240982056,
+   "camera.list": 0.9945365190505981,
+   "camera.preview": 0.9832509160041809,
+   "photos.find": 0.008949238806962967,
+   "screen.capture": 0.8000117540359497
+  },
+  {
+   "camera.capture": 0.004436679650098085,
+   "camera.list": 0.0021051832009106874,
+   "camera.preview": 0.0037306053563952446,
+   "photos.find": 0.001076509477570653,
+   "screen.capture": 0.9687711596488953
+  },
+  {
+   "camera.capture": 0.03236260265111923,
+   "camera.list": 0.00823493767529726,
+   "camera.preview": 0.005265210755169392,
+   "photos.find": 0.0016297773690894246,
+   "screen.capture": 0.015309719368815422
+  },
+  {
+   "camera.capture": 0.0013809457886964083,
+   "camera.list": 0.004315839149057865,
+   "camera.preview": 0.0009119387250393629,
+   "photos.find": 0.00046964999637566507,
+   "screen.capture": 0.023768121376633644
+  },
+  {
+   "camera.capture": 0.009915837086737156,
+   "camera.list": 0.0065656984224915504,
+   "camera.preview": 0.0022803153842687607,
+   "photos.find": 0.0018536874558776617,
+   "screen.capture": 0.05367317050695419
+  },
+  {
+   "camera.capture": 0.03073924593627453,
+   "camera.list": 0.00891364086419344,
+   "camera.preview": 0.014186522923409939,
+   "photos.find": 0.003673325525596738,
+   "screen.capture": 0.11133996397256851
+  },
+  {
+   "camera.capture": 0.012810789979994297,
+   "camera.list": 0.0065853591077029705,
+   "camera.preview": 0.007919405587017536,
+   "photos.find": 0.001987151801586151,
+   "screen.capture": 0.04836020618677139
+  },
+  {
+   "camera.capture": 0.0019253890495747328,
+   "camera.list": 0.002470556413754821,
+   "camera.preview": 0.0015847106697037816,
+   "photos.find": 0.0012486279010772705,
+   "screen.capture": 0.0070834713988006115
+  },
+  {
+   "camera.capture": 0.023420991376042366,
+   "camera.list": 0.010177207179367542,
+   "camera.preview": 0.014772909693419933,
+   "photos.find": 0.003558384720236063,
+   "screen.capture": 0.008618701249361038
+  },
+  {
+   "camera.capture": 0.00121180375572294,
+   "camera.list": 0.007628913503140211,
+   "camera.preview": 0.003123354399576783,
+   "photos.find": 0.001312483916990459,
+   "screen.capture": 0.0463431254029274
+  },
+  {
+   "camera.capture": 0.0020813795272260904,
+   "camera.list": 0.013875111937522888,
+   "camera.preview": 0.0021804722491651773,
+   "photos.find": 0.0011927391169592738,
+   "screen.capture": 0.00639989972114563
+  },
+  {
+   "camera.capture": 0.011245801113545895,
+   "camera.list": 0.027719467878341675,
+   "camera.preview": 0.0044069052673876286,
+   "photos.find": 0.002085132524371147,
+   "screen.capture": 0.07306493073701859
+  },
+  {
+   "camera.capture": 0.10814506560564041,
+   "camera.list": 0.036049459129571915,
+   "camera.preview": 0.015646880492568016,
+   "photos.find": 0.005656457971781492,
+   "screen.capture": 0.08046797662973404
+  },
+  {
+   "camera.capture": 0.01291875820606947,
+   "camera.list": 0.05059824138879776,
+   "camera.preview": 0.005396058317273855,
+   "photos.find": 0.0029496201314032078,
+   "screen.capture": 0.05553291738033295
+  },
+  {
+   "camera.capture": 0.003388704266399145,
+   "camera.list": 0.008085653185844421,
+   "camera.preview": 0.002130314474925399,
+   "photos.find": 0.0018547498621046543,
+   "screen.capture": 0.0010327247437089682
+  },
+  {
+   "camera.capture": 0.004834761843085289,
+   "camera.list": 0.0062676300294697285,
+   "camera.preview": 0.0010280315764248371,
+   "photos.find": 0.001986541086807847,
+   "screen.capture": 0.0073507726192474365
+  },
+  {
+   "camera.capture": 0.12465199828147888,
+   "camera.list": 0.026588836684823036,
+   "camera.preview": 0.014102503657341003,
+   "photos.find": 0.02095070108771324,
+   "screen.capture": 0.021322747692465782
+  },
+  {
+   "camera.capture": 0.0026588193140923977,
+   "camera.list": 0.004322031978517771,
+   "camera.preview": 0.0016324144089594483,
+   "photos.find": 0.0006848530611023307,
+   "screen.capture": 0.004765225574374199
+  },
+  {
+   "camera.capture": 0.4183366894721985,
+   "camera.list": 0.028361326083540916,
+   "camera.preview": 0.01510644517838955,
+   "photos.find": 0.018512139096856117,
+   "screen.capture": 0.041175514459609985
+  },
+  {
+   "camera.capture": 0.4945027530193329,
+   "camera.list": 0.03749348223209381,
+   "camera.preview": 0.08766652643680573,
+   "photos.find": 0.03385395184159279,
+   "screen.capture": 0.248792365193367
+  },
+  {
+   "camera.capture": 0.69756019115448,
+   "camera.list": 0.03812899813055992,
+   "camera.preview": 0.026895849034190178,
+   "photos.find": 0.43339237570762634,
+   "screen.capture": 0.15727736055850983
+  },
+  {
+   "camera.capture": 0.14816763997077942,
+   "camera.list": 0.045170266181230545,
+   "camera.preview": 0.006145843770354986,
+   "photos.find": 0.0028363221790641546,
+   "screen.capture": 0.04093693941831589
+  },
+  {
+   "camera.capture": 0.08194117993116379,
+   "camera.list": 0.021331366151571274,
+   "camera.preview": 0.0029160715639591217,
+   "photos.find": 0.0012458194978535175,
+   "screen.capture": 0.00574952457100153
+  },
+  {
+   "camera.capture": 0.8062469959259033,
+   "camera.list": 0.017493125051259995,
+   "camera.preview": 0.006549445446580648,
+   "photos.find": 0.015719519928097725,
+   "screen.capture": 0.06280671805143356
+  },
+  {
+   "camera.capture": 0.5598766803741455,
+   "camera.list": 0.03314243629574776,
+   "camera.preview": 0.12947772443294525,
+   "photos.find": 0.007100515067577362,
+   "screen.capture": 0.6147721409797668
+  },
+  {
+   "camera.capture": 0.15850962698459625,
+   "camera.list": 0.03971358388662338,
+   "camera.preview": 0.011580036953091621,
+   "photos.find": 0.00208431133069098,
+   "screen.capture": 0.03267361596226692
+  },
+  {
+   "camera.capture": 0.9160640239715576,
+   "camera.list": 0.8701662421226501,
+   "camera.preview": 0.4048771262168884,
+   "photos.find": 0.027735764160752296,
+   "screen.capture": 0.01600337214767933
+  },
+  {
+   "camera.capture": 0.9964118599891663,
+   "camera.list": 0.1675267219543457,
+   "camera.preview": 0.3681514263153076,
+   "photos.find": 0.004146464169025421,
+   "screen.capture": 0.039265260100364685
+  },
+  {
+   "camera.capture": 0.9935357570648193,
+   "camera.list": 0.04895234853029251,
+   "camera.preview": 0.33741116523742676,
+   "photos.find": 0.00472306041046977,
+   "screen.capture": 0.8544537425041199
+  },
+  {
+   "camera.capture": 0.9348456263542175,
+   "camera.list": 0.9892923831939697,
+   "camera.preview": 0.8289331793785095,
+   "photos.find": 0.009813496842980385,
+   "screen.capture": 0.0402248352766037
+  },
+  {
+   "camera.capture": 0.8169127106666565,
+   "camera.list": 0.09870393574237823,
+   "camera.preview": 0.07696036249399185,
+   "photos.find": 0.022662930190563202,
+   "screen.capture": 0.016546307131648064
+  },
+  {
+   "camera.capture": 0.9830922484397888,
+   "camera.list": 0.21537169814109802,
+   "camera.preview": 0.7398466467857361,
+   "photos.find": 0.011245833709836006,
+   "screen.capture": 0.40947213768959045
+  },
+  {
+   "camera.capture": 0.8721839785575867,
+   "camera.list": 0.7615253329277039,
+   "camera.preview": 0.2966339588165283,
+   "photos.find": 0.002178742317482829,
+   "screen.capture": 0.9935490489006042
+  },
+  {
+   "camera.capture": 0.6790660619735718,
+   "camera.list": 0.07011192291975021,
+   "camera.preview": 0.11902430653572083,
+   "photos.find": 0.06029845401644707,
+   "screen.capture": 0.05914149433374405
+  },
+  {
+   "camera.capture": 0.9989060163497925,
+   "camera.list": 0.048358798027038574,
+   "camera.preview": 0.154272198677063,
+   "photos.find": 0.014043765142560005,
+   "screen.capture": 0.03218766674399376
+  },
+  {
+   "camera.capture": 0.4694105088710785,
+   "camera.list": 0.00977109745144844,
+   "camera.preview": 0.010237598791718483,
+   "photos.find": 0.007218473125249147,
+   "screen.capture": 0.008404516614973545
+  },
+  {
+   "camera.capture": 0.9989049434661865,
+   "camera.list": 0.15412843227386475,
+   "camera.preview": 0.7474309206008911,
+   "photos.find": 0.02298220805823803,
+   "screen.capture": 0.3128815293312073
+  },
+  {
+   "camera.capture": 0.9878671169281006,
+   "camera.list": 0.5593991279602051,
+   "camera.preview": 0.9181326627731323,
+   "photos.find": 0.014607309363782406,
+   "screen.capture": 0.1161184012889862
+  },
+  {
+   "camera.capture": 0.5407226085662842,
+   "camera.list": 0.23519618809223175,
+   "camera.preview": 0.030281193554401398,
+   "photos.find": 0.008703975938260555,
+   "screen.capture": 0.11814483255147934
+  },
+  {
+   "camera.capture": 0.8438000679016113,
+   "camera.list": 0.009614174254238605,
+   "camera.preview": 0.018539952114224434,
+   "photos.find": 0.012413084506988525,
+   "screen.capture": 0.02706044912338257
+  },
+  {
+   "camera.capture": 0.07975555211305618,
+   "camera.list": 0.9358364939689636,
+   "camera.preview": 0.9986238479614258,
+   "photos.find": 0.0019956640899181366,
+   "screen.capture": 0.35225749015808105
+  },
+  {
+   "camera.capture": 0.5468728542327881,
+   "camera.list": 0.012713715434074402,
+   "camera.preview": 0.06488271057605743,
+   "photos.find": 0.004250157158821821,
+   "screen.capture": 0.030513588339090347
+  },
+  {
+   "camera.capture": 0.12556242942810059,
+   "camera.list": 0.3485134541988373,
+   "camera.preview": 0.2568037807941437,
+   "photos.find": 0.004387082532048225,
+   "screen.capture": 0.03120279125869274
+  },
+  {
+   "camera.capture": 0.025011923164129257,
+   "camera.list": 0.9215567708015442,
+   "camera.preview": 0.2486000955104828,
+   "photos.find": 0.001322871190495789,
+   "screen.capture": 0.01913650892674923
+  },
+  {
+   "camera.capture": 0.8303983807563782,
+   "camera.list": 0.999219536781311,
+   "camera.preview": 0.9737980365753174,
+   "photos.find": 0.06845400482416153,
+   "screen.capture": 0.36729997396469116
+  },
+  {
+   "camera.capture": 0.854437530040741,
+   "camera.list": 0.9797306060791016,
+   "camera.preview": 0.8818776607513428,
+   "photos.find": 0.007935966365039349,
+   "screen.capture": 0.47816571593284607
+  },
+  {
+   "camera.capture": 0.03185597434639931,
+   "camera.list": 0.8355249762535095,
+   "camera.preview": 0.038493044674396515,
+   "photos.find": 0.0020076509099453688,
+   "screen.capture": 0.060832105576992035
+  },
+  {
+   "camera.capture": 0.002380405319854617,
+   "camera.list": 0.49779942631721497,
+   "camera.preview": 0.01178740430623293,
+   "photos.find": 0.001374461455270648,
+   "screen.capture": 0.006570440251380205
+  },
+  {
+   "camera.capture": 0.00938334409147501,
+   "camera.list": 0.9688906669616699,
+   "camera.preview": 0.01626633293926716,
+   "photos.find": 0.001538343378342688,
+   "screen.capture": 0.007944177836179733
+  },
+  {
+   "camera.capture": 0.030048593878746033,
+   "camera.list": 0.9760320782661438,
+   "camera.preview": 0.1539238840341568,
+   "photos.find": 0.0015436419053003192,
+   "screen.capture": 0.072575643658638
+  },
+  {
+   "camera.capture": 0.35549405217170715,
+   "camera.list": 0.8719598650932312,
+   "camera.preview": 0.2501923441886902,
+   "photos.find": 0.0019919220358133316,
+   "screen.capture": 0.034939974546432495
+  },
+  {
+   "camera.capture": 0.06289923191070557,
+   "camera.list": 0.9974133372306824,
+   "camera.preview": 0.537219226360321,
+   "photos.find": 0.00366118922829628,
+   "screen.capture": 0.1106085255742073
+  },
+  {
+   "camera.capture": 0.018924206495285034,
+   "camera.list": 0.9296385049819946,
+   "camera.preview": 0.23705068230628967,
+   "photos.find": 0.0007490519783459604,
+   "screen.capture": 0.0064033325761556625
+  },
+  {
+   "camera.capture": 0.44571611285209656,
+   "camera.list": 0.9858542084693909,
+   "camera.preview": 0.9616285562515259,
+   "photos.find": 0.0019682138226926327,
+   "screen.capture": 0.3104313910007477
+  },
+  {
+   "camera.capture": 0.1743619441986084,
+   "camera.list": 0.7349050641059875,
+   "camera.preview": 0.36354756355285645,
+   "photos.find": 0.0049880691803991795,
+   "screen.capture": 0.10292664170265198
+  },
+  {
+   "camera.capture": 0.09649140387773514,
+   "camera.list": 0.7185602188110352,
+   "camera.preview": 0.14570079743862152,
+   "photos.find": 0.0015730627346783876,
+   "screen.capture": 0.06454773992300034
+  },
+  {
+   "camera.capture": 0.5629406571388245,
+   "camera.list": 0.7692488431930542,
+   "camera.preview": 0.8773584961891174,
+   "photos.find": 0.009190984070301056,
+   "screen.capture": 0.926834225654602
+  },
+  {
+   "camera.capture": 0.1051650196313858,
+   "camera.list": 0.9344984889030457,
+   "camera.preview": 0.6171490550041199,
+   "photos.find": 0.0012167287059128284,
+   "screen.capture": 0.10056678205728531
+  },
+  {
+   "camera.capture": 0.3670247793197632,
+   "camera.list": 0.8590665459632874,
+   "camera.preview": 0.9974230527877808,
+   "photos.find": 0.01028131227940321,
+   "screen.capture": 0.5981577038764954
+  },
+  {
+   "camera.capture": 0.9533849358558655,
+   "camera.list": 0.8818493485450745,
+   "camera.preview": 0.7229436039924622,
+   "photos.find": 0.032942187041044235,
+   "screen.capture": 0.06630638986825943
+  },
+  {
+   "camera.capture": 0.17861606180667877,
+   "camera.list": 0.7654913663864136,
+   "camera.preview": 0.9878281354904175,
+   "photos.find": 0.0022731947246938944,
+   "screen.capture": 0.2895125448703766
+  },
+  {
+   "camera.capture": 0.22109355032444,
+   "camera.list": 0.8682236671447754,
+   "camera.preview": 0.7489190697669983,
+   "photos.find": 0.008773591369390488,
+   "screen.capture": 0.1663607805967331
+  },
+  {
+   "camera.capture": 0.7143358588218689,
+   "camera.list": 0.5854039788246155,
+   "camera.preview": 0.5211984515190125,
+   "photos.find": 0.011049741879105568,
+   "screen.capture": 0.3622484505176544
+  },
+  {
+   "camera.capture": 0.0495678149163723,
+   "camera.list": 0.11235324293375015,
+   "camera.preview": 0.08059621602296829,
+   "photos.find": 0.0019536036998033524,
+   "screen.capture": 0.030081856995821
+  },
+  {
+   "camera.capture": 0.997273862361908,
+   "camera.list": 0.021048927679657936,
+   "camera.preview": 0.3629069924354553,
+   "photos.find": 0.023628823459148407,
+   "screen.capture": 0.20120403170585632
+  },
+  {
+   "camera.capture": 0.01983102597296238,
+   "camera.list": 0.019107745960354805,
+   "camera.preview": 0.011461603455245495,
+   "photos.find": 0.005024224054068327,
+   "screen.capture": 0.04318196326494217
+  },
+  {
+   "camera.capture": 0.9898794889450073,
+   "camera.list": 0.7551707625389099,
+   "camera.preview": 0.9664431810379028,
+   "photos.find": 0.01008711475878954,
+   "screen.capture": 0.8023466467857361
+  },
+  {
+   "camera.capture": 0.21781253814697266,
+   "camera.list": 0.9431837201118469,
+   "camera.preview": 0.9963359832763672,
+   "photos.find": 0.00200977292843163,
+   "screen.capture": 0.40500330924987793
+  },
+  {
+   "camera.capture": 0.3103468418121338,
+   "camera.list": 0.9792565107345581,
+   "camera.preview": 0.9976773858070374,
+   "photos.find": 0.009764768183231354,
+   "screen.capture": 0.2940720021724701
+  },
+  {
+   "camera.capture": 0.03512648120522499,
+   "camera.list": 0.8687191009521484,
+   "camera.preview": 0.8626760244369507,
+   "photos.find": 0.000810910714790225,
+   "screen.capture": 0.10862228274345398
+  },
+  {
+   "camera.capture": 0.17301908135414124,
+   "camera.list": 0.9067842960357666,
+   "camera.preview": 0.9104149341583252,
+   "photos.find": 0.0021043438464403152,
+   "screen.capture": 0.8860316872596741
+  },
+  {
+   "camera.capture": 0.02566039189696312,
+   "camera.list": 0.43850457668304443,
+   "camera.preview": 0.12592171132564545,
+   "photos.find": 0.0010851237457245588,
+   "screen.capture": 0.01009466964751482
+  },
+  {
+   "camera.capture": 0.8132131695747375,
+   "camera.list": 0.7576623558998108,
+   "camera.preview": 0.9415050745010376,
+   "photos.find": 0.022759579122066498,
+   "screen.capture": 0.9886202812194824
+  },
+  {
+   "camera.capture": 0.7037965059280396,
+   "camera.list": 0.9973883032798767,
+   "camera.preview": 0.933618426322937,
+   "photos.find": 0.0969744622707367,
+   "screen.capture": 0.35839778184890747
+  },
+  {
+   "camera.capture": 0.27916303277015686,
+   "camera.list": 0.05405547469854355,
+   "camera.preview": 0.36122193932533264,
+   "photos.find": 0.890559732913971,
+   "screen.capture": 0.001905938726849854
+  },
+  {
+   "camera.capture": 0.5401270985603333,
+   "camera.list": 0.7580064535140991,
+   "camera.preview": 0.2481183558702469,
+   "photos.find": 0.9668207764625549,
+   "screen.capture": 0.009375812485814095
+  },
+  {
+   "camera.capture": 0.07838737219572067,
+   "camera.list": 0.027508998289704323,
+   "camera.preview": 0.0075538549572229385,
+   "photos.find": 0.9945297837257385,
+   "screen.capture": 0.003295216476544738
+  },
+  {
+   "camera.capture": 0.1742931604385376,
+   "camera.list": 0.024421952664852142,
+   "camera.preview": 0.015071340836584568,
+   "photos.find": 0.8367722034454346,
+   "screen.capture": 0.016261663287878036
+  },
+  {
+   "camera.capture": 0.648578941822052,
+   "camera.list": 0.013251647353172302,
+   "camera.preview": 0.028845999389886856,
+   "photos.find": 0.5421404242515564,
+   "screen.capture": 0.008572871796786785
+  },
+  {
+   "camera.capture": 0.03975488245487213,
+   "camera.list": 0.015702780336141586,
+   "camera.preview": 0.0070045217871665955,
+   "photos.find": 0.4923454523086548,
+   "screen.capture": 0.0031226924620568752
+  },
+  {
+   "camera.capture": 0.9977104663848877,
+   "camera.list": 0.031140264123678207,
+   "camera.preview": 0.28668248653411865,
+   "photos.find": 0.7618258595466614,
+   "screen.capture": 0.010200539603829384
+  },
+  {
+   "camera.capture": 0.9503982067108154,
+   "camera.list": 0.02391033247113228,
+   "camera.preview": 0.3280421793460846,
+   "photos.find": 0.9714654684066772,
+   "screen.capture": 0.01931776851415634
+  },
+  {
+   "camera.capture": 0.7577331066131592,
+   "camera.list": 0.01709211990237236,
+   "camera.preview": 0.07492251694202423,
+   "photos.find": 0.9867384433746338,
+   "screen.capture": 0.004665971267968416
+  },
+  {
+   "camera.capture": 0.13938814401626587,
+   "camera.list": 0.016404956579208374,
+   "camera.preview": 0.09343206882476807,
+   "photos.find": 0.6035820841789246,
+   "screen.capture": 0.02441572956740856
+  },
+  {
+   "camera.capture": 0.06578969955444336,
+   "camera.list": 0.9575353264808655,
+   "camera.preview": 0.951516330242157,
+   "photos.find": 0.23280049860477448,
+   "screen.capture": 0.08574717491865158
+  },
+  {
+   "camera.capture": 0.39936456084251404,
+   "camera.list": 0.04927864670753479,
+   "camera.preview": 0.0350504107773304,
+   "photos.find": 0.5094659924507141,
+   "screen.capture": 0.03413968160748482
+  },
+  {
+   "camera.capture": 0.11085803806781769,
+   "camera.list": 0.07526975125074387,
+   "camera.preview": 0.030428027734160423,
+   "photos.find": 0.950430154800415,
+   "screen.capture": 0.004377611912786961
+  },
+  {
+   "camera.capture": 0.25760599970817566,
+   "camera.list": 0.009238095954060555,
+   "camera.preview": 0.013688936829566956,
+   "photos.find": 0.13019651174545288,
+   "screen.capture": 0.011095617897808552
+  },
+  {
+   "camera.capture": 0.9922141432762146,
+   "camera.list": 0.17008744180202484,
+   "camera.preview": 0.9617650508880615,
+   "photos.find": 0.05738057196140289,
+   "screen.capture": 0.9831851124763489
+  },
+  {
+   "camera.capture": 0.06701942533254623,
+   "camera.list": 0.04147133231163025,
+   "camera.preview": 0.001486504916101694,
+   "photos.find": 0.8625819683074951,
+   "screen.capture": 0.004974300507456064
+  },
+  {
+   "camera.capture": 0.7318337559700012,
+   "camera.list": 0.0984831377863884,
+   "camera.preview": 0.16123344004154205,
+   "photos.find": 0.009997351095080376,
+   "screen.capture": 0.9969958066940308
+  },
+  {
+   "camera.capture": 0.8870601654052734,
+   "camera.list": 0.13388098776340485,
+   "camera.preview": 0.09241250157356262,
+   "photos.find": 0.02384209632873535,
+   "screen.capture": 0.970795750617981
+  },
+  {
+   "camera.capture": 0.4916127026081085,
+   "camera.list": 0.02395479939877987,
+   "camera.preview": 0.43365681171417236,
+   "photos.find": 0.009497018530964851,
+   "screen.capture": 0.9948181509971619
+  },
+  {
+   "camera.capture": 0.9143004417419434,
+   "camera.list": 0.6163672804832458,
+   "camera.preview": 0.6731921434402466,
+   "photos.find": 0.031591013073921204,
+   "screen.capture": 0.9847240447998047
+  },
+  {
+   "camera.capture": 0.8649028539657593,
+   "camera.list": 0.051208529621362686,
+   "camera.preview": 0.04490317031741142,
+   "photos.find": 0.03675146773457527,
+   "screen.capture": 0.9953988194465637
+  },
+  {
+   "camera.capture": 0.8903337717056274,
+   "camera.list": 0.01187192928045988,
+   "camera.preview": 0.07999490946531296,
+   "photos.find": 0.008605509996414185,
+   "screen.capture": 0.9817387461662292
+  },
+  {
+   "camera.capture": 0.9932501316070557,
+   "camera.list": 0.8100569844245911,
+   "camera.preview": 0.9584991335868835,
+   "photos.find": 0.013776978477835655,
+   "screen.capture": 0.27605998516082764
+  },
+  {
+   "camera.capture": 0.047939907759428024,
+   "camera.list": 0.007808430586010218,
+   "camera.preview": 0.03337938338518143,
+   "photos.find": 0.006051389500498772,
+   "screen.capture": 0.5979004502296448
+  },
+  {
+   "camera.capture": 0.7100922465324402,
+   "camera.list": 0.009052809327840805,
+   "camera.preview": 0.006923625245690346,
+   "photos.find": 0.0044253915548324585,
+   "screen.capture": 0.9758262038230896
+  },
+  {
+   "camera.capture": 0.731033444404602,
+   "camera.list": 0.053828004747629166,
+   "camera.preview": 0.07479847967624664,
+   "photos.find": 0.018801189959049225,
+   "screen.capture": 0.9985540509223938
+  },
+  {
+   "camera.capture": 0.619276762008667,
+   "camera.list": 0.22402213513851166,
+   "camera.preview": 0.03305188938975334,
+   "photos.find": 0.02736189216375351,
+   "screen.capture": 0.9732793569564819
+  },
+  {
+   "camera.capture": 0.02945317141711712,
+   "camera.list": 0.014480303972959518,
+   "camera.preview": 0.002267584204673767,
+   "photos.find": 0.0015826690942049026,
+   "screen.capture": 0.5976018905639648
+  },
+  {
+   "camera.capture": 0.41234108805656433,
+   "camera.list": 0.008316698484122753,
+   "camera.preview": 0.009017578326165676,
+   "photos.find": 0.0053077018819749355,
+   "screen.capture": 0.9922985434532166
+  },
+  {
+   "camera.capture": 0.8480046391487122,
+   "camera.list": 0.02130635268986225,
+   "camera.preview": 0.0484633632004261,
+   "photos.find": 0.5689622163772583,
+   "screen.capture": 0.9802367091178894
+  },
+  {
+   "camera.capture": 0.9927943348884583,
+   "camera.list": 0.0682859867811203,
+   "camera.preview": 0.8547028303146362,
+   "photos.find": 0.04977286234498024,
+   "screen.capture": 0.9991010427474976
+  },
+  {
+   "camera.capture": 0.4711134731769562,
+   "camera.list": 0.8692808747291565,
+   "camera.preview": 0.9520565271377563,
+   "photos.find": 0.07182367146015167,
+   "screen.capture": 0.7070828080177307
+  },
+  {
+   "camera.capture": 0.002505130833014846,
+   "camera.list": 0.010684005916118622,
+   "camera.preview": 0.0018859378760680556,
+   "photos.find": 0.0008928838651627302,
+   "screen.capture": 0.004641779698431492
+  },
+  {
+   "camera.capture": 0.003267525462433696,
+   "camera.list": 0.028709521517157555,
+   "camera.preview": 0.004985589534044266,
+   "photos.find": 0.0007017519092187285,
+   "screen.capture": 0.028240449726581573
+  },
+  {
+   "camera.capture": 0.0031704548746347427,
+   "camera.list": 0.005731517914682627,
+   "camera.preview": 0.004669758956879377,
+   "photos.find": 0.001522987149655819,
+   "screen.capture": 0.009989548474550247
+  },
+  {
+   "camera.capture": 0.05284026637673378,
+   "camera.list": 0.08931185305118561,
+   "camera.preview": 0.025025254115462303,
+   "photos.find": 0.0013701330171898007,
+   "screen.capture": 0.030960531905293465
+  },
+  {
+   "camera.capture": 0.0014880741946399212,
+   "camera.list": 0.00558751355856657,
+   "camera.preview": 0.001749808550812304,
+   "photos.find": 0.0008304893271997571,
+   "screen.capture": 0.005356308072805405
+  },
+  {
+   "camera.capture": 0.0064481087028980255,
+   "camera.list": 0.007946477271616459,
+   "camera.preview": 0.003466983325779438,
+   "photos.find": 0.0014884666306897998,
+   "screen.capture": 0.010924392379820347
+  },
+  {
+   "camera.capture": 0.07172410935163498,
+   "camera.list": 0.777092456817627,
+   "camera.preview": 0.15331332385540009,
+   "photos.find": 0.0016981837106868625,
+   "screen.capture": 0.16443809866905212
+  },
+  {
+   "camera.capture": 0.0049200584180653095,
+   "camera.list": 0.017296740785241127,
+   "camera.preview": 0.009673066437244415,
+   "photos.find": 0.0009512215037830174,
+   "screen.capture": 0.014035054482519627
+  },
+  {
+   "camera.capture": 0.005863197613507509,
+   "camera.list": 0.009676538407802582,
+   "camera.preview": 0.0012460164725780487,
+   "photos.find": 0.0008879479137249291,
+   "screen.capture": 0.005239773541688919
+  },
+  {
+   "camera.capture": 0.001279340242035687,
+   "camera.list": 0.005379598122090101,
+   "camera.preview": 0.0008445586427114904,
+   "photos.find": 0.0024470598436892033,
+   "screen.capture": 0.0030584491323679686
+  },
+  {
+   "camera.capture": 0.02314234897494316,
+   "camera.list": 0.03316750377416611,
+   "camera.preview": 0.0025649666786193848,
+   "photos.find": 0.0028680202085524797,
+   "screen.capture": 0.04015497863292694
+  },
+  {
+   "camera.capture": 0.027954425662755966,
+   "camera.list": 0.05413921922445297,
+   "camera.preview": 0.005381077993661165,
+   "photos.find": 0.008519202470779419,
+   "screen.capture": 0.03471078351140022
+  },
+  {
+   "camera.capture": 0.055545173585414886,
+   "camera.list": 0.011794915422797203,
+   "camera.preview": 0.0014357680920511484,
+   "photos.find": 0.008577581495046616,
+   "screen.capture": 0.01935601606965065
+  },
+  {
+   "camera.capture": 0.010686364956200123,
+   "camera.list": 0.007412922568619251,
+   "camera.preview": 0.0034016696736216545,
+   "photos.find": 0.0018388262251392007,
+   "screen.capture": 0.005921176169067621
+  },
+  {
+   "camera.capture": 0.01660013571381569,
+   "camera.list": 0.05608120933175087,
+   "camera.preview": 0.003009022679179907,
+   "photos.find": 0.0076550873927772045,
+   "screen.capture": 0.021732579916715622
+  },
+  {
+   "camera.capture": 0.09866118431091309,
+   "camera.list": 0.008830211125314236,
+   "camera.preview": 0.0147161353379488,
+   "photos.find": 0.007569958455860615,
+   "screen.capture": 0.03733692690730095
+  },
+  {
+   "camera.capture": 0.8899720907211304,
+   "camera.list": 0.055022940039634705,
+   "camera.preview": 0.031804367899894714,
+   "photos.find": 0.04397384822368622,
+   "screen.capture": 0.1428111344575882
+  },
+  {
+   "camera.capture": 0.9961906671524048,
+   "camera.list": 0.08634272962808609,
+   "camera.preview": 0.5395902991294861,
+   "photos.find": 0.23742395639419556,
+   "screen.capture": 0.1315200924873352
+  },
+  {
+   "camera.capture": 0.07880713790655136,
+   "camera.list": 0.8860962986946106,
+   "camera.preview": 0.6767479777336121,
+   "photos.find": 0.0016037654131650925,
+   "screen.capture": 0.19435198605060577
+  },
+  {
+   "camera.capture": 0.7640044689178467,
+   "camera.list": 0.14324995875358582,
+   "camera.preview": 0.25338512659072876,
+   "photos.find": 0.041002966463565826,
+   "screen.capture": 0.10494015365839005
+  },
+  {
+   "camera.capture": 0.04389417544007301,
+   "camera.list": 0.0031770593486726284,
+   "camera.preview": 0.0013452016282826662,
+   "photos.find": 0.0009038919815793633,
+   "screen.capture": 0.00331337982788682
+  },
+  {
+   "camera.capture": 0.7115926146507263,
+   "camera.list": 0.019828541204333305,
+   "camera.preview": 0.004021259490400553,
+   "photos.find": 0.005178228951990604,
+   "screen.capture": 0.019063949584960938
+  },
+  {
+   "camera.capture": 0.9769538044929504,
+   "camera.list": 0.18629521131515503,
+   "camera.preview": 0.7764690518379211,
+   "photos.find": 0.4728907346725464,
+   "screen.capture": 0.9712187647819519
+  },
+  {
+   "camera.capture": 0.8712521195411682,
+   "camera.list": 0.9854105710983276,
+   "camera.preview": 0.9953089356422424,
+   "photos.find": 0.004178551957011223,
+   "screen.capture": 0.021916277706623077
+  },
+  {
+   "camera.capture": 0.984906017780304,
+   "camera.list": 0.07957026362419128,
+   "camera.preview": 0.39867347478866577,
+   "photos.find": 0.06103314459323883,
+   "screen.capture": 0.09179183095693588
+  },
+  {
+   "camera.capture": 0.906718909740448,
+   "camera.list": 0.009691647253930569,
+   "camera.preview": 0.010230914689600468,
+   "photos.find": 0.0050399284809827805,
+   "screen.capture": 0.0280744768679142
+  },
+  {
+   "camera.capture": 0.9851358532905579,
+   "camera.list": 0.04443252459168434,
+   "camera.preview": 0.136329784989357,
+   "photos.find": 0.10003811120986938,
+   "screen.capture": 0.03869623318314552
+  },
+  {
+   "camera.capture": 0.9878144264221191,
+   "camera.list": 0.1490778625011444,
+   "camera.preview": 0.22532622516155243,
+   "photos.find": 0.1723329722881317,
+   "screen.capture": 0.19868703186511993
+  },
+  {
+   "camera.capture": 0.9574052691459656,
+   "camera.list": 0.42402857542037964,
+   "camera.preview": 0.9640311002731323,
+   "photos.find": 0.006644133012741804,
+   "screen.capture": 0.5761446952819824
+  },
+  {
+   "camera.capture": 0.9893180727958679,
+   "camera.list": 0.15127485990524292,
+   "camera.preview": 0.7136538028717041,
+   "photos.find": 0.37669992446899414,
+   "screen.capture": 0.049412816762924194
+  },
+  {
+   "camera.capture": 0.9963808655738831,
+   "camera.list": 0.06862575560808182,
+   "camera.preview": 0.7261082530021667,
+   "photos.find": 0.46147847175598145,
+   "screen.capture": 0.7250277400016785
+  },
+  {
+   "camera.capture": 0.9919790029525757,
+   "camera.list": 0.5891246199607849,
+   "camera.preview": 0.9268018007278442,
+   "photos.find": 0.02475154586136341,
+   "screen.capture": 0.047960586845874786
+  },
+  {
+   "camera.capture": 0.29280123114585876,
+   "camera.list": 0.013313867151737213,
+   "camera.preview": 0.0033092566300183535,
+   "photos.find": 0.0022046957165002823,
+   "screen.capture": 0.016382381319999695
+  },
+  {
+   "camera.capture": 0.8897919654846191,
+   "camera.list": 0.01279425248503685,
+   "camera.preview": 0.007724124006927013,
+   "photos.find": 0.007000569254159927,
+   "screen.capture": 0.05102277174592018
+  },
+  {
+   "camera.capture": 0.122392438352108,
+   "camera.list": 0.9343540072441101,
+   "camera.preview": 0.07367348670959473,
+   "photos.find": 0.002617676043882966,
+   "screen.capture": 0.024855468422174454
+  },
+  {
+   "camera.capture": 0.167135551571846,
+   "camera.list": 0.970500648021698,
+   "camera.preview": 0.7618736028671265,
+   "photos.find": 0.005819965619593859,
+   "screen.capture": 0.05077854171395302
+  },
+  {
+   "camera.capture": 0.02690623514354229,
+   "camera.list": 0.779823362827301,
+   "camera.preview": 0.3837006390094757,
+   "photos.find": 0.014535142108798027,
+   "screen.capture": 0.020932044833898544
+  },
+  {
+   "camera.capture": 0.4359109103679657,
+   "camera.list": 0.9253407120704651,
+   "camera.preview": 0.5960690379142761,
+   "photos.find": 0.0011181749869138002,
+   "screen.capture": 0.04411550611257553
+  },
+  {
+   "camera.capture": 0.24964262545108795,
+   "camera.list": 0.9664247035980225,
+   "camera.preview": 0.5087762475013733,
+   "photos.find": 0.02341536432504654,
+   "screen.capture": 0.15374413132667542
+  },
+  {
+   "camera.capture": 0.004015347454696894,
+   "camera.list": 0.9944652915000916,
+   "camera.preview": 0.7351704239845276,
+   "photos.find": 0.0006553980056196451,
+   "screen.capture": 0.02495521679520607
+  },
+  {
+   "camera.capture": 0.031223637983202934,
+   "camera.list": 0.9594845175743103,
+   "camera.preview": 0.10298530757427216,
+   "photos.find": 0.0008438106160610914,
+   "screen.capture": 0.011641873978078365
+  },
+  {
+   "camera.capture": 0.38007673621177673,
+   "camera.list": 0.9188268780708313,
+   "camera.preview": 0.3574735224246979,
+   "photos.find": 0.013296527788043022,
+   "screen.capture": 0.06974527984857559
+  },
+  {
+   "camera.capture": 0.25999242067337036,
+   "camera.list": 0.6327345967292786,
+   "camera.preview": 0.8524090647697449,
+   "photos.find": 0.0036140361335128546,
+   "screen.capture": 0.26727572083473206
+  },
+  {
+   "camera.capture": 0.7781011462211609,
+   "camera.list": 0.9162178039550781,
+   "camera.preview": 0.9877350926399231,
+   "photos.find": 0.019591815769672394,
+   "screen.capture": 0.47448042035102844
+  },
+  {
+   "camera.capture": 0.9751625061035156,
+   "camera.list": 0.937783420085907,
+   "camera.preview": 0.9983838796615601,
+   "photos.find": 0.05063091218471527,
+   "screen.capture": 0.11656783521175385
+  },
+  {
+   "camera.capture": 0.1207491084933281,
+   "camera.list": 0.9307429194450378,
+   "camera.preview": 0.8489355444908142,
+   "photos.find": 0.002074371324852109,
+   "screen.capture": 0.050441473722457886
+  },
+  {
+   "camera.capture": 0.6209933757781982,
+   "camera.list": 0.8118141293525696,
+   "camera.preview": 0.8377280831336975,
+   "photos.find": 0.008381998166441917,
+   "screen.capture": 0.4214560091495514
+  },
+  {
+   "camera.capture": 0.9063274264335632,
+   "camera.list": 0.7475619316101074,
+   "camera.preview": 0.9858452081680298,
+   "photos.find": 0.02141123078763485,
+   "screen.capture": 0.17465677857398987
+  },
+  {
+   "camera.capture": 0.906717836856842,
+   "camera.list": 0.8930301070213318,
+   "camera.preview": 0.9825950860977173,
+   "photos.find": 0.03346913307905197,
+   "screen.capture": 0.04440722241997719
+  },
+  {
+   "camera.capture": 0.79801344871521,
+   "camera.list": 0.03966978192329407,
+   "camera.preview": 0.13053655624389648,
+   "photos.find": 0.972236692905426,
+   "screen.capture": 0.010581846348941326
+  },
+  {
+   "camera.capture": 0.16204942762851715,
+   "camera.list": 0.02515341341495514,
+   "camera.preview": 0.14877061545848846,
+   "photos.find": 0.657383143901825,
+   "screen.capture": 0.0015609590336680412
+  },
+  {
+   "camera.capture": 0.42984724044799805,
+   "camera.list": 0.019662335515022278,
+   "camera.preview": 0.02081471122801304,
+   "photos.find": 0.9906176924705505,
+   "screen.capture": 0.013027417473495007
+  },
+  {
+   "camera.capture": 0.6341257095336914,
+   "camera.list": 0.10563415288925171,
+   "camera.preview": 0.30935922265052795,
+   "photos.find": 0.11201708763837814,
+   "screen.capture": 0.19303341209888458
+  },
+  {
+   "camera.capture": 0.21595776081085205,
+   "camera.list": 0.01612677238881588,
+   "camera.preview": 0.0036192566622048616,
+   "photos.find": 0.995891809463501,
+   "screen.capture": 0.0023480779491364956
+  },
+  {
+   "camera.capture": 0.0950772762298584,
+   "camera.list": 0.4903276264667511,
+   "camera.preview": 0.6121244430541992,
+   "photos.find": 0.0274149589240551,
+   "screen.capture": 0.17452043294906616
+  },
+  {
+   "camera.capture": 0.8291585445404053,
+   "camera.list": 0.07294934242963791,
+   "camera.preview": 0.5491566061973572,
+   "photos.find": 0.7582834959030151,
+   "screen.capture": 0.1851407140493393
+  },
+  {
+   "camera.capture": 0.9541819095611572,
+   "camera.list": 0.12112942337989807,
+   "camera.preview": 0.1779041588306427,
+   "photos.find": 0.04394058138132095,
+   "screen.capture": 0.9799684286117554
+  },
+  {
+   "camera.capture": 0.03492148965597153,
+   "camera.list": 0.0029436268378049135,
+   "camera.preview": 0.0017350238049402833,
+   "photos.find": 0.00032414557063020766,
+   "screen.capture": 0.9897164702415466
+  },
+  {
+   "camera.capture": 0.5219918489456177,
+   "camera.list": 0.028947370126843452,
+   "camera.preview": 0.03616619482636452,
+   "photos.find": 0.0038495261687785387,
+   "screen.capture": 0.98311847448349
+  },
+  {
+   "camera.capture": 0.9847590327262878,
+   "camera.list": 0.04831137880682945,
+   "camera.preview": 0.523733913898468,
+   "photos.find": 0.11356940865516663,
+   "screen.capture": 0.9924938678741455
+  },
+  {
+   "camera.capture": 0.8614487648010254,
+   "camera.list": 0.04407109320163727,
+   "camera.preview": 0.0731172040104866,
+   "photos.find": 0.04223908856511116,
+   "screen.capture": 0.9725894331932068
+  },
+  {
+   "camera.capture": 0.2487431913614273,
+   "camera.list": 0.025689974427223206,
+   "camera.preview": 0.027308113873004913,
+   "photos.find": 0.02178976871073246,
+   "screen.capture": 0.8805747628211975
+  },
+  {
+   "camera.capture": 0.27690741419792175,
+   "camera.list": 0.17280033230781555,
+   "camera.preview": 0.45879432559013367,
+   "photos.find": 0.004515122156590223,
+   "screen.capture": 0.9403625726699829
+  },
+  {
+   "camera.capture": 0.6692671179771423,
+   "camera.list": 0.09842168539762497,
+   "camera.preview": 0.2282048761844635,
+   "photos.find": 0.052657999098300934,
+   "screen.capture": 0.051955606788396835
+  },
+  {
+   "camera.capture": 0.8682315349578857,
+   "camera.list": 0.581345796585083,
+   "camera.preview": 0.5204229950904846,
+   "photos.find": 0.03161856159567833,
+   "screen.capture": 0.05732138827443123
+  },
+  {
+   "camera.capture": 0.6053243279457092,
+   "camera.list": 0.2268788069486618,
+   "camera.preview": 0.1496240645647049,
+   "photos.find": 0.06592012196779251,
+   "screen.capture": 0.015608017332851887
+  },
+  {
+   "camera.capture": 0.00911570806056261,
+   "camera.list": 0.005771727301180363,
+   "camera.preview": 0.001043715514242649,
+   "photos.find": 0.0017455443739891052,
+   "screen.capture": 0.0030531759839504957
+  },
+  {
+   "camera.capture": 0.9932307004928589,
+   "camera.list": 0.12467706948518753,
+   "camera.preview": 0.558479368686676,
+   "photos.find": 0.07769747823476791,
+   "screen.capture": 0.2710151970386505
+  },
+  {
+   "camera.capture": 0.9845596551895142,
+   "camera.list": 0.08255095779895782,
+   "camera.preview": 0.11348428577184677,
+   "photos.find": 0.1378219872713089,
+   "screen.capture": 0.058286868035793304
+  },
+  {
+   "camera.capture": 0.943359375,
+   "camera.list": 0.03988410532474518,
+   "camera.preview": 0.15357407927513123,
+   "photos.find": 0.06375260651111603,
+   "screen.capture": 0.12909039855003357
+  },
+  {
+   "camera.capture": 0.6188843846321106,
+   "camera.list": 0.008414998650550842,
+   "camera.preview": 0.039411511272192,
+   "photos.find": 0.10756658017635345,
+   "screen.capture": 0.010806862264871597
+  },
+  {
+   "camera.capture": 0.1309497058391571,
+   "camera.list": 0.9587568044662476,
+   "camera.preview": 0.8388662338256836,
+   "photos.find": 0.007564421743154526,
+   "screen.capture": 0.051920950412750244
+  },
+  {
+   "camera.capture": 0.4940970838069916,
+   "camera.list": 0.5631682276725769,
+   "camera.preview": 0.3071345090866089,
+   "photos.find": 0.004967936780303717,
+   "screen.capture": 0.017486324533820152
+  },
+  {
+   "camera.capture": 0.2066773921251297,
+   "camera.list": 0.005140474531799555,
+   "camera.preview": 0.0037811119109392166,
+   "photos.find": 0.002925548003986478,
+   "screen.capture": 0.01894369162619114
+  },
+  {
+   "camera.capture": 0.9146355986595154,
+   "camera.list": 0.06466145068407059,
+   "camera.preview": 0.022550320252776146,
+   "photos.find": 0.02059922367334366,
+   "screen.capture": 0.1431179940700531
+  }
+ ]
+}
