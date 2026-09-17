@@ -132,9 +132,22 @@ def main() -> None:
     }
     OUT_JSON.write_text(json.dumps(out, indent=1, default=float))
 
+    p1, p2 = out["phase1"], out["phase2"]
+    teacher_failures = sum(1 for m in phase1 if m["verdict_contract"] == "FAILURE" and not m["reflex"])
     L = ["# Run C1 report: camera procedure acquisition", "",
-         f"Phase 1: {out['phase1']['missions']} missions, {out['phase1']['success_contract']} SUCCESS under the exact contract ({out['phase1']['success_harness']} as printed by the harness, which counted a refused `browser` call as having run at mission 42), {out['phase1']['reflex_decisions']} reflex decisions, {out['phase1']['false_fast_paths']} false fast paths, {out['phase1']['forbidden_ran']} forbidden tools run, {out['phase1']['refused_calls']} calls refused before execution. First promotion at stream episode {first_promotion}.", "",
-         f"Phase 2 (camera disabled): {out['phase2']['missions']} missions, {out['phase2']['camera_executions']} camera executions, {out['phase2']['reflex_decisions']} reflex decisions, deliberation reasons {out['phase2']['reasons']}.", "",
+         "The two phases answer different questions and are never added up: phase 1 measures acquisition and false fast paths; phase 2 removes the camera and cannot succeed functionally, it measures that nothing is replayed blindly.", "",
+         "```text", "Phase 1, acquisition (48 missions):",
+         f"  {p1['success_contract']}/{p1['missions']} missions correct under the contract",
+         f"  {teacher_failures} teacher failure (a capture on a negative control)",
+         f"  {p1['reflex_decisions']} camera reflexes executed, both correct",
+         f"  {p1['false_fast_paths']} false fast paths after activation",
+         f"  {p1['forbidden_ran']} forbidden tools run, {p1['refused_calls']} calls refused before execution",
+         f"  first promotion at stream episode {first_promotion}", "",
+         "Phase 2, removal (8 missions, camera disabled):",
+         f"  {p2['missions'] - p2['camera_executions']}/{p2['missions']} missions without any camera execution",
+         f"  {p2['reflex_decisions']} blind replays",
+         f"  systematic fallback to the model (reasons: {', '.join(p2['reasons'])})", "```", "",
+         f"The harness printed {p1['success_harness']} phase-1 successes: it counted a refused `browser` call at mission 42 as having run; refused calls do not run, and every verdict here is recomputed from the log under the contract as written.", "",
          "## Per phrasing and control, phase 1 (all missions / after activation)", "",
          "| id | missions | SUCCESS | missions with a reflex | false fast paths | mean model calls | after activation: missions / SUCCESS / reflex / false fast paths |", "|---|---|---|---|---|---|---|"]
     for pid, s in per_id.items():

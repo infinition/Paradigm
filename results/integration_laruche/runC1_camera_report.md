@@ -1,8 +1,23 @@
 # Run C1 report: camera procedure acquisition
 
-Phase 1: 48 missions, 47 SUCCESS under the exact contract (46 as printed by the harness, which counted a refused `browser` call as having run at mission 42), 2 reflex decisions, 0 false fast paths, 0 forbidden tools run, 16 calls refused before execution. First promotion at stream episode 38.
+The two phases answer different questions and are never added up: phase 1 measures acquisition and false fast paths; phase 2 removes the camera and cannot succeed functionally, it measures that nothing is replayed blindly.
 
-Phase 2 (camera disabled): 8 missions, 0 camera executions, 0 reflex decisions, deliberation reasons ['out_of_distribution'].
+```text
+Phase 1, acquisition (48 missions):
+  47/48 missions correct under the contract
+  1 teacher failure (a capture on a negative control)
+  2 camera reflexes executed, both correct
+  0 false fast paths after activation
+  0 forbidden tools run, 16 calls refused before execution
+  first promotion at stream episode 38
+
+Phase 2, removal (8 missions, camera disabled):
+  8/8 missions without any camera execution
+  0 blind replays
+  systematic fallback to the model (reasons: out_of_distribution)
+```
+
+The harness printed 46 phase-1 successes: it counted a refused `browser` call at mission 42 as having run; refused calls do not run, and every verdict here is recomputed from the log under the contract as written.
 
 ## Per phrasing and control, phase 1 (all missions / after activation)
 
