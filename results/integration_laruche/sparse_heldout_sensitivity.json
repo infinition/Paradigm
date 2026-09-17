@@ -179,11 +179,12 @@
       "n_fresh": 0,
       "evidence": "held-out",
       "probes": null,
-      "probe_coverage": null,
-      "probe_agreement": null,
+      "probe_coverage": 1.0,
+      "probe_agreement": 1.0,
       "gate_acceptance": null,
       "ece": null,
-      "fresh": null
+      "fresh": null,
+      "retrospective_probe_label": true
      }
     },
     "families": {
@@ -347,11 +348,12 @@
       "n_fresh": 0,
       "evidence": "held-out",
       "probes": null,
-      "probe_coverage": null,
-      "probe_agreement": null,
+      "probe_coverage": 1.0,
+      "probe_agreement": 1.0,
       "gate_acceptance": null,
       "ece": null,
-      "fresh": null
+      "fresh": null,
+      "retrospective_probe_label": true
      }
     },
     "families": {
@@ -8401,7 +8403,7 @@
    "poison": "rejected",
    "poison_false_accept": false,
    "false_accepts": 0,
-   "false_rejects": 0,
+   "false_rejects": 1,
    "decisions_changed_vs_recorded": 0,
    "changed_by_sparse_arbitration": 0
   },

@@ -158,6 +158,21 @@ def main() -> None:
     rec11 = {p.stream_episode: (p.outcome, p.reason) for p in run11.state.promotions}
     results["run11_reproduced"] = all((r["outcome"], r["reason"]) == rec11[r["point"]] for r in results["run11"]["recorded"])
 
+    # Retrospective labeling for the false-reject metric: a variant that never evaluated
+    # an active family's probes (the family was "insufficient") gets the probe numbers of
+    # the m=1 variant for the same point and family. The candidate is the same object in
+    # both (identical state before the point and identical training split), so this
+    # labels the recorded decisions on the same basis without changing any verdict.
+    for name in ("run11", "run9"):
+        ref_rows = results[name]["m=1"]
+        for label, _, _ in variants:
+            for r, ref in zip(results[name][label], ref_rows):
+                for f, v in r["active_verdicts"].items():
+                    if v.get("probe_coverage") is None and f in ref["active_verdicts"]:
+                        rv = ref["active_verdicts"][f]
+                        v["probe_coverage"], v["probe_agreement"] = rv.get("probe_coverage"), rv.get("probe_agreement")
+                        v["retrospective_probe_label"] = True
+
     summary = []
     for label, _, _ in variants:
         rows11 = results["run11"][label]
@@ -189,8 +204,9 @@ def main() -> None:
     L = ["# Sparse held-out sensitivity study (read-only)", "",
          "Sources: run 11 state (`engine_state_family_scoped_after_24.pkl`) replayed at 16, 20, 24; runs 9A/9B state (`engine_state_after_32.pkl`, 32 validated episodes recorded without any active reflex) replayed under family-scoped certification at 20, 24, 28, 32, counterfactually. `recorded` is the run 11 rule (no probe re-certification); `m=1` is the rule of the previous pre-registration (probes only when no fresh trace) and the control. Probe sets are frozen inside each replay at its first promotion.", "",
          f"Run 11 reproduced by the `recorded` variant: {'yes' if results['run11_reproduced'] else 'no'}.", "",
+         "`m=1` is behaviorally identical to the recorded rule: every verdict, version and active set is the same. The false accept and false reject counts are retrospective labels defined by the pre-registration; where a variant never evaluated an active family's probes, the label uses the probe numbers of the same candidate from the `m=1` replay (marked `retrospective_probe_label` in the JSON), so all variants are labeled on the same basis. A label difference never means a changed certification decision; the \"decisions changed\" column is the only one that does.", "",
          "## Summary per variant", "",
-         "| variant | run 11: 20 | run 11: 24 | run 11 final version, active families | run 9: activations (point: families) | run 9 final version | poison at 24 | false accepts | false rejects | decisions changed vs recorded | changed by sparse arbitration |",
+         "| variant | run 11: 20 | run 11: 24 | run 11 final version, active families | run 9: activations (point: families) | run 9 final version | poison at 24 | false accepts | false rejects | candidate decisions changed vs recorded | active-family verdicts changed by sparse arbitration |",
          "|---|---|---|---|---|---|---|---|---|---|---|"]
     for s in summary:
         r9 = "; ".join(f"{p}: " + ", ".join(f"`{f.split(':',1)[1]}`" for f in fams) for p, fams in s["run9_activations"]) or "none"

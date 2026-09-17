@@ -4,11 +4,13 @@ Sources: run 11 state (`engine_state_family_scoped_after_24.pkl`) replayed at 16
 
 Run 11 reproduced by the `recorded` variant: yes.
 
+`m=1` is behaviorally identical to the recorded rule: every verdict, version and active set is the same. The false accept and false reject counts are retrospective labels defined by the pre-registration; where a variant never evaluated an active family's probes, the label uses the probe numbers of the same candidate from the `m=1` replay (marked `retrospective_probe_label` in the JSON), so all variants are labeled on the same basis. A label difference never means a changed certification decision; the "decisions changed" column is the only one that does.
+
 ## Summary per variant
 
-| variant | run 11: 20 | run 11: 24 | run 11 final version, active families | run 9: activations (point: families) | run 9 final version | poison at 24 | false accepts | false rejects | decisions changed vs recorded | changed by sparse arbitration |
+| variant | run 11: 20 | run 11: 24 | run 11 final version, active families | run 9: activations (point: families) | run 9 final version | poison at 24 | false accepts | false rejects | candidate decisions changed vs recorded | active-family verdicts changed by sparse arbitration |
 |---|---|---|---|---|---|---|---|---|---|---|
-| recorded | rejected | rejected | v1: `file_edit:success:other`, `start:none:none` | 20: `file_edit:success:other`, `start:none:none` | v1 | rejected | 0 | 0 | 0 | 0 |
+| recorded | rejected | rejected | v1: `file_edit:success:other`, `start:none:none` | 20: `file_edit:success:other`, `start:none:none` | v1 | rejected | 0 | 1 | 0 | 0 |
 | m=1 | rejected | rejected | v1: `file_edit:success:other`, `start:none:none` | 20: `file_edit:success:other`, `start:none:none` | v1 | rejected | 0 | 1 | 0 | 2 |
 | m=2 | rejected | promoted | v2: `file_edit:success:other`, `shell_exec:success:tests_passed`, `start:none:none` | 20: `file_edit:success:other`, `start:none:none` | v1 | rejected | 0 | 0 | 1 | 3 |
 | m=3 | rejected | promoted | v2: `file_edit:success:other`, `shell_exec:success:tests_passed`, `start:none:none` | 20: `file_edit:success:other`, `start:none:none` | v1 | rejected | 0 | 0 | 1 | 3 |
