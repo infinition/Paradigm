@@ -1,0 +1,816 @@
+{
+ "threshold": 0.6178501092262769,
+ "g2_thresholds": {
+  "90": 0.763393317330376,
+  "95": 0.838147878248707,
+  "99": 1.1523238245711849
+ },
+ "g3_exp_thresholds": {
+  "0.05": 0.5391894927010129,
+  "0.1": 0.4389933482444809
+ },
+ "v1_oof": {
+  "G0": {
+   "acceptance_positives": 1.0,
+   "acceptance_hard_negatives": 1.0,
+   "coverage": 0.846875,
+   "selective_accuracy": 0.940959409594096,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 2,
+   "positive_reflex_coverage": 0.782608695652174,
+   "n_fired": 271,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.8846153846153846,
+     "selective_accuracy": 0.9456521739130435,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 92
+    },
+    "claude": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.7857142857142857,
+     "selective_accuracy": 0.9545454545454546,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.8,
+     "n_fired": 88
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.875,
+     "selective_accuracy": 0.9230769230769231,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 91
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 1,
+    "past_question": 0,
+    "object_change": 1,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G1": {
+   "acceptance_positives": 0.9347826086956522,
+   "acceptance_hard_negatives": 0.8941176470588236,
+   "coverage": 0.7875,
+   "selective_accuracy": 1.0,
+   "hard_false_fast_paths": 0,
+   "false_fast_paths_all": 0,
+   "positive_reflex_coverage": 0.7608695652173914,
+   "n_fired": 252,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 0.8852459016393442,
+     "coverage": 0.8269230769230769,
+     "selective_accuracy": 1.0,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 86
+    },
+    "claude": {
+     "acceptance_positives": 0.95,
+     "acceptance_hard_negatives": 0.8541666666666666,
+     "coverage": 0.75,
+     "selective_accuracy": 1.0,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.8,
+     "n_fired": 84
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 0.8461538461538461,
+     "acceptance_hard_negatives": 0.9344262295081968,
+     "coverage": 0.7884615384615384,
+     "selective_accuracy": 1.0,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.6923076923076923,
+     "n_fired": 82
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 0,
+    "past_question": 0,
+    "object_change": 0,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G2_p90": {
+   "acceptance_positives": 1.0,
+   "acceptance_hard_negatives": 1.0,
+   "coverage": 0.840625,
+   "selective_accuracy": 0.9405204460966543,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 2,
+   "positive_reflex_coverage": 0.782608695652174,
+   "n_fired": 269,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.8846153846153846,
+     "selective_accuracy": 0.9456521739130435,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 92
+    },
+    "claude": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.7678571428571429,
+     "selective_accuracy": 0.9534883720930233,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.8,
+     "n_fired": 86
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.875,
+     "selective_accuracy": 0.9230769230769231,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 91
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 1,
+    "past_question": 0,
+    "object_change": 1,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G2_p95": {
+   "acceptance_positives": 1.0,
+   "acceptance_hard_negatives": 1.0,
+   "coverage": 0.85,
+   "selective_accuracy": 0.9411764705882353,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 2,
+   "positive_reflex_coverage": 0.782608695652174,
+   "n_fired": 272,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.8846153846153846,
+     "selective_accuracy": 0.9456521739130435,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 92
+    },
+    "claude": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.7946428571428571,
+     "selective_accuracy": 0.9550561797752809,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.8,
+     "n_fired": 89
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.875,
+     "selective_accuracy": 0.9230769230769231,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 91
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 1,
+    "past_question": 0,
+    "object_change": 1,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G2_p99": {
+   "acceptance_positives": 1.0,
+   "acceptance_hard_negatives": 1.0,
+   "coverage": 0.85,
+   "selective_accuracy": 0.9411764705882353,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 2,
+   "positive_reflex_coverage": 0.782608695652174,
+   "n_fired": 272,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.8846153846153846,
+     "selective_accuracy": 0.9456521739130435,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 92
+    },
+    "claude": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.7946428571428571,
+     "selective_accuracy": 0.9550561797752809,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.8,
+     "n_fired": 89
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.875,
+     "selective_accuracy": 0.9230769230769231,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 91
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 1,
+    "past_question": 0,
+    "object_change": 1,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G4": {
+   "acceptance_positives": 0.9347826086956522,
+   "acceptance_hard_negatives": 0.19411764705882353,
+   "coverage": 0.4,
+   "selective_accuracy": 1.0,
+   "hard_false_fast_paths": 0,
+   "false_fast_paths_all": 0,
+   "positive_reflex_coverage": 0.7608695652173914,
+   "n_fired": 128,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 0.18032786885245902,
+     "coverage": 0.3942307692307692,
+     "selective_accuracy": 1.0,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 41
+    },
+    "claude": {
+     "acceptance_positives": 0.95,
+     "acceptance_hard_negatives": 0.16666666666666666,
+     "coverage": 0.44642857142857145,
+     "selective_accuracy": 1.0,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.8,
+     "n_fired": 50
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 0.8461538461538461,
+     "acceptance_hard_negatives": 0.22950819672131148,
+     "coverage": 0.3557692307692308,
+     "selective_accuracy": 1.0,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.6923076923076923,
+     "n_fired": 37
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 0,
+    "past_question": 0,
+    "object_change": 0,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G3exp_a0.05": {
+   "acceptance_positives": 0.9565217391304348,
+   "acceptance_hard_negatives": 0.9647058823529412,
+   "coverage": 0.85,
+   "selective_accuracy": 0.9411764705882353,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 2,
+   "positive_reflex_coverage": 0.782608695652174,
+   "n_fired": 272,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 0.9672131147540983,
+     "coverage": 0.8846153846153846,
+     "selective_accuracy": 0.9456521739130435,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 92
+    },
+    "claude": {
+     "acceptance_positives": 0.9,
+     "acceptance_hard_negatives": 0.9375,
+     "coverage": 0.7946428571428571,
+     "selective_accuracy": 0.9550561797752809,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.8,
+     "n_fired": 89
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 0.9836065573770492,
+     "coverage": 0.875,
+     "selective_accuracy": 0.9230769230769231,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 91
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 1,
+    "past_question": 0,
+    "object_change": 1,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G3exp_a0.1": {
+   "acceptance_positives": 0.8478260869565217,
+   "acceptance_hard_negatives": 0.9470588235294117,
+   "coverage": 0.85,
+   "selective_accuracy": 0.9411764705882353,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 2,
+   "positive_reflex_coverage": 0.782608695652174,
+   "n_fired": 272,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 0.8461538461538461,
+     "acceptance_hard_negatives": 0.9180327868852459,
+     "coverage": 0.8846153846153846,
+     "selective_accuracy": 0.9456521739130435,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 92
+    },
+    "claude": {
+     "acceptance_positives": 0.8,
+     "acceptance_hard_negatives": 0.9375,
+     "coverage": 0.7946428571428571,
+     "selective_accuracy": 0.9550561797752809,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.8,
+     "n_fired": 89
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 0.9230769230769231,
+     "acceptance_hard_negatives": 0.9836065573770492,
+     "coverage": 0.875,
+     "selective_accuracy": 0.9230769230769231,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.7692307692307693,
+     "n_fired": 91
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 1,
+    "past_question": 0,
+    "object_change": 1,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  }
+ },
+ "v2": {
+  "G0": {
+   "acceptance_positives": 0.26666666666666666,
+   "acceptance_hard_negatives": 0.06451612903225806,
+   "coverage": 0.07818930041152264,
+   "selective_accuracy": 0.8947368421052632,
+   "hard_false_fast_paths": 0,
+   "false_fast_paths_all": 0,
+   "positive_reflex_coverage": 0.16666666666666666,
+   "n_fired": 19,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 0.3,
+     "acceptance_hard_negatives": 0.07017543859649122,
+     "coverage": 0.05154639175257732,
+     "selective_accuracy": 0.8,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.1,
+     "n_fired": 5
+    },
+    "claude": {
+     "acceptance_positives": 0.1,
+     "acceptance_hard_negatives": 0.03571428571428571,
+     "coverage": 0.020833333333333332,
+     "selective_accuracy": 0.5,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.0,
+     "n_fired": 2
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 0.4,
+     "acceptance_hard_negatives": 0.18181818181818182,
+     "coverage": 0.24,
+     "selective_accuracy": 1.0,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.4,
+     "n_fired": 12
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 0,
+    "past_question": 0,
+    "object_change": 0,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G1": {
+   "acceptance_positives": 0.0,
+   "acceptance_hard_negatives": 0.024193548387096774,
+   "coverage": 0.012345679012345678,
+   "selective_accuracy": 1.0,
+   "hard_false_fast_paths": 0,
+   "false_fast_paths_all": 0,
+   "positive_reflex_coverage": 0.0,
+   "n_fired": 3,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 0.0,
+     "acceptance_hard_negatives": 0.017543859649122806,
+     "coverage": 0.010309278350515464,
+     "selective_accuracy": 1.0,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.0,
+     "n_fired": 1
+    },
+    "claude": {
+     "acceptance_positives": 0.0,
+     "acceptance_hard_negatives": 0.0,
+     "coverage": 0.0,
+     "selective_accuracy": null,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.0,
+     "n_fired": 0
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 0.0,
+     "acceptance_hard_negatives": 0.18181818181818182,
+     "coverage": 0.04,
+     "selective_accuracy": 1.0,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.0,
+     "n_fired": 2
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 0,
+    "past_question": 0,
+    "object_change": 0,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G2_p90": {
+   "acceptance_positives": 0.9,
+   "acceptance_hard_negatives": 0.6048387096774194,
+   "coverage": 0.49382716049382713,
+   "selective_accuracy": 0.8666666666666667,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 3,
+   "positive_reflex_coverage": 0.6666666666666666,
+   "n_fired": 120,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 0.9,
+     "acceptance_hard_negatives": 0.7192982456140351,
+     "coverage": 0.5463917525773195,
+     "selective_accuracy": 0.9056603773584906,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 1,
+     "positive_reflex_coverage": 0.7,
+     "n_fired": 53
+    },
+    "claude": {
+     "acceptance_positives": 0.9,
+     "acceptance_hard_negatives": 0.4107142857142857,
+     "coverage": 0.3333333333333333,
+     "selective_accuracy": 0.8125,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.4,
+     "n_fired": 32
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 0.9,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.7,
+     "selective_accuracy": 0.8571428571428571,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.9,
+     "n_fired": 35
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 2,
+    "past_question": 0,
+    "object_change": 0,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G2_p95": {
+   "acceptance_positives": 0.9666666666666667,
+   "acceptance_hard_negatives": 0.7419354838709677,
+   "coverage": 0.6008230452674898,
+   "selective_accuracy": 0.8493150684931506,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 3,
+   "positive_reflex_coverage": 0.7,
+   "n_fired": 146,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 0.9,
+     "acceptance_hard_negatives": 0.8070175438596491,
+     "coverage": 0.6288659793814433,
+     "selective_accuracy": 0.9016393442622951,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 1,
+     "positive_reflex_coverage": 0.7,
+     "n_fired": 61
+    },
+    "claude": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 0.625,
+     "coverage": 0.5104166666666666,
+     "selective_accuracy": 0.7959183673469388,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.5,
+     "n_fired": 49
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.72,
+     "selective_accuracy": 0.8333333333333334,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.9,
+     "n_fired": 36
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 2,
+    "past_question": 0,
+    "object_change": 0,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G2_p99": {
+   "acceptance_positives": 1.0,
+   "acceptance_hard_negatives": 1.0,
+   "coverage": 0.7777777777777778,
+   "selective_accuracy": 0.873015873015873,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 3,
+   "positive_reflex_coverage": 0.7,
+   "n_fired": 189,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.7835051546391752,
+     "selective_accuracy": 0.9078947368421053,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 1,
+     "positive_reflex_coverage": 0.7,
+     "n_fired": 76
+    },
+    "claude": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.78125,
+     "selective_accuracy": 0.8533333333333334,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.5,
+     "n_fired": 75
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 1.0,
+     "coverage": 0.76,
+     "selective_accuracy": 0.8421052631578947,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.9,
+     "n_fired": 38
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 2,
+    "past_question": 0,
+    "object_change": 0,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G4": {
+   "acceptance_positives": 0.0,
+   "acceptance_hard_negatives": 0.0,
+   "coverage": 0.0,
+   "selective_accuracy": null,
+   "hard_false_fast_paths": 0,
+   "false_fast_paths_all": 0,
+   "positive_reflex_coverage": 0.0,
+   "n_fired": 0,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 0.0,
+     "acceptance_hard_negatives": 0.0,
+     "coverage": 0.0,
+     "selective_accuracy": null,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.0,
+     "n_fired": 0
+    },
+    "claude": {
+     "acceptance_positives": 0.0,
+     "acceptance_hard_negatives": 0.0,
+     "coverage": 0.0,
+     "selective_accuracy": null,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.0,
+     "n_fired": 0
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 0.0,
+     "acceptance_hard_negatives": 0.0,
+     "coverage": 0.0,
+     "selective_accuracy": null,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.0,
+     "n_fired": 0
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 0,
+    "past_question": 0,
+    "object_change": 0,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G3exp_a0.05": {
+   "acceptance_positives": 0.8,
+   "acceptance_hard_negatives": 0.9354838709677419,
+   "coverage": 0.7777777777777778,
+   "selective_accuracy": 0.873015873015873,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 3,
+   "positive_reflex_coverage": 0.7,
+   "n_fired": 189,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 0.8,
+     "acceptance_hard_negatives": 0.9473684210526315,
+     "coverage": 0.7835051546391752,
+     "selective_accuracy": 0.9078947368421053,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 1,
+     "positive_reflex_coverage": 0.7,
+     "n_fired": 76
+    },
+    "claude": {
+     "acceptance_positives": 0.6,
+     "acceptance_hard_negatives": 0.9464285714285714,
+     "coverage": 0.78125,
+     "selective_accuracy": 0.8533333333333334,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.5,
+     "n_fired": 75
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 0.8181818181818182,
+     "coverage": 0.76,
+     "selective_accuracy": 0.8421052631578947,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.9,
+     "n_fired": 38
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 2,
+    "past_question": 0,
+    "object_change": 0,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  },
+  "G3exp_a0.1": {
+   "acceptance_positives": 0.7666666666666667,
+   "acceptance_hard_negatives": 0.8790322580645161,
+   "coverage": 0.7777777777777778,
+   "selective_accuracy": 0.873015873015873,
+   "hard_false_fast_paths": 2,
+   "false_fast_paths_all": 3,
+   "positive_reflex_coverage": 0.7,
+   "n_fired": 189,
+   "by_source": {
+    "chatgpt": {
+     "acceptance_positives": 0.8,
+     "acceptance_hard_negatives": 0.8596491228070176,
+     "coverage": 0.7835051546391752,
+     "selective_accuracy": 0.9078947368421053,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 1,
+     "positive_reflex_coverage": 0.7,
+     "n_fired": 76
+    },
+    "claude": {
+     "acceptance_positives": 0.5,
+     "acceptance_hard_negatives": 0.9107142857142857,
+     "coverage": 0.78125,
+     "selective_accuracy": 0.8533333333333334,
+     "hard_false_fast_paths": 0,
+     "false_fast_paths_all": 0,
+     "positive_reflex_coverage": 0.5,
+     "n_fired": 75
+    },
+    "synthetic_user_style": {
+     "acceptance_positives": 1.0,
+     "acceptance_hard_negatives": 0.8181818181818182,
+     "coverage": 0.76,
+     "selective_accuracy": 0.8421052631578947,
+     "hard_false_fast_paths": 2,
+     "false_fast_paths_all": 2,
+     "positive_reflex_coverage": 0.9,
+     "n_fired": 38
+    }
+   },
+   "hard_fired_by_transformation": {
+    "negation": 0,
+    "temporal": 2,
+    "past_question": 0,
+    "object_change": 0,
+    "inspection_only": 0,
+    "conditional": 0
+   }
+  }
+ }
+}
