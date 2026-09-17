@@ -170,7 +170,11 @@ def certify_families(
             failures.append("trust")
         if family in probes and probes[family]:
             coverage, agreement = probe_scores(reflex, gate, float(thr.threshold), probes[family])
-            retention: dict[str, Any] = {"probes": len(probes[family]), "coverage": coverage, "agreement": agreement, "incumbent_coverage": None}
+            retention: dict[str, Any] = {"probes": len(probes[family]), "coverage": coverage, "agreement": agreement, "incumbent_coverage": None, "evidence": "held-out"}
+            # Reporting only: the same fresh observation summary as the probe branch, at the
+            # incumbent threshold when there is one, so both branches are comparable.
+            report_thr = float(inc_thr) if inc_thr is not None else float(thr.threshold)
+            retention["fresh"] = fresh_report(reflex, gate, report_thr, va)
             if incumbent is not None:
                 inc_reflex, inc_gate, inc_thresholds = incumbent
                 inc_thr = inc_thresholds.get(family)
@@ -190,6 +194,18 @@ def certify_families(
             verdict.reason = "quality_trust_retention_pass"
         verdicts[family] = verdict
     return verdicts
+
+
+def fresh_report(reflex, gate: MahalanobisGate, threshold: float, fresh: list[Trace]) -> dict[str, int]:
+    """How many fresh traces the gate accepts, how many the candidate covers at ``threshold``,
+    and on how many covered ones it disagrees with the verified teacher action."""
+    x = np.stack([t.features for t in fresh])
+    y = np.asarray([t.action for t in fresh]).astype(str)
+    accepted = np.asarray(gate.accept(x), dtype=bool)
+    preds = np.asarray([str(reflex.predict(row)[0]) for row in x])
+    confs = np.asarray([float(reflex.predict(row)[1]) for row in x])
+    covered = accepted & (confs >= threshold)
+    return {"n": len(fresh), "gate_accepted": int(accepted.sum()), "covered": int(covered.sum()), "disagreements": int(np.sum(covered & (preds != y)))}
 
 
 def _recertify_on_probes(
@@ -221,15 +237,8 @@ def _recertify_on_probes(
     verdict.retention = {"probes": len(probe_traces), "coverage": coverage, "agreement": agreement, "incumbent_coverage": inc_cov, "evidence": "probes_only"}
     failures: list[str] = []
     if fresh:
-        x = np.stack([t.features for t in fresh])
-        y = np.asarray([t.action for t in fresh]).astype(str)
-        accepted = np.asarray(gate.accept(x), dtype=bool)
-        preds = np.asarray([str(reflex.predict(row)[0]) for row in x])
-        confs = np.asarray([float(reflex.predict(row)[1]) for row in x])
-        covered = accepted & (confs >= threshold)
-        disagreements = int(np.sum(covered & (preds != y)))
-        verdict.retention["fresh"] = {"n": len(fresh), "gate_accepted": int(accepted.sum()), "covered": int(covered.sum()), "disagreements": disagreements}
-        if disagreements:
+        verdict.retention["fresh"] = fresh_report(reflex, gate, threshold, fresh)
+        if verdict.retention["fresh"]["disagreements"]:
             failures.append("fresh_disagreement")
     if coverage < crit.probe_coverage_floor or agreement < crit.probe_accuracy_floor:
         failures.append("retention")
