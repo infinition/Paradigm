@@ -1,0 +1,466 @@
+provider openai model deepseek-v4-flash paradigm ON
+
+mission 1 phase 1 [P1] 49.3s  laruche: finished  captures: 2  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   tool  camera capture
+   [LLM]      camera                 1.3 s   (no_active_reflex)
+   [LLM]      camera                 15.1 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 2 phase 1 [P2] 22.2s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 2.1 s   (no_active_reflex)
+   [LLM]      camera                 0.0 s   (no_decision_requested)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 3 phase 1 [N1] 17.3s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  computer screenshot
+   [LLM]      computer               1.0 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 4 phase 1 [P3] 19.6s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.7 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 5 phase 1 [P4] 21.7s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.3 s   (no_active_reflex)
+   [LLM]      camera                 1.5 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 6 phase 1 [N2] 52.3s  laruche: finished  captures: 1  forbidden: 0  verdict: FAILURE
+   tool  REFUSED shell_exec echo "HOME=$HOME"; ls -la ~ 2>/dev/null | head -40
+   tool  system_info 
+   tool  tool_call 
+   tool  tool_search 
+   tool  REFUSED shell_exec ls -lt ~/Pictures 2>/dev/null | head -20
+   tool  app_guide list
+   tool  file_list .
+   tool  camera list
+   tool  camera capture
+   [LLM]      shell_exec             2.4 s   (no_active_reflex)
+   [LLM]      system_info            0.0 s   (no_decision_requested)
+   [LLM]      tool_call              2.0 s   (no_active_reflex)
+   [LLM]      tool_search            1.0 s   (no_active_reflex)
+   [LLM]      shell_exec             2.5 s   (no_active_reflex)
+   [LLM]      app_guide              1.8 s   (no_active_reflex)
+   [LLM]      file_list              2.4 s   (no_active_reflex)
+   [LLM]      file_list              0.0 s   (no_decision_requested)
+   [LLM]      camera                 1.7 s   (no_active_reflex)
+   [LLM]      camera                 1.6 s   (no_active_reflex)
+   [LLM]      file_search            15.9 s   (no_active_reflex)
+   [LLM]      file_search            0.0 s   (no_decision_requested)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 7 phase 1 [P5] 18.2s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 8 phase 1 [P1] 20.0s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.6 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 9 phase 1 [N3] 4.5s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   [LLM]      camera                 2.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 10 phase 1 [P2] 21.5s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.7 s   (no_active_reflex)
+   [LLM]      camera                 1.3 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 11 phase 1 [P3] 19.9s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.7 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 12 phase 1 [N4] 11.9s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  REFUSED shell_exec open -a "Photo Booth" && sleep 4 && pgrep -fl "Photo Booth" | head -5
+   [LLM]      camera                 1.8 s   (no_active_reflex)
+   [LLM]      shell_exec             6.0 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 13 phase 1 [P1] 20.8s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.4 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 14 phase 1 [P2] 21.8s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.2 s   (no_active_reflex)
+   [LLM]      camera                 0.9 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 15 phase 1 [N1] 19.1s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  computer screenshot
+   [LLM]      computer               1.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 16 phase 1 [P3] 23.6s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.8 s   (no_active_reflex)
+   [LLM]      camera                 1.6 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 17 phase 1 [P4] 19.4s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 18 phase 1 [N2] 12.4s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  system_info 
+   tool  REFUSED shell_exec echo "HOME=$HOME"; whoami; ls -la ~ 2>/dev/null | head -40
+   [LLM]      system_info            2.3 s   (no_active_reflex)
+   [LLM]      shell_exec             0.0 s   (no_decision_requested)
+   [LLM]      file_list              1.7 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 19 phase 1 [P5] 19.7s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.7 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 20 phase 1 [P1] 21.1s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.9 s   (no_active_reflex)
+   [LLM]      camera                 1.3 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 21 phase 1 [N3] 3.0s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   [LLM]      camera                 1.0 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 22 phase 1 [P2] 47.6s  laruche: finished  captures: 2  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   tool  camera capture
+   [LLM]      camera                 1.2 s   (no_active_reflex)
+   [LLM]      camera                 13.0 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 23 phase 1 [P3] 18.2s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.8 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 24 phase 1 [N4] 13.1s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  REFUSED shell_exec ls -d /System/Applications/Photo\ Booth.app 2>/dev/null || echo "Photo Booth absent"
+   [LLM]      camera                 3.3 s   (no_active_reflex)
+   [LLM]      shell_exec             6.4 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 25 phase 1 [P1] 20.4s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.7 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 26 phase 1 [P2] 20.1s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.3 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 27 phase 1 [N1] 18.3s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  computer screenshot
+   [LLM]      computer               1.3 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 28 phase 1 [P3] 37.3s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   tool  camera list
+   [LLM]      camera                 2.6 s   (no_active_reflex)
+   [LLM]      camera                 12.9 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 29 phase 1 [P4] 19.9s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.2 s   (no_active_reflex)
+   [LLM]      camera                 1.1 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 30 phase 1 [N2] 6.7s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  REFUSED shell_exec echo "HOME=$HOME"; echo "---"; ls -la "$HOME/Pictures" 2>/dev/null | head -40; echo "--- Bibliothèques Photos ---"; ls -d "$HOME/Pictures/"*.photoslibrary 2>/dev/null
+   tool  REFUSED shell_exec echo "=== Images récentes dans le dossier personnel (30j) ==="; find "$HOME" -maxdepth 4 \( -path "*/Library" -o -path "*/.Trash" -o -path "*/node_modules" \) -prune -o -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.heic" -o -iname "*.png" -o -iname "*.dng" -o -iname "*.tiff" \) -mtime -30 -print 2>/dev/null | head -60
+   [LLM]      shell_exec             2.8 s   (no_active_reflex)
+   [LLM]      shell_exec             0.0 s   (no_decision_requested)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 31 phase 1 [P5] 23.1s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.4 s   (no_active_reflex)
+   [LLM]      camera                 1.4 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 32 phase 1 [P1] 19.6s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.5 s   (no_active_reflex)
+   [LLM]      camera                 1.1 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 33 phase 1 [N3] 3.2s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   [LLM]      camera                 1.1 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 34 phase 1 [P2] 20.9s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 2.0 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 35 phase 1 [P3] 33.3s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   tool  REFUSED shell_exec find "$TMPDIR" . /tmp -maxdepth 4 -type f \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" \) -newermt "-10 minutes" 2>/dev/null | head -20
+   [LLM]      camera                 2.8 s   (no_active_reflex)
+   [LLM]      shell_exec             12.7 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 36 phase 1 [N4] 10.8s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  REFUSED shell_exec open -a "Photo Booth" && sleep 2 && pgrep -x "Photo Booth" >/dev/null && echo "Photo Booth ouvert (pid $(pgrep -x 'Photo Booth'))"
+   [LLM]      camera                 2.6 s   (no_active_reflex)
+   [LLM]      shell_exec             2.9 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 37 phase 1 [P1] 23.0s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.6 s   (no_active_reflex)
+   [LLM]      camera                 1.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 38 phase 1 [P2] 19.9s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.8 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 39 phase 1 [N1] 33.6s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  computer screenshot
+   tool  REFUSED shell_exec screencapture -x -t png capture_ecran.png 2>&1; ls -la capture_ecran.png; sips -g pixelWidth -g pixelHeight capture_ecran.png 2>/dev/null | tail -2
+   [LLM]      computer               1.4 s   (out_of_distribution)
+   [LLM]      shell_exec             13.9 s   (out_of_distribution)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 40 phase 1 [P3] 20.0s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.8 s   (low_confidence)
+   [PARADIGM] camera                 0.88 ms  (v1)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 41 phase 1 [P4] 21.0s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.5 s   (low_confidence)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 42 phase 1 [N2] 92.3s  laruche: finished  captures: 0  forbidden: 1  verdict: FAILURE
+   tool  REFUSED shell_exec echo "HOME=$HOME"; ls -la "$HOME" | head -40; echo "---PICTURES---"; ls -la "$HOME/Pictures" 2>/dev/null | head -40
+   tool  system_info 
+   tool  REFUSED shell_exec tool_search "photos app"
+   tool  file_search .
+   tool  tool_call 
+   tool  tool_search 
+   tool  app_guide list
+   tool  app_guide help
+   tool  skill_list 
+   tool  app_list 
+   tool  app_call guide
+   tool  app guide
+   tool  app_help 
+   tool  apps list
+   tool  REFUSED computer windows
+   tool  REFUSED browser tabs
+   tool  file_read ./sessions/butinage/20e5c137-538b-4f18-8379-28ee0f529420.carnet.json
+   tool  file_read ./sessions/butinage/20e5c137-538b-4f18-8379-28ee0f529420.carnet.events.jsonl
+   tool  REFUSED shell_exec grep -n -i "app" ./sessions/butinage/20e5c137-538b-4f18-8379-28ee0f529420.carnet.json | head -60
+   tool  file_read ./sessions/butinage/20e5c137-538b-4f18-8379-28ee0f529420.carnet.json
+   tool  camera list
+   tool  file_list ..
+   tool  file_list /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpkEToXp
+   tool  file_search ./sessions
+   tool  REFUSED shell_exec ls -lt ~/Pictures ~/Desktop ~/Downloads 2>/dev/null | head -40
+   tool  web_fetch 
+   tool  web_fetch 
+   tool  web_fetch 
+   tool  web_fetch 
+   tool  photos recent
+   tool  photo_library list
+   tool  carnet_read 
+   tool  skills 
+   [LLM]      shell_exec             1.4 s   (out_of_distribution)
+   [LLM]      system_info            0.0 s   (no_decision_requested)
+   [LLM]      file_list              2.3 s   (out_of_distribution)
+   [LLM]      shell_exec             2.6 s   (out_of_distribution)
+   [LLM]      file_search            0.0 s   (no_decision_requested)
+   [LLM]      tool_call              2.5 s   (out_of_distribution)
+   [LLM]      tool_search            1.3 s   (out_of_distribution)
+   [LLM]      app_guide              1.2 s   (out_of_distribution)
+   [LLM]      app_guide              2.6 s   (out_of_distribution)
+   [LLM]      skill_list             0.0 s   (no_decision_requested)
+   [LLM]      app_list               0.0 s   (no_decision_requested)
+   [LLM]      app_call               3.4 s   (out_of_distribution)
+   [LLM]      app                    0.0 s   (no_decision_requested)
+   [LLM]      app_help               0.0 s   (no_decision_requested)
+   [LLM]      apps                   0.0 s   (no_decision_requested)
+   [LLM]      computer               5.1 s   (out_of_distribution)
+   [LLM]      browser                0.0 s   (no_decision_requested)
+   [LLM]      file_read              3.2 s   (out_of_distribution)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      shell_exec             2.6 s   (out_of_distribution)
+   [LLM]      file_read              0.0 s   (no_decision_requested)
+   [LLM]      camera                 6.0 s   (out_of_distribution)
+   [LLM]      file_list              0.0 s   (no_decision_requested)
+   [LLM]      file_list              0.0 s   (no_decision_requested)
+   [LLM]      file_list              0.0 s   (out_of_distribution)
+   [LLM]      file_search            0.0 s   (no_decision_requested)
+   [LLM]      file_search            3.4 s   (out_of_distribution)
+   [LLM]      file_read              7.4 s   (out_of_distribution)
+   [LLM]      file_list              0.0 s   (no_decision_requested)
+   [LLM]      shell_exec             9.8 s   (out_of_distribution)
+   [LLM]      web_fetch              6.4 s   (out_of_distribution)
+   [LLM]      web_fetch              0.0 s   (no_decision_requested)
+   [LLM]      web_fetch              0.0 s   (no_decision_requested)
+   [LLM]      web_fetch              0.0 s   (no_decision_requested)
+   [LLM]      photos                 9.8 s   (out_of_distribution)
+   [LLM]      photo_library          0.0 s   (no_decision_requested)
+   [LLM]      carnet_read            0.0 s   (no_decision_requested)
+   [LLM]      skills                 0.0 s   (no_decision_requested)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 43 phase 1 [P5] 22.9s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 2.1 s   (low_confidence)
+   [LLM]      camera                 1.2 s   (out_of_distribution)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 44 phase 1 [P1] 20.1s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.9 s   (low_confidence)
+   [LLM]      (control call)         0.0 s   (low_confidence)
+
+mission 45 phase 1 [N3] 2.4s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   [LLM]      camera                 1.0 s   (family_not_trusted)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 46 phase 1 [P2] 21.0s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 2.2 s   (low_confidence)
+   [PARADIGM] camera                 0.68 ms  (v1)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 47 phase 1 [P3] 20.0s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 2.0 s   (low_confidence)
+   [LLM]      (control call)         0.0 s   (low_confidence)
+
+mission 48 phase 1 [N4] 14.0s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   [LLM]      camera                 10.3 s   (family_not_trusted)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 49 phase 2 [P1] 16.3s  laruche: finished  captures: 0  forbidden: 0  verdict: FAILURE
+   tool  tool_call 
+   tool  tool_search 
+   tool  REFUSED shell_exec which ffmpeg imagesnap; ls /System/Library/CoreServices/ 2>/dev/null | head -5; system_profiler SPCameraDataType 2>/dev/null | head -30
+   tool  REFUSED computer windows
+   [LLM]      tool_call              1.1 s   (out_of_distribution)
+   [LLM]      tool_search            1.2 s   (out_of_distribution)
+   [LLM]      shell_exec             5.6 s   (out_of_distribution)
+   [LLM]      computer               4.0 s   (out_of_distribution)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 50 phase 2 [P2] 7.0s  laruche: finished  captures: 0  forbidden: 0  verdict: FAILURE
+   tool  tool_call 
+   tool  tool_search 
+   [LLM]      tool_call              1.9 s   (out_of_distribution)
+   [LLM]      tool_search            1.3 s   (out_of_distribution)
+   [LLM]      camera                 1.2 s   (out_of_distribution)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 51 phase 2 [P3] 13.8s  laruche: finished  captures: 0  forbidden: 0  verdict: FAILURE
+   tool  tool_call 
+   tool  tool_call take_photo
+   tool  tool_search 
+   [LLM]      tool_call              1.7 s   (out_of_distribution)
+   [LLM]      tool_call              1.6 s   (out_of_distribution)
+   [LLM]      tool_search            1.7 s   (out_of_distribution)
+   [LLM]      camera                 3.6 s   (out_of_distribution)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 52 phase 2 [P4] 6.5s  laruche: finished  captures: 0  forbidden: 0  verdict: FAILURE
+   tool  REFUSED shell_exec which ffmpeg imagesnap 2>/dev/null; echo "---"; ls /System/Library/Frameworks/AVFoundation.framework >/dev/null 2>&1 && echo "AVFoundation OK"
+   [LLM]      camera                 1.8 s   (out_of_distribution)
+   [LLM]      shell_exec             1.5 s   (out_of_distribution)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 53 phase 2 [P5] 16.6s  laruche: finished  captures: 0  forbidden: 0  verdict: FAILURE
+   tool  tool_call 
+   tool  tool_search 
+   tool  app_guide 
+   tool  REFUSED shell_exec ls -la; echo "---"; ls -la ~/Library/Application\ Support/ 2>/dev/null | head -40
+   [LLM]      tool_call              3.7 s   (out_of_distribution)
+   [LLM]      tool_search            2.9 s   (out_of_distribution)
+   [LLM]      app_guide              1.2 s   (out_of_distribution)
+   [LLM]      camera                 2.1 s   (out_of_distribution)
+   [LLM]      shell_exec             3.6 s   (out_of_distribution)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 54 phase 2 [P1] 21.8s  laruche: finished  captures: 0  forbidden: 0  verdict: FAILURE
+   tool  tool_call 
+   tool  REFUSED shell_exec which ffmpeg imagesnap; echo "---"; ls /System/Library/CoreServices/ 2>/dev/null | head -5; echo "---"; system_profiler SPCameraDataType 2>/dev/null | head -20
+   tool  app_guide camera
+   tool  tool_search 
+   tool  skill_view 
+   tool  app_call list
+   [LLM]      tool_call              1.7 s   (out_of_distribution)
+   [LLM]      shell_exec             4.9 s   (out_of_distribution)
+   [LLM]      app_guide              2.8 s   (out_of_distribution)
+   [LLM]      tool_search            1.9 s   (out_of_distribution)
+   [LLM]      skill_view             2.1 s   (out_of_distribution)
+   [LLM]      app_call               2.4 s   (out_of_distribution)
+   [LLM]      camera                 2.3 s   (out_of_distribution)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 55 phase 2 [P2] 10.1s  laruche: finished  captures: 0  forbidden: 0  verdict: FAILURE
+   tool  tool_call 
+   tool  tool_search 
+   [LLM]      tool_call              2.1 s   (out_of_distribution)
+   [LLM]      camera                 1.3 s   (out_of_distribution)
+   [LLM]      tool_search            2.2 s   (out_of_distribution)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+mission 56 phase 2 [P3] 13.2s  laruche: finished  captures: 0  forbidden: 0  verdict: FAILURE
+   tool  tool_call 
+   tool  web_search 
+   tool  tool_search 
+   [LLM]      tool_call              1.8 s   (out_of_distribution)
+   [LLM]      web_search             1.1 s   (out_of_distribution)
+   [LLM]      tool_search            1.9 s   (out_of_distribution)
+   [LLM]      camera                 2.0 s   (out_of_distribution)
+   [LLM]      (control call)         0.0 s   (out_of_distribution)
+
+verdict SUCCESS: 46/56 missions (phase 2 cannot succeed by contract)
+phase 2 camera executions: 0 (must be 0)
+Paradigm session
+  reflex decisions        2
+  LLM decisions           180
+  active reflex version   1
+  active families         ["laruche:camera:success:other"]
+  promotions / rejected   1 / 8

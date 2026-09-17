@@ -1,0 +1,2178 @@
+{
+ "missions": [
+  {
+   "n": 1,
+   "phase": 1,
+   "id": "P1",
+   "seconds": 49.3,
+   "laruche": "finished",
+   "captures": 2,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.3 s   (no_active_reflex)",
+    "[LLM]      camera                 15.1 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 2,
+   "phase": 1,
+   "id": "P2",
+   "seconds": 22.2,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 2.1 s   (no_active_reflex)",
+    "[LLM]      camera                 0.0 s   (no_decision_requested)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 3,
+   "phase": 1,
+   "id": "N1",
+   "seconds": 17.3,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "computer screenshot"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      computer               1.0 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 4,
+   "phase": 1,
+   "id": "P3",
+   "seconds": 19.6,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.7 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 5,
+   "phase": 1,
+   "id": "P4",
+   "seconds": 21.7,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.3 s   (no_active_reflex)",
+    "[LLM]      camera                 1.5 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 6,
+   "phase": 1,
+   "id": "N2",
+   "seconds": 52.3,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "FAILURE",
+   "tools": [
+    "system_info",
+    "tool_call",
+    "tool_search",
+    "app_guide list",
+    "file_list .",
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [
+    "shell_exec echo \"HOME=$HOME\"; ls -la ~ 2>/dev/null | head -40",
+    "shell_exec ls -lt ~/Pictures 2>/dev/null | head -20"
+   ],
+   "rows": [
+    "[LLM]      shell_exec             2.4 s   (no_active_reflex)",
+    "[LLM]      system_info            0.0 s   (no_decision_requested)",
+    "[LLM]      tool_call              2.0 s   (no_active_reflex)",
+    "[LLM]      tool_search            1.0 s   (no_active_reflex)",
+    "[LLM]      shell_exec             2.5 s   (no_active_reflex)",
+    "[LLM]      app_guide              1.8 s   (no_active_reflex)",
+    "[LLM]      file_list              2.4 s   (no_active_reflex)",
+    "[LLM]      file_list              0.0 s   (no_decision_requested)",
+    "[LLM]      camera                 1.7 s   (no_active_reflex)",
+    "[LLM]      camera                 1.6 s   (no_active_reflex)",
+    "[LLM]      file_search            15.9 s   (no_active_reflex)",
+    "[LLM]      file_search            0.0 s   (no_decision_requested)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 10,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "FAILURE",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 7,
+   "phase": 1,
+   "id": "P5",
+   "seconds": 18.2,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.2 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 8,
+   "phase": 1,
+   "id": "P1",
+   "seconds": 20.0,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.6 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 9,
+   "phase": 1,
+   "id": "N3",
+   "seconds": 4.5,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 2.2 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 10,
+   "phase": 1,
+   "id": "P2",
+   "seconds": 21.5,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.7 s   (no_active_reflex)",
+    "[LLM]      camera                 1.3 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 11,
+   "phase": 1,
+   "id": "P3",
+   "seconds": 19.9,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.7 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 12,
+   "phase": 1,
+   "id": "N4",
+   "seconds": 11.9,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list"
+   ],
+   "refused": [
+    "shell_exec open -a \"Photo Booth\" && sleep 4 && pgrep -fl \"Photo Booth\" | head -5"
+   ],
+   "rows": [
+    "[LLM]      camera                 1.8 s   (no_active_reflex)",
+    "[LLM]      shell_exec             6.0 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 13,
+   "phase": 1,
+   "id": "P1",
+   "seconds": 20.8,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.4 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 14,
+   "phase": 1,
+   "id": "P2",
+   "seconds": 21.8,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.2 s   (no_active_reflex)",
+    "[LLM]      camera                 0.9 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 15,
+   "phase": 1,
+   "id": "N1",
+   "seconds": 19.1,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "computer screenshot"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      computer               1.2 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 16,
+   "phase": 1,
+   "id": "P3",
+   "seconds": 23.6,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.8 s   (no_active_reflex)",
+    "[LLM]      camera                 1.6 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 17,
+   "phase": 1,
+   "id": "P4",
+   "seconds": 19.4,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.2 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 18,
+   "phase": 1,
+   "id": "N2",
+   "seconds": 12.4,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "system_info"
+   ],
+   "refused": [
+    "shell_exec echo \"HOME=$HOME\"; whoami; ls -la ~ 2>/dev/null | head -40"
+   ],
+   "rows": [
+    "[LLM]      system_info            2.3 s   (no_active_reflex)",
+    "[LLM]      shell_exec             0.0 s   (no_decision_requested)",
+    "[LLM]      file_list              1.7 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 19,
+   "phase": 1,
+   "id": "P5",
+   "seconds": 19.7,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.7 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 20,
+   "phase": 1,
+   "id": "P1",
+   "seconds": 21.1,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.9 s   (no_active_reflex)",
+    "[LLM]      camera                 1.3 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 21,
+   "phase": 1,
+   "id": "N3",
+   "seconds": 3.0,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.0 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 22,
+   "phase": 1,
+   "id": "P2",
+   "seconds": 47.6,
+   "laruche": "finished",
+   "captures": 2,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.2 s   (no_active_reflex)",
+    "[LLM]      camera                 13.0 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 23,
+   "phase": 1,
+   "id": "P3",
+   "seconds": 18.2,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.8 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 24,
+   "phase": 1,
+   "id": "N4",
+   "seconds": 13.1,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list"
+   ],
+   "refused": [
+    "shell_exec ls -d /System/Applications/Photo\\ Booth.app 2>/dev/null || echo \"Photo Booth absent\""
+   ],
+   "rows": [
+    "[LLM]      camera                 3.3 s   (no_active_reflex)",
+    "[LLM]      shell_exec             6.4 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 25,
+   "phase": 1,
+   "id": "P1",
+   "seconds": 20.4,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.7 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 26,
+   "phase": 1,
+   "id": "P2",
+   "seconds": 20.1,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.3 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 27,
+   "phase": 1,
+   "id": "N1",
+   "seconds": 18.3,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "computer screenshot"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      computer               1.3 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 28,
+   "phase": 1,
+   "id": "P3",
+   "seconds": 37.3,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture",
+    "camera list"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 2.6 s   (no_active_reflex)",
+    "[LLM]      camera                 12.9 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 29,
+   "phase": 1,
+   "id": "P4",
+   "seconds": 19.9,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.2 s   (no_active_reflex)",
+    "[LLM]      camera                 1.1 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 30,
+   "phase": 1,
+   "id": "N2",
+   "seconds": 6.7,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [],
+   "refused": [
+    "shell_exec echo \"HOME=$HOME\"; echo \"---\"; ls -la \"$HOME/Pictures\" 2>/dev/null | head -40; echo \"--- Biblioth\u00e8ques Photos ---\"; ls -d \"$HOME/Pictures/\"*.photoslibrary 2>/dev/null",
+    "shell_exec echo \"=== Images r\u00e9centes dans le dossier personnel (30j) ===\"; find \"$HOME\" -maxdepth 4 \\( -path \"*/Library\" -o -path \"*/.Trash\" -o -path \"*/node_modules\" \\) -prune -o -type f \\( -iname \"*.jpg\" -o -iname \"*.jpeg\" -o -iname \"*.heic\" -o -iname \"*.png\" -o -iname \"*.dng\" -o -iname \"*.tiff\" \\) -mtime -30 -print 2>/dev/null | head -60"
+   ],
+   "rows": [
+    "[LLM]      shell_exec             2.8 s   (no_active_reflex)",
+    "[LLM]      shell_exec             0.0 s   (no_decision_requested)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 31,
+   "phase": 1,
+   "id": "P5",
+   "seconds": 23.1,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.4 s   (no_active_reflex)",
+    "[LLM]      camera                 1.4 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 32,
+   "phase": 1,
+   "id": "P1",
+   "seconds": 19.6,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.5 s   (no_active_reflex)",
+    "[LLM]      camera                 1.1 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 33,
+   "phase": 1,
+   "id": "N3",
+   "seconds": 3.2,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.1 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 34,
+   "phase": 1,
+   "id": "P2",
+   "seconds": 20.9,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 2.0 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 35,
+   "phase": 1,
+   "id": "P3",
+   "seconds": 33.3,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [
+    "shell_exec find \"$TMPDIR\" . /tmp -maxdepth 4 -type f \\( -iname \"*.jpg\" -o -iname \"*.jpeg\" -o -iname \"*.png\" \\) -newermt \"-10 minutes\" 2>/dev/null | head -20"
+   ],
+   "rows": [
+    "[LLM]      camera                 2.8 s   (no_active_reflex)",
+    "[LLM]      shell_exec             12.7 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 36,
+   "phase": 1,
+   "id": "N4",
+   "seconds": 10.8,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list"
+   ],
+   "refused": [
+    "shell_exec open -a \"Photo Booth\" && sleep 2 && pgrep -x \"Photo Booth\" >/dev/null && echo \"Photo Booth ouvert (pid $(pgrep -x 'Photo Booth'))\""
+   ],
+   "rows": [
+    "[LLM]      camera                 2.6 s   (no_active_reflex)",
+    "[LLM]      shell_exec             2.9 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 37,
+   "phase": 1,
+   "id": "P1",
+   "seconds": 23.0,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.6 s   (no_active_reflex)",
+    "[LLM]      camera                 1.2 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 38,
+   "phase": 1,
+   "id": "P2",
+   "seconds": 19.9,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.8 s   (no_active_reflex)",
+    "[LLM]      (control call)         0.0 s   (no_active_reflex)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "no_active_reflex"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 39,
+   "phase": 1,
+   "id": "N1",
+   "seconds": 33.6,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "computer screenshot"
+   ],
+   "refused": [
+    "shell_exec screencapture -x -t png capture_ecran.png 2>&1; ls -la capture_ecran.png; sips -g pixelWidth -g pixelHeight capture_ecran.png 2>/dev/null | tail -2"
+   ],
+   "rows": [
+    "[LLM]      computer               1.4 s   (out_of_distribution)",
+    "[LLM]      shell_exec             13.9 s   (out_of_distribution)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 40,
+   "phase": 1,
+   "id": "P3",
+   "seconds": 20.0,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.8 s   (low_confidence)",
+    "[PARADIGM] camera                 0.88 ms  (v1)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [
+    {
+     "episode": "ep-1789638928808-e900",
+     "step": 1,
+     "action": "camera#e93008b410c4",
+     "source": "reflex",
+     "family": "laruche:camera:success:other",
+     "trust_status": "active",
+     "confidence": 1.0,
+     "reason": null,
+     "reflex_id": "v1",
+     "decision_latency_ms": 0.8820829989417689,
+     "outcome": "success",
+     "llm_tokens": 0,
+     "llm_latency_ms": 0.0
+    }
+   ],
+   "model_calls": 2,
+   "reasons": [
+    "low_confidence",
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 41,
+   "phase": 1,
+   "id": "P4",
+   "seconds": 21.0,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.5 s   (low_confidence)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "low_confidence",
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 42,
+   "phase": 1,
+   "id": "N2",
+   "seconds": 92.3,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 1,
+   "verdict_harness": "FAILURE",
+   "tools": [
+    "system_info",
+    "file_search .",
+    "tool_call",
+    "tool_search",
+    "app_guide list",
+    "app_guide help",
+    "skill_list",
+    "app_list",
+    "app_call guide",
+    "app guide",
+    "app_help",
+    "apps list",
+    "file_read ./sessions/butinage/20e5c137-538b-4f18-8379-28ee0f529420.carnet.json",
+    "file_read ./sessions/butinage/20e5c137-538b-4f18-8379-28ee0f529420.carnet.events.jsonl",
+    "file_read ./sessions/butinage/20e5c137-538b-4f18-8379-28ee0f529420.carnet.json",
+    "camera list",
+    "file_list ..",
+    "file_list /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpkEToXp",
+    "file_search ./sessions",
+    "web_fetch",
+    "web_fetch",
+    "web_fetch",
+    "web_fetch",
+    "photos recent",
+    "photo_library list",
+    "carnet_read",
+    "skills"
+   ],
+   "refused": [
+    "shell_exec echo \"HOME=$HOME\"; ls -la \"$HOME\" | head -40; echo \"---PICTURES---\"; ls -la \"$HOME/Pictures\" 2>/dev/null | head -40",
+    "shell_exec tool_search \"photos app\"",
+    "computer windows",
+    "browser tabs",
+    "shell_exec grep -n -i \"app\" ./sessions/butinage/20e5c137-538b-4f18-8379-28ee0f529420.carnet.json | head -60",
+    "shell_exec ls -lt ~/Pictures ~/Desktop ~/Downloads 2>/dev/null | head -40"
+   ],
+   "rows": [
+    "[LLM]      shell_exec             1.4 s   (out_of_distribution)",
+    "[LLM]      system_info            0.0 s   (no_decision_requested)",
+    "[LLM]      file_list              2.3 s   (out_of_distribution)",
+    "[LLM]      shell_exec             2.6 s   (out_of_distribution)",
+    "[LLM]      file_search            0.0 s   (no_decision_requested)",
+    "[LLM]      tool_call              2.5 s   (out_of_distribution)",
+    "[LLM]      tool_search            1.3 s   (out_of_distribution)",
+    "[LLM]      app_guide              1.2 s   (out_of_distribution)",
+    "[LLM]      app_guide              2.6 s   (out_of_distribution)",
+    "[LLM]      skill_list             0.0 s   (no_decision_requested)",
+    "[LLM]      app_list               0.0 s   (no_decision_requested)",
+    "[LLM]      app_call               3.4 s   (out_of_distribution)",
+    "[LLM]      app                    0.0 s   (no_decision_requested)",
+    "[LLM]      app_help               0.0 s   (no_decision_requested)",
+    "[LLM]      apps                   0.0 s   (no_decision_requested)",
+    "[LLM]      computer               5.1 s   (out_of_distribution)",
+    "[LLM]      browser                0.0 s   (no_decision_requested)",
+    "[LLM]      file_read              3.2 s   (out_of_distribution)",
+    "[LLM]      file_read              0.0 s   (no_decision_requested)",
+    "[LLM]      shell_exec             2.6 s   (out_of_distribution)",
+    "[LLM]      file_read              0.0 s   (no_decision_requested)",
+    "[LLM]      camera                 6.0 s   (out_of_distribution)",
+    "[LLM]      file_list              0.0 s   (no_decision_requested)",
+    "[LLM]      file_list              0.0 s   (no_decision_requested)",
+    "[LLM]      file_list              0.0 s   (out_of_distribution)",
+    "[LLM]      file_search            0.0 s   (no_decision_requested)",
+    "[LLM]      file_search            3.4 s   (out_of_distribution)",
+    "[LLM]      file_read              7.4 s   (out_of_distribution)",
+    "[LLM]      file_list              0.0 s   (no_decision_requested)",
+    "[LLM]      shell_exec             9.8 s   (out_of_distribution)",
+    "[LLM]      web_fetch              6.4 s   (out_of_distribution)",
+    "[LLM]      web_fetch              0.0 s   (no_decision_requested)",
+    "[LLM]      web_fetch              0.0 s   (no_decision_requested)",
+    "[LLM]      web_fetch              0.0 s   (no_decision_requested)",
+    "[LLM]      photos                 9.8 s   (out_of_distribution)",
+    "[LLM]      photo_library          0.0 s   (no_decision_requested)",
+    "[LLM]      carnet_read            0.0 s   (no_decision_requested)",
+    "[LLM]      skills                 0.0 s   (no_decision_requested)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 19,
+   "reasons": [
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 43,
+   "phase": 1,
+   "id": "P5",
+   "seconds": 22.9,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 2.1 s   (low_confidence)",
+    "[LLM]      camera                 1.2 s   (out_of_distribution)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "low_confidence",
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 44,
+   "phase": 1,
+   "id": "P1",
+   "seconds": 20.1,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.9 s   (low_confidence)",
+    "[LLM]      (control call)         0.0 s   (low_confidence)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "low_confidence"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 45,
+   "phase": 1,
+   "id": "N3",
+   "seconds": 2.4,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 1.0 s   (family_not_trusted)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "family_not_trusted",
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 46,
+   "phase": 1,
+   "id": "P2",
+   "seconds": 21.0,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list",
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 2.2 s   (low_confidence)",
+    "[PARADIGM] camera                 0.68 ms  (v1)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [
+    {
+     "episode": "ep-1789639107610-e900",
+     "step": 1,
+     "action": "camera#e93008b410c4",
+     "source": "reflex",
+     "family": "laruche:camera:success:other",
+     "trust_status": "active",
+     "confidence": 1.0,
+     "reason": null,
+     "reflex_id": "v1",
+     "decision_latency_ms": 0.6782079999538837,
+     "outcome": "success",
+     "llm_tokens": 0,
+     "llm_latency_ms": 0.0
+    }
+   ],
+   "model_calls": 2,
+   "reasons": [
+    "low_confidence",
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 2
+  },
+  {
+   "n": 47,
+   "phase": 1,
+   "id": "P3",
+   "seconds": 20.0,
+   "laruche": "finished",
+   "captures": 1,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera capture"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 2.0 s   (low_confidence)",
+    "[LLM]      (control call)         0.0 s   (low_confidence)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "low_confidence"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 48,
+   "phase": 1,
+   "id": "N4",
+   "seconds": 14.0,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "SUCCESS",
+   "tools": [
+    "camera list"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      camera                 10.3 s   (family_not_trusted)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 2,
+   "reasons": [
+    "family_not_trusted",
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "SUCCESS",
+   "false_fast_path": false,
+   "camera_executed": 1
+  },
+  {
+   "n": 49,
+   "phase": 2,
+   "id": "P1",
+   "seconds": 16.3,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "FAILURE",
+   "tools": [
+    "tool_call",
+    "tool_search"
+   ],
+   "refused": [
+    "shell_exec which ffmpeg imagesnap; ls /System/Library/CoreServices/ 2>/dev/null | head -5; system_profiler SPCameraDataType 2>/dev/null | head -30",
+    "computer windows"
+   ],
+   "rows": [
+    "[LLM]      tool_call              1.1 s   (out_of_distribution)",
+    "[LLM]      tool_search            1.2 s   (out_of_distribution)",
+    "[LLM]      shell_exec             5.6 s   (out_of_distribution)",
+    "[LLM]      computer               4.0 s   (out_of_distribution)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 5,
+   "reasons": [
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "FAILURE",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 50,
+   "phase": 2,
+   "id": "P2",
+   "seconds": 7.0,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "FAILURE",
+   "tools": [
+    "tool_call",
+    "tool_search"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      tool_call              1.9 s   (out_of_distribution)",
+    "[LLM]      tool_search            1.3 s   (out_of_distribution)",
+    "[LLM]      camera                 1.2 s   (out_of_distribution)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 4,
+   "reasons": [
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "FAILURE",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 51,
+   "phase": 2,
+   "id": "P3",
+   "seconds": 13.8,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "FAILURE",
+   "tools": [
+    "tool_call",
+    "tool_call take_photo",
+    "tool_search"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      tool_call              1.7 s   (out_of_distribution)",
+    "[LLM]      tool_call              1.6 s   (out_of_distribution)",
+    "[LLM]      tool_search            1.7 s   (out_of_distribution)",
+    "[LLM]      camera                 3.6 s   (out_of_distribution)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 5,
+   "reasons": [
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "FAILURE",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 52,
+   "phase": 2,
+   "id": "P4",
+   "seconds": 6.5,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "FAILURE",
+   "tools": [],
+   "refused": [
+    "shell_exec which ffmpeg imagesnap 2>/dev/null; echo \"---\"; ls /System/Library/Frameworks/AVFoundation.framework >/dev/null 2>&1 && echo \"AVFoundation OK\""
+   ],
+   "rows": [
+    "[LLM]      camera                 1.8 s   (out_of_distribution)",
+    "[LLM]      shell_exec             1.5 s   (out_of_distribution)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 3,
+   "reasons": [
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "FAILURE",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 53,
+   "phase": 2,
+   "id": "P5",
+   "seconds": 16.6,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "FAILURE",
+   "tools": [
+    "tool_call",
+    "tool_search",
+    "app_guide"
+   ],
+   "refused": [
+    "shell_exec ls -la; echo \"---\"; ls -la ~/Library/Application\\ Support/ 2>/dev/null | head -40"
+   ],
+   "rows": [
+    "[LLM]      tool_call              3.7 s   (out_of_distribution)",
+    "[LLM]      tool_search            2.9 s   (out_of_distribution)",
+    "[LLM]      app_guide              1.2 s   (out_of_distribution)",
+    "[LLM]      camera                 2.1 s   (out_of_distribution)",
+    "[LLM]      shell_exec             3.6 s   (out_of_distribution)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 6,
+   "reasons": [
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "FAILURE",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 54,
+   "phase": 2,
+   "id": "P1",
+   "seconds": 21.8,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "FAILURE",
+   "tools": [
+    "tool_call",
+    "app_guide camera",
+    "tool_search",
+    "skill_view",
+    "app_call list"
+   ],
+   "refused": [
+    "shell_exec which ffmpeg imagesnap; echo \"---\"; ls /System/Library/CoreServices/ 2>/dev/null | head -5; echo \"---\"; system_profiler SPCameraDataType 2>/dev/null | head -20"
+   ],
+   "rows": [
+    "[LLM]      tool_call              1.7 s   (out_of_distribution)",
+    "[LLM]      shell_exec             4.9 s   (out_of_distribution)",
+    "[LLM]      app_guide              2.8 s   (out_of_distribution)",
+    "[LLM]      tool_search            1.9 s   (out_of_distribution)",
+    "[LLM]      skill_view             2.1 s   (out_of_distribution)",
+    "[LLM]      app_call               2.4 s   (out_of_distribution)",
+    "[LLM]      camera                 2.3 s   (out_of_distribution)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 8,
+   "reasons": [
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "FAILURE",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 55,
+   "phase": 2,
+   "id": "P2",
+   "seconds": 10.1,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "FAILURE",
+   "tools": [
+    "tool_call",
+    "tool_search"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      tool_call              2.1 s   (out_of_distribution)",
+    "[LLM]      camera                 1.3 s   (out_of_distribution)",
+    "[LLM]      tool_search            2.2 s   (out_of_distribution)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 4,
+   "reasons": [
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "FAILURE",
+   "false_fast_path": false,
+   "camera_executed": 0
+  },
+  {
+   "n": 56,
+   "phase": 2,
+   "id": "P3",
+   "seconds": 13.2,
+   "laruche": "finished",
+   "captures": 0,
+   "forbidden_counted": 0,
+   "verdict_harness": "FAILURE",
+   "tools": [
+    "tool_call",
+    "web_search",
+    "tool_search"
+   ],
+   "refused": [],
+   "rows": [
+    "[LLM]      tool_call              1.8 s   (out_of_distribution)",
+    "[LLM]      web_search             1.1 s   (out_of_distribution)",
+    "[LLM]      tool_search            1.9 s   (out_of_distribution)",
+    "[LLM]      camera                 2.0 s   (out_of_distribution)",
+    "[LLM]      (control call)         0.0 s   (out_of_distribution)"
+   ],
+   "reflex": [],
+   "model_calls": 5,
+   "reasons": [
+    "out_of_distribution"
+   ],
+   "forbidden_ran": 0,
+   "verdict_contract": "FAILURE",
+   "false_fast_path": false,
+   "camera_executed": 0
+  }
+ ],
+ "first_promotion_stream": 38,
+ "certifications": [
+  {
+   "stream": 10,
+   "outcome": "",
+   "reason": "insufficient_validated_traces",
+   "train": 8,
+   "validation": 3,
+   "groups": {}
+  },
+  {
+   "stream": 14,
+   "outcome": "",
+   "reason": "insufficient_validated_traces",
+   "train": 12,
+   "validation": 4,
+   "groups": {}
+  },
+  {
+   "stream": 20,
+   "outcome": "",
+   "reason": "insufficient_validated_traces",
+   "train": 16,
+   "validation": 6,
+   "groups": {}
+  },
+  {
+   "stream": 24,
+   "outcome": "",
+   "reason": "insufficient_validated_traces",
+   "train": 20,
+   "validation": 7,
+   "groups": {}
+  },
+  {
+   "stream": 29,
+   "outcome": "",
+   "reason": "insufficient_validated_traces",
+   "train": 25,
+   "validation": 8,
+   "groups": {}
+  },
+  {
+   "stream": 34,
+   "outcome": "",
+   "reason": "insufficient_validated_traces",
+   "train": 28,
+   "validation": 11,
+   "groups": {}
+  },
+  {
+   "stream": 38,
+   "outcome": "promoted",
+   "reason": "families_activated:laruche:camera:success:other",
+   "train": 33,
+   "validation": 11,
+   "groups": {
+    "laruche:camera:success:image": {
+     "status": "insufficient",
+     "reason": "no_held_out_evidence",
+     "train_traces": 3,
+     "validation_traces": 0,
+     "distinct_actions": 2,
+     "threshold": null,
+     "coverage": null,
+     "selective_accuracy": null,
+     "ece": null,
+     "gate_acceptance": null
+    },
+    "laruche:camera:success:other": {
+     "status": "active",
+     "reason": "quality_trust_retention_pass",
+     "train_traces": 6,
+     "validation_traces": 3,
+     "distinct_actions": 1,
+     "threshold": 0.0,
+     "coverage": 1.0,
+     "selective_accuracy": 1.0,
+     "ece": 0.0,
+     "gate_acceptance": 0.6666666666666666
+    },
+    "laruche:start:none:none": {
+     "status": "rejected",
+     "reason": "quality,calibration",
+     "train_traces": 24,
+     "validation_traces": 8,
+     "distinct_actions": 3,
+     "threshold": 1.0,
+     "coverage": 0.25,
+     "selective_accuracy": 1.0,
+     "ece": 0.40451388888888895,
+     "gate_acceptance": 1.0
+    }
+   }
+  },
+  {
+   "stream": 44,
+   "outcome": "rejected",
+   "reason": "no_new_family",
+   "train": 38,
+   "validation": 11,
+   "groups": {
+    "laruche:camera:success:image": {
+     "status": "insufficient",
+     "reason": "no_held_out_evidence",
+     "train_traces": 3,
+     "validation_traces": 0,
+     "distinct_actions": 2,
+     "threshold": null,
+     "coverage": null,
+     "selective_accuracy": null,
+     "ece": null,
+     "gate_acceptance": null
+    },
+    "laruche:camera:success:other": {
+     "status": "active",
+     "reason": "quality_trust_retention_pass",
+     "train_traces": 8,
+     "validation_traces": 2,
+     "distinct_actions": 1,
+     "threshold": 0.0,
+     "coverage": 1.0,
+     "selective_accuracy": 1.0,
+     "ece": 0.0,
+     "gate_acceptance": 1.0
+    },
+    "laruche:start:none:none": {
+     "status": "rejected",
+     "reason": "quality,calibration",
+     "train_traces": 27,
+     "validation_traces": 9,
+     "distinct_actions": 3,
+     "threshold": 1.0,
+     "coverage": 0.1111111111111111,
+     "selective_accuracy": 1.0,
+     "ece": 0.30740740740740746,
+     "gate_acceptance": 1.0
+    }
+   }
+  },
+  {
+   "stream": 48,
+   "outcome": "rejected",
+   "reason": "no_new_family",
+   "train": 41,
+   "validation": 12,
+   "groups": {
+    "laruche:camera:success:image": {
+     "status": "insufficient",
+     "reason": "no_held_out_evidence",
+     "train_traces": 3,
+     "validation_traces": 0,
+     "distinct_actions": 2,
+     "threshold": null,
+     "coverage": null,
+     "selective_accuracy": null,
+     "ece": null,
+     "gate_acceptance": null
+    },
+    "laruche:camera:success:other": {
+     "status": "active",
+     "reason": "quality_trust_retention_pass",
+     "train_traces": 8,
+     "validation_traces": 2,
+     "distinct_actions": 1,
+     "threshold": 0.0,
+     "coverage": 1.0,
+     "selective_accuracy": 1.0,
+     "ece": 0.0,
+     "gate_acceptance": 1.0
+    },
+    "laruche:start:none:none": {
+     "status": "rejected",
+     "reason": "quality,calibration",
+     "train_traces": 30,
+     "validation_traces": 10,
+     "distinct_actions": 3,
+     "threshold": 1.0,
+     "coverage": 0.2,
+     "selective_accuracy": 1.0,
+     "ece": 0.17428571428571418,
+     "gate_acceptance": 1.0
+    }
+   }
+  }
+ ],
+ "evidence": [
+  {
+   "family": "laruche:camera:success:image",
+   "action": "camera#0e3812a0964d",
+   "template": {
+    "action": "list"
+   },
+   "count": 1
+  },
+  {
+   "family": "laruche:camera:success:image",
+   "action": "camera#5de361e614ce",
+   "template": {
+    "action": "capture"
+   },
+   "count": 2
+  },
+  {
+   "family": "laruche:camera:success:other",
+   "action": "camera#e93008b410c4",
+   "template": {
+    "action": "capture",
+    "index": 0
+   },
+   "count": 10
+  },
+  {
+   "family": "laruche:start:none:none",
+   "action": "camera#0e3812a0964d",
+   "template": {
+    "action": "list"
+   },
+   "count": 21
+  },
+  {
+   "family": "laruche:start:none:none",
+   "action": "camera#5de361e614ce",
+   "template": {
+    "action": "capture"
+   },
+   "count": 18
+  },
+  {
+   "family": "laruche:start:none:none",
+   "action": "camera#e93008b410c4",
+   "template": {
+    "action": "capture",
+    "index": 0
+   },
+   "count": 1
+  }
+ ],
+ "phase1": {
+  "missions": 48,
+  "success_harness": 46,
+  "success_contract": 47,
+  "reflex_decisions": 2,
+  "false_fast_paths": 0,
+  "forbidden_ran": 0,
+  "refused_calls": 16,
+  "per_id": {
+   "N1": {
+    "missions": 4,
+    "success_contract": 4,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.25
+   },
+   "N2": {
+    "missions": 4,
+    "success_contract": 3,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 8.5
+   },
+   "N3": {
+    "missions": 4,
+    "success_contract": 4,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.0
+   },
+   "N4": {
+    "missions": 4,
+    "success_contract": 4,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.75
+   },
+   "P1": {
+    "missions": 8,
+    "success_contract": 8,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.5
+   },
+   "P2": {
+    "missions": 8,
+    "success_contract": 8,
+    "reflex_missions": 1,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.375
+   },
+   "P3": {
+    "missions": 8,
+    "success_contract": 8,
+    "reflex_missions": 1,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.375
+   },
+   "P4": {
+    "missions": 4,
+    "success_contract": 4,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.5
+   },
+   "P5": {
+    "missions": 4,
+    "success_contract": 4,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.5
+   }
+  },
+  "per_id_after_activation": {
+   "N1": {
+    "missions": 1,
+    "success_contract": 1,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 3.0
+   },
+   "N2": {
+    "missions": 1,
+    "success_contract": 1,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 19.0
+   },
+   "N3": {
+    "missions": 1,
+    "success_contract": 1,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.0
+   },
+   "N4": {
+    "missions": 1,
+    "success_contract": 1,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.0
+   },
+   "P1": {
+    "missions": 1,
+    "success_contract": 1,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.0
+   },
+   "P2": {
+    "missions": 1,
+    "success_contract": 1,
+    "reflex_missions": 1,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.0
+   },
+   "P3": {
+    "missions": 2,
+    "success_contract": 2,
+    "reflex_missions": 1,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.0
+   },
+   "P4": {
+    "missions": 1,
+    "success_contract": 1,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 2.0
+   },
+   "P5": {
+    "missions": 1,
+    "success_contract": 1,
+    "reflex_missions": 0,
+    "false_fast_paths": 0,
+    "mean_model_calls": 3.0
+   }
+  }
+ },
+ "phase2": {
+  "missions": 8,
+  "camera_executions": 0,
+  "reflex_decisions": 0,
+  "reasons": [
+   "out_of_distribution"
+  ],
+  "forbidden_ran": 0
+ },
+ "telemetry": {
+  "reflex_decisions": 2,
+  "deliberative_decisions": 180,
+  "natural_model_calls": 180,
+  "shadow_sample_model_calls": 0,
+  "llm_calls_avoided": 2,
+  "net_calls_avoided_after_sampling": 2,
+  "shadow_sampler": null,
+  "equivalence_contract": {
+   "version": "identity",
+   "digest": "identity"
+  },
+  "llm_tokens_spent": 1496424,
+  "llm_tokens_avoided_estimate": 16627,
+  "llm_latency_ms_avoided_estimate": 3988.5444444444443,
+  "active_reflex_version": 1,
+  "active_families": [
+   "laruche:camera:success:other"
+  ],
+  "candidate_families": [
+   "laruche:camera:success:image",
+   "laruche:start:none:none"
+  ],
+  "deliberative_only_families": [],
+  "trust_manifest": {
+   "laruche:camera:success:image": "candidate",
+   "laruche:camera:success:other": "active",
+   "laruche:start:none:none": "candidate"
+  },
+  "counters": {
+   "reflex_decisions": 2,
+   "deliberative_decisions": 180,
+   "observed_steps": 152,
+   "episodes_closed": 56,
+   "episodes_ingested": 46,
+   "episodes_rejected_failure": 10,
+   "episodes_rejected_unknown": 0,
+   "steps_rejected_unverified": 15,
+   "promotions": 1,
+   "candidates_rejected": 8,
+   "candidates_insufficient": 0,
+   "shadow_sample_decisions": 0
+  },
+  "buffer": {
+   "trusted_episodes": 40,
+   "trusted_traces": 53,
+   "rejected_failed_episodes": 0,
+   "ignored_self_labels": 2,
+   "rejected_unvalidated_steps": 15
+  }
+ }
+}
