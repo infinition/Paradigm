@@ -50,3 +50,17 @@ Also reported: the raw scores of the two scorers on the four decisive sentence t
 ## Not done
 
 No live run, no fine-tuning, no gate or threshold change, no contract or instruction change after the first scores, no extractor revision.
+
+## Outcome (written after the run, `RESULTS_C6.md`, `results_c6.json`, scores cached in `results_c6_scores.json`)
+
+Raw scores first, as pre-registered. The zero-shot NLI does not do what the contracts ask: `camera.capture` entailment averages 0.18 on the positives (17% above 0.5) and 0.31 on past questions, higher than on the positives; on "Prends-moi en photo." it is 0.00 (neutral). The reranker follows the topic: 0.98 on the positives, and 0.47 to 0.62 on every hard-negative type, including 0.82 on "Ne me prends pas en photo.", 0.98 on the past question and 0.98 on "Fais une photo de moi avec la webcam quand je te le dirai." Prediction 2 did not hold: neither frozen scorer refuses the deferral on its own; prediction 1 did not hold for the NLI. As relation scorers, both measure relevance, not executability, under the frozen contracts and instruction.
+
+H1, representation: SUPPORTED for the full stack with the reranker, not for the relation alone. `E` alone is below `A+S+T` for both scorers. `A+S+E_RERANK+T` with k-NN: unseen positive recall 0.50 against 0.46, hard-negative false fast paths 2 against 2 (criterion met against `A+S+T` and against `A+S`); with logistic regression: recall 0.33 against 0.00, 0 false fast paths. The NLI block adds nothing to `A+S+T` (k-NN 0.46 / 2, unchanged).
+
+H2, certification, as pre-registered (the C5 regions with the fused k-NN): UNSUPPORTED. No region is certifiable for either scorer; the agreement regions reach 0.98 with one hard-negative false fast path, the same subordinate deferral as in C5.
+
+An observation outside the pre-registered H2, reported as such and not claimed: with `A+S+E_RERANK+T` and logistic regression, Paradigm's whole-family selector is feasible for the first time in this benchmark line: selective accuracy 0.995 at coverage 0.58 of the sentences (six classes; the OTHER class, 48% of the dataset, is the easy part of that coverage), and under the gate 28% of the sentences fire with selective accuracy 1.00 and 0 false fast paths, 15 of 46 positives among them (7 Claude, 4 ChatGPT, 4 user-style). The deferral sentence is predicted CAPTURE_PERSON with confidence 0.75 against a selector threshold of 0.785: it is excluded by a margin of 0.035, not by understanding; a small change of the training folds could move it. This feasibility is therefore a candidate result for a confirmation on new sentences written after this run, pre-registered on its own, not a result of C6.
+
+Costs, for the record: NLI 837 ms and reranker 1085 ms per sentence for five contracts on CPU; about 0.9 GB and 3.6 GB resident respectively. Nothing in these numbers is compatible with a per-decision call in the product on this machine; the RTX would change the latency, not the conclusion on what the scorers measure.
+
+Not done: no fine-tuning, no contract or instruction change, no threshold change, no live run.
