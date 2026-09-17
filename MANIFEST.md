@@ -31,6 +31,13 @@ Generated file inventory for this snapshot.
 - `benchmarks/core_p23r_replication.py`
 - `benchmarks/core_p23t_threshold.py`
 - `benchmarks/core_p24_type_b.py`
+- `benchmarks/integration_probe_recertification.py`
+- `benchmarks/integration_sparse_heldout_sensitivity.py`
+- `benchmarks/integration_shadow_report.py`
+- `benchmarks/integration_shadow_ledger.py`
+- `benchmarks/integration_triadic_veto.py`
+- `benchmarks/integration_behavioral_equivalence.py`
+- `benchmarks/integration_live_equivalence_report.py`
 - `data/README.md`
 - `docs/ARCHITECTURE.md`
 - `docs/EVALUATION.md`
@@ -154,7 +161,7 @@ Generated file inventory for this snapshot.
 - `results/core_p24/SUMMARY.md`
 - `results/core_p24/core_p24_type_b.json`
 - `results/core_p24/traces/` (LLM-only trace episodes and teacher statistics per model)
-- `results/integration_laruche/` (real-loop LaRuche runs with DeepSeek: mission logs 9A and 9B with their engine state, the offline family audit, and run 11 with family-scoped activation: log, decision log, telemetry, engine state, `run11_family_scoped.md`)
+- `results/integration_laruche/` (real-loop LaRuche runs with DeepSeek: mission logs 9A and 9B with their engine state, the offline family audit, run 11 with family-scoped activation, run 12 with shadow sampling and run 12b with the equivalence contract live, each with log, decision log, telemetry, engine state and hashes; the invalidated first attempt of 12b as `run12b_attempt1_*`; the pre-registrations `probe_recertification_prereg.md`, `sparse_heldout_prereg.md`, `shadow_sampling_prereg.md`, `triadic_veto_prereg.md`, `behavioral_equivalence_prereg.md`, `live_equivalence_prereg.md` with their outcomes, and the audits and reports they produced)
 - `src/paradigm/__init__.py`
 - `src/paradigm/agent_scenarios.py`
 - `src/paradigm/agent_vertical.py`
@@ -163,6 +170,7 @@ Generated file inventory for this snapshot.
 - `src/paradigm/cli.py`
 - `src/paradigm/compiler.py`
 - `src/paradigm/deliberation.py`
+- `src/paradigm/equivalence.py`
 - `src/paradigm/evaluation.py`
 - `src/paradigm/family_evolution.py`
 - `src/paradigm/family_registry.py`
@@ -174,6 +182,7 @@ Generated file inventory for this snapshot.
 - `src/paradigm/integration/engine.py`
 - `src/paradigm/integration/laruche.py`
 - `src/paradigm/integration/service.py`
+- `src/paradigm/integration/shadow.py`
 - `src/paradigm/lifecycle_scenarios.py`
 - `src/paradigm/llm_controller.py`
 - `src/paradigm/model_selection.py`
