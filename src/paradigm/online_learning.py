@@ -8,7 +8,7 @@ import numpy as np
 from .agent_vertical import ACTIONS, AgentEpisode, AgentFeatureEncoder, ParadigmCodingAgent
 from .bounded import SpectralDriftContract, softmax_gradient
 from .evaluation import expected_calibration_error, multiclass_brier
-from .family_scoped import FamilyCriteria, certify_families, summarize_verdicts
+from .family_scoped import FamilyCriteria, certify_families, materialized_contract, summarize_verdicts
 from .model_selection import MinimalReflexSelector, ReflexSelection
 from .ood import MahalanobisGate
 from .reflex import CompiledReflex
@@ -158,6 +158,7 @@ class OnlineReflexCompiler:
         probe_recertification: bool = False,
         min_fresh_support: int = 1,
         triadic_veto: bool = False,
+        equivalence=None,
     ) -> None:
         if certification not in {"recent", "family_aware", "family_scoped"}:
             raise ValueError(f"unknown certification mode: {certification!r}")
@@ -180,6 +181,8 @@ class OnlineReflexCompiler:
         self.probe_recertification = bool(probe_recertification)
         self.min_fresh_support = int(min_fresh_support)
         self.triadic_veto = bool(triadic_veto)
+        # Optional behavioral equivalence contract (paradigm.equivalence); None is identity.
+        self.equivalence = equivalence
         self.buffer = OnlineExperienceBuffer()
         self.state = OnlineCompilerState()
         self._episodes_since_compile = 0
@@ -272,6 +275,7 @@ class OnlineReflexCompiler:
             probe_recertification=getattr(self, "probe_recertification", False),
             min_fresh_support=getattr(self, "min_fresh_support", 1),
             triadic_veto=getattr(self, "triadic_veto", False),
+            equivalence=getattr(self, "equivalence", None),
         )
         incumbent = None
         if self.state.selection is not None and self.state.ood_gate is not None and self.state.family_thresholds:
@@ -282,6 +286,8 @@ class OnlineReflexCompiler:
             incumbent=incumbent, criteria=criteria,
         )
         summary = summarize_verdicts(verdicts)
+        probe_traces = {f: p.traces for f, p in self.state.probes.items()}
+        contract_record = materialized_contract(getattr(self, "equivalence", None), train, validation, probe_traces)
         active_now = {f: float(verdicts[f].threshold or 0.0) for f in summary["active"]}
         newly_active = {f: thr for f, thr in active_now.items() if f not in self.state.family_thresholds}
         # A replacement artifact must re-certify every active family. A family that is
@@ -325,7 +331,7 @@ class OnlineReflexCompiler:
             validation_families=val_counts,
             ood_acceptance_by_family={f: v.gate_acceptance for f, v in verdicts.items() if v.gate_acceptance is not None},
             outcome=outcome,
-            certification={"mode": "family_scoped", "outcome": outcome, "reason": reason, "groups": summary["families"], "active_families": sorted(active_now) if promoted else sorted(self.state.family_thresholds), "probe_recertification": getattr(self, "probe_recertification", False), "min_fresh_support": getattr(self, "min_fresh_support", 1), "triadic_veto": getattr(self, "triadic_veto", False)},
+            certification={"mode": "family_scoped", "outcome": outcome, "reason": reason, "groups": summary["families"], "active_families": sorted(active_now) if promoted else sorted(self.state.family_thresholds), "probe_recertification": getattr(self, "probe_recertification", False), "min_fresh_support": getattr(self, "min_fresh_support", 1), "triadic_veto": getattr(self, "triadic_veto", False), "equivalence": contract_record},
         )
         self.state.promotions.append(record)
         return record

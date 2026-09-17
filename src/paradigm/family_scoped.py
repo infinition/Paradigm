@@ -23,6 +23,7 @@ from typing import Any
 
 import numpy as np
 
+from .equivalence import EquivalenceContract, collapse_to_classes, same_class
 from .evaluation import expected_calibration_error
 from .ood import MahalanobisGate
 from .schema import Trace
@@ -50,6 +51,9 @@ class FamilyCriteria:
     # does not); a disagreement the incumbent shares, with a still-valid incumbent action,
     # is an alternative trajectory. Off: any covered disagreement is a veto.
     triadic_veto: bool = False
+    # Behavioral equivalence for quality, calibration, probe agreement and the fresh
+    # classification. None is literal identity.
+    equivalence: EquivalenceContract | None = None
 
 
 @dataclass(slots=True)
@@ -90,13 +94,18 @@ def _family_of(trace: Trace) -> str:
     return str(trace.metadata.get("family", "unknown"))
 
 
-def probe_scores(reflex, gate: MahalanobisGate, threshold: float, traces: list[Trace]) -> tuple[float, float]:
-    coverage, agreement, _, _ = probe_report(reflex, gate, threshold, traces)
+def probe_scores(
+    reflex, gate: MahalanobisGate, threshold: float, traces: list[Trace], contract: EquivalenceContract | None = None
+) -> tuple[float, float]:
+    coverage, agreement, _, _ = probe_report(reflex, gate, threshold, traces, contract)
     return coverage, agreement
 
 
-def probe_report(reflex, gate: MahalanobisGate, threshold: float, traces: list[Trace]) -> tuple[float, float, float, float]:
-    """Coverage, agreement, gate acceptance and ECE of one artifact on a probe set."""
+def probe_report(
+    reflex, gate: MahalanobisGate, threshold: float, traces: list[Trace], contract: EquivalenceContract | None = None
+) -> tuple[float, float, float, float]:
+    """Coverage, agreement, gate acceptance and ECE of one artifact on a probe set, in class
+    space when a contract is given."""
     x = np.stack([t.features for t in traces])
     y = np.asarray([t.action for t in traces]).astype(str)
     accepted = np.asarray(gate.accept(x), dtype=bool)
@@ -107,8 +116,10 @@ def probe_report(reflex, gate: MahalanobisGate, threshold: float, traces: list[T
         confs.append(float(confidence))
     covered = accepted & (np.asarray(confs) >= threshold)
     coverage = float(np.mean(covered))
-    agreement = float(np.mean(np.asarray(preds)[covered] == y[covered])) if covered.any() else 0.0
-    ece = float(expected_calibration_error(y, reflex.predict_proba(x), reflex.classes_.astype(str)))
+    hits = np.asarray([same_class(p, t, contract) for p, t in zip(preds, y)])
+    agreement = float(np.mean(hits[covered])) if covered.any() else 0.0
+    y_c, probs_c, classes_c = collapse_to_classes(y, reflex.predict_proba(x), reflex.classes_.astype(str), contract)
+    ece = float(expected_calibration_error(y_c, probs_c, classes_c))
     return coverage, agreement, float(np.mean(accepted)), ece
 
 
@@ -156,10 +167,14 @@ def certify_families(
         y_val = np.asarray([t.action for t in va]).astype(str)
         probs = reflex.predict_proba(x_val)
         classes = reflex.classes_.astype(str)
+        y_s, probs_s, classes_s = collapse_to_classes(y_val, probs, classes, crit.equivalence)
         thr = select_confidence_threshold(
-            y_val, probs, classes, reference_predictions=y_val, tolerance=crit.accuracy_tolerance, minimum_coverage=crit.minimum_coverage
+            y_s, probs_s, classes_s, reference_predictions=y_s, tolerance=crit.accuracy_tolerance, minimum_coverage=crit.minimum_coverage
         )
-        ece = float(expected_calibration_error(y_val, probs, classes))
+        ece = float(expected_calibration_error(y_s, probs_s, classes_s))
+        literal_preds = classes[np.argmax(probs, axis=1)]
+        verdict.retention["literal_agreement"] = float(np.mean(literal_preds == y_val))
+        verdict.retention["equivalent_agreement"] = float(np.mean([same_class(p, t, crit.equivalence) for p, t in zip(literal_preds, y_val)]))
         accepted = np.asarray(gate.accept(x_val), dtype=bool)
         acceptance = float(np.mean(accepted))
         verdict.threshold = float(thr.threshold)
@@ -175,17 +190,17 @@ def certify_families(
         if acceptance < crit.minimum_ood_acceptance:
             failures.append("trust")
         if family in probes and probes[family]:
-            coverage, agreement = probe_scores(reflex, gate, float(thr.threshold), probes[family])
-            retention: dict[str, Any] = {"probes": len(probes[family]), "coverage": coverage, "agreement": agreement, "incumbent_coverage": None, "evidence": "held-out"}
+            coverage, agreement = probe_scores(reflex, gate, float(thr.threshold), probes[family], crit.equivalence)
+            retention: dict[str, Any] = {**verdict.retention, "probes": len(probes[family]), "coverage": coverage, "agreement": agreement, "incumbent_coverage": None, "evidence": "held-out"}
             # Reporting only: the same fresh observation summary as the probe branch, at the
             # incumbent threshold when there is one, so both branches are comparable.
             report_thr = float(inc_thr) if inc_thr is not None else float(thr.threshold)
-            retention["fresh"] = fresh_report(reflex, gate, report_thr, va, incumbent[0] if incumbent is not None else None, valid_actions)
+            retention["fresh"] = fresh_report(reflex, gate, report_thr, va, incumbent[0] if incumbent is not None else None, valid_actions, crit.equivalence)
             if incumbent is not None:
                 inc_reflex, inc_gate, inc_thresholds = incumbent
                 inc_thr = inc_thresholds.get(family)
                 if inc_thr is not None:
-                    inc_cov, _ = probe_scores(inc_reflex, inc_gate, inc_thr, probes[family])
+                    inc_cov, _ = probe_scores(inc_reflex, inc_gate, inc_thr, probes[family], crit.equivalence)
                     retention["incumbent_coverage"] = inc_cov
                     if coverage < inc_cov - crit.probe_coverage_regression_tolerance:
                         failures.append("retention_regression")
@@ -203,7 +218,13 @@ def certify_families(
 
 
 def fresh_report(
-    reflex, gate: MahalanobisGate, threshold: float, fresh: list[Trace], incumbent_reflex=None, valid_actions: set[str] | None = None
+    reflex,
+    gate: MahalanobisGate,
+    threshold: float,
+    fresh: list[Trace],
+    incumbent_reflex=None,
+    valid_actions: set[str] | None = None,
+    contract: EquivalenceContract | None = None,
 ) -> dict[str, int]:
     """How many fresh traces the gate accepts, how many the candidate covers at ``threshold``,
     and on how many covered ones it disagrees with the verified teacher action. With an
@@ -217,15 +238,19 @@ def fresh_report(
     preds = np.asarray([str(reflex.predict(row)[0]) for row in x])
     confs = np.asarray([float(reflex.predict(row)[1]) for row in x])
     covered = accepted & (confs >= threshold)
-    report = {"n": len(fresh), "gate_accepted": int(accepted.sum()), "covered": int(covered.sum()), "disagreements": int(np.sum(covered & (preds != y)))}
+    equal = np.asarray([same_class(p, t, contract) for p, t in zip(preds, y)])
+    report = {
+        "n": len(fresh), "gate_accepted": int(accepted.sum()), "covered": int(covered.sum()),
+        "disagreements": int(np.sum(covered & ~equal)), "literal_disagreements": int(np.sum(covered & (preds != y))),
+    }
     if incumbent_reflex is not None:
         inc = np.asarray([str(incumbent_reflex.predict(row)[0]) for row in x])
         valid = valid_actions or set()
         regression = alternative = ambiguous = 0
-        for k in np.flatnonzero(covered & (preds != y)):
-            if inc[k] == y[k]:
+        for k in np.flatnonzero(covered & ~equal):
+            if same_class(inc[k], y[k], contract):
                 regression += 1
-            elif preds[k] == inc[k] and inc[k] in valid:
+            elif same_class(preds[k], inc[k], contract) and inc[k] in valid:
                 alternative += 1
             else:
                 ambiguous += 1
@@ -252,9 +277,9 @@ def _recertify_on_probes(
     candidate disagrees with the teacher is a hard veto; a fresh state the gate rejects
     is reported, not counted as a regression.
     """
-    coverage, agreement, acceptance, ece = probe_report(reflex, gate, threshold, probe_traces)
+    coverage, agreement, acceptance, ece = probe_report(reflex, gate, threshold, probe_traces, crit.equivalence)
     inc_reflex, inc_gate, _ = incumbent
-    inc_cov, _ = probe_scores(inc_reflex, inc_gate, threshold, probe_traces)
+    inc_cov, _ = probe_scores(inc_reflex, inc_gate, threshold, probe_traces, crit.equivalence)
     verdict.threshold = threshold
     verdict.coverage = coverage
     verdict.selective_accuracy = agreement
@@ -263,7 +288,7 @@ def _recertify_on_probes(
     verdict.retention = {"probes": len(probe_traces), "coverage": coverage, "agreement": agreement, "incumbent_coverage": inc_cov, "evidence": "probes_only"}
     failures: list[str] = []
     if fresh:
-        report = fresh_report(reflex, gate, threshold, fresh, inc_reflex, valid_actions)
+        report = fresh_report(reflex, gate, threshold, fresh, inc_reflex, valid_actions, crit.equivalence)
         verdict.retention["fresh"] = report
         if crit.triadic_veto:
             if report.get("candidate_regression", 0):
@@ -283,6 +308,14 @@ def _recertify_on_probes(
     else:
         verdict.status, verdict.reason = "active", "probe_recertified"
     return verdict
+
+
+def materialized_contract(contract: EquivalenceContract | None, train: list[Trace], validation: list[Trace], probes: dict[str, list[Trace]] | None) -> dict[str, Any]:
+    """The explicit, hashed mapping of every action key in play at this certification."""
+    keys = {str(t.action) for t in train} | {str(t.action) for t in validation}
+    for traces in (probes or {}).values():
+        keys |= {str(t.action) for t in traces}
+    return (contract or EquivalenceContract()).materialize(keys)
 
 
 def summarize_verdicts(verdicts: dict[str, FamilyVerdict]) -> dict[str, Any]:

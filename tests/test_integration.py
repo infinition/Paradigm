@@ -421,3 +421,32 @@ def test_triadic_veto_distinguishes_candidate_regression_from_alternative_trajec
     # Same observation under the naive veto: rejected.
     v = certify_families(reflex, gate, train, [_fam_trace("a", "z", 900, "f1")], probes=probes, incumbent=incumbent, criteria=FamilyCriteria(probe_recertification=True, min_fresh_support=8))["a"]
     assert "fresh_disagreement" in v.reason
+
+
+def test_equivalence_contract_scores_equivalent_actions_as_correct_and_keeps_literal_agreement():
+    import numpy as np
+    from sklearn.tree import DecisionTreeClassifier
+    from paradigm.equivalence import EquivalenceContract, collapse_to_classes
+    from paradigm.family_scoped import FamilyCriteria, certify_families
+    from paradigm.ood import MahalanobisGate
+    from paradigm.reflex import CompiledReflex
+
+    contract = EquivalenceContract(version="t", class_of=lambda k: "TEST" if k in ("pytest", "pytest_cat") else k)
+    y, p, c = collapse_to_classes(np.array(["pytest_cat", "read"]), np.array([[0.7, 0.15, 0.15], [0.1, 0.1, 0.8]]), np.array(["pytest", "pytest_cat", "read"]), contract)
+    assert list(c) == ["TEST", "read"] and list(y) == ["TEST", "read"]
+    assert np.allclose(p, [[0.85, 0.15], [0.2, 0.8]])
+    m = contract.materialize({"pytest", "pytest_cat", "read"})
+    assert m["mapping"] == {"pytest": "TEST", "pytest_cat": "TEST", "read": "read"} and len(m["digest"]) == 64
+
+    # Family a always did "pytest" in training; held-out has one "pytest_cat" among 7.
+    train = [_fam_trace("a", "pytest", s, f"t{s}") for s in range(20)] + [_fam_trace("b", "read", 100 + s, f"u{s}") for s in range(20)]
+    x = np.stack([t.features for t in train])
+    reflex = CompiledReflex(model=DecisionTreeClassifier(random_state=0).fit(x, np.asarray([t.action for t in train])), metadata={"backend": "tree"})
+    gate = MahalanobisGate(quantile=0.997).fit(x)
+    fresh = [_fam_trace("a", "pytest", 900 + s, f"f{s}") for s in range(6)] + [_fam_trace("a", "pytest_cat", 950, "f6")]
+
+    literal = certify_families(reflex, gate, train, fresh, criteria=FamilyCriteria())["a"]
+    scored = certify_families(reflex, gate, train, fresh, criteria=FamilyCriteria(equivalence=contract))["a"]
+    assert literal.status == "rejected" and literal.retention["literal_agreement"] < 1.0
+    assert scored.status == "active" and scored.selective_accuracy == 1.0 and scored.ece == 0.0
+    assert scored.retention["literal_agreement"] == literal.retention["literal_agreement"] and scored.retention["equivalent_agreement"] == 1.0

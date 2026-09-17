@@ -37,7 +37,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_list:success:other": {
       "family": "laruche:file_list:success:other",
@@ -67,7 +70,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -82,7 +88,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -112,7 +121,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.19999999999999996,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -142,7 +154,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -176,6 +191,7 @@
        "gate_accepted": 1,
        "covered": 1,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -210,6 +226,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 16,
        "coverage": 1.0,
        "agreement": 0.9375,
@@ -220,6 +238,7 @@
         "gate_accepted": 1,
         "covered": 1,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -254,7 +273,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -269,7 +291,10 @@
       "selective_accuracy": 0.75,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.75,
+       "equivalent_agreement": 0.75
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -299,7 +324,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -314,7 +342,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.16666666666666663,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -363,6 +394,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -397,6 +429,8 @@
       "ece": 0.0,
       "gate_acceptance": 0.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 16,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -407,6 +441,7 @@
         "gate_accepted": 0,
         "covered": 0,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -441,7 +476,10 @@
       "selective_accuracy": 0.0,
       "ece": 1.0,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -456,7 +494,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666674,
       "gate_acceptance": 0.8333333333333334,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -486,7 +527,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.33333333333333337,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -501,7 +545,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.09523809523809526,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -551,7 +598,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_list:success:other": {
       "family": "laruche:file_list:success:other",
@@ -581,7 +631,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -596,7 +649,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -626,7 +682,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.19999999999999996,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -656,7 +715,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -690,6 +752,7 @@
        "gate_accepted": 1,
        "covered": 1,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -723,6 +786,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 16,
        "coverage": 1.0,
        "agreement": 0.9375,
@@ -733,6 +798,7 @@
         "gate_accepted": 1,
         "covered": 1,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -767,7 +833,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -782,7 +851,10 @@
       "selective_accuracy": 0.75,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.75,
+       "equivalent_agreement": 0.75
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -812,7 +884,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -827,7 +902,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.16666666666666663,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -882,6 +960,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -915,6 +994,8 @@
       "ece": 0.0,
       "gate_acceptance": 0.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 16,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -925,6 +1006,7 @@
         "gate_accepted": 0,
         "covered": 0,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -959,7 +1041,10 @@
       "selective_accuracy": 0.0,
       "ece": 1.0,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -974,7 +1059,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666674,
       "gate_acceptance": 0.8333333333333334,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -1004,7 +1092,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.33333333333333337,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -1019,7 +1110,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.09523809523809526,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -1075,7 +1169,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_list:success:other": {
       "family": "laruche:file_list:success:other",
@@ -1105,7 +1202,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -1120,7 +1220,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -1150,7 +1253,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.19999999999999996,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -1180,7 +1286,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -1214,6 +1323,7 @@
        "gate_accepted": 1,
        "covered": 1,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -1257,6 +1367,7 @@
         "gate_accepted": 1,
         "covered": 1,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -1291,7 +1402,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -1306,7 +1420,10 @@
       "selective_accuracy": 0.75,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.75,
+       "equivalent_agreement": 0.75
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -1336,7 +1453,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -1351,7 +1471,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.16666666666666663,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -1409,6 +1532,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -1452,6 +1576,7 @@
         "gate_accepted": 0,
         "covered": 0,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -1486,7 +1611,10 @@
       "selective_accuracy": 0.0,
       "ece": 1.0,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -1501,7 +1629,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666674,
       "gate_acceptance": 0.8333333333333334,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -1531,7 +1662,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.33333333333333337,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -1546,7 +1680,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.09523809523809526,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -1602,7 +1739,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_list:success:other": {
       "family": "laruche:file_list:success:other",
@@ -1632,7 +1772,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -1647,7 +1790,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -1677,7 +1823,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.19999999999999996,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -1707,7 +1856,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -1741,6 +1893,7 @@
        "gate_accepted": 1,
        "covered": 1,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -1784,6 +1937,7 @@
         "gate_accepted": 1,
         "covered": 1,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -1818,7 +1972,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -1833,7 +1990,10 @@
       "selective_accuracy": 0.75,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.75,
+       "equivalent_agreement": 0.75
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -1863,7 +2023,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -1878,7 +2041,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.16666666666666663,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -1936,6 +2102,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -1979,6 +2146,7 @@
         "gate_accepted": 0,
         "covered": 0,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -2013,7 +2181,10 @@
       "selective_accuracy": 0.0,
       "ece": 1.0,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -2028,7 +2199,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666674,
       "gate_acceptance": 0.8333333333333334,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -2058,7 +2232,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.33333333333333337,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -2073,7 +2250,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.09523809523809526,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -2129,7 +2309,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_list:success:other": {
       "family": "laruche:file_list:success:other",
@@ -2159,7 +2342,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -2174,7 +2360,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -2204,7 +2393,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.19999999999999996,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -2234,7 +2426,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -2268,6 +2463,7 @@
        "gate_accepted": 1,
        "covered": 1,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -2311,6 +2507,7 @@
         "gate_accepted": 1,
         "covered": 1,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -2345,7 +2542,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -2360,7 +2560,10 @@
       "selective_accuracy": 0.75,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.75,
+       "equivalent_agreement": 0.75
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -2390,7 +2593,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -2405,7 +2611,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.16666666666666663,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -2463,6 +2672,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -2506,6 +2716,7 @@
         "gate_accepted": 0,
         "covered": 0,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -2540,7 +2751,10 @@
       "selective_accuracy": 0.0,
       "ece": 1.0,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -2555,7 +2769,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666674,
       "gate_acceptance": 0.8333333333333334,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -2585,7 +2802,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.33333333333333337,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -2600,7 +2820,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.09523809523809526,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -2656,7 +2879,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_list:success:other": {
       "family": "laruche:file_list:success:other",
@@ -2686,7 +2912,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -2701,7 +2930,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -2731,7 +2963,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.19999999999999996,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -2761,7 +2996,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -2795,6 +3033,7 @@
        "gate_accepted": 1,
        "covered": 1,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -2838,6 +3077,7 @@
         "gate_accepted": 1,
         "covered": 1,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -2872,7 +3112,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.5,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -2887,7 +3130,10 @@
       "selective_accuracy": 0.75,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.75,
+       "equivalent_agreement": 0.75
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -2917,7 +3163,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -2932,7 +3181,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.16666666666666663,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -2990,6 +3242,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -3033,6 +3286,7 @@
         "gate_accepted": 0,
         "covered": 0,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -3067,7 +3321,10 @@
       "selective_accuracy": 0.0,
       "ece": 1.0,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:failure:other": {
       "family": "laruche:shell_exec:failure:other",
@@ -3082,7 +3339,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666674,
       "gate_acceptance": 0.8333333333333334,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -3112,7 +3372,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.33333333333333337,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -3127,7 +3390,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.09523809523809526,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -3185,7 +3451,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_read:success:other": {
       "family": "laruche:file_read:success:other",
@@ -3200,7 +3469,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.2857142857142857,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -3215,7 +3487,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -3290,7 +3565,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -3324,6 +3602,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -3344,6 +3623,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -3365,6 +3645,8 @@
       "ece": 0.047619047619047616,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 19,
        "coverage": 1.0,
        "agreement": 0.9473684210526315,
@@ -3375,6 +3657,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -3394,7 +3677,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -3454,7 +3740,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -3469,7 +3758,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -3485,6 +3777,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -3495,6 +3789,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -3533,6 +3828,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -3553,6 +3849,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -3574,6 +3871,8 @@
       "ece": 0.1020408163265306,
       "gate_acceptance": 0.8571428571428571,
       "retention": {
+       "literal_agreement": 0.8571428571428571,
+       "equivalent_agreement": 0.8571428571428571,
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
@@ -3584,6 +3883,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -3603,7 +3903,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6666666666666666,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -3648,7 +3951,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -3663,7 +3969,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -3678,7 +3987,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -3693,7 +4005,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.3333333333333333,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -3709,6 +4024,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -3719,6 +4036,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -3757,6 +4075,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 1,
+       "literal_disagreements": 1,
        "candidate_regression": 0,
        "alternative_trajectory": 1,
        "ambiguous": 0
@@ -3777,6 +4096,7 @@
        "gate_accepted": 3,
        "covered": 3,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -3798,6 +4118,8 @@
       "ece": 0.17857142857142855,
       "gate_acceptance": 0.8571428571428571,
       "retention": {
+       "literal_agreement": 0.7142857142857143,
+       "equivalent_agreement": 0.7142857142857143,
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
@@ -3808,6 +4130,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 1,
+        "literal_disagreements": 1,
         "candidate_regression": 0,
         "alternative_trajectory": 1,
         "ambiguous": 0
@@ -3827,7 +4150,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5454545454545454,
       "gate_acceptance": 0.75,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -3842,7 +4168,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -3872,7 +4201,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -3887,7 +4219,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -3902,7 +4237,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -3917,7 +4255,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666663,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -3933,6 +4274,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -3943,6 +4286,7 @@
         "gate_accepted": 3,
         "covered": 3,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -3982,7 +4326,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_read:success:other": {
       "family": "laruche:file_read:success:other",
@@ -3997,7 +4344,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.2857142857142857,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -4012,7 +4362,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -4087,7 +4440,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -4121,6 +4477,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -4141,6 +4498,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -4162,6 +4520,8 @@
       "ece": 0.047619047619047616,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 19,
        "coverage": 1.0,
        "agreement": 0.9473684210526315,
@@ -4172,6 +4532,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -4191,7 +4552,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -4251,7 +4615,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -4266,7 +4633,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -4282,6 +4652,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -4292,6 +4664,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -4330,6 +4703,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -4350,6 +4724,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -4371,6 +4746,8 @@
       "ece": 0.1020408163265306,
       "gate_acceptance": 0.8571428571428571,
       "retention": {
+       "literal_agreement": 0.8571428571428571,
+       "equivalent_agreement": 0.8571428571428571,
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
@@ -4381,6 +4758,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -4400,7 +4778,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6666666666666666,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -4445,7 +4826,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -4460,7 +4844,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -4475,7 +4862,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -4490,7 +4880,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.3333333333333333,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -4506,6 +4899,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -4516,6 +4911,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -4554,6 +4950,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 1,
+       "literal_disagreements": 1,
        "candidate_regression": 0,
        "alternative_trajectory": 1,
        "ambiguous": 0
@@ -4574,6 +4971,7 @@
        "gate_accepted": 3,
        "covered": 3,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -4595,6 +4993,8 @@
       "ece": 0.17857142857142855,
       "gate_acceptance": 0.8571428571428571,
       "retention": {
+       "literal_agreement": 0.7142857142857143,
+       "equivalent_agreement": 0.7142857142857143,
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
@@ -4605,6 +5005,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 1,
+        "literal_disagreements": 1,
         "candidate_regression": 0,
         "alternative_trajectory": 1,
         "ambiguous": 0
@@ -4624,7 +5025,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5454545454545454,
       "gate_acceptance": 0.75,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -4639,7 +5043,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -4669,7 +5076,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -4684,7 +5094,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -4699,7 +5112,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -4714,7 +5130,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666663,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -4730,6 +5149,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -4740,6 +5161,7 @@
         "gate_accepted": 3,
         "covered": 3,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -4779,7 +5201,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_read:success:other": {
       "family": "laruche:file_read:success:other",
@@ -4794,7 +5219,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.2857142857142857,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -4809,7 +5237,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -4884,7 +5315,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -4918,6 +5352,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -4938,6 +5373,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -4959,6 +5395,8 @@
       "ece": 0.047619047619047616,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 19,
        "coverage": 1.0,
        "agreement": 0.9473684210526315,
@@ -4969,6 +5407,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -4988,7 +5427,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -5048,7 +5490,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -5063,7 +5508,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -5079,6 +5527,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -5089,6 +5539,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -5127,6 +5578,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -5147,6 +5599,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -5168,6 +5621,8 @@
       "ece": 0.1020408163265306,
       "gate_acceptance": 0.8571428571428571,
       "retention": {
+       "literal_agreement": 0.8571428571428571,
+       "equivalent_agreement": 0.8571428571428571,
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
@@ -5178,6 +5633,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -5197,7 +5653,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6666666666666666,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -5242,7 +5701,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -5257,7 +5719,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -5272,7 +5737,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -5287,7 +5755,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.3333333333333333,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -5303,6 +5774,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -5313,6 +5786,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -5351,6 +5825,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 1,
+       "literal_disagreements": 1,
        "candidate_regression": 0,
        "alternative_trajectory": 1,
        "ambiguous": 0
@@ -5371,6 +5846,7 @@
        "gate_accepted": 3,
        "covered": 3,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -5392,6 +5868,8 @@
       "ece": 0.17857142857142855,
       "gate_acceptance": 0.8571428571428571,
       "retention": {
+       "literal_agreement": 0.7142857142857143,
+       "equivalent_agreement": 0.7142857142857143,
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
@@ -5402,6 +5880,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 1,
+        "literal_disagreements": 1,
         "candidate_regression": 0,
         "alternative_trajectory": 1,
         "ambiguous": 0
@@ -5421,7 +5900,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5454545454545454,
       "gate_acceptance": 0.75,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -5436,7 +5918,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -5466,7 +5951,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -5481,7 +5969,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -5496,7 +5987,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -5511,7 +6005,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666663,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -5527,6 +6024,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -5537,6 +6036,7 @@
         "gate_accepted": 3,
         "covered": 3,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -5576,7 +6076,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_read:success:other": {
       "family": "laruche:file_read:success:other",
@@ -5591,7 +6094,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.2857142857142857,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -5606,7 +6112,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -5681,7 +6190,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -5715,6 +6227,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -5735,6 +6248,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -5756,6 +6270,8 @@
       "ece": 0.047619047619047616,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 19,
        "coverage": 1.0,
        "agreement": 0.9473684210526315,
@@ -5766,6 +6282,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -5785,7 +6302,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -5845,7 +6365,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -5860,7 +6383,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -5876,6 +6402,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -5886,6 +6414,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -5924,6 +6453,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -5944,6 +6474,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -5965,6 +6496,8 @@
       "ece": 0.1020408163265306,
       "gate_acceptance": 0.8571428571428571,
       "retention": {
+       "literal_agreement": 0.8571428571428571,
+       "equivalent_agreement": 0.8571428571428571,
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
@@ -5975,6 +6508,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -5994,7 +6528,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6666666666666666,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -6039,7 +6576,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -6054,7 +6594,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -6069,7 +6612,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -6084,7 +6630,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.3333333333333333,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -6100,6 +6649,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -6110,6 +6661,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -6148,6 +6700,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 1,
+       "literal_disagreements": 1,
        "candidate_regression": 0,
        "alternative_trajectory": 1,
        "ambiguous": 0
@@ -6168,6 +6721,7 @@
        "gate_accepted": 3,
        "covered": 3,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -6189,6 +6743,8 @@
       "ece": 0.17857142857142855,
       "gate_acceptance": 0.8571428571428571,
       "retention": {
+       "literal_agreement": 0.7142857142857143,
+       "equivalent_agreement": 0.7142857142857143,
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
@@ -6199,6 +6755,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 1,
+        "literal_disagreements": 1,
         "candidate_regression": 0,
         "alternative_trajectory": 1,
         "ambiguous": 0
@@ -6218,7 +6775,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5454545454545454,
       "gate_acceptance": 0.75,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -6233,7 +6793,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -6263,7 +6826,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -6278,7 +6844,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -6293,7 +6862,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -6308,7 +6880,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666663,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -6324,6 +6899,8 @@
       "ece": 0.0,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
@@ -6334,6 +6911,7 @@
         "gate_accepted": 3,
         "covered": 3,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -6373,7 +6951,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_read:success:other": {
       "family": "laruche:file_read:success:other",
@@ -6388,7 +6969,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.2857142857142857,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -6403,7 +6987,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -6478,7 +7065,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -6512,6 +7102,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -6532,6 +7123,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -6553,6 +7145,8 @@
       "ece": 0.047619047619047616,
       "gate_acceptance": 1.0,
       "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0,
        "probes": 19,
        "coverage": 1.0,
        "agreement": 0.9473684210526315,
@@ -6563,6 +7157,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -6582,7 +7177,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -6642,7 +7240,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -6657,7 +7258,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -6683,6 +7287,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -6721,6 +7326,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -6741,6 +7347,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -6762,6 +7369,8 @@
       "ece": 0.1020408163265306,
       "gate_acceptance": 0.8571428571428571,
       "retention": {
+       "literal_agreement": 0.8571428571428571,
+       "equivalent_agreement": 0.8571428571428571,
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
@@ -6772,6 +7381,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -6791,7 +7401,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6666666666666666,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -6836,7 +7449,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -6851,7 +7467,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -6866,7 +7485,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -6881,7 +7503,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.3333333333333333,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -6907,6 +7532,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -6945,6 +7571,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 1,
+       "literal_disagreements": 1,
        "candidate_regression": 0,
        "alternative_trajectory": 1,
        "ambiguous": 0
@@ -6965,6 +7592,7 @@
        "gate_accepted": 3,
        "covered": 3,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -6986,6 +7614,8 @@
       "ece": 0.17857142857142855,
       "gate_acceptance": 0.8571428571428571,
       "retention": {
+       "literal_agreement": 0.7142857142857143,
+       "equivalent_agreement": 0.7142857142857143,
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
@@ -6996,6 +7626,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 1,
+        "literal_disagreements": 1,
         "candidate_regression": 0,
         "alternative_trajectory": 1,
         "ambiguous": 0
@@ -7015,7 +7646,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5454545454545454,
       "gate_acceptance": 0.75,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -7030,7 +7664,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -7060,7 +7697,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -7075,7 +7715,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -7090,7 +7733,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -7105,7 +7751,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666663,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -7131,6 +7780,7 @@
         "gate_accepted": 3,
         "covered": 3,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -7170,7 +7820,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_read:success:other": {
       "family": "laruche:file_read:success:other",
@@ -7185,7 +7838,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.2857142857142857,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -7200,7 +7856,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -7275,7 +7934,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      }
     }
    },
@@ -7309,6 +7971,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -7329,6 +7992,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -7360,6 +8024,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -7379,7 +8044,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.75,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -7439,7 +8107,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -7454,7 +8125,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6,
       "gate_acceptance": 1.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -7480,6 +8154,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -7518,6 +8193,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -7538,6 +8214,7 @@
        "gate_accepted": 4,
        "covered": 4,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -7569,6 +8246,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -7588,7 +8266,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.6666666666666666,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -7633,7 +8314,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -7648,7 +8332,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -7663,7 +8350,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.5,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -7678,7 +8368,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.42857142857142855,
       "gate_acceptance": 0.3333333333333333,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -7704,6 +8397,7 @@
         "gate_accepted": 4,
         "covered": 4,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -7742,6 +8436,7 @@
        "gate_accepted": 6,
        "covered": 6,
        "disagreements": 1,
+       "literal_disagreements": 1,
        "candidate_regression": 0,
        "alternative_trajectory": 1,
        "ambiguous": 0
@@ -7762,6 +8457,7 @@
        "gate_accepted": 3,
        "covered": 3,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -7793,6 +8489,7 @@
         "gate_accepted": 6,
         "covered": 6,
         "disagreements": 1,
+        "literal_disagreements": 1,
         "candidate_regression": 0,
         "alternative_trajectory": 1,
         "ambiguous": 0
@@ -7812,7 +8509,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5454545454545454,
       "gate_acceptance": 0.75,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:file_write:success:other": {
       "family": "laruche:file_write:success:other",
@@ -7827,7 +8527,10 @@
       "selective_accuracy": 1.0,
       "ece": 0.0,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 1.0,
+       "equivalent_agreement": 1.0
+      }
      },
      "laruche:read_extract:failure:other": {
       "family": "laruche:read_extract:failure:other",
@@ -7857,7 +8560,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:other": {
       "family": "laruche:shell_exec:success:other",
@@ -7872,7 +8578,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_failed": {
       "family": "laruche:shell_exec:success:tests_failed",
@@ -7887,7 +8596,10 @@
       "selective_accuracy": 0.0,
       "ece": 0.5,
       "gate_acceptance": 0.6666666666666666,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.0,
+       "equivalent_agreement": 0.0
+      }
      },
      "laruche:shell_exec:success:tests_passed": {
       "family": "laruche:shell_exec:success:tests_passed",
@@ -7902,7 +8614,10 @@
       "selective_accuracy": 0.6666666666666666,
       "ece": 0.16666666666666663,
       "gate_acceptance": 0.0,
-      "retention": {}
+      "retention": {
+       "literal_agreement": 0.6666666666666666,
+       "equivalent_agreement": 0.6666666666666666
+      }
      },
      "laruche:start:none:none": {
       "family": "laruche:start:none:none",
@@ -7928,6 +8643,7 @@
         "gate_accepted": 3,
         "covered": 3,
         "disagreements": 0,
+        "literal_disagreements": 0,
         "candidate_regression": 0,
         "alternative_trajectory": 0,
         "ambiguous": 0
@@ -7969,6 +8685,7 @@
       "gate_accepted": 0,
       "covered": 0,
       "disagreements": 0,
+      "literal_disagreements": 0,
       "candidate_regression": 0,
       "alternative_trajectory": 0,
       "ambiguous": 0
@@ -8002,6 +8719,8 @@
      "ece": 0.75,
      "gate_acceptance": 0.0,
      "retention": {
+      "literal_agreement": 0.0,
+      "equivalent_agreement": 0.0,
       "probes": 16,
       "coverage": 1.0,
       "agreement": 0.0625,
@@ -8012,6 +8731,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -8046,7 +8766,10 @@
      "selective_accuracy": 0.5,
      "ece": 0.09999999999999998,
      "gate_acceptance": 0.5,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.5,
+      "equivalent_agreement": 0.5
+     }
     },
     "laruche:shell_exec:failure:other": {
      "family": "laruche:shell_exec:failure:other",
@@ -8061,7 +8784,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.16666666666666674,
      "gate_acceptance": 0.8333333333333334,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:other": {
      "family": "laruche:shell_exec:success:other",
@@ -8091,7 +8817,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.20833333333333337,
      "gate_acceptance": 1.0,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:tests_passed": {
      "family": "laruche:shell_exec:success:tests_passed",
@@ -8106,7 +8835,10 @@
      "selective_accuracy": 1.0,
      "ece": 0.08333333333333333,
      "gate_acceptance": 0.6666666666666666,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 1.0,
+      "equivalent_agreement": 1.0
+     }
     },
     "laruche:start:none:none": {
      "family": "laruche:start:none:none",
@@ -8155,6 +8887,7 @@
       "gate_accepted": 0,
       "covered": 0,
       "disagreements": 0,
+      "literal_disagreements": 0,
       "candidate_regression": 0,
       "alternative_trajectory": 0,
       "ambiguous": 0
@@ -8188,6 +8921,8 @@
      "ece": 0.75,
      "gate_acceptance": 0.0,
      "retention": {
+      "literal_agreement": 0.0,
+      "equivalent_agreement": 0.0,
       "probes": 16,
       "coverage": 1.0,
       "agreement": 0.0625,
@@ -8198,6 +8933,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -8232,7 +8968,10 @@
      "selective_accuracy": 0.5,
      "ece": 0.09999999999999998,
      "gate_acceptance": 0.5,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.5,
+      "equivalent_agreement": 0.5
+     }
     },
     "laruche:shell_exec:failure:other": {
      "family": "laruche:shell_exec:failure:other",
@@ -8247,7 +8986,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.16666666666666674,
      "gate_acceptance": 0.8333333333333334,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:other": {
      "family": "laruche:shell_exec:success:other",
@@ -8277,7 +9019,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.20833333333333337,
      "gate_acceptance": 1.0,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:tests_passed": {
      "family": "laruche:shell_exec:success:tests_passed",
@@ -8292,7 +9037,10 @@
      "selective_accuracy": 1.0,
      "ece": 0.08333333333333333,
      "gate_acceptance": 0.6666666666666666,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 1.0,
+      "equivalent_agreement": 1.0
+     }
     },
     "laruche:start:none:none": {
      "family": "laruche:start:none:none",
@@ -8347,6 +9095,7 @@
       "gate_accepted": 0,
       "covered": 0,
       "disagreements": 0,
+      "literal_disagreements": 0,
       "candidate_regression": 0,
       "alternative_trajectory": 0,
       "ambiguous": 0
@@ -8390,6 +9139,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -8424,7 +9174,10 @@
      "selective_accuracy": 0.5,
      "ece": 0.09999999999999998,
      "gate_acceptance": 0.5,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.5,
+      "equivalent_agreement": 0.5
+     }
     },
     "laruche:shell_exec:failure:other": {
      "family": "laruche:shell_exec:failure:other",
@@ -8439,7 +9192,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.16666666666666674,
      "gate_acceptance": 0.8333333333333334,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:other": {
      "family": "laruche:shell_exec:success:other",
@@ -8469,7 +9225,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.20833333333333337,
      "gate_acceptance": 1.0,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:tests_passed": {
      "family": "laruche:shell_exec:success:tests_passed",
@@ -8484,7 +9243,10 @@
      "selective_accuracy": 1.0,
      "ece": 0.08333333333333333,
      "gate_acceptance": 0.6666666666666666,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 1.0,
+      "equivalent_agreement": 1.0
+     }
     },
     "laruche:start:none:none": {
      "family": "laruche:start:none:none",
@@ -8539,6 +9301,7 @@
       "gate_accepted": 0,
       "covered": 0,
       "disagreements": 0,
+      "literal_disagreements": 0,
       "candidate_regression": 0,
       "alternative_trajectory": 0,
       "ambiguous": 0
@@ -8582,6 +9345,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -8616,7 +9380,10 @@
      "selective_accuracy": 0.5,
      "ece": 0.09999999999999998,
      "gate_acceptance": 0.5,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.5,
+      "equivalent_agreement": 0.5
+     }
     },
     "laruche:shell_exec:failure:other": {
      "family": "laruche:shell_exec:failure:other",
@@ -8631,7 +9398,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.16666666666666674,
      "gate_acceptance": 0.8333333333333334,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:other": {
      "family": "laruche:shell_exec:success:other",
@@ -8661,7 +9431,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.20833333333333337,
      "gate_acceptance": 1.0,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:tests_passed": {
      "family": "laruche:shell_exec:success:tests_passed",
@@ -8676,7 +9449,10 @@
      "selective_accuracy": 1.0,
      "ece": 0.08333333333333333,
      "gate_acceptance": 0.6666666666666666,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 1.0,
+      "equivalent_agreement": 1.0
+     }
     },
     "laruche:start:none:none": {
      "family": "laruche:start:none:none",
@@ -8731,6 +9507,7 @@
       "gate_accepted": 0,
       "covered": 0,
       "disagreements": 0,
+      "literal_disagreements": 0,
       "candidate_regression": 0,
       "alternative_trajectory": 0,
       "ambiguous": 0
@@ -8774,6 +9551,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -8808,7 +9586,10 @@
      "selective_accuracy": 0.5,
      "ece": 0.09999999999999998,
      "gate_acceptance": 0.5,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.5,
+      "equivalent_agreement": 0.5
+     }
     },
     "laruche:shell_exec:failure:other": {
      "family": "laruche:shell_exec:failure:other",
@@ -8823,7 +9604,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.16666666666666674,
      "gate_acceptance": 0.8333333333333334,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:other": {
      "family": "laruche:shell_exec:success:other",
@@ -8853,7 +9637,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.20833333333333337,
      "gate_acceptance": 1.0,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:tests_passed": {
      "family": "laruche:shell_exec:success:tests_passed",
@@ -8868,7 +9655,10 @@
      "selective_accuracy": 1.0,
      "ece": 0.08333333333333333,
      "gate_acceptance": 0.6666666666666666,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 1.0,
+      "equivalent_agreement": 1.0
+     }
     },
     "laruche:start:none:none": {
      "family": "laruche:start:none:none",
@@ -8923,6 +9713,7 @@
       "gate_accepted": 0,
       "covered": 0,
       "disagreements": 0,
+      "literal_disagreements": 0,
       "candidate_regression": 0,
       "alternative_trajectory": 0,
       "ambiguous": 0
@@ -8966,6 +9757,7 @@
        "gate_accepted": 0,
        "covered": 0,
        "disagreements": 0,
+       "literal_disagreements": 0,
        "candidate_regression": 0,
        "alternative_trajectory": 0,
        "ambiguous": 0
@@ -9000,7 +9792,10 @@
      "selective_accuracy": 0.5,
      "ece": 0.09999999999999998,
      "gate_acceptance": 0.5,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.5,
+      "equivalent_agreement": 0.5
+     }
     },
     "laruche:shell_exec:failure:other": {
      "family": "laruche:shell_exec:failure:other",
@@ -9015,7 +9810,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.16666666666666674,
      "gate_acceptance": 0.8333333333333334,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:other": {
      "family": "laruche:shell_exec:success:other",
@@ -9045,7 +9843,10 @@
      "selective_accuracy": 0.6666666666666666,
      "ece": 0.20833333333333337,
      "gate_acceptance": 1.0,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 0.6666666666666666,
+      "equivalent_agreement": 0.6666666666666666
+     }
     },
     "laruche:shell_exec:success:tests_passed": {
      "family": "laruche:shell_exec:success:tests_passed",
@@ -9060,7 +9861,10 @@
      "selective_accuracy": 1.0,
      "ece": 0.08333333333333333,
      "gate_acceptance": 0.6666666666666666,
-     "retention": {}
+     "retention": {
+      "literal_agreement": 1.0,
+      "equivalent_agreement": 1.0
+     }
     },
     "laruche:start:none:none": {
      "family": "laruche:start:none:none",

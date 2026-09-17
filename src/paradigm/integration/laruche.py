@@ -96,6 +96,30 @@ class LaRucheAdapter:
             return bool(cmd) and any(re.fullmatch(p, cmd) for p in self.shell_allow)
         return True
 
+    # ------------------------------------------------------ behavioral equivalence
+
+    TEST_EXECUTION = "TEST_EXECUTION"
+    EQUIVALENCE_VERSION = "laruche-equivalence-1"
+
+    def is_test_execution(self, key: str) -> bool:
+        """An allowlisted test command that writes nothing: the guard hook's read-only rule
+        (no file redirection, no tee; ``2>&1`` is not a file redirection) applied to the
+        canonical template. Its postcondition is the test report the adapter already checks."""
+        template = self.templates.get(key)
+        if not template or template.get("nom") != "shell_exec":
+            return False
+        cmd = self.shell_command(template.get("args"))
+        if not cmd or not any(re.fullmatch(p, cmd) for p in self.shell_allow):
+            return False
+        stripped = cmd.replace("2>&1", "")
+        return not re.search(r">|\btee\b", stripped)
+
+    def equivalence_contract(self):
+        """Minimal contract: one class, TEST_EXECUTION; every other key is literal."""
+        from ..equivalence import EquivalenceContract
+
+        return EquivalenceContract(version=self.EQUIVALENCE_VERSION, class_of=lambda key: self.TEST_EXECUTION if self.is_test_execution(key) else key)
+
     def register_template(self, nom: str, args: Any) -> str:
         key = action_key(nom, args)
         self.templates[key] = {"nom": nom, "args": args}

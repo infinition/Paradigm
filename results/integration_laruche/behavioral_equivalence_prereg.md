@@ -46,3 +46,19 @@ If any earlier record changes unexpectedly, stop and report before extending the
 ## Not done
 
 No canonicalizer change, no threshold change, no live run, no grouping of read actions, no `m` selected.
+
+## Outcome (written after the replay, `behavioral_equivalence_audit.md`)
+
+Contract `laruche-equivalence-1`, digest `d7d6df94a13503f9bc4b5cc034438334c6d9025d5c8592318477f883353416ca` on the run 12 keys. Only two keys leave identity: `python -m pytest -q` and `python -m pytest -q | cat`, both TEST_EXECUTION. The two file-writing pytest phrasings stay literal, as pre-registered.
+
+Prediction 1 held: point 25 rejected under every variant (`file_read` is not TEST_EXECUTION; held-out calibration, probe-branch candidate regression).
+
+Prediction 2 held: point 33, `file_edit`, held-out branch: selective accuracy 1.0 (equivalent), ECE 0.0; literal agreement 0.857 reported alongside; active under `recorded` and every `m` up to 5; the naive veto at `m = 8` no longer fires either, since the disagreement is not one in class space.
+
+Prediction 3 held: the candidate at 33 is `no_new_family` under every variant.
+
+Prediction 5 held: run 12 points 16, 20, 25 and 29 keep their verdicts.
+
+Prediction 4 held for candidate decisions, and not at the reason level for the runs 9A/9B record, which is reported here as the pre-registration requires. Run 11 replays identically at every level. In the runs 9A/9B record, every candidate decision is unchanged (all rejected), but the family verdict of `file_edit` at 24 (and at 28 and 32 for `m = 8`) changes from rejected (retention 18 of 19 probes, 0.947) to active, and the candidate's reason from "active family regressed" to "no new family". The cause is the same phenomenon as at run 12 point 33: the 19 probes frozen for `file_edit` in that record contain one `python -m pytest -q | cat` occurrence; the candidate replays `python -m pytest -q` on it, literally wrong, equivalently right. The "27 of 30 consistent" family of the sensitivity study is 28 of 30 in class space, the other two being reads. So the retention failure that blocked that family at every `m` in the sensitivity study was, for one of its two missing probes, a phrasing difference. This does not change any adoption decision in that record (there was no new family to activate), and it is consistent with the hypothesis rather than against it, but it is a change the pre-registration did not predict at the family level; it is recorded before any extension of the contract.
+
+Stopped here. No canonicalizer change, no threshold change, no live run, no grouping of read actions, no `m` selected. The contract is used by no live configuration yet: `serve` does not pass it, and the default remains identity.
