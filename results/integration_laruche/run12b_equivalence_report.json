@@ -1,0 +1,431 @@
+{
+ "reproduced": true,
+ "points": [
+  16,
+  20,
+  24
+ ],
+ "contract": {
+  "version": "laruche-equivalence-1",
+  "digest": "e00115ab2921714c16aa6468274960077b05e479a2a4970e82a0b5146c13523b",
+  "classes": {
+   "shell_exec#5fa23c7577e0": "TEST_EXECUTION",
+   "shell_exec#a4e317297fb3": "TEST_EXECUTION"
+  }
+ },
+ "probe_contracts": {
+  "laruche:start:none:none": "76dcf5c1b074a8cb340fce3488047b293895d293b8af16efc95de91374e88984",
+  "laruche:file_edit:success:other": "5f55584fd34f3a456abd2ee7b2493db935e6d778b0832bfc16680a6ae11a7d27",
+  "laruche:shell_exec:success:tests_failed": "3ff9cb86d7ead0287228f295e72009bbd302f35a1061939478af3c6ea9c088cd"
+ },
+ "test_families": [
+  "laruche:file_edit:success:other",
+  "laruche:file_read:success:other",
+  "laruche:file_write:success:other",
+  "laruche:mission_criteria:none:none",
+  "laruche:shell_exec:failure:other",
+  "laruche:start:none:none"
+ ],
+ "table": [
+  {
+   "point": 20,
+   "family": "laruche:file_edit:success:other",
+   "has_test_action": true,
+   "literal_agreement": 1.0,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "rejected",
+   "reason_with": "calibration",
+   "verdict_without": "rejected",
+   "reason_without": "calibration"
+  },
+  {
+   "point": 20,
+   "family": "laruche:file_read:success:other",
+   "has_test_action": true,
+   "literal_agreement": 1.0,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "rejected",
+   "reason_with": "calibration,trust",
+   "verdict_without": "rejected",
+   "reason_without": "calibration,trust"
+  },
+  {
+   "point": 20,
+   "family": "laruche:file_write:success:other",
+   "has_test_action": true,
+   "literal_agreement": null,
+   "behavioral_agreement": null,
+   "verdict_with": "insufficient",
+   "reason_with": "no_held_out_evidence",
+   "verdict_without": "insufficient",
+   "reason_without": "no_held_out_evidence"
+  },
+  {
+   "point": 20,
+   "family": "laruche:mission_criteria:none:none",
+   "has_test_action": true,
+   "literal_agreement": 1.0,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "rejected",
+   "reason_with": "trust",
+   "verdict_without": "rejected",
+   "reason_without": "trust"
+  },
+  {
+   "point": 20,
+   "family": "laruche:shell_exec:failure:other",
+   "has_test_action": true,
+   "literal_agreement": 1.0,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "rejected",
+   "reason_with": "calibration",
+   "verdict_without": "rejected",
+   "reason_without": "calibration"
+  },
+  {
+   "point": 20,
+   "family": "laruche:shell_exec:success:other",
+   "has_test_action": false,
+   "literal_agreement": null,
+   "behavioral_agreement": null,
+   "verdict_with": "insufficient",
+   "reason_with": "no_held_out_evidence",
+   "verdict_without": "insufficient",
+   "reason_without": "no_held_out_evidence"
+  },
+  {
+   "point": 20,
+   "family": "laruche:shell_exec:success:tests_failed",
+   "has_test_action": false,
+   "literal_agreement": 1.0,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "rejected",
+   "reason_with": "calibration",
+   "verdict_without": "rejected",
+   "reason_without": "calibration"
+  },
+  {
+   "point": 20,
+   "family": "laruche:shell_exec:success:tests_passed",
+   "has_test_action": false,
+   "literal_agreement": 0.6666666666666666,
+   "behavioral_agreement": 0.6666666666666666,
+   "verdict_with": "rejected",
+   "reason_with": "quality,calibration",
+   "verdict_without": "rejected",
+   "reason_without": "quality,calibration"
+  },
+  {
+   "point": 20,
+   "family": "laruche:start:none:none",
+   "has_test_action": true,
+   "literal_agreement": 1.0,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "active",
+   "reason_with": "quality_trust_retention_pass",
+   "verdict_without": "active",
+   "reason_without": "quality_trust_retention_pass"
+  },
+  {
+   "point": 24,
+   "family": "laruche:file_edit:success:other",
+   "has_test_action": true,
+   "literal_agreement": 0.8,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "active",
+   "reason_with": "quality_trust_retention_pass",
+   "verdict_without": "rejected",
+   "reason_without": "quality,calibration"
+  },
+  {
+   "point": 24,
+   "family": "laruche:file_read:success:other",
+   "has_test_action": true,
+   "literal_agreement": 1.0,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "rejected",
+   "reason_with": "calibration",
+   "verdict_without": "rejected",
+   "reason_without": "calibration"
+  },
+  {
+   "point": 24,
+   "family": "laruche:file_write:success:other",
+   "has_test_action": true,
+   "literal_agreement": 1.0,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "rejected",
+   "reason_with": "trust",
+   "verdict_without": "rejected",
+   "reason_without": "trust"
+  },
+  {
+   "point": 24,
+   "family": "laruche:mission_criteria:none:none",
+   "has_test_action": true,
+   "literal_agreement": null,
+   "behavioral_agreement": null,
+   "verdict_with": "insufficient",
+   "reason_with": "no_held_out_evidence",
+   "verdict_without": "insufficient",
+   "reason_without": "no_held_out_evidence"
+  },
+  {
+   "point": 24,
+   "family": "laruche:shell_exec:failure:other",
+   "has_test_action": true,
+   "literal_agreement": 0.75,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "rejected",
+   "reason_with": "calibration",
+   "verdict_without": "rejected",
+   "reason_without": "quality"
+  },
+  {
+   "point": 24,
+   "family": "laruche:shell_exec:success:other",
+   "has_test_action": false,
+   "literal_agreement": null,
+   "behavioral_agreement": null,
+   "verdict_with": "insufficient",
+   "reason_with": "no_held_out_evidence",
+   "verdict_without": "insufficient",
+   "reason_without": "no_held_out_evidence"
+  },
+  {
+   "point": 24,
+   "family": "laruche:shell_exec:success:tests_failed",
+   "has_test_action": false,
+   "literal_agreement": 1.0,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "active",
+   "reason_with": "quality_trust_retention_pass",
+   "verdict_without": "active",
+   "reason_without": "quality_trust_retention_pass"
+  },
+  {
+   "point": 24,
+   "family": "laruche:shell_exec:success:tests_passed",
+   "has_test_action": false,
+   "literal_agreement": 0.5,
+   "behavioral_agreement": 0.5,
+   "verdict_with": "rejected",
+   "reason_with": "quality",
+   "verdict_without": "rejected",
+   "reason_without": "quality"
+  },
+  {
+   "point": 24,
+   "family": "laruche:start:none:none",
+   "has_test_action": true,
+   "literal_agreement": 1.0,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "active",
+   "reason_with": "quality_trust_retention_pass",
+   "verdict_without": "active",
+   "reason_without": "quality_trust_retention_pass"
+  }
+ ],
+ "changed_family_verdicts": [
+  {
+   "point": 24,
+   "family": "laruche:file_edit:success:other",
+   "has_test_action": true,
+   "literal_agreement": 0.8,
+   "behavioral_agreement": 1.0,
+   "verdict_with": "active",
+   "reason_with": "quality_trust_retention_pass",
+   "verdict_without": "rejected",
+   "reason_without": "quality,calibration"
+  }
+ ],
+ "unexpected_changes": [],
+ "decisions": [
+  {
+   "point": 16,
+   "with": [
+    "",
+    "insufficient_validated_traces",
+    0,
+    []
+   ],
+   "without": [
+    "",
+    "insufficient_validated_traces",
+    0,
+    []
+   ]
+  },
+  {
+   "point": 20,
+   "with": [
+    "promoted",
+    "families_activated:laruche:start:none:none",
+    1,
+    [
+     "laruche:start:none:none"
+    ]
+   ],
+   "without": [
+    "promoted",
+    "families_activated:laruche:start:none:none",
+    1,
+    [
+     "laruche:start:none:none"
+    ]
+   ]
+  },
+  {
+   "point": 24,
+   "with": [
+    "promoted",
+    "families_activated:laruche:file_edit:success:other,laruche:shell_exec:success:tests_failed",
+    2,
+    [
+     "laruche:file_edit:success:other",
+     "laruche:shell_exec:success:tests_failed",
+     "laruche:start:none:none"
+    ]
+   ],
+   "without": [
+    "promoted",
+    "families_activated:laruche:shell_exec:success:tests_failed",
+    2,
+    [
+     "laruche:shell_exec:success:tests_failed",
+     "laruche:start:none:none"
+    ]
+   ]
+  }
+ ],
+ "decisions_changed": [
+  {
+   "point": 24,
+   "with": [
+    "promoted",
+    "families_activated:laruche:file_edit:success:other,laruche:shell_exec:success:tests_failed",
+    2,
+    [
+     "laruche:file_edit:success:other",
+     "laruche:shell_exec:success:tests_failed",
+     "laruche:start:none:none"
+    ]
+   ],
+   "without": [
+    "promoted",
+    "families_activated:laruche:shell_exec:success:tests_failed",
+    2,
+    [
+     "laruche:shell_exec:success:tests_failed",
+     "laruche:start:none:none"
+    ]
+   ]
+  }
+ ],
+ "divergence_from_run12": [
+  {
+   "point": 16,
+   "family": "laruche:file_edit:success:other",
+   "run12": "active",
+   "run12b": null
+  },
+  {
+   "point": 16,
+   "family": "laruche:file_read:success:other",
+   "run12": "active",
+   "run12b": null
+  },
+  {
+   "point": 16,
+   "family": "laruche:file_write:success:other",
+   "run12": "insufficient",
+   "run12b": null
+  },
+  {
+   "point": 16,
+   "family": "laruche:shell_exec:failure:other",
+   "run12": "rejected",
+   "run12b": null
+  },
+  {
+   "point": 16,
+   "family": "laruche:shell_exec:success:tests_failed",
+   "run12": "insufficient",
+   "run12b": null
+  },
+  {
+   "point": 16,
+   "family": "laruche:shell_exec:success:tests_passed",
+   "run12": "active",
+   "run12b": null
+  },
+  {
+   "point": 16,
+   "family": "laruche:start:none:none",
+   "run12": "active",
+   "run12b": null
+  },
+  {
+   "point": 20,
+   "family": "laruche:file_edit:success:other",
+   "run12": "rejected",
+   "run12b": "rejected"
+  },
+  {
+   "point": 20,
+   "family": "laruche:file_read:success:other",
+   "run12": "active",
+   "run12b": "rejected"
+  },
+  {
+   "point": 20,
+   "family": "laruche:file_write:success:other",
+   "run12": "insufficient",
+   "run12b": "insufficient"
+  },
+  {
+   "point": 20,
+   "family": "laruche:mission_criteria:none:none",
+   "run12": null,
+   "run12b": "rejected"
+  },
+  {
+   "point": 20,
+   "family": "laruche:shell_exec:failure:other",
+   "run12": "active",
+   "run12b": "rejected"
+  },
+  {
+   "point": 20,
+   "family": "laruche:shell_exec:success:other",
+   "run12": null,
+   "run12b": "insufficient"
+  },
+  {
+   "point": 20,
+   "family": "laruche:shell_exec:success:tests_failed",
+   "run12": "rejected",
+   "run12b": "rejected"
+  },
+  {
+   "point": 20,
+   "family": "laruche:shell_exec:success:tests_passed",
+   "run12": "active",
+   "run12b": "rejected"
+  },
+  {
+   "point": 20,
+   "family": "laruche:start:none:none",
+   "run12": "active",
+   "run12b": "active"
+  }
+ ],
+ "economy": {
+  "natural_model_calls": 129,
+  "shadow_sample_model_calls": 3,
+  "reflex_decisions": 1,
+  "reflex_outcomes": {
+   "unknown": 1
+  }
+ }
+}

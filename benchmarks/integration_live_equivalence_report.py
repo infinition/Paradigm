@@ -76,8 +76,9 @@ def main() -> None:
             table.append(entry)
             if entry["verdict_with"] != entry["verdict_without"]:
                 changed.append(entry)
-    decisions = [{"point": lab, "with": (a["outcome"], a["reason"], a["version_after"]), "without": (b["outcome"], b["reason"], b["version_after"])} for lab, a, b in zip(labels, with_c, without)]
-    decisions_changed = [d for d in decisions if d["with"][:1] != d["without"][:1] or d["with"][2] != d["without"][2]]
+    decisions = [{"point": lab, "with": (a["outcome"], a["reason"], a["version_after"], tuple(a["active_after"])), "without": (b["outcome"], b["reason"], b["version_after"], tuple(b["active_after"]))} for lab, a, b in zip(labels, with_c, without)]
+    # An adoption decision is its outcome, the version it yields and the set of active families it leaves.
+    decisions_changed = [d for d in decisions if (d["with"][0], d["with"][2], d["with"][3]) != (d["without"][0], d["without"][2], d["without"][3])]
     unexpected = [e for e in changed if not e["has_test_action"]]
 
     # Divergence from run 12 at common compile points (family verdicts of the live records).
@@ -117,9 +118,9 @@ def main() -> None:
          "| point | family | test action in family | literal | behavioral | verdict with (reason) | verdict without (reason) |", "|---|---|---|---|---|---|---|"]
     for e in table:
         L.append(f"| {e['point']} | `{e['family'].split(':',1)[1]}` | {'yes' if e['has_test_action'] else 'no'} | {fmt(e['literal_agreement'])} | {fmt(e['behavioral_agreement'])} | {e['verdict_with']} ({e['reason_with']}) | {e['verdict_without']} ({e['reason_without']}) |")
-    L += ["", "## Adoption decisions with and without the contract", "", "| point | with | without |", "|---|---|---|"]
+    L += ["", "## Adoption decisions with and without the contract (outcome, version, active families after)", "", "| point | with | without |", "|---|---|---|"]
     for d in decisions:
-        L.append(f"| {d['point']} | {d['with'][0]} ({d['with'][1].split(':')[0]}), v{d['with'][2]} | {d['without'][0]} ({d['without'][1].split(':')[0]}), v{d['without'][2]} |")
+        L.append(f"| {d['point']} | {d['with'][0]} ({d['with'][1].split(':')[0]}), v{d['with'][2]}: " + ", ".join(f"`{f.split(':',1)[1]}`" for f in d["with"][3]) + f" | {d['without'][0]} ({d['without'][1].split(':')[0]}), v{d['without'][2]}: " + ", ".join(f"`{f.split(':',1)[1]}`" for f in d["without"][3]) + " |")
     L += ["", f"Family verdicts changed by equivalence: {len(changed)}; adoption decisions changed: {len(decisions_changed)}; changes in families without a TEST_EXECUTION action: {len(unexpected)}.", "",
           "## Divergence from run 12 at the common compile points (family verdicts of the live records)", "", "| point | family | run 12 | run 12b |", "|---|---|---|---|"]
     for d in divergence:

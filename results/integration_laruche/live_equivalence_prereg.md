@@ -39,3 +39,21 @@ No mechanism change, no threshold change, no `m` selected, no probe re-certifica
 Attempt 1 (24 missions, 24 of 24 verified; `run12b_attempt1_*` artifacts) was invalidated for every conclusion about probes, digests or certification records: the state file was never written, because the equivalence callback was a lambda that `pickle` refuses, and each save after an episode close failed in the service (24 tracebacks in its log). The live decisions and the telemetry stand as an informative record only (final telemetry: version 2, active `start`, `file_edit:success`, `file_write:success`; 1 reflex decision, 6 shadow samples; 2 promotions, 3 rejections).
 
 The retry uses the same pre-registered protocol and decision logic; only serialization plumbing was corrected: the contract's classifier is a bound method of the adapter, and contracts rebuilt from a mapping use a picklable classifier. Guardrails added before spending model calls: a test that saves and reloads an engine with `laruche-equivalence-1`; the contract digest is asserted identical before and after reload; a save, reload, decide, observe, certify, save cycle runs in the test suite.
+
+## Outcome (retry; raw artifacts frozen, hashes in `run12b_raw_sha256.txt`; report `run12b_equivalence_report.md`)
+
+24 of 24 missions verified, 0 unsafe actions, 0 service tracebacks, state persisted after every episode. Contract `laruche-equivalence-1` active from mission 1; its version and digest are in the telemetry and in every certification record; the three probe sets frozen in this run carry their contract digest. The live certification is reproduced exactly by the replay with the contract on the frozen record.
+
+Trajectory: 16 insufficient traces; 20 promoted, version 1, `start` only; 24 promoted, version 2. The teacher was less regular than in run 12 (which had activated four families at 16); this is teacher variance between runs, and the replay without the contract on the same record follows the same trajectory except for one family.
+
+Prediction 1 held. Behavioral agreement exceeds literal agreement at exactly two family-points, both in families with TEST_EXECUTION actions and both caused by `python -m pytest -q | cat` in the held-out split: `file_edit` at 24 (literal 0.800, behavioral 1.000, 4 canonical and 1 `| cat`) and `shell_exec:failure` at 24 (0.750 against 1.000). Everywhere else the two agreements are equal.
+
+Prediction 2 not testable: no gate-covered disagreement of the run 12 point-25 kind occurred in this run.
+
+Prediction 3 held. Family verdicts changed by the contract: one, `file_edit` at 24, rejected on quality and calibration without the contract, active with it. `shell_exec:failure` at 24 stays rejected in both (calibration on 4 traces), so the contract does not simply pass more. No family without a TEST_EXECUTION action changes.
+
+Consequence on adoption, reported at the level of the active set: the version 2 promoted at 24 activates `file_edit` and `tests_failed` with the contract, `tests_failed` only without it. Same outcome, same version number, different set of authorized families; this is the first live certification decision that depends on behavioral equivalence, and it is in the predicted class.
+
+Predictions 4 and 5 held: fresh state, earlier records untouched; 24 of 24 verified, 0 false fast paths (1 reflex decision, outcome UNKNOWN, the start-of-mission test run).
+
+Economy is not readable from this run, as intended for a wiring validation: promotion came at 20, leaving 4 missions with one active family, 3 shadow samples and 1 reflex decision. Whether this deserves a run 13 is a separate decision.
