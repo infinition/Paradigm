@@ -45,3 +45,17 @@ Also reported per region: size (share of all sentences, of positives, of hard ne
 ## Not done
 
 No threshold change, no region added after the fact, no live run.
+
+## Outcome (written after the run, `RESULTS_C5.md`, `results_c5.json`)
+
+Verdict under the pre-registered criterion: UNSUPPORTED. No region is certifiable; the certification thresholds are not touched.
+
+Per region, under the gate, out of sample: R1 (actionable_now, 176 sentences, 98% of positives, 26% of hard negatives) selective accuracy 0.96, 2 hard-negative false fast paths. R2 (plus lexical and semantic agreement, 88 sentences, 61% of positives, 10% of hard negatives) 0.98, 1 false fast path, coverage 0.49 of the region, ECE 0.02. R3 (density) changes R1 by a few sentences at every percentile and leaves its verdict unchanged. R4 (agreement and density) equals R2 within a few sentences at every percentile: 0.98, 1 false fast path. The selector is infeasible in every region (best selective accuracy 0.98 against the 0.99 required).
+
+Prediction 1 held (R1 keeps 26% of the hard negatives, mostly inspection_only and object_change, and is not certifiable). Prediction 2 held in direction (agreement raises selective accuracy from 0.96 to 0.98 at the cost of coverage, from 98% to 61% of the positives) and the criterion is not reached. Prediction 3 held (density changes almost nothing). Prediction 4 did not hold: no region is certifiable, R4 included.
+
+What keeps R2 and R4 below the criterion is a single sentence: "Fais une photo de moi avec la webcam quand je te le dirai." (temporal hard negative, class OTHER), the only covered error inside the region and its only false fast path. It is one of the two `quand + future` clauses the frozen C4 extractor does not tag as FUTURE, so it enters `actionable_now`, both k-NNs agree it is a capture, and the fused model is unanimous. The region logic did what it was designed to do on everything else: inside R2 every other covered sentence is correct.
+
+This is not turned into a correction here. A version 2 of the extractor that handles subordinate temporal clauses is a separate pre-registration, and its motivation is this observation, which the pre-registration will say. Whether such a version makes R2 certifiable is then a prediction to write before running, not a result to claim now.
+
+Not done: no threshold change, no extractor change, no region added, no live run.
