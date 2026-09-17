@@ -81,7 +81,7 @@ D1, proposed source: real LaRuche + DeepSeek missions; Paradigm observes only, n
 
 ## Dataset provenance
 
-Intent v1 (`phrases.jsonl`, sha in `DATASET_SHA256.txt`) and v2 (`phrases_v2.jsonl`, `DATASET_v2_SHA256.txt`) are synthetic benchmark datasets: `claude-*`/`c*` by the assistant, `g*` by ChatGPT, `u*` by ChatGPT simulating the user's style. No human-written slice was ultimately used. Both are immutable; a correction is a new version with a new hash. v2 was prospective for C6R and is no longer virgin.
+Intent v1 (`phrases.jsonl`, sha in `DATASET_SHA256.txt`) and v2 (`phrases_v2.jsonl`, `DATASET_v2_SHA256.txt`) are synthetic benchmark datasets: `gen_a-*`/`c*` by the assistant, `g*` by generator B, `u*` by generator B simulating the user's style. No human-written slice was ultimately used. Both are immutable; a correction is a new version with a new hash. v2 was prospective for C6R and is no longer virgin.
 
 ## Experimental discipline
 

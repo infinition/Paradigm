@@ -12,7 +12,7 @@ Does a semantic encoder let Paradigm generalize from natural language at the fir
 
 ## Dataset
 
-`phrases.jsonl`, one sentence per line: `id`, `group`, `source`, `role`, `transformation`, `intent`, `text`. Three sources of roughly equal size, each written blind to every score: `claude`, `chatgpt`, `user`. A group is one base sentence, its variants (same intent, rewordings), and its hard negatives obtained by minimal transformation of the base: `negation`, `temporal` (future or deferred), `past_question` (question about an action already done), `object_change` (same verb, another object), `inspection_only` (look or check without acting). Every hard negative carries the class it actually belongs to. Each group is written by one source. Once the three parts are in, the file is frozen: SHA-256 recorded in `DATASET_SHA256.txt` and committed before the first embedding is computed. Nothing is added, edited or removed afterwards; a later correction is a new version with a new hash and its own results.
+`phrases.jsonl`, one sentence per line: `id`, `group`, `source`, `role`, `transformation`, `intent`, `text`. Three sources of roughly equal size, each written blind to every score: `gen_a`, `gen_b`, `user`. A group is one base sentence, its variants (same intent, rewordings), and its hard negatives obtained by minimal transformation of the base: `negation`, `temporal` (future or deferred), `past_question` (question about an action already done), `object_change` (same verb, another object), `inspection_only` (look or check without acting). Every hard negative carries the class it actually belongs to. Each group is written by one source. Once the three parts are in, the file is frozen: SHA-256 recorded in `DATASET_SHA256.txt` and committed before the first embedding is computed. Nothing is added, edited or removed afterwards; a later correction is a new version with a new hash and its own results.
 
 ## Split
 
@@ -52,7 +52,7 @@ No live run, no fine-tuning, no contrastive adaptation, no gate change.
 
 ## Addendum, before the first embedding
 
-The three parts are three generators with distinct styles, not two models and a person: `claude-*` by Claude, `g*` by ChatGPT, `u*` by ChatGPT simulating the user's writing style (synthetic). No human-written sentence is in version 1; see `MANIFEST.md`. Four sentence texts occur in two groups of different sources; the dataset is frozen with them, and a leave-one-group-out fold can therefore contain a held-out text that also exists in training (4 of 320); this is reported, not corrected. The RTX box was unreachable from this Mac, so the specialized encoder runs locally on CPU with `sentence-transformers`, as the pre-registration allows.
+The three parts are three generators with distinct styles, not two models and a person: `gen_a-*` by generator A, `g*` by generator B, `u*` by generator B simulating the user's writing style (synthetic). No human-written sentence is in version 1; see `MANIFEST.md`. Four sentence texts occur in two groups of different sources; the dataset is frozen with them, and a leave-one-group-out fold can therefore contain a held-out text that also exists in training (4 of 320); this is reported, not corrected. The RTX box was unreachable from this Mac, so the specialized encoder runs locally on CPU with `sentence-transformers`, as the pre-registration allows.
 
 ## Outcome (written after the run, `RESULTS_v1.md`, `results_v1.json`)
 

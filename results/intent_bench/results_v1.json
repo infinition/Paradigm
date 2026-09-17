@@ -82,8 +82,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.0,
+    "gen_b": 0.0,
+    "gen_a": 0.0,
     "synthetic_user_style": 0.0
    },
    "leaked_test_sentences": 8,
@@ -157,8 +157,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.23076923076923078,
-    "claude": 0.15,
+    "gen_b": 0.23076923076923078,
+    "gen_a": 0.15,
     "synthetic_user_style": 0.46153846153846156
    },
    "leaked_test_sentences": 8,
@@ -232,8 +232,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.0,
+    "gen_b": 0.0,
+    "gen_a": 0.0,
     "synthetic_user_style": 0.0
    },
    "leaked_test_sentences": 8,
@@ -307,8 +307,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.1,
+    "gen_b": 0.0,
+    "gen_a": 0.1,
     "synthetic_user_style": 0.07692307692307693
    },
    "leaked_test_sentences": 8,
@@ -382,8 +382,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.0,
+    "gen_b": 0.0,
+    "gen_a": 0.0,
     "synthetic_user_style": 0.0
    },
    "leaked_test_sentences": 8,
@@ -457,8 +457,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.1,
+    "gen_b": 0.0,
+    "gen_a": 0.1,
     "synthetic_user_style": 0.15384615384615385
    },
    "leaked_test_sentences": 8,
@@ -532,8 +532,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.0,
+    "gen_b": 0.0,
+    "gen_a": 0.0,
     "synthetic_user_style": 0.0
    },
    "leaked_test_sentences": 8,
@@ -607,8 +607,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.2,
+    "gen_b": 0.0,
+    "gen_a": 0.2,
     "synthetic_user_style": 0.15384615384615385
    },
    "leaked_test_sentences": 8,
@@ -682,8 +682,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.0,
+    "gen_b": 0.0,
+    "gen_a": 0.0,
     "synthetic_user_style": 0.0
    },
    "leaked_test_sentences": 8,
@@ -757,8 +757,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.5384615384615384,
-    "claude": 0.65,
+    "gen_b": 0.5384615384615384,
+    "gen_a": 0.65,
     "synthetic_user_style": 0.3076923076923077
    },
    "leaked_test_sentences": 8,
@@ -832,8 +832,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.0,
+    "gen_b": 0.0,
+    "gen_a": 0.0,
     "synthetic_user_style": 0.0
    },
    "leaked_test_sentences": 8,
@@ -907,8 +907,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.3076923076923077,
-    "claude": 0.6,
+    "gen_b": 0.3076923076923077,
+    "gen_a": 0.6,
     "synthetic_user_style": 0.38461538461538464
    },
    "leaked_test_sentences": 8,
@@ -982,8 +982,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.0,
+    "gen_b": 0.0,
+    "gen_a": 0.0,
     "synthetic_user_style": 0.0
    },
    "leaked_test_sentences": 8,
@@ -1057,8 +1057,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.05,
+    "gen_b": 0.0,
+    "gen_a": 0.05,
     "synthetic_user_style": 0.07692307692307693
    },
    "leaked_test_sentences": 8,
@@ -1132,8 +1132,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.0,
+    "gen_b": 0.0,
+    "gen_a": 0.0,
     "synthetic_user_style": 0.0
    },
    "leaked_test_sentences": 8,
@@ -1207,8 +1207,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.2,
+    "gen_b": 0.0,
+    "gen_a": 0.2,
     "synthetic_user_style": 0.15384615384615385
    },
    "leaked_test_sentences": 8,
@@ -1282,8 +1282,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.05,
+    "gen_b": 0.0,
+    "gen_a": 0.05,
     "synthetic_user_style": 0.0
    },
    "leaked_test_sentences": 8,
@@ -1357,8 +1357,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.38461538461538464,
-    "claude": 0.3,
+    "gen_b": 0.38461538461538464,
+    "gen_a": 0.3,
     "synthetic_user_style": 0.46153846153846156
    },
    "leaked_test_sentences": 8,
@@ -1432,8 +1432,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.0,
-    "claude": 0.0,
+    "gen_b": 0.0,
+    "gen_a": 0.0,
     "synthetic_user_style": 0.0
    },
    "leaked_test_sentences": 8,
@@ -1507,8 +1507,8 @@
     }
    },
    "per_source_positive_recall": {
-    "chatgpt": 0.3076923076923077,
-    "claude": 0.55,
+    "gen_b": 0.3076923076923077,
+    "gen_a": 0.55,
     "synthetic_user_style": 0.38461538461538464
    },
    "leaked_test_sentences": 8,

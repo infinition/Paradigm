@@ -12,8 +12,8 @@ Frozen model `f499123be5f4b1e2` (trained on v1, threshold 0.6179 by the pre-regi
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | PRIMARY | 243 | 0.08 | 0.89 | 0 | 0 | 30 | 5 / 0 | 0.17 | 0.14 | 0.78 | 0.81 |
 | DIAGNOSTIC (ambiguous) | 16 | 0.00 | n/a | 0 | 0 | 5 | 0 / 0 | 0.00 | 0.00 | 0.62 | 0.50 |
-| PRIMARY, source chatgpt | 97 | 0.05 | 0.80 | 0 | 0 | 10 | 1 / 0 | 0.10 | 0.12 | 0.78 | 0.85 |
-| PRIMARY, source claude | 96 | 0.02 | 0.50 | 0 | 0 | 10 | 0 / 0 | 0.00 | 0.04 | 0.78 | 0.80 |
+| PRIMARY, source gen_b | 97 | 0.05 | 0.80 | 0 | 0 | 10 | 1 / 0 | 0.10 | 0.12 | 0.78 | 0.85 |
+| PRIMARY, source gen_a | 96 | 0.02 | 0.50 | 0 | 0 | 10 | 0 / 0 | 0.00 | 0.04 | 0.78 | 0.80 |
 | PRIMARY, source synthetic_user_style | 50 | 0.24 | 1.00 | 0 | 0 | 10 | 4 / 0 | 0.40 | 0.34 | 0.76 | 0.78 |
 | tag oral | 85 | 0.14 | 1.00 | 0 | 0 | 18 | 4 / 0 | 0.22 | 0.21 | 0.78 | 0.81 |
 | tag long | 9 | 0.11 | 0.00 | 0 | 0 | 1 | 0 / 0 | 0.00 | 0.22 | 0.33 | 0.67 |
@@ -35,9 +35,9 @@ Reranker capture yes mean on positives: 0.91.
 
 | text | true | pred | confidence | source | tags |
 |---|---|---|---|---|---|
-| Allume la webcam pour vérifier le cadrage, aucune capture. | OPEN_CAMERA_NO_CAPTURE | OTHER | 0.79 | claude |  |
-| Utilise pas la webcam pour moi, capture plutôt la fenêtre qui est ouverte à l'écran. | SCREENSHOT | OTHER | 0.77 | chatgpt | long |
-| Laisse la fenêtre tranquille et prends-moi plutôt en photo maintenant. | CAPTURE_PERSON | CAPTURE_PERSON | 0.78 | chatgpt |  |
+| Allume la webcam pour vérifier le cadrage, aucune capture. | OPEN_CAMERA_NO_CAPTURE | OTHER | 0.79 | gen_a |  |
+| Utilise pas la webcam pour moi, capture plutôt la fenêtre qui est ouverte à l'écran. | SCREENSHOT | OTHER | 0.77 | gen_b | long |
+| Laisse la fenêtre tranquille et prends-moi plutôt en photo maintenant. | CAPTURE_PERSON | CAPTURE_PERSON | 0.78 | gen_b |  |
 | tu peux me faire une photo la | CAPTURE_PERSON | CAPTURE_PERSON | 0.93 | synthetic_user_style | oral |
 | fais une photo vite fait stp | CAPTURE_PERSON | CAPTURE_PERSON | 0.76 | synthetic_user_style | oral |
 | prends moi avec la webcam maintenant | CAPTURE_PERSON | CAPTURE_PERSON | 0.94 | synthetic_user_style | oral |

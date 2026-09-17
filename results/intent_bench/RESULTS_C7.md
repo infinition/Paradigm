@@ -30,7 +30,7 @@ Frozen decision model of C6R (threshold 0.6179); version 1 scored out of fold (l
 
 ## Version 2 by source, positive reflex coverage / selective accuracy / hard FFP
 
-| gate | chatgpt | claude | synthetic_user_style |
+| gate | gen_b | gen_a | synthetic_user_style |
 |---|---|---|---|
 | G0 | 0.10 / 0.80 / 0 | 0.00 / 0.50 / 0 | 0.40 / 1.00 / 0 |
 | G1 | 0.00 / 1.00 / 0 | 0.00 / n/a / 0 | 0.00 / 1.00 / 0 |

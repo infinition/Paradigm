@@ -80,7 +80,7 @@
   }
  },
  "per_source_primary": {
-  "chatgpt": {
+  "gen_b": {
    "n": 97,
    "coverage": 0.05154639175257732,
    "selective_accuracy": 0.8,
@@ -94,7 +94,7 @@
    "covered_share": 0.7835051546391752,
    "accuracy_no_gate": 0.845360824742268
   },
-  "claude": {
+  "gen_a": {
    "n": 96,
    "coverage": 0.020833333333333332,
    "selective_accuracy": 0.5,
@@ -159,7 +159,7 @@
    "true": "OPEN_CAMERA_NO_CAPTURE",
    "pred": "OTHER",
    "confidence": 0.7919866855507924,
-   "source": "claude",
+   "source": "gen_a",
    "tags": []
   },
   {
@@ -167,7 +167,7 @@
    "true": "SCREENSHOT",
    "pred": "OTHER",
    "confidence": 0.7697445996168528,
-   "source": "chatgpt",
+   "source": "gen_b",
    "tags": [
     "long"
    ]
@@ -177,7 +177,7 @@
    "true": "CAPTURE_PERSON",
    "pred": "CAPTURE_PERSON",
    "confidence": 0.783480435917484,
-   "source": "chatgpt",
+   "source": "gen_b",
    "tags": []
   },
   {

@@ -58,7 +58,7 @@ Leaked test sentences (identical text in another group): 8 of 320.
 
 ## Per source, unseen positive recall under the gate (logistic regression)
 
-| representation | chatgpt | claude | synthetic_user_style |
+| representation | gen_b | gen_a | synthetic_user_style |
 |---|---|---|---|
 | A_lexical | 0.00 | 0.00 | 0.00 |
 | B_nomic_laruche | 0.00 | 0.00 | 0.00 |
