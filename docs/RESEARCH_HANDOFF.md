@@ -81,7 +81,7 @@ D1, proposed source: real LaRuche + DeepSeek missions; Paradigm observes only, n
 
 ## Dataset provenance
 
-Intent v1 (`phrases.jsonl`, sha in `DATASET_SHA256.txt`) and v2 (`phrases_v2.jsonl`, `DATASET_v2_SHA256.txt`) are synthetic benchmark datasets: `gen_a-*`/`c*` by the assistant, `g*` by generator B, `u*` by generator B simulating the user's style. No human-written slice was ultimately used. Both are immutable; a correction is a new version with a new hash. v2 was prospective for C6R and is no longer virgin.
+Intent v1 (`phrases.jsonl`, sha in `DATASET_SHA256.txt`) and v2 (`phrases_v2.jsonl`, `DATASET_v2_SHA256.txt`) are synthetic benchmark datasets: `gen_a` (assistant of the session, ids `gen_a-*`, groups `c*`), `gen_b` (a second language model, groups `g*`), `synthetic_user_style` (the second model simulating the user's style, groups `u*`). No human-written slice was ultimately used. Both are immutable; a correction is a new version with a new hash. v2 was prospective for C6R and is no longer virgin.
 
 ## Experimental discipline
 
@@ -100,4 +100,4 @@ Repository `/Users/infinition/Coding/laruche/laruche`, branch `paradigm-integrat
 
 ## Repository state at handoff
 
-See the commit that adds this file. Tree clean; `main` in sync with `origin/main`; tags `v0.1.0`, `v0.2.0`, `p2.4-type-b-baseline`, `laruche-family-scoped-run11` unchanged. Hygiene checks done: no credentials, no personal file names from the failed camera attempts, no model weights or caches tracked (the 4.4 MB `c6r_frozen_model.pkl` is the frozen C6R artifact and belongs to the record), no forbidden names in commit messages; the one absolute home path in `camera_prereg.md` is the recorded text of a failed attempt's command and is kept as such.
+Tree clean after the relabeling commit; `main` in sync with `origin/main`; tags `v0.1.0`, `v0.2.0`, `p2.4-type-b-baseline`, `laruche-family-scoped-run11` unchanged. Hygiene checks done: no credentials, no personal file names from the failed camera attempts, no model weights or caches tracked (the 4.4 MB `c6r_frozen_model.pkl` is the frozen C6R artifact and belongs to the record), no forbidden names in commit messages; the one absolute home path in `camera_prereg.md` is the recorded text of a failed attempt's command and is kept as such.
