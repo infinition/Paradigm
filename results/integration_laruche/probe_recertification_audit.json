@@ -171,7 +171,14 @@
       "probes": 16,
       "coverage": 1.0,
       "agreement": 0.9375,
-      "incumbent_coverage": 1.0
+      "incumbent_coverage": 1.0,
+      "evidence": "held-out",
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 1,
+       "covered": 1,
+       "disagreements": 0
+      }
      }
     },
     "laruche:file_list:success:other": {
@@ -317,7 +324,14 @@
       "probes": 16,
       "coverage": 1.0,
       "agreement": 0.9375,
-      "incumbent_coverage": 1.0
+      "incumbent_coverage": 1.0,
+      "evidence": "held-out",
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 1,
+       "covered": 1,
+       "disagreements": 0
+      }
      }
     },
     "laruche:file_list:success:other": {
@@ -600,7 +614,14 @@
       "probes": 16,
       "coverage": 1.0,
       "agreement": 1.0,
-      "incumbent_coverage": 1.0
+      "incumbent_coverage": 1.0,
+      "evidence": "held-out",
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 0,
+       "covered": 0,
+       "disagreements": 0
+      }
      }
     },
     "laruche:file_list:success:other": {
@@ -746,7 +767,14 @@
       "probes": 16,
       "coverage": 1.0,
       "agreement": 1.0,
-      "incumbent_coverage": 1.0
+      "incumbent_coverage": 1.0,
+      "evidence": "held-out",
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 0,
+       "covered": 0,
+       "disagreements": 0
+      }
      }
     },
     "laruche:file_list:success:other": {
@@ -898,7 +926,14 @@
       "probes": 16,
       "coverage": 1.0,
       "agreement": 0.0625,
-      "incumbent_coverage": 1.0
+      "incumbent_coverage": 1.0,
+      "evidence": "held-out",
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 0,
+       "covered": 0,
+       "disagreements": 0
+      }
      }
     },
     "laruche:file_list:success:other": {

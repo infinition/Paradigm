@@ -21,13 +21,13 @@ Run 11 reproduced by the `recorded` variant: yes.
 
 | variant | point | family | n fresh | evidence | probes cov. / agr. | fresh: gate-accepted / covered / disagreements | gate acc. | ECE | verdict |
 |---|---|---|---|---|---|---|---|---|---|
-| recorded | 20 | `file_edit:success:other` | 1 | held-out | 1.000 / 0.938 |  | 1.000 | 0.000 | rejected (retention) |
+| recorded | 20 | `file_edit:success:other` | 1 | held-out | 1.000 / 0.938 | 1 / 1 / 0 | 1.000 | 0.000 | rejected (retention) |
 | recorded | 20 | `start:none:none` | 0 | held-out |  |  | n/a | n/a | insufficient (no_held_out_evidence) |
-| recorded | 24 | `file_edit:success:other` | 1 | held-out | 1.000 / 1.000 |  | 0.000 | 0.000 | rejected (trust) |
+| recorded | 24 | `file_edit:success:other` | 1 | held-out | 1.000 / 1.000 | 0 / 0 / 0 | 0.000 | 0.000 | rejected (trust) |
 | recorded | 24 | `start:none:none` | 0 | held-out |  |  | n/a | n/a | insufficient (no_held_out_evidence) |
-| m=1 | 20 | `file_edit:success:other` | 1 | held-out | 1.000 / 0.938 |  | 1.000 | 0.000 | rejected (retention) |
+| m=1 | 20 | `file_edit:success:other` | 1 | held-out | 1.000 / 0.938 | 1 / 1 / 0 | 1.000 | 0.000 | rejected (retention) |
 | m=1 | 20 | `start:none:none` | 0 | probes_only | 1.000 / 1.000 |  | 1.000 | 0.000 | active (probe_recertified) |
-| m=1 | 24 | `file_edit:success:other` | 1 | held-out | 1.000 / 1.000 |  | 0.000 | 0.000 | rejected (trust) |
+| m=1 | 24 | `file_edit:success:other` | 1 | held-out | 1.000 / 1.000 | 0 / 0 / 0 | 0.000 | 0.000 | rejected (trust) |
 | m=1 | 24 | `start:none:none` | 0 | probes_only | 1.000 / 1.000 |  | 1.000 | 0.000 | active (probe_recertified) |
 | m=2 | 20 | `file_edit:success:other` | 1 | probes_only | 1.000 / 0.938 | 1 / 1 / 0 | 1.000 | 0.042 | rejected (retention) |
 | m=2 | 20 | `start:none:none` | 0 | probes_only | 1.000 / 1.000 |  | 1.000 | 0.000 | active (probe_recertified) |
@@ -50,35 +50,35 @@ Run 11 reproduced by the `recorded` variant: yes.
 
 | variant | point | family | n fresh | evidence | probes cov. / agr. | fresh: gate-accepted / covered / disagreements | gate acc. | ECE | verdict |
 |---|---|---|---|---|---|---|---|---|---|
-| recorded | 24 | `file_edit:success:other` | 6 | held-out | 1.000 / 0.947 |  | 1.000 | 0.048 | rejected (retention) |
-| recorded | 24 | `start:none:none` | 4 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| recorded | 28 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 |  | 0.857 | 0.102 | rejected (calibration,retention) |
-| recorded | 28 | `start:none:none` | 4 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| recorded | 32 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 |  | 0.857 | 0.179 | rejected (calibration,retention) |
-| recorded | 32 | `start:none:none` | 3 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| m=1 | 24 | `file_edit:success:other` | 6 | held-out | 1.000 / 0.947 |  | 1.000 | 0.048 | rejected (retention) |
-| m=1 | 24 | `start:none:none` | 4 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| m=1 | 28 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 |  | 0.857 | 0.102 | rejected (calibration,retention) |
-| m=1 | 28 | `start:none:none` | 4 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| m=1 | 32 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 |  | 0.857 | 0.179 | rejected (calibration,retention) |
-| m=1 | 32 | `start:none:none` | 3 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| m=2 | 24 | `file_edit:success:other` | 6 | held-out | 1.000 / 0.947 |  | 1.000 | 0.048 | rejected (retention) |
-| m=2 | 24 | `start:none:none` | 4 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| m=2 | 28 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 |  | 0.857 | 0.102 | rejected (calibration,retention) |
-| m=2 | 28 | `start:none:none` | 4 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| m=2 | 32 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 |  | 0.857 | 0.179 | rejected (calibration,retention) |
-| m=2 | 32 | `start:none:none` | 3 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| m=3 | 24 | `file_edit:success:other` | 6 | held-out | 1.000 / 0.947 |  | 1.000 | 0.048 | rejected (retention) |
-| m=3 | 24 | `start:none:none` | 4 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| m=3 | 28 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 |  | 0.857 | 0.102 | rejected (calibration,retention) |
-| m=3 | 28 | `start:none:none` | 4 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| m=3 | 32 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 |  | 0.857 | 0.179 | rejected (calibration,retention) |
-| m=3 | 32 | `start:none:none` | 3 | held-out | 1.000 / 1.000 |  | 1.000 | 0.000 | active (quality_trust_retention_pass) |
-| m=5 | 24 | `file_edit:success:other` | 6 | held-out | 1.000 / 0.947 |  | 1.000 | 0.048 | rejected (retention) |
+| recorded | 24 | `file_edit:success:other` | 6 | held-out | 1.000 / 0.947 | 6 / 6 / 0 | 1.000 | 0.048 | rejected (retention) |
+| recorded | 24 | `start:none:none` | 4 | held-out | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| recorded | 28 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 | 6 / 6 / 0 | 0.857 | 0.102 | rejected (calibration,retention) |
+| recorded | 28 | `start:none:none` | 4 | held-out | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| recorded | 32 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 | 6 / 6 / 1 | 0.857 | 0.179 | rejected (calibration,retention) |
+| recorded | 32 | `start:none:none` | 3 | held-out | 1.000 / 1.000 | 3 / 3 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| m=1 | 24 | `file_edit:success:other` | 6 | held-out | 1.000 / 0.947 | 6 / 6 / 0 | 1.000 | 0.048 | rejected (retention) |
+| m=1 | 24 | `start:none:none` | 4 | held-out | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| m=1 | 28 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 | 6 / 6 / 0 | 0.857 | 0.102 | rejected (calibration,retention) |
+| m=1 | 28 | `start:none:none` | 4 | held-out | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| m=1 | 32 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 | 6 / 6 / 1 | 0.857 | 0.179 | rejected (calibration,retention) |
+| m=1 | 32 | `start:none:none` | 3 | held-out | 1.000 / 1.000 | 3 / 3 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| m=2 | 24 | `file_edit:success:other` | 6 | held-out | 1.000 / 0.947 | 6 / 6 / 0 | 1.000 | 0.048 | rejected (retention) |
+| m=2 | 24 | `start:none:none` | 4 | held-out | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| m=2 | 28 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 | 6 / 6 / 0 | 0.857 | 0.102 | rejected (calibration,retention) |
+| m=2 | 28 | `start:none:none` | 4 | held-out | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| m=2 | 32 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 | 6 / 6 / 1 | 0.857 | 0.179 | rejected (calibration,retention) |
+| m=2 | 32 | `start:none:none` | 3 | held-out | 1.000 / 1.000 | 3 / 3 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| m=3 | 24 | `file_edit:success:other` | 6 | held-out | 1.000 / 0.947 | 6 / 6 / 0 | 1.000 | 0.048 | rejected (retention) |
+| m=3 | 24 | `start:none:none` | 4 | held-out | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| m=3 | 28 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 | 6 / 6 / 0 | 0.857 | 0.102 | rejected (calibration,retention) |
+| m=3 | 28 | `start:none:none` | 4 | held-out | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| m=3 | 32 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 | 6 / 6 / 1 | 0.857 | 0.179 | rejected (calibration,retention) |
+| m=3 | 32 | `start:none:none` | 3 | held-out | 1.000 / 1.000 | 3 / 3 / 0 | 1.000 | 0.000 | active (quality_trust_retention_pass) |
+| m=5 | 24 | `file_edit:success:other` | 6 | held-out | 1.000 / 0.947 | 6 / 6 / 0 | 1.000 | 0.048 | rejected (retention) |
 | m=5 | 24 | `start:none:none` | 4 | probes_only | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (probe_recertified) |
-| m=5 | 28 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 |  | 0.857 | 0.102 | rejected (calibration,retention) |
+| m=5 | 28 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 | 6 / 6 / 0 | 0.857 | 0.102 | rejected (calibration,retention) |
 | m=5 | 28 | `start:none:none` | 4 | probes_only | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (probe_recertified) |
-| m=5 | 32 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 |  | 0.857 | 0.179 | rejected (calibration,retention) |
+| m=5 | 32 | `file_edit:success:other` | 7 | held-out | 0.947 / 0.944 | 6 / 6 / 1 | 0.857 | 0.179 | rejected (calibration,retention) |
 | m=5 | 32 | `start:none:none` | 3 | probes_only | 1.000 / 1.000 | 3 / 3 / 0 | 1.000 | 0.000 | active (probe_recertified) |
 | m=8 | 24 | `file_edit:success:other` | 6 | probes_only | 1.000 / 0.947 | 6 / 6 / 0 | 1.000 | 0.059 | rejected (retention) |
 | m=8 | 24 | `start:none:none` | 4 | probes_only | 1.000 / 1.000 | 4 / 4 / 0 | 1.000 | 0.000 | active (probe_recertified) |

@@ -171,7 +171,12 @@
       "probe_agreement": 0.9375,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 1,
+       "covered": 1,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "insufficient",
@@ -205,7 +210,14 @@
        "probes": 16,
        "coverage": 1.0,
        "agreement": 0.9375,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_list:success:other": {
@@ -340,7 +352,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 0.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 0,
+       "covered": 0,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "insufficient",
@@ -374,7 +391,14 @@
        "probes": 16,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 0,
+        "covered": 0,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_list:success:other": {
@@ -649,7 +673,12 @@
       "probe_agreement": 0.9375,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 1,
+       "covered": 1,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -682,7 +711,14 @@
        "probes": 16,
        "coverage": 1.0,
        "agreement": 0.9375,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 1,
+        "covered": 1,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_list:success:other": {
@@ -823,7 +859,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 0.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 0,
+       "covered": 0,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -856,7 +897,14 @@
        "probes": 16,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 1,
+        "gate_accepted": 0,
+        "covered": 0,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_list:success:other": {
@@ -3199,7 +3247,12 @@
       "probe_agreement": 0.9473684210526315,
       "gate_acceptance": 1.0,
       "ece": 0.047619047619047616,
-      "fresh": null
+      "fresh": {
+       "n": 6,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -3211,7 +3264,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 4,
+       "gate_accepted": 4,
+       "covered": 4,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -3232,7 +3290,14 @@
        "probes": 19,
        "coverage": 1.0,
        "agreement": 0.9473684210526315,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -3342,7 +3407,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 4,
+        "covered": 4,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -3372,7 +3444,12 @@
       "probe_agreement": 0.9444444444444444,
       "gate_acceptance": 0.8571428571428571,
       "ece": 0.1020408163265306,
-      "fresh": null
+      "fresh": {
+       "n": 7,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -3384,7 +3461,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 4,
+       "gate_accepted": 4,
+       "covered": 4,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -3405,7 +3487,14 @@
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -3530,7 +3619,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 4,
+        "covered": 4,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -3560,7 +3656,12 @@
       "probe_agreement": 0.9444444444444444,
       "gate_acceptance": 0.8571428571428571,
       "ece": 0.17857142857142855,
-      "fresh": null
+      "fresh": {
+       "n": 7,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 1
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -3572,7 +3673,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 3,
+       "gate_accepted": 3,
+       "covered": 3,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -3593,7 +3699,14 @@
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 1
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -3718,7 +3831,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -3888,7 +4008,12 @@
       "probe_agreement": 0.9473684210526315,
       "gate_acceptance": 1.0,
       "ece": 0.047619047619047616,
-      "fresh": null
+      "fresh": {
+       "n": 6,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -3900,7 +4025,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 4,
+       "gate_accepted": 4,
+       "covered": 4,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -3921,7 +4051,14 @@
        "probes": 19,
        "coverage": 1.0,
        "agreement": 0.9473684210526315,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -4031,7 +4168,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 4,
+        "covered": 4,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -4061,7 +4205,12 @@
       "probe_agreement": 0.9444444444444444,
       "gate_acceptance": 0.8571428571428571,
       "ece": 0.1020408163265306,
-      "fresh": null
+      "fresh": {
+       "n": 7,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -4073,7 +4222,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 4,
+       "gate_accepted": 4,
+       "covered": 4,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -4094,7 +4248,14 @@
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -4219,7 +4380,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 4,
+        "covered": 4,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -4249,7 +4417,12 @@
       "probe_agreement": 0.9444444444444444,
       "gate_acceptance": 0.8571428571428571,
       "ece": 0.17857142857142855,
-      "fresh": null
+      "fresh": {
+       "n": 7,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 1
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -4261,7 +4434,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 3,
+       "gate_accepted": 3,
+       "covered": 3,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -4282,7 +4460,14 @@
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 1
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -4407,7 +4592,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -4577,7 +4769,12 @@
       "probe_agreement": 0.9473684210526315,
       "gate_acceptance": 1.0,
       "ece": 0.047619047619047616,
-      "fresh": null
+      "fresh": {
+       "n": 6,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -4589,7 +4786,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 4,
+       "gate_accepted": 4,
+       "covered": 4,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -4610,7 +4812,14 @@
        "probes": 19,
        "coverage": 1.0,
        "agreement": 0.9473684210526315,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -4720,7 +4929,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 4,
+        "covered": 4,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -4750,7 +4966,12 @@
       "probe_agreement": 0.9444444444444444,
       "gate_acceptance": 0.8571428571428571,
       "ece": 0.1020408163265306,
-      "fresh": null
+      "fresh": {
+       "n": 7,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -4762,7 +4983,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 4,
+       "gate_accepted": 4,
+       "covered": 4,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -4783,7 +5009,14 @@
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -4908,7 +5141,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 4,
+        "covered": 4,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -4938,7 +5178,12 @@
       "probe_agreement": 0.9444444444444444,
       "gate_acceptance": 0.8571428571428571,
       "ece": 0.17857142857142855,
-      "fresh": null
+      "fresh": {
+       "n": 7,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 1
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -4950,7 +5195,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 3,
+       "gate_accepted": 3,
+       "covered": 3,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -4971,7 +5221,14 @@
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 1
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -5096,7 +5353,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -5266,7 +5530,12 @@
       "probe_agreement": 0.9473684210526315,
       "gate_acceptance": 1.0,
       "ece": 0.047619047619047616,
-      "fresh": null
+      "fresh": {
+       "n": 6,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -5278,7 +5547,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 4,
+       "gate_accepted": 4,
+       "covered": 4,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -5299,7 +5573,14 @@
        "probes": 19,
        "coverage": 1.0,
        "agreement": 0.9473684210526315,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -5409,7 +5690,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 4,
+        "covered": 4,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -5439,7 +5727,12 @@
       "probe_agreement": 0.9444444444444444,
       "gate_acceptance": 0.8571428571428571,
       "ece": 0.1020408163265306,
-      "fresh": null
+      "fresh": {
+       "n": 7,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -5451,7 +5744,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 4,
+       "gate_accepted": 4,
+       "covered": 4,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -5472,7 +5770,14 @@
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -5597,7 +5902,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 4,
+        "gate_accepted": 4,
+        "covered": 4,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -5627,7 +5939,12 @@
       "probe_agreement": 0.9444444444444444,
       "gate_acceptance": 0.8571428571428571,
       "ece": 0.17857142857142855,
-      "fresh": null
+      "fresh": {
+       "n": 7,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 1
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -5639,7 +5956,12 @@
       "probe_agreement": 1.0,
       "gate_acceptance": 1.0,
       "ece": 0.0,
-      "fresh": null
+      "fresh": {
+       "n": 3,
+       "gate_accepted": 3,
+       "covered": 3,
+       "disagreements": 0
+      }
      }
     },
     "families": {
@@ -5660,7 +5982,14 @@
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 1
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -5785,7 +6114,14 @@
        "probes": 10,
        "coverage": 1.0,
        "agreement": 1.0,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 3,
+        "gate_accepted": 3,
+        "covered": 3,
+        "disagreements": 0
+       }
       }
      }
     }
@@ -5955,7 +6291,12 @@
       "probe_agreement": 0.9473684210526315,
       "gate_acceptance": 1.0,
       "ece": 0.047619047619047616,
-      "fresh": null
+      "fresh": {
+       "n": 6,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -5993,7 +6334,14 @@
        "probes": 19,
        "coverage": 1.0,
        "agreement": 0.9473684210526315,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 6,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -6140,7 +6488,12 @@
       "probe_agreement": 0.9444444444444444,
       "gate_acceptance": 0.8571428571428571,
       "ece": 0.1020408163265306,
-      "fresh": null
+      "fresh": {
+       "n": 7,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 0
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -6178,7 +6531,14 @@
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 0
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -6340,7 +6700,12 @@
       "probe_agreement": 0.9444444444444444,
       "gate_acceptance": 0.8571428571428571,
       "ece": 0.17857142857142855,
-      "fresh": null
+      "fresh": {
+       "n": 7,
+       "gate_accepted": 6,
+       "covered": 6,
+       "disagreements": 1
+      }
      },
      "laruche:start:none:none": {
       "status": "active",
@@ -6378,7 +6743,14 @@
        "probes": 19,
        "coverage": 0.9473684210526315,
        "agreement": 0.9444444444444444,
-       "incumbent_coverage": 1.0
+       "incumbent_coverage": 1.0,
+       "evidence": "held-out",
+       "fresh": {
+        "n": 7,
+        "gate_accepted": 6,
+        "covered": 6,
+        "disagreements": 1
+       }
       }
      },
      "laruche:file_read:success:other": {
@@ -7304,7 +7676,12 @@
      "probe_agreement": 0.0625,
      "gate_acceptance": 0.0,
      "ece": 0.75,
-     "fresh": null
+     "fresh": {
+      "n": 1,
+      "gate_accepted": 0,
+      "covered": 0,
+      "disagreements": 0
+     }
     },
     "laruche:start:none:none": {
      "status": "insufficient",
@@ -7337,7 +7714,14 @@
       "probes": 16,
       "coverage": 1.0,
       "agreement": 0.0625,
-      "incumbent_coverage": 1.0
+      "incumbent_coverage": 1.0,
+      "evidence": "held-out",
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 0,
+       "covered": 0,
+       "disagreements": 0
+      }
      }
     },
     "laruche:file_list:success:other": {
@@ -7472,7 +7856,12 @@
      "probe_agreement": 0.0625,
      "gate_acceptance": 0.0,
      "ece": 0.75,
-     "fresh": null
+     "fresh": {
+      "n": 1,
+      "gate_accepted": 0,
+      "covered": 0,
+      "disagreements": 0
+     }
     },
     "laruche:start:none:none": {
      "status": "active",
@@ -7505,7 +7894,14 @@
       "probes": 16,
       "coverage": 1.0,
       "agreement": 0.0625,
-      "incumbent_coverage": 1.0
+      "incumbent_coverage": 1.0,
+      "evidence": "held-out",
+      "fresh": {
+       "n": 1,
+       "gate_accepted": 0,
+       "covered": 0,
+       "disagreements": 0
+      }
      }
     },
     "laruche:file_list:success:other": {
