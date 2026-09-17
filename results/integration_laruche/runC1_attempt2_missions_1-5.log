@@ -1,0 +1,38 @@
+provider openai model deepseek-v4-flash paradigm ON
+
+mission 1 phase 1 [P1] 36.2s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   tool  REFUSED shell_exec for c in ffmpeg imagesnap; do printf '%s: ' "$c"; command -v "$c" || echo "absent"; done; sw_vers 2>/dev/null; echo "---"; ls ~/Pictures 2>/dev/null | head
+   [LLM]      camera                 1.7 s   (no_active_reflex)
+   [LLM]      camera                 1.5 s   (no_active_reflex)
+   [LLM]      shell_exec             13.6 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 2 phase 1 [P2] 21.9s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.8 s   (no_active_reflex)
+   [LLM]      camera                 1.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 3 phase 1 [N1] 32.3s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  computer screenshot
+   tool  REFUSED shell_exec mkdir -p captures && screencapture -x captures/capture_$(date +%Y%m%d_%H%M%S).png && ls -lh captures/
+   [LLM]      computer               2.1 s   (no_active_reflex)
+   [LLM]      shell_exec             11.6 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 4 phase 1 [P3] 21.3s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 2.1 s   (no_active_reflex)
+   [LLM]      camera                 0.0 s   (no_decision_requested)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 5 phase 1 [P4] 20.4s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 2.2 s   (no_active_reflex)
+   [LLM]      camera                 0.0 s   (no_decision_requested)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
