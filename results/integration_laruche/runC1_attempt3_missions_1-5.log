@@ -1,0 +1,28 @@
+provider openai model deepseek-v4-flash paradigm ON
+
+mission 1 phase 1 [P1] 20.7s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 2.3 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 2 phase 1 [P2] 21.6s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.7 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 3 phase 1 [N1] 18.3s  laruche: finished  captures: 0  forbidden: 0  verdict: SUCCESS
+   tool  computer screenshot
+   [LLM]      computer               1.2 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 4 phase 1 [P3] 20.4s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera capture
+   [LLM]      camera                 1.6 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
+
+mission 5 phase 1 [P4] 23.4s  laruche: finished  captures: 1  forbidden: 0  verdict: SUCCESS
+   tool  camera list
+   tool  camera capture
+   [LLM]      camera                 1.3 s   (no_active_reflex)
+   [LLM]      camera                 1.3 s   (no_active_reflex)
+   [LLM]      (control call)         0.0 s   (no_active_reflex)
