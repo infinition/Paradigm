@@ -1,0 +1,32 @@
+{
+  "source": "gen_a",
+  "language": "fr",
+  "count": 20,
+  "note": "Written without sight of the gen_b batch. Four formulations per intention, indices j=0..3 inside each intention, crossed with state families by the frozen rotation in PREREG.md. The constant constraint suffix is added by the harness and is not part of a formulation.",
+  "formulations": [
+    {"id": "gen_a-I1-0", "intention": "I1", "j": 0, "text": "Les tests ne passent pas dans ce projet. Trouve ce qui cloche, corrige-le, et assure-toi que la suite passe ensuite."},
+    {"id": "gen_a-I1-1", "intention": "I1", "j": 1, "text": "Ça casse. Répare calc.py et vérifie que tout est vert après."},
+    {"id": "gen_a-I1-2", "intention": "I1", "j": 2, "text": "Peux-tu regarder pourquoi la suite échoue, faire la correction qu'il faut, puis relancer les tests ?"},
+    {"id": "gen_a-I1-3", "intention": "I1", "j": 3, "text": "Le module de calcul a un défaut quelque part. Corrige-le et confirme avec les tests."},
+
+    {"id": "gen_a-I2-0", "intention": "I2", "j": 0, "text": "Explique-moi pourquoi les tests échouent, sans rien modifier."},
+    {"id": "gen_a-I2-1", "intention": "I2", "j": 1, "text": "Je veux comprendre la cause de l'échec avant qu'on touche au code. Fais le diagnostic seulement."},
+    {"id": "gen_a-I2-2", "intention": "I2", "j": 2, "text": "Qu'est-ce qui ne va pas dans calc.py ? Ne corrige rien, dis-moi juste le problème."},
+    {"id": "gen_a-I2-3", "intention": "I2", "j": 3, "text": "Analyse l'échec de la suite de tests et laisse le code tel quel."},
+
+    {"id": "gen_a-I3-0", "intention": "I3", "j": 0, "text": "Est-ce que la suite de tests passe en l'état ?"},
+    {"id": "gen_a-I3-1", "intention": "I3", "j": 1, "text": "Dis-moi simplement si le projet est vert ou rouge."},
+    {"id": "gen_a-I3-2", "intention": "I3", "j": 2, "text": "Vérifie l'état des tests, rien d'autre."},
+    {"id": "gen_a-I3-3", "intention": "I3", "j": 3, "text": "Où en est ce projet côté tests ?"},
+
+    {"id": "gen_a-I4-0", "intention": "I4", "j": 0, "text": "On m'a signalé {bug} dans calc.py. Corrige et vérifie."},
+    {"id": "gen_a-I4-1", "intention": "I4", "j": 1, "text": "Le problème est identifié : {bug}. Applique le correctif et confirme que les tests passent."},
+    {"id": "gen_a-I4-2", "intention": "I4", "j": 2, "text": "Il y a {bug} là-dedans. Répare, puis relance la suite."},
+    {"id": "gen_a-I4-3", "intention": "I4", "j": 3, "text": "Inutile de chercher longtemps, c'est {bug}. Fais la correction et valide."},
+
+    {"id": "gen_a-I5-0", "intention": "I5", "j": 0, "text": "Corrige le bug sans toucher au fichier de tests."},
+    {"id": "gen_a-I5-1", "intention": "I5", "j": 1, "text": "Répare ça, mais je ne veux aucune modification ailleurs que dans calc.py."},
+    {"id": "gen_a-I5-2", "intention": "I5", "j": 2, "text": "Fais la correction la plus petite possible qui fait passer la suite, sans rien casser d'autre."},
+    {"id": "gen_a-I5-3", "intention": "I5", "j": 3, "text": "Corrige en gardant le reste intact, et vérifie qu'il n'y a pas de régression."}
+  ]
+}
