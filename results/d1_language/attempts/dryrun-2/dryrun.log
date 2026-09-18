@@ -1,0 +1,71 @@
+D1-language  attempt dryrun-2  model deepseek-v4-flash  paradigm ON  missions 5
+manifest /Users/infinition/Coding/paradigm/results/d1_language/missions.json
+hard stop: 800 deliberative decisions or 8000000 tokens
+
+mission 1 [gen_a-I1-0] I1/S1/gen_a 11.7s  laruche: finished  verdict: SUCCESS  decisions: 6  tokens: 61189
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/calc.py
+   tool  REFUSED execute_code
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -m unittest -v test_calc
+   cumulative  6 decisions  61189 tokens
+
+mission 19 [gen_a-I2-1] I2/S2/gen_a 38.4s  laruche: finished  verdict: SUCCESS  decisions: 10  tokens: 115605
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -m unittest -v 2>&1; echo "EXIT=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && ls -la && echo "---FIND---" && find . -type f -not -path './.git/*' | sort && echo "---GIT---" && git status 2>&1 | head -20 && echo "---PY---" && python3 --version && which -a python3
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -m unittest -v
+   tool  math_eval 
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -c "print(1+1)"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -c "from calc import total; v=total(100); print('total(100) =', repr(v)); print('egal 120.0 ?', v==120.0); print('flottant interne =', repr(100*(1+0.2)))"
+   cumulative  16 decisions  176794 tokens
+[contract] fichier inattendu: stats-outils.json
+
+mission 34 [gen_a-I3-0] I3/S3/gen_a 10.5s  laruche: finished  verdict: FAILURE  decisions: 6  tokens: 59450
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace
+   tool  system_info 
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -m unittest discover -v 2>&1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -m unittest discover -v 2>&1 | cat; echo "EXIT=${PIPESTATUS[0]}"
+   cumulative  22 decisions  236244 tokens
+
+mission 51 [gen_a-I4-1] I4/S2/gen_a 47.5s  laruche: finished  verdict: SUCCESS  decisions: 10  tokens: 64259
+   diagnostic  edits: 0  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace
+   tool  system_info 
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -m pytest -v 2>&1; echo "--- exit: $?"; echo "=== unittest ==="; python3 -m unittest -v 2>&1; echo "--- exit: $?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && echo "=== ls -la ==="; ls -la; echo "=== find ==="; find . -not -path '*/.git/*' -not -name '.git'; echo "=== git ==="; git status 2>&1 | head -20; echo "=== python -c import ==="; python3 -c "import calc; print('import ok ->', calc.root(81))" 2>&1; echo "=== grep import ==="; grep -rn "import" . 2>/dev/null
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -W error -c "
+import ast, sys
+for f in ['calc.py','test_calc.py']:
+    ast.parse(open(f).read())
+    print(f, 'parses OK')
+"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -m pytest -v; echo "EXIT=$?"
+   cumulative  32 decisions  300503 tokens
+
+mission 68 [gen_a-I5-1] I5/S4/gen_a 14.6s  laruche: finished  verdict: SUCCESS  decisions: 8  tokens: 87684
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/test_calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -m unittest test_calc -v 2>&1 | tail -20
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && shasum -a 256 util.py test_calc.py calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace && python3 -m unittest test_calc -v 2>&1 | tail -20 && echo "--- hashes ---" && shasum -a 256 util.py test_calc.py calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpBaiaY5/workspace/calc.py
+   cumulative  40 decisions  388187 tokens
+
+D1-language: 4/5 missions SUCCESS

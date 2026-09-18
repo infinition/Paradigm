@@ -1,0 +1,99 @@
+D1-language  attempt dryrun-3  model deepseek-v4-flash  paradigm ON  missions 5
+manifest /Users/infinition/Coding/paradigm/results/d1_language/missions.json
+hard stop: 800 deliberative decisions or 8000000 tokens
+
+mission 1 [gen_a-I1-0] I1/S1/gen_a 117.6s  laruche: finished  verdict: SUCCESS  decisions: 26  tokens: 374527
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list .
+   tool  system_info 
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  REFUSED shell_exec
+   tool  REFUSED execute_code
+   tool  file_edit calc.py
+   tool  REFUSED shell_exec
+   tool  file_read calc.py
+   tool  REFUSED shell_exec
+   tool  math_eval 
+   tool  shell_exec echo ok
+   tool  REFUSED shell_exec
+   tool  REFUSED shell_exec
+   tool  REFUSED shell_exec
+   tool  shell_exec ls -la /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace
+   tool  REFUSED computer
+   tool  REFUSED shell_exec
+   tool  REFUSED shell_exec
+   tool  REFUSED execute_code
+   tool  shell_exec echo hello python3 world
+   tool  shell_exec ls . && echo ok
+   tool  REFUSED shell_exec
+   tool  REFUSED shell_exec
+   tool  REFUSED shell_exec
+   tool  shell_exec cat test_calc.py
+   tool  shell_exec date
+   tool  shell_exec ls -R .
+   tool  shell_exec cat calc.py
+   tool  REFUSED shell_exec
+   tool  shell_exec ls -la .
+   tool  shell_exec pytest -v
+   cumulative  26 decisions  374527 tokens
+
+mission 19 [gen_a-I2-1] I2/S2/gen_a 90.9s  laruche: finished  verdict: SUCCESS  decisions: 7  tokens: 96462
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list .
+   tool  system_info 
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  REFUSED shell_exec
+   tool  REFUSED execute_code
+   tool  git_status 
+   tool  git_log 
+   tool  file_search .
+   tool  file_list .
+   tool  file_list __pycache__
+   tool  file_search .
+   tool  math_eval 
+   tool  math_eval 
+   tool  math_eval 
+   tool  math_eval 
+   tool  math_eval 
+   cumulative  33 decisions  470989 tokens
+
+mission 34 [gen_a-I3-0] I3/S3/gen_a 15.1s  laruche: finished  verdict: SUCCESS  decisions: 6  tokens: 60005
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list .
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  REFUSED shell_exec
+   tool  REFUSED execute_code
+   tool  math_eval 
+   tool  math_eval 
+   cumulative  39 decisions  530994 tokens
+
+mission 51 [gen_a-I4-1] I4/S2/gen_a 25.1s  laruche: finished  verdict: SUCCESS  decisions: 6  tokens: 50265
+   diagnostic  edits: 0  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace
+   tool  git_status 
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace/test_calc.py
+   tool  REFUSED shell_exec
+   tool  REFUSED shell_exec
+   tool  REFUSED execute_code
+   tool  lsp 
+   tool  lsp 
+   cumulative  45 decisions  581259 tokens
+
+mission 68 [gen_a-I5-1] I5/S4/gen_a 14.2s  laruche: finished  verdict: SUCCESS  decisions: 8  tokens: 88307
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace && ls -la && git status 2>&1 | head -30
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace/test_calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace/util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace && md5 calc.py util.py test_calc.py && python3 -m unittest -v test_calc 2>&1 | tail -15
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace && python3 -m unittest -v test_calc 2>&1 | tail -8 && echo "--- md5 after ---" && md5 calc.py util.py test_calc.py && echo "--- files ---" && ls -la
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmp4Gty35/workspace && python3 -B -m unittest -v test_calc 2>&1 | tail -6 && echo "--- md5 final ---" && md5 calc.py util.py test_calc.py && echo "--- contenu calc.py ---" && cat calc.py
+   cumulative  53 decisions  669566 tokens
+
+D1-language: 5/5 missions SUCCESS

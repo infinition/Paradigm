@@ -84,6 +84,22 @@ B1 = learned procedural representation    (not started; candidate methods only: 
 
 D1, source: real LaRuche + DeepSeek missions; Paradigm observes only, no training or promotion during collection; the existing outcome contract stays authoritative; only verified successful experience can become positive evidence; capture per step `goal, state, candidate action, teacher decision, verified action outcome, episode outcome`. Fix the D1 size only after the cost and diversity pilot. B1's baseline is the current stack (`A+S+E+T`, current classifier and gate) under the same certification protocol, then a prospective replication on a new distribution before any claim of generalization. No B1 work of any kind before D1 is finished and frozen.
 
+## B1: the goal-conditioned policy result (`experiments/micro_env/`)
+
+A deterministic grid world with symbolic goals, no language and no provider, built after the
+language collection was cancelled. Before any training, the design was checked: the goal
+changes the expert action on 98% of distinct states, so neither arm can win by construction.
+
+```text
+unseen goal/layout pairs        goal 0.203, state 0.537, goal+state 0.770   baseline 0.201
+unseen layouts                  goal 0.177, state 0.340, goal+state 0.606
+15,413 samples, 9 goals, 200 layouts, 5 seeds
+```
+
+Neither the goal nor the state alone is sufficient; together they generalize substantially
+better to pairings and layouts never seen. The gain over the state alone is about thirty
+times the seed spread. It says nothing about natural language, which stays open.
+
 ## D1 state (everything is in `results/d1_experience/`)
 
 The pilot is pre-registered in `pilot_prereg.md`, with its outcome sections; the 24 missions, their order and their verbatim prompts are frozen in `missions.json` (sha256 in `MANIFEST.md`) and read by the harness so it cannot drift from the pre-registration. 12 code missions (three request templates over the three bug variants of `paradigm_demo`), then 12 camera missions (capture, list only, preview, negation, future, past, conditional, screenshot, unrelated).

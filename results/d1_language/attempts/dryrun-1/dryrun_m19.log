@@ -1,0 +1,24 @@
+D1-language  attempt dryrun-1  model deepseek-v4-flash  paradigm ON  missions 1
+manifest /Users/infinition/Coding/paradigm/results/d1_language/missions.json
+hard stop: 800 deliberative decisions or 8000000 tokens
+
+mission 19 [gen_a-I2-1] I2/S2/gen_a 52.1s  laruche: finished  verdict: SUCCESS  decisions: 10  tokens: 91871
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list .
+   tool  system_info 
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  REFUSED shell_exec
+   tool  file_read sessions/butinage/57be83bb-0b31-4aa4-83a7-b6c3e36b4608.carnet.json
+   tool  read_extract sessions/butinage/57be83bb-0b31-4aa4-83a7-b6c3e36b4608.carnet.events.jsonl
+   tool  file_search .
+   tool  git_status 
+   tool  file_read sessions/butinage/57be83bb-0b31-4aa4-83a7-b6c3e36b4608.carnet.events.jsonl
+   tool  file_read sessions/butinage/57be83bb-0b31-4aa4-83a7-b6c3e36b4608.carnet.lock
+   tool  REFUSED execute_code
+   tool  file_search .
+   tool  file_search .
+   tool  file_search .
+   cumulative  61 decisions  697065 tokens
+
+D1-language: 1/1 missions SUCCESS

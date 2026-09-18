@@ -32,6 +32,25 @@ Both branches are verified by the harness from the workspace itself, never from 
 
 For I4 in the state with no bug, where the defect is claimed but absent, the fix branch applies: a mission that checks and changes nothing leaves a green suite and passes, and one that edits and breaks the suite fails.
 
+## General precondition, in force from now on: a contract branch is never first exercised by a costly block
+
+Extends the rule that made a hardware preflight mandatory, and for the same reason. Attempt `d1lang-1` spent 2.54M tokens discovering that one branch of its outcome contract was wrong, and the fault was visible at its first use, mission 17.
+
+```text
+new or changed outcome contract
+  -> a dry run exercising every branch, on real missions, before any costly block
+  -> a branch that has never been exercised may not gate a block
+```
+
+The dry run uses a separate attempt id, a fresh state and its own trace. It is a preflight and never evidence: its episodes enter no dataset, its cost is counted as an incident cost, and its missions are run again in full by the block that follows.
+
+Cost accounting is kept in two separate lines that are never added together:
+
+```text
+invalid attempts and preflights   cost of incidents, never data
+the valid run                     the scientific cost
+```
+
 ## The four axes
 
 Five procedural intentions, distinct by the procedure they call for and not by vocabulary:
