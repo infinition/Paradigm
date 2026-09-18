@@ -139,6 +139,31 @@ camera preflight FAIL  ->  no attempt starts
 
 For the camera that check is `camera_preflight`, run under Terminal.app immediately before the block. It must show `list` succeeding **and** `capture` returning an image that actually decodes as a PNG with plausible dimensions, not merely a call that returns. `a2` failed for want of ten seconds of this: the tool was available, the device was listed, and capture never returned, which three positive missions at about 305 seconds each discovered the expensive way.
 
+## What the pilot has established about the design of the real D1
+
+Recorded while the camera block is still pending, because it does not depend on that block's results and it is the question the pilot exists to answer: does real experience, collected this way, carry the diversity the next branch needs.
+
+```text
+code domain      69 decisions over 12 missions,  2 distinct goal formulations
+camera domain   about 11 decisions over 12 missions, 12 distinct formulations
+```
+
+The code figure is measured on the valid block `a3-code-1`. The camera figure is a structural property of the domain, not a result: a camera mission is a single shot, the teacher calls one tool or none and finishes, and the finishing call is never observed, so a request like "do I have a webcam" yields zero or one observed decision. The per mission step counts that show this come from the invalidated attempt `a2` and are used here as an engineering fact about mission shape, never as evidence.
+
+The consequence is that neither domain, as frozen, can carry the language question. The code domain has the state depth and two formulations; the camera domain has twelve formulations and too few decisions to fit anything. For learning whether a procedural representation generalizes to new phrasings, the unit that matters is the distinct formulation, not the step, so repeating twelve phrases more often adds decisions and no linguistic variation at all.
+
+What a collection designed for that question needs, fixed here before it is designed:
+
+```text
+many distinct formulations per intention, not repetitions of a few
+several intentions
+a domain that yields several decisions per mission, which the code domain does
+  and the camera domain does not
+the two varying together, so that the same goal can meet different states
+```
+
+The camera block is still run, to close the pilot on cost, action diversity and the physical domain working again, and it is not asked to answer the language question. The frozen missions are not modified to manufacture formulations; a collection for the language question is a new pre-registration and a new mission set, and it is the sizing decision the pilot was meant to inform.
+
 ## Pilot safety hard stop
 
 Not a scientific criterion, a protection against a looping harness or a teacher trajectory running abnormally long, confirmed by the user: the 24-mission pilot stops immediately if cumulative model calls exceed 200, or cumulative tokens exceed 2,000,000, whichever comes first, counted across both domains from the start of the pilot. A stop under this rule is reported as an incident, exactly like the harness faults recorded in `camera_prereg.md`'s addenda, and does not by itself decide the diversity question.
