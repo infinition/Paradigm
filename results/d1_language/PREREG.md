@@ -90,10 +90,17 @@ Neither property is a defect of the batches. They are what two independent gener
 ## Splits, and what each one answers
 
 ```text
-primary    leave-formulation-out    10 of the 40 formulations, with both of their
-                                    missions, held out. No test phrase is seen in
-                                    training. Answers: does it generalize to a new
-                                    formulation.
+primary    leave-formulation-out    four folds of 10 formulations, with both of
+                                    their missions, so every formulation is tested
+                                    once and no test phrase is seen in training.
+                                    Fold of a formulation, fixed here: for the
+                                    intention of index k and fold f, gen_a holds
+                                    j = (f+k) mod 4 and gen_b holds
+                                    j = 4 + ((f+k+2) mod 4), which puts 2
+                                    formulations of every intention and 5 of every
+                                    source in each fold and spreads the four state
+                                    families across it. Answers: does it generalize
+                                    to a new formulation.
 transfer   leave-source-out         train on gen_a, test on gen_b, then the reverse.
                                     Answers: does it survive a change of generator
                                     and style, which is exactly what C6R discovered
