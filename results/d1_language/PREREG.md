@@ -40,6 +40,14 @@ gen_b   20 formulations, written by a second language model
 
 Both are synthetic. No human-written slice is claimed. The two batches are written independently and neither generator sees the other's batch before writing its own; `gen_a` is committed first and is not shown in the conversation, so that the second batch is not anchored on it.
 
+## Shared specification both generators must follow, fixed before either writes
+
+**Language.** Every formulation is in French, for both generators. The whole intent line was French and mixing languages across generators would confound the transfer test with a translation effect. The English scaffold of the pilot's prompt is dropped.
+
+**Constant constraint suffix.** Each mission prompt is one formulation followed by the same suffix, identical in all 80 missions: the workspace path, and the instructions not to install anything, not to touch anything outside it, and never to modify the test file. Being identical everywhere it carries no discriminative signal, and the path is stripped before encoding. A formulation therefore does not need to restate the constraints, and must not.
+
+**The `{bug}` slot of intention I4.** I4 names the defect, which is what moves its entry point past the diagnosis, so its formulations cannot name a fixed defect while the injected bug rotates. An I4 formulation contains the slot `{bug}`, filled by the harness with the description of the bug actually injected in that mission: a wrong constant, a missing import, an off-by-one bound. In the `S2` state, where no bug is injected, the slot is filled with a rotated plausible defect, which makes those missions the case of a defect claimed but absent, where the procedure is to check and report rather than to edit. No other intention uses a slot.
+
 ## Crossing plan, fixed before any formulation exists
 
 Each formulation appears in exactly two of the four state families, by systematic rotation on its index `j` inside its intention:
