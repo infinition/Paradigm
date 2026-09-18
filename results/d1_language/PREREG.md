@@ -150,6 +150,18 @@ Global, then per intention, then per state family, for every arm and every split
 
 **Cost of open formulations.** The per-mission cost measured here is compared to the pilot's, whose prompt dictated the procedure step by step. A difference is a result about the goal's form changing the cost of deliberation, not only the trajectory, and is reported as such.
 
+## Order in which the result is read, fixed before it exists
+
+Not a new analysis, an ordering of the ones already specified, so that the conclusion cannot be reached by stopping at the first favourable step.
+
+```text
+1  does goal + state actually beat state only
+2  does the gain hold at comparable intention
+3  does it hold when trajectory depth is controlled
+4  does it hold under leave-source-out, including on the normalized text
+5  only then may a signal be attributed to procedural intent
+```
+
 ## Verdict, fixed now
 
 ```text
