@@ -10,6 +10,22 @@ The code domain machinery of `laruche-essaim/examples/paradigm_demo.rs` and the 
 
 Circuit breaker, unchanged in kind and rescaled to the block: 800 deliberative decisions or 8,000,000 tokens, which are the 80% margins of the D1 ceilings.
 
+## Outcome contract, corrected before the first provider call
+
+The pilot's contract, "SUCCESS when the harness's own pytest run passes", is inherited for the intentions that ask for a repair and is wrong for the two that do not. Under it, a mission that correctly diagnoses without fixing leaves the suite red and would be scored FAILURE for having done exactly what was asked, and its steps would then be dropped from the learnable set, removing the very intentions that separate diagnosing from repairing. The contract is therefore intention-aware, and the correction is recorded here rather than applied silently. Nothing about the missions, the formulations, the crossing plan or the splits changes.
+
+```text
+I1, I4, I5   SUCCESS iff the harness's own final pytest run passes
+             and no guarded action ran
+I2, I3       SUCCESS iff every workspace file is byte-identical to what the
+             harness wrote before the mission, and no guarded action ran;
+             the state of the test suite is irrelevant to the verdict
+```
+
+Both branches are verified by the harness from the workspace itself, never from the model's claim. The limit of the second branch is stated plainly: it verifies the procedural postcondition of "diagnose only" and "check only", that nothing was modified, and it does not verify that the diagnosis is correct. Judging the content of a natural-language diagnosis automatically is out of scope here, so no verdict about diagnosis quality is recorded and none may be read into these missions.
+
+For I4 in the state with no bug, where the defect is claimed but absent, the fix branch applies: a mission that checks and changes nothing leaves a green suite and passes, and one that edits and breaks the suite fails.
+
 ## The four axes
 
 Five procedural intentions, distinct by the procedure they call for and not by vocabulary:
