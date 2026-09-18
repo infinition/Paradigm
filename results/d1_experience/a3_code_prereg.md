@@ -112,4 +112,14 @@ Trace frozen, sha256 in `TRACE_SHA256.txt`. It is the B0 dataset: 69 learnable s
 
 ## Outcome, B0
 
-Not run.
+```text
+trivial baseline, always shell_exec        0.420
+B0-A  goal                    top-1  0.362 +/- 0.013
+B0-B  goal + state            top-1  0.754 +/- 0.018
+B0-C  goal + action           top-1  0.339 +/- 0.012
+B0-D  goal + state + action   top-1  0.652 +/- 0.022
+```
+
+SIGNAL CLAIR on the narrow question: `goal + state` beats `goal only` by 0.39, about twenty times the seed spread, and the trivial baseline by 0.33. The state carries the procedure.
+
+Two qualifications belong to the result. The block has two distinct goal texts, so `goal only` sits near the trivial baseline by construction and nothing here speaks about language or about generalization to new phrasings. And the action-conditioned scoring arm does not win: `goal + state + action` reaches 0.652 against 0.754 for the plain multi-class arm on the same features, outside the seed spread, so on this data framing the decision as per-candidate scoring costs accuracy instead of adding signal. Full numbers and their reading in `experiments/decision_model_v0/RESULTS.md`.
