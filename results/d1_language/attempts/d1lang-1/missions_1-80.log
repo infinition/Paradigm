@@ -1,0 +1,405 @@
+D1-language  attempt d1lang-1  model deepseek-v4-flash  paradigm ON  missions 80
+manifest /Users/infinition/Coding/paradigm/results/d1_language/missions.json
+hard stop: 800 deliberative decisions or 8000000 tokens
+
+mission 1 [gen_a-I1-0] I1/S1/gen_a 11.2s  laruche: finished  verdict: SUCCESS  decisions: 6  tokens: 60949
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1; echo "EXIT=$?"
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1; echo "EXIT=$?"
+   cumulative  6 decisions  60949 tokens
+
+mission 2 [gen_a-I1-0] I1/S3/gen_a 15.5s  laruche: finished  verdict: SUCCESS  decisions: 9  tokens: 100203
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd "/private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace" && python3 -m unittest -v test_calc 2>&1
+   tool  shell_exec cd "/private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace" && python3 -m unittest -v test_calc.py 2>&1 | cat
+   tool  file_edit /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  shell_exec cd "/private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace" && python3 -m unittest -v test_calc.py 2>&1 | cat
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   cumulative  15 decisions  161152 tokens
+
+mission 3 [gen_a-I1-1] I1/S2/gen_a 26.1s  laruche: finished  verdict: SUCCESS  decisions: 8  tokens: 88088
+   diagnostic  edits: 0  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v 2>&1
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/0f0086c8-abfc-4fc8-a554-7435c232a7e3.carnet.json
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/0f0086c8-abfc-4fc8-a554-7435c232a7e3.carnet.events.jsonl
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v 2>&1
+   cumulative  23 decisions  249240 tokens
+
+mission 4 [gen_a-I1-1] I1/S4/gen_a 38.8s  laruche: finished  verdict: SUCCESS  decisions: 9  tokens: 103543
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && ls -la && echo "--- TEST ---" && python3 -m unittest -v test_calc 2>&1 | tail -20
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/3620d4a6-e383-4bce-a306-846b500d9f4b.carnet.json
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== ALL FILES (incl. hidden) ===" && find . -not -path '*/.git/*' | sort && echo && echo "=== GIT ===" && git status 2>&1 | head -20 && echo "=== EVENTS ===" && cat sessions/butinage/*.events.jsonl && echo "=== PY VERSION ===" && python3 --version
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "SHA_TESTS=$(shasum -a 256 test_calc.py | cut -d' ' -f1)" && echo "SHA_CALC=$(shasum -a 256 calc.py | cut -d' ' -f1)" && echo "SHA_UTIL=$(shasum -a 256 util.py | cut -d' ' -f1)" && echo "--- comportement actuel ---" && python3 -c "from calc import total; from util import rate; print('rate()=',rate()); print('total(100)=',total(100)); print('attendu par le test= 120.0')"
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== UTIL APRES ===" && cat util.py && echo "=== TESTS ===" && python3 -m unittest -v test_calc 2>&1 && echo "=== VERIF VALEUR ===" && python3 -c "from calc import total; print('total(100) =', total(100)); print('total(50)  =', total(50))" && echo "=== INTEGRITE FICHIERS ===" && echo "SHA_TESTS=$(shasum -a 256 test_calc.py | cut -d' ' -f1)" && echo "SHA_CALC=$(shasum -a 256 calc.py | cut -d' ' -f1)" && echo "SHA_UTIL=$(shasum -a 256 util.py | cut -d' ' -f1)" && echo "=== ARBORESCENCE ===" && find . -not -path './__pycache__/*' | sort
+   cumulative  32 decisions  352783 tokens
+
+mission 5 [gen_a-I1-2] I1/S1/gen_a 10.6s  laruche: finished  verdict: SUCCESS  decisions: 6  tokens: 59976
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v test_calc 2>&1; echo "EXIT=$?"
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "--- calc.py ---" && cat calc.py && echo "--- test_calc.py (doit être intact) ---" && cat test_calc.py && echo "--- RUN ---" && python3 -m unittest -v test_calc 2>&1; echo "EXIT=$?"
+   cumulative  38 decisions  412759 tokens
+
+mission 6 [gen_a-I1-2] I1/S4/gen_a 9.0s  laruche: finished  verdict: SUCCESS  decisions: 6  tokens: 60315
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/util.py
+   tool  shell_exec cd /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1 | tail -30
+   tool  file_edit /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/util.py
+   tool  shell_exec cd /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1 | tail -20
+   cumulative  44 decisions  473074 tokens
+
+mission 7 [gen_a-I1-3] I1/S2/gen_a 92.7s  laruche: finished  verdict: SUCCESS  decisions: 15  tokens: 162084
+   diagnostic  edits: 0  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v test_calc 2>&1; echo "---exit:$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== git ===" && git status 2>&1 | head -20; echo "=== log ==="; git log --oneline -10 2>&1; echo "=== files ==="; ls -la; echo "=== carnet json ==="; cat sessions/butinage/*.carnet.json 2>&1 | head -100
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== events.jsonl ===" && cat sessions/butinage/*.carnet.events.jsonl; echo; echo "=== find all python ==="; find . -name '*.py' -not -path '*/__pycache__/*'; echo "=== pycache ==="; ls -la __pycache__; echo "=== calc.py md5 & stat ==="; md5 calc.py test_calc.py; stat -f '%N %m %z' calc.py test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && \
+echo "=== python ===" && python3 --version && \
+echo "=== run test_calc.py direct ===" && python3 test_calc.py; echo "exit:$?" && \
+echo "=== pytest ===" && (python3 -m pytest -q 2>&1 | tail -15) && \
+echo "=== manual compute ===" && python3 - <<'EOF'
+import calc, inspect
+print("module file:", calc.__file__)
+print("TAX_RATE:", calc.TAX_RATE)
+print("source:", inspect.getsource(calc.total))
+print("total(100) =", repr(calc.total(100)))
+print("100*(1+0.2) =", repr(100*(1+0.2)))
+print("total(0) =", calc.total(0), " total(50) =", calc.total(50), " total(250) =", calc.total(250))
+EOF
+echo "=== hexdump calc.py (hidden chars?) ===" && xxd calc.py | head -20; echo \
+echo "=== suspicious import hooks ===" && find / -maxdepth 6 -name 'conftest.py' 2>/dev/null | grep -v workspace; python3 -c "import sys; print('PYTHONPATH=', sys.path)"; echo "PYTHONPATH env=[$PYTHONPATH]"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && \
+echo "=== python ===" && python3 --version && \
+echo "=== run test_calc.py direct ===" && python3 test_calc.py; echo "exit:$?" && \
+echo "=== pytest ===" && (python3 -m pytest -q 2>&1 | tail -15) && \
+echo "=== manual compute ===" && python3 - <<'EOF'
+import calc, inspect
+print("module file:", calc.__file__)
+print("TAX_RATE:", calc.TAX_RATE)
+print(inspect.getsource(calc.total))
+print("total(100) =", repr(calc.total(100)))
+print("total(0)=",calc.total(0)," total(50)=",calc.total(50)," total(250)=",calc.total(250))
+EOF
+echo "=== hexdump calc.py ===" && xxd calc.py && \
+echo "=== local config/test files ===" && ls -la . sessions sessions/butinage && \
+echo "=== conftest in workspace? ===" && (find . -name 'conftest.py' -o -name '*.pth' -o -name 'sitecustomize.py' | grep -v __pycache__ || echo none) && \
+echo "PYTHONPATH env=[$PYTHONPATH]" && python3 -c "import sys; print(sys.path)"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v test_calc 2>&1; echo "EXIT_CODE=$?"; echo "---- valeur ----"; python3 -c "from calc import total; print('total(100) =', total(100)); print('total(0) =', total(0)); print('total(50) =', total(50))"; echo "---- ligne 6 du test ----"; sed -n '6p' test_calc.py; echo "---- empreintes ----"; md5 -q calc.py test_calc.py
+   tool  REFUSED execute_code
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc; echo "exit_code=$?"; python3 -c "from calc import total; print('stdout: total(100) =', total(100))"; echo "body_line6=$(sed -n '6p' test_calc.py)"; md5 -q test_calc.py
+   cumulative  59 decisions  635158 tokens
+
+mission 8 [gen_a-I1-3] I1/S3/gen_a 11.5s  laruche: finished  verdict: SUCCESS  decisions: 6  tokens: 49535
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1 | tail -40
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1 | tail -20; echo "--- exit: $? ---"; echo "--- calc.py ---"; cat calc.py; echo "--- md5 test_calc.py ---"; md5 -q test_calc.py
+   cumulative  65 decisions  684693 tokens
+
+mission 9 [gen_b-I1-4] I1/S1/gen_b 9.7s  laruche: finished  verdict: SUCCESS  decisions: 6  tokens: 59769
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m pytest test_calc.py -v 2>&1 | tail -30
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m pytest test_calc.py -v 2>&1 | tail -15
+   cumulative  71 decisions  744462 tokens
+
+mission 10 [gen_b-I1-4] I1/S3/gen_b 78.8s  laruche: finished  verdict: SUCCESS  decisions: 19  tokens: 253867
+   diagnostic  edits: 2  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/faba1811-4f0f-4ce1-b2ac-0b2d2f2d2f3e.carnet.json
+   tool  REFUSED execute_code
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && shasum -a 256 calc.py test_calc.py && echo "=== RUN TESTS ===" && python3 -m unittest test_calc -v 2>&1; echo "EXIT_CODE=$?"
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== RUN TESTS ===" && python3 -m unittest test_calc -v 2>&1; echo "EXIT_CODE=$?"; echo "=== VALEURS ==="; python3 -c "from calc import total, sum_to; print('total(100) =', total(100)); print('sum_to(10) =', sum_to(10))"; echo "=== HASHES ==="; shasum -a 256 calc.py test_calc.py; echo "=== CONTENU calc.py ==="; cat calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && find . -type f | sort
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== RUN TESTS ===" && PYTHONDONTWRITEBYTECODE=1 python3 -m unittest test_calc -v 2>&1; echo "EXIT_CODE=$?"; echo "=== VALEURS ==="; PYTHONDONTWRITEBYTECODE=1 python3 -c "from calc import total, sum_to; print('total(100) =', total(100)); print('sum_to(10) =', sum_to(10))"; echo "=== FICHIERS ==="; find . -type f | sort; echo "=== HASHES ==="; shasum -a 256 calc.py test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "--- C1: SUITE DE TESTS ---" && PYTHONDONTWRITEBYTECODE=1 python3 -m unittest test_calc -v 2>&1; echo "C1_EXIT=$?"; echo "--- C2/C3: VALEURS ---"; PYTHONDONTWRITEBYTECODE=1 python3 -c "from calc import total, sum_to; print('C2_total(100)=', total(100)); print('C3_sum_to(10)=', sum_to(10))"; echo "--- C4: EMPREINTES ---"; shasum -a 256 calc.py test_calc.py; echo "--- C5: ARBORESCENCE ---"; find . -type f | sort
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace; PYTHONDONTWRITEBYTECODE=1 python3 -m unittest test_calc -q 2>&1; echo "EXIT=$?"; PYTHONDONTWRITEBYTECODE=1 python3 -c "from calc import total,sum_to; print('total(100)=',total(100),'| sum_to(10)=',sum_to(10))"; shasum -a 256 calc.py test_calc.py | cut -c1-22; stat -f "%m %N" calc.py test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace; find . -type f | sort
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace; ls -la stats-outils.json; echo "--- CONTENU ---"; cat stats-outils.json
+   cumulative  90 decisions  998329 tokens
+
+mission 11 [gen_b-I1-5] I1/S2/gen_b 21.5s  laruche: finished  verdict: SUCCESS  decisions: 8  tokens: 96703
+   diagnostic  edits: 0  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v test_calc 2>&1; echo "EXIT=$?"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/c43713a5-2b0b-4d16-8e8f-3031ca5e8afb.carnet.json
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/c43713a5-2b0b-4d16-8e8f-3031ca5e8afb.carnet.events.jsonl
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && ls -la && echo "--- find ---" && find . -not -path '*/.git/*' | head -50 && echo "--- hexdump calc.py ---" && xxd calc.py && echo "--- hexdump test_calc.py ---" && xxd test_calc.py && echo "--- python3 version ---" && python3 --version
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -B -m unittest -v test_calc 2>&1; echo "EXIT=$?"; echo "--- valeurs de controle ---"; python3 -B -c "from calc import sum_to; print([(n, sum_to(n)) for n in (0,1,2,3,4,10)])"
+   cumulative  98 decisions  1095032 tokens
+
+mission 12 [gen_b-I1-5] I1/S4/gen_b 10.2s  laruche: finished  verdict: SUCCESS  decisions: 6  tokens: 60705
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/util.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v test_calc 2>&1; echo "EXIT=$?"
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v test_calc 2>&1; echo "EXIT=$?"
+   cumulative  104 decisions  1155737 tokens
+
+mission 13 [gen_b-I1-6] I1/S1/gen_b 91.6s  laruche: finished  verdict: SUCCESS  decisions: 20  tokens: 228986
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && ls -la && git status 2>&1 | head -20 && git log --oneline -20 2>&1 | head -20 && python3 -m unittest -v 2>&1 | tail -20
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/stats-outils.json
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/e5b46fb1-62fe-4394-b019-180ccb3b25a9.carnet.json
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && md5 -q test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && cat calc.py && echo "--- TESTS ---" && python3 -m unittest 2>&1 | tail -n 1 && echo "--- MD5 test file ---" && md5 -q test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest 2>&1 | tail -n 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && md5 -q test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest 2>&1 | tail -n 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v 2>&1 && echo "===SORTIE===" && python3 -c "import json,subprocess,hashlib;r=subprocess.run(['python3','-m','unittest'],capture_output=True,text=True);print(json.dumps({'sortie':r.stderr.strip().splitlines()[-1],'md5_tests':hashlib.md5(open('test_calc.py','rb').read()).hexdigest()}))"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest 2>&1 | tail -n 1 | tr -d '\n'
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -c "import subprocess,json;r=subprocess.run(['python3','-m','unittest'],capture_output=True,text=True);print(json.dumps({'sortie':r.stderr.strip().splitlines()[-1]}))"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -c "import hashlib,json;print(json.dumps({'sortie':hashlib.md5(open('test_calc.py','rb').read()).hexdigest()}))"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest 2>&1 | tail -n 1 | tr -d '\n'
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && md5 -q test_calc.py | tr -d '\n'
+   cumulative  124 decisions  1384723 tokens
+
+mission 14 [gen_b-I1-6] I1/S4/gen_b 8.5s  laruche: finished  verdict: SUCCESS  decisions: 6  tokens: 59855
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list .
+   tool  system_info 
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  file_read util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v test_calc 2>&1 | tail -20
+   tool  file_edit util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest discover -v 2>&1 | tail -20; echo "---exit:$?"
+   cumulative  130 decisions  1444578 tokens
+
+mission 15 [gen_b-I1-7] I1/S2/gen_b 37.3s  laruche: finished  verdict: SUCCESS  decisions: 9  tokens: 94424
+   diagnostic  edits: 0  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && ls -la && python3 -m unittest -v test_calc 2>&1 | tail -30
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "--- discover ---" && python3 -m unittest discover -v 2>&1 | tail -20; echo "--- pytest ---"; python3 -m pytest -q 2>&1 | tail -20; echo "--- direct ---"; python3 test_calc.py 2>&1 | tail -5; echo "--- python ver ---"; python3 -V; echo "--- env ---"; env | grep -i -E "python|path=" ; echo "--- root(81) ---"; python3 -c "from calc import root; print(repr(root(81)))"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/602c2619-bddc-47fd-8976-f15db1dfd15b.carnet.json
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "--- git ---"; git status 2>&1 | head -5; git log --oneline -5 2>&1 | head -5; echo "--- import path ---"; python3 -c "import calc,sys; print(calc.__file__); print(sys.version)"; echo "--- hexdump calc.py ---"; od -c calc.py | head -10; echo "--- exit codes ---"; python3 -m unittest -v test_calc >/dev/null 2>&1; echo "unittest rc=$?"; python3 -m pytest -q >/dev/null 2>&1; echo "pytest rc=$?"; python3 test_calc.py >/dev/null 2>&1; echo "direct rc=$?"; echo "--- find any other py ---"; find . -name "*.py" -o -name "*.cfg" -o -name "*.ini" -o -name "*.toml" | grep -v sessions
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== 1. Empreintes des fichiers AVANT toute intervention ==="; shasum -a 256 calc.py test_calc.py; echo; echo "=== 2. pytest ==="; python3 -m pytest -q; echo "pytest rc=$?"; echo; echo "=== 3. unittest ==="; python3 -m unittest -v test_calc; echo "unittest rc=$?"; echo; echo "=== 4. Comportement de la fonction ==="; python3 -c "from calc import root; print('root(81) =', root(81)); print('type =', type(root(81)).__name__)"
+   tool  REFUSED shell_exec
+   cumulative  139 decisions  1539002 tokens
+
+mission 16 [gen_b-I1-7] I1/S3/gen_b 25.5s  laruche: finished  verdict: SUCCESS  decisions: 14  tokens: 174411
+   diagnostic  edits: 1  contract: pytest
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1
+   tool  REFUSED execute_code
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1 | tee unittest_out.txt; echo "EXIT=${PIPESTATUS[0]}"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && ls -la && echo "---- calc.py ----" && cat calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -c "import os; os.remove('unittest_out.txt')" && ls
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1; echo "EXIT=$?"
+   cumulative  153 decisions  1713413 tokens
+
+mission 17 [gen_a-I2-0] I2/S1/gen_a 6.6s  laruche: finished  verdict: FAILURE  decisions: 4  tokens: 34934
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest -v test_calc 2>&1; echo "---exit:$?---"; python3 -c "print('sum_to(10) =', __import__('calc').sum_to(10))"
+   cumulative  157 decisions  1748347 tokens
+
+mission 18 [gen_a-I2-0] I2/S3/gen_a 8.3s  laruche: finished  verdict: FAILURE  decisions: 4  tokens: 23452
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1; echo "---exit:$?---"; python3 -c "import sys; print(sys.version)"
+   cumulative  161 decisions  1771799 tokens
+
+mission 19 [gen_a-I2-1] I2/S2/gen_a 67.4s  laruche: finished  verdict: FAILURE  decisions: 8  tokens: 77954
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1; echo "---EXIT:$?---"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/29bcb329-d40e-4263-b497-749ad5ef0672.carnet.json
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/29bcb329-d40e-4263-b497-749ad5ef0672.carnet.events.jsonl
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -c 'print(repr(1+0.2), repr(100*(1+0.2)), repr(round(100*(1+0.2),2)))'
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && (python3 -m pytest -q 2>&1; echo "---pytest EXIT:$?---"); (python3 test_calc.py 2>&1; echo "---direct EXIT:$?---")
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && ls -la && echo "---" && find . -type f -not -path './sessions/*' && echo "---" && python3 --version && (python3 -m pytest --version 2>&1 | head -1)
+   cumulative  169 decisions  1849753 tokens
+
+mission 20 [gen_a-I2-1] I2/S4/gen_a 11.0s  laruche: finished  verdict: FAILURE  decisions: 5  tokens: 35470
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1; echo "---exit=$?"; python3 -c "from util import upto; print(list(upto(10)), sum(upto(10)))"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/e6aee2bb-d79c-4e8c-911f-96f1ff47c309.carnet.json
+   cumulative  174 decisions  1885223 tokens
+
+mission 21 [gen_a-I2-2] I2/S1/gen_a 23.6s  laruche: finished  verdict: FAILURE  decisions: 4  tokens: 34786
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list .
+   tool  file_list .
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -c "import calc; calc.root(81)" 2>&1 | tail -5; python3 -m unittest test_calc 2>&1 | tail -12
+   cumulative  178 decisions  1920009 tokens
+
+mission 22 [gen_a-I2-2] I2/S4/gen_a 15.3s  laruche: finished  verdict: FAILURE  decisions: 5  tokens: 37666
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  system_info 
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1 | tail -20; echo "---"; python3 -c "import sys; sys.path.insert(0,'.'); import calc; print('total(100) =', calc.total(100)); import util; print('util.rate() =', util.rate()); print('util file:', util.__file__)"
+   cumulative  183 decisions  1957675 tokens
+
+mission 23 [gen_a-I2-3] I2/S2/gen_a 25.2s  laruche: finished  verdict: FAILURE  decisions: 9  tokens: 104881
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  system_info 
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest discover -v 2>&1; echo "EXIT=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "--- fichiers de test ---" && ls -la && find . -name "*test*" -o -name "conftest.py" -o -name "pytest.ini" -o -name "tox.ini" -o -name "setup.cfg" | grep -v sessions; echo "--- python ---"; python3 --version; echo "--- pytest dispo ? ---"; python3 -m pytest --version 2>&1 | head -3; echo "--- run pytest ---"; python3 -m pytest -v 2>&1 | tail -20; echo "EXIT_PYTEST=$?"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/83159312-871a-45d6-90fd-20e831b5a6d6.carnet.json
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "--- md5 & integralite ---" && md5 calc.py test_calc.py && echo "--- contenu octet-exact de calc.py ---" && od -c calc.py | tail -5 && echo "--- valeur calculee ---" && python3 -c "from calc import sum_to; print('sum_to(10) =', sum_to(10)); print('attendu   = 55'); print('VERDICT:', 'PASS' if sum_to(10)==55 else 'FAIL')" && echo "--- un seul test collecte ? ---" && python3 -m pytest --collect-only -q 2>&1 | tail -5 && echo "--- git ? ---" && (git status --short 2>&1 | head -5 || echo "pas un depot git") && echo "--- stats-outils.json ---" && cat stats-outils.json
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest discover -q; echo "UNITTEST_EXIT=$?"; python3 -m pytest -q; echo "PYTEST_EXIT=$?"; python3 -c "from calc import sum_to; print('VALEUR=' + str(sum_to(10)))"; md5 -q calc.py test_calc.py
+   cumulative  192 decisions  2062556 tokens
+
+mission 24 [gen_a-I2-3] I2/S3/gen_a 10.9s  laruche: finished  verdict: FAILURE  decisions: 4  tokens: 35308
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  system_info 
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1; echo "EXIT=$?"
+   cumulative  196 decisions  2097864 tokens
+
+mission 25 [gen_b-I2-4] I2/S1/gen_b 11.0s  laruche: finished  verdict: FAILURE  decisions: 5  tokens: 23273
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && time python3 -m unittest test_calc -v 2>&1 | tail -30
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/c95dcc15-c78e-4515-8fc2-eb4330d9c3f5.carnet.json
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/c95dcc15-c78e-4515-8fc2-eb4330d9c3f5.carnet.events.jsonl
+   cumulative  201 decisions  2121137 tokens
+
+mission 26 [gen_b-I2-4] I2/S3/gen_b 8.2s  laruche: finished  verdict: FAILURE  decisions: 4  tokens: 34904
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1; echo "EXIT=$?"
+   cumulative  205 decisions  2156041 tokens
+
+mission 27 [gen_b-I2-5] I2/S2/gen_b 92.6s  laruche: finished  verdict: FAILURE  decisions: 14  tokens: 226959
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m pytest test_calc.py -v 2>&1; echo "---EXIT:$?---"; echo "=== unittest ==="; python3 -m unittest test_calc -v 2>&1; echo "---EXIT:$?---"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/5a8bdaa1-a68a-4fac-9bff-abfea3226cab.carnet.json
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== ls -la ===" && ls -la && echo "=== find all ===" && find . -not -path '*/.git/*' | sort && echo "=== hexdump calc.py ===" && hexdump -C calc.py && echo "=== hexdump test_calc.py ===" && hexdump -C test_calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/stats-outils.json
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/sessions/butinage/5a8bdaa1-a68a-4fac-9bff-abfea3226cab.carnet.events.jsonl
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== taille events ===" && wc -c sessions/butinage/*.jsonl && echo "=== grep events types ===" && grep -o '"event":"[^"]*"' sessions/butinage/*.jsonl | sort | uniq -c && echo "=== erreurs ? ===" && grep -i -n -E 'error|erreur|echec|échec|fail|exception|traceback|incertain|ok":false' sessions/butinage/*.jsonl | head -40
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== git status ===" && git status 2>&1 | head; echo "=== .pytest_cache nodeids ==="; cat .pytest_cache/v/cache/nodeids; echo; echo "=== run plain ==="; python3 -c "from calc import root; print(repr(root(81)), root(81)==9.0)"; echo "=== py version ==="; python3 -VV
+   tool  REFUSED execute_code
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "=== od calc.py ===" && od -c calc.py && echo "=== od test_calc.py ===" && od -c test_calc.py && echo "=== mtimes ===" && stat -f '%N %z bytes  mtime=%Sm' calc.py test_calc.py && echo "=== pytest_cache tree ===" && find .pytest_cache -type f | sort && echo "--- nodeids ---" && cat .pytest_cache/v/cache/nodeids && echo && echo "--- lastfailed (s il existe) ---" && cat .pytest_cache/v/cache/lastfailed 2>&1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && od -c calc.py; echo "-----"; od -c test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 - <<'EOF'
+import calc, inspect, sys
+print("LOADED:", calc.__file__)
+print("SRC:", repr(inspect.getsource(calc)))
+print("root(81)=", repr(calc.root(81)))
+print("sys.path[:3]=", sys.path[:3])
+EOF
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "### python direct:"; python3 test_calc.py; echo "exit=$?"; echo "### pytest -q:"; python3 -m pytest -q test_calc.py 2>&1 | cat
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && echo "### keys carnet:"; grep -o '"[a-z_]*":' sessions/butinage/*.carnet.json | sort -u | tr '\n' ' '; echo; echo "### keys stats:"; grep -o '"[a-z_]*":' stats-outils.json | sort -u | tr '\n' ' '; echo; echo "### mots-cles events:"; grep -o -i -E 'erreur|error|echec|fail|bug|attendu|obtenu|traceback|assertion|probleme|problème' sessions/butinage/*.jsonl | sort | uniq -c
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && grep -o '"contenu":"[^"]\{0,300\}' sessions/butinage/*.jsonl | sort -u | head -50
+   cumulative  219 decisions  2383000 tokens
+
+mission 28 [gen_b-I2-5] I2/S4/gen_b 10.8s  laruche: finished  verdict: FAILURE  decisions: 5  tokens: 51042
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list .
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  file_read util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1; echo "EXIT=$?"
+   tool  file_read sessions/butinage/3b059970-b766-46cd-aaad-02973e83cefc.carnet.json
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -c "
+import util, calc, sys
+print('util module file :', util.__file__)
+print('rate() returned  :', util.rate())
+print('1 + rate()       :', 1 + util.rate())
+print('total(100)       :', calc.total(100))
+print('expected by test :', 120.0)
+print('rate implied by test :', 120.0/100 - 1)
+" 2>&1; echo "---"; ls -la
+   cumulative  224 decisions  2434042 tokens
+
+mission 29 [gen_b-I2-6] I2/S1/gen_b 10.2s  laruche: finished  verdict: FAILURE  decisions: 4  tokens: 35250
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list .
+   tool  system_info 
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  shell_exec cd /private/var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1 | tail -20; echo "---versions---"; python3 --version
+   tool  file_read sessions/butinage/7ca3669e-4b9f-427f-b0e3-aad262acbe2b.carnet.json
+   cumulative  228 decisions  2469292 tokens
+
+mission 30 [gen_b-I2-6] I2/S4/gen_b 8.1s  laruche: finished  verdict: FAILURE  decisions: 4  tokens: 35212
+   diagnostic  edits: 0  contract: untouched
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace
+   tool  system_info 
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/test_calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace/util.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpQMdh8Q/workspace && python3 -m unittest test_calc -v 2>&1; echo "--- exit: $?"
+   cumulative  232 decisions  2504504 tokens
