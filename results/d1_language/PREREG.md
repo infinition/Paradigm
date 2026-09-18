@@ -142,6 +142,14 @@ Encoder `paraphrase-multilingual-MiniLM-L12-v2`, frozen, on CPU. The goal text i
 
 Global, then per intention, then per state family, for every arm and every split. Per intention matters most: the decisive comparison is on the intentions where **the same state allows several procedures**, which is where language must carry information that the state cannot.
 
+## Secondary analyses, specified before the numbers exist
+
+**Trajectory depth against formulation openness.** An open formulation may simply produce longer and more exploratory trajectories than a directive one. If it does, part of any gain of `goal + state` over `state only` could come from the goal predicting how deep the trajectory will go, rather than from it carrying procedural intent. Reported alongside the arms, per intention and per source: steps per mission, share of read and list actions, number of distinct action keys per mission, and the variance of steps per mission. If the arms' gain tracks depth variance rather than intention, that is stated as the more likely reading and the intent claim is withheld.
+
+**What the two non-repair intentions may be claimed to show.** Their contract verifies that nothing was modified and nothing else. A SUCCESS there means the workspace is byte-identical, never that the diagnosis or the check was correct. Any statement about I2 and I3 is therefore about the procedural constraint being respected, and no claim about answer quality is available from this collection.
+
+**Cost of open formulations.** The per-mission cost measured here is compared to the pilot's, whose prompt dictated the procedure step by step. A difference is a result about the goal's form changing the cost of deliberation, not only the trajectory, and is reported as such.
+
 ## Verdict, fixed now
 
 ```text
