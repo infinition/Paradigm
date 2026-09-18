@@ -1,0 +1,91 @@
+# Pre-registration: `a3-code-1`, a valid code block, and the B0 feasibility test it feeds
+
+Written before the block runs and before any B0 code exists. It replaces the plan of testing B0 on the intent benchmarks, which was abandoned for the reason recorded below. Nothing here changes the D1 pilot's frozen protocol: the missions, prompts, order, outcome contracts, ceilings and diversity criterion of `pilot_prereg.md` are reused unmodified, under the amendment that makes invalidation block-level from `a3` on.
+
+## Why B0 is not run on the intent benchmarks
+
+The plan was to compare `goal only` against `goal + candidate_action` on intent v1 and v2. Inspection of the data before writing any code shows the comparison could not mean what it claims:
+
+```text
+v1: 320 phrases, 39 groups, 6 intent classes
+fields: id, group, source, role, transformation, intent, text
+transformation: negation 37, temporal 37, past_question 37, object_change 37, inspection_only 37, none 135
+no state, no action
+```
+
+The label is a function of the goal alone: "Ne me prends pas en photo" carries `intent: OTHER` directly. Building pairs `(goal, candidate_action) -> applicable` therefore requires deriving the label as `candidate_action == action_of(intent(goal))`, which makes the candidate action a mirror of the label rather than an independent variable. A goal-only binary model then sees one goal with several actions and contradictory labels and cannot exceed the base rate, so the action-conditioned model wins by construction, whatever the encoder. The experiment would measure the dataset's construction, not the architecture.
+
+Action conditioning can only pay where **the same goal leads to different correct actions depending on the state**. That variation is absent from v1 and v2 by construction, and present in D1 traces. Hence this block.
+
+## The distinction this branch rests on, documented before collection
+
+```text
+learnable_for_representation   !=   replayable_as_reflex
+```
+
+A step may be legitimate evidence for learning a procedural representation without ever being authorized for automatic replay. The two properties answer different questions: one asks whether an observation carries information about the procedure, the other whether Paradigm may execute the action on its own.
+
+Concretely, `file_edit` and `file_write` are marked `not_reflex_capable` by the adapter, so they never become exploitable positive transitions for certification, and they will keep that status. Nothing about the engine, the adapter, the reflex policy or their authorization changes. But they are observed steps with a verified episode outcome, and for B0 they are kept in the dataset as learnable transitions. The reason is the one the pilot already exposed: of the 28 exploitable validated transitions the previous code block produced, not one was a write, so a representation built from certification-eligible steps alone would learn to read and to test and never to change the environment, which is the part of a procedure that matters most.
+
+The rule for the B0 dataset, fixed here:
+
+```text
+kept as learnable      a step observed in an episode that closed SUCCESS,
+                       whatever its reflex capability
+never positive         a step in an episode that closed FAILURE or UNKNOWN
+never replayable       anything the adapter marks not_reflex_capable stays
+                       unauthorized for reflex, in the engine, unchanged
+```
+
+Each row carries both flags, so any later analysis can separate the two populations rather than conflate them.
+
+## Block `a3-code-1`
+
+Twelve code missions, identical to the pilot's: the frozen `missions.json` (sha256 in `MANIFEST.md`), templates A, B and C over the three bug variants, same order, same outcome contract verified by the harness's own `pytest` run, same guard hook, same 30-iteration ceiling, same model `deepseek-v4-flash`. Fresh Paradigm state, `--shadow-schedule 1-24:1.0` so nothing is replayed and no promotion has behavioral effect, trace sink on with `--attempt-id a3-code-1`.
+
+The camera preflight does not gate this block: it depends on no physical device. The camera block stays out of `a3` until its preflight passes, and will run later as `a3-camera-1` under the block-level rule.
+
+Circuit breaker unchanged, 200 deliberative decisions or 2,000,000 tokens. Expected cost, from the previous code block, about 72 decisions and 590k tokens.
+
+The interpreter correction of `a1` applies: a venv providing `python` and `python3` with pytest is first on the harness PATH, for the harness verification and for the model's own commands alike.
+
+If the block closes without incident, its trace is frozen and hashed, and becomes the B0 dataset. If any harness incident occurs, only this block is invalidated, archived under its id, and restarted as `a3-code-2` from mission 1.
+
+## B0, pre-registered now, before the data exists
+
+Question, and the only one: does conditioning on the state and on the candidate action carry real signal on observed transitions? Not whether it generalizes, not whether it is ready for anything.
+
+Task: for a step, predict whether the candidate action is the one the teacher took in that state, a binary applicability judgement built from the trace and never from a hand-written rule. Negatives are drawn from the actions actually available in that state (`available_actions`), so a negative means "not the action taken here", never "invalid action". Rows from episodes that closed FAILURE or UNKNOWN are excluded from the positive class entirely.
+
+Four arms, same encoder, same splits, same classifier, same seeds:
+
+```text
+B0-A   goal only
+B0-B   goal + state
+B0-C   goal + action
+B0-D   goal + state + action
+```
+
+`goal` is the raw mission text; `state` is the structured state the sink recorded (phase, last action, last outcome, output kind, recent actions, step index, available actions); `action` is the candidate action key, tool and template.
+
+Encoder: `paraphrase-multilingual-MiniLM-L12-v2`, frozen, already used in C3 and available locally, on CPU. Structured fields are encoded as small categorical vectors, not as sentences. Head: one small MLP. No fine-tuning of the encoder in this first pass, no RL, no multi-head, no calibration, no gate, no wiring, no change to the engine.
+
+Split: grouped, leaving whole missions out, never individual steps, so no step of a mission appears on both sides. Five seeds, mean and standard deviation reported for every metric; an arm that beats another by less than the spread of the seeds is reported as indistinguishable.
+
+Metrics: balanced accuracy, precision, recall, F1, and separately the false positive rate on the negatives drawn from the same state, which is the quantity of interest.
+
+Verdict, fixed now:
+
+```text
+SIGNAL CLAIR    B0-D and B0-C beat B0-A beyond the seed spread, and the gain
+                survives the grouped split
+SIGNAL FAIBLE   a gain inside or near the seed spread, or one that depends on
+                the arm's classifier rather than on the conditioning
+PAS DE SIGNAL   conditioning adds nothing, or costs accuracy
+```
+
+Stop after this verdict. No claim of generalization, no camera, no live wiring, no B1.
+
+## Outcome
+
+Not run.
