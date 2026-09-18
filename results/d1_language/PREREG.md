@@ -10,6 +10,12 @@ The code domain machinery of `laruche-essaim/examples/paradigm_demo.rs` and the 
 
 Circuit breaker, unchanged in kind and rescaled to the block: 800 deliberative decisions or 8,000,000 tokens, which are the 80% margins of the D1 ceilings.
 
+**Raised during the run, at mission 12, on cost alone.** The measured rate was 9.4 deliberative decisions and 103k tokens per mission against the 6.2 and 56k estimated from the pilot, which projects about 753 decisions and 8.3M tokens over the eighty missions, so the token breaker would have fired around mission 77 and, under the rule, invalidated a block of seventy-seven clean missions for an overshoot of three. The ceiling is raised to 1,200 deliberative decisions and 12,000,000 tokens for this block.
+
+What this decision was and was not based on: the only quantity inspected was the running cost, mission verdicts and counters; no arm, no split, no comparison and no scored result existed or was looked at, and none could, since the evaluation runs after the collection. The device is a guard against a runaway harness and was declared from the start not to be a scientific criterion and never a target to consume; nothing is looping here, the missions simply cost more than an estimate drawn from a prompt that dictated the procedure step by step. That underestimation is itself one of this collection's results and is reported as such.
+
+The raise applies to this block only and does not touch the D1 ceilings, the 80% sizing rule for a planned campaign, or the invalidation rules.
+
 ## Outcome contract, corrected before the first provider call
 
 The pilot's contract, "SUCCESS when the harness's own pytest run passes", is inherited for the intentions that ask for a repair and is wrong for the two that do not. Under it, a mission that correctly diagnoses without fixing leaves the suite red and would be scored FAILURE for having done exactly what was asked, and its steps would then be dropped from the learnable set, removing the very intentions that separate diagnosing from repairing. The contract is therefore intention-aware, and the correction is recorded here rather than applied silently. Nothing about the missions, the formulations, the crossing plan or the splits changes.
