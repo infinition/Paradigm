@@ -45,6 +45,25 @@ The goal alone sits at the trivial baseline, so it carries nothing without the s
 state alone reaches 0.537 while 98% of states admit several actions depending on the goal,
 which is the ceiling a state-only policy should be expected to hit.
 
+## Scale, stated so the number is not read for more than it is
+
+Learning a goal-conditioned policy in a well-formed synthetic world is an expected result,
+not a surprising one. The distance to the problem this is a step towards:
+
+```text
+here                              a robotic policy
+15,413 synthetic transitions      images, depth, proprioception
+9 symbolic goals                  unknown objects
+200 layouts                       physical dynamics, contact, occlusion
+discrete actions                  continuous action
+fully observable, no sensor noise  noise, partial observation
+no transfer                       new environments, sim to real
+```
+
+What the result buys is narrower and still worth having: the architectural core is not
+dead, and there is enough signal to justify moving to a more realistic environment rather
+than adding more two-dimensional layouts.
+
 ## What this does not say
 
 Nothing about natural language. The goals here are symbolic, and the question of whether a
