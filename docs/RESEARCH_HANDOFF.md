@@ -142,6 +142,19 @@ Intent v1 (`phrases.jsonl`, sha in `DATASET_SHA256.txt`) and v2 (`phrases_v2.jso
 
 Pre-register before scoring; freeze and hash datasets and models before prospective tests; preserve negative results; label exploratory against confirmatory; require a new distribution for a prospective replication; no post-hoc threshold tuning; report a metric bug as a bug, never as a protocol change.
 
+```text
+a benchmark that disappoints gets debugged
+a benchmark that flatters gets published
+```
+
+The warning sign is rarely a poor result. It is a good one. Across this project the leaks
+that mattered all produced something that looked like a discovery: a state-only score
+inflated by a trajectory advanced towards the goal, a noise curve flattened by an observation
+copied between the goal and the scene, an attribute branch whose numbers matched the identity
+branch because the attributes were the identity, a label that followed from the goal alone,
+another that followed from the state alone. Treat a pleasing number as a hypothesis about the
+harness until it survives an attempt to break it.
+
 ## LaRuche state
 
 Repository `/Users/infinition/Coding/laruche/laruche`, branch `paradigm-integration`, pushed to `origin` (`https://github.com/infinition/LaRuche`), not merged into `main`; last commit `1575651`. The Paradigm bridge is `laruche-essaim/src/paradigm_pont.rs` (decorators `FournisseurParadigm`, `OutilsParadigm`, wired in `butinage_pont.rs::executer_avec_bilan` when `LARUCHE_PARADIGM_URL` is set; transport errors fail open to the model; `LARUCHE_PARADIGM_CLOSE=external` lets the harness close the episode; the number of images is forwarded with each observation). Examples: `paradigm_demo.rs` (pytest missions), `paradigm_camera_demo.rs` (camera benchmark, native `camera` tool, blocking guard on every tool confining paths to the workspace, 30-iteration ceiling, `preflight` mode), `camera_preflight.rs`, and `paradigm_d1_pilot.rs` (the D1 pilot harness: reads the frozen `missions.json` from the Paradigm repository so it cannot drift from the pre-registration, one invocation per domain, reuses each domain's approval gate and guard hook unchanged, reads the circuit-breaker counters from `/v1/telemetry` after every mission). `camera_preflight.rs` now bounds the capture call, decodes the frame and checks its dimensions, and exits non-zero on anything else, so a blocked capture path is found in seconds instead of by benchmark missions. The camera process must be launched from Terminal.app (AVFoundation needs an event loop the desktop-app shell lacks); launching it through `osascript` with `tell application "Terminal" to do script` works and was used, though it does not fix a camera that delivers no frames at all. Behavioral equivalence is wired live on the Paradigm side (`serve --equivalence laruche`); the persistence faults found in run 12b (non-picklable contract, unsaved episode counter, non-atomic state write) are fixed in Paradigm.
