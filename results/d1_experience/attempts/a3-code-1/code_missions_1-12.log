@@ -1,0 +1,122 @@
+D1 pilot  domain code  attempt a3-code-1  model deepseek-v4-flash  paradigm ON
+manifest /Users/infinition/Coding/paradigm/results/d1_experience/missions.json
+hard stop: 200 model calls or 2000000 tokens (cumulative, both domains)
+
+mission 1 [A1] A/wrong_constant 11.3s  laruche: finished  verdict: SUCCESS  calls: 7  tokens: 72199
+   diagnostic  edits: 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | tail -20
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && cat calc.py && python -m pytest -q 2>&1 | tail -5
+   cumulative  7 calls  72199 tokens
+
+mission 2 [A2] A/off_by_one 8.5s  laruche: finished  verdict: SUCCESS  calls: 5  tokens: 48310
+   diagnostic  edits: 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1; echo "EXIT=$?"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   cumulative  12 calls  120509 tokens
+
+mission 3 [A3] A/missing_import 7.9s  laruche: finished  verdict: SUCCESS  calls: 5  tokens: 47570
+   diagnostic  edits: 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | tail -20
+   cumulative  17 calls  168079 tokens
+
+mission 4 [B1] B/wrong_constant 10.3s  laruche: finished  verdict: SUCCESS  calls: 6  tokens: 36385
+   diagnostic  edits: 1
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | tail -20
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | tail -20
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   cumulative  23 calls  204464 tokens
+
+mission 5 [B2] B/off_by_one 6.2s  laruche: finished  verdict: SUCCESS  calls: 4  tokens: 34849
+   diagnostic  edits: 1
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  file_edit calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q
+   cumulative  27 calls  239313 tokens
+
+mission 6 [B3] B/missing_import 8.0s  laruche: finished  verdict: SUCCESS  calls: 5  tokens: 35318
+   diagnostic  edits: 1
+   tool  file_read calc.py
+   tool  file_read test_calc.py
+   tool  file_edit calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q
+   tool  file_read calc.py
+   cumulative  32 calls  274631 tokens
+
+mission 7 [C1] C/wrong_constant 18.2s  laruche: finished  verdict: SUCCESS  calls: 5  tokens: 51959
+   diagnostic  edits: 0
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && ls -la && echo "--- sessions ---" && ls -la sessions/ && echo "--- run ---" && python -m pytest -q; echo "EXIT=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && echo "--- md5 ---" && md5 calc.py test_calc.py && echo "--- import resolution ---" && python -c "import calc, sys; print('calc.__file__ =', calc.__file__); print('total(100) =', repr(calc.total(100))); print('TAX_RATE =', calc.TAX_RATE)" && echo "--- shadowing check ---" && python -c "import sys,os; print('cwd entries named calc*:', [f for f in os.listdir('.') if 'calc' in f])" && echo "--- pytest config files ---" && ls -a | grep -Ei 'conftest|pytest.ini|setup.cfg|pyproject|tox.ini' || echo "(none)" && echo "--- butinage ---" && find sessions -type f | head -50
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q; echo "EXIT=$?"
+   cumulative  37 calls  326590 tokens
+
+mission 8 [C2] C/off_by_one 14.2s  laruche: finished  verdict: SUCCESS  calls: 5  tokens: 37636
+   diagnostic  edits: 0
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && ls -la && python -m pytest -q 2>&1 | tail -20
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -c "import calc, inspect; print('calc from:', calc.__file__); print(inspect.getsource(calc))" && echo "--- sessions ---" && find sessions -type f | head -20 && echo "--- stats ---" && cat stats-outils.json
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q -v 2>&1 | tail -10 && echo "--- exit: $? ---" && md5 calc.py test_calc.py
+   cumulative  42 calls  364226 tokens
+
+mission 9 [C3] C/missing_import 19.4s  laruche: finished  verdict: SUCCESS  calls: 6  tokens: 63822
+   diagnostic  edits: 0
+   tool  file_list /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | tail -40
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && echo "--- files ---" && ls -la && echo "--- sessions ---" && ls -la sessions 2>/dev/null | head -20 && echo "--- verbose run ---" && python -m pytest -v 2>&1 | tail -20
+   tool  REFUSED execute_code
+   tool  shell_exec python -m pytest -q
+   cumulative  48 calls  428048 tokens
+
+mission 10 [A4] A/wrong_constant 13.5s  laruche: finished  verdict: SUCCESS  calls: 7  tokens: 60657
+   diagnostic  edits: 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1; echo "EXIT=$?"
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1; echo "EXIT=$?"
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && echo "--- calc.py ---" && cat calc.py && echo "--- test_calc.py (unmodified) ---" && cat test_calc.py && echo "--- pytest ---" && python -m pytest -q 2>&1
+   cumulative  55 calls  488705 tokens
+
+mission 11 [A5] A/off_by_one 7.5s  laruche: finished  verdict: SUCCESS  calls: 5  tokens: 47637
+   diagnostic  edits: 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | tail -40
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | tail -20
+   cumulative  60 calls  536342 tokens
+
+mission 12 [A6] A/missing_import 7.0s  laruche: finished  verdict: SUCCESS  calls: 5  tokens: 47851
+   diagnostic  edits: 1
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | head -50
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  file_read /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/test_calc.py
+   tool  file_edit /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace/calc.py
+   tool  shell_exec cd /var/folders/jy/3s3vdbkj5936m1304trj6kr00000gn/T/.tmpH8lvrp/workspace && python -m pytest -q 2>&1 | tail -20
+   cumulative  65 calls  584193 tokens
+
+domain code: 12/12 missions SUCCESS
+cumulative after code: 65 model calls, 584193 tokens

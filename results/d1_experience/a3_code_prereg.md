@@ -57,35 +57,59 @@ Question, and the only one: does conditioning on the state and on the candidate 
 
 Task: for a step, predict whether the candidate action is the one the teacher took in that state, a binary applicability judgement built from the trace and never from a hand-written rule. Negatives are drawn from the actions actually available in that state (`available_actions`), so a negative means "not the action taken here", never "invalid action". Rows from episodes that closed FAILURE or UNKNOWN are excluded from the positive class entirely.
 
-Four arms, same encoder, same splits, same classifier, same seeds:
+Four arms, same encoder, same splits, same seeds:
 
 ```text
-B0-A   goal only
-B0-B   goal + state
-B0-C   goal + action
-B0-D   goal + state + action
+B0-A   goal                    multi-class over the candidate actions
+B0-B   goal + state            multi-class over the candidate actions
+B0-C   goal + action           scores one candidate, ranked over the same set
+B0-D   goal + state + action   scores one candidate, ranked over the same set
 ```
 
-`goal` is the raw mission text; `state` is the structured state the sink recorded (phase, last action, last outcome, output kind, recent actions, step index, available actions); `action` is the candidate action key, tool and template.
+Correction made before any B0 number exists, and recorded rather than silently applied. The first formulation asked every arm the binary question "is this candidate the action taken here", which makes the arms without the action structurally blind: one `(goal, state)` appears with every available candidate and different labels, so they could not exceed the base rate and the action-conditioned arms would have won by construction. That is the same flaw that disqualified the benchmark plan, reproduced in this file. All four arms now decide the same thing on the same candidate set: which of the 36 available actions was taken. Arms without the action emit a distribution over the 36; arms with the action score each candidate and take the argmax. The metric is top-1 accuracy for everyone, so no arm is handed an advantage by its formulation.
 
-Encoder: `paraphrase-multilingual-MiniLM-L12-v2`, frozen, already used in C3 and available locally, on CPU. Structured fields are encoded as small categorical vectors, not as sentences. Head: one small MLP. No fine-tuning of the encoder in this first pass, no RL, no multi-head, no calibration, no gate, no wiring, no change to the engine.
+`goal` is the raw mission text; `state` is the structured state the sink recorded (phase, last action, last outcome, output kind, recent actions, step index, consecutive failures); `action` is the candidate tool.
 
-Split: grouped, leaving whole missions out, never individual steps, so no step of a mission appears on both sides. Five seeds, mean and standard deviation reported for every metric; an arm that beats another by less than the spread of the seeds is reported as indistinguishable.
+Encoder: `paraphrase-multilingual-MiniLM-L12-v2`, frozen, already used in C3 and cached locally, on CPU. Structured fields are encoded as categorical vectors, not as sentences. Head: one small MLP. No fine-tuning of the encoder, no RL, no multi-head, no calibration, no gate, no wiring, no change to the engine.
 
-Metrics: balanced accuracy, precision, recall, F1, and separately the false positive rate on the negatives drawn from the same state, which is the quantity of interest.
+Split: leave one mission out, twelve folds, so no step of a mission appears on both sides. Five seeds, mean and standard deviation for every metric; an arm that beats another by less than the spread of the seeds is reported as indistinguishable, not as a winner.
 
-Verdict, fixed now:
+Metric: top-1 accuracy over the candidate set, with the majority-action rate reported as the trivial baseline.
+
+## What this block can and cannot answer
+
+The code block carries **two distinct goal texts** for its 69 steps, because templates B and C share their wording by design and the workspace path is identical across missions. All the variation is in the state. This is the mirror image of the benchmark's defect, where all the variation was in the goal and there was no state.
+
+So the verdict from this block is narrow and is stated as such: **does the state carry the procedure, that is, is the next action predictable from the state**. It says nothing about generalization to new phrasings, which needs goal variation and therefore the camera block. The informative comparison here is `goal` against `goal + state`; the arms carrying the action are reported for completeness, not as an answer about language.
+
+Verdict, fixed now, on that narrow question:
 
 ```text
-SIGNAL CLAIR    B0-D and B0-C beat B0-A beyond the seed spread, and the gain
-                survives the grouped split
-SIGNAL FAIBLE   a gain inside or near the seed spread, or one that depends on
-                the arm's classifier rather than on the conditioning
-PAS DE SIGNAL   conditioning adds nothing, or costs accuracy
+SIGNAL CLAIR    goal + state beats goal only beyond the spread of the five
+                seeds, and beats the majority-action baseline
+SIGNAL FAIBLE   a gain inside or near the seed spread
+PAS DE SIGNAL   the state adds nothing, or costs accuracy
 ```
 
-Stop after this verdict. No claim of generalization, no camera, no live wiring, no B1.
+The frozen missions are not modified to manufacture goal variation. Stop after this verdict, then wait for `a3-camera-1` for the full question.
 
-## Outcome
+## Outcome, collection
+
+Block `a3-code-1` ran clean: 12 of 12 missions verified, no circuit breaker, no incident.
+
+```text
+missions              SUCCESS 12   FAILURE 0   UNKNOWN 0
+deliberative decisions    65       actual model responses  48
+tokens                584193       (input 572934, output 11259)
+per mission              5.4 decisions, 48.7k tokens
+steps observed            69       of which 9 file_edit
+exploitable validated     33       over shell_exec, file_read, file_list
+families                   8
+distinct goal texts        2
+```
+
+Trace frozen, sha256 in `TRACE_SHA256.txt`. It is the B0 dataset: 69 learnable steps, every one of them from an episode that closed SUCCESS, writes included under the distinction recorded above.
+
+## Outcome, B0
 
 Not run.
