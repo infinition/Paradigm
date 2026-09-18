@@ -162,6 +162,17 @@ a domain that yields several decisions per mission, which the code domain does
 the two varying together, so that the same goal can meet different states
 ```
 
+Two constraints matter more than the counts, because they are what stops the dataset from answering the question by construction, which is how both earlier attempts at this question failed:
+
+```text
+the same kind of request must occur in several different states
+different formulations must sometimes lead to the same procedure
+```
+
+The first stops the goal from being a proxy for the state. If a phrasing always appears in one state, a model reading the goal alone can recover the state from it, and the arms stop being separable. The second stops the surface form from being a shortcut to the action: if each formulation maps to exactly one procedure, the task collapses into phrase matching and measures the vocabulary rather than the procedure. Together they are the reason the benchmark line and the frozen code block each failed to pose the question, once from each side.
+
+A formulation set built this way also has to move the entry point of the procedure, not only the wording: asking to fix a bug already diagnosed, asking to find then fix it, and asking to fix it without breaking anything else are the same intention reached from different states and through different trajectories. That is joint variation; paraphrase alone is not.
+
 The camera block is still run, to close the pilot on cost, action diversity and the physical domain working again, and it is not asked to answer the language question. The frozen missions are not modified to manufacture formulations; a collection for the language question is a new pre-registration and a new mission set, and it is the sizing decision the pilot was meant to inform.
 
 ## Pilot safety hard stop
