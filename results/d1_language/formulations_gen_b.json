@@ -1,0 +1,32 @@
+{
+  "source": "gen_b",
+  "language": "fr",
+  "count": 20,
+  "note": "Written by a second language model without sight of the gen_a batch. Kept verbatim, no edit after merging. Four per intention, indices j=4..7 inside each intention.",
+  "formulations": [
+    {"id": "gen_b-I1-4", "intention": "I1", "j": 4, "text": "regarde ce qui cloche, corrige le problème et vérifie que tout repasse correctement"},
+    {"id": "gen_b-I1-5", "intention": "I1", "j": 5, "text": "trouve la cause du bug, fais la correction nécessaire puis relance les tests"},
+    {"id": "gen_b-I1-6", "intention": "I1", "j": 6, "text": "remets le projet en état de marche et assure-toi que la suite de tests est verte"},
+    {"id": "gen_b-I1-7", "intention": "I1", "j": 7, "text": "répare ce qui empêche le code de fonctionner normalement, puis confirme avec les tests"},
+
+    {"id": "gen_b-I2-4", "intention": "I2", "j": 4, "text": "analyse pourquoi ça ne marche pas et dis-moi ce qui bloque, sans modifier les fichiers"},
+    {"id": "gen_b-I2-5", "intention": "I2", "j": 5, "text": "trouve la cause du problème et explique-la moi, je veux juste le diagnostic"},
+    {"id": "gen_b-I2-6", "intention": "I2", "j": 6, "text": "inspecte le projet pour comprendre d'où vient l'erreur, mais ne corrige rien"},
+    {"id": "gen_b-I2-7", "intention": "I2", "j": 7, "text": "identifie précisément ce qui provoque l'échec et arrête-toi une fois le diagnostic établi"},
+
+    {"id": "gen_b-I3-4", "intention": "I3", "j": 4, "text": "vérifie rapidement si le projet est actuellement en bon état"},
+    {"id": "gen_b-I3-5", "intention": "I3", "j": 5, "text": "regarde simplement si tout fonctionne comme prévu dans le projet"},
+    {"id": "gen_b-I3-6", "intention": "I3", "j": 6, "text": "fais un contrôle de l'état actuel et dis-moi s'il y a quelque chose qui ne va pas"},
+    {"id": "gen_b-I3-7", "intention": "I3", "j": 7, "text": "confirme-moi juste si le projet passe ses vérifications dans son état actuel"},
+
+    {"id": "gen_b-I4-4", "intention": "I4", "j": 4, "text": "on m'a signalé {bug} dans calc.py, vérifie ce point et corrige-le si c'est bien le problème"},
+    {"id": "gen_b-I4-5", "intention": "I4", "j": 5, "text": "il paraît qu'il y a {bug} dans calc.py, contrôle ça et répare si nécessaire"},
+    {"id": "gen_b-I4-6", "intention": "I4", "j": 6, "text": "le défaut remonté est {bug} dans calc.py, pars directement de cette piste et vérifie-la"},
+    {"id": "gen_b-I4-7", "intention": "I4", "j": 7, "text": "on pense que le souci vient de {bug} dans calc.py, confirme d'abord puis corrige si c'est avéré"},
+
+    {"id": "gen_b-I5-4", "intention": "I5", "j": 4, "text": "corrige le bug sans modifier les tests, puis vérifie que tu n'as rien cassé ailleurs"},
+    {"id": "gen_b-I5-5", "intention": "I5", "j": 5, "text": "répare le problème en laissant les tests intacts et assure-toi qu'il n'y a pas de régression"},
+    {"id": "gen_b-I5-6", "intention": "I5", "j": 6, "text": "fais la correction nécessaire sans toucher à la suite de tests, puis contrôle que le reste fonctionne toujours"},
+    {"id": "gen_b-I5-7", "intention": "I5", "j": 7, "text": "règle le bug sans changer les tests existants et vérifie que la correction n'introduit aucun autre problème"}
+  ]
+}

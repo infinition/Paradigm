@@ -69,6 +69,24 @@ Two properties this buys, and they are the point of the plan. A formulation neve
 
 Bug kinds inside S1, S3 and S4 rotate deterministically over `wrong_constant`, `off_by_one`, `missing_import` by mission index, so no formulation is tied to one kind.
 
+## Two properties of the two batches, measured before the run and not corrected
+
+Both batches are frozen and hashed. Neither is edited, and these notes exist so that the transfer result is read correctly rather than adjusted afterwards.
+
+**Surface form separates the sources perfectly.** Every `gen_a` formulation starts with a capital and ends with a period or a question mark; no `gen_b` formulation does either. Mean length 70 characters against 84.
+
+```text
+                              gen_a   gen_b
+starts with a capital         20/20    0/20
+ends with . or ?              20/20    0/20
+```
+
+A leave-source-out result therefore measures resistance to a style change that includes a trivial typographic marker, not only to a change of phrasing. The mitigation is reporting, not editing: the transfer evaluation is run twice, once on the frozen text and once with case and final punctuation normalized, and both numbers are reported. If they differ, the difference is the part of the transfer gap that is typographic rather than linguistic.
+
+**The two batches take different stances inside intention I4.** The `gen_a` formulations assert the named defect ("inutile de chercher longtemps, c'est {bug}"), while every `gen_b` one hedges and asks for a check before the fix ("vérifie ce point et corrige-le si c'est bien le problème", "confirme d'abord puis corrige si c'est avéré"). That is not only style: an asserted defect invites going straight to the edit, a hedged one invites verifying first, so the expected procedure differs. Transfer on I4 may therefore reflect a procedural difference and not a stylistic one, and I4 is reported separately from the other intentions in the leave-source-out analysis for that reason.
+
+Neither property is a defect of the batches. They are what two independent generators actually produce, which is the situation the collection is meant to face.
+
 ## Splits, and what each one answers
 
 ```text
