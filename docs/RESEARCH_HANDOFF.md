@@ -91,12 +91,17 @@ The pilot is pre-registered in `pilot_prereg.md`, with its outcome sections; the
 Two attempts have run, both invalid, both archived whole with their incident record, neither merged with anything:
 
 ```text
-a1   invalid   pytest not importable by the python3 on PATH, so every code mission
-               scored FAILURE whatever the model did      9 missions, 132 decisions, 1.70M tokens
-a2   invalid   camera enumerates devices and delivers no frame to any process
-                                                          20 missions, 93 decisions, 657k tokens
-a3   not started, blocked on the mandatory camera preflight
+a1         invalid    pytest not importable by the python3 on PATH, so every code
+                      mission scored FAILURE whatever the model did
+a2         invalid    camera enumerates devices and delivers no frame to any process
+a3-code-1  valid      12 of 12 verified, 65 deliberative decisions, 48 model
+                      responses, 584k tokens, 69 steps, 33 exploitable transitions
+a3-camera-1  not run  external capture-system failure, not a scientific failure
 ```
+
+The pilot is closed with the code domain completed and valid and the camera domain not run. The camera's capture path is broken on the machine, outside Paradigm and LaRuche: the native tool and `ffmpeg` both start a session, light the indicator and receive no frame, on the built-in and Continuity cameras alike, from two launch contexts, with permissions granted, surviving a reboot, with no third-party CoreMediaIO plugin installed. `a3-camera-1` stays available unchanged and can run later under the block-level rule.
+
+The feasibility test on the frozen `a3-code-1` trace (`experiments/decision_model_v0/`) gave a clear signal on a narrow question: `goal + state` reaches 0.754 top-1 against 0.362 for `goal only` and a trivial baseline of 0.420, over 69 decisions, 12 missions, leave one mission out, five seeds. The state carries the procedure. The arm that scores each candidate action lands at 0.652, below the plain multi-class arm on the same features, but the two families do not share a loss, so that judges the formulation and not the architecture; a listwise loss over the candidates would be the fair test. The block carries two distinct goal texts, so nothing there speaks about language.
 
 `a2`'s code block was clean (12 of 12 verified, 72 deliberative decisions, 46 actual model responses, 587k tokens, 28 exploitable validated transitions over `shell_exec`, `file_read`, `file_list`) and is invalid all the same, because the rule in force when the camera fault occurred invalidated the whole attempt. It is not revived by the later amendment.
 

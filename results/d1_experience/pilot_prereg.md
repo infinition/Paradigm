@@ -271,3 +271,25 @@ What the two invalid attempts did establish, and what is worth carrying forward:
 2. Start `a3` only on `PREFLIGHT OK` with real PNG dimensions, from mission 1, code block then camera block, under `a3-code-1` and `a3-camera-1`.
 3. Report the raw numbers over the 24 missions before any verdict: missions by status, deliberative decisions and actual model responses kept separate, tokens, exploitable validated transitions, distinct action keys per domain, the maximum share of one action, at least one structural negative per domain, and how many transitions are lost to `not_reflex_capable`.
 4. Only then the three diversity clauses, and only then the sizing of the real D1.
+
+## Pilot closed
+
+```text
+code domain      completed and valid
+camera domain    not run, external capture-system failure
+```
+
+The code domain is measured on block `a3-code-1`: 12 of 12 missions verified, 65 deliberative decisions, 48 model responses, 584k tokens, 69 observed steps, 33 exploitable validated transitions over 3 action keys, trace frozen and hashed. The feasibility test on that trace gave a clear signal that the state carries the procedure, `goal + state` at 0.754 against 0.362 for `goal only` and 0.420 for the trivial baseline.
+
+The camera domain was not measured and is **not a scientific failure**. Its capture path is broken on this machine, outside Paradigm and outside LaRuche: two independent capture stacks, the native tool and `ffmpeg`, both start a session, light the recording indicator and never receive a frame, on both the built-in camera and a Continuity Camera, from two launch contexts, with permissions granted, and the fault survives a reboot. No third-party CoreMediaIO plugin is installed. Nothing about the camera domain's design, contracts or missions is implicated, and no verdict about it is recorded.
+
+`a3-camera-1` stays available and unchanged. If the preflight goes green again it can run under the block-level rule, which exists for exactly this, and the pilot's camera half can be filled in then.
+
+What the pilot delivered, which is what it was for:
+
+- the code domain produces enough state depth and enough transitions per mission to learn a procedural policy, at about 5.4 deliberative decisions and 48.7k tokens per mission;
+- the collection as frozen cannot study language, the code domain carrying two formulations and the camera domain about eleven decisions;
+- the instrumentation is sound and was twice the only thing that made a diagnosis possible;
+- a write action never becomes an exploitable positive transition, which is a constraint on any collection meant to teach procedures that change the environment.
+
+The next collection is a separate pre-registration, `D1-language`, on the code domain, designed for the question this pilot established it could not answer.
