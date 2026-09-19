@@ -58,6 +58,7 @@ def _serve(args: argparse.Namespace) -> int:
     from .integration.service import ParadigmService, serve
 
     adapter = LaRucheAdapter()
+    from .integration.engine import ReflexPolicy
     from .integration.shadow import ShadowSampler
 
     sampler = ShadowSampler.parse(args.shadow_schedule, seed=args.shadow_seed) if args.shadow_schedule else None
@@ -67,10 +68,15 @@ def _serve(args: argparse.Namespace) -> int:
 
         sink = TraceSink(Path(args.trace_file), attempt_id=args.attempt_id)
     state_file = Path(args.state_file) if args.state_file else None
+    # The reflex policy decides which action labels may ever be replayed. It defaults to the
+    # LaRuche adapter's templates; another domain, an arm for instance, names its actions
+    # differently and has to declare them or nothing it does can be authorised.
+    policy = adapter.policy() if not args.allow_actions else ReflexPolicy(
+        allowed_actions=tuple(args.allow_actions), max_risk="low")
     if state_file is not None and state_file.exists():
-        engine = Paradigm.load(state_file, policy=adapter.policy(), shadow_sampler=sampler, trace_sink=sink)
+        engine = Paradigm.load(state_file, policy=policy, shadow_sampler=sampler, trace_sink=sink)
     else:
-        engine = Paradigm(policy=adapter.policy(), shadow_sampler=sampler, trace_sink=sink)
+        engine = Paradigm(policy=policy, shadow_sampler=sampler, trace_sink=sink)
     adapter.templates = engine.action_templates  # one shared template map, persisted with the engine
     if getattr(args, "equivalence", "identity") == "laruche":
         # Behavioral equivalence contract derived from the adapter's own rules; identity otherwise.
@@ -116,6 +122,7 @@ def build_parser() -> argparse.ArgumentParser:
     srv.add_argument("--shadow-seed", type=int, default=20260917)
     srv.add_argument("--equivalence", choices=("identity", "laruche"), default="identity", help="equivalence contract for per-family certification scoring (default identity)")
     srv.add_argument("--trace-file", default=None, help="append raw experience (one JSONL row per observed step and per closed episode, FAILURE and UNKNOWN included) for dataset collection; off by default and never read back by the engine")
+    srv.add_argument("--allow-actions", action="append", default=None, help="regular expression an action label must match to be replayable; repeatable. Defaults to the LaRuche templates, which no other domain matches")
     srv.add_argument("--attempt-id", default="unset", help="attempt tag written on every trace row; a restart after an incident uses a new one and is never merged with the invalidated attempt")
     srv.set_defaults(func=_serve)
     return parser
